@@ -15,6 +15,7 @@ gem "wysiwyg-rails"
 gem "font-awesome-rails"
 gem 'draper'
 gem 'friendly_id', '~> 5.0.0'
+gem 'kaminari'
 gem 'devise'
 
 group :development do
