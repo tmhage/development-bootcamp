@@ -1,0 +1,23 @@
+.page-header
+  h1 Posts
+
+table.table
+  caption List of posts
+  thead
+    tr
+      th #
+      th Title
+      th Created by
+      th Status
+
+    - @posts.each do |post|
+      tr
+        td= post.title
+        td= post.user.full_name
+        td
+          - if post.published?
+            span.status.published= •
+            = link_to 'x', unpublish_post_path(post), method: :put
+          - else
+            span.status.unpublished= •
+            = link_to '√', publish_post_path(post), method: :put

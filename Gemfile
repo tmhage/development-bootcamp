@@ -10,7 +10,6 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
-gem 'bootstrap-generators', '~> 3.2.0'
 gem "wysiwyg-rails"
 gem "font-awesome-rails"
 gem 'draper'
@@ -20,6 +19,8 @@ gem 'devise'
 
 group :development do
   gem 'spring'
+  gem 'devise-bootstrap-views'
+  gem 'bootstrap-generators', '~> 3.2.0'
 end
 
 group :development, :test do
@@ -32,3 +33,4 @@ group :development, :test do
   gem 'shoulda-matchers', require: false
 end
 
+gem 'puma'

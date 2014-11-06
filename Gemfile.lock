@@ -49,6 +49,7 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    devise-bootstrap-views (0.0.3)
     diff-lcs (1.2.5)
     draper (1.4.0)
       actionpack (>= 3.0)
@@ -109,6 +110,8 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    puma (1.6.3)
+      rack (~> 1.2)
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -209,6 +212,7 @@ DEPENDENCIES
   bootstrap-generators (~> 3.2.0)
   coffee-rails (~> 4.0.0)
   devise
+  devise-bootstrap-views
   draper
   factory_girl_rails
   faker
@@ -219,6 +223,7 @@ DEPENDENCIES
   jquery-rails
   kaminari
   pg
+  puma
   rails (= 4.1.6)
   rb-fsevent
   rspec-rails (~> 3.0.2)
