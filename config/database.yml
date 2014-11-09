@@ -23,4 +23,6 @@ test:
 
 production:
   <<: *default
-  database: developmentbootcamp_production
+  database: <%= ENV['DB_DB'] %>
+  user: <%= ENV['DB_USER'] %>
+  password: <%= ENV['DB_PASS'] %>
