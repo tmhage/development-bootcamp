@@ -27,7 +27,7 @@ group :development, :test do
   gem 'spring-commands-rspec'
   gem 'rspec-rails', '~> 3.0.2'
   gem 'guard-rspec'
-  gem 'rb-fsevent' if `uname` =~ /Darwin/
+  gem 'rb-fsevent'
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'shoulda-matchers', require: false
