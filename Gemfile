@@ -33,3 +33,5 @@ group :development, :test do
 end
 
 gem 'puma'
+
+gem 'capistrano'
