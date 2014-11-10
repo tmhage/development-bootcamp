@@ -15,11 +15,11 @@ gem 'draper'
 gem 'friendly_id', '~> 5.0.0'
 gem 'kaminari'
 gem 'devise'
+gem 'devise-bootstrap-views'
+gem 'bootstrap-generators', '~> 3.2.0'
 
 group :development do
   gem 'spring'
-  gem 'devise-bootstrap-views'
-  gem 'bootstrap-generators', '~> 3.2.0'
 end
 
 group :development, :test do
