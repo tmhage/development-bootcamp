@@ -36,7 +36,8 @@ end
 namespace :assets do
   task :precompile do
     on roles(:app) do
-      execute "cd #{release_path}
+      execute "source ~/.profile && \
+        cd #{release_path} && \
         RAILS_ENV=production bundle exec rake assets:precompile; true"
     end
   end
