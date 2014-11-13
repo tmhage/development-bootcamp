@@ -1,0 +1,21 @@
+= bootstrap_form_for @post, url: (@post.persisted? ? admin_post_path(@post) : admin_posts_path), file: true do |f|
+
+  fieldset
+    = f.text_field :title
+    = f.text_area :content
+
+  fieldset
+    legend Publishing
+    = f.radio_button :published?, 1, checked: @post.published?, label: 'Published'
+    = f.radio_button :published?, 0, checked: @post.unpublished?, label: 'Unpublished'
+
+  fieldset
+    legend Cover Image
+    = f.file_field :cover_image
+    - if @post.cover_image.present?
+      = image_tag @post.cover_image.url(:small), class: 'pull-right'
+
+  p
+    = link_to 'Cancel', admin_posts_path, class: 'btn btn-default'
+    |  
+    = f.submit 'Save post', class: 'btn btn-primary'

@@ -1,0 +1,13 @@
+development: &default
+  enable_processing: true
+
+test:
+  <<: *default
+  enable_processing: false
+
+production:
+  storage: s3
+  s3_access_policy: public_read
+  s3_access_key_id: <%= ENV['DB_S3_ACCES_KEY_ID'] %>
+  s3_secret_access_key: <%= ENV['DB_S3_SECRET_ACCES_KEY'] %>
+  s3_bucket: <%= ENV['DB_S3_ASSET_BUCKET'] %>

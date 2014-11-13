@@ -1,23 +1,33 @@
 .page-header
   h1 Posts
 
+.actions
+  = link_to 'New post', new_admin_post_path, class: 'btn btn-primary'
+
 table.table
   caption List of posts
   thead
     tr
-      th #
       th Title
       th Created by
       th Status
+      th Actions
 
     - @posts.each do |post|
       tr
-        td= post.title
+        td= link_to post.title, edit_admin_post_path(post)
         td= post.user.full_name
         td
-          - if post.published?
-            span.status.published= •
-            = link_to 'x', unpublish_post_path(post), method: :put
+          - if post.to_be_unpublished?
+            span.label.label-warning= "To be unpublished on #{post.unpublished_at.to_formatted_s(:short)}"
+          - elsif post.published?
+            span.label.label-success Published
+          - elsif post.to_be_published?
+            span.label.label-warning= "To be published on #{post.published_at.to_formatted_s(:short)}"
           - else
-            span.status.unpublished= •
-            = link_to '√', publish_post_path(post), method: :put
+            span.label.label-danger Unpublished
+        td
+          - if post.published?
+            = link_to 'Unpublish', unpublish_admin_post_path(post), method: :put
+          - else
+            = link_to 'Publish', publish_admin_post_path(post), method: :put
