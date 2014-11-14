@@ -8,6 +8,7 @@ Rails.application.routes.draw do
         put :unpublish
       end
     end
+    resources :sponsors
   end
 
   resources :posts, only: [:index, :show]
