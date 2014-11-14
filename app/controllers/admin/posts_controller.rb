@@ -47,6 +47,11 @@ class Admin::PostsController < Admin::AdminController
   end
 
   def destroy
+    if @post.destroy!
+      redirect_to admin_posts_path, notice: "Post is successfully destroyed."
+    else
+      redirect_to admin_posts_path, error: "Post could not be destroyed."
+    end
   end
 
   private
