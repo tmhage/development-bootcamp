@@ -38,3 +38,6 @@ end
 gem 'puma'
 
 gem 'capistrano'
+gem 'capistrano-bundler'
+gem 'capistrano-github', github: 'capistrano/github'
+gem 'octokit', github: 'octokit/octokit.rb', branch: 'deployments-preview'
