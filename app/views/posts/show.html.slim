@@ -1,5 +1,8 @@
 .page-header
-  h1
-    | Posts#show
-p
-  | Find me in app/views/posts/show.html.slim
+  h1= @post.title
+
+article.post
+  .article-cover-image
+    = image_tag @post.cover_image.url(:big), class: 'img-responsive'
+
+  = @post.content.html_safe
