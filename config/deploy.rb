@@ -22,10 +22,6 @@ before "deploy:symlink:release", "assets:precompile"
 before "deploy:symlink:release", "database:migrate"
 after  "deploy:symlink:release", "deploy:restart"
 
-if ENV['GITHUB_ACCESS_TOKEN']
-  set :github_access_token, ENV['GITHUB_ACCESS_TOKEN']
-end
-
 namespace :assets do
   task :precompile do
     on roles(:app) do
