@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+require 'factory_girl_rails'
+
+FactoryGirl.create_list :sponsor, 5, :active
+FactoryGirl.create_list :sponsor, 5, hiring: true
+FactoryGirl.create_list :sponsor, 5, hiring: true
+FactoryGirl.create_list :sponsor, 5, :active, hiring: true

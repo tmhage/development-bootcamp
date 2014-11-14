@@ -1,0 +1,20 @@
+h1 Registering as a sponsor
+
+p Would you like to register your company as one of the sponsors? Please fill in the form and we will contact you as soon as possible.
+
+= form_for @sponsor do |f|
+  .input
+    = f.label :name
+    = f.text_field :name
+
+  .input
+    = f.label :email
+    = f.text_field :email
+
+  .input
+    = f.label :remarks
+    = f.text_field :remarks
+
+  = f.submit 'Apply!'
+
+p Or contact us directly by calling: 01234556789

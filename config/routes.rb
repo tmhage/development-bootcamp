@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   end
 
   resources :posts, only: [:index, :show]
+  resources :sponsors, only: [:index, :new, :create]
 
   root to: "posts#index"
 end
