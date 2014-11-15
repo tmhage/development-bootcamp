@@ -7,8 +7,8 @@ class User < ActiveRecord::Base
   validates_presence_of :first_name, :last_name, if: :persisted?
 
   def full_name
-    _full_name = [ :first_name, :last_name ].join(" ")
-    return :email unless _full_name.present?
+    _full_name = [ first_name, last_name ].join(" ")
+    return email unless _full_name.present?
     _full_name
   end
 end

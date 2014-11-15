@@ -18,20 +18,9 @@ set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/sys
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 set :keep_releases, 5
 
-before "deploy:symlink:release", "bundle:install"
 before "deploy:symlink:release", "assets:precompile"
 before "deploy:symlink:release", "database:migrate"
 after  "deploy:symlink:release", "deploy:restart"
-
-namespace :bundle do
-  task :install do
-    on roles(:app) do
-      execute "cd #{release_path} && bundle install \
-        --without development test \
-        --deployment"
-    end
-  end
-end
 
 namespace :assets do
   task :precompile do

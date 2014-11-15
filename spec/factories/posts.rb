@@ -1,12 +1,9 @@
 FactoryGirl.define do
   factory :post do
-    title "MyString"
-slug "MyString"
-content "MyText"
-cover_image "MyText"
-user nil
-published_at "2014-10-27 09:04:59"
-unpublished_at "2014-10-27 09:04:59"
+    title { Faker::Company.bs }
+    content { "<p>#{Faker::Lorem.paragraphs.join("</p><p>")}</p>" }
+    user
+    published_at { 1.week.ago }
   end
 
 end

@@ -1,12 +1,10 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.page(page_number).per(10)
-    render stream: true
+    @posts = Post.published.page(page_number).per(10)
   end
 
   def show
-    @post = Post.friendly.find(params[:id])
-    render stream: true
+    @post = Post.published.friendly.find(params[:id])
   end
 
   private

@@ -1,5 +1,12 @@
 .page-header
-  h1
-    | Posts#index
-p
-  | Find me in app/views/posts/index.html.slim
+  h1 Development Bootcamp Amsterdam
+
+- @posts.each do |post|
+  article.post
+    .article-header
+      h2= link_to post.title, post
+
+    .article-cover-image
+      = image_tag post.cover_image.url(:big), class: 'img-responsive'
+
+    = post.content.html_safe
