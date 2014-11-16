@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.1.7'
+gem 'rails_12factor'
 gem 'pg'
 gem 'slim-rails'
 gem 'sass-rails', '~> 4.0.3'
