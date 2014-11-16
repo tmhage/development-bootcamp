@@ -11,10 +11,8 @@ before_script:
 script:
 - bundle exec rspec spec/
 before_install:
-- openssl aes-256-cbc -K $encrypted_ebbfec5e58e4_key -iv $encrypted_ebbfec5e58e4_iv
-  -in dokku.pub.enc -out .travis/dokku.pub -d
-- openssl aes-256-cbc -K $encrypted_ebbfec5e58e4_key -iv $encrypted_ebbfec5e58e4_iv
-  -in dokku.enc -out .travis/dokku -d
+- openssl aes-256-cbc -K $encrypted_ebbfec5e58e4_key -iv $encrypted_ebbfec5e58e4_iv -in dokku.pub.enc -out .travis/dokku.pub -d
+- openssl aes-256-cbc -K $encrypted_ebbfec5e58e4_key -iv $encrypted_ebbfec5e58e4_iv -in dokku.enc -out .travis/dokku -d
 after_success:
   - chmod 600 .travis/dokku*
   - ssh-add .travis/dokku
