@@ -1,9 +1,13 @@
-button.pull-right=link_to 'Become sponsor!', new_sponsor_path
+.pull-right=link_to 'Become sponsor!', new_admin_sponsor_path, class: 'btn btn-success'
 
 h1 Proud to have them with us
 
 - @sponsors.each do |sponsor|
-  .sponsor.col-lg-4.col-md-6
-    .pull-right= fa_icon "flag fw" if sponsor.hiring
-    p= sponsor.name
-    p= sponsor.description
+  .sponsor-thumb.thumbnail.col-lg-4.col-md-6
+    p
+      = fa_icon "flag fw" if sponsor.hiring
+      = sponsor.name
+    .col-md-4
+      .img-responsive= image_tag sponsor.logo.thumb if sponsor.logo.present?
+    .col-md-8
+      p= sponsor.description

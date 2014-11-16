@@ -26,3 +26,6 @@ en:
     attributes:
       sponsor:
         name: Organization name
+        email: Email
+        remarks: Remarks
+        activated_at: Activate
