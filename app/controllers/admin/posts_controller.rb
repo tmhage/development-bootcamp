@@ -63,8 +63,8 @@ class Admin::PostsController < Admin::AdminController
   def post_params
     parameters = params.require(:post).permit(
       :id, :title, :slug, :content, :cover_image, :published, :unpublished)
-    parameters['published_at'] = Time.now if parameters['published'] == '1' && @post.unpublished?
-    parameters['unpublished_at'] = Time.now if parameters['published'] == '0' && @post.published?
+    parameters['published_at'] = Time.now if parameters['published'] == '1' && @post && @post.unpublished?
+    parameters['unpublished_at'] = Time.now if parameters['published'] == '0' && @post && @post.published?
     parameters.delete('published')
     parameters
   end
