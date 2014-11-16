@@ -1,8 +1,16 @@
-carrierwave_config_path = Rails.root.join('config', 'carrierwave.yml')
-carrierwave_config = YAML.load(ERB.new(File.read(carrierwave_config_path)).result)[Rails.env]
+require 'fog/aws/storage'
+require 'carrierwave'
 
 CarrierWave.configure do |config|
-  carrierwave_config.each do |param, value|
-    config.send(param, value)
+  config.enable_processing = true unless Rails.env.test?
+  if Rails.env.production?
+    config.storage = :fog
+    config.fog_credentials = {
+      provider: 'AWS',
+      aws_access_key_id: ENV['AWS_ACCESS_KEY_ID'] || 'xxx',
+      aws_secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'] || 'xxx',
+      region: 'eu-central-1'
+    }
+    config.fog_directory = 'development-bootcamp-uploads'
   end
 end

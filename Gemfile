@@ -14,6 +14,7 @@ gem 'font-awesome-rails'
 gem 'draper'
 gem 'friendly_id', '~> 5.0.0'
 gem 'kaminari'
+gem "fog", require: "fog/aws/storage"
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'bootstrap_form'
