@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
 
+  get '/schedule' => 'static_pages#schedule'
+  get '/tickets' => 'static_pages#tickets'
+
   namespace :admin do
     resources :posts, except: :show do
       member do
