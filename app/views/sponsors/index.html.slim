@@ -10,4 +10,4 @@ h1 Proud to have them with us
     .col-md-4
       .img-responsive= image_tag sponsor.logo.thumb if sponsor.logo.present?
     .col-md-8
-      p= sponsor.description
+      p= sponsor.description.html_safe
