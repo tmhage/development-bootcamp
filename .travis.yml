@@ -5,12 +5,7 @@ rvm:
 cache: bundler
 addons:
   postgresql: '9.3'
-before_script:
-- cp config/database.travis.yml config/database.yml
-- RAILS_ENV=test bundle exec rake db:drop db:create db:migrate
-script:
-- bundle exec rspec spec/
-after_success:
+before_install:
 - mkdir -p .travis
 - openssl aes-256-cbc -K $encrypted_ebbfec5e58e4_key -iv $encrypted_ebbfec5e58e4_iv
   -in dokku.pub.gz.enc -out .travis/dokku.pub.gz -d
@@ -24,5 +19,12 @@ after_success:
   -in host_key.enc -out .travis/host_key -d
 - cat .travis/host_key >> ~/.ssh/known_hosts
 - cat .travis/ssh_config >> ~/.ssh/config
+- ssh dokku@dokku.codez.it
+before_script:
+- cp config/database.travis.yml config/database.yml
+- RAILS_ENV=test bundle exec rake db:drop db:create db:migrate
+script:
+- bundle exec rspec spec/
+after_success:
 - git remote add dokku dokku@dokku.codez.it:development_bootcamp
 - git push dokku master
