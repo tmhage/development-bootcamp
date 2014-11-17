@@ -1,0 +1,4 @@
+Host RemoteServer
+  HostName dokku.codez.it
+  User dokku
+  IdentityFile /home/travis/build/devbootcamps/website/.travis/dokku
