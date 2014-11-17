@@ -1,7 +1,11 @@
-h1 Registering as a sponsor
-
 .col-md-8
-  p Would you like to register your company as one of the sponsors? Please fill in the form and we will contact you as soon as possible.
+  .jumbotron
+
+    h1
+      = fa_icon "heart fw"
+      | Register as a sponsor
+
+    p Would you like to register your company as one of the sponsors? Please fill in the form and we will contact you as soon as possible.
 
   = bootstrap_form_for @sponsor do |f|
     .input
@@ -16,4 +20,9 @@ h1 Registering as a sponsor
     .pull-right= f.submit 'Apply!', class: 'btn btn-primary'
 
 .col-md-4
-  p Or contact us directly by calling: 01234556789
+  h2 Or give us a call
+  p
+    | Contact us directly by calling:
+    br
+    = fa_icon "phone fw"
+    | +31 (0)6 81910218
