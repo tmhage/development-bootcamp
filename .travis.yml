@@ -7,18 +7,12 @@ addons:
   postgresql: '9.3'
 before_install:
 - mkdir -p .travis
-- openssl aes-256-cbc -K $encrypted_ebbfec5e58e4_key -iv $encrypted_ebbfec5e58e4_iv
-  -in dokku.pub.gz.enc -out .travis/dokku.pub.gz -d
-- openssl aes-256-cbc -K $encrypted_ebbfec5e58e4_key -iv $encrypted_ebbfec5e58e4_iv
-  -in dokku.gz.enc -out .travis/dokku.gz -d
-- gunzip .travis/dokku.pub.gz
+- openssl aes-256-cbc -K $encrypted_ebbfec5e58e4_key -iv $encrypted_ebbfec5e58e4_iv -in dokku.gz.enc -out .travis/dokku.gz -d
 - gunzip .travis/dokku.gz
 - chmod 600 .travis/dokku*
+- eval `ssh-agent -s`
 - ssh-add .travis/dokku
-- openssl aes-256-cbc -K $encrypted_ebbfec5e58e4_key -iv $encrypted_ebbfec5e58e4_iv
-  -in host_key.enc -out .travis/host_key -d
 - cat .travis/host_key >> ~/.ssh/known_hosts
-- cat .travis/ssh_config >> ~/.ssh/config
 - ssh dokku@dokku.codez.it
 before_script:
 - cp config/database.travis.yml config/database.yml
