@@ -1,4 +1,4 @@
-.pull-right=link_to 'Become sponsor!', new_admin_sponsor_path, class: 'btn btn-success'
+.pull-right=link_to 'Become sponsor!', (user_signed_in? ? new_admin_sponsor_path : new_sponsor_path), class: 'btn btn-success'
 
 h1 Proud to have them with us
 
