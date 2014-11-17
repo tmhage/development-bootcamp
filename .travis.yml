@@ -21,4 +21,4 @@ script:
 - bundle exec rspec spec/
 after_success:
 - git remote add dokku dokku@dokku.codez.it:development_bootcamp
-- git push dokku master
+- if [ "${TRAVIS_PULL_REQUEST}" = "false" && "${TRAVIS_BRANCH}" = "master" ]; then git push dokku master; fi
