@@ -1,0 +1,18 @@
+= bootstrap_form_for [:admin, @sponsor] do |f|
+  = f.text_field :name, required: true
+  = f.text_area :description, required: true
+
+  = f.file_field :logo
+  - if @sponsor.logo.present?
+    = image_tag @sponsor.logo.url(:thumb)
+
+  = f.text_field :email, type: 'email', required: true
+  = f.text_area :remarks
+
+  = f.check_box :hiring
+  = f.check_box :activated_at
+
+  p
+    = link_to 'Cancel', admin_posts_path, class: 'btn btn-default'
+    |
+    = f.submit 'Save Sponsor', class: 'btn btn-primary'

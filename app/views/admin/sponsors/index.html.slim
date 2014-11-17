@@ -1,0 +1,25 @@
+.sponsor.col-md-12
+  .pull-right= link_to 'Add new sponsor', new_admin_sponsor_path,
+    class: 'btn btn-primary'
+
+- @sponsors.each do |sponsor|
+  .sponsor.col-md-12
+    h3= sponsor.name
+    .col-md-10
+      .col-md-2
+        - if sponsor.logo.present?
+          .img-responsive= image_tag sponsor.logo.thumb
+        - else
+          .img-responsive= image_tag 'default-logo.jpg'
+      .col-md-10
+        p= sponsor.description
+        h4 Remarks
+        p.bg-info= sponsor.remarks
+        p= "Hiring: #{sponsor.hiring}"
+        p.pull-right= sponsor.created_at.to_s(:long)
+    .col-md-2
+      p= link_to 'Edit', edit_admin_sponsor_path(sponsor)
+      p= link_to 'Delete', admin_sponsor_path(sponsor), method: :delete,
+        data: { confirm: 'Are you sure you want to delete a sponsor?' }
+
+.text-center= paginate @sponsors

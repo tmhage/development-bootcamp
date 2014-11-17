@@ -19,3 +19,5 @@
 
 # Ignore SSH key files
 /.travis/*
+
+config/database.yml

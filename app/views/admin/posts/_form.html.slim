@@ -2,7 +2,7 @@
 
   fieldset
     = f.text_field :title
-    = f.text_area :content
+    = f.text_area :content, class: 'editor'
 
   fieldset
     legend Publishing
@@ -17,5 +17,5 @@
 
   p
     = link_to 'Cancel', admin_posts_path, class: 'btn btn-default'
-    |  
+    |
     = f.submit 'Save post', class: 'btn btn-primary'
