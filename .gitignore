@@ -18,5 +18,4 @@
 .ruby-version
 
 # Ignore SSH key files
-/.travis/dokku
-/.travis/dokku.pub
+/.travis/*
