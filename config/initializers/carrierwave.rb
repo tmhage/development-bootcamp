@@ -11,6 +11,6 @@ CarrierWave.configure do |config|
       aws_secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'] || 'xxx',
       region: 'eu-west-1',
     }
-    config.fog_directory = 'development-bootcamp-uploads'
+    config.fog_directory = 'development-bootcamp-assets'
   end
 end
