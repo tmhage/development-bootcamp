@@ -1,8 +1,14 @@
 .mod-header
-  padding: 40px 20px
+  padding: 20px
+
+  +min-width(1000px)
+    padding: 50px 30px
 
   img
-    max-width: 100%
+    width: 100%
+    max-width: 200px
+    margin: 0 auto
+    display: block
 
   ul
     list-style: none
@@ -11,6 +17,8 @@
     text-align: center
     display: block
     margin: 20px 0
+    &:last-child
+      margin: 0
 
   a
     text-decoration: none
