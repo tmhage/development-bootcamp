@@ -1,0 +1,16 @@
+.l-side
+  background: $yellow
+
+  +min-width(1000px)
+    width: 250px
+    min-height: 100%
+    position: fixed
+
+.l-main
+  +min-width(1000px)
+    margin-left: 250px
+
+  .inner
+    @extend %block-padding
+    max-width: 800px
+    margin: 0 auto
