@@ -27,7 +27,7 @@ html
     = render "shared/navigation"
     .l-main
       = render 'shared/flash_messages'
-    / = render 'layouts/page'
-    /   = yield
+      = yield
+      / = render 'layouts/page'
 
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
