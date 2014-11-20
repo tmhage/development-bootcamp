@@ -1,0 +1,24 @@
+- cache navigation_cache_key do
+  .navbar.navbar-inverse.navbar-fixed-top
+    .container
+      .navbar-header
+        button.navbar-toggle type="button" data-toggle="collapse" data-target=".navbar-collapse"
+          span.sr-only
+            | Toggle navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        = link_to root_url, :class => "navbar-brand" do
+          = fa_icon "trophy fw"
+          | Development Bootcamp
+      .collapse.navbar-collapse
+        ul.nav.navbar-nav
+          = menu_item_for root_path do
+            = fa_icon "home fw"
+            | Public website
+          = menu_item_for admin_posts_path do
+            = fa_icon "post fw"
+            | Posts
+          = menu_item_for admin_sponsors_path do
+            = fa_icon "heart fw"
+            | Sponsors
