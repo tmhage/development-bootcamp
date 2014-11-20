@@ -15,7 +15,7 @@
           h2 = sponsor.name
           p = sponsor.description.html_safe
           p
-            a href="#" Twitter website
+            = link_to sponsor.website, "#{sponsor.name} website"
 
 .mod-cta
   .inner

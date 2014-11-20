@@ -1,28 +1,29 @@
-.col-md-8
-  .jumbotron
-
-    h1
-      = fa_icon "heart fw"
-      | Register as a sponsor
-
+.mod-intro
+  .inner
+    h1 Register as a sponsor
     p Would you like to register your company as one of the sponsors? Please fill in the form and we will contact you as soon as possible.
 
-  = bootstrap_form_for @sponsor do |f|
-    .input
-      = f.text_field :name, required: true
+.mod-text
+  .inner
+    = form_for @sponsor do |f|
+      .input
+        = f.label :name
+        = f.text_field :name, required: true
 
-    .input
-      = f.text_field :email, type: 'email', required: true
+      .input
+        = f.label :email
+        = f.text_field :email, type: 'email', required: true
 
-    .input
-      = f.text_area :remarks
+      .input
+        = f.label :remarks
+        = f.text_area :remarks
 
-    .pull-right= f.submit 'Apply!', class: 'btn btn-primary'
+      br
+      = f.submit 'Apply!', class: 'button'
 
-.col-md-4
-  h2 Or give us a call
-  p
-    | Contact us directly by calling:
-    br
-    = fa_icon "phone fw"
-    | +31 (0)6 81910218
+.mod-cta
+  .inner
+    h1 Or give us a call
+    p
+      | Contact us directly by calling:
+      |  +31(0)68 191 0218
