@@ -26,14 +26,8 @@ html
   body
     = render "shared/navigation"
     .l-main
+      = render 'shared/flash_messages'
     / = render 'layouts/page'
-    / .container
-    /   - flash.each do |name, msg|
-    /     div class="alert alert-#{ name == :error ? "danger" : "success" } alert-dismissable"
-    /       button.close type="button" data-dismiss="alert" aria-hidden="true"
-    /         | &times;
-    /       = msg
-
     /   = yield
 
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
