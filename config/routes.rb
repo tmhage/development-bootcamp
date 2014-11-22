@@ -3,7 +3,8 @@ Rails.application.routes.draw do
 
   get '/schedule' => 'static_pages#schedule'
   get '/tickets' => 'static_pages#tickets'
-  get '/about' => 'static_pages#about'
+  get '/blog' => 'posts#index'
+  get '/blog/:id' => 'posts#show'
 
   namespace :admin do
     resources :posts, except: :show do
@@ -15,8 +16,8 @@ Rails.application.routes.draw do
     resources :sponsors, except: :show
   end
 
-  resources :posts, only: [:index, :show]
+  # resources :posts, only: [:index, :show]
   resources :sponsors, only: [:index, :new, :create]
 
-  root to: "posts#index"
+  root to: "static_pages#about"
 end
