@@ -1,27 +1,15 @@
 - cache navigation_cache_key do
-  .navbar.navbar-inverse.navbar-fixed-top
-    .container
-      .navbar-header
-        button.navbar-toggle type="button" data-toggle="collapse" data-target=".navbar-collapse"
-          span.sr-only
-            | Toggle navigation
-          span.icon-bar
-          span.icon-bar
-          span.icon-bar
-        = link_to root_url, :class => "navbar-brand" do
-          = fa_icon "trophy fw"
-          | Development Bootcamp
-      .collapse.navbar-collapse
-        ul.nav.navbar-nav
-          = menu_item_for "http://www.developmentbootcamp.nl/" do
-            = fa_icon "home fw"
-            | Home
-          = menu_item_for "/schedule" do
-            = fa_icon "calendar fw"
-            | Schedule
-          = menu_item_for sponsors_path do
-            = fa_icon "heart fw"
-            | Sponsors
-          = menu_item_for "/tickets" do
-            = fa_icon "ticket fw"
-            | Tickets
+  .l-side
+    .mod-header
+      = image_tag 'bootcamp-logo.png'
+      ul
+        = menu_item_for root_path do
+          | Home
+        = menu_item_for schedule_path do
+          | Schedule
+        = menu_item_for sponsors_path do
+          | Sponsors
+        = menu_item_for tickets_path do
+          | Tickets
+        = menu_item_for blog_path do
+          | Blog

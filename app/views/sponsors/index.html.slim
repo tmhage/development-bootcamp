@@ -1,13 +1,25 @@
-.pull-right=link_to 'Become sponsor!', (user_signed_in? ? new_admin_sponsor_path : new_sponsor_path), class: 'btn btn-success'
+.mod-intro
+  .inner
+    h1 Proud to have them with us
+    p None of this would be possible without them, our grateful sponsors! Interesting in sponsoring?
+    = link_to 'Contact us!',
+      (user_signed_in? ? new_admin_sponsor_path : new_sponsor_path),
+      class: 'button'
 
-h1 Proud to have them with us
+.mod-sponsors
+    .inner
+      - @sponsors.each do |sponsor|
+        .sponsor
+          .logo
+            = image_tag sponsor.logo.thumb if sponsor.logo.present?
+          h2 = sponsor.name
+          p = sponsor.description.html_safe
+          p
+            = link_to "#{sponsor.name} website", sponsor.website
 
-- @sponsors.each do |sponsor|
-  .sponsor-thumb.thumbnail.col-lg-4.col-md-6
-    p
-      = fa_icon "flag fw" if sponsor.hiring
-      = sponsor.name
-    .col-md-4
-      .img-responsive= image_tag sponsor.logo.thumb if sponsor.logo.present?
-    .col-md-8
-      p= sponsor.description.html_safe
+.mod-cta
+  .inner
+    p We are looking for sponsors and partners. Would you like to collaborate with us? Do not hesitate to contact us!
+    = link_to 'Become sponsor!',
+      (user_signed_in? ? new_admin_sponsor_path : new_sponsor_path),
+      class: 'button'

@@ -1,4 +1,4 @@
-class Admin::SponsorsController < ApplicationController
+class Admin::SponsorsController < Admin::AdminController
   before_action :authenticate_user!
   before_filter :set_sponsor, only: [:edit, :update, :destroy]
 

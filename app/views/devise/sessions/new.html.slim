@@ -1,19 +1,19 @@
-.panel.panel-default
-  .panel-heading
-    h4
-      = t('.sign_in', :default => "Sign in")
-  .panel-body
-    = form_for(resource, as: resource_name, url: session_path(resource_name), html: { role: "form" }) do |f|
-      .form-group
+.mod-text
+  .inner
+    = form_for(resource, as: resource_name, url: session_path(resource_name), html: { role: 'form' }) do |f|
+      .input
         = f.label :email
-        = f.email_field :email, autofocus: true, class: "form-control"
-      .form-group
+        = f.email_field :email, autofocus: true, class: 'form-control'
+
+      .input
         = f.label :password
-        = f.password_field :password, autocomplete: "off", class: "form-control"
+        = f.password_field :password, autocomplete: 'off', class: 'form-control'
+
       - if devise_mapping.rememberable?
-        .checkbox
-          label
-            = f.check_box :remember_me
-            = f.label :remember_me
-      = f.submit  t('.sign_in', :default => "Sign in"), class: "btn btn-primary"
+        .input
+          = f.label :remember_me
+          = f.check_box :remember_me
+      br
+      = f.submit  t('.sign_in', default: 'Sign in'), class: 'button'
+
 = render "devise/shared/links"

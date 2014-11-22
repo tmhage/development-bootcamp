@@ -5,4 +5,7 @@ class StaticPagesController < ApplicationController
 
   def tickets
   end
+
+  def about
+  end
 end

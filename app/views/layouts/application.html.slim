@@ -24,15 +24,9 @@ html
       !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
 
   body
-    == render "shared/navigation"
-
-    .container
-      - flash.each do |name, msg|
-        div class="alert alert-#{ name == :error ? "danger" : "success" } alert-dismissable"
-          button.close type="button" data-dismiss="alert" aria-hidden="true"
-            | &times;
-          = msg
-
+    = render "shared/navigation"
+    .l-main
+      = render 'shared/flash_messages'
       = yield
 
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
