@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   get '/schedule' => 'static_pages#schedule'
   get '/tickets' => 'static_pages#tickets'
+  get '/about' => 'static_pages#about'
 
   namespace :admin do
     resources :posts, except: :show do
