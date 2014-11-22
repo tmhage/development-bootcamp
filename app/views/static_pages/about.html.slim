@@ -14,7 +14,10 @@
 .mod-text
   .inner
     h1 Decades of experience dedicated to teaching you how to get there
-    p We brought [decades of experience] together in [three beautiful programs](link to programs) for new developers. The three combined, offer all the knowledge, tools, and people that you need to head out there by yourself and make a real salary out of this, and not just some crappy internship.
+    p
+      | We brought decades of experience together in
+      =<> link_to "three beautiful programs", schedule_path
+      | for new developers. The three combined, offer all the knowledge, tools, and people that you need to head out there by yourself and make a real salary out of this, and not just some crappy internship.
     = link_to 'Read full program', schedule_path, class: 'button'
 
 .mod-cta
