@@ -12,18 +12,19 @@
 
       .input
         = f.label :email
-        = f.text_field :email, type: 'email', required: true
+        = f.text_field :email, type: 'email', required: true, placeholder: 'you@organization.co'
 
       .input
-        = f.label :website
-        = f.text_field :website, type: 'website', required: true, placeholder: 'http://'
+        = f.label :website, 'Website (optional)'
+        = f.text_field :website, type: 'website', required: false, placeholder: 'http://'
+
 
       .input
-        = f.label :remarks
-        = f.text_area :remarks
+        = f.label :remarks, 'Remarks (optional)'
+        = f.text_area :remarks, required: false, placeholder: "Anything you'd like to share?"
 
       br
-      = f.submit 'Apply!', class: 'button'
+      = f.submit 'Contact me!', class: 'button'
 
 .mod-cta
   .inner
