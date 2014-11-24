@@ -12,18 +12,23 @@
 
       .input
         = f.label :email
-        = f.text_field :email, type: 'email', required: true
+        = f.text_field :email, type: 'email', required: true, placeholder: 'you@organization.co'
 
       .input
-        = f.label :remarks
-        = f.text_area :remarks
+        = f.label :website, 'Website (optional)'
+        = f.text_field :website, type: 'website', required: false, placeholder: 'http://'
+
+
+      .input
+        = f.label :remarks, 'Remarks (optional)'
+        = f.text_area :remarks, required: false, placeholder: "Anything you'd like to share?"
 
       br
-      = f.submit 'Apply!', class: 'button'
+      = f.submit 'Contact me!', class: 'button'
 
 .mod-cta
   .inner
     h1 Or give us a call
     p
       | Contact us directly by calling:
-      |  +31(0)68 191 0218
+      |  +31 (0)6 81 91 02 18
