@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   end
 
   root to: "static_pages#about"
-  get '/schedule' => 'static_pages#schedule'
+  get '/program' => 'static_pages#program'
   get '/tickets' => 'static_pages#tickets'
   get '/team' => 'static_pages#team'
 

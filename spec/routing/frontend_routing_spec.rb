@@ -10,11 +10,11 @@ describe 'frontend routes', type: :routing do
     end
   end
 
-  describe 'schedule_path' do
-    it 'routes to static_pages#schedule' do
-      expect(get: '/schedule').to route_to(
+  describe 'program_path' do
+    it 'routes to static_pages#program' do
+      expect(get: '/program').to route_to(
         controller: 'static_pages',
-        action: 'schedule'
+        action: 'program'
       )
     end
   end
