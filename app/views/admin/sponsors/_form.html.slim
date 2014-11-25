@@ -1,6 +1,7 @@
 = bootstrap_form_for [:admin, @sponsor] do |f|
   = f.text_field :name, required: true
   = f.text_area :description, required: true, class: 'editor'
+  = f.text_field :website, type: 'website', required: false, placeholder: 'http://'
 
   = f.file_field :logo
   - if @sponsor.logo.present?
