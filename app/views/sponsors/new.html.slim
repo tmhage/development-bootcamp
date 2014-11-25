@@ -1,7 +1,25 @@
 .mod-intro
   .inner
     h1 Register as a sponsor
-    p Would you like to register your company as one of the sponsors? Please fill in the form and we will contact you as soon as possible.
+
+    markdown:
+      We want to help our students as best as we can during their learning experience at
+      the conference and after that. We are looking for sponsors to keep the costs of
+      admission tickets as low as possible for students, _and_ we are looking for companies
+      who want to adopt students as the decide to continue down the path of learning how to
+      program.
+
+      So here's what we need:
+
+        - Internships and admission fees for students through our adoption program
+        - Donations to help with (the costs of) the venue, wifi, food, etc.
+        - VPS's / Hosting credit that we can use during workshops etc.
+        - Speakers and teachers!
+
+      Would you like to register your company as one of the sponsors? Please fill in the
+      form and we will contact you as soon as possible. Any help is appreciated.
+
+    p = link_to "Help out!", "#new_sponsor", class: 'button'
 
 .mod-text
   .inner
@@ -25,6 +43,8 @@
 
       br
       = f.submit 'Contact me!', class: 'button'
+      br
+      i.small By clicking this button you accept the love and gratitude of us and our students.
 
 .mod-cta
   .inner
