@@ -48,6 +48,6 @@ class Admin::SponsorsController < Admin::AdminController
   def sponsor_params
     params[:sponsor][:activated_at] = Time.now if params[:sponsor][:activated_at] == '1'
     params.require(:sponsor).permit(:name, :description, :logo, :remarks, :email,
-      :hiring, :activated_at)
+      :hiring, :activated_at, :website)
   end
 end
