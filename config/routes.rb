@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   get '/schedule' => 'static_pages#schedule'
   get '/tickets' => 'static_pages#tickets'
+  get '/team' => 'static_pages#team'
   get '/blog' => 'posts#index'
   get '/blog/:id' => 'posts#show'
 
