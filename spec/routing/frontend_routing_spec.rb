@@ -28,6 +28,15 @@ describe 'frontend routes', type: :routing do
     end
   end
 
+  describe 'team_path' do
+    it 'routes to static_pages#team' do
+      expect(get: '/team').to route_to(
+        controller: 'static_pages',
+        action: 'team'
+      )
+    end
+  end
+
   describe 'blog routing' do
     it 'should route to posts#index' do
       describe 'blog index route' do
