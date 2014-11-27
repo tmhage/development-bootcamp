@@ -1,3 +1,7 @@
+- title @post.title
+- meta_description truncate(strip_tags(@post.content), 130)
+- meta_keywords "development, bootcamp, programming, learn, teach, sponsor"
+
 .mod-intro
   .inner
     h1= @post.title
