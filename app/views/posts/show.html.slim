@@ -1,11 +1,25 @@
 - title @post.title
-- meta_description truncate(strip_tags(@post.content), 130)
+- meta_description truncate(strip_tags(@post.content), length: 130)
 - meta_keywords "development, bootcamp, programming, learn, teach, sponsor"
 
-.mod-intro
+.mod-intro.with-cover-image
+  .cover-image style="background-image: url(#{image_url(@post.cover_image.url(:big))})"
   .inner
     h1= @post.title
 
 .mod-text
   .inner
-    p= @post.content.html_safe
+    - if @post.user && @post.user.first_name
+      p.post-meta
+        => image_tag @post.user.gravatar_url, class: "gravatar"
+        span.author = "#{@post.user.first_name} #{@post.user.last_name}"
+        br
+        => time_ago_in_words @post.created_at
+        | ago
+
+    p = @post.content.sub(/<hr>/, '').html_safe
+
+.mod-cta
+  .inner
+    = link_to 'Read full program', schedule_path, class: 'button'
+    = link_to 'Get tickets', tickets_path, class: 'button secondary'
