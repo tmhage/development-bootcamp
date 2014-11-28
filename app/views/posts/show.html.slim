@@ -1,6 +1,7 @@
 - title @post.title
 - meta_description truncate(strip_tags(@post.content), length: 130)
 - meta_keywords "development, bootcamp, programming, learn, teach, sponsor"
+- meta_image @post.cover_image.url(:thumb) if @post.cover_image.present?
 
 .mod-intro.with-cover-image
   .cover-image style="background-image: url(#{image_url(@post.cover_image.url(:big))})"

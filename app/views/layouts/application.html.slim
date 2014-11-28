@@ -12,6 +12,8 @@ html
       meta name="description" content=h(yield(:meta_description))
     - unless yield(:meta_keywords).chomp.empty?
       meta name="keywords" content=h(yield(:meta_keywords))
+    - unless yield(:meta_image).chomp.empty?
+      meta property="og:image" content=h(yield(:meta_image))
 
     /! HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries
     /[if lt IE 9]

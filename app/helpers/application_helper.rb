@@ -24,4 +24,12 @@ module ApplicationHelper
   def meta_robots(directive)
     content_for :meta_robots, directive
   end
+
+  # Public: Defines a sharing image for the current page. Social media
+  # sites use these images in their previews.
+  #
+  # image - the (uploaded) image to link to.
+  def meta_image(image)
+    content_for :meta_image, image_url(image)
+  end
 end
