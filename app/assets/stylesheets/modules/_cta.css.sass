@@ -9,3 +9,22 @@
 
   h2
     @extend %h-normal
+
+    +max-width(800px)
+      font-size: 1.5rem
+
+  p.post-meta
+    padding: 1em 0 1em
+    border-top: 1px solid #999
+    border-bottom: none
+    margin: 2em 0 0
+
+    +max-width(800px)
+      font-size: 1rem
+
+    .author
+      font-weight: bold
+
+    .gravatar
+      float: left
+      padding-right: 2em
