@@ -1,8 +1,14 @@
 class ApplicationController < ActionController::Base
 
+  layout :set_layout
+
+  before_filter :configure_permitted_parameters, if: :devise_controller?
+
   protect_from_forgery with: :exception
 
   rescue_from ActiveRecord::RecordNotFound, with: :page_not_found
+
+  protected
 
   def page_not_found(exception = nil)
     if /(jpe?g|png|gif)/i === request.path
@@ -14,6 +20,18 @@ class ApplicationController < ActionController::Base
         format.xml { render xml: {status: 404, message: 'Resource not found'}, status: 404 }
         format.rss { render xml: {status: 404, message: 'Resource not found'}, status: 404 }
       end
+    end
+  end
+
+  def set_layout
+    return 'admin' if devise_controller?
+    'application'
+  end
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:account_update) do |u|
+      u.permit(:password, :password_confirmation, :current_password, :email,
+        :first_name, :last_name)
     end
   end
 end

@@ -9,11 +9,20 @@
         .mod-cta
           .inner
             h2= post.title
+
+            - if post.user && post.user.first_name
+              p.post-meta
+                => image_tag post.user.gravatar_url, class: "gravatar"
+                span.author = "#{post.user.first_name} #{post.user.last_name}"
+                br
+                => time_ago_in_words post.created_at
+                | ago
+
         .mod-text
           .inner
-            p= image_tag post.cover_image.url(:small)
-            p= post.content.html_safe
-            p= link_to link_to 'Read more', post
+            = image_tag post.cover_image.url(:thumb), class: 'post-thumb'
+            = post.content.split("<hr>").first.html_safe
+            p= link_to link_to 'Read more', post, class: 'button'
 
 - else
   = render 'static_pages/coming_soon'
