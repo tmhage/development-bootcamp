@@ -1,0 +1,35 @@
+.mod-navbar
+  a:link,
+  a:visited
+    color: $dark
+    text-decoration: none
+    font-weight: bold
+
+  .mobile-menu-toggle
+    position: absolute
+    top: 20px
+    right: 20px
+
+    +min-width(800px)
+      display: none
+
+  .logo
+    float: left
+    padding: 10px
+
+    img
+      height: 55px
+
+  nav.main
+    +max-width(800px)
+      display: none
+
+    margin: 40px 0 0 60px
+    float: left
+
+    ul
+      list-style: none
+
+      li
+        display: inline
+        margin-right: 2em
