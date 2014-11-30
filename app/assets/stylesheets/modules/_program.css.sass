@@ -12,32 +12,42 @@
   h2
     @extend %h-normal
 
-  .block
-    padding: 2em
+  .blocks
+    display: block
+    clear: both
 
     +min-width(700px)
-      display: inline-block
-      width: 49%
-      vertical-align: top
+      height: 32rem
 
-    &.beginner
-      background: $green
-    &.intermediate
-      background: $yellow
+    .block
+      padding: 2em
 
-      .button
-        background: $dark
-        color: $yellow
+      +min-width(700px)
+        display: inline-block
+        width: 49%
+        vertical-align: top
+        height: 100%
 
-    &.advanced
-      background: $purple
+        &::last-child
+          clear: right
 
-      .button
-        margin-top: 0.4rem
+      &.beginner
+        background: $green
+      &.intermediate
+        background: $yellow
 
-    &.expert
-      background: $light
-      color: $muted
+        .button
+          background: $dark
+          color: $yellow
+
+      &.advanced
+        background: $purple
+
+        .button
+          margin-top: 0.4rem
+
+      &.expert
+        background: $light
 
   ul
     list-style: none
