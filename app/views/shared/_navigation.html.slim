@@ -1,17 +1,11 @@
 - cache navigation_cache_key do
-  .l-side
-    .mod-header
-      = image_tag 'bootcamp-logo.png'
-      ul
-        = menu_item_for root_path do
-          | Home
-        = menu_item_for schedule_path do
-          | Schedule
-        = menu_item_for sponsors_path do
-          | Sponsors
-        = menu_item_for tickets_path do
-          | Tickets
-        = menu_item_for team_path do
-          | Team
-        = menu_item_for blog_index_path do
-          | Blog
+  .l-top
+    .mod-navbar
+      .mobile-menu-toggle
+        = link_to "#bottom-nav", class: 'toggle-mobile-menu'
+          = fa_icon "reorder fw"
+
+      .logo = link_to "/"
+        = image_tag 'bootcamp-logo.png'
+      nav.main
+        = render "shared/menu_items"

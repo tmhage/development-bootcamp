@@ -1,6 +1,6 @@
 module ApplicationHelper
   def title(title, suffix=true)
-    title += " - Development Bootcamp" if suffix
+    title += " – Development Bootcamp, Amsterdam" if suffix
     content_for :title, title
   end
 
