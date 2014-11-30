@@ -33,55 +33,57 @@
       the courses, so **these topics might change a little bit, but it
       gives you an impression!**
 
-    .block.beginner
-      h2 Level One
-      ul
-        li The (UNIX) Terminal
-        li Version control with Git
-        li Basic programming
-        li Debugging your code
-        li OSS and the Gem ecosystem
-        li Object Oriented Programming
-        li Testing your Code with Code
-        li Programming Contest
-      p= link_to "Read more", program_level_1_path, class: "button"
+    .blocks
+      .block.beginner
+        h2 Level One
+        ul
+          li The (UNIX) Terminal
+          li Version control with Git
+          li Basic programming
+          li Debugging your code
+          li OSS and the Gem ecosystem
+          li Object Oriented Programming
+          li Testing your Code with Code
+          li Programming Contest
+        p= link_to "Read more", program_level_1_path, class: "button"
 
-    .block.intermediate
-      h2 Level Two
-      ul
-        li HTML
-        li CSS
-        li Browsers and the Web (clinic)
-        li Rails & MVC
-        li Hosting on PaaS
-        li Basic JavaScript
-        li Working with Databases
-        li Integration Testing (clinic)
-        li Programming Contest
-      p= link_to "Read more", program_level_2_path, class: "button"
+      .block.intermediate
+        h2 Level Two
+        ul
+          li HTML
+          li CSS
+          li Browsers and the Web (clinic)
+          li Rails & MVC
+          li Hosting on PaaS
+          li Basic JavaScript
+          li Working with Databases
+          li Integration Testing (clinic)
+          li Programming Contest
+        p= link_to "Read more", program_level_2_path, class: "button"
+    .blocks
+      .block.advanced
+        h2 Level Three
+        ul
+          li Concerns and Decorators
+          li ElasticSearch (clinic)
+          li Background Jobs
+          li Networking and Security (clinic)
+          li Making your first Gem
+          li Docker (clinic)
+          li RubyMotion (clinic)
+          li Hosting on a VPS
+        p= link_to "Read more", program_level_3_path, class: "button"
 
-    .block.advanced
-      h2 Level Three
-      ul
-        li Concerns and Decorators
-        li ElasticSearch (clinic)
-        li Background Jobs
-        li Networking and Security (clinic)
-        li Making your first Gem
-        li Docker (clinic)
-        li RubyMotion (clinic)
-        li Hosting on a VPS
-      p= link_to "Read more", program_level_3_path, class: "button"
-
-    .block.expert
-      h2 Level Four, your turn! :)
-      ul
-        li Find a job as a junior programmer
-        li Meet new people
-        li Do something that you love
-        li Keep on learning
-        li Share back with the community!
-      p = link_to "Find a job", program_level_4_path, class: "button"
+      .block.expert
+        h2 Level Four, your turn! :)
+        ul
+          li Find a job as a junior programmer
+          li Meet new people
+          li Do something that you love
+          li Keep on learning
+          li Share back with the community!
+        p = link_to "Find a job", program_level_4_path, class: "button"
+      p &nbsp;
 
 .mod-program.intro
   .inner
