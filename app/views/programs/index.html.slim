@@ -1,0 +1,113 @@
+.mod-intro
+  .inner
+    .h-event
+      h1.p-name Program Spring 2014 Development Bootcamp
+      p
+        time.dt-start datetime="2015-03-02 09:00:00 +01:00"
+          strong> 2 March 2015
+        | to
+        time.dt-end datetime="2015-03-08 18:00:00 +01:00"
+          strong<> 8 March 2015
+        | at
+        span.p-location<
+          | a great venue in
+          strong< Amsterdam
+      p.p-summary
+        | We brought decades of experience together in
+        =<> link_to "three beautiful programs", "#the-programs"
+        |  for new developers. The three combined, offer all the knowledge,
+        |  tools, and people that you need to head out there by yourself
+        |  and make a real salary out of this, and not just some crappy
+        |  internship.
+
+      = link_to 'Read full program', "#the-programs", class: 'button'
+      = link_to 'Get tickets', tickets_path, class: 'button secondary'
+
+.mod-program
+  .inner
+    h1 Three programs
+
+    markdown:
+      These are the three levels and an impression of what their programs
+      will look like. _Disclaimer:_ We are still tweaking the structure of
+      the courses, so **these topics might change a little bit, but it
+      gives you an impression!**
+
+    .blocks
+      .block.beginner
+        h2 Level One
+        ul
+          li The (UNIX) Terminal
+          li Version control with Git
+          li Basic programming
+          li Debugging your code
+          li OSS and the Gem ecosystem
+          li Object Oriented Programming
+          li Testing your Code with Code
+          li Programming Contest
+        p= link_to "Read more", program_level_1_path, class: "button"
+
+      .block.intermediate
+        h2 Level Two
+        ul
+          li HTML
+          li CSS
+          li Browsers and the Web (clinic)
+          li Rails & MVC
+          li Hosting on PaaS
+          li Basic JavaScript
+          li Working with Databases
+          li Integration Testing (clinic)
+          li Programming Contest
+        p= link_to "Read more", program_level_2_path, class: "button"
+    .blocks
+      .block.advanced
+        h2 Level Three
+        ul
+          li Concerns and Decorators
+          li ElasticSearch (clinic)
+          li Background Jobs
+          li Networking and Security (clinic)
+          li Making your first Gem
+          li Docker (clinic)
+          li RubyMotion (clinic)
+          li Hosting on a VPS
+        p= link_to "Read more", program_level_3_path, class: "button"
+
+      .block.expert
+        h2 Level Four, your turn! :)
+        ul
+          li Find a job as a junior programmer
+          li Meet new people
+          li Do something that you love
+          li Keep on learning
+          li Share back with the community!
+        p = link_to "Find a job", program_level_4_path, class: "button"
+      p &nbsp;
+
+.mod-program.intro
+  .inner
+    h1#about-the-programs About The Programs
+
+    markdown:
+      We have three programs that will get you to the point where you will
+      be able to switch your career to programming if you'd want to.
+
+      Every program ends with a contest. Winners of the contest will get help
+      from us and our sponsors to give you everything you need to start
+      growing your own career in development.
+
+      [Level One](#level-one) will teach you the basics of programming, and
+      how tho _think_ like programmer. By the end of the week, you will be
+      able to start writing small programs to make your lives easier.
+
+      In [Level Two](#level-two) we will start with the basics of building
+      a web application. Your code will come alive on the internet, where
+      the world will be able to see what you built. An exciting week, after
+      which you will have built a couple of applications, and released them
+      to the public internet.
+
+      Finally, [Level Three](#level-three) is where we will start preparing
+      you for the professional programming world out there. You will add
+      more complicated technology to your applications, and you will learn
+      about the latest hi-tech developments and how to use them.

@@ -1,14 +1,8 @@
 class StaticPagesController < ApplicationController
 
-  def schedule
-  end
+  def tickets; end
 
-  def tickets
-  end
+  def about; end
 
-  def about
-  end
-
-  def team
-  end
+  def team; end
 end
