@@ -13,10 +13,31 @@
     @extend %h-normal
 
   .block
+    padding: 2em
+
     +min-width(700px)
       display: inline-block
       width: 49%
       vertical-align: top
+
+    &.beginner
+      background: $green
+    &.intermediate
+      background: $yellow
+
+      .button
+        background: $dark
+        color: $yellow
+
+    &.advanced
+      background: $purple
+
+      .button
+        margin-top: 0.4rem
+
+    &.expert
+      background: $light
+      color: $muted
 
   ul
     list-style: none

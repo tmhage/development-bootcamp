@@ -11,10 +11,34 @@ describe 'frontend routes', type: :routing do
   end
 
   describe 'program_path' do
-    it 'routes to static_pages#program' do
+    it 'routes to programs#index' do
       expect(get: '/program').to route_to(
-        controller: 'static_pages',
-        action: 'program'
+        controller: 'programs',
+        action: 'index'
+      )
+    end
+    it 'routes to programs#level_one' do
+      expect(get: '/program/level-1').to route_to(
+        controller: 'programs',
+        action: 'level_one'
+      )
+    end
+    it 'routes to programs#level_two' do
+      expect(get: '/program/level-2').to route_to(
+        controller: 'programs',
+        action: 'level_two'
+      )
+    end
+    it 'routes to programs#level_three' do
+      expect(get: '/program/level-3').to route_to(
+        controller: 'programs',
+        action: 'level_three'
+      )
+    end
+    it 'routes to programs#level_four' do
+      expect(get: '/program/level-4').to route_to(
+        controller: 'programs',
+        action: 'level_four'
       )
     end
   end

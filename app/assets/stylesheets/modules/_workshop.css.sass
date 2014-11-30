@@ -1,8 +1,19 @@
 .mod-workshop
+  @extend .mod-text
   border-left: 4em solid
 
   &.beginner
-    border-color: #096
+    border-color: $green
+
+    .icon
+      color: $green
+
+  &.intermediate
+    border-color: $yellow
+  &.advanced
+    border-color: $purple
+  &.expert
+    border-color: $purple
 
   h1
     @extend %h-large
@@ -14,3 +25,6 @@
     font-family: Helvetica, "Sans-Serif"
     @extend %h-small
 
+  .icon
+    float: left
+    padding-right: 2em
