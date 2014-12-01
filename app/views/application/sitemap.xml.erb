@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc><%= root_url %></loc>
+    <lastmod><%= File.ctime(Rails.root.join("app", "views", "static_pages", "about.html.slim")).strftime('%Y-%m-%d') %></lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc><%= root_url %>program</loc>
+    <lastmod><%= File.ctime(Rails.root.join("app", "views", "programs", "index.html.slim")).strftime('%Y-%m-%d') %></lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  <url>
+    <loc><%= root_url %>program/level-1</loc>
+    <lastmod><%= File.ctime(Rails.root.join("app", "views", "programs", "level_one.html.slim")).strftime('%Y-%m-%d') %></lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  <url>
+    <loc><%= root_url %>program/level-2</loc>
+    <lastmod><%= File.ctime(Rails.root.join("app", "views", "programs", "level_two.html.slim")).strftime('%Y-%m-%d') %></lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  <url>
+    <loc><%= root_url %>program/level-3</loc>
+    <lastmod><%= File.ctime(Rails.root.join("app", "views", "programs", "level_three.html.slim")).strftime('%Y-%m-%d') %></lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  <url>
+    <loc><%= root_url %>program/level-4</loc>
+    <lastmod><%= File.ctime(Rails.root.join("app", "views", "programs", "level_four.html.slim")).strftime('%Y-%m-%d') %></lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  <url>
+    <loc><%= root_url %>tickets</loc>
+    <lastmod><%= File.ctime(Rails.root.join("app", "views", "static_pages", "tickets.html.slim")).strftime('%Y-%m-%d') %></lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  <url>
+    <loc><%= root_url %>team</loc>
+    <lastmod><%= File.ctime(Rails.root.join("app", "views", "static_pages", "team.html.slim")).strftime('%Y-%m-%d') %></lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  <url>
+    <loc><%= root_url %>sponsors</loc>
+    <lastmod><%= Sponsor.all.order("updated_at DESC").first.updated_at.strftime('%Y-%m-%d') %></lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.2</priority>
+  </url>
+  <url>
+    <loc><%= root_url %>sponsors/new</loc>
+    <lastmod><%= File.ctime(Rails.root.join("app", "views", "sponsors", "new.html.slim")).strftime('%Y-%m-%d') %></lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  <url>
+    <loc><%= root_url %>blog</loc>
+    <lastmod><%= Post.all.order("updated_at DESC").first.updated_at.strftime('%Y-%m-%d') %></lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.2</priority>
+  </url>
+  <% Post.published.each do |post| %>
+    <url>
+      <loc><%= root_url %>blog/<%= post.slug %></loc>
+      <lastmod><%= post.updated_at.strftime('%Y-%m-%d') %></lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+    </url>
+  <% end %>
+</urlset>
