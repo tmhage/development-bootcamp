@@ -81,5 +81,20 @@ describe 'frontend routes', type: :routing do
       end
     end
   end
+
+  describe 'sitemap_path' do
+    it 'routes to application#sitemap' do
+      expect(get: '/sitemap.xml').to route_to(
+        controller: 'application',
+        action: 'sitemap',
+        format: 'xml'
+      )
+    end
+
+    it 'routes does not route other formats than xml' do
+      expect(get: '/sitemap').to_not be_routable
+      expect(get: '/sitemap.json').to_not be_routable
+    end
+  end
 end
 

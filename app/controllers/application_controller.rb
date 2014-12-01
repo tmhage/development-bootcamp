@@ -8,6 +8,8 @@ class ApplicationController < ActionController::Base
 
   rescue_from ActiveRecord::RecordNotFound, with: :page_not_found
 
+  def sitemap; end
+
   protected
 
   def page_not_found(exception = nil)

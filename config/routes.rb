@@ -19,6 +19,8 @@ Rails.application.routes.draw do
   resources :blog, controller: 'posts', only: [:index, :show]
   resources :sponsors, only: [:index, :new, :create]
 
+  get '/sitemap.:format' => 'application#sitemap', constraints: { format: :xml }
+
   namespace :admin do
     resources :posts, except: :show do
       member do
