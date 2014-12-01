@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
   get '/tickets' => 'static_pages#tickets'
   get '/team' => 'static_pages#team'
+  get '/speakers' => 'static_pages#speakers'
 
   resources :blog, controller: 'posts', only: [:index, :show]
   resources :sponsors, only: [:index, :new, :create]
