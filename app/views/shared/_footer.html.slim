@@ -5,9 +5,9 @@
       ul
         = menu_item_for root_path do
           | Home
+        = render "shared/menu_items"
         = menu_item_for team_path do
           | About us
-        = render "shared/menu_items"
 
     .section.social
       h3 Follow us
