@@ -1,4 +1,4 @@
-Gibbon::API.api_key = ENV['DB_MAILCHIMP_API_KEY']
+Gibbon::API.api_key = ENV['DB_MAILCHIMP_API_KEY'] || ''
 Gibbon::API.timeout = 15
 Gibbon::API.throws_exceptions = false
 
