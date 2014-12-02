@@ -27,6 +27,11 @@
 
 .mod-text
   .inner
+    - if @sponsor.errors.full_messages.any?
+      h3.form-error The following errors prevented us from saving your request.
+      ul.form-errors
+        - @sponsor.errors.full_messages.each do |error_message|
+          li = error_message
     = form_for @sponsor do |f|
       .input
         = f.label :name
