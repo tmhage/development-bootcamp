@@ -23,7 +23,7 @@ class SponsorsController < ApplicationController
   private
 
   def apply_as_sponsor_params
-    params.require(:sponsor).permit(:name, :email, :remarks)
+    params.require(:sponsor).permit(:name, :email, :website, :remarks)
   end
 
   def add_to_list(sponsor)

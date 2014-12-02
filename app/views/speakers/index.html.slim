@@ -1,0 +1,47 @@
+- title "Speakers"
+- meta_description "Meet the speakers of Development Bootcamp. Zero to developer in three sessions of a week."
+- meta_keywords "speakers, development, bootcamp, programming, learn, teach, speaker"
+
+.mod-intro
+  .inner
+    h1 Call for speakers!
+
+    markdown:
+      Even though we have a list of our favourite coaches and mentors we will need more!
+      Do you think you are the one we are looking for?
+
+    p
+      = link_to "Apply now", new_speaker_path, class: "button"
+      = link_to "Check Programs", program_path, class: "button secondary"
+
+- if @speakers.any?
+  .mod-speakers
+    .inner
+      - @speakers.each do |speaker|
+        .speaker
+          .avatar = image_tag speaker.gravatar_url, class: "gravatar"
+          h2 = "#{speaker.first_name} #{speaker.last_name}"
+          p = speaker.description.html_safe
+          p
+            - if speaker.website.present?
+              = link_to "#{speaker.first_name}'s website", speaker.website
+              br
+            - if speaker.twitter_handle.present?
+              = link_to "@#{speaker.twitter_handle}", "https://twitter.com/#{speaker.twitter_handle}"
+
+.mod-text
+  .inner
+    h2 Share your knowledge
+
+    markdown:
+      Do you have experience in **web development**? **Teaching** and
+      **mentoring** are just parts of your daily job? Would you accept the challenge of
+      teaching a group of **beginners**? Or would you prefer having a longer **talk**
+      on one of the fields we plan to teach?
+
+      If you are the one - **wait no longer**! Contact us!
+
+      Besides the **priceless gratefulness** of all the **participants** we are working
+      hard on the other approaches on saying **thank you**! You know... We will keep you posted!
+
+    p = link_to 'Become a speaker!', new_speaker_path, class: 'button'

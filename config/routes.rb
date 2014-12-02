@@ -15,10 +15,10 @@ Rails.application.routes.draw do
 
   get '/tickets' => 'static_pages#tickets'
   get '/team' => 'static_pages#team'
-  get '/speakers' => 'static_pages#speakers'
 
   resources :blog, controller: 'posts', only: [:index, :show]
   resources :sponsors, only: [:index, :new, :create]
+  resources :speakers, only: [:index, :new, :create]
 
   get '/sitemap.:format' => 'application#sitemap', constraints: { format: :xml }
 
@@ -30,5 +30,6 @@ Rails.application.routes.draw do
       end
     end
     resources :sponsors, except: :show
+    resources :speakers, except: :show
   end
 end

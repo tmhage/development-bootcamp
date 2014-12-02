@@ -1,0 +1,65 @@
+- title "Speakers"
+- meta_description "Would you like to be one of the coaches? Apply here!"
+- meta_keywords "speakers, coaches, mentors, development, bootcamp, programming, learn, teach, speaker"
+
+.mod-intro
+  .inner
+    h1 Apply as a speaker
+
+    markdown:
+      Do you have experience in **web development**? **Teaching** and
+      **mentoring** are just parts of your daily job? Would you accept the challenge of
+      teaching a group of **beginners**? Or would you prefer having a longer **talk**
+      on one of the fields we plan to teach?
+
+      If you are the one - **wait no longer**! Contact us!
+
+      Besides the **priceless gratefulness** of all the **participants** we are working
+      hard on the other approaches on saying **thank you**! You know... We will keep you posted!
+
+    p = link_to "Apply now!", "#new_speaker_form", class: 'button'
+
+.mod-text
+  .inner#new_speaker_form
+    - if @speaker.errors.full_messages.any?
+      h3.form-error The following errors prevented us from saving your request.
+      ul.form-errors
+        - @speaker.errors.full_messages.each do |error_message|
+          li = error_message
+
+    = form_for @speaker do |f|
+      .input
+        = f.label :first_name
+        = f.text_field :first_name, required: true
+
+      .input
+        = f.label :last_name
+        = f.text_field :last_name, required: true
+
+      .input
+        = f.label :email
+        = f.text_field :email, type: 'email', required: true, placeholder: 'you@organization.co'
+
+      .input
+        = f.label :twitter_handle, 'Twitter handle (optional)'
+        = f.text_field :twitter_handle, type: 'twitter_handle', required: false, placeholder: '@username'
+
+      .input
+        = f.label :website, 'Website (optional)'
+        = f.text_field :website, type: 'website', required: false, placeholder: 'http://'
+
+      .input
+        = f.label :remarks, 'Remarks (optional)'
+        = f.text_area :remarks, required: false, placeholder: "Anything you'd like to share?"
+
+      br
+      = f.submit 'Contact me!', class: 'button'
+      br
+      i.small By clicking this button you accept the love and gratitude of us and our students.
+
+.mod-cta
+  .inner
+    h1 Or give us a call
+    p
+      | Contact us directly by calling:
+      |  +31 (0)6 81 91 02 18
