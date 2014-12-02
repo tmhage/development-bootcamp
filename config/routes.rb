@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
   resources :blog, controller: 'posts', only: [:index, :show]
   resources :sponsors, only: [:index, :new, :create]
+  resources :speakers, only: [:index, :new, :create]
 
   get '/sitemap.:format' => 'application#sitemap', constraints: { format: :xml }
 
@@ -29,5 +30,6 @@ Rails.application.routes.draw do
       end
     end
     resources :sponsors, except: :show
+    resources :speakers, except: :show
   end
 end

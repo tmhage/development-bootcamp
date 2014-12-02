@@ -3,7 +3,11 @@
     nav.section
       h3#bottom-nav Navigation
       ul
+        = menu_item_for root_path do
+          | Home
         = render "shared/menu_items"
+        = menu_item_for team_path do
+          | About us
 
     .section.social
       h3 Follow us
@@ -16,7 +20,7 @@
     .section.vcard
       h3.fn Development Bootcamp
       br
-      span.org Development Bootcamp 
+      span.org Development Bootcamp
       span.title HQ
       br
       span.adr

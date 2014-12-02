@@ -1,0 +1,21 @@
+.speaker.col-md-12
+  .pull-right= link_to 'Add new speaker', new_admin_speaker_path,
+    class: 'btn btn-primary'
+
+- @speakers.each do |speaker|
+  .speaker.col-md-12
+    h3= "#{speaker.first_name} #{speaker.last_name}"
+    .col-md-10
+      .col-md-2
+        .img-responsive= image_tag speaker.gravatar_url
+      .col-md-10
+        p= speaker.description && speaker.description.html_safe
+        h4 Remarks
+        p.bg-info= speaker.remarks
+        p.pull-right= speaker.created_at.to_s(:long)
+    .col-md-2
+      p= link_to 'Edit', edit_admin_speaker_path(speaker)
+      p= link_to 'Delete', admin_speaker_path(speaker), method: :delete,
+        data: { confirm: 'Are you sure you want to delete this speaker?' }
+
+.text-center= paginate @speakers

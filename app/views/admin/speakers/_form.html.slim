@@ -1,0 +1,14 @@
+= bootstrap_form_for [:admin, @speaker] do |f|
+  = f.text_field :first_name, required: true
+  = f.text_field :last_name, required: true
+  = f.text_area :description, required: true, class: 'editor'
+  = f.text_field :email, type: 'email', required: true
+  = f.text_field :twitter_handle, type: 'twitter_handle', required: false, placeholder: '@username'
+  = f.text_field :website, type: 'website', required: false, placeholder: 'http://'
+  = f.text_area :remarks
+  = f.check_box :activated_at
+
+  p
+    = link_to 'Cancel', admin_speakers_path, class: 'btn btn-default'
+    |
+    = f.submit 'Save Speaker', class: 'btn btn-primary'
