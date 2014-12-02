@@ -20,6 +20,7 @@ RSpec.describe SponsorsController, type: :controller do
     let(:sponsor_attributes) { attributes_for :sponsor }
 
     it 'returns http success' do
+      expect_any_instance_of(SponsorsController).to receive(:add_to_list)
       expect { post :create, sponsor: sponsor_attributes }.
         to change{ Sponsor.count }.from(0).to(1)
     end
