@@ -7,9 +7,7 @@
     .inner
       h1 Proud to have them with us
       p None of this would be possible without them, our grateful sponsors! Interesting in sponsoring?
-      = link_to 'Contact us!',
-        (user_signed_in? ? new_admin_sponsor_path : new_sponsor_path),
-        class: 'button'
+      p = link_to 'Check the plans', plans_sponsors_path, class: 'button'
 
 - cache cache_key_for_sponsors do
   .mod-sponsors
@@ -27,7 +25,5 @@
 - cache 'sponsor-cta' do
   .mod-cta
     .inner
-      p We are looking for sponsors and partners. Would you like to collaborate with us? Do not hesitate to contact us!
-      = link_to 'Become sponsor!',
-        (user_signed_in? ? new_admin_sponsor_path : new_sponsor_path),
-        class: 'button'
+      p We are looking for sponsors and partners. Would you like to collaborate with us? Check out our sponsor plans!
+      p = link_to 'Check the plans', plans_sponsors_path, class: 'button'
