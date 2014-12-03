@@ -1,0 +1,13 @@
+= bootstrap_form_for [:admin, @student] do |f|
+  = f.text_field :first_name, required: true
+  = f.text_field :last_name, required: true
+  = f.text_field :email, type: 'email', required: true
+  = f.text_field :twitter_handle, required: false, placeholder: '@username'
+  = f.text_field :github_handle, required: false, placeholder: '@username'
+  = f.date_select :birth_date, required: true, include_blank: true, start_year: 1890, end_year: (Date.today.year - 13), order: [:month, :day, :year]
+  = f.text_area :remarks
+
+  p
+    = link_to 'Cancel', admin_students_path, class: 'btn btn-default'
+    |
+    = f.submit 'Save Student', class: 'btn btn-primary'
