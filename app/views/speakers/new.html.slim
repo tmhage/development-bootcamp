@@ -2,19 +2,20 @@
 - meta_description "Would you like to be one of the coaches? Apply here!"
 - meta_keywords "speakers, coaches, mentors, development, bootcamp, programming, learn, teach, speaker"
 
-.mod-intro
-  .inner
-    h1 Apply as a speaker
+- cache 'new-speaker-intro' do
+  .mod-intro
+    .inner
+      h1 Apply as a speaker
 
-    markdown:
-      Do you have experience in web development? Teaching and
-      mentoring are just parts of your daily job? Would you accept the challenge of
-      teaching a group of beginners? Or would you prefer having a longer talk
-      on one of the fields we plan to teach?
+      markdown:
+        Do you have experience in web development? Teaching and
+        mentoring are just parts of your daily job? Would you accept the challenge of
+        teaching a group of beginners? Or would you prefer having a longer talk
+        on one of the fields we plan to teach?
 
-      Please fill in the form!
+        Please fill in the form!
 
-    = link_to "Check Programs", program_path, class: "button"
+      = link_to "Check Programs", program_path, class: "button"
 
 .mod-text
   .inner#new_speaker_form
@@ -54,9 +55,10 @@
       br
       i.small By clicking this button you accept the love and gratitude of us and our students.
 
-.mod-cta
-  .inner
-    h1 Or give us a call
-    p
-      | Contact us directly by calling:
-      |  +31 (0)6 81 91 02 18
+- cache 'new-speaker-cta'
+  .mod-cta
+    .inner
+      h1 Or give us a call
+      p
+        | Contact us directly by calling:
+        |  +31 (0)6 81 91 02 18

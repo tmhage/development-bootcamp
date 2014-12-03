@@ -2,28 +2,32 @@
 - meta_description "Meet the sponsors of Development Bootcamp. Zero to developer in three sessions of a week."
 - meta_keywords "sponsors, development, bootcamp, programming, learn, teach, sponsor"
 
-.mod-intro
-  .inner
-    h1 Proud to have them with us
-    p None of this would be possible without them, our grateful sponsors! Interesting in sponsoring?
-    = link_to 'Contact us!',
-      (user_signed_in? ? new_admin_sponsor_path : new_sponsor_path),
-      class: 'button'
+- cache 'sponsors-intro' do
+  .mod-intro
+    .inner
+      h1 Proud to have them with us
+      p None of this would be possible without them, our grateful sponsors! Interesting in sponsoring?
+      = link_to 'Contact us!',
+        (user_signed_in? ? new_admin_sponsor_path : new_sponsor_path),
+        class: 'button'
 
-.mod-sponsors
+- cache cache_key_for_sponsors do
+  .mod-sponsors
     .inner
       - @sponsors.each do |sponsor|
-        .sponsor
-          .logo
-            = image_tag sponsor.logo.thumb if sponsor.logo.present?
-          h2 = sponsor.name
-          p = sponsor.description.html_safe
-          - if sponsor.website.present?
-            p = link_to "#{sponsor.name} website", sponsor.website
+        - cache sponsor do
+          .sponsor
+            .logo
+              = image_tag sponsor.logo.thumb if sponsor.logo.present?
+            h2 = sponsor.name
+            p = sponsor.description.html_safe
+            - if sponsor.website.present?
+              p = link_to "#{sponsor.name} website", sponsor.website
 
-.mod-cta
-  .inner
-    p We are looking for sponsors and partners. Would you like to collaborate with us? Do not hesitate to contact us!
-    = link_to 'Become sponsor!',
-      (user_signed_in? ? new_admin_sponsor_path : new_sponsor_path),
-      class: 'button'
+- cache 'sponsor-cta' do
+  .mod-cta
+    .inner
+      p We are looking for sponsors and partners. Would you like to collaborate with us? Do not hesitate to contact us!
+      = link_to 'Become sponsor!',
+        (user_signed_in? ? new_admin_sponsor_path : new_sponsor_path),
+        class: 'button'

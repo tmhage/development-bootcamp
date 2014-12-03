@@ -1,35 +1,35 @@
-.footer
-  .inner
-    nav.section
-      h3#bottom-nav Navigation
-      ul
-        = menu_item_for root_path do
-          | Home
-        = render "shared/menu_items"
-        = menu_item_for team_path do
-          | About us
-
-    .section.social
-      h3 Follow us
-      ul
-        li = link_to "Twitter", "https://twitter.com/devbootcamps"
-        li = link_to "Facebook", "https://www.facebook.com/developmentbootcamp"
-        li = link_to "LinkedIn", "https://www.linkedin.com/company/development-bootcamp"
-        li = link_to "Sitemap", "/sitemap.xml"
-
-    .section.vcard
-      h3.fn Development Bootcamp
-      br
-      span.org Development Bootcamp
-      span.title HQ
-      br
-      span.adr
-        span.email
-          = link_to "info@developmentbootcamp.nl", "mailto:info@developmentbootcamp.nl"
+- cache 'footer' do
+  .footer
+    .inner
+      nav.section
+        h3#bottom-nav Navigation
+        ul
+          = menu_item_for root_path do
+            | Home
+          = render "shared/menu_items"
+          = menu_item_for team_path do
+            | About us
+  
+      .section.social
+        h3 Follow us
+        ul
+          li = link_to "Twitter", "https://twitter.com/devbootcamps"
+          li = link_to "Facebook", "https://www.facebook.com/developmentbootcamp"
+          li = link_to "LinkedIn", "https://www.linkedin.com/company/development-bootcamp"
+          li = link_to "Sitemap", "/sitemap.xml"
+  
+      .section.vcard
+        h3.fn Development Bootcamp
         br
-        span.street-address Rokin 75
-        span.postal-code , 1012 KL
+        span.title Dev Bootcamp HQ
         br
-        span.locality Amsterdam
-        span.region , NH
-      p © 2014 Development Bootcamp
+        span.adr
+          span.email
+            = link_to "info@developmentbootcamp.nl", "mailto:info@developmentbootcamp.nl"
+          br
+          span.street-address Rokin 75
+          span.postal-code , 1012 KL
+          br
+          span.locality Amsterdam
+          span.region , NH
+        p © 2014 Development Bootcamp
