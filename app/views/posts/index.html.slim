@@ -2,27 +2,29 @@
 - meta_description "A week long full time bootcamp to get you to the point where you can start programming on your own. Zero to developer in three sessions of a week."
 - meta_keywords "blog, development, bootcamp, programming, learn, teach, sponsor"
 
-- if @posts.any?
-  - @posts.each do |post|
-    .mod-text
-      .inner
-        .mod-cta
-          .inner
-            h2= post.title
-
-            - if post.user && post.user.first_name
-              p.post-meta
-                => image_tag post.user.gravatar_url, class: "gravatar"
-                span.author = "#{post.user.first_name} #{post.user.last_name}"
-                br
-                => time_ago_in_words post.created_at
-                | ago
-
+- cache cache_key_for_posts do
+  - if @posts.any?
+    - @posts.each do |post|
+      - cache post do
         .mod-text
           .inner
-            = image_tag post.cover_image.url(:thumb), class: 'post-thumb'
-            = post.content.split("<hr>").first.html_safe
-            p= link_to link_to 'Read more', post, class: 'button'
+            .mod-cta
+              .inner
+                h2= post.title
 
-- else
-  = render 'static_pages/coming_soon'
+                - if post.user && post.user.first_name
+                  p.post-meta
+                    => image_tag post.user.gravatar_url, class: "gravatar"
+                    span.author = "#{post.user.first_name} #{post.user.last_name}"
+                    br
+                    => time_ago_in_words post.created_at
+                    | ago
+
+            .mod-text
+              .inner
+                = image_tag post.cover_image.url(:thumb), class: 'post-thumb'
+                = post.content.split("<hr>").first.html_safe
+                p= link_to link_to 'Read more', post, class: 'button'
+
+  - else
+    = render 'static_pages/coming_soon'

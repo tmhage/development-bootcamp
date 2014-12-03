@@ -8,10 +8,10 @@ default: &default
   adapter: postgresql
   pool: 5
   timeout: 5000
-
-development:
-  <<: *default
   user: <%= `whoami`.chomp %>
+
+development: &development
+  <<: *default
   database: developmentbootcamp_development
 
 # Warning: The database defined as "test" will be erased and
@@ -22,7 +22,4 @@ test:
   database: developmentbootcamp_test
 
 production:
-  <<: *default
-  database: <%= ENV['DB_DB'] %>
-  user: <%= ENV['DB_USER'] %>
-  password: <%= ENV['DB_PASS'] %>
+  <<: *development

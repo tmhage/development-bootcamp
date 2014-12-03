@@ -3,24 +3,25 @@
 - meta_keywords "development, bootcamp, programming, learn, teach, sponsor"
 - meta_image @post.cover_image.url(:thumb) if @post.cover_image.present?
 
-.mod-intro.with-cover-image
-  .cover-image style="background-image: url(#{image_url(@post.cover_image.url(:big))})"
-  .inner
-    h1= @post.title
+- cache @post do
+  .mod-intro.with-cover-image
+    .cover-image style="background-image: url(#{image_url(@post.cover_image.url(:big))})"
+    .inner
+      h1= @post.title
 
-.mod-text
-  .inner
-    - if @post.user && @post.user.first_name
-      p.post-meta
-        => image_tag @post.user.gravatar_url, class: "gravatar"
-        span.author = "#{@post.user.first_name} #{@post.user.last_name}"
-        br
-        => time_ago_in_words @post.created_at
-        | ago
+  .mod-text
+    .inner
+      - if @post.user && @post.user.first_name
+        p.post-meta
+          => image_tag @post.user.gravatar_url, class: "gravatar"
+          span.author = "#{@post.user.first_name} #{@post.user.last_name}"
+          br
+          => time_ago_in_words @post.created_at
+          | ago
 
-    p = @post.content.sub(/<hr>/, '').html_safe
+      p = @post.content.sub(/<hr>/, '').html_safe
 
-.mod-cta
-  .inner
-    = link_to 'Read full program', program_path, class: 'button'
-    = link_to 'Get tickets', tickets_path, class: 'button secondary'
+  .mod-cta
+    .inner
+      = link_to 'Read full program', program_path, class: 'button'
+      = link_to 'Get tickets', tickets_path, class: 'button secondary'

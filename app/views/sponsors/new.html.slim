@@ -2,28 +2,29 @@
 - meta_description "Become a sponsor for Development Bootcamp to give the tech industry that boost it needs. Zero to developer in three sessions of a week."
 - meta_keywords "sponsoring, sponsor, development, bootcamp, programming, learn, teach, sponsor"
 
-.mod-intro
-  .inner
-    h1 Register as a sponsor
+- cache 'new-sponsors-intro' do
+  .mod-intro
+    .inner
+      h1 Register as a sponsor
 
-    markdown:
-      We want to help our students as best as we can during their learning experience at
-      the conference and after that. We are looking for sponsors to keep the costs of
-      admission tickets as low as possible for students, _and_ we are looking for companies
-      who want to adopt students as they decide to continue down the path of learning how to
-      program.
+      markdown:
+        We want to help our students as best as we can during their learning experience at
+        the conference and after that. We are looking for sponsors to keep the costs of
+        admission tickets as low as possible for students, _and_ we are looking for companies
+        who want to adopt students as they decide to continue down the path of learning how to
+        program.
 
-      So here's what we need:
+        So here's what we need:
 
-        - Internships and admission fees for students through our adoption program
-        - Donations to help with (the costs of) the venue, wifi, food, etc.
-        - VPS's / Hosting credit that we can use during workshops etc.
-        - Speakers and teachers!
+          - Internships and admission fees for students through our adoption program
+          - Donations to help with (the costs of) the venue, wifi, food, etc.
+          - VPS's / Hosting credit that we can use during workshops etc.
+          - Speakers and teachers!
 
-      Would you like to register your company as one of the sponsors? Please fill in the
-      form and we will contact you as soon as possible. Any help is appreciated.
+        Would you like to register your company as one of the sponsors? Please fill in the
+        form and we will contact you as soon as possible. Any help is appreciated.
 
-    p = link_to "Help out!", "#new_sponsor", class: 'button'
+      p = link_to "Help out!", "#new_sponsor", class: 'button'
 
 .mod-text
   .inner
@@ -55,9 +56,10 @@
       br
       i.small By clicking this button you accept the love and gratitude of us and our students.
 
-.mod-cta
-  .inner
-    h1 Or give us a call
-    p
-      | Contact us directly by calling:
-      |  +31 (0)6 81 91 02 18
+- cache 'new-sponsors-cta' do
+  .mod-cta
+    .inner
+      h1 Or give us a call
+      p
+        | Contact us directly by calling:
+        |  +31 (0)6 81 91 02 18

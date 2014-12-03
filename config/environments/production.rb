@@ -51,7 +51,11 @@ Rails.application.configure do
   # config.logger = ActiveSupport::TaggedLogging.new(SyslogLogger.new)
 
   # Use a different cache store in production.
-  # config.cache_store = :mem_cache_store
+  config.cache_store = :dalli_store, (ENV['MEMCACHE_SERVERS'] || 'localhost:11211'), {
+    namespace: 'development_bootcamp',
+    compress: true,
+    pool_size: Integer(ENV['MAX_THREADS'] || 16)
+  }
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.action_controller.asset_host = "http://assets.example.com"

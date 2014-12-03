@@ -2,98 +2,99 @@
 - meta_description "Learn the first steps of writing code in an awesome program of just one week. Zero to developer in three sessions of a week."
 - meta_keywords "program, terminal, unix, git, testing, contest, job, development, bootcamp, programming, learn, teach, sponsor"
 
-.mod-intro
-  .inner
-    h1#level-one Level One. Beginner Week.
+- cache 'programs/level-1' do
+  .mod-intro
+    .inner
+      h1#level-one Level One. Beginner Week.
 
-    markdown:
-      During the first week of classes, you will learn everything you need
-      to start your journey as a programmer. You will learn many, many basics
-      that will help you find your way around all the most widely used tools,
-      but most importantly:
-
-      **We will teach you how to THINK as a programmer.**
-
-    p
-      = link_to "Read on", "#start", class: "button"
-      = link_to "Other Programs", program_path, class: "button secondary"
-
-.mod-workshop.beginner
-  .inner#start
-    h2 The (UNIX) Terminal
-
-    .icon = fa_icon "terminal fw 4x"
-    .description
       markdown:
-        This is the first of many things that you will need to get used to:
-        The Terminal. We will help you understand the power of this **window into the heart of
-        a computer**. You will learn about powerful tools that you will never forget
-        and will make the rest of your life behind a computer a lot easier.
+        During the first week of classes, you will learn everything you need
+        to start your journey as a programmer. You will learn many, many basics
+        that will help you find your way around all the most widely used tools,
+        but most importantly:
 
-    h2 Version Control with Git
+        **We will teach you how to THINK as a programmer.**
 
-    .icon = fa_icon "code-fork fw 4x"
-    .description
-      markdown:
-        Ever lost some valuable work due to a backup failure? How about accidentally
-        deleted a file? What about collaboration? Working with multiple
-        people on the same file from different parts of the world in different time zones.
+      p
+        = link_to "Read on", "#start", class: "button"
+        = link_to "Other Programs", program_path, class: "button secondary"
 
-        **Withouth proper versioning software, programming would be an extremely expensive, and
-        very frustrating hobby**. Git is a widely adopted, and certainly one of the best systems
-        around. The power of Git is another thing that you will never do without after you
-        mastered it in our classes.
+  .mod-workshop.beginner
+    .inner#start
+      h2 The (UNIX) Terminal
 
-    h2 Basic programming with Ruby
+      .icon = fa_icon "terminal fw 4x"
+      .description
+        markdown:
+          This is the first of many things that you will need to get used to:
+          The Terminal. We will help you understand the power of this **window into the heart of
+          a computer**. You will learn about powerful tools that you will never forget
+          and will make the rest of your life behind a computer a lot easier.
 
-    .icon = fa_icon "code fw 4x"
-    .description
-      markdown:
-        In the first programming classes you will learn about the **building blocks of a program**:
-        variables, data types, output, and iterating over collections that hold data.
+      h2 Version Control with Git
 
-        You will learn the basics of programming and a new language! This may sound hard, but it
-        is not! It is just like English, and **you will see that you can write simple programs that
-        can do stuff for you after just a couple of hours**!
+      .icon = fa_icon "code-fork fw 4x"
+      .description
+        markdown:
+          Ever lost some valuable work due to a backup failure? How about accidentally
+          deleted a file? What about collaboration? Working with multiple
+          people on the same file from different parts of the world in different time zones.
 
-    h2 Open Source Software (clinic)
+          **Withouth proper versioning software, programming would be an extremely expensive, and
+          very frustrating hobby**. Git is a widely adopted, and certainly one of the best systems
+          around. The power of Git is another thing that you will never do without after you
+          mastered it in our classes.
 
-    .icon = fa_icon "group fw 4x"
-    .description
-      markdown:
-        Sharing is caring. Developers have known this for decades already, and there is an enormous
-        amount of **freely available software around that can help you**. Did you know that most websites
-        run on free, Open Source software?
+      h2 Basic programming with Ruby
 
-    h2 Object Oriented Programming
+      .icon = fa_icon "code fw 4x"
+      .description
+        markdown:
+          In the first programming classes you will learn about the **building blocks of a program**:
+          variables, data types, output, and iterating over collections that hold data.
 
-    .icon = fa_icon "code fw 4x"
-    .description
-      markdown:
-        What do a Circle, a Square, and a Triangle have in common? They are all Shapes! Learn about
-        **defining objects, and how they relate to others**.
+          You will learn the basics of programming and a new language! This may sound hard, but it
+          is not! It is just like English, and **you will see that you can write simple programs that
+          can do stuff for you after just a couple of hours**!
 
-        The object-oriented programming paradigm help us create more **modular software** design and **increases reusability** compared to some other programming paradigms. We will help you find out what that actually means and how can we take advantage of it.
+      h2 Open Source Software (clinic)
 
-    h2 Testing your Code with Code
+      .icon = fa_icon "group fw 4x"
+      .description
+        markdown:
+          Sharing is caring. Developers have known this for decades already, and there is an enormous
+          amount of **freely available software around that can help you**. Did you know that most websites
+          run on free, Open Source software?
 
-    .icon = fa_icon "check fw 4x"
-    .description
-      markdown:
-        How do you check that the code you wrote actually works? **Did you know you can write programs to
-        test your programs**? See how your code comes to live with the basics of testing code.
+      h2 Object Oriented Programming
 
-        Amount of bugs should be as low as possible and **testing** is one of the mechanisms that can help you out in **writing better code**. How should it be done and what is important will be covered in this session.
+      .icon = fa_icon "code fw 4x"
+      .description
+        markdown:
+          What do a Circle, a Square, and a Triangle have in common? They are all Shapes! Learn about
+          **defining objects, and how they relate to others**.
 
-    h2 Programming Contest
+          The object-oriented programming paradigm help us create more **modular software** design and **increases reusability** compared to some other programming paradigms. We will help you find out what that actually means and how can we take advantage of it.
 
-    .icon = fa_icon "trophy fw 4x"
-    .description
-      markdown:
-        On this last day, you will **work together on a real programming contest**. You will use everything
-        you have learned in this entire week to collaborate with fellow students. There will be prizes
-        for those who win that might just change their lives!
+      h2 Testing your Code with Code
 
-    p
-      = link_to "Buy Tickets", tickets_path, class: "button"
-      = link_to "Other Programs", program_path, class: "button secondary"
+      .icon = fa_icon "check fw 4x"
+      .description
+        markdown:
+          How do you check that the code you wrote actually works? **Did you know you can write programs to
+          test your programs**? See how your code comes to live with the basics of testing code.
+
+          Amount of bugs should be as low as possible and **testing** is one of the mechanisms that can help you out in **writing better code**. How should it be done and what is important will be covered in this session.
+
+      h2 Programming Contest
+
+      .icon = fa_icon "trophy fw 4x"
+      .description
+        markdown:
+          On this last day, you will **work together on a real programming contest**. You will use everything
+          you have learned in this entire week to collaborate with fellow students. There will be prizes
+          for those who win that might just change their lives!
+
+      p
+        = link_to "Buy Tickets", tickets_path, class: "button"
+        = link_to "Other Programs", program_path, class: "button secondary"
