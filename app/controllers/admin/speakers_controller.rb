@@ -47,7 +47,7 @@ class Admin::SpeakersController < Admin::AdminController
 
   def speaker_params
     params[:speaker][:activated_at] = Time.now if params[:speaker][:activated_at] == '1'
-    params.require(:speaker).permit(:name, :description, :logo, :remarks, :email,
+    params.require(:speaker).permit(:name, :description, :remarks, :email,
       :twitter_handle, :activated_at, :website)
   end
 end

@@ -33,10 +33,13 @@ class SpeakersController < ApplicationController
       :id => MailingLists::SPEAKERS,
       email: {
         email: speaker.email,
-        double_optin: false
+      },
+      merge_vars: {
+        FNAME: speaker.first_name,
+        LNAME: speaker.last_name
       }
     })
   rescue Gibbon::MailChimpError => e
-    logger.error "Could not add #{speaker.email} to speakers mailing list"
+    logger.error "Could not add #{speaker.email} to speakers mailing list: #{e.message}"
   end
 end

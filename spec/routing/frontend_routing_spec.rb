@@ -44,10 +44,10 @@ describe 'frontend routes', type: :routing do
   end
 
   describe 'tickets_path' do
-    it 'routes to static_pages#tickets' do
+    it 'routes to students#new' do
       expect(get: '/tickets').to route_to(
-        controller: 'static_pages',
-        action: 'tickets'
+        controller: 'students',
+        action: 'new'
       )
     end
   end

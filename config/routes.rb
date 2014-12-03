@@ -13,12 +13,13 @@ Rails.application.routes.draw do
   get '/program/level-3' => 'programs#level_three'
   get '/program/level-4' => 'programs#level_four'
 
-  get '/tickets' => 'static_pages#tickets'
+  get '/tickets' => 'students#new'
   get '/team' => 'static_pages#team'
 
   resources :blog, controller: 'posts', only: [:index, :show]
   resources :sponsors, only: [:index, :new, :create]
   resources :speakers, only: [:index, :new, :create]
+  resources :students, only: :create
 
   get '/sitemap.:format' => 'application#sitemap', constraints: { format: :xml }
 
@@ -31,5 +32,6 @@ Rails.application.routes.draw do
     end
     resources :sponsors, except: :show
     resources :speakers, except: :show
+    resources :students, except: :show
   end
 end

@@ -31,11 +31,14 @@ class SponsorsController < ApplicationController
     gb.lists.subscribe({
       :id => MailingLists::SPONSORS,
       email: {
-        email: sponsor.email,
-        double_optin: false
+        email: sponsor.email
+      },
+      merge_vars: {
+        FNAME: sponsor.first_name,
+        LNAME: sponsor.last_name
       }
     })
   rescue Gibbon::MailChimpError => e
-    logger.error "Could not add #{sponsor.email} to sponsors mailing list"
+    logger.error "Could not add #{sponsor.email} to sponsors mailing list: #{e.message}"
   end
 end
