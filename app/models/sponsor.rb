@@ -13,27 +13,27 @@ class Sponsor < ActiveRecord::Base
     {
       platinum: {
         name: 'Platinum',
-        price: 10000
+        price: 6000
       },
       gold: {
         name: 'Gold',
-        price: 5000
+        price: 3600
       },
       silver: {
         name: 'Silver',
-        price: 2000
+        price: 1000
       },
       party: {
         name: 'Party Support',
-        price: 5000
+        price: 4000
       },
-      lunch: {
-        name: 'Lunch Support',
-        price: 5000
+      dinner: {
+        name: 'Dinner Support',
+        price: 4000
       },
       hackathon: {
         name: 'Hackathon Support',
-        price: 2000
+        price: 5000
       }
     }
   end
