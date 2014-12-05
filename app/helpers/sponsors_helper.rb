@@ -10,4 +10,8 @@ module SponsorsHelper
       ["#{plan[:name]} #{number_to_currency(plan[:price])}", key]
     end
   end
+
+  def package_price(plan)
+    number_to_currency(Sponsor.plans[plan][:price])
+  end
 end

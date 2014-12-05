@@ -13,6 +13,7 @@
   .mod-text#plans
     .inner
       h2 Platinum package (Max. 2 spots)
+      .button.price.platinum= package_price(:platinum)
       markdown:
         - Recognition as a Platinum sponsor on the development bootcamp website
         - Social network (Twitter, Facebook, LinkedIn) post about becoming a sponsor
@@ -32,6 +33,7 @@
         = link_to "More info", "#more-info", class: 'button secondary'
 
       h2 Gold package (Unlimited spots)
+      .button.price.gold= package_price(:gold)
       markdown:
         - Recognition as a Gold sponsor on the development bootcamp website
         - 10 minutes lightning talk (free topic) or 20 minutes if topic from the list of topics
@@ -49,6 +51,7 @@
         = link_to "More info", "#more-info", class: 'button secondary'
 
       h2 Silver package (Unlimited spots)
+      .button.price.silver= package_price(:silver)
       markdown:
         - Recognition as a Silver sponsor on the development bootcamp website
         - 10 minutes lightning talk (free topic) or 20 minutes if topic from the list of topics
@@ -63,6 +66,7 @@
       h2 Exclusive packages
 
       h3 Party support (1 spot)
+      .button.green.price= package_price(:party)
       markdown:
         - A party named after you
         - Social network (Twitter, Facebook, LinkedIn) 1 post as thank you note
@@ -71,6 +75,7 @@
         = link_to "More info", "#more-info", class: 'button secondary'
 
       h3 Dinner support (3 spots)
+      .button.green.price= package_price(:dinner)
       markdown:
         - Promoting you as a dinner sponsor
         - Social network (Twitter, Facebook, LinkedIn) 1 post as thank you note
@@ -79,6 +84,7 @@
         = link_to "More info", "#more-info", class: 'button secondary'
 
       h3 Hackathon support (1 spot)
+      .button.price.green= package_price(:hackathon)
       markdown:
         - Choosing and presenting the theme for the hackathon
         - Social network (Twitter, Facebook, LinkedIn) 1 post as thank you note
