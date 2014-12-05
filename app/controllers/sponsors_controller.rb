@@ -3,6 +3,8 @@ class SponsorsController < ApplicationController
     @sponsors = Sponsor.active
   end
 
+  def plans; end
+
   def new
     @sponsor = Sponsor.new
   end
@@ -23,7 +25,7 @@ class SponsorsController < ApplicationController
   private
 
   def apply_as_sponsor_params
-    params.require(:sponsor).permit(:name, :email, :website, :remarks)
+    params.require(:sponsor).permit(:name, :email, :website, :remarks, :plan)
   end
 
   def add_to_list(sponsor)

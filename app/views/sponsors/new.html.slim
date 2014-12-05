@@ -6,27 +6,10 @@
   .mod-intro
     .inner
       h1 Register as a sponsor
+      p Please fill in the form and we will contact you as soon as possible.
 
-      markdown:
-        We want to help our students as best as we can during their learning experience at
-        the conference and after that. We are looking for sponsors to keep the costs of
-        admission tickets as low as possible for students, _and_ we are looking for companies
-        who want to adopt students as they decide to continue down the path of learning how to
-        program.
 
-        So here's what we need:
-
-          - Internships and admission fees for students through our adoption program
-          - Donations to help with (the costs of) the venue, wifi, food, etc.
-          - VPS's / Hosting credit that we can use during workshops etc.
-          - Speakers and teachers!
-
-        Would you like to register your company as one of the sponsors? Please fill in the
-        form and we will contact you as soon as possible. Any help is appreciated.
-
-      p = link_to "Help out!", "#new_sponsor", class: 'button'
-
-.mod-text
+.mod-text#sponsor-form
   .inner
     - if @sponsor.errors.full_messages.any?
       h3.form-error The following errors prevented us from saving your request.
@@ -34,6 +17,10 @@
         - @sponsor.errors.full_messages.each do |error_message|
           li = error_message
     = form_for @sponsor do |f|
+      .input
+        = f.label :plan, "Plan&nbsp&nbsp&nbsp&nbsp(#{link_to 'Read more about the plans', plans_sponsors_path})".html_safe
+        = f.select :plan, sponsor_plans_collection, selected: params[:plan]
+
       .input
         = f.label :name
         = f.text_field :name, required: true
@@ -63,3 +50,25 @@
       p
         | Contact us directly by calling:
         |  +31 (0)6 81 91 02 18
+
+- cache 'new-sponsors-description' do
+  .mod-text
+    .inner
+      markdown:
+        We want to help our students as best as we can during their **learning experience** at
+        the conference and after that. We are looking for sponsors to **keep the costs** of
+        admission tickets as **low** as possible **for students**, _and_ we are looking for companies
+        who want to **adopt students** as they decide to continue down the path of learning how to
+        program.
+
+        So here's what we need:
+
+          - Internships and admission fees for students through our adoption program
+          - Donations to help with (the costs of) the venue, wifi, food, etc.
+          - VPS's / Hosting credit that we can use during workshops etc.
+          - [Speakers and teachers](/speakers)!
+
+        Would you like to register your company as one of the sponsors? Please fill in the
+        form and we will contact you as soon as possible. Any help is appreciated.
+
+      p = link_to "Help out!", "#sponsor-form", class: 'button'

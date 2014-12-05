@@ -15,7 +15,9 @@
         p= sponsor.description && sponsor.description.html_safe
         h4 Remarks
         p.bg-info= sponsor.remarks
-        p= "Hiring: #{sponsor.hiring}"
+        p
+          = "Plan: #{sponsor.plan}"
+          =< "Hiring: #{sponsor.hiring? ? 'yes' : 'no'}"
         p.pull-right= sponsor.created_at.to_s(:long)
     .col-md-2
       p= link_to 'Edit', edit_admin_sponsor_path(sponsor)
