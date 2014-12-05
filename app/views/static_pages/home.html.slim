@@ -1,0 +1,59 @@
+- title "Home"
+- meta_description "A week long full time bootcamp to get you to the point where you can start programming on your own. Zero to developer in three sessions of a week."
+- meta_keywords "development, bootcamp, programming, learn, teach, sponsor"
+
+.mod-intro.with-cover-image
+  .inner
+    .cover-image.home
+    h1 Learn to code in a week
+    p Beginner, intermediate, and advanced boot camps
+
+.mod-text
+  .inner
+    .block-with-image
+      .image
+        = image_tag 'photos/laptop.png'
+      h2 Learn to write software
+      markdown:
+        Expert programmers and designers will let you in on their best
+        practices. The invaluable ability to write code will change
+        your life around. In just one week!
+      p
+        = link_to 'Program', program_path, class: 'button'
+        = link_to 'Tickets', tickets_path, class: 'button secondary'
+
+    .block-with-image
+      .image
+        = image_tag 'photos/nosy-people.png'
+      h2 Follow our evening program
+      markdown:
+        Experience the vibe of our bootcamps and sit in on our evening
+        discussions, knowlegde sharing sessions, and student
+        presentations.
+      p
+        = link_to 'Program', program_path, class: 'button'
+        = link_to 'Tickets', tickets_path, class: 'button secondary'
+
+    .block-with-image
+      .image
+        = image_tag 'photos/engine.png'
+      h2 Join our team of experts
+      markdown:
+        We need more people with different backgrounds in development.
+        Teaching is the best way to develop yourself and our industry!
+        Check out the program and apply now.
+      p
+        = link_to 'Speakers', speakers_path, class: 'button'
+        = link_to 'Program', program_path, class: 'button secondary'
+
+    .block-with-image
+      .image
+        = image_tag 'photos/boat.png'
+      h2 Invest in the future of software
+      markdown:
+        Our students learn to write code and they will be your future
+        clients. This is an excellent opportunity to bring your brand
+        to their attention. Check our sponsor plans.
+      p
+        = link_to 'Sponsors', sponsors_path, class: 'button'
+        = link_to 'Program', program_path, class: 'button secondary'
