@@ -25,15 +25,15 @@ class Sponsor < ActiveRecord::Base
       },
       party: {
         name: 'Party Support',
-        price: 4000
+        price: 2500
       },
       dinner: {
         name: 'Dinner Support',
-        price: 4000
+        price: 2500
       },
       hackathon: {
         name: 'Hackathon Support',
-        price: 5000
+        price: 4000
       }
     }
   end
