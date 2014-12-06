@@ -51,3 +51,31 @@
     .gravatar
       float: left
       padding-right: 3em
+
+  .block-with-image
+    clear: both
+    &::after
+      content: ""
+      height: 2em
+      display: block
+      clear: both
+    .image
+      vertical-align: top
+      img
+        width: 100%
+
+      +min-width(480px)
+        width: 43%
+        float: left
+    .content
+      vertical-align: top
+      margin-left: 2em
+
+      +min-width(480px)
+        width: 46%
+        float: left
+
+        &::after
+          content: ""
+          display: block
+          clear: both

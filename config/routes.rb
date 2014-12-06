@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     put 'users/:id' => 'devise/registrations#update', :as => 'user_registration'
   end
 
-  root to: "static_pages#about"
+  root to: "static_pages#home"
 
   get '/program' => 'programs#index'
   get '/program/level-1' => 'programs#level_one'

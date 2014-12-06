@@ -2,10 +2,10 @@ require 'rails_helper'
 
 describe 'frontend routes', type: :routing do
   describe 'root_path' do
-    it 'routes to static_pages#about' do
+    it 'routes to static_pages#home' do
       expect(get: '/').to route_to(
         controller: 'static_pages',
-        action: 'about'
+        action: 'home'
       )
     end
   end

@@ -17,8 +17,7 @@
                     => image_tag post.user.gravatar_url, class: "gravatar"
                     span.author = "#{post.user.first_name} #{post.user.last_name}"
                     br
-                    => time_ago_in_words post.created_at
-                    | ago
+                    => post.created_at.strftime("%d %b %y")
 
             .mod-text
               .inner

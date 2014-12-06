@@ -13,12 +13,13 @@ module NavigationHelper
     end
 
     if options[:active].nil?
-      options[:active] = url_for(object) == request.url
+      options[:active] = url_for(object) == request.path
     end
 
-    if options.delete("active")
+    if options.delete(:active)
       options[:class] ||= ""
       options[:class] << " active"
+      options[:class].strip!
     end
 
     content_tag(:li, link_to(content, object), options)
