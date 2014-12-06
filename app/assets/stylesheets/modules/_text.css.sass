@@ -60,19 +60,22 @@
       display: block
       clear: both
     .image
-      width: 43%
-      float: left
-      height: 100%
       vertical-align: top
       img
         width: 100%
+
+      +min-width(480px)
+        width: 43%
+        float: left
     .content
-      width: 46%
       vertical-align: top
       margin-left: 2em
-      float: left
 
-      &::after
-        content: ""
-        display: block
-        clear: both
+      +min-width(480px)
+        width: 46%
+        float: left
+
+        &::after
+          content: ""
+          display: block
+          clear: both
