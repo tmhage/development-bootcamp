@@ -23,8 +23,7 @@
         h3.fn Development Bootcamp
         br
         span.title Dev Bootcamp HQ
-        br
-        span.adr
+        p.adr
           span.email
             = link_to "info@developmentbootcamp.nl", "mailto:info@developmentbootcamp.nl"
           br
@@ -33,4 +32,8 @@
           br
           span.locality Amsterdam
           span.region , NH
-        p © 2014 Development Bootcamp
+
+      .bottom
+        p
+          => link_to 'Code of conduct', code_of_conduct_path
+          | • © 2014 Development Bootcamp

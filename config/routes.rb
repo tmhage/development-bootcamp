@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
   get '/tickets' => 'students#new'
   get '/team' => 'static_pages#team'
+  get '/code-of-conduct' => 'static_pages#code_of_conduct'
 
   resources :blog, controller: 'posts', only: [:index, :show]
   resources :sponsors, only: [:index, :new, :create] do
