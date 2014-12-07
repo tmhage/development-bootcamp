@@ -1,0 +1,15 @@
+.workshop.col-md-12
+  h1= @workshop.title
+  .pull-right
+    = link_to 'Edit', edit_admin_workshop_path(@workshop), class: 'btn btn-default'
+    = link_to 'Delete', admin_workshop_path(@workshop), class: 'btn btn-danger', method: :delete,
+      data: { confirm: 'Are you sure you want to delete a workshop?' }
+
+  .col-md-12
+    p= @workshop.description && @workshop.description.html_safe
+    h4 Prerequisite
+    p.bg-info= @workshop.prerequisite.html_safe
+    h4 Outcome
+    p.bg-info= @workshop.outcome.html_safe
+    p= "Published:  #{@workshop.published}"
+    p.pull-right= @workshop.starts_at.to_s(:long)

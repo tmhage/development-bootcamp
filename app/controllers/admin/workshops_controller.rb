@@ -1,6 +1,6 @@
 class Admin::WorkshopsController < Admin::AdminController
   before_action :authenticate_user!
-  before_filter :set_workshop, only: [:edit, :update, :destroy]
+  before_filter :set_workshop, only: [:edit, :show, :update, :destroy]
 
   def index
     @workshops = Workshop.all
@@ -11,6 +11,9 @@ class Admin::WorkshopsController < Admin::AdminController
   end
 
   def edit
+  end
+
+  def show
   end
 
   def create
