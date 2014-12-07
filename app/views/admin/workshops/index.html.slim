@@ -1,0 +1,20 @@
+.workshop.col-md-12
+  .pull-right= link_to 'Add new workshop',
+    new_admin_workshop_path, class: 'btn btn-primary'
+
+- @workshops.each do |workshop|
+  .workshop.col-md-12
+    h3= workshop.title
+    .col-md-10
+      .col-md-10
+        p= workshop.description && workshop.description.html_safe
+        h4 Prerequisite
+        p.bg-info= workshop.prerequisite
+        h4 Outcome
+        p.bg-info= workshop.outcome
+        p.pull-right= workshop.starts_at.to_s(:long)
+    .col-md-2
+      p= link_to 'Edit', edit_admin_workshop_path(workshop)
+      p= link_to 'Show', admin_workshop_path(workshop)
+      p= link_to 'Delete', admin_workshop_path(workshop), method: :delete,
+        data: { confirm: 'Are you sure you want to delete a workshop?' }

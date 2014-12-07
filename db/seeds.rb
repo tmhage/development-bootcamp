@@ -15,3 +15,5 @@ FactoryGirl.create_list :sponsor, 5, :active
 FactoryGirl.create_list :sponsor, 5, hiring: true
 FactoryGirl.create_list :sponsor, 5, hiring: true
 FactoryGirl.create_list :sponsor, 5, :active, hiring: true
+
+FactoryGirl.create_list :workshop, 4

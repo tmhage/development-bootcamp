@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :workshop, class: 'Admin::Workshop' do
+  factory :workshop, class: 'Workshop' do
     title { Faker::Lorem.sentence }
     description { Faker::Lorem.paragraph(4) }
     prerequisite { Faker::Lorem.paragraph(4) }
