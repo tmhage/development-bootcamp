@@ -5,6 +5,7 @@ class CreateWorkshops < ActiveRecord::Migration
       t.text :description
       t.text :prerequisite
       t.text :outcome
+      t.string :slug
       t.boolean :published
       t.datetime :starts_at
 

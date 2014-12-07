@@ -9,9 +9,10 @@
       .col-md-12
         p= workshop.description && workshop.description.html_safe
         h4 Prerequisite
-        p.bg-info= workshop.prerequisite
+        p.bg-info= workshop.prerequisite.html_safe
         h4 Outcome
-        p.bg-info= workshop.outcome
+        p.bg-info= workshop.outcome.html_safe
+        p= "Published:  #{workshop.published}"
         p.pull-right= workshop.starts_at.to_s(:long)
     .col-md-2
       p= link_to 'Edit', edit_admin_workshop_path(workshop)

@@ -1,0 +1,14 @@
+= bootstrap_form_for [:admin, @workshop] do |f|
+  = f.text_field :title, required: true
+  = f.text_area :description, required: true, class: 'editor'
+
+  = f.text_area :prerequisite, class: 'editor'
+  = f.text_area :outcome, class: 'editor'
+
+  = f.check_box :published
+  = f.datetime_select :starts_at
+
+  p
+    = link_to 'Cancel', admin_workshops_path, class: 'btn btn-default'
+    |
+    = f.submit 'Save Workshop', class: 'btn btn-primary'

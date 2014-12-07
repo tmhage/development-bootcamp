@@ -43,6 +43,6 @@ class Admin::WorkshopsController < Admin::AdminController
 
   def workshop_params
     params.require(:workshop).permit(:title, :description, :prerequisite,
-      :outcome, :starts_at)
+      :outcome, :starts_at, :published)
   end
 end

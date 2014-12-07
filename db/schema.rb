@@ -110,6 +110,7 @@ ActiveRecord::Schema.define(version: 20141207123556) do
     t.text     "description"
     t.text     "prerequisite"
     t.text     "outcome"
+    t.string   "slug"
     t.boolean  "published"
     t.datetime "starts_at"
     t.datetime "created_at"
