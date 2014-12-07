@@ -5,15 +5,16 @@
 - cache 'programs/level-2' do
   .mod-intro
     .inner
-      h1#level-one Level Two
+      h1#level-two Level Two.
 
       markdown:
-        During the first week of classes, you will learn everything you need
-        to start your journey as a programmer. You will learn many, many basics
-        that will help you find your way around all the most widely used tools,
-        but most importantly:
+        Assuming you already know what programming is, you are comfortable with
+        Ruby and you would love to learn how to build web applications with it.
 
-        **We will teach you how to THINK as a programmer.**
+        You have difficulties elaborating your idea and you never worked in a
+        team. This is the workshop for you! We will teach you how to THINK as a
+        programmer, challenge you to work in a team and deploy your web
+        application to a PaaS.
 
       p
         = link_to "Read on", "#start", class: "button"
@@ -24,7 +25,10 @@
       h2 Prerequisites
 
       markdown:
-        You know how to maintain versions of the codebase and you get around with the command line with ease. You know what OOP stands for and how to apply it using Ruby. You see automated tests as just a part of the development process.
+        You know how to maintain versions of the codebase and you get around with
+        the command line with ease. You know what OOP stands for and how to
+        apply it using Ruby. You see automated tests as just a part of
+        the development process.
 
         Keywords: Command line, Git, Open Source, Ruby, OOP, MiniTest
 
@@ -33,28 +37,28 @@
       .icon = fa_icon "html5 fw 4x"
       .description
         markdown:
-          A very important part of the web application is built using HTML and
-          CSS, that is what your user sees and interacts with. Design styles
-          have been changing a lot since the beginning of the web, shaping the
+          A very important part of the web application is built using **HTML** and
+          **CSS**, that is what your user sees and interacts with. **Design** styles
+          have been changing a lot since the beginning of the **web**, shaping the
           common patterns and standards that have to be adopted in order to
-          create visually attractive and functional structure of the website.
+          create **visually attractive** and **functional structure** of the website.
 
-          This day will teach you how to use the markup and styles for your
+          This day will teach you how to use the **markup** and **styles** for your
           website combining the latest trends that are out there.
 
-          Practical example: Prepare the design for the holidays counter
+          **Practical example**: Prepare the design for the holidays counter
 
       h2 Browsers and the Web
 
       .icon = fa_icon "globe fw 4x"
       .description
         markdown:
-          How does the web actually work and what happens when you type a URL
+          How does the web actually work and what happens when you type a **URL**
           in your browser? How does your application handle that? This lesson
-          will cover the communication between the web client and web server.
+          will cover the **communication** between the **web client** and **web server**.
 
           We will prepare you for the next step when you actually learn how
-          you write applications that run in an HTTP requests yourself using
+          you write applications that run in an **HTTP requests** yourself using
           Rails.
 
 
@@ -64,31 +68,31 @@
       .description
         markdown:
           There is much more behind the web application than what you see in
-          your browser. We will use the Ruby on Rails framework that already
+          your browser. We will use the **Ruby on Rails** framework that already
           adopts the best practices when it comes to building web applications,
-          we will go through the MVC design pattern and see the flow of
+          we will go through the **MVC design patternv and see the flow of
           communication between different parts within the application.
 
-          Practical example: Create basic Rails application with welcome homepage
+          **Practical example**: Create basic Rails application with welcome homepage
 
       h2 Scrum and planning requirements
 
       .icon = fa_icon "refresh fw 4x"
       .description
         markdown:
-          Every development process starts with an idea, a rough vision of the
-          web application you want to build. But how can you simplify and plan
+          Every development process starts with an **idea**, a rough vision of the
+          web application you want to build. But how can you **simplify and plan**
           what your application is going to look like? And what does it actually
-          mean to plan requirements? How does it look like when you work in a
-          team? What are the best practices in this field?
+          mean to plan requirements? How does it look like when you **work in a
+          team**? What are the best practices in this field?
 
           Many questions to start with, but we will cover them all. On this day
-          you will learn how to transform your ideas into user stories that
+          you will learn how to transform your ideas into **user stories** that
           describe what it should look like, and how it should work for a user
           of your application. You will learn how to manage them within the
-          team and what Scrum actually means.
+          team and what **Scrum** actually means.
 
-          Practical example: Imagine a project of your choice - write down five
+          **Practical example**: Imagine a project of your choice - write down five
           stories and cover each story with a mock up. Simulation of Scrum poker.
 
       h2 Database and associations
@@ -97,15 +101,15 @@
       .description
         markdown:
           An important part of the web application is the data we manipulate.
-          Data in databases describes entities. An entity is something that
+          Data in **databases** describes **entities**. An entity is something that
           our systems takes care of, like a user, organization, blog post,
           comment, etc. Their data is stored in databases, and they can also
           be related: a comment belongs to a blog post and a user.
 
-          How Rails communicates with the database and what a database could
-          look like (design) is part of these lessons.
+          How **Rails** communicates with the **database** and what a database
+          could look like (design) is part of these lessons.
 
-          Practical example: Creating a blog that can have multiple comments
+          **Practical example**: Creating a blog that can have multiple comments
           created by different users.
 
       h2 TDD
@@ -113,37 +117,37 @@
       .icon = fa_icon "check fw 4x"
       .description
         markdown:
-          Delivering high quality software is crucial. In order to improve on
-          the quality, we will teach you how to use Test Driven Development (TDD).
-          You will learn the cycle of red-green-refactor; starting with a failing
+          Delivering **high quality software** is crucial. In order to improve on
+          the quality, we will teach you how to use **Test Driven Development** (TDD).
+          You will learn the cycle of **red-green-refactor**; starting with a failing
           automated test, writing just enough code to cover the test and
           repeating the cycle till the feature is not implemented completely.
 
-          Practical example: Build the feature of blog creation using TDD
+          **Practical example**: Build the feature of blog creation using TDD
 
       h2 Javascript
       .icon = fa_icon "magic fw 4x"
 
       markdown:
         The look and feel of websites changed a lot since the beginning of the
-        web. Nowadays, every website uses Javascript to create a better user
+        web. Nowadays, every website uses **Javascript** to create a better user
         interaction and experience.
         In these lessons we will see how to integrate and use jQuery in our
-        project, jQuery is a commonly used Javascript library.
+        project, **jQuery** is a commonly used Javascript library.
 
-        Practical example: Implement form that renders different background
+        **Practical example**: Implement form that renders different background
         for a dropdown value.
 
       h2 Hosting on PaaS
       .icon = fa_icon "cloud fw 4x"
 
       markdown:
-        The last step in the web application development is make it available
-        for the public, deploy it to a server. In order to do that we will use
-        one of the PaaS servers where you can use preconfigured server
+        The last step in the **web application** development is make it available
+        for the public, **deploy** it to a server. In order to do that we will use
+        one of the PaaS servers where you can use **preconfigured server**
         environment for the application you created.
 
-        Practical example: Deploy the web application to one of the PaaS.
+        **Practical example**: Deploy the web application to one of the PaaS.
 
       h2 Programming Contest
 
