@@ -40,5 +40,6 @@ Rails.application.routes.draw do
     resources :speakers, except: :show
     resources :students, except: :show
     resources :workshops
+    resources :lessons
   end
 end

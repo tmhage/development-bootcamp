@@ -1,0 +1,23 @@
+.lesson.col-md-12
+  .pull-right= link_to 'Add new lesson',
+    new_admin_lesson_path, class: 'btn btn-primary'
+
+- @lessons.each do |lesson|
+  .lesson.col-md-12
+    h3= lesson.title
+    .col-md-10
+      .col-md-2
+        - if lesson.image.present?
+          .logo
+            = image_tag lesson.image.thumb
+        - else
+          .icon
+            = fa_icon "#{lesson.icon} fw 4x"
+      .col-md-8
+        p= lesson.description && lesson.description.html_safe
+        p= "Published:  #{lesson.published}"
+
+    .col-md-2
+      p= link_to 'Edit', edit_admin_lesson_path(lesson)
+      p= link_to 'Delete', admin_lesson_path(lesson), method: :delete,
+        data: { confirm: 'Are you sure you want to delete a lesson?' }

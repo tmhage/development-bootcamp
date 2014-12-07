@@ -1,6 +1,9 @@
 .workshop.col-md-12
-  .pull-right= link_to 'Add new workshop',
-    new_admin_workshop_path, class: 'btn btn-primary'
+  .pull-right
+    = link_to 'Add new lesson',
+      new_admin_lesson_path, class: 'btn btn-default'
+    = link_to 'Add new workshop',
+      new_admin_workshop_path, class: 'btn btn-primary'
 
 - @workshops.each do |workshop|
   .workshop.col-md-12

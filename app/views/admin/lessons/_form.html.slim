@@ -1,0 +1,19 @@
+= bootstrap_form_for [:admin, @lesson] do |f|
+  = f.text_field :title, required: true
+  = f.text_area :description, required: true, class: 'editor'
+
+  = f.number_field :duration
+  = f.collection_select :workshop_id, Workshop.all, :id, :title, prompt: true
+
+  = f.text_field :icon, label: 'Font awesome icon'
+  = f.file_field :image
+  - if @lesson.image.present?
+    = image_tag @lesson.image.url(:thumb)
+
+  = f.check_box :published
+  = f.datetime_select :starts_at
+
+  p
+    = link_to 'Cancel', admin_lessons_path, class: 'btn btn-default'
+    |
+    = f.submit 'Save lesson', class: 'btn btn-primary'
