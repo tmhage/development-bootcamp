@@ -15,7 +15,7 @@
 
         We fear we can't take all of you in, which is why we decided to start a list. Leave your details below
         to add yourself to the list and we will keep you posted and you will have a bigger chance on getting
-        in!
+        in! **No strings attached**.
 
       p
         = link_to 'Reserve a seat', '#subscribe', class: 'button'
@@ -24,7 +24,10 @@
 .mod-text
   .inner#subscribe
     h2 Reserve a seat
-    p Fill out the form below and we will keep you updated on the event and it will increase your chance on getting a seat.
+    markdown:
+      Fill out the form below and we will keep you updated on the event and it will increase your chance on
+      getting a seat. We will let you know when tickets are available before everyone else. No strings attached
+      though!
 
     - if @student.errors.full_messages.any?
       h3.form-error The following errors prevented us from saving your subscription.
@@ -67,7 +70,7 @@
         = f.text_area :remarks, required: false, placeholder: "Anything you'd like to add?"
 
       br
-      = f.submit 'Subscribe me!', class: 'button'
+      = f.submit 'Keep me updated!', class: 'button'
 
 - cache 'new-speaker-cta'
   .mod-cta
