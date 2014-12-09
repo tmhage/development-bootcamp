@@ -10,6 +10,8 @@
   = f.text_field :email, type: 'email', required: true
   = f.text_area :remarks
 
+  = f.select :plan, sponsor_plans_collection + [['Partner support', :partner]]
+
   = f.check_box :hiring
   = f.check_box :activated_at
 

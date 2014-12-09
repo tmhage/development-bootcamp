@@ -29,7 +29,6 @@
 div class="mod-sponsors partner"
   .inner
     h1= t("plans.title.partners")
-    p Thank you for your support
     - @sponsors.where(plan: 'partner').each do |sponsor|
       - cache sponsor do
         .sponsor
