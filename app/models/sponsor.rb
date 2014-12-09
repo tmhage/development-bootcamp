@@ -27,13 +27,13 @@ class Sponsor < ActiveRecord::Base
         name: 'Party Support',
         price: 2500
       },
-      dinner: {
-        name: 'Dinner Support',
-        price: 2500
-      },
       hackathon: {
         name: 'Hackathon Support',
         price: 4000
+      },
+      dinner: {
+        name: 'Dinner Support',
+        price: 2500
       }
     }
   end

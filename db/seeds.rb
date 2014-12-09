@@ -15,3 +15,10 @@ FactoryGirl.create_list :sponsor, 5, :active
 FactoryGirl.create_list :sponsor, 5, hiring: true
 FactoryGirl.create_list :sponsor, 5, hiring: true
 FactoryGirl.create_list :sponsor, 5, :active, hiring: true
+
+FactoryGirl.create_list :sponsor, 2, :active, plan: 'platinum'
+FactoryGirl.create_list :sponsor, 5, :active, plan: 'gold'
+FactoryGirl.create_list :sponsor, 5, :active, plan: 'silver'
+FactoryGirl.create_list :sponsor, 2, :active, plan: 'lunch'
+FactoryGirl.create :sponsor, :active, plan: 'hackathon'
+FactoryGirl.create :sponsor, :active, plan: 'party'

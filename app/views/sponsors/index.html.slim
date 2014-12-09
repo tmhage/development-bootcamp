@@ -11,18 +11,34 @@
         = link_to 'Check the plans', plans_sponsors_path, class: 'button'
         = link_to 'Apply now!', new_sponsor_path, class: 'button secondary'
 
-- cache cache_key_for_sponsors do
-  .mod-sponsors
-    .inner
-      - @sponsors.each do |sponsor|
-        - cache sponsor do
-          .sponsor
-            .logo
-              = image_tag sponsor.logo.thumb if sponsor.logo.present?
-            h2 = sponsor.name
-            p = sponsor.description.html_safe
-            - if sponsor.website.present?
-              p = link_to "#{sponsor.name} website", sponsor.website
+- Sponsor.plans.keys.each do |plan|
+  - cache cache_key_for_sponsors do
+    div class="mod-sponsors #{plan}"
+      .inner
+        h1= t("plans.title.#{plan}")
+        - @sponsors.where(plan: plan).each do |sponsor|
+          - cache sponsor do
+            .sponsor
+              .logo
+                = image_tag sponsor.logo.thumb if sponsor.logo.present?
+              h2 = sponsor.name
+              p = sponsor.description.html_safe
+              - if sponsor.website.present?
+                p = link_to "#{sponsor.name} website", sponsor.website
+
+div class="mod-sponsors partner"
+  .inner
+    h1= t("plans.title.partners")
+    p Thank you for your support
+    - @sponsors.where(plan: 'partner').each do |sponsor|
+      - cache sponsor do
+        .sponsor
+          .logo
+            = image_tag sponsor.logo.thumb if sponsor.logo.present?
+          h2 = sponsor.name
+          p = sponsor.description.html_safe
+          - if sponsor.website.present?
+            p = link_to "#{sponsor.name} website", sponsor.website
 
 - cache 'sponsor-cta' do
   .mod-cta
