@@ -22,7 +22,15 @@
         = f.select :plan, sponsor_plans_collection, selected: params[:plan]
 
       .input
-        = f.label :name
+        = f.label :first_name
+        = f.text_field :first_name, required: true
+
+      .input
+        = f.label :last_name
+        = f.text_field :last_name, required: true
+
+      .input
+        = f.label :name, 'Company name:'
         = f.text_field :name, required: true
 
       .input

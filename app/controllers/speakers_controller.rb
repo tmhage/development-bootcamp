@@ -13,11 +13,15 @@ class SpeakersController < ApplicationController
     if @speaker.save
       flash.notice = 'Thank you for registering. We will contact you soon!'
       add_to_list(@speaker)
-      redirect_to speakers_path
+      redirect_to thanks_speaker_path(@speaker)
     else
       flash.alert = 'Sorry, it seems something went wrong.'
       render action: 'new'
     end
+  end
+
+  def thanks
+    @speaker = Speaker.find(params[:id])
   end
 
   private

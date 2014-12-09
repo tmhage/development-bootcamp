@@ -1,6 +1,8 @@
 FactoryGirl.define do
   factory :sponsor do
     sequence(:name) { |n| "Sponsor name #{n}" }
+    first_name { Faker::Name.first_name }
+    last_name { Faker::Name.last_name }
     sequence(:email) { |n| "some#{n}@sponsor.com" }
     description { Faker::Lorem.paragraph(4) }
     remarks { Faker::Lorem.paragraph(4) }
