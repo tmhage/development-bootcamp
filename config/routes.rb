@@ -19,13 +19,26 @@ Rails.application.routes.draw do
 
   resources :blog, controller: 'posts', only: [:index, :show]
   resources :sponsors, only: [:index, :new, :create] do
+    member do
+      get :thanks
+    end
+
     collection do
       get :plans
     end
   end
 
-  resources :speakers, only: [:index, :new, :create]
-  resources :students, only: :create
+  resources :speakers, only: [:index, :new, :create] do
+    member do
+      get :thanks
+    end
+  end
+
+  resources :students, only: :create do
+    member do
+      get :thanks
+    end
+  end
 
   get '/sitemap.:format' => 'application#sitemap', constraints: { format: :xml }
 

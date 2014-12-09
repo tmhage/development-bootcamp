@@ -15,17 +15,21 @@ class SponsorsController < ApplicationController
     if @sponsor.save
       flash.notice = 'Thank you for registering. We will contact you soon!'
       add_to_list(@sponsor)
-      redirect_to sponsors_path
+      redirect_to thanks_sponsor_path(@sponsor)
     else
       flash.alert = 'Sorry, it seems something went wrong.'
       render action: 'new'
     end
   end
 
+  def thanks
+    @sponsor = Sponsor.friendly.find(params[:id])
+  end
+
   private
 
   def apply_as_sponsor_params
-    params.require(:sponsor).permit(:name, :email, :website, :remarks, :plan)
+    params.require(:sponsor).permit(:first_name, :last_name, :name, :email, :website, :remarks, :plan)
   end
 
   def add_to_list(sponsor)

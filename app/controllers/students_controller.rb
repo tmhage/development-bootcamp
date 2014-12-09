@@ -9,11 +9,15 @@ class StudentsController < ApplicationController
     if @student.save
       flash.notice = 'Thank you for registering. We will contact you soon!'
       add_to_list(@student)
-      redirect_to tickets_path
+      redirect_to thanks_student_path(@student)
     else
       flash.alert = 'Sorry, it seems something went wrong.'
       render action: 'new'
     end
+  end
+
+  def thanks
+    @student = Student.find(params[:id])
   end
 
   private

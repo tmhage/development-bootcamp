@@ -19,10 +19,15 @@ RSpec.describe SpeakersController, type: :controller do
   describe '#create' do
     let(:speaker_attributes) { attributes_for :speaker }
 
-    it 'returns http success' do
+    it 'creates a speaker' do
       expect_any_instance_of(SpeakersController).to receive(:add_to_list)
       expect { post :create, speaker: speaker_attributes }.
         to change{ Speaker.count }.from(0).to(1)
+    end
+
+    it 'redirects to the thank you page' do
+      expect(post :create, speaker: speaker_attributes).
+        to redirect_to thanks_speaker_path(Speaker.last)
     end
   end
 end

@@ -4,7 +4,7 @@ class Sponsor < ActiveRecord::Base
 
   mount_uploader :logo, LogoUploader
 
-  validates :name, :email, presence: true
+  validates :name, :email, :first_name, :last_name, presence: true
   validates_uniqueness_of :name, scope: :email
 
   scope :active, -> { where.not(activated_at: nil) }
