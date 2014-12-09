@@ -1,5 +1,7 @@
 = bootstrap_form_for [:admin, @sponsor] do |f|
-  = f.text_field :name, required: true
+  = f.text_field :name, required: true, label: 'Company name:'
+  = f.text_field :first_name, required: true
+  = f.text_field :last_name, required: true
   = f.text_area :description, required: true, class: 'editor'
   = f.text_field :website, type: 'website', required: false, placeholder: 'http://'
 
@@ -9,6 +11,8 @@
 
   = f.text_field :email, type: 'email', required: true
   = f.text_area :remarks
+
+  = f.select :plan, sponsor_plans_collection + [['Partner support', :partner]]
 
   = f.check_box :hiring
   = f.check_box :activated_at

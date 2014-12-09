@@ -33,3 +33,12 @@ en:
      currency:
         format:
           unit: '€'
+
+  plans:
+    title:
+      platinum: Platinum sponsors
+      gold: Gold sponsors
+      silver: Silver sponsors
+      party: Party Support sponsor
+      dinner: Dinner Support sponsors
+      hackathon: Hackathon sponsor
