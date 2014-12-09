@@ -197,7 +197,7 @@ GEM
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.1)
-    nokogiri (1.6.5)
+    nokogiri (1.6.4.1)
       mini_portile (~> 0.6.0)
     octokit (3.7.0)
       sawyer (~> 0.6.0, >= 0.5.3)
@@ -366,6 +366,7 @@ DEPENDENCIES
   jquery-rails
   kaminari
   mini_magick
+  nokogiri (= 1.6.4.1)
   pg
   pronto
   pronto-rubocop

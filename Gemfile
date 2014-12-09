@@ -32,6 +32,7 @@ gem 'devise-bootstrap-views'
 gem 'bootstrap-generators', '~> 3.2.0'
 gem 'pronto'
 gem 'pronto-rubocop', require: false
+gem 'nokogiri', '1.6.4.1'
 
 group :development do
   gem 'spring'
