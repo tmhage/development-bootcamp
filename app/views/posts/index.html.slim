@@ -4,10 +4,10 @@
 
 - cache cache_key_for_posts do
   - if @posts.any?
-    - @posts.each do |post|
-      - cache post do
-        .mod-text
-          .inner
+    .mod-text
+      .inner
+        - @posts.each do |post|
+          - cache post do
             .mod-cta
               .inner
                 h2= post.title
