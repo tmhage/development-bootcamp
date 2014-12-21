@@ -1,6 +1,16 @@
 .student.col-md-12
   .pull-right= link_to 'Add new student', new_admin_student_path,
     class: 'btn btn-primary'
+  .stats
+    => link_to '#' do
+      | Level 1
+      span.badge =< Student.where(preferred_level: '1').count
+    => link_to '#' do
+      | Level 2
+      span.badge =< Student.where(preferred_level: '2').count
+    = link_to '#' do
+      | Level 3
+      span.badge =< Student.where(preferred_level: '3').count
 
 - @students.each do |student|
   .student.col-md-12
