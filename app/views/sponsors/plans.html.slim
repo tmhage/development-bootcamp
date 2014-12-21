@@ -107,8 +107,14 @@
         = link_to "Register", new_sponsor_path(plan: :hackathon), class: 'button'
         = link_to "More info", "#more-info", class: 'button secondary'
 
+- cache 'contact-sponsors-cta'
   .mod-cta
-    br
+    .inner
+      h1 Contact us
+      p Want more details? Any concerns? Feel free to contact us.
+      p
+        | Email us on
+        =< mail_to 'sponsors@developmentbootcamp.nl'
 
 - cache 'sponsor-plans-cta' do
   .mod-text#more-info

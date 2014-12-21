@@ -5,22 +5,23 @@
 - cache 'new-speaker-intro' do
   .mod-intro
     .inner
-      h1 Apply as a speaker
+      h1 Apply as a speaker or mentor
 
       markdown:
-        Do you have experience in web development? Teaching and
-        mentoring are just parts of your daily job? Would you accept the challenge of
-        teaching a group of beginners? Or would you prefer having a longer talk
-        on one of the fields we plan to teach?
+        Our teachers are our biggest assets and we take very good care
+        of them. Apply below and we will contact you to discuss everything
+        in detail.
 
-        Please fill in the form!
+        _Make sure to check out the programs we put together if you have not already.
+        You will find all the topics we will be teaching in there._
 
-      = link_to "Check Programs", program_path, class: "button"
+      = link_to "Apply now", '#new_speaker_form', class: "button"
+      = link_to "Check Programs", program_path, class: "button secondary"
 
 .mod-text
   .inner#new_speaker_form
     - if @speaker.errors.full_messages.any?
-      h3.form-error The following errors prevented us from saving your request.
+      h3.form-error The following errors prevented us from saving your details.
       ul.form-errors
         - @speaker.errors.full_messages.each do |error_message|
           li = error_message
@@ -58,7 +59,8 @@
 - cache 'new-speaker-cta'
   .mod-cta
     .inner
-      h1 Or give us a call
+      h1 Contact us
+      p Want more details? Any concerns? Feel free to contact us.
       p
-        | Contact us directly by calling:
-        |  +31 (0)6 81 91 02 18
+        | Email us on
+        =< mail_to 'speakers@developmentbootcamp.nl'

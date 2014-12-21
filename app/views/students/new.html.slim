@@ -64,10 +64,11 @@
       br
       = f.submit 'Subscribe now', class: 'button'
 
-- cache 'new-speaker-cta'
+- cache 'new-student-cta'
   .mod-cta
     .inner
-      h1 Or give us a call
+      h1 Contact us
+      p Want more details? Any concerns? Feel free to contact us.
       p
-        | Contact us directly by calling:
-        |  +31 (0)6 81 91 02 18
+        | Email us on
+        =< mail_to 'support@developmentbootcamp.nl'

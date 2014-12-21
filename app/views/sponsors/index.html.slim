@@ -5,11 +5,15 @@
 - cache 'sponsors-intro' do
   .mod-intro
     .inner
-      h1 Proud to have them with us
-      p None of this would be possible without sponsors! Interested in sponsoring?
       /! Later: We are grateful to our sponsors. None of this would be possible without them!
+      h1 Sponsors
+
+      markdown:
+        To be able to teach more people, we are looking for the support to **minimize
+        the cost** per participant without lowering the quality of the program we
+        are preparing.
       p
-        = link_to 'Check the plans', plans_sponsors_path, class: 'button'
+        = link_to 'Support us', plans_sponsors_path, class: 'button'
         = link_to 'Apply now!', new_sponsor_path, class: 'button secondary'
 
 - cache cache_key_for_sponsors do
