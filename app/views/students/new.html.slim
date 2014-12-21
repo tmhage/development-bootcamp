@@ -7,27 +7,19 @@
     .inner
       h1 Pre-registration has opened!
       markdown:
-        We are working very hard to get the show on the road. Part of this is trying to keep ticket prices
-        as low as we can keep them by getting [Sponsors](/sponsors) and volunteers.
-
-        It's going to be super awesome. We are so excited, and we hope you are too! From your reactions so far
-        we really feel the love and warmth of a huge group of people who want to LEARN. TO. CODE! Yeah!
-
-        We fear we can't take all of you in, which is why we decided to start a list. Leave your details below
-        to add yourself to the list and we will keep you posted and you will have a bigger chance on getting
-        in! **No strings attached**.
+        We fear we can't take all of you in, which is why we decided to start a list. Leave your details below and be among the first to know when we start selling Early Bird tickets! **No strings attached**.
 
       p
-        = link_to 'Reserve a seat', '#subscribe', class: 'button'
-        = link_to 'Check program', program_path, class: 'button secondary'
+        = link_to 'Subscribe now', '#subscribe', class: 'button'
+        = link_to 'Check our program', program_path, class: 'button secondary'
 
 .mod-text
   .inner#subscribe
-    h2 Reserve a seat
+    h2 Subscribe now
     markdown:
-      Fill out the form below and we will keep you updated on the event and it will increase your chance on
-      getting a seat. We will let you know when tickets are available before everyone else. No strings attached
-      though!
+      Fill out the form below and we will keep you updated on the event. It will increase your chance on
+      getting a seat because you will get an email as soon as we start selling tickets. No strings attached
+      of course!
 
     - if @student.errors.full_messages.any?
       h3.form-error The following errors prevented us from saving your subscription.
@@ -70,7 +62,7 @@
         = f.text_area :remarks, required: false, placeholder: "Anything you'd like to add?"
 
       br
-      = f.submit 'Keep me updated!', class: 'button'
+      = f.submit 'Subscribe now', class: 'button'
 
 - cache 'new-speaker-cta'
   .mod-cta
