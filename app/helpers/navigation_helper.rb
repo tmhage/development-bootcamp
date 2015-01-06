@@ -26,6 +26,6 @@ module NavigationHelper
   end
 
   def navigation_cache_key
-    "navigation-#{VERSION}-#{request.path}"
+    "navigation-#{VERSION}-#{request.path}-#{Student.count}-#{Speaker.count}-#{Sponsor.count}"
   end
 end
