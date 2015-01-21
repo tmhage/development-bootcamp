@@ -1,0 +1,20 @@
+h2 Confirmation
+
+- if @order.errors.full_messages.any?
+  h3.form-error The following errors need to be addressed before we can save your registration.
+  ul.form-errors
+    - @order.errors.full_messages.each do |error_message|
+      li = error_message
+  h3.form-error You can use the back button below to change your input.
+  p
+    br
+
+- else
+  markdown:
+    Please check your details carefully. If everything looks good, you can proceed to checkout.
+
+  = render @order
+
+  p Click "Continue" to proceed to checkout. Click "Back" to make changes.
+
+= f.hidden_field :confirmed_at, value: DateTime.now

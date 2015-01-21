@@ -5,29 +5,47 @@
 - cache 'students-list-intro' do
   .mod-intro
     .inner
-      h1 Pre-registration has opened!
+      h2 Register now
+
+      h4  Tickets include:
+
       markdown:
-        We fear we can't take all of you in, which is why we decided to start a list. Leave your details below and be among the first to know when we start selling Early Bird tickets! **No strings attached**.
+        - Access to the Bootcamp: **July 12-18, 2015**
+        - Healthy lunch on Monday - Saturday
+        - Daily Keynotes Sunday - Saturday
+        - Workshops Monday - Saturday
+        - Evening Sessions Sunday - Friday
+        - Coding Contest with great prizes
+        - Certificate upon completion of the program
 
       p
-        = link_to 'Subscribe now', '#subscribe', class: 'button'
+        = link_to 'Register now', '#subscribe', class: 'button'
         = link_to 'Check our program', program_path, class: 'button secondary'
 
 .mod-text
   .inner#subscribe
-    h2 Subscribe now
-    markdown:
-      Fill out the form below and we will keep you updated on the event. It will increase your chance on
-      getting a seat because you will get an email as soon as we start selling tickets. No strings attached
-      of course!
 
     - if @student.errors.full_messages.any?
-      h3.form-error The following errors prevented us from saving your subscription.
+      h3.form-error The following errors prevented us from saving your registration.
       ul.form-errors
         - @student.errors.full_messages.each do |error_message|
           li = error_message
 
     = form_for @student do |f|
+      .input.radios
+        h4 Ticket Type
+        br
+        = f.radio_button :registration, 1250
+        = f.label :registration, 'Early Bird Ticket (€ 1250)', value: 1250
+        br
+        = f.radio_button :registration, 1500, checked: true
+        = f.label :registration, 'Normal Ticket (€ 1500)', value: 1500
+        br
+        = f.radio_button :registration, 1750
+        = f.label :registration, 'Supporter Ticket (€ 1750)', value: 1750
+        p
+          br
+
       .input
         = f.label :first_name
         = f.text_field :first_name, required: true
@@ -56,6 +74,10 @@
       .input
         = f.label :github_handle, 'Github handle (optional)'
         = f.text_field :github_handle, required: false, placeholder: '@username'
+
+      .input
+        = f.label :allergies, 'Dietary wishes (optional)'
+        = f.text_area :remarks, required: false, placeholder: "E.g. do you have any allergies, are you a vegan?"
 
       .input
         = f.label :remarks, 'Remarks (optional)'

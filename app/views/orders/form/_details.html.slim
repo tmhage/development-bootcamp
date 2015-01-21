@@ -1,0 +1,39 @@
+h2 Billing Details
+
+- if @order.errors.full_messages.any?
+  h3.form-error The following errors prevented us from saving your registration.
+  ul.form-errors
+    - @order.errors.full_messages.each do |error_message|
+      li = error_message
+
+.input
+  = f.label :billing_name, 'Full name'
+  = f.text_field :billing_name
+
+.input
+  = f.label :billing_company_name, 'Company name (optional)'
+  = f.text_field :billing_company_name, required: false
+
+.input
+  = f.label :billing_email, 'Email'
+  = f.text_field :billing_email
+
+.input
+  = f.label :billing_address, 'Address'
+  = f.text_field :billing_address
+
+.input
+  = f.label :billing_postal, 'Postal code'
+  = f.text_field :billing_postal
+
+.input
+  = f.label :billing_city, 'City'
+  = f.text_field :billing_city
+
+.input
+  = f.label :billing_country, 'Country'
+  = f.text_field :billing_country
+
+.input
+  = f.label :billing_phone, 'Phone number'
+  = f.text_field :billing_phone

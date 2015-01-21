@@ -46,7 +46,11 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'shoulda-matchers', require: false
+  gem 'byebug'
 end
 
 gem 'puma'
 gem 'appsignal'
+
+gem 'mollie-api-ruby'
+gem 'paper_trail'

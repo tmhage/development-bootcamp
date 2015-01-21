@@ -13,9 +13,12 @@ Rails.application.routes.draw do
   get '/program/level-3' => 'programs#level_three'
   get '/program/level-4' => 'programs#level_four'
 
-  get '/tickets' => 'students#new'
+  get '/tickets' => 'orders#new'
   get '/team' => 'static_pages#team'
   get '/code-of-conduct' => 'static_pages#code_of_conduct'
+
+  get '/terms-and-conditions' => 'static_pages#terms_and_conditions'
+  get '/return-policy' => 'static_pages#return_policy'
 
   resources :blog, controller: 'posts', only: [:index, :show]
   resources :sponsors, only: [:index, :new, :create] do
@@ -37,6 +40,18 @@ Rails.application.routes.draw do
   resources :students, only: :create do
     member do
       get :thanks
+    end
+  end
+
+  resources :tickets, controller: 'orders', only: [:create, :show] do
+    collection do
+      post :webhook
+    end
+
+    member do
+      get :thanks
+      post :stripe_webhook
+      patch :stripe_token
     end
   end
 

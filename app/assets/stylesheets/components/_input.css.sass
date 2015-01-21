@@ -55,3 +55,24 @@
     text-overflow: ellipsis
     white-space: nowrap
     padding-right: 2rem
+
+  &.radios
+    label
+      display: inline
+      clear: right
+
+  &.inline
+    div.field_with_errors
+      display: inline
+    input
+      display: inline
+      width: auto
+    input[type=number]
+      width: 5rem
+      min-width: 5rem
+    label
+      display: inline
+
+ol.order-steps
+  li.active
+    font-weight: bold

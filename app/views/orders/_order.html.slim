@@ -1,0 +1,131 @@
+h3 Tickets & Price
+
+- if @order.cart[:early_bird].present?
+  .input
+    => @order.cart[:early_bird]
+    strong Early Bird
+    |  tickets (#{number_to_currency(@order.ticket_prices[:early_bird])})
+- if @order.cart[:normal].present?
+  .input
+    => @order.cart[:normal]
+    strong Normal
+    |  tickets (#{number_to_currency(@order.ticket_prices[:normal])})
+- if @order.cart[:supporter].present?
+  .input
+    => @order.cart[:supporter]
+    strong Supporter
+    |  tickets (#{number_to_currency(@order.ticket_prices[:supporter])})
+.input
+  strong Total price:
+  =< number_to_currency(@order.cart_sum_total)
+p
+  br
+
+- if @order.confirmed?
+  - if @order.mollie_status.blank? && @order.stripe_token.blank?
+    p = payment_link_to 'Pay now!', order, class: 'button'
+
+    p
+      | Prefer creditcard? Click the button below, but note that you will pay
+      |  a fee of 2.9% (#{number_to_currency(@order.cart_sum_total)} + #{number_to_currency(@order.cart_sum_total * 0.029)} = #{number_to_currency(@order.cart_sum_total * 1.029)})
+
+      = form_for @order, url: stripe_token_ticket_url(@order) do |f|
+        script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="#{ENV['DB_STRIPE_PKEY']}" data-amount="#{(@order.cart_sum_total * 102.9).to_i}" data-name="Development Bootcamp Tickets" data-description="#{@order.identifier}" data-image="/devbootcamp.png" data-email="#{@order.billing_email}" data-customer="#{@order.identifier}"
+
+    p
+      br
+
+    markdown:
+      Click the button below to make the payment. If someone else needs to make the payment for you,
+      just send them the link to this page.
+
+      If the price is too high for you, we might be able to help you out by allowing you to pay in installments.
+      Send us an email with your request _and a link to this page_ at support@developmentbootcamp.nl and we
+      will contact you as soon as we can.
+
+  - elsif @order.mollie_status.present?
+    h4 = "Status: #{@order.mollie_status.upcase}"
+
+    - if %w(CANCELLED EXPIRED).include? @order.mollie_status.upcase
+      strong Please contact us at support@developmentbootcamp.nl.
+
+  - else
+    h4 Thank you, your payment will be processed
+    markdown:
+      You will receive an email as soon as we have processed your payment.
+
+p Below is an overview of the details you provided.
+
+h3 Billing Details
+.input
+  strong Full name:
+  =< @order.billing_name
+
+- if @order.billing_company_name.present?
+  .input
+    strong Company name:
+    =< @order.billing_company_name
+
+.input
+  strong Email:
+  =< @order.billing_email
+
+.input
+  strong Address:
+  =< @order.billing_address
+
+.input
+  strong Postal code:
+  =< @order.billing_postal
+
+.input
+  strong City:
+  =< @order.billing_city
+
+.input
+  strong Country:
+  =< @order.billing_country
+
+.input
+  strong Phone number:
+  =< @order.billing_phone
+p
+  br
+
+h3 Student Details
+
+- @order.students.each do |student|
+  .input
+    strong Name:
+    =< student.first_name
+    =< student.last_name
+
+  .input
+    strong Email:
+    =< student.email
+
+  .input
+    strong Birth date:
+    =< student.birth_date && student.birth_date.to_formatted_s(:long)
+
+  .input
+    strong Preferred level:
+    =< student.preferred_level
+
+  .input
+    strong Twitter handle:
+    =< student.twitter_handle || 'not filled in'
+
+  .input
+    strong Github handle:
+    =< student.github_handle || 'not filled in'
+
+  .input
+    strong Dietary wishes:
+    =< student.allergies || 'none'
+
+  .input
+    strong Remarks:
+    =< student.remarks || 'none'
+  p
+    br

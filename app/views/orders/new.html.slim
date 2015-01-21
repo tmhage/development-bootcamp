@@ -1,0 +1,28 @@
+- if @order.current_step == 'tickets'
+  - cache 'students-list-intro' do
+    .mod-intro
+      .inner
+        h2 Register now
+
+        h4  Tickets include:
+
+        markdown:
+          - Access to the Bootcamp: **July 12-18, 2015**
+          - Healthy lunch on Monday - Saturday
+          - Daily Keynotes Sunday - Saturday
+          - Workshops Monday - Saturday
+          - Evening Sessions Sunday - Friday
+          - Coding Contest with great prizes
+          - Certificate upon completion of the program
+
+        p
+          = link_to 'Register now', '#subscribe', class: 'button'
+          = link_to 'Check our program', program_path, class: 'button secondary'
+
+.mod-right-bar
+  
+
+.mod-text
+  .inner#orderForm
+    = render 'order_steps'
+    = render 'form'
