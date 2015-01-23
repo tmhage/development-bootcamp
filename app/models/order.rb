@@ -101,11 +101,17 @@ class Order < ActiveRecord::Base
 
   def cart_valid?
     cart_has_valid_ticket_types? &&
-      cart_sum_total >= ticket_prices.values.min
+      cart_sum_total >= ticket_prices.values.min &&
+        cart_has_positive_amounts_for_tickets?
   end
 
   def cart_has_valid_ticket_types?
     ((cart.keys.map(&:to_sym) - ticket_types) + (ticket_types - cart.keys.map(&:to_sym))).empty?
+  end
+
+  def cart_has_positive_amounts_for_tickets?
+    return if cart.values.select{|v| v.to_i >= 0 }.size == cart.values.size
+    errors.add(:cart, "You can only order positive amounts of tickets.")
   end
 
   def create_identifier
