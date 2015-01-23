@@ -44,10 +44,40 @@ describe 'frontend routes', type: :routing do
   end
 
   describe 'tickets_path' do
-    it 'routes to students#new' do
+    it 'routes to orders#new' do
       expect(get: '/tickets').to route_to(
-        controller: 'students',
+        controller: 'orders',
         action: 'new'
+      )
+    end
+
+    it 'routes to orders#create' do
+      expect(post: '/tickets').to route_to(
+        controller: 'orders',
+        action: 'create'
+      )
+    end
+
+    it 'routes to orders#show' do
+      expect(get: '/tickets/1').to route_to(
+        controller: 'orders',
+        action: 'show',
+        id: '1'
+      )
+    end
+
+    it 'routes to orders#thanks' do
+      expect(get: '/tickets/1/thanks').to route_to(
+        controller: 'orders',
+        action: 'thanks',
+        id: '1'
+      )
+    end
+
+    it 'routes to orders#webhook' do
+      expect(post: '/tickets/webhook').to route_to(
+        controller: 'orders',
+        action: 'webhook'
       )
     end
   end

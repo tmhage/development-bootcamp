@@ -1,0 +1,33 @@
+h2 Choose your Tickets
+
+- if @order.errors.full_messages.any?
+  h3.form-error The following errors prevented us from saving your registration.
+  ul.form-errors
+    - @order.errors.full_messages.each do |error_message|
+      li = error_message
+
+- if @order.cart.present?
+  - values = @order.cart
+- else
+  - values = {}
+
+.input.inline
+  = f.number_field :cart, name: 'order[cart][early_bird]', id: :order_cart_early_bird, placeholder: 0, value: values[:early_bird]
+  = f.label :cart, "Early Bird Ticket (€ #{@order.ticket_prices[:early_bird]}.-)*", value: :early_bird
+
+.input.inline
+  = f.number_field :cart, name: 'order[cart][normal]', id: :order_cart_normal, placeholder: 0, value: values[:normal]
+  = f.label :cart, "Normal Ticket (€ #{@order.ticket_prices[:normal]}.-)*", value: :normal
+
+.input.inline
+  = f.number_field :cart, name: 'order[cart][supporter]', id: :order_cart_supporter, placeholder: 0, value: values[:supporter]
+  = f.label :cart, "Supporter Ticket (€ #{@order.ticket_prices[:supporter]}.-)*", value: :supporter
+
+markdown:
+  *If the prices are too high for you, we might be able to help you out by allowing you to pay in installments.
+  Walk through all the steps of registration until you see a button that says "Pay now". Below that button you
+  will find instructions.
+
+  **Important!** We have a very limited number of seats! If you want to secure your place in the program, but
+  you want us to help you pay, _you still need to register_! If you don't, tickets might get sold out in the
+  meantime, or while we process your request.

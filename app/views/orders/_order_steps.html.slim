@@ -1,0 +1,5 @@
+ol.order-steps
+  - @order.steps.each do |step|
+    li class="#{ @order.current_step == step ? 'active' : ''}" = order_step_name step
+  li Checkout
+  li Thanks
