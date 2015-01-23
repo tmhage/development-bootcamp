@@ -1,12 +1,9 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :thanks, :stripe_token]
 
-  respond_to :html
+  protect_from_forgery with: :exception, except: [:webhook, :stripe_webhook]
 
-  def index
-    @orders = Order.all
-    respond_with(@orders)
-  end
+  respond_to :html
 
   def show
     respond_with(@order)
@@ -18,9 +15,6 @@ class OrdersController < ApplicationController
     @order = Order.new(session[:order_params])
     @order.current_step = session[:order_step]
     respond_with(@order)
-  end
-
-  def edit
   end
 
   def create
