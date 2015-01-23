@@ -67,5 +67,6 @@ Rails.application.routes.draw do
     resources :sponsors, except: :show
     resources :speakers, except: :show
     resources :students, except: :show
+    resources :orders, except: :show
   end
 end

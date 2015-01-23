@@ -43,11 +43,20 @@ p
       Send us an email with your request _and a link to this page_ at support@developmentbootcamp.nl and we
       will contact you as soon as we can.
 
-  - elsif @order.mollie_status.present?
-    h4 = "Status: #{@order.mollie_status.upcase}"
+  - elsif @order.payment
+    h4 = "Status: #{@order.payment.status.upcase}"
 
-    - if %w(CANCELLED EXPIRED).include? @order.mollie_status.upcase
-      strong Please contact us at support@developmentbootcamp.nl.
+    - if %w(CANCELLED EXPIRED).include? @order.payment.status.upcase
+      p Your order was #{@order.payment.status.upcase}. You can try make a new payment below:
+
+      p = payment_link_to 'Pay now!', order, class: 'button'
+
+      p
+        | Prefer creditcard? Click the button below, but note that you will pay
+        |  a fee of 2.9% (#{number_to_currency(@order.cart_sum_total)} + #{number_to_currency(@order.cart_sum_total * 0.029)} = #{number_to_currency(@order.cart_sum_total * 1.029)})
+
+        = form_for @order, url: stripe_token_ticket_url(@order) do |f|
+          script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="#{ENV['DB_STRIPE_PKEY']}" data-amount="#{(@order.cart_sum_total * 102.9).to_i}" data-name="Development Bootcamp Tickets" data-description="#{@order.identifier}" data-image="/devbootcamp.png" data-email="#{@order.billing_email}" data-customer="#{@order.identifier}"
 
   - else
     h4 Thank you, your payment will be processed

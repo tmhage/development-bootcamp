@@ -1,36 +1,39 @@
-- cache navigation_cache_key do
-  .navbar.navbar-inverse.navbar-fixed-top
-    .container
-      .navbar-header
-        button.navbar-toggle type='button' data-toggle='collapse' data-target='.navbar-collapse'
-          span.sr-only
-            | Toggle navigation
-          span.icon-bar
-          span.icon-bar
-          span.icon-bar
-        = link_to admin_posts_path, :class => 'navbar-brand' do
-          = fa_icon "trophy fw"
-          | Development Bootcamp
-      .collapse.navbar-collapse
-        ul.nav.navbar-nav
-          = menu_item_for admin_posts_path do
-            = fa_icon 'bookmark fw'
-            | Posts
-          = menu_item_for admin_students_path do
-            = fa_icon 'heart fw'
-            | Students
-            span.badge =< Student.count
-          = menu_item_for admin_speakers_path do
-            = fa_icon 'heart fw'
-            | Speakers
-            span.badge =< Speaker.count
-          = menu_item_for admin_sponsors_path do
-            = fa_icon 'heart fw'
-            | Sponsors
-            span.badge =< Sponsor.count
-          = menu_item_for root_path do
-            = fa_icon 'home fw'
-            | Public website
-          = menu_item_for edit_user_registration_path do
-            = fa_icon 'user fw'
-            | Account
+.navbar.navbar-inverse.navbar-fixed-top
+  .container
+    .navbar-header
+      button.navbar-toggle type='button' data-toggle='collapse' data-target='.navbar-collapse'
+        span.sr-only
+          | Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      = link_to admin_posts_path, :class => 'navbar-brand' do
+        = fa_icon "trophy fw"
+        | Development Bootcamp
+    .collapse.navbar-collapse
+      ul.nav.navbar-nav
+        = menu_item_for admin_orders_path do
+          = fa_icon 'heart fw'
+          | Orders
+          span.badge =< Order.count
+        = menu_item_for admin_posts_path do
+          = fa_icon 'bookmark fw'
+          | Posts
+        = menu_item_for admin_students_path do
+          = fa_icon 'heart fw'
+          | Students
+          span.badge =< Student.count
+        = menu_item_for admin_speakers_path do
+          = fa_icon 'heart fw'
+          | Speakers
+          span.badge =< Speaker.count
+        = menu_item_for admin_sponsors_path do
+          = fa_icon 'heart fw'
+          | Sponsors
+          span.badge =< Sponsor.count
+        = menu_item_for root_path do
+          = fa_icon 'home fw'
+          | Public website
+        = menu_item_for edit_user_registration_path do
+          = fa_icon 'user fw'
+          | Account
