@@ -38,7 +38,7 @@ class OrdersController < ApplicationController
       @order.price = @order.cart_sum_total
       @order.save
     else
-      @order.next_step unless (@order.current_step == 'tickets' && @order.cart_sum_tickets == 0)
+      @order.next_step unless (@order.current_step == 'tickets' && (@order.cart_sum_tickets == 0 || !@order.cart_has_positive_amounts_for_tickets?))
     end
     session[:order_step] = @order.current_step
 

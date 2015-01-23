@@ -110,8 +110,9 @@ class Order < ActiveRecord::Base
   end
 
   def cart_has_positive_amounts_for_tickets?
-    return if cart.values.select{|v| v.to_i >= 0 }.size == cart.values.size
+    return true if cart.values.select{|v| v.to_i >= 0 }.size == cart.values.size
     errors.add(:cart, "You can only order positive amounts of tickets.")
+    return false
   end
 
   def create_identifier
