@@ -5,5 +5,4 @@ class Student < ActiveRecord::Base
 
   validates_presence_of :first_name, :last_name, :email,
     :birth_date, :preferred_level
-  validates_uniqueness_of :email
 end
