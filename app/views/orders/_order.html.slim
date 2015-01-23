@@ -3,21 +3,28 @@ h3 Tickets & Price
 - if @order.cart[:early_bird].present?
   .input
     => @order.cart[:early_bird]
-    strong Early Bird
+    strong Early Bird*
     |  tickets (#{number_to_currency(@order.ticket_prices[:early_bird])})
 - if @order.cart[:normal].present?
   .input
     => @order.cart[:normal]
-    strong Normal
+    strong Normal*
     |  tickets (#{number_to_currency(@order.ticket_prices[:normal])})
 - if @order.cart[:supporter].present?
   .input
     => @order.cart[:supporter]
-    strong Supporter
+    strong Supporter*
     |  tickets (#{number_to_currency(@order.ticket_prices[:supporter])})
 .input
-  strong Total price:
-  =< number_to_currency(@order.cart_sum_total)
+  strong Subtotal:
+  = number_to_currency(@order.cart_sum_total)
+.input
+  strong VAT (21%):
+  = number_to_currency(@order.cart_sum_total * 0.21)
+.input
+  strong Total price*:
+  strong =< number_to_currency(@order.cart_sum_total * 1.21)
+
 p
   br
 
@@ -27,10 +34,10 @@ p
 
     p
       | Prefer creditcard? Click the button below, but note that you will pay
-      |  a fee of 2.9% (#{number_to_currency(@order.cart_sum_total)} + #{number_to_currency(@order.cart_sum_total * 0.029)} = #{number_to_currency(@order.cart_sum_total * 1.029)})
+      |  a fee of 2.9% (#{number_to_currency(@order.cart_sum_total * 1.21)} + Payment fee: #{number_to_currency(@order.cart_sum_total * 1.21 * 0.029)} = #{number_to_currency(@order.cart_sum_total * 1.21 * 1.029)})
 
       = form_for @order, url: stripe_token_ticket_url(@order) do |f|
-        script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="#{ENV['DB_STRIPE_PKEY']}" data-amount="#{(@order.cart_sum_total * 102.9).to_i}" data-name="Development Bootcamp Tickets" data-description="#{@order.identifier}" data-image="/devbootcamp.png" data-email="#{@order.billing_email}" data-customer="#{@order.identifier}"
+        script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="#{ENV['DB_STRIPE_PKEY']}" data-amount="#{(@order.cart_sum_total * 1.21 * 102.9).to_i}" data-name="Development Bootcamp Tickets" data-description="#{@order.identifier}" data-image="/devbootcamp.png" data-email="#{@order.billing_email}" data-customer="#{@order.identifier}"
 
     p
       br
@@ -49,14 +56,14 @@ p
     - if %w(CANCELLED EXPIRED).include? @order.payment.status.upcase
       p Your order was #{@order.payment.status.upcase}. You can try make a new payment below:
 
-      p = payment_link_to 'Pay now!', order, class: 'button'
+    p = payment_link_to 'Pay now!', order, class: 'button'
 
-      p
-        | Prefer creditcard? Click the button below, but note that you will pay
-        |  a fee of 2.9% (#{number_to_currency(@order.cart_sum_total)} + #{number_to_currency(@order.cart_sum_total * 0.029)} = #{number_to_currency(@order.cart_sum_total * 1.029)})
+    p
+      | Prefer creditcard? Click the button below, but note that you will pay
+      |  a fee of 2.9% (#{number_to_currency(@order.cart_sum_total * 1.21)} + Payment fee: #{number_to_currency(@order.cart_sum_total * 1.21 * 0.029)} = #{number_to_currency(@order.cart_sum_total * 1.21 * 1.029)})
 
-        = form_for @order, url: stripe_token_ticket_url(@order) do |f|
-          script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="#{ENV['DB_STRIPE_PKEY']}" data-amount="#{(@order.cart_sum_total * 102.9).to_i}" data-name="Development Bootcamp Tickets" data-description="#{@order.identifier}" data-image="/devbootcamp.png" data-email="#{@order.billing_email}" data-customer="#{@order.identifier}"
+      = form_for @order, url: stripe_token_ticket_url(@order) do |f|
+        script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="#{ENV['DB_STRIPE_PKEY']}" data-amount="#{(@order.cart_sum_total * 1.21 * 102.9).to_i}" data-name="Development Bootcamp Tickets" data-description="#{@order.identifier}" data-image="/devbootcamp.png" data-email="#{@order.billing_email}" data-customer="#{@order.identifier}"
 
   - else
     h4 Thank you, your payment will be processed
