@@ -3,8 +3,9 @@
 - meta_keywords "program, beginner, intermediate, advanced, expert, development, bootcamp, programming, learn, teach, sponsor"
 
 - cache 'programs-index' do
-  .mod-intro
+  .mod-intro.with-cover-image
     .inner
+      .cover-image.program
       .h-event
         h1.p-name Program Summer 2015 Development Bootcamp
         p
@@ -24,7 +25,7 @@
           |  tools, and people that you need to head out there by yourself
           |  and make a real salary out of this, and not just some crappy
           |  internship.
-
+      p
         = link_to 'Read full program', "#the-programs", class: 'button'
         = link_to 'Get tickets', tickets_path, class: 'button secondary'
 

@@ -4,9 +4,10 @@
 
 - if @order.current_step == 'tickets'
   - cache 'students-list-intro' do
-    .mod-intro
+    .mod-intro.with-cover-image
       .inner
-        h2 Register now
+        .cover-image.tickets
+        h1 Register now
 
         h4  Tickets include:
 
