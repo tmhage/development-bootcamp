@@ -151,4 +151,9 @@ class Order < ActiveRecord::Base
     @mollie.setApiKey ENV['DB_MOLLY_KEY'] || ""
     @mollie
   end
+
+  def cart_has_invalid_amounts_for_tickets?
+    cart_sum_tickets == 0 ||
+      !cart_has_positive_amounts_for_tickets?
+  end
 end

@@ -18,34 +18,31 @@ class OrdersController < ApplicationController
 
   def create
     session[:order_params].deep_merge!(order_params) if order_params
+
     @order = Order.new(session[:order_params])
 
-    (@order.cart_sum_tickets - @order.students.size).times { @order.students.build } if @order.cart_sum_tickets > 0
+    build_students
 
     @order.current_step = session[:order_step]
 
     if params[:back_button]
       @order.previous_step
       @order.valid?
-    elsif @order.last_step?
-      @order.confirmed_at = Time.now
-      @order.price = @order.cart_sum_total
-      @order.save
-    else
-      @order.next_step unless (@order.current_step == 'tickets' && (@order.cart_sum_tickets == 0 || !@order.cart_has_positive_amounts_for_tickets?))
     end
+
+    if @order.last_step?
+      finish_up_after_confirmation
+      @order.save
+    end
+
+    @order.next_step unless params[:back_button] || no_tickets_selected?
     session[:order_step] = @order.current_step
 
     @order.valid? if @order.current_step == 'confirmation'
 
     if @order.persisted?
       flash[:notice] = "Thank you for your registration!"
-
-      # reset session
-      session.delete(:order_step)
-      session.delete(:order_params)
-
-      # add students to mailing list
+      reset_order_session!
       @order.students.each { |student| add_to_list(student) }
       redirect_to ticket_url(@order)
     else
@@ -114,5 +111,25 @@ class OrdersController < ApplicationController
     })
   rescue Gibbon::MailChimpError => e
     logger.error "Could not add #{student.email} to students mailing list: #{e.message}"
+  end
+
+  def build_students
+    amount_to_build = @order.cart_sum_tickets - @order.students.size
+    return if amount_to_build <= 0
+    amount_to_build.times { @order.students.build }
+  end
+
+  def no_tickets_selected?
+    @order.current_step == 'tickets' && @order.cart_has_invalid_amounts_for_tickets?
+  end
+
+  def finish_up_after_confirmation
+    @order.confirmed_at = Time.now
+    @order.price = @order.cart_sum_total
+  end
+
+  def reset_order_session!
+    session.delete(:order_step)
+    session.delete(:order_params)
   end
 end
