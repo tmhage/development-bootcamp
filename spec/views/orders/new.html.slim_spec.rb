@@ -33,11 +33,14 @@ RSpec.describe "orders/new", :type => :view do
 
         assert_select "form[action=?][method=?]", tickets_path, "post" do
           fields = %w(billing_name billing_email billing_address billing_postal billing_city
-            billing_country billing_phone billing_company_name)
+            billing_phone billing_company_name)
 
           fields.each do |f|
             assert_select "input#order_#{f}[name=?]", "order[#{f}]"
           end
+
+          assert_select "input#order_terms_and_conditions[name=?][type=?]", "order[terms_and_conditions]", 'checkbox'
+          assert_select "select#order_billing_country[name=?]", "order[billing_country]"
 
           assert_select "input[type=text]", count: fields.size
 
