@@ -15,6 +15,8 @@ class Order < ActiveRecord::Base
 
   validate :validate_students_amount
 
+  validates :terms_and_conditions, inclusion: { in: [true], message: 'must be accepted.' }
+
   accepts_nested_attributes_for :students
 
   before_validation :create_identifier

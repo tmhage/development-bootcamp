@@ -26,6 +26,7 @@ class OrdersController < ApplicationController
 
     if params[:back_button]
       @order.previous_step
+      @order.valid?
     elsif @order.last_step?
       @order.confirmed_at = Time.now
       @order.price = @order.cart_sum_total
