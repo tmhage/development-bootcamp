@@ -62,6 +62,11 @@ GEM
     coffee-script-source (1.8.0)
     columnize (0.9.0)
     connection_pool (2.1.0)
+    countries (0.10.0)
+      currencies (~> 0.4.2)
+    country_select (2.1.0)
+      countries (~> 0.9, >= 0.9.3)
+    currencies (0.4.2)
     dalli (2.7.2)
     debugger-linecache (1.2.0)
     devise (3.4.1)
@@ -387,6 +392,7 @@ DEPENDENCIES
   carrierwave
   coffee-rails (~> 4.0.0)
   connection_pool
+  country_select
   dalli
   devise
   devise-bootstrap-views

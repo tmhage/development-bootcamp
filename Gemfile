@@ -27,6 +27,7 @@ gem "fog", require: "fog/aws/storage"
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'bootstrap_form'
+gem 'country_select'
 gem 'devise'
 gem 'devise-bootstrap-views'
 gem 'bootstrap-generators', '~> 3.2.0'

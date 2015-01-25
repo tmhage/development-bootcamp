@@ -32,7 +32,7 @@ h2 Billing Details
 
 .input
   = f.label :billing_country, 'Country'
-  = f.text_field :billing_country
+  = f.country_select :billing_country, priority_countries: ['NL', 'DE', 'BE', 'GB']
 
 .input
   = f.label :billing_phone, 'Phone number'
