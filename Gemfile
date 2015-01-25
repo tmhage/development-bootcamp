@@ -38,6 +38,7 @@ gem 'rails_12factor', group: :production
 
 group :development do
   gem 'spring'
+  gem 'quiet_assets'
 end
 
 gem 'codeclimate-test-reporter', group: :test, require: nil
