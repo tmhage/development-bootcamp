@@ -39,6 +39,8 @@ group :development do
   gem 'spring'
 end
 
+gem 'codeclimate-test-reporter', group: :test, require: nil
+
 group :development, :test do
   gem 'spring-commands-rspec'
   gem 'rspec-rails', '~> 3.0.2'
