@@ -16,8 +16,8 @@ RSpec.describe "orders/new", :type => :view do
           assert_select "input#order_cart_supporter[name=?]", "order[cart][supporter]"
 
           assert_select "label[for=?]", "order_cart_early_bird", text: "Early Bird Ticket (€ #{Order.new.ticket_prices[:early_bird]}.-)*"
-          assert_select "label[for=?]", "order_cart_normal", text: "Normal Ticket (€ #{Order.new.ticket_prices[:normal]}.-)*"
-          assert_select "label[for=?]", "order_cart_supporter", text: "Supporter Ticket (€ #{Order.new.ticket_prices[:supporter]}.-)*"
+          assert_select "label[for=?]", "order_cart_normal", text: "Normal Ticket (€ #{Order.new.ticket_prices[:normal]}.-)"
+          assert_select "label[for=?]", "order_cart_supporter", text: "Supporter Ticket (€ #{Order.new.ticket_prices[:supporter]}.-)"
 
           assert_select "input[type=submit]", count: 1 # No back button in this step
           assert_select "input[type=submit]", value: "Continue"
@@ -33,11 +33,14 @@ RSpec.describe "orders/new", :type => :view do
 
         assert_select "form[action=?][method=?]", tickets_path, "post" do
           fields = %w(billing_name billing_email billing_address billing_postal billing_city
-            billing_country billing_phone billing_company_name)
+            billing_phone billing_company_name)
 
           fields.each do |f|
             assert_select "input#order_#{f}[name=?]", "order[#{f}]"
           end
+
+          assert_select "input#order_terms_and_conditions[name=?][type=?]", "order[terms_and_conditions]", 'checkbox'
+          assert_select "select#order_billing_country[name=?]", "order[billing_country]"
 
           assert_select "input[type=text]", count: fields.size
 

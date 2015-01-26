@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   get '/code-of-conduct' => 'static_pages#code_of_conduct'
 
   get '/terms-and-conditions' => 'static_pages#terms_and_conditions'
-  get '/return-policy' => 'static_pages#return_policy'
+  get '/cancellation-policy' => 'static_pages#cancellation_policy'
 
   resources :blog, controller: 'posts', only: [:index, :show]
   resources :sponsors, only: [:index, :new, :create] do

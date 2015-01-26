@@ -5,7 +5,11 @@ h2 Confirmation
   ul.form-errors
     - @order.errors.full_messages.each do |error_message|
       li = error_message
-  h3.form-error You can use the back button below to change your input.
+
+  - if @order.errors.full_messages.size == 1 && @order.errors[:terms_and_conditions].present?
+    = render 'orders/form/accept_terms', f: f
+  - else
+    h3.form-error You can use the back button below to change your input.
   p
     br
 

@@ -4,7 +4,6 @@ ruby '2.1.4'
 # ruby '2.0.0'
 
 gem 'rails', '4.1.7'
-gem 'rails_12factor'
 gem 'pg'
 gem 'dalli'
 gem 'connection_pool'
@@ -35,8 +34,11 @@ gem 'pronto'
 gem 'pronto-rubocop', require: false
 gem 'nokogiri', '1.6.4.1'
 
+gem 'rails_12factor', group: :production
+
 group :development do
   gem 'spring'
+  gem 'quiet_assets'
 end
 
 gem 'codeclimate-test-reporter', group: :test, require: nil

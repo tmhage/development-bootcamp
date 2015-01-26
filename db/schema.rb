@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 20150126114700) do
     t.json     "stripe_payload"
     t.boolean  "manually_paid"
     t.boolean  "paid_by_creditcard"
+    t.boolean  "terms_and_conditions"
   end
 
   create_table "posts", force: true do |t|

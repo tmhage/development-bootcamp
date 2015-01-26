@@ -37,3 +37,5 @@ h2 Billing Details
 .input
   = f.label :billing_phone, 'Phone number'
   = f.text_field :billing_phone
+
+= render 'orders/form/accept_terms', f: f
