@@ -16,8 +16,8 @@ RSpec.describe "orders/new", :type => :view do
           assert_select "input#order_cart_supporter[name=?]", "order[cart][supporter]"
 
           assert_select "label[for=?]", "order_cart_early_bird", text: "Early Bird Ticket (€ #{Order.new.ticket_prices[:early_bird]}.-)*"
-          assert_select "label[for=?]", "order_cart_normal", text: "Normal Ticket (€ #{Order.new.ticket_prices[:normal]}.-)*"
-          assert_select "label[for=?]", "order_cart_supporter", text: "Supporter Ticket (€ #{Order.new.ticket_prices[:supporter]}.-)*"
+          assert_select "label[for=?]", "order_cart_normal", text: "Normal Ticket (€ #{Order.new.ticket_prices[:normal]}.-)"
+          assert_select "label[for=?]", "order_cart_supporter", text: "Supporter Ticket (€ #{Order.new.ticket_prices[:supporter]}.-)"
 
           assert_select "input[type=submit]", count: 1 # No back button in this step
           assert_select "input[type=submit]", value: "Continue"
