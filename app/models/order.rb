@@ -67,9 +67,9 @@ class Order < ActiveRecord::Base
 
   def ticket_prices
     {
-      early_bird: 1250,
-      normal: 1550,
-      supporter: 1750
+      early_bird: 1499,
+      normal: 1799,
+      supporter: 1999
     }
   end
 
@@ -123,7 +123,7 @@ class Order < ActiveRecord::Base
 
   def create_payment(options = {})
     _payment = mollie.payments.create options.merge(
-      amount: (cart_sum_total.to_f * 1.21),
+      amount: (cart_sum_total.to_f),
       description: "Development Bootcamp tuition fee",
       metadata: { identifier: self.identifier})
     update(mollie_payment_id: _payment.id)
