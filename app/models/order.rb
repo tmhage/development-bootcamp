@@ -135,6 +135,10 @@ class Order < ActiveRecord::Base
     mollie.payments.get self.mollie_payment_id
   end
 
+  def paid?
+    manually_paid? || paid_by_creditcard? || (payment && payment.paid?)
+  end
+
   def mollie
     @mollie || setup_mollie
   end

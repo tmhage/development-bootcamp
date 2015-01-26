@@ -5,14 +5,17 @@
 
 - @orders.each do |order|
   .order.col-md-12
-    h3
+    h3.bg-info
       = order.billing_name
-      - if order.payment
-        - if order.payment.paid?
-          span.label.label-success Paid
-        - else
-          span.label.label-warning =< order.payment.status
-      =< link_to 'Payment link', ticket_url(order)
+      span.pull-right
+        - if order.payment
+          - if order.paid?
+            span.label.label-success =<> 'Paid'
+          - else
+            span.label.label-warning =< order.payment.status
+            =<> link_to 'Manually Paid', manually_paid_admin_order_path(order), method: :patch, class: 'btn btn-small'
+            =<> link_to 'Paid by Creditcard', paid_by_creditcard_admin_order_path(order), method: :patch, class: 'btn btn-small'
+            = link_to 'Payment link', ticket_url(order), class: 'btn btn-primary'
     - order.students.each do |student|
       .col-md-10
         .col-md-2

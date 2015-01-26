@@ -67,6 +67,11 @@ Rails.application.routes.draw do
     resources :sponsors, except: :show
     resources :speakers, except: :show
     resources :students, except: :show
-    resources :orders, except: :show
+    resources :orders, except: :show do
+      member do
+        patch :manually_paid
+        patch :paid_by_creditcard
+      end
+    end
   end
 end
