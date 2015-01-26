@@ -35,7 +35,8 @@ class OrdersController < ApplicationController
       @order.save
     end
 
-    @order.next_step unless params[:back_button] || no_tickets_selected?
+    @order.next_step unless params[:back_button] ||
+      (@order.current_step == 'tickets' && !@order.cart_has_positive_amounts_for_tickets?)
     session[:order_step] = @order.current_step
 
     @order.valid? if @order.current_step == 'confirmation'
@@ -117,10 +118,6 @@ class OrdersController < ApplicationController
     amount_to_build = @order.cart_sum_tickets - @order.students.size
     return if amount_to_build <= 0
     amount_to_build.times { @order.students.build }
-  end
-
-  def no_tickets_selected?
-    @order.current_step == 'tickets' && @order.cart_has_invalid_amounts_for_tickets?
   end
 
   def finish_up_after_confirmation

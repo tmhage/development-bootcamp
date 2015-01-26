@@ -112,8 +112,9 @@ class Order < ActiveRecord::Base
   end
 
   def cart_has_positive_amounts_for_tickets?
-    return true if cart.values.select{|v| v.to_i >= 0 }.size == cart.values.size
-    errors.add(:cart, "You can only order positive amounts of tickets.")
+    return true if cart.values.select{|v| v.to_i >= 0 }.size == cart.values.size &&
+      cart_sum_tickets > 0
+    errors.add(:cart, "You can only order amounts of 1 or more tickets.")
     return false
   end
 
@@ -150,10 +151,5 @@ class Order < ActiveRecord::Base
     @mollie = Mollie::API::Client.new
     @mollie.setApiKey ENV['DB_MOLLY_KEY'] || ""
     @mollie
-  end
-
-  def cart_has_invalid_amounts_for_tickets?
-    cart_sum_tickets == 0 ||
-      !cart_has_positive_amounts_for_tickets?
   end
 end

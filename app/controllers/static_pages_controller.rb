@@ -8,7 +8,7 @@ class StaticPagesController < ApplicationController
 
   def code_of_conduct; end
 
-  def return_policy; end
+  def cancellation_policy; end
 
   def terms_and_conditions; end
 end

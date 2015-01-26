@@ -1,4 +1,4 @@
 .input.inline
   = f.check_box :terms_and_conditions
-  = f.label :terms_and_conditions, ('I have read and agreed to the %{terms} and %{conditions}' % { terms: link_to('Terms', '/terms-and-conditions', target: '_blank'), conditions: link_to('Return Policy', '/return-policy', target: '_blank') }).html_safe
+  = f.label :terms_and_conditions, ('I have read and agreed to the %{terms} and %{conditions}' % { terms: link_to('Terms', '/terms-and-conditions', target: '_blank'), conditions: link_to('Cancellation Policy', '/cancellation-policy', target: '_blank') }).html_safe
   p You must accept these terms before you can proceed.
