@@ -24,10 +24,14 @@
           = link_to 'Register now', '#orderForm', class: 'button'
           = link_to 'Check our program', program_path, class: 'button secondary'
 
-.mod-right-bar
-  
-
 .mod-text
   .inner#orderForm
+    p
+      | Feel free to mail us at
+      strong =<> mail_to 'support@developmentbootcamp.nl'
+      | or call us on
+      strong =<> '+31681910218'
+      | if you have any questions.
+
     = render 'order_steps'
     = render 'form'

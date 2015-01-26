@@ -1,3 +1,17 @@
+javascript:
+  var google_conversion_id = 967651577;
+  var google_conversion_language = "en";
+  var google_conversion_format = "3";
+  var google_conversion_color = "ffffff";
+  var google_conversion_label = "8rjSCMSWmlkQ-eG0zQM";
+  var google_conversion_value = 0.00;
+  var google_conversion_currency = "EUR";
+  var google_remarketing_only = false;
+
+noscript
+  div style="display:inline;"
+  img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/967651577/?value=#{"%.2f" % @order.cart_sum_total.to_f}&currency_code=EUR&label=8rjSCMSWmlkQ-eG0zQM&guid=ON&script=0"
+
 .mod-text
   .inner
     h1 Thank you for your #{@order.payment && @order.payment.paid? ? 'payment' : 'order'}, #{@order.billing_name}!
@@ -9,6 +23,10 @@
       - if @order.cart_sum_tickets > 1
         markdown:
           Individual tickets will also be sent to the individual students: **#{@order.students.pluck(:email).to_sentence}**.
+
+      - if Rails.env.production?
+        javascript:
+          var google_conversion_value = #{@order.cart_sum_total.to_f};
 
     - elsif @order.payment && @order.payment.cancelled?
       markdown:
@@ -22,7 +40,7 @@
         Your payment has **expired**. If this was unintentional, please retry your payment by clicking
         the payment button below.
 
-      p = payment_link_to 'Pay now!', order, class: 'button'
+      p = payment_link_to 'Pay now!', @order, class: 'button'
 
     - elsif @order.payment && @order.payment.open?
       markdown:
@@ -44,3 +62,5 @@
       Email: support@developmentbootcamp.nl
 
       Phone: +31681910218
+
+= javascript_include_tag '//www.googleadservices.com/pagead/conversion.js'
