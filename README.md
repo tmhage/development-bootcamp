@@ -1,5 +1,8 @@
 # Development Bootcamp Website
 
+![Development
+Bootcamp](https://www.developmentbootcamp.nl/assets/bootcamp-logo-1ea505a897b5aaed29435b4bbeea6e20.png)
+
 ![build status](https://travis-ci.org/devbootcamps/website.svg)
 [![Code
 Climate](https://codeclimate.com/github/devbootcamps/website/badges/gpa.svg)](https://codeclimate.com/github/devbootcamps/website)
@@ -9,5 +12,4 @@ Coverage](https://codeclimate.com/github/devbootcamps/website/badges/coverage.sv
 This is the code for the [Development Bootcamp
 Website](http://www.developmentbootcamp.nl). Feel free to look through
 the code.
-
 
