@@ -140,7 +140,7 @@ class Order < ActiveRecord::Base
 
   def payment
     return unless self.mollie_payment_id.present?
-    mollie.payments.get self.mollie_payment_id
+    mollie.payments.get self.mollie_payment_id rescue nil
   end
 
   def paid?
