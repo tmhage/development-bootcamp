@@ -1,0 +1,6 @@
+- if @nav_items.any?
+  nav.subnav
+    ul
+      - @nav_items.each do |label, link|
+        = menu_item_for link, active: request.path == url_for(link) do
+          = label

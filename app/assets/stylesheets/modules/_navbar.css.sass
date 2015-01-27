@@ -20,23 +20,54 @@
     img
       height: 55px
 
-  nav.main
+  nav
     +max-width(800px)
       display: none
 
-    margin: 40px 0 0 60px
     float: left
 
     ul
       list-style: none
+      -webkit-margin-before: 0
+      -webkit-margin-after: 0
+      -webkit-margin-start: 0
+      -webkit-margin-end: 0
+      -webkit-padding-start: 0
 
       li
         display: inline
         margin-right: 2em
 
         &.active
-          background: $purple
           padding: 12px
+
+    &.main
+      margin: 40px 0 0 60px
+      +max-width(900px)
+        margin-left: 20px
+
+      ul
+        li
+          &.active
+            background: $purple
+            a:link,
+            a:visited
+              color: $yellow
+    &.subnav
+      margin: -2px 0 0
+      clear: left
+      background: $dark
+      width: 100%
+      padding-left: 40px
+      ul
+        li
           a:link,
           a:visited
-            color: $yellow
+            color: $light
+            font-weight: normal
+          &.active
+            padding: 3px
+            a:link,
+            a:visited
+              font-weight: bold
+              color: $yellow

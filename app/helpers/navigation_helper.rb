@@ -13,7 +13,7 @@ module NavigationHelper
     end
 
     if options[:active].nil?
-      options[:active] = url_for(object) == request.path
+      options[:active] = request.path.match(url_for(object))
     end
 
     if options.delete(:active)

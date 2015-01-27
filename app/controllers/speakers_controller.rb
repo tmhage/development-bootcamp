@@ -1,4 +1,6 @@
 class SpeakersController < ApplicationController
+  before_filter :set_subnav
+
   def index
     @speakers = Speaker.active
   end
@@ -45,5 +47,12 @@ class SpeakersController < ApplicationController
     })
   rescue Gibbon::MailChimpError => e
     logger.error "Could not add #{speaker.email} to speakers mailing list: #{e.message}"
+  end
+
+  def set_subnav
+    @nav_items = {
+      'Overview' => speakers_path,
+      'Apply' => new_speaker_path
+    }
   end
 end

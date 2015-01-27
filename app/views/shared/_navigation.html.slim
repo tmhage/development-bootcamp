@@ -10,3 +10,4 @@
       nav.main
         ul
           = render "shared/menu_items"
+      = render "shared/subnav" if @nav_items.present?

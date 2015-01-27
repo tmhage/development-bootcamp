@@ -1,4 +1,6 @@
 - cache "menu-items/#{request.path}" do
+  = menu_item_for root_url, active: request.path == root_path do
+    | Home
   = menu_item_for program_path do
     | Program
   = menu_item_for sponsors_path do
