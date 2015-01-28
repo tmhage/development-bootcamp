@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150126114700) do
+ActiveRecord::Schema.define(version: 20150128181826) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,9 +53,10 @@ ActiveRecord::Schema.define(version: 20150126114700) do
     t.uuid     "identifier"
     t.string   "stripe_token"
     t.json     "stripe_payload"
+    t.text     "qr_code"
+    t.boolean  "terms_and_conditions"
     t.boolean  "manually_paid"
     t.boolean  "paid_by_creditcard"
-    t.boolean  "terms_and_conditions"
   end
 
   create_table "posts", force: true do |t|
@@ -84,6 +85,8 @@ ActiveRecord::Schema.define(version: 20150126114700) do
     t.datetime "activated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "role"
+    t.text     "bio"
   end
 
   create_table "sponsors", force: true do |t|
@@ -117,8 +120,10 @@ ActiveRecord::Schema.define(version: 20150126114700) do
     t.text     "allergies"
     t.integer  "registration"
     t.integer  "order_id"
+    t.uuid     "identifier"
   end
 
+  add_index "students", ["identifier"], name: "index_students_on_identifier", using: :btree
   add_index "students", ["order_id"], name: "index_students_on_order_id", using: :btree
 
   create_table "users", force: true do |t|

@@ -7,4 +7,12 @@ class Speaker < ActiveRecord::Base
   validates_uniqueness_of :email
 
   scope :active, -> { where.not(activated_at: nil) }
+
+  def self.roles
+    {
+      keynote_speaker: 'Keynote Speaker',
+      teacher: 'Teacher (Workshops)',
+      volunteer: 'Volunteer (Assisting Workshops)'
+    }
+  end
 end

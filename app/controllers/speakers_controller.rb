@@ -30,7 +30,7 @@ class SpeakersController < ApplicationController
 
   def apply_as_speaker_params
     params.require(:speaker).
-      permit(:first_name, :last_name, :email, :twitter_handle, :website, :remarks)
+      permit(:first_name, :last_name, :email, :twitter_handle, :website, :remarks, :role, :bio)
   end
 
   def add_to_list(speaker)

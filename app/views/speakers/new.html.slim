@@ -49,8 +49,19 @@
         = f.text_field :website, type: 'website', required: false, placeholder: 'http://'
 
       .input
+        = f.label :role, 'What role would fit you best?'
+        - Speaker.roles.each do |value, text|
+          = f.label :role, value: value do
+            = f.radio_button :role, value, required: true
+            = text
+
+      .input
+        = f.label :bio, 'Biography (for your profile on the site)'
+        = f.text_area :bio, required: false, placeholder: "What's your experience?"
+
+      .input
         = f.label :remarks, 'Remarks (optional)'
-        = f.text_area :remarks, required: false, placeholder: "Anything you'd like to share?"
+        = f.text_area :remarks, required: false, placeholder: "Anything you'd like to share with the organisers?"
 
       br
       = f.submit 'Contact me!', class: 'button'
