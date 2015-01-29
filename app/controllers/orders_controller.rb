@@ -53,8 +53,10 @@ class OrdersController < ApplicationController
 
   def webhook
     @order = Order.find_by_mollie_payment_id(params[:id])
-    success = @order.update(mollie_status: @order.payment.status)
-    render json: { success: success }
+    if @order.present?
+      @order.update(mollie_status: @order.payment.status)
+    end
+    render text: 'OK'
   end
 
   def stripe_webhook
