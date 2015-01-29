@@ -4,14 +4,15 @@ FactoryGirl.define do
     mollie_payment_id { 'tr_WDqYK6vllg' }
     refunded_at { Time.now - 2.minutes }
     mollie_refund_id { 'tr_WDqYK6aarb' }
-    billing_name { Faker::Name.full_name }
+    billing_name { Faker::Name.name }
     billing_email { Faker::Internet.email }
-    billing_address { Faker::Address.address }
-    billing_postal { Faker::Address.postal }
+    billing_address { Faker::Address.street_address }
+    billing_postal { Faker::Address.zip_code }
     billing_city { Faker::Address.city }
     billing_country { Faker::Address.country }
-    billing_phone { Faker::Address.phone }
+    billing_phone { Faker::PhoneNumber.phone_number }
     billing_company_name { Faker::Company.name }
+    terms_and_conditions true
     confirmed_at { Time.now - 6.minutes }
     cart { { early_bird: 0, normal: 1, supporter: 0 } }
 
@@ -36,13 +37,16 @@ FactoryGirl.define do
       billing_country { Faker::Address.country }
       billing_phone { Faker::PhoneNumber.phone_number }
       billing_company_name { Faker::Company.name }
+      terms_and_conditions true
 
       factory :order_step_students, class: 'Order' do
-        current_step { "students-#{cart_sum_tickets-1}" }
+        cart { { early_bird: 0, normal: 1, supporter: 0 } }
+
         after(:build) do |order, evaluator|
           if order.cart_sum_tickets > 0
             order.students = build_list(:student, order.cart_sum_tickets)
           end
+          order.current_step = 'students-0'
         end
 
         factory :order_step_confirmation, class: 'Order' do
@@ -69,8 +73,5 @@ FactoryGirl.define do
         end
       end
     end
-
-    
   end
-
 end

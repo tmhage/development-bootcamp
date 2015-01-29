@@ -51,7 +51,7 @@ RSpec.describe "orders/new", :type => :view do
       end
     end
 
-    describe 'students-1' do
+    describe 'students-0' do
       let(:order) { build(:order_step_students) }
 
       it "renders new order form" do
@@ -62,20 +62,20 @@ RSpec.describe "orders/new", :type => :view do
           text_areas = [:remarks, :allergies]
 
           text_fields.each do |f|
-            assert_select "input#order_students_attributes_1_#{f}[name=?]", "order[students_attributes][1][#{f}]"
+            assert_select "input#order_students_attributes_0_#{f}[name=?]", "order[students_attributes][0][#{f}]"
           end
 
-          assert_select "input#order_students_attributes_1_email[name=?]", "order[students_attributes][1][email]"
+          assert_select "input#order_students_attributes_0_email[name=?]", "order[students_attributes][0][email]"
 
           text_areas.each do |f|
-            assert_select "textarea#order_students_attributes_1_#{f}[name=?]", "order[students_attributes][1][#{f}]"
+            assert_select "textarea#order_students_attributes_0_#{f}[name=?]", "order[students_attributes][0][#{f}]"
           end
 
-          assert_select "select#order_students_attributes_1_preferred_level[name=?]", "order[students_attributes][1][preferred_level]"
+          assert_select "select#order_students_attributes_0_preferred_level[name=?]", "order[students_attributes][0][preferred_level]"
 
-          assert_select "select#order_students_attributes_1_birth_date_1i[name=?]", "order[students_attributes][1][birth_date(1i)]"
-          assert_select "select#order_students_attributes_1_birth_date_2i[name=?]", "order[students_attributes][1][birth_date(2i)]"
-          assert_select "select#order_students_attributes_1_birth_date_3i[name=?]", "order[students_attributes][1][birth_date(3i)]"
+          assert_select "select#order_students_attributes_0_birth_date_1i[name=?]", "order[students_attributes][0][birth_date(1i)]"
+          assert_select "select#order_students_attributes_0_birth_date_2i[name=?]", "order[students_attributes][0][birth_date(2i)]"
+          assert_select "select#order_students_attributes_0_birth_date_3i[name=?]", "order[students_attributes][0][birth_date(3i)]"
 
           assert_select "input[type=text]", count: text_fields.size
           assert_select "input[type=email]", count: 1

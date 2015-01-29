@@ -56,6 +56,9 @@ class OrdersController < ApplicationController
     if @order.present?
       @order.update(mollie_status: @order.payment.status)
     end
+  rescue Mollie::API::Exception => error
+    Rails.logger.info error.message
+  ensure
     render text: 'OK'
   end
 
