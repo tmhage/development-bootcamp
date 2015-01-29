@@ -12,7 +12,28 @@
         => fa_icon 'map-marker'
         strong
           | 12-18 July,
-          =< link_to 'Amsterdam Science Park', 'http://www.amsterdamsciencepark.nl/'
+          =<> link_to 'Amsterdam Science Park', 'http://www.amsterdamsciencepark.nl/'
+          | in:
+
+      ul#countdown
+        li
+          span.days 00
+        li.seperator
+          |
+            :
+        li
+          span.hours 00
+        li.seperator
+          |
+            :
+        li
+          span.minutes 00
+        li.seperator
+          |
+            :
+        li
+          span.seconds 00
+
 .dbc-content
   .dbc-container.dbc-text
     .inner.centered

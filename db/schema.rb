@@ -64,7 +64,6 @@ ActiveRecord::Schema.define(version: 20150309142549) do
     t.uuid     "identifier"
     t.string   "stripe_token"
     t.json     "stripe_payload"
-    t.text     "qr_code"
     t.boolean  "terms_and_conditions"
     t.boolean  "manually_paid"
     t.boolean  "paid_by_creditcard"
@@ -134,10 +133,8 @@ ActiveRecord::Schema.define(version: 20150309142549) do
     t.text     "allergies"
     t.integer  "registration"
     t.integer  "order_id"
-    t.uuid     "identifier"
   end
 
-  add_index "students", ["identifier"], name: "index_students_on_identifier", using: :btree
   add_index "students", ["order_id"], name: "index_students_on_order_id", using: :btree
 
   create_table "users", force: true do |t|
