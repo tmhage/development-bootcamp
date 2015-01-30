@@ -1,8 +1,6 @@
 class Order < ActiveRecord::Base
   has_paper_trail
 
-  attr_writer :current_step
-
   has_many :students
 
   validate :validate_cart
@@ -29,6 +27,11 @@ class Order < ActiveRecord::Base
     @current_step || steps.first
   end
 
+  def current_step=(step)
+    raise ArgumentError.new("Step #{step} does not exist!") unless steps.include?(step) || step.nil?
+    @current_step = step
+  end
+
   def steps
     steps = (0...cart_sum_tickets).map{ |i| "students-#{i}" }
     steps.unshift "details"
@@ -37,11 +40,13 @@ class Order < ActiveRecord::Base
   end
 
   def next_step
-    self.current_step = steps[steps.index(current_step)+1]
+    step_index = [steps.index(current_step)+1, (steps.size-1)].min
+    self.current_step = steps[step_index]
   end
 
   def previous_step
-    self.current_step = steps[steps.index(current_step)-1]
+    step_index = [steps.index(current_step)-1, 0].max
+    self.current_step = steps[step_index]
   end
 
   def first_step?

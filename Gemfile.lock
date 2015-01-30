@@ -45,6 +45,12 @@ GEM
       columnize (~> 0.8)
       debugger-linecache (~> 1.2)
       slop (~> 3.6)
+    capybara (2.4.4)
+      mime-types (>= 1.16)
+      nokogiri (>= 1.3.3)
+      rack (>= 1.0.0)
+      rack-test (>= 0.5.4)
+      xpath (~> 2.0)
     carrierwave (0.10.0)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
@@ -395,6 +401,8 @@ GEM
     wysiwyg-rails (1.2.5)
       font-awesome-rails (= 4.2.0.0)
       railties (>= 3.2, < 5.0)
+    xpath (2.0.0)
+      nokogiri (~> 1.3)
 
 PLATFORMS
   ruby
@@ -404,6 +412,7 @@ DEPENDENCIES
   bootstrap-generators (~> 3.2.0)
   bootstrap_form
   byebug
+  capybara
   carrierwave
   codeclimate-test-reporter
   coffee-rails (~> 4.0.0)

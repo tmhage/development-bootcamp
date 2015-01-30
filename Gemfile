@@ -45,13 +45,17 @@ gem 'codeclimate-test-reporter', group: :test, require: nil
 
 group :development, :test do
   gem 'spring-commands-rspec'
-  gem 'rspec-rails', '~> 3.0.2'
   gem 'guard-rspec'
   gem 'rb-fsevent'
+  gem 'byebug'
+end
+
+group :test do
+  gem 'capybara'
+  gem 'shoulda-matchers', require: false
+  gem 'rspec-rails', '~> 3.0.2'
   gem 'factory_girl_rails'
   gem 'faker'
-  gem 'shoulda-matchers', require: false
-  gem 'byebug'
 end
 
 gem 'puma'
