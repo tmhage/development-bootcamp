@@ -31,7 +31,6 @@ class Admin::OrdersController < Admin::AdminController
       send_tickets!
     else
       flash[:error] = 'Could not update status, try again'
-      logger.debug @order.errors.to_json
     end
     redirect_to admin_orders_path
   end
@@ -42,7 +41,6 @@ class Admin::OrdersController < Admin::AdminController
       send_tickets!
     else
       flash[:error] = 'Could not update status, try again'
-      logger.debug @order.errors.to_json
     end
     redirect_to admin_orders_path
   end

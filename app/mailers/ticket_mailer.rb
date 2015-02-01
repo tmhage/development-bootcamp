@@ -12,7 +12,6 @@ module TicketMailer
       @order.students.each do |student|
         @student = student
         html = render_to_string('ticket_mailer/ticket', layout: false)
-        Rails.logger.debug html
         message = {
          subject: "Your Development Bootcamp Ticket",
          from_name: "Development Bootcamp",
