@@ -1,4 +1,6 @@
 class OrdersController < ApplicationController
+  include TicketMailer
+
   before_action :set_order, only: [:show, :thanks, :stripe_token]
 
   protect_from_forgery with: :exception, except: [:webhook, :stripe_webhook]
@@ -54,7 +56,9 @@ class OrdersController < ApplicationController
   def webhook
     @order = Order.find_by_mollie_payment_id(params[:id])
     if @order.present?
-      @order.update(mollie_status: @order.payment.status)
+      payment_status = @order.payment.status
+      send_tickets! if @order.payment.paid? && @order.mollie_status != 'paid'
+      @order.update(mollie_status: payment_status)
     end
   rescue Mollie::API::Exception => error
     Rails.logger.info error.message

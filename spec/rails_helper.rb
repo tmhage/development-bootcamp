@@ -8,6 +8,9 @@ require 'shoulda/matchers'
 require 'rspec/rails'
 require 'capybara/rails'
 require 'capybara/rspec'
+require 'webmock/rspec'
+
+WebMock.disable_net_connect!(allow_localhost: true, allow: %w(codeclimate.com))
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
@@ -50,4 +53,15 @@ RSpec.configure do |config|
   # The different available types are documented in the features, such as in
   # https://relishapp.com/rspec/rspec-rails/docs
   config.infer_spec_type_from_file_location!
+
+  ENV['MANDRILL_APIKEY'] = 'foobar'
+
+  config.before do
+    stub_request(:post, "https://mandrillapp.com/api/1.0/messages/send.json").
+      to_return(:status => 200, :body => "{}", :headers => {})
+
+
+    stub_request(:post, "https://api.mollie.nl/v1/payments").
+      to_return(:status => 200, :body => "{}", :headers => {})
+  end
 end
