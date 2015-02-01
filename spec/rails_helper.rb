@@ -54,7 +54,7 @@ RSpec.configure do |config|
   # https://relishapp.com/rspec/rspec-rails/docs
   config.infer_spec_type_from_file_location!
 
-  ENV['MANDRILL_APIKEY'] = 'foobar'
+  ENV['MANDRILL_APIKEY'] ||= 'foobar'
 
   config.before do
     stub_request(:post, "https://mandrillapp.com/api/1.0/messages/send.json").

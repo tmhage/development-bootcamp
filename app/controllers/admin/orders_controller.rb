@@ -26,7 +26,7 @@ class Admin::OrdersController < Admin::AdminController
   end
 
   def manually_paid
-    if @order.update(manually_paid: true, terms_and_conditions: true, billing_country: "Netherlands")
+    if @order.update(manually_paid: true)
       flash[:notice] = 'Status set to manually paid'
       send_tickets!
     else
