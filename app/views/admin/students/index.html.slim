@@ -14,7 +14,7 @@
 
 - @students.each do |student|
   .student.col-md-12
-    h3= "#{student.first_name} #{student.last_name}"
+    h3= mail_to student.email, "#{student.first_name} #{student.last_name}"
     .col-md-10
       .col-md-2
         .img-responsive= image_tag student.gravatar_url
