@@ -6,7 +6,7 @@
 - @orders.each do |order|
   .order.col-md-12
     h3.bg-info
-      = order.billing_name
+      = mail_to order.billing_email, order.billing_name
       span.pull-right
         - if order.payment
           - if order.paid?
@@ -21,7 +21,7 @@
         .col-md-2
           .img-responsive= image_tag student.gravatar_url
         .col-md-10
-          p = "#{student.first_name} #{student.last_name}"
+          p = mail_to student.email, "#{student.first_name} #{student.last_name}"
           p.bg-danger
             | Preferred Level:
             =< student.preferred_level
