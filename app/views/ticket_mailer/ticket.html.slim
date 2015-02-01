@@ -1,0 +1,47 @@
+.devbootcamp_ticket
+  h1 Your Development Bootcamp Ticket
+
+  p Hi #{@student.first_name},
+
+  p First off, thank you for your order. We are excited to welcome you to our Development Bootcamp! Yay!
+
+  p We received your payment and now, as promised, we send you your ticket. We know, it doesn't look like much, but a picture says more than a thousand words right? :)
+
+  p Below is a short recap of the data we received from you. Feel free to ask any questions you might have. You can just reply to this email and we will respond to you shortly.
+
+  table style="border-width: 0; border-style: none;"
+    tr
+      th style="width: 30%; vertical-align: top; text-align: left;" Name:
+      td style="vertical-align: top; text-align: left;" = "#{@student.first_name} #{@student.last_name}"
+    tr
+      th style="width: 30%; vertical-align: top; text-align: left;" Preferred level:
+      td style="vertical-align: top; text-align: left;" = "Level #{@student.preferred_level}"
+    tr
+      th style="width: 30%; vertical-align: top; text-align: left;" Twitter handle:
+      td style="vertical-align: top; text-align: left;" = @student.twitter_handle.present? ? @student.twitter_handle : 'not filled in'
+    tr
+      th style="width: 30%; vertical-align: top; text-align: left;" Github handle:
+      td style="vertical-align: top; text-align: left;" = @student.github_handle.present? ? @student.github_handle : 'not filled in'
+    tr
+      th style="width: 30%; vertical-align: top; text-align: left;" Dietary wishes:
+      td style="vertical-align: top; text-align: left;" = @student.allergies.present? ? @student.allergies : 'none'
+    tr
+      th style="width: 30%; vertical-align: top; text-align: left;" Remarks:
+      td style="vertical-align: top; text-align: left;" = @student.remarks.present? ? @student.remarks : 'none'
+    tr
+      th style="width: 30%; vertical-align: top; text-align: left;" QR Code:
+      td style="vertical-align: top; text-align: left;" = image_tag (root_url + "students/#{@student.identifier}/qr-code.png"), width: 250, height: 250, alt: 'QR Code'
+
+  p
+    | You might want to join the buzz at our
+    =< link_to 'Facebook event', 'https://www.facebook.com/events/528041797337906/'
+    | .
+
+  p
+    | See you in July at
+    =< link_to 'Tobacco theater', 'http://www.tobacco.nl'
+    | !
+
+  p Cheers,
+
+  p The Development Bootcamp Team

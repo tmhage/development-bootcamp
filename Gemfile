@@ -33,6 +33,8 @@ gem 'bootstrap-generators', '~> 3.2.0'
 gem 'pronto'
 gem 'pronto-rubocop', require: false
 gem 'nokogiri', '1.6.4.1'
+gem 'rqrcode_png'
+gem 'mandrill-api'
 
 gem 'rails_12factor', group: :production
 
@@ -56,6 +58,7 @@ group :test do
   gem 'rspec-rails', '~> 3.0.2'
   gem 'factory_girl_rails'
   gem 'faker'
+  gem 'webmock'
 end
 
 gem 'puma'

@@ -1,3 +1,5 @@
+require "Mollie/API/Client"
+
 class Order < ActiveRecord::Base
   has_paper_trail
 
@@ -140,7 +142,7 @@ class Order < ActiveRecord::Base
 
   def payment
     return unless self.mollie_payment_id.present?
-    mollie.payments.get self.mollie_payment_id
+    mollie.payments.get self.mollie_payment_id rescue nil
   end
 
   def paid?
@@ -152,7 +154,6 @@ class Order < ActiveRecord::Base
   end
 
   def setup_mollie
-    require "Mollie/API/Client"
     @mollie = Mollie::API::Client.new
     @mollie.setApiKey ENV['DB_MOLLY_KEY'] || ""
     @mollie

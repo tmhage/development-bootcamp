@@ -58,6 +58,7 @@ GEM
       mime-types (>= 1.16)
     celluloid (0.16.0)
       timers (~> 4.0.0)
+    chunky_png (1.3.3)
     codeclimate-test-reporter (0.4.6)
       simplecov (>= 0.7.1, < 1.0.0)
     coderay (1.1.0)
@@ -74,6 +75,8 @@ GEM
       currencies (~> 0.4.2)
     country_select (2.1.0)
       countries (~> 0.9, >= 0.9.3)
+    crack (0.4.2)
+      safe_yaml (~> 1.0.0)
     currencies (0.4.2)
     dalli (2.7.2)
     debugger-linecache (1.2.0)
@@ -233,6 +236,9 @@ GEM
     lumberjack (1.0.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    mandrill-api (1.0.53)
+      excon (>= 0.16.0, < 1.0)
+      json (>= 1.7.7, < 2.0)
     method_source (0.8.2)
     mime-types (2.4.3)
     mini_magick (4.0.2)
@@ -315,6 +321,10 @@ GEM
     rest-client (1.7.2)
       mime-types (>= 1.16, < 3.0)
       netrc (~> 0.7)
+    rqrcode (0.4.2)
+    rqrcode_png (0.1.5)
+      chunky_png
+      rqrcode
     rspec (3.0.0)
       rspec-core (~> 3.0.0)
       rspec-expectations (~> 3.0.0)
@@ -343,6 +353,7 @@ GEM
       ruby-progressbar (~> 1.4)
     ruby-progressbar (1.7.1)
     rugged (0.21.4)
+    safe_yaml (1.0.4)
     sass (3.2.19)
     sass-rails (4.0.5)
       railties (>= 4.0.0, < 5.0)
@@ -398,6 +409,9 @@ GEM
       json (>= 1.8.0)
     warden (1.2.3)
       rack (>= 1.0)
+    webmock (1.20.4)
+      addressable (>= 2.3.6)
+      crack (>= 0.3.2)
     wysiwyg-rails (1.2.5)
       font-awesome-rails (= 4.2.0.0)
       railties (>= 3.2, < 5.0)
@@ -433,6 +447,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   kaminari
+  mandrill-api
   mini_magick
   mollie-api-ruby
   nokogiri (= 1.6.4.1)
@@ -446,6 +461,7 @@ DEPENDENCIES
   rails_12factor
   rb-fsevent
   redcarpet
+  rqrcode_png
   rspec-rails (~> 3.0.2)
   sass-rails (~> 4.0.3)
   shoulda-matchers
@@ -454,4 +470,5 @@ DEPENDENCIES
   spring-commands-rspec
   turbolinks
   uglifier (>= 1.3.0)
+  webmock
   wysiwyg-rails

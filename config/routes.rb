@@ -20,6 +20,9 @@ Rails.application.routes.draw do
   get '/terms-and-conditions' => 'static_pages#terms_and_conditions'
   get '/cancellation-policy' => 'static_pages#cancellation_policy'
 
+  get '/students/:id/qr-code' => 'students#qr_code'
+  get '/students/:id/check' => 'students#check_qr_code'
+
   resources :blog, controller: 'posts', only: [:index, :show]
   resources :sponsors, only: [:index, :new, :create] do
     member do
@@ -32,12 +35,6 @@ Rails.application.routes.draw do
   end
 
   resources :speakers, only: [:index, :new, :create] do
-    member do
-      get :thanks
-    end
-  end
-
-  resources :students, only: :create do
     member do
       get :thanks
     end
