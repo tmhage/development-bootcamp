@@ -38,6 +38,8 @@ gem 'mandrill-api'
 
 gem 'rails_12factor', group: :production
 
+gem 'web-console'
+
 group :development do
   gem 'spring'
   gem 'quiet_assets'
