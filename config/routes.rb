@@ -55,7 +55,6 @@ Rails.application.routes.draw do
   get '/sitemap.:format' => 'application#sitemap', constraints: { format: :xml }
 
   namespace :admin do
-    get '/console' => 'console#show'
     resources :posts, except: :show do
       member do
         put :publish
