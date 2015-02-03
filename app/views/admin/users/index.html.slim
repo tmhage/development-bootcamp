@@ -1,0 +1,15 @@
+.user.col-md-12
+  h1 Users
+  .pull-right= link_to 'Add new user', new_admin_user_path,
+    class: 'btn btn-primary'
+
+- @users.each do |user|
+  .user.col-md-12
+    p.bg-info
+      = "#{user.first_name} #{user.last_name}"
+    .col-md-2
+      p= link_to 'Edit', edit_admin_user_path(user)
+      p= link_to 'Delete', admin_user_path(user), method: :delete,
+        data: { confirm: 'Are you sure you want to delete this user?' }
+
+.text-center= paginate @users

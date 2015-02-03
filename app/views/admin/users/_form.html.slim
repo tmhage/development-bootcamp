@@ -1,0 +1,10 @@
+= bootstrap_form_for([:admin, @user]) do |f|
+  = f.text_field :first_name
+  = f.text_field :last_name
+  = f.email_field :email, required: true
+  = f.password_field :password, required: true
+  = f.password_field :password_confirmation, required: true
+  p
+    = link_to 'Cancel', admin_users_path, class: 'btn btn-default'
+    |
+    = f.submit 'Save', class: 'btn btn-primary'
