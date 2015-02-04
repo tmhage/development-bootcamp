@@ -1,6 +1,4 @@
-@import "bootstrap-variables";
-@import "bootstrap.scss";
-
+@import "config/bootstrap-variables";
 body {
   padding-top: $navbar-height + 10px;
 }

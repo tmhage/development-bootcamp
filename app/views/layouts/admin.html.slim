@@ -16,7 +16,8 @@ html
     link rel="icon" href="/favicon.ico" type="image/x-icon"
 
   body
-    = render 'shared/admin_navigation'
+    - if user_signed_in?
+      = render 'shared/admin_navigation'
 
     .container
       - flash.each do |name, msg|
