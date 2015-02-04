@@ -1,0 +1,23 @@
+.footer
+  padding-top: 2em
+  background: $gray-darker
+  color: $gray-lighter
+
+  ul
+    list-style: none
+    margin: 0
+    padding: 0
+
+  .inner
+    @extend .container
+    .sections
+      @extend .row-fluid
+
+      .section
+        @extend .col-md-4
+        padding-bottom: 2em
+
+    .bottom
+      @extend .row-fluid
+      padding-bottom: 2em
+      text-align: center

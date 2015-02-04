@@ -2,6 +2,8 @@
 // defaults to true if twbs-font-path function is present (no function => twbs-font-path('') parsed as string == right side)
 // in Sass 3.3 this can be improved with: function-exists(twbs-font-path)
 $bootstrap-sass-asset-helper: (twbs-font-path("") != unquote('twbs-font-path("")')) !default;
+@import url(http://fonts.googleapis.com/css?family=Courgette);
+
 //
 // Variables
 // --------------------------------------------------
@@ -17,7 +19,7 @@ $gray:                   lighten(#000, 33.5%) !default; // #555
 $gray-light:             lighten(#000, 46.7%) !default; // #777
 $gray-lighter:           lighten(#000, 93.5%) !default; // #eee
 
-$brand-primary:         #428bca !default;
+$brand-primary:         #ffc600 !default;
 $brand-success:         #5cb85c !default;
 $brand-info:            #5bc0de !default;
 $brand-warning:         #f0ad4e !default;
@@ -30,6 +32,12 @@ $green:                 #009966 !default;
 $red:                   #992222 !default;
 $blue:                  #2277cc !default;
 
+//== Page headers
+
+$dbc-navbar-height: 84px;
+$dbc-page-header-height: 480px;
+$dbc-page-header-title-offset: 44px;
+$dbc-page-header-font-size: 24px;
 
 //== Scaffolding
 //
@@ -152,11 +160,11 @@ $table-border-color:            #ddd !default;
 
 $btn-font-weight:                normal !default;
 
-$btn-default-color:              #333 !default;
+$btn-default-color:              #222 !default;
 $btn-default-bg:                 #fff !default;
-$btn-default-border:             #ccc !default;
+$btn-default-border:             #222 !default;
 
-$btn-primary-color:              #fff !default;
+$btn-primary-color:              #222222 !default;
 $btn-primary-bg:                 $brand-primary !default;
 $btn-primary-border:             darken($btn-primary-bg, 5%) !default;
 
