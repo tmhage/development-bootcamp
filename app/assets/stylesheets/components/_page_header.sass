@@ -1,0 +1,80 @@
+.dbc-page-header
+  background-repeat: no-repeat
+  background-position: top center
+  background-color: transparent
+  background-size: cover
+  top: 0
+  left: 0
+  right: 0
+  position: relative
+  margin: 0
+  padding-top: 60px
+  padding-bottom: 60px
+  font-size: $dbc-page-header-font-size
+  min-height: $dbc-page-header-height
+  color: #fff
+
+  .inner
+    @extend .col-md-6
+    @extend .col-md-offset-3
+
+    h1
+      font-size: 6.5rem
+      top: $dbc-page-header-title-offset
+      bottom: 0
+      position: relative
+      text-shadow: 1px 1px 2px rgba(150, 150, 150, 1)
+      z-index: +2
+
+    p
+      position: relative
+      top: $dbc-page-header-title-offset + $dbc-page-header-font-size
+      bottom: 0
+      z-index: +2
+      font-weight: lighter
+
+      &:last-child
+        padding-bottom: 1em
+
+      i.fa
+        color: $yellow
+
+    ul, h4
+      top: $dbc-page-header-title-offset + $dbc-page-header-font-size
+      position: relative
+      z-index: +2
+
+    a:link,
+    a:visited,
+    a:hover
+      color: $yellow
+
+  &.home
+    background-image: image_url('photos/tobacco-entree.jpg')
+
+  &.tickets
+    background-image: image_url('photos/tobacco-cellars.jpg')
+
+  &.program
+    background-image: image_url('photos/tobacco-stairs.jpg')
+
+  &.sponsors
+    background-image: image_url('photos/tobacco-stage.jpg')
+
+  &.speakers
+    background-image: image_url('photos/tobacco-from-stage.jpg')
+
+  &::after
+    content: ""
+    top: 0
+    left: 0
+    bottom: 0
+    right: 0
+    position: absolute
+    z-index: +1
+    background: -moz-linear-gradient(top,  rgba(0,0,0,0) 30%, rgba(0,0,0,0.9) 100%)
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(40%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.9)))
+    background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 40%,rgba(0,0,0,0.9) 100%)
+    background: -o-linear-gradient(top,  rgba(0,0,0,0) 40%,rgba(0,0,0,0.9) 100%)
+    background: -ms-linear-gradient(top,  rgba(0,0,0,0) 40%,rgba(0,0,0,0.9) 100%)
+    background: linear-gradient(to bottom,  rgba(0,0,0,0) 40%,rgba(0,0,0,0.9) 100%)

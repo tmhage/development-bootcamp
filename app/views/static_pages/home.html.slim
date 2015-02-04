@@ -2,103 +2,126 @@
 - meta_description "A week long full time bootcamp to get you to the point where you can start programming on your own. Zero to developer in three sessions of a week."
 - meta_keywords "development, bootcamp, programming, learn, teach, sponsor"
 
-.mod-intro.with-cover-image
-  .inner
-    .cover-image.home
-    h1 Learn to code in a week
-    p Beginner, intermediate, and advanced boot camps, each of one week.
-    p
-      strong 12-18 July,
-      =<> link_to 'Tobacco Theater', 'http://www.tobacco.nl'
-      | Amsterdam
+.dbc-page-header.home
+  .container-fluid
+    .inner
+      h1 Learn to code in a week
+      p Beginner, intermediate, and advanced boot camps, each of one week.
+      p
+        => fa_icon 'map-marker'
+        strong 12-18 July,
+        =<> link_to 'Tobacco Theater', 'http://www.tobacco.nl'
+        | – Amsterdam
 
-.mod-text
+.dbc-continue
+  = fa_icon 'sort-desc'
+
+.dbc-text
+  .inner
+    .centered
+      h2
+        => fa_icon 'cube'
+        | Learn to write code!
+      markdown:
+        Expert programmers and designers will share their best
+        practices with you. The invaluable ability to write code will change
+        your life around. In just one week!
+      p
+        = link_to 'Program', program_path, class: 'button primary'
+        = link_to 'Tickets', tickets_path, class: 'button default'
+
+.dbc-continue
+  = fa_icon 'sort-desc'
+
+.dbc-text-cta
+  .inner
+    .centered
+      p
+        em There is only so
+        mark =<> 'much'
+        | that you can
+        mark =<> 'learn'
+        | in an afternoon workshop, and teaching yourself how to code with online courses will not have you move too fast either. And we want you to move.
+        mark =< 'Fast'
+        | .
+      p = fa_icon 'leaf'
+      p = link_to 'Read full program', program_path, class: 'button primary'
+
+.dbc-text
   .inner
     .block-with-image
-      h2 Learn to write code
       .image
-        = image_tag 'photos/laptop.png'
+        = image_tag 'photos/nosy-people-square.png'
       .content
-        markdown:
-          Expert programmers and designers will share their best
-          practices with you. The invaluable ability to write code will change
-          your life around. In just one week!
-        p
-          = link_to 'Program', program_path, class: 'button'
-          = link_to 'Tickets', tickets_path, class: 'button secondary'
-
-.mod-cta
-  .inner
-    p
-      em There is only so much that you can learn in an afternoon workshop, and teaching yourself how to code with online courses will not have you move too fast either. And we want you to move. Fast.
-    p = link_to 'Read full program', program_path, class: 'button'
-
-.mod-text
-  .inner
-    .block-with-image
-      h2 Follow our evening program
-      .image
-        = image_tag 'photos/nosy-people.png'
-      .content
+        h2
+          => fa_icon 'share-alt'
+          | Follow our evening program
         markdown:
           Experience the vibe of our bootcamps and sit in on our evening
           discussions, knowlegde sharing sessions, and student
           presentations.
 
-          These sessions will be open for visitors so even if you are not part of the bootcamp daily program you will be able to join us in the evening!
+          These sessions will be open for visitors.
         p
-          = link_to 'Program', program_path, class: 'button'
-          = link_to 'Tickets', tickets_path, class: 'button secondary'
+          = link_to 'Program', program_path, class: 'button primary'
+          = link_to 'Tickets', tickets_path, class: 'button default'
 
-.mod-cta
+.dbc-text-cta
   .inner
-    h1 A day at Dev Bootcamp
-    ul.outline
-      li Daily keynote by a high profile expert speaker
-      li Morning workshop sessions in small teams
-      li Lunch cooked at the venue
-      li Afternoon workshop sessions in small teams
-      li Evening sessions (additional tickets for visitors)
-    p
-      em Other activities: sports, party, hackathon, contest.
-    p
-      = link_to 'Program', program_path, class: 'button'
-      = link_to 'Tickets', tickets_path, class: 'button secondary'
+    .normal
+      h1 A day at Dev Bootcamp
+      ul.outline
+        li Daily keynote by a high profile expert speaker
+        li Morning workshop sessions in small teams
+        li Lunch cooked at the venue
+        li Afternoon workshop sessions in small teams
+        li Evening sessions (additional tickets for visitors)
+      p.subnote
+        small Other activities: sports, party, hackathon, contest.
+      p
+        = link_to 'Program', program_path, class: 'button primary'
+        = link_to 'Tickets', tickets_path, class: 'button default'
 
-.mod-text
+.dbc-text
   .inner
     .block-with-image
-      h2 Join our team of experts
       .image
-        = image_tag 'photos/engine.png'
+        = image_tag 'photos/engine-square.png'
       .content
+        h2
+          => fa_icon 'wrench'
+          | Join our team of experts
         markdown:
           Teaching is the best way to develop yourself and our industry!
           Become a mentor for our keynotes or workshop sessions. Apply now.
         p
-          = link_to 'Speakers', speakers_path, class: 'button'
-          = link_to 'Program', program_path, class: 'button secondary'
+          = link_to 'Speakers', speakers_path, class: 'button primary'
+          = link_to 'Program', program_path, class: 'button default'
 
-.mod-cta
+.dbc-text-cta
   .inner
-    p
-      em
-        | We brought decades of experience together in
-        =<> link_to "three beautiful programs", program_path
-        | for new developers. The three combined, offer all the knowledge, tools, and network that you need to head out there by yourself and make a real salary out of this, and not just some crappy internship.
-    p = link_to 'Read full program', program_path, class: 'button'
+    .centered
+      p
+        em
+          | We brought decades of experience together in
+          =<> link_to "three beautiful programs", program_path
+          | for new developers. The three combined, offer all the knowledge, tools,
+          | and network that you need to head out there by yourself and make a life out of this.
+      p = link_to 'Read full program', program_path, class: 'button primary'
 
-.mod-text
+.dbc-text
   .inner
     .block-with-image
-      h2 Invest in the future of software
       .image
-        = image_tag 'photos/boat.png'
+        = image_tag 'photos/boat-square.png'
       .content
+        h2
+          => fa_icon 'rocket'
+          | Invest in the future of software
         markdown:
           Our students learn to write code and they will be your future
           clients. This is an excellent opportunity to bring your brand
           to their attention. Check our sponsor plans.
         p
-          = link_to 'Sponsors', sponsors_path, class: 'button'
-          = link_to 'Program', program_path, class: 'button secondary'
+          = link_to 'Sponsors', sponsors_path, class: 'button primary'
+          = link_to 'Program', program_path, class: 'button default'
