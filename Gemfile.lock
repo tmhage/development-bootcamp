@@ -40,6 +40,7 @@ GEM
     bootstrap-generators (3.2.0)
       railties (>= 3.1.0)
     bootstrap_form (2.2.0)
+    bower-rails (0.9.2)
     builder (3.2.2)
     byebug (3.5.1)
       columnize (~> 0.8)
@@ -70,6 +71,12 @@ GEM
       execjs
     coffee-script-source (1.8.0)
     columnize (0.9.0)
+    compass (0.12.7)
+      chunky_png (~> 1.2)
+      fssm (>= 0.2.7)
+      sass (~> 3.2.19)
+    compass-rails (2.0.0)
+      compass (>= 0.12.2)
     connection_pool (2.1.1)
     countries (0.10.0)
       currencies (~> 0.4.2)
@@ -190,6 +197,7 @@ GEM
     formatador (0.2.5)
     friendly_id (5.0.5)
       activerecord (>= 4.0.0)
+    fssm (0.2.10)
     gibbon (1.1.4)
       httparty
       multi_json (>= 1.3.4)
@@ -425,11 +433,13 @@ DEPENDENCIES
   appsignal
   bootstrap-generators (~> 3.2.0)
   bootstrap_form
+  bower-rails
   byebug
   capybara
   carrierwave
   codeclimate-test-reporter
   coffee-rails (~> 4.0.0)
+  compass-rails
   connection_pool
   country_select
   dalli
