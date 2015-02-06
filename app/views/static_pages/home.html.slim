@@ -30,9 +30,6 @@
         = link_to 'Program', program_path, class: 'button primary'
         = link_to 'Tickets', tickets_path, class: 'button default'
 
-.dbc-continue
-  = fa_icon 'sort-desc'
-
 .dbc-text-cta
   .inner
     .centered
@@ -69,7 +66,9 @@
 .dbc-text-cta
   .inner
     .normal
-      h1 A day at Dev Bootcamp
+      h1
+        => fa_icon 'sun-o'
+        | A day at Dev Bootcamp
       ul.outline
         li Daily keynote by a high profile expert speaker
         li Morning workshop sessions in small teams
@@ -93,7 +92,8 @@
           | Join our team of experts
         markdown:
           Teaching is the best way to develop yourself and our industry!
-          Become a mentor for our keynotes or workshop sessions. Apply now.
+          Become a speaker for our keynotes or mentor for our workshop
+          sessions. Apply now.
         p
           = link_to 'Speakers', speakers_path, class: 'button primary'
           = link_to 'Program', program_path, class: 'button default'
