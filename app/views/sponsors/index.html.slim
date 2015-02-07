@@ -3,35 +3,37 @@
 - meta_keywords "sponsors, development, bootcamp, programming, learn, teach, sponsor"
 
 - cache 'sponsors-intro' do
-  .mod-intro.with-cover-image
-    .inner
-      .cover-image.sponsors
-      /! Later: We are grateful to our sponsors. None of this would be possible without them!
-      h1 Sponsors
+  .dbc-page-header.sponsors
+    .container-fluid
+      .inner
+        /! Later: We are grateful to our sponsors. None of this would be possible without them!
+        h1 Sponsors
 
-      markdown:
-        To be able to teach more people, we are looking for the support to **minimize
-        the cost** per participant without lowering the quality of the program we
-        are preparing.
-      p
-        = link_to 'Support us', plans_sponsors_path, class: 'button'
-        = link_to 'Apply now!', new_sponsor_path, class: 'button secondary'
+        markdown:
+          To be able to **teach more people**, we are looking for the support to minimize
+          costs for participants without lowering the quality of the program we
+          are preparing.
+        p
+          = link_to 'Sponsor plans', plans_sponsors_path, class: 'button primary'
+          = link_to 'Apply now!', new_sponsor_path, class: 'button default'
 
 - cache cache_key_for_sponsors do
   - Sponsor.plans.keys.each do |plan|
     - if @sponsors.where(plan: plan).count > 0
-      div class="mod-sponsors #{plan}"
+      div class="dbc-sponsors #{plan}"
         .inner
           h1= t("plans.title.#{plan}")
-          - @sponsors.where(plan: plan).each do |sponsor|
-            - cache sponsor do
-              .sponsor
-                .logo
-                  = image_tag sponsor.logo.thumb if sponsor.logo.present?
-                h2 = sponsor.name
-                p = sponsor.description.html_safe
-                - if sponsor.website.present?
-                  p = link_to "#{sponsor.name} website", sponsor.website
+        - @sponsors.where(plan: plan).in_groups_of(4) do |group|
+          .inner
+            - group.compact.each do |sponsor|
+              - cache sponsor do
+                .sponsor
+                  .logo
+                    = image_tag sponsor.logo.thumb if sponsor.logo.present?
+                  h2 = sponsor.name
+                  p = sponsor.description.html_safe
+                  - if sponsor.website.present?
+                    p = link_to "#{sponsor.name} website", sponsor.website
 
   - if @sponsors.where(plan: 'partner').count > 0
     div class="mod-sponsors partner"
@@ -47,10 +49,10 @@
               - if sponsor.website.present?
                 p = link_to "#{sponsor.name} website", sponsor.website
 
-- cache 'sponsor-cta' do
-  .mod-cta
-    .inner
+.dbc-text
+  .inner
+    .centered
       p We are looking for sponsors and partners. Would you like to collaborate with us? Check out our sponsor plans!
       p
-        = link_to 'Check the plans', plans_sponsors_path, class: 'button'
-        = link_to 'Apply now!', new_sponsor_path, class: 'button secondary'
+        = link_to 'Check the plans', plans_sponsors_path, class: 'button primary'
+        = link_to 'Apply now!', new_sponsor_path, class: 'button default'
