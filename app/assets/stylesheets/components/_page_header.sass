@@ -32,12 +32,24 @@
       bottom: 0
       z-index: +2
       font-weight: lighter
+      padding-bottom: 1em
 
-      &:last-child
-        padding-bottom: 1em
-
-      i.fa
+      i.fa,
+      strong
         color: $yellow
+
+      .button
+        @extend .btn-lg
+
+        &.primary
+          color: $gray-darker
+
+        &.default
+          color: $gray-lighter
+          border-color: $gray-lighter
+
+          &:hover
+            background: none
 
     ul, h4
       top: $dbc-page-header-title-offset + $dbc-page-header-font-size
