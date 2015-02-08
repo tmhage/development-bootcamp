@@ -3,150 +3,163 @@
 - meta_keywords "sponsor plans, sponsoring, sponsor, development, bootcamp, programming, learn, teach, sponsor"
 
 - cache 'sponsor-plans-intro' do
-  .mod-intro.with-cover-image
-    .inner
-      .cover-image.sponsors
-      h1 Call for Sponsors!
-      markdown:
-        The IT industry grew enormously in the last decades, and what people
-        studied back in the days does not match the need of the market nowadays.
-        We will help them get on the development track, and they will be your
-        future customers.
+  .dbc-page-header.sponsors
+    .container-fluid
+      .inner
+        h1 Call for Sponsors!
+        markdown:
+          The IT industry grew enormously in the last decades, and what people
+          studied back in the days does not match the need of the market nowadays.
+          We will help them get on the development track, and they might be your
+          future customers.
 
-        To be able to teach more people, we are looking for the support to **minimize
-        the cost** per participant without lowering the quality of the program we
-        are preparing. If you have more questions or more ideas how you could
-        **support us**, please do not hesitate to contact us! We will make sure we
-        find an option that suits you best!
-      p
-        = link_to 'Download Information', image_path('sponsors/Development Bootcamp - Sponsor Proposition.pdf'), class: 'button'
-        = link_to 'More info', '#plans', class: 'button secondary'
+          To be able to teach more people, we are looking for the support to **minimize
+          the cost** per participant without lowering the quality of the program we
+          are preparing. If you have more questions or more ideas how you could
+          **support us**, please do not hesitate to contact us! We will make sure we
+          find an option that suits you best!
+        p
+          = link_to 'Download Information', image_path('sponsors/Development Bootcamp - Sponsor Proposition.pdf'), class: 'button primary'
+          = link_to 'More info', '#plans', class: 'button default'
+
+.dbc-continue
+  = fa_icon 'sort-desc'
 
 - cache 'sponsor-plans-list' do
-  .mod-text#plans
+  .dbc-text-sponsors#plans
     .inner
-      h2 Platinum package (Max. 2 spots)
-      .button.price.platinum= package_price(:platinum)
-      markdown:
-        - Recognition as a Platinum sponsor on the Development Bootcamp website
-        - Your logo on the certificate that students get after the bootcamp
-        - Social network (Twitter, Facebook, LinkedIn) post about becoming a sponsor
-        - Emailing subscribed students about you becoming a sponsor shortly before the event
-        - Social network (Twitter, Facebook, LinkedIn) 1 post as thank you note
-        - Logo in the "thank you" email that will be sent out
-        - Sponsor booth at the event
-        - Opportunity for a blog post on the dev bootcamp site
-        - Logo in the Development bootcamp video before the start of the day
-        - Opportunity to place a company banner near the speaker’s podium
-        - Up to 3 company items for the swag bag
-        - 2 Bootcamp tickets and 5 Evening tickets
-        - Opportunity to speak in front of the participants about why technology is important at your company
-        - Opportunity to send out a newsletter to all our participants
-      p
-        = link_to "Register", new_sponsor_path(plan: :platinum), class: 'button'
-        = link_to "More info", "#more-info", class: 'button secondary'
+      .sponsor-plan.platinum
+        h2 Platinum package (Max. 2 spots)
+        .button.price.platinum= package_price(:platinum)
+        markdown:
+          - Recognition as a Platinum sponsor on the Development Bootcamp website
+          - Your logo on the certificate that students get after the bootcamp
+          - Social network (Twitter, Facebook, LinkedIn) post about becoming a sponsor
+          - Emailing subscribed students about you becoming a sponsor shortly before the event
+          - Social network (Twitter, Facebook, LinkedIn) 1 post as thank you note
+          - Logo in the "thank you" email that will be sent out
+          - Sponsor booth at the event
+          - Opportunity for a blog post on the dev bootcamp site
+          - Logo in the Development bootcamp video before the start of the day
+          - Opportunity to place a company banner near the speaker’s podium
+          - Up to 3 company items for the swag bag
+          - 2 Bootcamp tickets and 5 Evening tickets
+          - Opportunity to speak in front of the participants about why technology is important at your company
+          - Opportunity to send out a newsletter to all our participants
+        p
+          = link_to "Register", new_sponsor_path(plan: :platinum), class: 'button primary'
+          = link_to "More info", "#more-info", class: 'button default'
+    .inner
+      .sponsor-plan.gold
+        h2 Gold package (Unlimited spots)
+        .button.price.gold= package_price(:gold)
+        markdown:
+          - Recognition as a Gold sponsor on the development bootcamp website
+          - _First 3 Gold sponsors_ get their logo on the certificate that students get after the bootcamp
+          - 10 minutes lightning talk (free topic) or 20 minutes if topic from the list of topics
+          - 1/2 page Color Advertisement in the Development Bootcamp Program
+          - Logo on the website (within the corresponding category)
+          - Social network (Twitter, Facebook, LinkedIn) post about becoming a sponsor
+          - Social network (Twitter, Facebook, LinkedIn) 1 post as thank you note
+          - Sponsor booth at the event
+          - Opportunity for a blog post on the dev bootcamp site
+          - Logo in the Development bootcamp video before the start of the day
+          - Up to 2 company items for the swag bag
+          - 1 Bootcamp ticket and 4 Evening tickets
+        p
+          = link_to "Register", new_sponsor_path(plan: :gold), class: 'button primary'
+          = link_to "More info", "#more-info", class: 'button default'
 
-      h2 Gold package (Unlimited spots)
-      .button.price.gold= package_price(:gold)
-      markdown:
-        - Recognition as a Gold sponsor on the development bootcamp website
-        - _First 3 Gold sponsors_ get their logo on the certificate that students get after the bootcamp
-        - 10 minutes lightning talk (free topic) or 20 minutes if topic from the list of topics
-        - 1/2 page Color Advertisement in the Development Bootcamp Program
-        - Logo on the website (within the corresponding category)
-        - Social network (Twitter, Facebook, LinkedIn) post about becoming a sponsor
-        - Social network (Twitter, Facebook, LinkedIn) 1 post as thank you note
-        - Sponsor booth at the event
-        - Opportunity for a blog post on the dev bootcamp site
-        - Logo in the Development bootcamp video before the start of the day
-        - Up to 2 company items for the swag bag
-        - 1 Bootcamp ticket and 4 Evening tickets
-      p
-        = link_to "Register", new_sponsor_path(plan: :gold), class: 'button'
-        = link_to "More info", "#more-info", class: 'button secondary'
+    .inner
+      .sponsor-plan.silver
+        h2 Silver package (Unlimited spots)
+        .button.price.silver= package_price(:silver)
+        markdown:
+          - Recognition as a Silver sponsor on the development bootcamp website
+          - 10 minutes lightning talk (free topic) or 20 minutes if topic from the list of topics
+          - Logo on the website (within the corresponding category)
+          - Social network (Twitter, Facebook, LinkedIn) 1 post as thank you note
+          - Company item for the swag bag
+          - 2 Evening tickets
+        p
+          = link_to "Register", new_sponsor_path(plan: :silver), class: 'button primary'
+          = link_to "More info", "#more-info", class: 'button default'
 
-      h2 Silver package (Unlimited spots)
-      .button.price.silver= package_price(:silver)
-      markdown:
-        - Recognition as a Silver sponsor on the development bootcamp website
-        - 10 minutes lightning talk (free topic) or 20 minutes if topic from the list of topics
-        - Logo on the website (within the corresponding category)
-        - Social network (Twitter, Facebook, LinkedIn) 1 post as thank you note
-        - Company item for the swag bag
-        - 2 Evening tickets
-      p
-        = link_to "Register", new_sponsor_path(plan: :silver), class: 'button'
-        = link_to "More info", "#more-info", class: 'button secondary'
+    .inner
+      .sponsor-plan.exclusive
+        h2 Exclusive packages
 
-      h2 Exclusive packages
+        h3 Party support (1 spot)
+        .button.green.price= package_price(:party)
+        markdown:
+          - A party named after you
+          - Social network (Twitter, Facebook, LinkedIn) 1 post as thank you note
+        p
+          = link_to "Register", new_sponsor_path(plan: :party), class: 'button primary'
+          = link_to "More info", "#more-info", class: 'button default'
 
-      h3 Party support (1 spot)
-      .button.green.price= package_price(:party)
-      markdown:
-        - A party named after you
-        - Social network (Twitter, Facebook, LinkedIn) 1 post as thank you note
-      p
-        = link_to "Register", new_sponsor_path(plan: :party), class: 'button'
-        = link_to "More info", "#more-info", class: 'button secondary'
+        h3 Dinner support (3 spots)
+        .button.green.price= package_price(:dinner)
+        markdown:
+          - Promoting you as a dinner sponsor
+          - Social network (Twitter, Facebook, LinkedIn) 1 post as thank you note
+        p
+          = link_to "Register", new_sponsor_path(plan: :dinner), class: 'button primary'
+          = link_to "More info", "#more-info", class: 'button default'
 
-      h3 Dinner support (3 spots)
-      .button.green.price= package_price(:dinner)
-      markdown:
-        - Promoting you as a dinner sponsor
-        - Social network (Twitter, Facebook, LinkedIn) 1 post as thank you note
-      p
-        = link_to "Register", new_sponsor_path(plan: :dinner), class: 'button'
-        = link_to "More info", "#more-info", class: 'button secondary'
-
-      h3 Hackathon support (1 spot)
-      .button.price.green= package_price(:hackathon)
-      markdown:
-        - Choosing and presenting the theme for the hackathon
-        - Social network (Twitter, Facebook, LinkedIn) 1 post as thank you note
-        - Shared access to the code created at the hackathon
-      p
-        = link_to "Register", new_sponsor_path(plan: :hackathon), class: 'button'
-        = link_to "More info", "#more-info", class: 'button secondary'
+        h3 Hackathon support (1 spot)
+        .button.price.green= package_price(:hackathon)
+        markdown:
+          - Choosing and presenting the theme for the hackathon
+          - Social network (Twitter, Facebook, LinkedIn) 1 post as thank you note
+          - Shared access to the code created at the hackathon
+        p
+          = link_to "Register", new_sponsor_path(plan: :hackathon), class: 'button primary'
+          = link_to "More info", "#more-info", class: 'button default'
 
 - cache 'contact-sponsors-cta'
-  .mod-cta
+  .dbc-text-cta
     .inner
-      h1 Contact us
-      p Want more details? Any concerns? Feel free to contact us.
-      p
-        | Email us on
-        =< mail_to 'sponsors@developmentbootcamp.nl'
+      .centered
+        h1
+          => fa_icon 'heart'
+          | Contact us!
+        p Want more details? Any concerns? Feel free to contact us.
+        p
+          | Email us on
+          =< mail_to 'sponsors@developmentbootcamp.nl'
 
 - cache 'sponsor-plans-cta' do
-  .mod-text#more-info
+  .dbc-text#more-info
     .inner
-      h2 What’s in it for you?
+      .text
+        h2 What’s in it for you?
 
-      markdown:
-        Why this could be interesting for you is because you might be one of those
-        companies that is **struggling with finding the right people**, maybe you would
-        like to **promote you business** and get more people interested in your
-        products or services?
+        markdown:
+          Why this could be interesting for you is because yours might be one of those
+          companies that is **struggling with finding the right people**, maybe you would
+          like to **promote you business** and get more people interested in your
+          products or services?
 
-        The event will gather a lot of participants that are interested in developing
-        themselves as a programmer. With different backgrounds but one common
-        goal - **become** a professional **developer**. Do you feel your business
-        needs a person that is not just a good developer but also has a **background
-        in psychology, art or music**? Combining different backgrounds can help
-        your **business grow better and faster**!
+          The event will gather a lot of participants that are interested in developing
+          themselves as a programmer. With different backgrounds but one common
+          goal - **become** a professional **developer**. Do you feel your business
+          needs a person that is not just a good developer but also has a **background
+          in psychology, art or music**? Combining different backgrounds can help
+          your **business grow better and faster**!
 
-        Maybe you would like your **project managers** to follow the course in order
-        to improve themselves? Maybe your **testers** could use some **knowledge of
-        programming**?
+          Maybe you would like your **project managers** to follow the course in order
+          to improve themselves? Maybe your **testers** could use some **knowledge of
+          programming**?
 
-        Or maybe you are just simply one of those companies that particularly **value**
-        this kind of **initiatives** and you would like your name to be pointed out?
+          Or maybe you are just simply one of those companies that particularly **value**
+          this kind of **initiatives** and you would like your name to be pointed out?
 
-        We are looking for the support to **minimize the cost** per participant without
-        lowering the quality of the program we are preparing. If you have more questions
-        or more ideas how you could **support us**, please do not hesitate to  contact us!
-        We will make sure we find an option that suits you best!
+          We are looking for the support to **minimize the cost** per participant without
+          lowering the quality of the program we are preparing. If you have more questions
+          or more ideas how you could **support us**, please do not hesitate to  contact us!
+          We will make sure we find an option that suits you best!
 
-      p
-        = link_to 'Download Information', image_url('sponsors/Development Bootcamp - Sponsor Proposition.pdf'), class: 'button'
-        = link_to 'Plans', '#plans', class: 'button secondary'
+        p
+          = link_to 'Download Information', image_url('sponsors/Development Bootcamp - Sponsor Proposition.pdf'), class: 'button primary'
+          = link_to 'Plans', '#plans', class: 'button default'
