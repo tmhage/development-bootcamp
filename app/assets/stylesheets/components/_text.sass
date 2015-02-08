@@ -11,10 +11,10 @@
       text-align: center
 
     .centered,
-    .normal
+    .normal,
+    .text
       @extend .col-md-8
       @extend .col-md-offset-2
-      font-size: 32px
 
       h1, h2, h3, h4
         font-family: 'Courgette', cursive
@@ -25,6 +25,10 @@
         padding-bottom: 0.2em
         margin-bottom: 0.3em
         border-bottom: 1px solid $yellow
+
+    .centered,
+    .normal,
+      font-size: 32px
 
       p
         font-weight: lighter
@@ -59,10 +63,9 @@
         p
           margin-bottom: 1em
 
-.dbc-text-cta
+.dbc-text-cta,
+.dbc-text-sponsors
   @extend .dbc-text
-  background: $gray-darker
-  color: $gray-lighter
   font-family: 'Courgette', cursive
 
   mark
@@ -75,6 +78,31 @@
   p.subnote,
   ul
     font-family: $font-family-base
+
+  .sponsor-plan
+    @extend .col-md-6
+    @extend .col-md-offset-3
+
+    &.platinum
+      h2,h3
+        color: $purple
+
+    &.gold
+      h2,h3
+        color: $yellow
+
+    &.silver,
+    &.exclusive
+      h2,h3
+        color: $gray
+
+    &.exclusive
+      h2
+        color: $green
+
+.dbc-text-cta
+  background: $gray-darker
+  color: $gray-lighter
 
   .button.default
     border-color: $gray-lighter

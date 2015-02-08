@@ -3,82 +3,77 @@
 - meta_keywords "sponsoring, sponsor, development, bootcamp, programming, learn, teach, sponsor"
 
 - cache 'new-sponsors-intro' do
-  .mod-intro.with-cover-image
-    .inner
-      .cover-image.sponsors
-      h1 Register as a sponsor
-      p Please fill in the form and we will contact you as soon as possible.
+  .dbc-page-header.sponsors
+    .container-fluid
+      .inner
+        h1 Become a sponsor!
+        p Please fill in the form below and we will contact you as soon as possible.
 
+.dbc-continue
+  = fa_icon 'sort-desc'
 
-.mod-text#sponsor-form
+.dbc-form#sponsor-form
   .inner
-    - if @sponsor.errors.full_messages.any?
-      h3.form-error The following errors prevented us from saving your request.
-      ul.form-errors
-        - @sponsor.errors.full_messages.each do |error_message|
-          li = error_message
-    = form_for @sponsor do |f|
-      .input
-        = f.label :plan, "Plan&nbsp&nbsp&nbsp&nbsp(#{link_to 'Read more about the plans', plans_sponsors_path})".html_safe
-        = f.select :plan, sponsor_plans_collection, selected: params[:plan]
+    .form
+      h2 Apply for a sponsor package
 
-      .input
-        = f.label :first_name
-        = f.text_field :first_name, required: true
+      - if @sponsor.errors.full_messages.any?
+        h3.form-error The following errors prevented us from saving your request.
+        ul.form-errors
+          - @sponsor.errors.full_messages.each do |error_message|
+            li = error_message
+      = bootstrap_form_for @sponsor, layout: :horizontal do |f|
+        .input
+          = f.select :plan, sponsor_plans_collection, selected: params[:plan], help: link_to('Read more about the plans', plans_sponsors_path), include_blank: true
+          = f.text_field :first_name, required: true
+          = f.text_field :last_name, required: true
+          = f.text_field :name, required: true, label: 'Company:'
+          = f.text_field :email, type: 'email', required: true, placeholder: 'you@organization.co'
+          = f.text_field :website, type: 'website', required: false, placeholder: 'http://', label: 'Website (optional)'
 
-      .input
-        = f.label :last_name
-        = f.text_field :last_name, required: true
+          = f.text_area :remarks, required: false, placeholder: "Anything you'd like to share?", label: 'Remarks (optional)'
 
-      .input
-        = f.label :name, 'Company name:'
-        = f.text_field :name, required: true
-
-      .input
-        = f.label :email
-        = f.text_field :email, type: 'email', required: true, placeholder: 'you@organization.co'
-
-      .input
-        = f.label :website, 'Website (optional)'
-        = f.text_field :website, type: 'website', required: false, placeholder: 'http://'
-
-
-      .input
-        = f.label :remarks, 'Remarks (optional)'
-        = f.text_area :remarks, required: false, placeholder: "Anything you'd like to share?"
-
-      br
-      = f.submit 'Contact me!', class: 'button'
-      br
-      i.small By clicking this button you accept the love and gratitude of us and our students.
+        = f.form_group do
+          = f.primary 'Contact me!', class: 'button'
+          br
+          br
+            em By clicking this button you accept the love and gratitude of us and our students.
 
 - cache 'new-sponsor-cta'
-  .mod-cta
+  .dbc-text-cta
     .inner
-      h1 Contact us
-      p Want more details? Any concerns? Feel free to contact us.
-      p
-        | Email us on
-        =< mail_to 'sponsors@developmentbootcamp.nl'
+      .centered
+        h1
+          => fa_icon 'heart'
+          | Contact us!
+        p Want more details? Any concerns? Feel free to contact us.
+        p
+          | Email us on
+          =< mail_to 'sponsors@developmentbootcamp.nl'
 
 - cache 'new-sponsors-description' do
-  .mod-text
+  .dbc-text
     .inner
-      markdown:
-        We want to help our students as best as we can during their **learning experience** at
-        the conference and after that. We are looking for sponsors to **keep the costs** of
-        admission tickets as **low** as possible **for students**, _and_ we are looking for companies
-        who want to **adopt students** as they decide to continue down the path of learning how to
-        program.
+      .text
+        h2 Want to help out?
 
-        So here's what we need:
+        markdown:
+          We want to help our students as best as we can during their **learning experience** at
+          the conference and after that. We are looking for sponsors to **keep the costs** of
+          admission tickets as **low** as possible **for students**, _and_ we are looking for companies
+          who want to **adopt students** as they decide to continue down the path of learning how to
+          program.
 
-          - Internships and admission fees for students through our adoption program
-          - Donations to help with (the costs of) the venue, wifi, food, etc.
-          - VPS's / Hosting credit that we can use during workshops etc.
-          - [Speakers and teachers](/speakers)!
+          So here's what we need:
 
-        Would you like to register your company as one of the sponsors? Please fill in the
-        form and we will contact you as soon as possible. Any help is appreciated.
+            - Internships and admission fees for students through our adoption program
+            - Donations to help with (the costs of) the venue, wifi, food, etc.
+            - VPS's / Hosting credit that we can use during workshops etc.
+            - [Speakers](/speakers), teachers, and mentors!
 
-      p = link_to "Help out!", "#sponsor-form", class: 'button'
+          Would you like to register your company as one of the sponsors? Please fill in the
+          form and we will contact you as soon as possible. Any help is appreciated.
+
+        p
+          = link_to "Help funding", "#sponsor-form", class: 'button primary'
+          = link_to 'Help teaching', new_speaker_path, class: 'button default'
