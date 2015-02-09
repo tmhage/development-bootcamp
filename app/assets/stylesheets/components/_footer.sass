@@ -1,12 +1,22 @@
 .footer
   padding-top: 2em
-  background: $gray-darker
+  background: $gray-lighter
   color: $gray-light
+  font-size: 0.8em
+
+  a:link,
+  a:hover,
+  a:visited
+    color: $gray-light
 
   ul
     list-style: none
     margin: 0
     padding: 0
+
+    .fa,
+    ul
+      display: none
 
   .inner
     @extend .container
@@ -14,8 +24,11 @@
       @extend .row
 
       .section
-        @extend .col-md-4
+        @extend .col-md-3
         padding-bottom: 2em
+
+        &:first-child
+          @extend .col-md-offset-1
 
     .bottom
       @extend .row
