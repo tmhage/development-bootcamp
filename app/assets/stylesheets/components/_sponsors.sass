@@ -3,6 +3,15 @@
   .inner
     @extend .row
 
+    .page-title
+      @extend .col-sm-offset-2
+      @extend .col-sm-9
+      margin-top: 3em
+      margin-bottom: 2em
+
     .sponsor
-      @extend .col-sm-4
+      @extend .col-sm-3
+
+      &:first-child
+        @extend .col-sm-offset-2
 

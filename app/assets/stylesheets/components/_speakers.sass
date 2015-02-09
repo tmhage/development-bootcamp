@@ -1,0 +1,57 @@
+.dbc-speakers
+  @extend .container-fluid
+  .inner
+    @extend .row
+    @extend .col-lg-offset-2
+    @extend .col-md-offset-1
+
+    .page-title
+      @extend .col-lg-9
+      margin-top: 3em
+      margin-bottom: 2em
+
+    .speaker
+      @extend .col-md-10
+      @extend .col-lg-5
+      .avatar
+        @extend .col-lg-5
+        text-align: center
+        img
+          margin: 0 auto
+          @extend .img-circle
+          @extend .img-responsive
+        p
+          font-size: 1.25em
+          margin-top: 5px
+
+        a:link,
+        a:hover,
+        a:visited
+          color: $purple
+          margin: 5px
+          transition: color 350ms ease-in-out
+          text-decoration: none
+          font-size: 1.25em
+        a:hover
+          color: $yellow
+      .bio
+        @extend .col-lg-7
+
+        h2
+          margin-top: 5px
+          font-size: 1.125em
+
+        p
+          font-size: 0.925em
+          font-weight: light
+
+@media (max-width: $screen-md-max)
+  .dbc-speakers .speaker
+    margin-top: 2em
+    .avatar
+      img
+        width: 50%
+
+@media (max-width: $screen-xs-max)
+  .dbc-speakers .speaker .avatar img
+    width: 75%

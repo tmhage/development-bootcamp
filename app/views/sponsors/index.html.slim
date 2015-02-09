@@ -24,7 +24,8 @@
       - if @sponsors.where(plan: plan).count > 0
         .dbc-sponsors class=plan
           .inner
-            h1= t("plans.title.#{plan}")
+            .page-title
+              h1= t("plans.title.#{plan}")
             - @sponsors.where(plan: plan).in_groups_of(3) do |group|
               .inner
                 - group.compact.each do |sponsor|
@@ -36,6 +37,7 @@
                       p = sponsor.description.html_safe
                       - if sponsor.website.present?
                         p = link_to "#{sponsor.name} website", sponsor.website
+
     - if @sponsors.where(plan: 'partner').count > 0
       div class="mod-sponsors partner"
         .inner
