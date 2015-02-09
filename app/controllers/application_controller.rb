@@ -36,4 +36,8 @@ class ApplicationController < ActionController::Base
         :first_name, :last_name)
     end
   end
+
+  def disable_sidebar
+    @show_sidebar = false
+  end
 end
