@@ -50,10 +50,11 @@
                 - if sponsor.website.present?
                   p = link_to "#{sponsor.name} website", sponsor.website
 
-  .dbc-text
-    .inner
-      .centered
-        p We are looking for sponsors and partners. Would you like to collaborate with us? Check out our sponsor plans!
-        p
-          = link_to 'Check the plans', plans_sponsors_path, class: 'button primary'
-          = link_to 'Apply now!', new_sponsor_path, class: 'button default'
+  - cache 'sponsors-index-cta'
+    .dbc-text
+      .inner
+        .centered
+          p We are looking for more sponsors and partners. Would you like to collaborate with us? Check out our sponsor plans!
+          p
+            = link_to 'Check the plans', plans_sponsors_path, class: 'button primary'
+            = link_to 'Apply now!', new_sponsor_path, class: 'button default'
