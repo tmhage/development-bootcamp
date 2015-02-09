@@ -7,6 +7,36 @@ body
   border-bottom: 3px solid $purple
   font-weight: bold
 
-  ul.navbar-nav
-    margin-left: 40px
-    margin-top: 25px
+  .navbar-brand
+    position: relative
+    z-index: 1000
+
+.navbar-default .navbar-toggle
+  border-color: $purple
+  .icon-bar
+    background-color: $purple
+  &:focus
+    background-color: transparent
+    border-color: $purple
+    .icon-bar
+      background-color: $purple
+  &:hover
+    background-color: $purple
+    .icon-bar
+      background-color: $yellow
+
+@media (max-width: $screen-xs-max)
+  .navbar
+    height: auto
+    min-height: $dbc-navbar-height
+  .navbar-collapse
+    border: 0
+    box-shadow: none
+    z-index: 100
+    background: $yellow
+    padding: 0
+
+    ul.navbar-nav
+      margin-left: 0
+      margin-top: 25px
+      margin-bottom: 0
