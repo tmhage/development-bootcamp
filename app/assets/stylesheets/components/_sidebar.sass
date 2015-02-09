@@ -1,0 +1,38 @@
+.dbc-sidebar
+  nav
+    ul
+      list-style: none
+      margin: 2em
+      padding: 0
+
+      li
+        margin-bottom: 1em
+        font-weight: bold
+
+        ul
+          margin: 0.5em 0 0.5em 0.5em
+          font-size: 0.8em
+
+          li
+            margin-bottom: 0.5em
+            font-weight: normal
+
+            &.active
+              font-weight: bold
+
+        & > ul
+          display: none
+
+        a:link,
+        a:hover,
+        a:visited
+          color: $gray-darker
+
+        &.active
+          a:link,
+          a:hover,
+          a:visited
+            color: $purple
+
+          & > ul
+            display: block
