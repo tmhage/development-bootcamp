@@ -8,6 +8,7 @@
       background: #fff
     .l-content
       @extend .col-sm-10
+      border-right: 2px solid $purple
     .l-sidebar
       @extend .col-sm-2
 
@@ -15,3 +16,7 @@
   @extend .row
   @extend .col-lg-offset-2
   @extend .col-md-offset-1
+
+@media (max-width: $screen-sm-min)
+  .l-page .l-main .l-content
+    border-right: 0

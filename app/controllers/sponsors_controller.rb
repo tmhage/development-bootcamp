@@ -1,6 +1,4 @@
 class SponsorsController < ApplicationController
-  before_filter :set_subnav
-
   def index
     @sponsors = Sponsor.active
   end
@@ -25,6 +23,7 @@ class SponsorsController < ApplicationController
   end
 
   def thanks
+    disable_sidebar
     @sponsor = Sponsor.friendly.find(params[:id])
   end
 
@@ -48,13 +47,5 @@ class SponsorsController < ApplicationController
     })
   rescue Gibbon::MailChimpError => e
     logger.error "Could not add #{sponsor.email} to sponsors mailing list: #{e.message}"
-  end
-
-  def set_subnav
-    @nav_items = {
-      'Overview' => sponsors_path,
-      'Plans' => plans_sponsors_path,
-      'Apply' => new_sponsor_path
-    }
   end
 end

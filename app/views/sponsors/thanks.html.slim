@@ -7,7 +7,9 @@ javascript:
 .dbc-text
   .inner
     .centered
-      h1 Thank you, #{@sponsor.first_name}!
+      h1
+        => fa_icon 'check', class: 'green'
+        | Thank you, #{@sponsor.first_name}!
       markdown:
         Thank you for your interest in sponsoring Dev Bootcamp EU. We will contact you soon
         to discuss the details. Additionally, you will receive an email invitation to join

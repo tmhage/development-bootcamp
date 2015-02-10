@@ -36,7 +36,7 @@
                 - cache speaker do
                   .speaker
                     .avatar
-                      = image_tag speaker.gravatar_url(size: 512), class: "gravatar"
+                      = image_tag speaker.gravatar_url(size: 512, secure: true), class: "gravatar"
                       p
                         - if speaker.website.present?
                           = link_to speaker.website do
@@ -52,7 +52,9 @@
     .dbc-text#more-info
       .inner
         .text
-          h2 Share your knowledge
+          h2
+            => fa_icon 'share-alt'
+            | Share your knowledge
 
           markdown:
             Do you have experience in **web development**? **Teaching** and
