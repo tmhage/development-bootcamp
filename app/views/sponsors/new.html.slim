@@ -18,21 +18,16 @@
       .form
         h2 Apply for a sponsor package
 
-        - if @sponsor.errors.full_messages.any?
-          h3.form-error The following errors prevented us from saving your request.
-          ul.form-errors
-            - @sponsor.errors.full_messages.each do |error_message|
-              li = error_message
-        = bootstrap_form_for @sponsor, layout: :horizontal do |f|
-          .input
-            = f.select :plan, sponsor_plans_collection, selected: params[:plan], help: link_to('Read more about the plans', plans_sponsors_path), include_blank: true
-            = f.text_field :first_name, required: true
-            = f.text_field :last_name, required: true
-            = f.text_field :name, required: true, label: 'Company:'
-            = f.text_field :email, type: 'email', required: true, placeholder: 'you@organization.co'
-            = f.text_field :website, type: 'website', required: false, placeholder: 'http://', label: 'Website (optional)'
+        = bootstrap_form_for @sponsor do |f|
+          = f.alert_message "Please fix the errors below."
+          = f.text_field :first_name, required: true
+          = f.text_field :last_name, required: true
+          = f.text_field :name, required: true, label: 'Company:'
+          = f.text_field :email, type: 'email', required: true, placeholder: 'you@organization.co'
+          = f.text_field :website, type: 'website', required: false, placeholder: 'http://', label: 'Website (optional)'
+          = f.select :plan, sponsor_plans_collection, selected: params[:plan], help: link_to('Read more about the plans', plans_sponsors_path), include_blank: true, label: 'Plan (optional)'
 
-            = f.text_area :remarks, required: false, placeholder: "Anything you'd like to share?", label: 'Remarks (optional)'
+          = f.text_area :remarks, required: false, placeholder: "Anything you'd like to share?", label: 'Remarks (optional)'
 
           = f.form_group do
             = f.primary 'Contact me!', class: 'button'

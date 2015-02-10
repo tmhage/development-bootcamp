@@ -23,6 +23,7 @@ class SpeakersController < ApplicationController
   end
 
   def thanks
+    disable_sidebar
     @speaker = Speaker.find(params[:id])
   end
 

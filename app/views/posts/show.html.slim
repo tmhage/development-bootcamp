@@ -13,7 +13,7 @@
     .inner
       - if @post.user && @post.user.first_name
         p.post-meta
-          => image_tag @post.user.gravatar_url, class: "gravatar"
+          => image_tag @post.user.gravatar_url(secure: true), class: "gravatar"
           span.author = "#{@post.user.first_name} #{@post.user.last_name}"
           br
           => @post.created_at.strftime("%d %b %y")
