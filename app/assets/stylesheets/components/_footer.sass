@@ -24,7 +24,7 @@
       @extend .row
 
       .section
-        @extend .col-md-3
+        @extend .col-sm-3
         padding-bottom: 2em
 
         &:first-child
@@ -34,3 +34,7 @@
       @extend .row
       padding-bottom: 2em
       text-align: center
+
+@media (max-width: $screen-sm-min)
+  .footer .sections
+    display: none
