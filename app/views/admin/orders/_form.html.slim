@@ -1,0 +1,12 @@
+h2 Billing Details
+
+= bootstrap_form_for [:admin, @order] do |f|
+  = f.text_field :billing_name, label: 'Full name'
+  = f.text_field :billing_company_name, required: false, label: 'Company name'
+  = f.text_field :billing_email
+  = f.text_field :billing_address
+  = f.text_field :billing_postal
+  = f.text_field :billing_city
+  = f.country_select :billing_country, priority_countries: ['NL', 'DE', 'BE', 'GB']
+  = f.text_field :billing_phone
+  = f.check_box :terms_and_conditions
