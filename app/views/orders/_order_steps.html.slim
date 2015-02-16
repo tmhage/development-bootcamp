@@ -1,5 +1,9 @@
 ol.order-steps
+  - index = 0
   - @order.steps.each do |step|
-    li class="#{ @order.current_step == step ? 'active' : ''}" = order_step_name step
-  li Checkout
-  li Thanks
+    li class="#{ @order.current_step == step ? 'active' : ''}"
+      .number title=order_step_name(step) = order_step_icon(step)
+  li
+    .number title='Payment' = fa_icon('cc-mastercard fw')
+  li
+    .number title='Thank you' = fa_icon('graduation-cap fw')

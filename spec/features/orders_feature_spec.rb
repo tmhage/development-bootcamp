@@ -8,7 +8,7 @@ describe 'the ticket order process' do
     expect(page).to have_content 'Choose your tickets'
 
     within('#orderForm') do
-      fill_in 'Normal Ticket', with: num_tickets
+      fill_in 'order_cart_normal', with: num_tickets
     end
 
     click_button 'Continue'
@@ -32,8 +32,8 @@ describe 'the ticket order process' do
         let(:num_tickets) { 2 }
 
         it 'shows two "student steps" in the list at the top' do
-          expect(page).to have_content 'Student Details 1'
-          expect(page).to have_content 'Student Details 2'
+          expect(page).to have_selector '.number[title="Student Details 1"]'
+          expect(page).to have_selector '.number[title="Student Details 2"]'
         end
       end
 
@@ -47,7 +47,7 @@ describe 'the ticket order process' do
             fill_in 'Address', with: Faker::Address.street_address
             fill_in 'Postal code', with: Faker::Address.zip_code
             fill_in 'City', with: Faker::Address.city
-            select 'Austria', from: 'Country'
+            select 'Austria', from: 'order_billing_country'
             fill_in 'Phone', with: Faker::PhoneNumber.phone_number
             fill_in 'Company name', with: Faker::Company.name
             check 'I have read and agree to the Terms and Cancellation Policy'
@@ -75,6 +75,8 @@ describe 'the ticket order process' do
               select (1..28).to_a.sample, from: 'order_students_attributes_0_birth_date_3i'
               select 'Level 1', from: 'Preferred level'
               fill_in 'Github handle', with: Faker::Internet.user_name
+
+              click_button 'Continue'
             end
           end
 
@@ -84,11 +86,6 @@ describe 'the ticket order process' do
 
           describe 'Payment' do
             before do
-              click_button 'Continue'
-              expect(page).to have_content 'Confirmation'
-            end
-
-            it 'posts and renders the "payment" step' do
               click_button 'Continue'
               expect(page).to have_content 'Order & Payment'
             end
