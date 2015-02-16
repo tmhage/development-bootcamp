@@ -4,34 +4,35 @@
 
 - if @order.current_step == 'tickets'
   - cache 'students-list-intro' do
-    .mod-intro.with-cover-image
-      .inner
-        .cover-image.tickets
-        h1 Register now
+    .dbc-page-header.tickets
+      .container-fluid
+        .inner
+          h1 Register now
 
-        h4  Tickets include:
+          h4  Tickets include:
 
-        markdown:
-          - Access to the Bootcamp: **July 12-18, 2015**
-          - Healthy lunch on Monday - Saturday
-          - Daily Keynotes Sunday - Saturday
-          - Workshops Monday - Saturday
-          - Evening Sessions Sunday - Friday
-          - Coding Contest with great prizes
-          - Certificate upon completion of the program
+          markdown:
+            - Access to the Bootcamp: **July 12-18, 2015**
+            - Healthy lunch on Monday - Saturday
+            - Daily Keynotes Sunday - Saturday
+            - Workshops Monday - Saturday
+            - Evening Sessions Sunday - Friday
+            - Coding Contest with great prizes
+            - Certificate upon completion of the program
 
-        p
-          = link_to 'Register now', '#orderForm', class: 'button'
-          = link_to 'Check our program', program_path, class: 'button secondary'
+          p
+            = link_to 'Register now', '#orderForm', class: 'button primary'
+            = link_to 'Check our program', program_path, class: 'button default'
+.l-wide
+  .dbc-form
+    .inner#orderForm
+      .form
+        = render 'order_steps'
+        = render 'form'
 
-.mod-text
-  .inner#orderForm
-    p.support
-      | Feel free to mail us at
-      strong =<> mail_to 'support@developmentbootcamp.nl'
-      | or call us on
-      strong =<> '+31681910218'
-      | if you have any questions.
-
-    = render 'order_steps'
-    = render 'form'
+        .support-box
+          | Feel free to mail us at
+          strong =<> mail_to 'support@developmentbootcamp.nl'
+          | or call us on
+          strong =<> '+31681910218'
+          | if you have any questions.

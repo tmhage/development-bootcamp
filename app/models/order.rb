@@ -3,19 +3,21 @@ require "Mollie/API/Client"
 class Order < ActiveRecord::Base
   has_paper_trail
 
-  has_many :students
+  has_many :students, inverse_of: :order
 
   validate :validate_cart
 
   validates_presence_of :identifier
 
+  validates_presence_of :cart
+
   validates_presence_of :billing_name, :billing_email, :billing_address,
                         :billing_postal, :billing_city, :billing_country,
-                        :billing_phone, :cart
+                        :billing_phone, if: ->{ at_step_or_after('details') }
 
-  validate :validate_students_amount
+  validate :validate_students_amount, if: ->{ cart_sum_tickets > 0 && at_step_or_after("confirmation") }
 
-  validates :terms_and_conditions, inclusion: { in: [true], message: 'must be accepted.' }
+  validates :terms_and_conditions, inclusion: { in: [true], message: 'must be accepted.' }, if: ->{ at_step_or_after('details') }
 
   accepts_nested_attributes_for :students
 
@@ -57,6 +59,16 @@ class Order < ActiveRecord::Base
 
   def last_step?
     current_step == steps.last
+  end
+
+  def at_step_or_after(step)
+    return true unless steps.include?(step)
+    steps.index(current_step) >= steps.index(step)
+  end
+
+  def after_step(step)
+    return true unless steps.include?(step)
+    steps.index(current_step) > steps.index(step)
   end
 
   def all_valid?
@@ -104,7 +116,7 @@ class Order < ActiveRecord::Base
   end
 
   def validate_students_amount
-    return if students.size == cart_sum_tickets
+    return if students.size == cart_sum_tickets && students.map(&:valid?).all?
     errors.add(:students, "You need to provide details for all #{cart_sum_tickets} students.")
   end
 

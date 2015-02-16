@@ -12,55 +12,57 @@ noscript
   div style="display:inline;"
   img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/967651577/?value=#{"%.2f" % @order.cart_sum_total.to_f}&currency_code=EUR&label=8rjSCMSWmlkQ-eG0zQM&guid=ON&script=0"
 
-.mod-text
-  .inner
-    h1 Thank you for your #{@order.payment && @order.payment.paid? ? 'payment' : 'order'}, #{@order.billing_name}!
+.l-wide
+  .dbc-text
+    .inner
+      .text
+        h1 Thank you for your #{@order.payment && @order.payment.paid? ? 'payment' : 'order'}, #{@order.billing_name}!
 
-    - if @order.payment && @order.payment.paid?
-      markdown:
-        Your payment was processed, and you will receive your #{@order.cart_sum_tickets} #{t('tickets', count: @order.cart_sum_tickets)} shortly by email to **#{@order.billing_email}**.
+        - if @order.payment && @order.payment.paid?
+          markdown:
+            Your payment was processed, and you will receive your #{@order.cart_sum_tickets} #{t('tickets', count: @order.cart_sum_tickets)} shortly by email to **#{@order.billing_email}**.
 
-      - if @order.cart_sum_tickets > 1
+          - if @order.cart_sum_tickets > 1
+            markdown:
+              Individual tickets will also be sent to the individual students: **#{@order.students.pluck(:email).to_sentence}**.
+
+          - if Rails.env.production?
+            javascript:
+              var google_conversion_value = #{@order.cart_sum_total.to_f};
+
+        - elsif @order.payment && @order.payment.cancelled?
+          markdown:
+            Your payment was **cancelled**. If this was a mistake, please retry your payment by clicking
+            the payment button below.
+
+          p = payment_link_to 'Pay now!', @order, class: 'button primary'
+
+        - elsif @order.payment && @order.payment.expired?
+          markdown:
+            Your payment has **expired**. If this was unintentional, please retry your payment by clicking
+            the payment button below.
+
+          p = payment_link_to 'Pay now!', @order, class: 'button primary'
+
+        - elsif @order.payment && @order.payment.open?
+          markdown:
+            You will receive an email with more information as soon as we have processed your
+            payment.
+
+        - else
+          markdown:
+            So sorry, something went wrong and we were not able to track your payment. If you did not pay,
+            please click the button below to make a payment. If you _did_ already pay, however,
+            you should _not_ pay again! Contact us via phone or email. Details below.
+
+          p = payment_link_to 'Pay now!', @order, class: 'button primary'
+
         markdown:
-          Individual tickets will also be sent to the individual students: **#{@order.students.pluck(:email).to_sentence}**.
+          If you have _any_ questions about your order, the program, or
+          anything else we might be able to help you with, feel free to contact us:
 
-      - if Rails.env.production?
-        javascript:
-          var google_conversion_value = #{@order.cart_sum_total.to_f};
+          Email: [support@developmentbootcamp.nl](mailto:support@developmentbootcamp.nl)
 
-    - elsif @order.payment && @order.payment.cancelled?
-      markdown:
-        Your payment was **cancelled**. If this was a mistake, please retry your payment by clicking
-        the payment button below.
+          Phone: **+31681910218**
 
-      p = payment_link_to 'Pay now!', @order, class: 'button'
-
-    - elsif @order.payment && @order.payment.expired?
-      markdown:
-        Your payment has **expired**. If this was unintentional, please retry your payment by clicking
-        the payment button below.
-
-      p = payment_link_to 'Pay now!', @order, class: 'button'
-
-    - elsif @order.payment && @order.payment.open?
-      markdown:
-        You will receive an email with more information as soon as we have processed your
-        payment.
-
-    - else
-      markdown:
-        So sorry, something went wrong and we were not able to track your payment. If you did not pay,
-        please click the button below to make a payment. If you _did_ already pay, however,
-        you should _not_ pay again! Contact us via phone or email. Details below.
-
-      p = payment_link_to 'Pay now!', @order, class: 'button'
-
-    markdown:
-      If you have _any_ questions about your order, the program, or
-      anything else we might be able to help you with, feel free to contact us:
-
-      Email: support@developmentbootcamp.nl
-
-      Phone: +31681910218
-
-= javascript_include_tag '//www.googleadservices.com/pagead/conversion.js'
+    = javascript_include_tag '//www.googleadservices.com/pagead/conversion.js'

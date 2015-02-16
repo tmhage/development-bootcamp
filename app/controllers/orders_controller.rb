@@ -1,6 +1,8 @@
 class OrdersController < ApplicationController
   include TicketMailer
 
+  before_filter :disable_sidebar
+
   before_action :set_order, only: [:show, :thanks, :stripe_token]
 
   protect_from_forgery with: :exception, except: [:webhook, :stripe_webhook]
@@ -23,25 +25,21 @@ class OrdersController < ApplicationController
 
     @order = Order.new(session[:order_params])
 
-    build_students
-
     @order.current_step = session[:order_step]
 
     if params[:back_button]
       @order.previous_step
+      build_students
       @order.valid?
-    end
-
-    if @order.last_step?
+    elsif @order.last_step?
       finish_up_after_confirmation
       @order.save
+    else
+      build_students
+      @order.next_step if @order.valid?
     end
 
-    @order.next_step unless params[:back_button] ||
-      (@order.current_step == 'tickets' && !@order.cart_has_positive_amounts_for_tickets?)
     session[:order_step] = @order.current_step
-
-    @order.valid? if @order.current_step == 'confirmation'
 
     if @order.persisted?
       flash[:notice] = "Thank you for your registration!"
@@ -124,9 +122,24 @@ class OrdersController < ApplicationController
   end
 
   def build_students
+    if @order.current_step =~ /^students/
+      student_index = @order.current_step.split('-').last.to_i + 1
+    else
+      student_index = 0
+    end
     amount_to_build = @order.cart_sum_tickets - @order.students.size
-    return if amount_to_build <= 0
     amount_to_build.times { @order.students.build }
+    students_to_take = @order.students.to_a.first(student_index)
+    @order.students = []
+    logger.info "CURRENT STEP IS: #{(@order.current_step)}!"
+    logger.info "STUDENTS INDEX IS: #{(student_index)}!"
+    logger.info "CART SUM TICKETS IS: #{(@order.cart_sum_tickets)}!"
+    logger.info "AMOUNT TO BUILD IS: #{(amount_to_build)}!"
+    logger.info "STUDENTS TO TAKE SIZE IS: #{(students_to_take.size)}!"
+    students_to_take.each do |student|
+      @order.students << student
+    end
+    logger.info "STUDENTS SIZE IS: #{(@order.students.size)}!"
   end
 
   def finish_up_after_confirmation

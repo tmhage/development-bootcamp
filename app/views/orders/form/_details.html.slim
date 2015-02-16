@@ -1,41 +1,12 @@
 h2 Billing Details
 
-- if @order.errors.full_messages.any?
-  h3.form-error The following errors prevented us from saving your registration.
-  ul.form-errors
-    - @order.errors.full_messages.each do |error_message|
-      li = error_message
-
-.input
-  = f.label :billing_name, 'Full name'
-  = f.text_field :billing_name
-
-.input
-  = f.label :billing_company_name, 'Company name (optional)'
-  = f.text_field :billing_company_name, required: false
-
-.input
-  = f.label :billing_email, 'Email'
-  = f.text_field :billing_email
-
-.input
-  = f.label :billing_address, 'Address'
-  = f.text_field :billing_address
-
-.input
-  = f.label :billing_postal, 'Postal code'
-  = f.text_field :billing_postal
-
-.input
-  = f.label :billing_city, 'City'
-  = f.text_field :billing_city
-
-.input
-  = f.label :billing_country, 'Country'
-  = f.country_select :billing_country, priority_countries: ['NL', 'DE', 'BE', 'GB']
-
-.input
-  = f.label :billing_phone, 'Phone number'
-  = f.text_field :billing_phone
-
+= f.alert_message "Please fix the errors below."
+= f.text_field :billing_name, label: 'Full name'
+= f.text_field :billing_company_name, required: false, label: 'Company name (optional)'
+= f.text_field :billing_email, label: 'Email'
+= f.text_field :billing_address, label: 'Address'
+= f.text_field :billing_postal, label: 'Postal code'
+= f.text_field :billing_city, label: 'City'
+= f.country_select :billing_country, priority_countries: ['NL', 'DE', 'BE', 'GB'], label: 'Country'
+= f.text_field :billing_phone, label: 'Phone number'
 = render 'orders/form/accept_terms', f: f

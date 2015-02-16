@@ -1,5 +1,17 @@
-= form_for @order, url: '/tickets' do |f|
+= bootstrap_form_for @order, url: '/tickets' do |f|
   = render "orders/form/#{@order.current_step.split('-').first}", f: f
-  br
-  = f.submit 'Back', class: 'button secondary', name: 'back_button' unless @order.first_step?
-  = f.submit 'Continue', class: 'button'
+
+  .actions
+    = f.form_group do
+      = f.submit 'Back', class: 'button default', name: 'back_button' unless @order.first_step?
+      = f.submit 'Continue', class: 'button primary'
+
+- if @order.first_step?
+  markdown:
+      * Ticket prices are the same for all [3 levels](#{program_path}).
+      * __* Important!__ We have a very limited number of seats! If you want to secure your place in the program, but
+    you want us to help you pay, _you still need to register_! If you don't, tickets might get sold out in the
+    meantime, or while we process your request.
+      * If the prices are too high for you, we might be able to help you out by allowing you to pay in installments.
+    Walk through all the steps of registration until you see a button that says "Pay now". Below that button you
+    will find instructions.

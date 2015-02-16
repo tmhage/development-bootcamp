@@ -19,4 +19,16 @@ module OrdersHelper
       "Confirmation"
     end
   end
+
+  def order_step_icon(step)
+    if step =~ /^students/
+      fa_icon 'user fw'
+    elsif step == 'tickets'
+      fa_icon 'ticket fw'
+    elsif step == 'details'
+      fa_icon 'globe fw'
+    elsif step == 'confirmation'
+      fa_icon 'check fw'
+    end
+  end
 end
