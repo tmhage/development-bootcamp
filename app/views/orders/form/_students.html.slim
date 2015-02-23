@@ -8,7 +8,9 @@
     - @order.students[student_number].last_name ||= name.join(' ')
     - @order.students[student_number].email ||= @order.billing_email
 
-h2 Student Details (#{student_number + 1} / #{@order.cart_sum_tickets})
+h2
+  => fa_icon 'user fw'
+  | Student Details (#{student_number + 1} / #{@order.cart_sum_tickets})
 
 = f.alert_message "Please fix the errors below."
 
