@@ -27,12 +27,12 @@
   .dbc-form
     .inner#orderForm
       .form
-        = render 'order_steps'
-        = render 'form'
-
         .support-box
           | Feel free to mail us at
           strong =<> mail_to 'support@developmentbootcamp.nl'
           | or call us on
           strong =<> '+31681910218'
           | if you have any questions.
+
+        = render 'order_steps'
+        = render 'form'
