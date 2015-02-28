@@ -1,7 +1,7 @@
 class Admin::OrdersController < Admin::AdminController
   include TicketMailer
 
-  before_action :set_order, only: [:show, :edit, :destroy, :manually_paid, :paid_by_creditcard]
+  before_action :set_order, only: [:show, :edit, :update, :destroy, :manually_paid, :paid_by_creditcard]
 
   respond_to :html
 
