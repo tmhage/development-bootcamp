@@ -26,9 +26,6 @@
       th style="width: 30%; vertical-align: top; text-align: left;" Dietary wishes:
       td style="vertical-align: top; text-align: left;" = @student.allergies.present? ? @student.allergies : 'none'
     tr
-      th style="width: 30%; vertical-align: top; text-align: left;" Remarks:
-      td style="vertical-align: top; text-align: left;" = @student.remarks.present? ? @student.remarks : 'none'
-    tr
       th style="width: 30%; vertical-align: top; text-align: left;" QR Code:
       td style="vertical-align: top; text-align: left;" = image_tag (root_url + "students/#{@student.identifier}/qr-code.png"), width: 250, height: 250, alt: 'QR Code'
 
@@ -38,7 +35,7 @@
     | .
 
   p
-    | See you in July at
+    | See you 12-18 July at
     =< link_to 'Tobacco theater', 'http://www.tobacco.nl'
     | !
 
