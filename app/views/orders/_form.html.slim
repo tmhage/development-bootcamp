@@ -6,20 +6,3 @@
       = f.submit 'Back', class: 'button default', name: 'back_button' unless @order.first_step?
       = f.submit 'Continue', class: 'button primary'
 
-- if @order.first_step?
-  markdown:
-      * Ticket prices are the same for all [3 levels](#{program_path}).
-      * __* Important!__ We have a very limited number of seats! If you want to secure your place in the program, but
-    you want us to help you pay, _you still need to register_! If you don't, tickets might get sold out in the
-    meantime, or while we process your request.
-      * If the prices are too high for you, we might be able to help you out by allowing you to pay in installments.
-        Walk through all the steps of registration until you see a button that says "Pay now". Below that button you
-        will find instructions.
-    * We are a **low-profit** organization. Meaning we won't earn much by selling you these tickets.
-    * Ticket prices help us pay for the venue, the catering, and the WiFi. Speakers, coaches, and mentors
-      do not get paid. Our cost are over € 100,000.00.
-    * If we sell over 100 tickets, we will start giving out more discounts to minorities, pay volunteers,
-      and compensate people who already bought a ticket so they might benefit from discounts even if they
-    * already bought their ticket.
-    * Our number one purpose is to contribute to development education. Giving you a valuable experience for an
-      affordable price is paramount to us.
