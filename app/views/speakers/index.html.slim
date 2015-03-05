@@ -49,23 +49,17 @@
                       p = speaker.description.html_safe
 
   - cache 'speakers-text' do
-    .dbc-text#more-info
+    .dbc-text-cta#more-info
       .inner
-        .text
+        .centered
           h2
             => fa_icon 'share-alt'
-            | Share your knowledge
+            | Share your knowledge!
 
           markdown:
-            Do you have experience in **web development**? **Teaching** and
-            **mentoring** are just parts of your daily job? Would you accept the challenge of
-            teaching a group of **beginners**? Or would you prefer having a longer **talk**
-            on one of the fields we plan to teach?
+            Would you accept the challenge of teaching a group of beginners? Or would you prefer having a longer keynote on one of the fields we plan to teach?
 
-            If you are the one - **wait no longer**! Contact us!
-
-            Besides the **priceless gratefulness** of all the **participants** we are working
-            hard on the other approaches on saying **thank you**! You know... We will keep you posted!
+            Contact us!
 
           p
             = link_to 'Become a speaker!', new_speaker_path, class: 'button primary'
