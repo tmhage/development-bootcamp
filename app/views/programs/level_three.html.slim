@@ -3,134 +3,160 @@
 - meta_keywords "program, contest, job, development, bootcamp, programming, learn, teach, sponsor"
 
 - cache 'programs/level-3' do
-  .mod-intro
-    .inner
-      h1#level-three Level Three.
+  .dbc-page-header.program
+    .container-fluid
+      .inner
+        h1#level-three Level Three.
 
-      markdown:
-        You have been around for a while, web development and Ruby are something
-        you work with on daily basis but you would love to learn more? With this program
-        you will dive deeper into what you already know.
+        markdown:
+          You have been around for a while, web development and Ruby are something
+          you work with on daily basis but you would love to learn more? With this program
+          you will dive deeper into what you already know.
 
-      p
-        = link_to "Read on", "#start", class: "button"
-        = link_to "Other Programs", program_path, class: "button secondary"
+        p
+          = link_to "Read on", "#start", class: "button primary"
+          = link_to "Other Programs", program_path, class: "button default"
 
-  .mod-workshop.advanced
-    .inner#start
-      h2 Prerequisites
+  .dbc-content.dbc-workshop.advanced
+    .dbc-container.dbc-text#start
+      .inner.text
+        h2 Prerequisites
 
-      markdown:
-        Prerequisites: You know how to maintain versions of the codebase and
-        you get around command line with an ease. You know what OOP stands for
-        and how to apply it using Ruby. You see automated tests as just a part
-        of the development process. Besides Ruby programing language you know
-        your way around with HTML components and CSS.
+        markdown:
+          Prerequisites: You know how to maintain versions of the codebase and
+          you get around command line with an ease. You know what OOP stands for
+          and how to apply it using Ruby. You see automated tests as just a part
+          of the development process. Besides Ruby programing language you know
+          your way around with HTML components and CSS.
 
-        You created a Rails application, you understand how MVC works and
-        creating attractive and friendly user interface is not an issue. You
-        know how to recognize system requirements, organize your database and
-        associate models. Javascript is your friend and you already have a web
-        application running on some PaaS.
+          You created a Rails application, you understand how MVC works and
+          creating attractive and friendly user interface is not an issue. You
+          know how to recognize system requirements, organize your database and
+          associate models. Javascript is your friend and you already have a web
+          application running on some PaaS.
 
-        Great! Welcome to this level!
+          Great! Welcome to this level!
 
-        Keywords: Command line, Git, Ruby, OOP, MiniTest, Rails, MVC, ERB,
-        HTTP, CSS, Javascript, TDD, BDD, PaaS, Database, ActiveRecord
+          *Keywords: Command line, Git, Ruby, OOP, MiniTest, Rails, MVC, ERB,
+          HTTP, CSS, Javascript, TDD, BDD, PaaS, Database, ActiveRecord*
 
-      p
-        = link_to "Read on", "#start", class: "button"
-        = link_to "Other Programs", program_path, class: "button secondary"
+        p
+          = link_to "Read on", "#start", class: "button primary"
+          = link_to "Other Programs", program_path, class: "button default"
 
-      h2 Advanced CSS and SASS
+    .dbc-container.dbc-text-cta
+      .inner.block-with-image
+        .image
+          h1 = fa_icon "css3 fw 4x"
+        .content
+          h2 Advanced CSS and SASS
 
-      .icon = fa_icon "css3 fw 4x"
-      markdown:
-        You have a clear vision of how is your system going to look like, you
-        created some **mock-ups** and wrote down the **user stories**. Modular
-        approach is very important and in this lesson we will see how to extract
-        the mockup elements into **components** and how to create nice and neat
-        **CSS** file structure and organize code. Sytem has to be flexible enough
-        to adapt to a new view as soon as it gets extended.
+          markdown:
+            You have a clear vision of how is your system going to look like, you
+            created some **mock-ups** and wrote down the **user stories**. Modular
+            approach is very important and in this lesson we will see how to extract
+            the mockup elements into **components** and how to create nice and neat
+            **CSS** file structure and organize code. Sytem has to be flexible enough
+            to adapt to a new view as soon as it gets extended.
 
-        **Practical example**: Implement Button as a component in a form module.
+            **Practical example**: Implement Button as a component in a form module.
 
-      h2 Ruby metaprogramming
+    .dbc-container.dbc-text
+      .inner.block-with-image
+        .image
+          h1 = fa_icon "dot-circle-o fw 4x"
+        .content
+          h2 Ruby metaprogramming
 
-      .icon = fa_icon "dot-circle-o fw 4x"
-      markdown:
-        **Metaprogramming** is approach to programming where the code we write
-        operates on the **code itself** rather than on **data**. It is important to
-        understand how **powerful** this is since it involves **inspecting** and
-        **modifying** a program during **runtime** using constructs exposed by
-        the language.
+          markdown:
+            **Metaprogramming** is approach to programming where the code we write
+            operates on the **code itself** rather than on **data**. It is important to
+            understand how **powerful** this is since it involves **inspecting** and
+            **modifying** a program during **runtime** using constructs exposed by
+            the language.
 
-        In this lesson we will **challenge** ourselves with some **metaprogramming**
-        and prove that it can be very useful if implemented properly.
+            In this lesson we will **challenge** ourselves with some **metaprogramming**
+            and prove that it can be very useful if implemented properly.
 
-        **Practical example**: Define a class without a class and def
+            **Practical example**: Define a class without a class and def
 
-      h2 Hosting on VPS
+    .dbc-container.dbc-text-cta
+      .inner.block-with-image
+        .image
+          h1 = fa_icon "cloud-upload fw 4x"
+        .content
+          h2 Hosting on a VPS
 
-      .icon = fa_icon "cloud-upload fw 4x"
-      markdown:
-        Web applications can grow rapidly, the PaaS solution you used in the
-        beginning might not suite your needs a year after, maybe the **cost** grew
-        up enormously or maybe you just wish **more control** over your **web
-        application**.
-        Well, time to migrate to the **VPS**! In this lesson we will teach you
-        how to setup the **server** from scratch, what is important and how to
-        **automate** the entire development process.
+          markdown:
+            Web applications can grow rapidly, the PaaS solution you used in the
+            beginning might not suite your needs a year after, maybe the **cost** grew
+            up enormously or maybe you just wish **more control** over your **web
+            application**.
+            Well, time to migrate to the **VPS**! In this lesson we will teach you
+            how to setup the **server** from scratch, what is important and how to
+            **automate** the entire development process.
 
-        **Practical example**: Deploy an app to VPS of choice
+            **Practical example**: Deploy an app to VPS of choice
 
-      h2 Networking and Security
+    .dbc-container.dbc-text
+      .inner.block-with-image
+        .image
+          h1 = fa_icon "lock fw 4x"
+        .content
+          h2 Networking and Security
 
-      .icon = fa_icon "lock fw 4x"
-      markdown:
-        Since everything is in the **cloud** how can you, as a developer, make sure
-        **no data is harmed** and everything is well **protected?** There are provisions
-        and policies  defined that **prevent and monitor unauthorized access**,
-        misuse, modification, or denial of a computer network and
-        network-accessible resources.
+          markdown:
+            Since everything is in the **cloud** how can you, as a developer, make sure
+            **no data is harmed** and everything is well **protected?** There are provisions
+            and policies  defined that **prevent and monitor unauthorized access**,
+            misuse, modification, or denial of a computer network and
+            network-accessible resources.
 
-        What tools can you use to be warned about **security flaws** and potential
-        **threats**? How can you **configure** your server and what can you do with your
-        Rails application in order to keep it **safe and untouched**?
+            What tools can you use to be warned about **security flaws** and potential
+            **threats**? How can you **configure** your server and what can you do with your
+            Rails application in order to keep it **safe and untouched**?
 
-        **Practical example**: Identify the weak spot in the presented Rails
-        application.
+            **Practical example**: Identify the weak spot in the presented Rails
+            application.
 
-      h2 Advanced Rails and refactoring
+    .dbc-container.dbc-text-cta
+      .inner.block-with-image
+        .image
+          h1 = fa_icon "recycle fw 4x"
+        .content
+          h2 Advanced Rails and refactoring
 
-      .icon = fa_icon "recycle fw 4x"
-      markdown:
-        As you are developing your codebase can get bigger and messier. One of
-        the important concepts of Rails is to keep it **DRY** and if you ever worked
-        on a big project you know how important it is to respect conventions
-        and **best practices** in order to keep it maintainable.
-        This session will be all about best practices in Rails. What **tools** can
-        you use to help yourself, what should you do and what  should you not
-        even think about. How to **slim** your controllers, use **concerns**, how
-        should a **model** look like?
+          markdown:
+            As you are developing your codebase can get bigger and messier. One of
+            the important concepts of Rails is to keep it **DRY** and if you ever worked
+            on a big project you know how important it is to respect conventions
+            and **best practices** in order to keep it maintainable.
+            This session will be all about best practices in Rails. What **tools** can
+            you use to help yourself, what should you do and what  should you not
+            even think about. How to **slim** your controllers, use **concerns**, how
+            should a **model** look like?
 
-        Time for some **refactoring**!
+            Time for some **refactoring**!
 
-        **Practical example**: Refactor existing project using the Rails best practices
+            **Practical example**: Refactor existing project using the Rails best practices
 
-      h2 Background jobs
+    .dbc-container.dbc-text
+      .inner.block-with-image
+        .image
+          h1 = fa_icon "compress fw 4x"
+        .content
+          h2 Background jobs
 
-      .icon = fa_icon "compress fw 4x"
-      markdown:
-        Is your system very slow lately? There is a lot of things going on and
-        some **processes** do not depend on user? Maybe you should use a help from the
-        **background workers**?
+          markdown:
+            Is your system very slow lately? There is a lot of things going on and
+            some **processes** do not depend on user? Maybe you should use a help from the
+            **background workers**?
 
-        All about background jobs will be covered within this topic. What is usually
-        a **backround job**, what **tools** to use, how to do **schedule** them?
-        What to do when your system depends on **third party services**, and much more!
+            All about background jobs will be covered within this topic. What is usually
+            a **backround job**, what **tools** to use, how to do **schedule** them?
+            What to do when your system depends on **third party services**, and much more!
 
-        **Practical example**: Implement simple web crawler that updates data
-        in your database
+            **Practical example**: Implement simple web crawler that updates data
+            in your database
 
     = render 'static_pages/cta_students'
