@@ -13,7 +13,6 @@
 //= require jquery/dist/jquery.min
 //= require jquery-ujs/src/rails
 //= require bootstrap-sass/assets/javascripts/bootstrap-sprockets
-//= require turbolinks
 //= require bootstrap
 //= require froala_editor.min
 //= require plugins/block_styles.min

@@ -23,44 +23,49 @@
           = link_to 'Apply now', new_speaker_path, class: 'button primary'
           = link_to 'Check Programs', program_path, class: 'button default'
 
-.l-content
+.dbc-content
   - cache cache_key_for_speakers do
-    - if @speakers.any?
-      .dbc-speakers
-        .inner
-          .page-title
-            h1 Speakers
+    .dbc-container.dbc-text.dbc-speakers#the-speakers
+      .inner.text
+        h2 Speakers
+
+      - if @speakers.any?
         - @speakers.in_groups_of(2) do |group|
-            .inner
-              - group.compact.each do |speaker|
-                - cache speaker do
-                  .speaker
-                    .avatar
-                      = image_tag speaker.gravatar_url(size: 512, secure: true), class: "gravatar"
-                      p
-                        - if speaker.website.present?
-                          = link_to speaker.website do
-                            => fa_icon 'link'
-                        - if speaker.twitter_handle.present?
-                          = link_to "https://twitter.com/#{speaker.twitter_handle}" do
-                            => fa_icon 'twitter'
-                    .bio
-                      h2 = "#{speaker.first_name} #{speaker.last_name}"
-                      p = speaker.description.html_safe
+          .inner
+            - group.compact.each do |speaker|
+              - cache speaker do
+                .block.speaker
+                  .avatar
+                    = image_tag speaker.gravatar_url(size: 512, secure: true), class: "gravatar"
+                    p
+                      - if speaker.website.present?
+                        = link_to speaker.website do
+                          => fa_icon 'link'
+                      - if speaker.twitter_handle.present?
+                        = link_to "https://twitter.com/#{speaker.twitter_handle}" do
+                          => fa_icon 'twitter'
+                  .bio
+                    h2 = "#{speaker.first_name} #{speaker.last_name}"
+                    p = speaker.description.html_safe
 
   - cache 'speakers-text' do
-    .dbc-text-cta#more-info
-      .inner
-        .centered
-          h2
-            => fa_icon 'share-alt'
-            | Share your knowledge!
+    .dbc-container.dbc-text#more-info
+      .inner.text
+        h2
+          => fa_icon 'share-alt'
+          | Share your knowledge
 
-          markdown:
-            Would you accept the challenge of teaching a group of beginners? Or would you prefer having a longer keynote on one of the fields we plan to teach?
+        markdown:
+          Do you have experience in **web development**? **Teaching** and
+          **mentoring** are just parts of your daily job? Would you accept the challenge of
+          teaching a group of **beginners**? Or would you prefer having a longer **talk**
+          on one of the fields we plan to teach?
 
-            Contact us!
+          If you are the one - **wait no longer**! Contact us!
 
-          p
-            = link_to 'Become a speaker!', new_speaker_path, class: 'button primary'
-            = link_to 'Check the program', program_path, class: 'button default'
+          Besides the **priceless gratefulness** of all the **participants** we are working
+          hard on the other approaches on saying **thank you**! You know... We will keep you posted!
+
+        p
+          = link_to 'Become a speaker!', new_speaker_path, class: 'button primary'
+          = link_to 'Check the program', program_path, class: 'button default'

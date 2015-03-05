@@ -1,5 +1,4 @@
 .dbc-text
-  @extend .container-fluid
   padding-top: 8em
   padding-bottom: 8em
   color: darken($purple, 30%)
@@ -7,64 +6,55 @@
   .green
     color: $brand-success
 
-  .inner
-    @extend .row
+  .centered
+    text-align: center
 
-    .centered
-      text-align: center
+  .centered,
+  .normal,
+  .text
+    h1, h2, h3, h4
+      font-family: 'Courgette', cursive
+      color: $yellow
 
-    .centered,
-    .normal,
-    .text
-      @extend .col-md-8
-      @extend .col-md-offset-2
+    h2
+      font-size: 2em
+      padding-bottom: 0.2em
+      margin-bottom: 0.3em
+      border-bottom: 1px solid $yellow
+
+  .centered,
+  .normal,
+    font-size: 32px
+
+    p
+      font-weight: lighter
+      margin-bottom: 1em
+
+      .button
+        @extend .btn-lg
+
+  .block-with-image
+    .image
+      @extend .col-md-6
+      img
+        @extend .img-responsive
+        @extend .img-circle
+
+    .content
+      @extend .col-md-6
+      font-size: 22px
 
       h2
         font-size: 2em
-        padding-bottom: 0.2em
-        margin-bottom: 0.3em
-        border-bottom: 1px solid $yellow
-
-    .centered,
-    .normal,
-      font-size: 32px
-
-      h1, h2, h3, h4
+        margin-bottom: 0.8em
         font-family: 'Courgette', cursive
         color: $yellow
 
+      .button
+        @extend .btn-lg
+
       p
-        font-weight: lighter
         margin-bottom: 1em
-
-        .button
-          @extend .btn-lg
-
-    .block-with-image
-      @extend .row
-      .image
-        @extend .col-md-4
-        @extend .col-md-offset-2
-
-        img
-          @extend .img-responsive
-          @extend .img-circle
-
-      .content
-        @extend .col-md-4
-        font-size: 22px
-
-        h2
-          font-size: 2em
-          margin-bottom: 0.8em
-          font-family: 'Courgette', cursive
-          color: $yellow
-
-        .button
-          @extend .btn-lg
-
-        p
-          margin-bottom: 1em
 
 .dbc-text-cta,
 .dbc-text-sponsors
