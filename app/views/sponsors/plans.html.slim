@@ -22,101 +22,98 @@
           = link_to 'Download Information', image_path('sponsors/Development Bootcamp - Sponsor Proposition.pdf'), class: 'button primary'
           = link_to 'More info', '#plans', class: 'button default'
 
-.content
+.dbc-content
   - cache 'sponsor-plans-list' do
-    .dbc-text-sponsors#plans
-      .inner
-        .normal
-          h1 Sponsor Plans
+    .dbc-container.dbc-text-sponsors#plans
+      .inner.text
+        h2 Sponsor Plans
 
-        .sponsor-plan.platinum
-          h2 Platinum package (Max. 2 spots)
-          .button.price.platinum= package_price(:platinum)
-          markdown:
-            - Recognition as a Platinum sponsor on the Development Bootcamp website
-            - Your logo on the certificate that students get after the bootcamp
-            - Social network (Twitter, Facebook, LinkedIn) post about becoming a sponsor
-            - Emailing subscribed students about you becoming a sponsor shortly before the event
-            - Social network (Twitter, Facebook, LinkedIn) 1 post as thank you note
-            - Logo in the "thank you" email that will be sent out
-            - Sponsor booth at the event
-            - Opportunity for a blog post on the dev bootcamp site
-            - Logo in the Development bootcamp video before the start of the day
-            - Opportunity to place a company banner near the speaker’s podium
-            - Up to 3 company items for the swag bag
-            - 2 Bootcamp tickets and 5 Evening tickets
-            - Opportunity to speak in front of the participants about why technology is important at your company
-            - Opportunity to send out a newsletter to all our participants
-          p
-            = link_to "Register", new_sponsor_path(plan: :platinum), class: 'button primary'
-            = link_to "More info", "#more-info", class: 'button default'
-      .inner
-        .sponsor-plan.gold
-          h2 Gold package (Unlimited spots)
-          .button.price.gold= package_price(:gold)
-          markdown:
-            - Recognition as a Gold sponsor on the development bootcamp website
-            - _First 3 Gold sponsors_ get their logo on the certificate that students get after the bootcamp
-            - 10 minutes lightning talk (free topic) or 20 minutes if topic from the list of topics
-            - 1/2 page Color Advertisement in the Development Bootcamp Program
-            - Logo on the website (within the corresponding category)
-            - Social network (Twitter, Facebook, LinkedIn) post about becoming a sponsor
-            - Social network (Twitter, Facebook, LinkedIn) 1 post as thank you note
-            - Sponsor booth at the event
-            - Opportunity for a blog post on the dev bootcamp site
-            - Logo in the Development bootcamp video before the start of the day
-            - Up to 2 company items for the swag bag
-            - 1 Bootcamp ticket and 4 Evening tickets
-          p
-            = link_to "Register", new_sponsor_path(plan: :gold), class: 'button primary'
-            = link_to "More info", "#more-info", class: 'button default'
+      .sponsor-plan.platinum
+        h2 Platinum package (Max. 2 spots)
+        .button.price.platinum= package_price(:platinum)
+        markdown:
+          - Recognition as a Platinum sponsor on the Development Bootcamp website
+          - Your logo on the certificate that students get after the bootcamp
+          - Social network (Twitter, Facebook, LinkedIn) post about becoming a sponsor
+          - Emailing subscribed students about you becoming a sponsor shortly before the event
+          - Social network (Twitter, Facebook, LinkedIn) 1 post as thank you note
+          - Logo in the "thank you" email that will be sent out
+          - Sponsor booth at the event
+          - Opportunity for a blog post on the dev bootcamp site
+          - Logo in the Development bootcamp video before the start of the day
+          - Opportunity to place a company banner near the speaker’s podium
+          - Up to 3 company items for the swag bag
+          - 2 Bootcamp tickets and 5 Evening tickets
+          - Opportunity to speak in front of the participants about why technology is important at your company
+          - Opportunity to send out a newsletter to all our participants
+        p
+          = link_to "Register", new_sponsor_path(plan: :platinum), class: 'button primary'
+          = link_to "More info", "#more-info", class: 'button default'
 
-      .inner
-        .sponsor-plan.silver
-          h2 Silver package (Unlimited spots)
-          .button.price.silver= package_price(:silver)
-          markdown:
-            - Recognition as a Silver sponsor on the development bootcamp website
-            - 10 minutes lightning talk (free topic) or 20 minutes if topic from the list of topics
-            - Logo on the website (within the corresponding category)
-            - Social network (Twitter, Facebook, LinkedIn) 1 post as thank you note
-            - Company item for the swag bag
-            - 2 Evening tickets
-          p
-            = link_to "Register", new_sponsor_path(plan: :silver), class: 'button primary'
-            = link_to "More info", "#more-info", class: 'button default'
+      .sponsor-plan.gold
+        h2 Gold package (Unlimited spots)
+        .button.price.gold= package_price(:gold)
+        markdown:
+          - Recognition as a Gold sponsor on the development bootcamp website
+          - _First 3 Gold sponsors_ get their logo on the certificate that students get after the bootcamp
+          - 10 minutes lightning talk (free topic) or 20 minutes if topic from the list of topics
+          - 1/2 page Color Advertisement in the Development Bootcamp Program
+          - Logo on the website (within the corresponding category)
+          - Social network (Twitter, Facebook, LinkedIn) post about becoming a sponsor
+          - Social network (Twitter, Facebook, LinkedIn) 1 post as thank you note
+          - Sponsor booth at the event
+          - Opportunity for a blog post on the dev bootcamp site
+          - Logo in the Development bootcamp video before the start of the day
+          - Up to 2 company items for the swag bag
+          - 1 Bootcamp ticket and 4 Evening tickets
+        p
+          = link_to "Register", new_sponsor_path(plan: :gold), class: 'button primary'
+          = link_to "More info", "#more-info", class: 'button default'
 
-      .inner
-        .sponsor-plan.exclusive
-          h2 Exclusive packages
+      .sponsor-plan.silver
+        h2 Silver package (Unlimited spots)
+        .button.price.silver= package_price(:silver)
+        markdown:
+          - Recognition as a Silver sponsor on the development bootcamp website
+          - 10 minutes lightning talk (free topic) or 20 minutes if topic from the list of topics
+          - Logo on the website (within the corresponding category)
+          - Social network (Twitter, Facebook, LinkedIn) 1 post as thank you note
+          - Company item for the swag bag
+          - 2 Evening tickets
+        p
+          = link_to "Register", new_sponsor_path(plan: :silver), class: 'button primary'
+          = link_to "More info", "#more-info", class: 'button default'
 
-          h3 Party support (1 spot)
-          .button.green.price= package_price(:party)
-          markdown:
-            - A party named after you
-            - Social network (Twitter, Facebook, LinkedIn) 1 post as thank you note
-          p
-            = link_to "Register", new_sponsor_path(plan: :party), class: 'button primary'
-            = link_to "More info", "#more-info", class: 'button default'
+      .sponsor-plan.exclusive
+        h2 Exclusive packages
 
-          h3 Dinner support (3 spots)
-          .button.green.price= package_price(:dinner)
-          markdown:
-            - Promoting you as a dinner sponsor
-            - Social network (Twitter, Facebook, LinkedIn) 1 post as thank you note
-          p
-            = link_to "Register", new_sponsor_path(plan: :dinner), class: 'button primary'
-            = link_to "More info", "#more-info", class: 'button default'
+        h3 Party support (1 spot)
+        .button.green.price= package_price(:party)
+        markdown:
+          - A party named after you
+          - Social network (Twitter, Facebook, LinkedIn) 1 post as thank you note
+        p
+          = link_to "Register", new_sponsor_path(plan: :party), class: 'button primary'
+          = link_to "More info", "#more-info", class: 'button default'
 
-          h3 Hackathon support (1 spot)
-          .button.price.green= package_price(:hackathon)
-          markdown:
-            - Choosing and presenting the theme for the hackathon
-            - Social network (Twitter, Facebook, LinkedIn) 1 post as thank you note
-            - Shared access to the code created at the hackathon
-          p
-            = link_to "Register", new_sponsor_path(plan: :hackathon), class: 'button primary'
-            = link_to "More info", "#more-info", class: 'button default'
+        h3 Dinner support (3 spots)
+        .button.green.price= package_price(:dinner)
+        markdown:
+          - Promoting you as a dinner sponsor
+          - Social network (Twitter, Facebook, LinkedIn) 1 post as thank you note
+        p
+          = link_to "Register", new_sponsor_path(plan: :dinner), class: 'button primary'
+          = link_to "More info", "#more-info", class: 'button default'
+
+        h3 Hackathon support (1 spot)
+        .button.price.green= package_price(:hackathon)
+        markdown:
+          - Choosing and presenting the theme for the hackathon
+          - Social network (Twitter, Facebook, LinkedIn) 1 post as thank you note
+          - Shared access to the code created at the hackathon
+        p
+          = link_to "Register", new_sponsor_path(plan: :hackathon), class: 'button primary'
+          = link_to "More info", "#more-info", class: 'button default'
 
   - cache 'contact-sponsors-cta'
     .dbc-text-cta
@@ -131,7 +128,7 @@
             =< mail_to 'sponsors@developmentbootcamp.nl'
 
   - cache 'sponsor-plans-cta' do
-    .dbc-text#more-info
+    .dbc-container.dbc-text#more-info
       .inner
         .text
           h2 What’s in it for you?

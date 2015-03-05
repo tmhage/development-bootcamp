@@ -1,15 +1,22 @@
 .dbc-sponsors
-  @extend .container-fluid
+  @extend .dbc-speakers
 
-  .page-title
-    @extend .col-sm-offset-2
-    @extend .col-sm-9
-    margin-top: 3em
-    margin-bottom: 2em
+.sponsor
+  @extend .speaker
 
-  .sponsor
-    @extend .col-sm-3
+  .logo
+    @extend .avatar
 
-    &:first-child
-      @extend .col-sm-offset-2
+@media (max-width: $screen-md-max)
+  .dbc-sponsors .sponsor
+    margin-top: 2em
+    .avatar img
+      width: 50%
 
+@media (max-width: $screen-xs-max)
+  .dbc-sponsors .sponsor
+    .avatar, .bio
+      padding-left: 0
+      padding-right: 0
+    .avatar img
+      width: 75%

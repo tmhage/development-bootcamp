@@ -18,45 +18,53 @@
           = link_to 'Sponsor plans', plans_sponsors_path, class: 'button primary'
           = link_to 'Apply now!', new_sponsor_path, class: 'button default'
 
-.content
+.dbc-content
   - cache cache_key_for_sponsors do
-    - Sponsor.plans.keys.each do |plan|
-      - if @sponsors.where(plan: plan).count > 0
-        .dbc-sponsors class=plan
-          .inner
-            .page-title
-              h1= t("plans.title.#{plan}")
-            - @sponsors.where(plan: plan).in_groups_of(3) do |group|
-              .inner
-                - group.compact.each do |sponsor|
-                  - cache sponsor do
-                    .sponsor
-                      .logo
-                        = image_tag sponsor.logo.thumb if sponsor.logo.present?
+    .dbc-container.dbc-text.dbc-sponsors#the-sponsors
+
+      - Sponsor.plans.keys.each do |plan|
+        - if @sponsors.where(plan: plan).count > 0
+          .inner.text
+            h2 = t("plans.title.#{plan}")
+
+          - @sponsors.where(plan: plan).in_groups_of(2) do |group|
+            .inner
+              - group.compact.each do |sponsor|
+                - cache sponsor do
+                  .block.sponsor
+                    .logo
+                      = image_tag sponsor.logo.thumb if sponsor.logo.present?
+                       p
+                        - if sponsor.website.present?
+                          = link_to sponsor.website do
+                            => fa_icon 'link'
+                    .bio
                       h2 = sponsor.name
                       p = sponsor.description.html_safe
-                      - if sponsor.website.present?
-                        p = link_to "#{sponsor.name} website", sponsor.website
 
     - if @sponsors.where(plan: 'partner').count > 0
-      div class="mod-sponsors partner"
-        .inner
-          h1= t("plans.title.partners")
-          - @sponsors.where(plan: 'partner').each do |sponsor|
-            - cache sponsor do
-              .sponsor
-                .logo
-                  = image_tag sponsor.logo.thumb if sponsor.logo.present?
-                h2 = sponsor.name
-                p = sponsor.description.html_safe
-                - if sponsor.website.present?
-                  p = link_to "#{sponsor.name} website", sponsor.website
+      .dbc-container.dbc-text.dbc-sponsors#the-partners
+        .inner.text
+          h2= t("plans.title.partners")
+        - @sponsors.where(plan: 'partner').in_groups_of(2) do |group|
+          .inner
+            - group.compact.each do |sponsor|
+              - cache sponsor do
+                .sponsor
+                  .logo
+                    = image_tag sponsor.logo.thumb if sponsor.logo.present?
+                    p
+                      - if sponsor.website.present?
+                        = link_to sponsor.website do
+                          => fa_icon 'link'
+                  .bio
+                    h2 = sponsor.name
+                    p = sponsor.description.html_safe
 
-  - cache 'sponsors-index-cta'
-    .dbc-text
-      .inner
-        .centered
-          p We are looking for more sponsors and partners. Would you like to collaborate with us? Check out our sponsor plans!
-          p
-            = link_to 'Check the plans', plans_sponsors_path, class: 'button primary'
-            = link_to 'Apply now!', new_sponsor_path, class: 'button default'
+    - cache 'sponsors-index-cta'
+      .dbc-container.dbc-text
+        .inner.centered
+            p We are looking for more sponsors and partners. Would you like to collaborate with us? Check out our sponsor plans!
+            p
+              = link_to 'Check the plans', plans_sponsors_path, class: 'button primary'
+              = link_to 'Apply now!', new_sponsor_path, class: 'button default'
