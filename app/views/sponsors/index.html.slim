@@ -18,7 +18,7 @@
           = link_to 'Sponsor plans', plans_sponsors_path, class: 'button primary'
           = link_to 'Apply now!', new_sponsor_path, class: 'button default'
 
-.l-content
+.content
   - cache cache_key_for_sponsors do
     - Sponsor.plans.keys.each do |plan|
       - if @sponsors.where(plan: plan).count > 0

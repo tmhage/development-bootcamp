@@ -22,10 +22,7 @@
           = link_to 'Download Information', image_path('sponsors/Development Bootcamp - Sponsor Proposition.pdf'), class: 'button primary'
           = link_to 'More info', '#plans', class: 'button default'
 
-.l-content
-  .dbc-continue
-    = fa_icon 'sort-desc'
-
+.content
   - cache 'sponsor-plans-list' do
     .dbc-text-sponsors#plans
       .inner

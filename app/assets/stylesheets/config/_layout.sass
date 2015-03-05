@@ -1,22 +1,17 @@
-.l-page
+.dbc-page
   @extend .container-fluid
-  .l-main
+  .dbc-main
     @extend .row
     background: $gray-lighter
-    .l-content,
-    .l-wide
+    .dbc-content
       background: #fff
-    .l-content
-      @extend .col-sm-10
-      border-right: 2px solid $purple
-    .l-sidebar
-      @extend .col-sm-2
 
-.inner
-  @extend .row
-  @extend .col-lg-offset-2
-  @extend .col-md-offset-1
+.dbc-container
+  @extend .container-fluid
+  .inner
+    @extend .col-md-8
+    @extend .col-md-offset-2
 
 @media (max-width: $screen-sm-min)
-  .l-page .l-main .l-content
+  .dbc-page .dbc-main .dbc-content
     border-right: 0
