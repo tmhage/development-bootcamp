@@ -4,23 +4,26 @@
 - meta_image @post.cover_image.url(:thumb) if @post.cover_image.present?
 
 - cache @post do
-  .mod-intro.with-cover-image
-    .cover-image style="background-image: url(#{image_url(@post.cover_image.url(:big))})"
-    .inner
-      h1= @post.title
+  .dbc-content
+    .dbc-container.dbc-text.dbc-post
+      .inner
+        h1= @post.title
 
-  .mod-text
-    .inner
-      - if @post.user && @post.user.first_name
-        p.post-meta
-          => image_tag @post.user.gravatar_url(secure: true), class: "gravatar"
-          span.author = "#{@post.user.first_name} #{@post.user.last_name}"
-          br
-          => @post.created_at.strftime("%d %b %y")
+      .inner
+        - if @post.user && @post.user.first_name
+          .post-meta
+            .avatar
+              => image_tag @post.user.gravatar_url(secure: true), class: "gravatar"
+            .author
+              = "#{@post.user.first_name} #{@post.user.last_name}"
+              br
+              => @post.created_at.strftime("%d %b %y")
+      .inner
+        p = @post.content.sub(/<hr>/, '').html_safe
 
-      p = @post.content.sub(/<hr>/, '').html_safe
-
-  .mod-cta
-    .inner
-      = link_to 'Read full program', program_path, class: 'button'
-      = link_to 'Get tickets', tickets_path, class: 'button secondary'
+    .dbc-text-cta
+      .inner.centered
+        h1 Like what you've been reading?
+        p Learn more about coding during our Development Bootcamp!
+        = link_to 'Read full program', program_path, class: 'button primary'
+        = link_to 'Get tickets', tickets_path, class: 'button default'

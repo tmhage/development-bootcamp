@@ -3,26 +3,22 @@
 - meta_keywords "blog, development, bootcamp, programming, learn, teach, sponsor"
 
 - cache cache_key_for_posts do
-  .l-wide.posts
+  .dbc-content
     - if @posts.any?
       - @posts.each do |post|
         - cache post do
-          .dbc-text
+          .dbc-container.dbc-text.dbc-post
             .inner
-              .block-with-image
-                .post-image
-                  = image_tag post.cover_image.url(:small)
-                .content
-                  h2= link_to post.title, post
+              h2= link_to post.title, post
 
-                  - if post.user && post.user.first_name
-                    .post-meta
-                      .avatar
-                        => image_tag post.user.gravatar_url(secure: true), class: "gravatar"
-                      .author
-                        = "#{post.user.first_name} #{post.user.last_name}"
-                        br
-                        => post.created_at.strftime("%d %b %y")
-
-                  = post.content.split("<hr>").first.html_safe
-                  p= link_to 'Read more', post, class: 'button primary'
+              - if post.user && post.user.first_name
+                .post-meta
+                  .avatar
+                    => image_tag post.user.gravatar_url(secure: true), class: "gravatar"
+                  .author
+                    = "#{post.user.first_name} #{post.user.last_name}"
+                    br
+                    => post.created_at.strftime("%d %b %y")
+            .inner
+              = post.content.split("<hr>").first.html_safe
+              p= link_to 'Read more', post, class: 'button primary'
