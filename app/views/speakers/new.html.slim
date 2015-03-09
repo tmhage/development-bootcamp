@@ -20,36 +20,35 @@
           = link_to "Apply now", '#new_speaker_form', class: "button primary"
           = link_to "Check Programs", program_path, class: "button default"
 
-.content
-  .dbc-form#new_speaker_form
-    .inner
-      .form
-        h2
-          => fa_icon 'bullhorn'
-          | Help us teach
+.dbc-content
+  .dbc-container.dbc-form#new_speaker_form
+    .inner.form
+      h2
+        => fa_icon 'bullhorn'
+        | Help us teach
 
-        = bootstrap_form_for @speaker do |f|
-          = f.alert_message "Please fix the errors below."
-          = f.text_field :first_name, required: true
-          = f.text_field :last_name, required: true
-          = f.text_field :email, type: 'email', placeholder: 'you@organization.co', required: true
-          = f.text_field :twitter_handle, type: 'twitter_handle', required: false, placeholder: '@username', label: 'Twitter handle (optional)'
-          = f.text_field :website, type: 'website', required: false, placeholder: 'http://', label: 'Website (optional)'
-          = f.collection_radio_buttons :role, Speaker.roles, :first, :last, label: 'What role would fit you best?', required: true
-          = f.text_area :bio, required: false, placeholder: "What's your experience?", label: 'Biography (for your profile on the site)'
-          = f.text_area :remarks, required: false, placeholder: "Anything you'd like to share with the organisers?", label: 'Remarks (optional)'
+      = bootstrap_form_for @speaker do |f|
+        = f.alert_message "Please fix the errors below."
+        = f.text_field :first_name, required: true
+        = f.text_field :last_name, required: true
+        = f.text_field :email, type: 'email', placeholder: 'you@organization.co', required: true
+        = f.text_field :twitter_handle, type: 'twitter_handle', required: false, placeholder: '@username', label: 'Twitter handle (optional)'
+        = f.text_field :website, type: 'website', required: false, placeholder: 'http://', label: 'Website (optional)'
+        = f.collection_radio_buttons :role, Speaker.roles, :first, :last, label: 'What role would fit you best?', required: true
+        = f.text_area :bio, required: false, placeholder: "What's your experience?", label: 'Biography (for your profile on the site)'
+        = f.text_area :remarks, required: false, placeholder: "Anything you'd like to share with the organisers?", label: 'Remarks (optional)'
 
-          = f.form_group do
-            = f.primary 'Contact me!', class: 'button'
-            br
-            br
-              em By clicking this button you accept the love and gratitude of us and our students.
+        = f.form_group do
+          = f.primary 'Contact me!', class: 'button'
+          br
+          br
+            em By clicking this button you accept the love and gratitude of us and our students.
 
   - cache 'new-speaker-cta'
     .dbc-text-cta
         .inner
           .centered
-            h2
+            h1
               => fa_icon 'heart'
               | Contact us
             p Want more details? Any concerns? Feel free to contact us.

@@ -23,19 +23,28 @@
 
   .dbc-content.dbc-workshop.intermediate
     .dbc-container.dbc-text#start
-      .inner.centered
-        h2 Prerequisites
-
+      .inner.normal
+        h2
+          => fa_icon 'cog'
+          | Level Two outcome
         markdown:
-          You know how to maintain versions of the codebase and you get around with
-          the command line with ease. You know what OOP stands for and how to
-          apply it using Ruby. You see automated tests as just a part of
-          the development process.
+          - create page structure using HTML and CSS
+          - use HTTP for the communication between web server and client
+          - build a web application using Rails
+          - plan requirements and create mock-ups
+          - guide your development process using TDD
+          - bring your application to life using Javascript
+          - associate entities
+          - deploy to a platform service
 
-          Keywords: Command line, Git, Open Source, Ruby, OOP, MiniTest
+        br
 
-    .dbc-container.dbc-text
-      .inner.block-with-image
+        p
+          = link_to "Buy Tickets", tickets_path, class: "button primary"
+          = link_to "Read on", "#read-on", class: "button default"
+
+    .dbc-container.dbc-text-cta
+      .inner.block-with-image#read-on
         .image
           h1 = fa_icon "html5 fw 4x"
         .content
@@ -53,7 +62,7 @@
 
             **Practical example**: Prepare the design for the holidays countdown
 
-    .dbc-container.dbc-text-cta
+    .dbc-container.dbc-text
       .inner.block-with-image
         .image
           h1 = fa_icon "globe fw 4x"
@@ -69,7 +78,7 @@
             you write applications that run in an **HTTP requests** yourself using
             Rails.
 
-    .dbc-container.dbc-text
+    .dbc-container.dbc-text-cta
       .inner.block-with-image
         .image
           h1 = fa_icon "arrow-up fw 4x"
@@ -85,7 +94,7 @@
 
             **Practical example**: Create a basic Rails application with welcome homepage
 
-    .dbc-container.dbc-text-cta
+    .dbc-container.dbc-text
       .inner.block-with-image
         .image
           h1 = fa_icon "refresh fw 4x"
@@ -108,7 +117,7 @@
             **Practical example**: Imagine a project of your choice - write down five
             stories and cover each story with a mock up. Simulation of Scrum poker.
 
-    .dbc-container.dbc-text
+    .dbc-container.dbc-text-cta
       .inner.block-with-image
         .image
           h1 = fa_icon "database fw 4x"
@@ -128,7 +137,7 @@
             **Practical example**: Creating a blog that can have multiple comments
             created by different users.
 
-    .dbc-container.dbc-text-cta
+    .dbc-container.dbc-text
       .inner.block-with-image
         .image
           h1 = fa_icon "check fw 4x"
@@ -144,7 +153,7 @@
 
             **Practical example**: Build the feature of creating a blog using TDD
 
-    .dbc-container.dbc-text
+    .dbc-container.dbc-text-cta
       .inner.block-with-image
         .image
           h1 = fa_icon "magic fw 4x"
@@ -161,7 +170,7 @@
             **Practical example**: Implement form that renders different background
             for a dropdown value.
 
-    .dbc-container.dbc-text-cta
+    .dbc-container.dbc-text
       .inner.block-with-image
         .image
           h1 = fa_icon "cloud fw 4x"
@@ -176,7 +185,7 @@
 
             **Practical example**: Deploy the web application to one of the platform service.
 
-    .dbc-container.dbc-text
+    .dbc-container.dbc-text-cta
       .inner.block-with-image
         .image
           h1 = fa_icon "trophy fw 4x"
@@ -190,22 +199,24 @@
             win that might just change your life!
 
     .dbc-container.dbc-text
-      .inner.normal
-        h2 Level Two outcome
-        markdown:
-          - create page structure using HTML and CSS
-          - use HTTP for the communication between web server and client
-          - build a web application using Rails
-          - plan requirements and create mock-ups
-          - guide your development process using TDD
-          - bring your application to life using Javascript
-          - associate entities
-          - deploy to a platform service
+      .inner.centered
+        h2
+          => fa_icon 'check'
+          | Prerequisites
 
-        br
+        markdown:
+          You know how to maintain versions of the codebase and you get around with
+          the command line with ease. You know what OOP stands for and how to
+          apply it using Ruby. You see automated tests as just a part of
+          the development process.
+
+          Keywords: Command line, Git, Open Source, Ruby, OOP, MiniTest
+
+          Not your level? Check out other programs below:
 
         p
-          = link_to "Buy Tickets", tickets_path, class: "button primary"
-          = link_to "Other Programs", program_path, class: "button default"
+            = link_to "Level 1", program_level_1_path, class: "button default"
+            = link_to "Level 2", program_level_2_path, class: "button primary"
+            = link_to "Level 3", program_level_3_path, class: "button default"
 
     = render 'static_pages/cta_students'

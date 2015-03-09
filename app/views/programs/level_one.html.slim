@@ -24,7 +24,9 @@
     .dbc-container.dbc-text#start
       .inner.normal
 
-        h2 Level One outcome
+        h2
+          => fa_icon 'circle-o-notch'
+          | Level One outcome
         markdown:
           - Navigate around the workspace using command line
           - Maintain the versions of your code
@@ -36,10 +38,10 @@
 
         p
           = link_to "Buy Tickets", tickets_path, class: "button primary"
-          = link_to "Other Programs", program_path, class: "button default"
+          = link_to "Read on", "#read-on", class: "button default"
 
     .dbc-container.dbc-text-cta
-      .inner.block-with-image
+      .inner.block-with-image#read-on
         .image
           h1 = fa_icon "terminal fw 4x"
         .content
@@ -141,5 +143,25 @@
             You will use everything you have learned in this entire week to
             collaborate with fellow students. There will be prizes for you if
             you win that might just change your life!
+
+    .dbc-container.dbc-text
+      .inner.centered
+        h2
+          => fa_icon 'check'
+          | Prerequisites
+
+        markdown:
+          None! :) Well.. You are eager to know about writing code and you are
+          willing to spend some time and money on it. A learning program packed
+          with new knowledge does not scare you.
+
+          *Keywords: Basic Programming, Git, Terminal*
+
+          Not your level? Check out other programs below:
+
+        p
+          = link_to "Level 1", program_level_1_path, class: "button primary"
+          = link_to "Level 2", program_level_2_path, class: "button default"
+          = link_to "Level 3", program_level_3_path, class: "button default"
 
     = render 'static_pages/cta_students'
