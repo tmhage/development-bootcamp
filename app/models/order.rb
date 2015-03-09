@@ -3,9 +3,13 @@ require "Mollie/API/Client"
 class Order < ActiveRecord::Base
   has_paper_trail
 
+  attr_accessor :promo_code
+
+  belongs_to :discount_code
   has_many :students, inverse_of: :order
 
   validate :validate_cart
+  validate :validate_discount_code
 
   validates_presence_of :identifier
 
@@ -99,9 +103,19 @@ class Order < ActiveRecord::Base
   end
 
   def cart_sum_total
-    ticket_prices.map do |type, price|
+    ticket_total = ticket_prices.map do |type, price|
       cart[type].to_i * price
     end.inject(&:+)
+    return ticket_total unless discount_code.present?
+    (ticket_total - cart_discount).round(2)
+  end
+
+  def cart_discount
+    return 0 unless discount_code.present?
+    ticket_total = ticket_prices.map do |type, price|
+      cart[type].to_i * price
+    end.inject(&:+)
+    ticket_total * (discount_code.discount_percentage / 100.0)
   end
 
   def cart_sum_tickets
@@ -113,6 +127,14 @@ class Order < ActiveRecord::Base
   def validate_cart
     return if cart_valid?
     errors.add(:cart, "Please select 1 or more tickets.")
+  end
+
+  def validate_discount_code
+    return if promo_code.blank?
+    discount_code = DiscountCode.valid.find_by_code(promo_code)
+    self.discount_code = discount_code if discount_code.present?
+    return if discount_code.present?
+    errors.add(:promo_code, "is not a valid.")
   end
 
   def validate_students_amount

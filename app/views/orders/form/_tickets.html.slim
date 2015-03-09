@@ -11,3 +11,6 @@ h2
 - @order.ticket_prices.each do |name, price|
   .row
     = f.number_field :cart, name: "order[cart][#{name}]", id: "order_cart_#{name}", placeholder: 0, value: values[name], hide_label: true, append: "#{name.to_s.humanize} Ticket (€ #{@order.ticket_prices[name]}.-)#{ name == :early_bird ? '*' : ''}"
+
+.row
+  = f.text_field :promo_code, label: 'Promo code (optional):'

@@ -106,4 +106,42 @@ RSpec.describe Order, :type => :model do
       it { expect(order.last_step?).to be true }
     end
   end
+
+  describe 'discount code' do
+    let(:order) { build(:order, promo_code: promo_code) }
+
+    before { order.validate_discount_code }
+
+    describe 'validation' do
+      context 'is valid' do
+        let(:discount_code) { create(:discount_code) }
+        let(:promo_code) { discount_code.code }
+        it { expect(order.discount_code).to eq discount_code }
+        it { expect(order.valid?).to be true }
+
+        context 'but expired' do
+          let(:discount_code) { create(:discount_code, valid_until: 1.minute.ago) }
+          it { expect(order.discount_code).to be nil }
+          it { expect(order.valid?).to be false }
+        end
+      end
+
+      context 'is invalid' do
+        let(:promo_code) { 'random user input' }
+        it { expect(order.discount_code).to be nil }
+        it { expect(order.valid?).to be false }
+      end
+    end
+
+    describe 'order price' do
+      let(:discount_code) { create(:discount_code, discount_percentage: 10) }
+      let(:promo_code) { discount_code.code }
+      it { expect(order.cart_sum_total).to eq (0.9 * order.ticket_prices[:normal]).round(2) }
+
+      context 'different percentage' do
+        let(:discount_code) { create(:discount_code, discount_percentage: 20) }
+        it { expect(order.cart_sum_total).to eq (0.8 * order.ticket_prices[:normal]).round(2) }
+      end
+    end
+  end
 end

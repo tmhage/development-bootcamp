@@ -15,9 +15,13 @@ h3 Tickets & Price
     => @order.cart[:supporter]
     strong Supporter
     |  tickets (#{number_to_currency(@order.ticket_prices[:supporter])})
+- if @order.discount_code.present?
+  .input
+    strong = "Total discount promo code '#{@order.discount_code.code}':"
+    =< number_to_currency(@order.cart_discount)
 .input
   strong Total price:
-  = number_to_currency(@order.cart_sum_total)
+  =< number_to_currency(@order.cart_sum_total)
 
 p
   br
@@ -27,7 +31,7 @@ p
     p = payment_link_to 'Pay now!', order, class: 'button primary'
 
     p
-      | Prefer creditcard? Click the button below, but note that you will pay
+      | Prefer credit card? Click the button below, but note that you will pay
       |  a fee of 2.9% (#{number_to_currency(@order.cart_sum_total)} + Payment fee: #{number_to_currency(@order.cart_sum_total * 0.029)} = #{number_to_currency(@order.cart_sum_total * 1.029)})
 
       = form_for @order, url: stripe_token_ticket_url(@order) do |f|
@@ -53,7 +57,7 @@ p
     p = payment_link_to 'Pay now!', order, class: 'button primary'
 
     p
-      | Prefer creditcard? Click the button below, but note that you will pay
+      | Prefer credit card? Click the button below, but note that you will pay
       |  a fee of 2.9% (#{number_to_currency(@order.cart_sum_total)} + Payment fee: #{number_to_currency(@order.cart_sum_total * 0.029)} = #{number_to_currency(@order.cart_sum_total * 1.029)})
 
       = form_for @order, url: stripe_token_ticket_url(@order) do |f|
