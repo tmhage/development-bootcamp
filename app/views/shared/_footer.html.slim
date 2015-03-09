@@ -1,42 +1,43 @@
 - cache 'footer' do
   .footer
     .inner
-      nav.section
-        h3#bottom-nav Navigation
-        ul
-          = render "shared/menu_items"
-          = menu_item_for team_path do
-            | About us
-  
-      .section.social
-        h3 Follow us
-        ul
-          li = link_to "Twitter", "https://twitter.com/devbootcamps"
-          li = link_to "Facebook", "https://www.facebook.com/developmentbootcamp"
-          li = link_to "LinkedIn", "https://www.linkedin.com/company/development-bootcamp"
-          li = link_to "Github", "https://github.com/devbootcamps"
-          li = link_to "Sitemap", "/sitemap.xml"
-  
-      .section.vcard
-        h3.fn Development Bootcamp
-        br
-        span.title Reinio, Amsterdam, Europe
-        p.adr
-          span.email
-            = link_to "info@developmentbootcamp.nl", "mailto:info@developmentbootcamp.nl"
+      .sections
+        nav.section
+          strong Navigation
+          ul
+            = render "shared/menu_items"
+            = menu_item_for team_path do
+              | About us
+
+        .section.social
+          strong Follow us
+          ul
+            li = link_to "Twitter", "https://twitter.com/devbootcamps"
+            li = link_to "Facebook", "https://www.facebook.com/developmentbootcamp"
+            li = link_to "LinkedIn", "https://www.linkedin.com/company/development-bootcamp"
+            li = link_to "Github", "https://github.com/devbootcamps"
+            li = link_to "Sitemap", "/sitemap.xml"
+
+        .section.vcard
+          strong.fn Development Bootcamp
           br
-          span.street-address Rokin 75
-          span.postal-code , 1012 KL
-          br
-          span.locality Amsterdam
-          span.region , NH
-          br
-          | Phone: 
-          span.phone-number +31681910218
-          br
-          span KvK (Chamber of Commerce): 34260299
-          br
-          span VAT ID: NL108713003B01
+          span.title Reinio, Amsterdam, Europe
+          p.adr
+            span.email
+              = link_to "info@developmentbootcamp.nl", "mailto:info@developmentbootcamp.nl"
+            br
+            span.street-address Rokin 75
+            span.postal-code , 1012 KL
+            br
+            span.locality Amsterdam
+            span.region , NH
+            br
+            | Phone: 
+            span.phone-number +31681910218
+            br
+            span KvK (Chamber of Commerce): 34260299
+            br
+            span VAT ID: NL108713003B01
 
       .bottom
         p

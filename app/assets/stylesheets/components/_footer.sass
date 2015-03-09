@@ -1,0 +1,41 @@
+.footer
+  padding-top: 8em
+  background: darken($purple, 10%)
+  color: $gray-lighter
+  font-size: 0.8em
+  border-top: 2px solid $yellow
+
+  a:link,
+  a:hover,
+  a:visited
+    color: $gray-lighter
+
+  ul
+    list-style: none
+    margin: 0
+    padding: 0
+
+    .fa,
+    ul
+      display: none
+
+  .inner
+    @extend .container
+    .sections
+      @extend .row
+
+      .section
+        @extend .col-sm-3
+        padding-bottom: 2em
+
+        &:first-child
+          @extend .col-md-offset-1
+
+    .bottom
+      @extend .row
+      padding-bottom: 2em
+      text-align: center
+
+@media (max-width: $screen-sm-min)
+  .footer .sections
+    display: none

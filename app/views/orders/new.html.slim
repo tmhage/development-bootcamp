@@ -4,34 +4,63 @@
 
 - if @order.current_step == 'tickets'
   - cache 'students-list-intro' do
-    .mod-intro.with-cover-image
-      .inner
-        .cover-image.tickets
-        h1 Register now
+    .dbc-page-header.tickets
+      .container-fluid
+        .inner
+          h1 Register now
 
-        h4  Tickets include:
+          h4  Tickets include:
 
-        markdown:
-          - Access to the Bootcamp: **July 12-18, 2015**
-          - Healthy lunch on Monday - Saturday
-          - Daily Keynotes Sunday - Saturday
-          - Workshops Monday - Saturday
-          - Evening Sessions Sunday - Friday
-          - Coding Contest with great prizes
-          - Certificate upon completion of the program
+          markdown:
+            - Access to the Bootcamp: **July 12-18, 2015**
+            - Healthy lunch on Monday - Saturday
+            - Daily Keynotes Sunday - Saturday
+            - Workshops Monday - Saturday
+            - Evening Sessions Sunday - Friday
+            - Coding Contest with great prizes
+            - Certificate upon completion of the program
 
-        p
-          = link_to 'Register now', '#orderForm', class: 'button'
-          = link_to 'Check our program', program_path, class: 'button secondary'
+          p
+            = link_to 'Register now', '#orderForm', class: 'button primary'
+            = link_to 'Check our program', program_path, class: 'button default'
+.dbc-content
+  .dbc-container.dbc-form
+    .inner.form#orderForm
+      .support-box
+        | Feel free to mail us at
+        strong =<> mail_to 'support@developmentbootcamp.nl'
+        | or call us on
+        strong =<> '+31681910218'
+        | if you have any questions.
 
-.mod-text
-  .inner#orderForm
-    p.support
-      | Feel free to mail us at
-      strong =<> mail_to 'support@developmentbootcamp.nl'
-      | or call us on
-      strong =<> '+31681910218'
-      | if you have any questions.
+      = render 'order_steps'
+      = render 'form'
 
-    = render 'order_steps'
-    = render 'form'
+  - if @order.first_step?
+    .dbc-container.dbc-text
+      .inner.normal
+          h2
+            => fa_icon 'support fw'
+            | About Tickets & Pricing
+
+          markdown:
+            * Ticket prices are the same for all [3 levels](#{program_path}).
+            * __* Important!__ We have a very limited number of seats! If you want to secure your place in the program, but
+            you want us to help you pay, _you still need to register_! If you don't, tickets might get sold out in the
+            meantime, or while we process your request.
+            * If the prices are too high for you, we might be able to help you out by allowing you to pay in installments.
+              Walk through all the steps of registration until you see a button that says "Pay now". Below that button you
+              will find instructions.
+            * We are a **low-profit** organization. Meaning we won't earn much by selling you these tickets.
+            * Ticket prices help us pay for the venue, the catering, and the WiFi. Speakers, coaches, and mentors
+              do not get paid. Our cost are over € 100,000.00.
+            * If we sell over 100 tickets, we will start giving out more discounts to minorities, pay volunteers,
+              and compensate people who already bought a ticket so they might benefit from discounts even if they
+              already bought their ticket.
+            * Our number one purpose is to contribute to development education. Giving you a valuable experience for an
+              affordable price is paramount to us.
+
+          center
+            = fa_icon 'heart fw'
+            = fa_icon 'heart fw'
+            = fa_icon 'heart fw'

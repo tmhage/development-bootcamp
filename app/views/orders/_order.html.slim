@@ -24,7 +24,7 @@ p
 
 - if @order.confirmed?
   - if @order.mollie_status.blank? && @order.stripe_token.blank?
-    p = payment_link_to 'Pay now!', order, class: 'button'
+    p = payment_link_to 'Pay now!', order, class: 'button primary'
 
     p
       | Prefer creditcard? Click the button below, but note that you will pay
@@ -50,7 +50,7 @@ p
     - if %w(CANCELLED EXPIRED).include? @order.payment.status.upcase
       p Your order was #{@order.payment.status.upcase}. You can try make a new payment below:
 
-    p = payment_link_to 'Pay now!', order, class: 'button'
+    p = payment_link_to 'Pay now!', order, class: 'button primary'
 
     p
       | Prefer creditcard? Click the button below, but note that you will pay

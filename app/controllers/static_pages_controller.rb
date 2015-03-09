@@ -1,5 +1,7 @@
 class StaticPagesController < ApplicationController
 
+  before_filter :disable_sidebar
+
   def home; end
 
   def about; end

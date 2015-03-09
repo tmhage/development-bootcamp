@@ -1,5 +1,8 @@
-= form_for @order, url: '/tickets' do |f|
+= bootstrap_form_for @order, url: '/tickets' do |f|
   = render "orders/form/#{@order.current_step.split('-').first}", f: f
-  br
-  = f.submit 'Back', class: 'button secondary', name: 'back_button' unless @order.first_step?
-  = f.submit 'Continue', class: 'button'
+
+  .actions
+    = f.form_group do
+      = f.submit 'Back', class: 'button default', name: 'back_button' unless @order.first_step?
+      = f.submit 'Continue', class: 'button primary'
+

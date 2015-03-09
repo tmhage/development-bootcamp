@@ -1,0 +1,29 @@
+.block
+  @extend .col-lg-6
+  @extend .col-md-12
+
+  .button
+    background-color: $green
+    color: #fff
+
+  &.beginner
+    h2
+      color: $green
+    .button
+      background-color: $green
+      color: #fff
+  &.intermediate
+    h2
+      color: $yellow
+    .button
+      background-color: $yellow
+      color: $gray-darker
+  &.advanced
+    h2
+      color: $purple
+    .button
+      background-color: $purple
+      color: #fff
+  &.expert
+    .button
+      background-color: $gray

@@ -1,0 +1,51 @@
+.dbc-form
+  @extend .dbc-text
+
+  .form
+    @extend .col-md-6
+    @extend .col-md-offset-3
+
+    h2
+      margin-bottom: 2em
+      font-family: 'Courgette', cursive
+      color: $purple
+      font-size: 3em
+
+  ol.order-steps
+    list-style: none
+    text-align: center
+    clear: both
+    margin-bottom: 6em
+    padding-left: 0
+
+    li
+      display: inline-block
+      width: 52px
+      text-align: center
+      font-size: 16px
+      margin-right: 1em
+      &:last-child
+        margin-right: 0
+
+      @media (min-width: $screen-lg-min)
+        margin-right: 2em
+
+      @media (max-width: $screen-md-max)
+        width: 35px
+        font-size: 12px
+
+    .number
+      padding: 15px
+      border-radius: 36px
+      background-color: $gray-dark
+      color: #fff
+      text-align: center
+
+      @media (max-width: $screen-md-max)
+        padding: 10px
+        width: 35px
+        font-size: 12px
+
+    li.active
+      .number
+        background-color: $yellow

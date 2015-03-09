@@ -1,11 +1,10 @@
-h2 Confirmation
+h2
+  => fa_icon 'check fw'
+  | Confirmation
+
+= f.alert_message "Please fix the errors below."
 
 - if @order.errors.full_messages.any?
-  h3.form-error The following errors need to be addressed before we can save your registration.
-  ul.form-errors
-    - @order.errors.full_messages.each do |error_message|
-      li = error_message
-
   - if @order.errors.full_messages.size == 1 && @order.errors[:terms_and_conditions].present?
     = render 'orders/form/accept_terms', f: f
   - else

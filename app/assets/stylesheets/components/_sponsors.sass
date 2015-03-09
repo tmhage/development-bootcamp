@@ -1,0 +1,22 @@
+.dbc-sponsors
+  @extend .dbc-speakers
+
+.sponsor
+  @extend .speaker
+
+  .logo
+    @extend .avatar
+
+@media (max-width: $screen-md-max)
+  .dbc-sponsors .sponsor
+    margin-top: 2em
+    .avatar img
+      width: 50%
+
+@media (max-width: $screen-xs-max)
+  .dbc-sponsors .sponsor
+    .avatar, .bio
+      padding-left: 0
+      padding-right: 0
+    .avatar img
+      width: 75%

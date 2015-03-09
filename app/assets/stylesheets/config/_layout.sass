@@ -1,0 +1,17 @@
+.dbc-page
+  @extend .container-fluid
+  .dbc-main
+    @extend .row
+    background: $gray-lighter
+    .dbc-content
+      background: #fff
+
+.dbc-container
+  @extend .container-fluid
+  .inner
+    @extend .col-md-8
+    @extend .col-md-offset-2
+
+@media (max-width: $screen-sm-min)
+  .dbc-page .dbc-main .dbc-content
+    border-right: 0

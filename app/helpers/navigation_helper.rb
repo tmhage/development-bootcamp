@@ -25,6 +25,13 @@ module NavigationHelper
     content_tag(:li, link_to(content, object), options)
   end
 
+  def menu_dropdown_for(path, &block)
+    content_tag(:li,
+      link_to(capture(&block), path,
+        class: 'dropdown-toggle', 'aria-expanded' => false, 'data-toggle' => 'dropdown', role: 'button'),
+        class: "#{request.path.match(url_for(path)) ? 'active' : ''}")
+  end
+
   def navigation_cache_key
     "navigation-#{VERSION}-#{request.path}-#{Student.count}-#{Speaker.count}-#{Sponsor.count}"
   end

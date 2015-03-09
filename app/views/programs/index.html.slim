@@ -3,45 +3,51 @@
 - meta_keywords "program, beginner, intermediate, advanced, expert, development, bootcamp, programming, learn, teach, sponsor"
 
 - cache 'programs-index' do
-  .mod-intro.with-cover-image
-    .inner
-      .cover-image.program
-      .h-event
-        h1.p-name Program Summer 2015 Development Bootcamp
+  .dbc-page-header.program
+    .container-fluid
+      .inner
+        h1 Program Summer 2015 Development Bootcamp
         p
-          time.dt-start datetime="2015-07-12 09:00:00 +01:00"
-            strong> 12
-          | -
-          time.dt-end datetime="2015-07-18 09:00:00 +01:00"
-            strong<> 18 July 2015
-          | at
-          span.p-location<
-            = link_to 'Tobacco Theater', 'http://www.tobacco.nl/engels/index.html'
-            strong< Amsterdam
-        p.p-summary
+          => fa_icon 'map-marker'
+          strong 12-18 July,
+          =<> link_to 'Tobacco Theater', 'http://www.tobacco.nl'
+          | – Amsterdam
+        p
           | We brought decades of experience together in
           =<> link_to "three beautiful programs", "#the-programs"
           |  for new developers. The three combined, offer all the knowledge,
           |  tools, and people that you need to head out there by yourself
           |  and make a real salary out of this, and not just some crappy
           |  internship.
-      p
-        = link_to 'Read full program', "#the-programs", class: 'button'
-        = link_to 'Get tickets', tickets_path, class: 'button secondary'
+        p
+          = link_to 'Read full program', "#the-programs", class: 'button default'
+          = link_to 'Get tickets', tickets_path, class: 'button primary'
 
-  .mod-program#the-programs
-    .inner
-      h1 Three programs
+  .dbc-content
+    .dbc-container.dbc-text#the-programs
+      .inner.centered
+        h2
+          => fa_icon 'signal'
+          | The programs
 
-      markdown:
-        These are the three levels and an impression of what their programs
-        will look like. _Disclaimer:_ We are still tweaking the structure of
-        the courses, so **these topics might change a little bit, but it
-        gives you an impression!**
+        markdown:
+          These are the three levels and an impression of what their programs
+          will look like. _Disclaimer:_ We are still tweaking the structure of
+          the courses, so *these topics might change a little bit, but it
+          gives you an impression!*
 
-      .blocks
+    .dbc-container
+      .inner
         .block.beginner
-          h2 Level One
+          h2
+            => fa_icon 'spin circle-o-notch'
+            | Level One
+
+          markdown:
+            This is where you will write your first little programs. You will
+            see that just a few lines of code will soon become readable and
+            that you can do magical things with them!
+
           ul
             li The (UNIX) Terminal
             li Version control with Git
@@ -51,10 +57,18 @@
             li Object Oriented Programming
             li Testing your Code with Code
             li Programming Contest
-          p= link_to "Read more", program_level_1_path, class: "button"
+          p= link_to "Full program", program_level_1_path, class: "button default"
 
         .block.intermediate
-          h2 Level Two
+          h2
+            => fa_icon 'spin cog'
+            | Level Two
+
+          markdown:
+            This is where we are going to take your code for a spin around
+            the world! We're going to get familiar with the technologies
+            that drive the web!
+
           ul
             li HTML, CSS
             li Browsers and the Web (clinic)
@@ -65,10 +79,20 @@
             li Basic JavaScript
             li Hosting on PaaS
             li Programming Contest
-          p= link_to "Read more", program_level_2_path, class: "button"
-      .blocks
+          p= link_to "Full program", program_level_2_path, class: "button default"
+
+    .dbc-container
+      .inner
         .block.advanced
-          h2 Level Three
+          h2
+            => fa_icon 'spin spinner'
+            | Level Three
+
+          markdown:
+            This is where you start to piece everything together that you have
+            learned so far. We're going to deepen your knowledge and show you
+            what you need to know to become a professional!
+
           ul
             li Advanced CSS and SASS
             li Ruby metaprogramming
@@ -80,45 +104,26 @@
             li Making your first Gem
             li Docker (clinic)
             li RubyMotion (clinic)
-          p= link_to "Read more", program_level_3_path, class: "button"
+          p= link_to "Full program", program_level_3_path, class: "button default"
 
         .block.expert
-          h2 Level Four, your turn! :)
-          ul
+          h2
+            => fa_icon 'spin refresh'
+            | Level Four, your turn! :)
+
+          markdown:
+            This is where you will form a community of Bootcamp alumni! You will
+            share and learn from each other, build a network, and we will always
+            be around to help you get over the rough patches!
+
+          ul  
+            li Join the community!
             li Do something that you love
-            li Meet like-minded people
-            li Find a job as a junior programmer
+            li Connect with like-minded people
             li Start your own project
             li Keep on learning
-            li Take a lead
+            li Find a job as a junior programmer
             li Share it with others
-            li Join the community!
-          p = link_to "Find a job", program_level_4_path, class: "button"
-        p &nbsp;
+          p = link_to "Join the community", program_level_4_path, class: "button default"
 
-  .mod-program.intro
-    .inner
-      h1#about-the-programs About The Programs
-
-      markdown:
-        We have three programs that will get you to the point where you will
-        be able to switch your career to programming if you'd want to.
-
-        Every program ends with a contest. Winners of the contest will get help
-        from us and our sponsors to give you everything you need to start
-        growing your own career in development.
-
-        [Level One](#level-one) will teach you the basics of programming, and
-        how tho _think_ like programmer. By the end of the week, you will be
-        able to start writing small programs to make your lives easier.
-
-        In [Level Two](#level-two) we will start with the basics of building
-        a web application. Your code will come alive on the internet, where
-        the world will be able to see what you built. An exciting week, after
-        which you will have built a couple of applications, and released them
-        to the public internet.
-
-        Finally, [Level Three](#level-three) is where we will start preparing
-        you for the professional programming world out there. You will add
-        more complicated technology to your applications, and you will learn
-        about the latest hi-tech developments and how to use them.
+    == render 'about_the_programs'

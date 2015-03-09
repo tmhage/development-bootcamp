@@ -3,57 +3,69 @@
 - meta_keywords "speakers, development, bootcamp, programming, learn, teach, speaker"
 
 - cache 'speakers-index-intro' do
-  .mod-intro.with-cover-image
-    .inner
-      .cover-image.speakers
-      h1 Call for speakers!
-
-      markdown:
-        We are contiuously looking for more daily keynote speakers, workshop
-        teachers, and coaches to help out during the workshops etc.
-
-        Please let us know if you're interested in teaching a group of motivated new
-        developers what programming is and how it is done. Apply below and we will
-        contact you to discuss more details.
-
-        Make sure to check out the programs we put together if you have not already.
-        You will find all the topics we will be teaching in there.
-
-      p
-        = link_to "Apply now", new_speaker_path, class: "button"
-        = link_to "Check Programs", program_path, class: "button secondary"
-
-- cache cache_key_for_speakers do
-  - if @speakers.any?
-    .mod-speakers
+  .dbc-page-header.speakers
+    .container-fluid
       .inner
-        - @speakers.each do |speaker|
-          - cache speaker do
-            .speaker
-              .avatar = image_tag speaker.gravatar_url, class: "gravatar"
-              h2 = "#{speaker.first_name} #{speaker.last_name}"
-              p = speaker.description.html_safe
-              p
-                - if speaker.website.present?
-                  = link_to "#{speaker.first_name}'s website", speaker.website
-                  br
-                - if speaker.twitter_handle.present?
-                  = link_to "@#{speaker.twitter_handle}", "https://twitter.com/#{speaker.twitter_handle}"
+        h1 Call for speakers!
 
-- cache 'speakers-text' do
-  .mod-text
-    .inner
-      h2 Share your knowledge
+        markdown:
+          We are contiuously looking for more daily keynote speakers, workshop
+          teachers, and coaches to help out during the workshops etc.
 
-      markdown:
-        Do you have experience in **web development**? **Teaching** and
-        **mentoring** are just parts of your daily job? Would you accept the challenge of
-        teaching a group of **beginners**? Or would you prefer having a longer **talk**
-        on one of the fields we plan to teach?
+          Please let us know if you're interested in teaching a group of motivated new
+          developers what programming is and how it is done. Apply below and we will
+          contact you to discuss more details.
 
-        If you are the one - **wait no longer**! Contact us!
+          Make sure to check out the programs we put together if you have not already.
+          You will find all the topics we will be teaching in there.
 
-        Besides the **priceless gratefulness** of all the **participants** we are working
-        hard on the other approaches on saying **thank you**! You know... We will keep you posted!
+        p
+          = link_to 'Apply now', new_speaker_path, class: 'button primary'
+          = link_to 'Check Programs', program_path, class: 'button default'
 
-      p = link_to 'Become a speaker!', new_speaker_path, class: 'button'
+.dbc-content
+  - cache cache_key_for_speakers do
+    .dbc-container.dbc-text.dbc-speakers#the-speakers
+      .inner.text
+        h2 Speakers
+
+      - if @speakers.any?
+        - @speakers.in_groups_of(2) do |group|
+          .inner
+            - group.compact.each do |speaker|
+              - cache speaker do
+                .block.speaker
+                  .avatar
+                    = image_tag speaker.gravatar_url(size: 512, secure: true), class: "gravatar"
+                    p
+                      - if speaker.website.present?
+                        = link_to speaker.website do
+                          => fa_icon 'link'
+                      - if speaker.twitter_handle.present?
+                        = link_to "https://twitter.com/#{speaker.twitter_handle}" do
+                          => fa_icon 'twitter'
+                  .bio
+                    h2 = "#{speaker.first_name} #{speaker.last_name}"
+                    p = speaker.description.html_safe
+
+  - cache 'speakers-text' do
+    .dbc-container.dbc-text#more-info
+      .inner.text
+        h2
+          => fa_icon 'share-alt'
+          | Share your knowledge
+
+        markdown:
+          Do you have experience in **web development**? **Teaching** and
+          **mentoring** are just parts of your daily job? Would you accept the challenge of
+          teaching a group of **beginners**? Or would you prefer having a longer **talk**
+          on one of the fields we plan to teach?
+
+          If you are the one - **wait no longer**! Contact us!
+
+          Besides the **priceless gratefulness** of all the **participants** we are working
+          hard on the other approaches on saying **thank you**! You know... We will keep you posted!
+
+        p
+          = link_to 'Become a speaker!', new_speaker_path, class: 'button primary'
+          = link_to 'Check the program', program_path, class: 'button default'

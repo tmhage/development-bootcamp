@@ -3,76 +3,55 @@
 - meta_keywords "speakers, coaches, mentors, development, bootcamp, programming, learn, teach, speaker"
 
 - cache 'new-speaker-intro' do
-  .mod-intro.with-cover-image
-    .inner
-      .cover-image.speakers
-      h1 Apply as a speaker or mentor
+  .dbc-page-header.sponsors
+    .container-fluid
+      .inner
+        h1 Apply as a speaker, teacher or mentor
 
-      markdown:
-        Our teachers are our biggest assets and we take very good care
-        of them. Apply below and we will contact you to discuss everything
-        in detail.
+        markdown:
+          Our teachers are our biggest assets and we take very good care
+          of them. Apply below and we will contact you to discuss everything
+          in detail.
 
-        _Make sure to check out the programs we put together if you have not already.
-        You will find all the topics we will be teaching in there._
+          _Make sure to check out the programs we put together if you have not already.
+          You will find all the topics we will be teaching in there._
 
-      = link_to "Apply now", '#new_speaker_form', class: "button"
-      = link_to "Check Programs", program_path, class: "button secondary"
+        p
+          = link_to "Apply now", '#new_speaker_form', class: "button primary"
+          = link_to "Check Programs", program_path, class: "button default"
 
-.mod-text
-  .inner#new_speaker_form
-    - if @speaker.errors.full_messages.any?
-      h3.form-error The following errors prevented us from saving your details.
-      ul.form-errors
-        - @speaker.errors.full_messages.each do |error_message|
-          li = error_message
+.dbc-content
+  .dbc-container.dbc-form#new_speaker_form
+    .inner.form
+      h2
+        => fa_icon 'bullhorn'
+        | Help us teach
 
-    = form_for @speaker do |f|
-      .input
-        = f.label :first_name
+      = bootstrap_form_for @speaker do |f|
+        = f.alert_message "Please fix the errors below."
         = f.text_field :first_name, required: true
-
-      .input
-        = f.label :last_name
         = f.text_field :last_name, required: true
+        = f.text_field :email, type: 'email', placeholder: 'you@organization.co', required: true
+        = f.text_field :twitter_handle, type: 'twitter_handle', required: false, placeholder: '@username', label: 'Twitter handle (optional)'
+        = f.text_field :website, type: 'website', required: false, placeholder: 'http://', label: 'Website (optional)'
+        = f.collection_radio_buttons :role, Speaker.roles, :first, :last, label: 'What role would fit you best?', required: true
+        = f.text_area :bio, required: false, placeholder: "What's your experience?", label: 'Biography (for your profile on the site)'
+        = f.text_area :remarks, required: false, placeholder: "Anything you'd like to share with the organisers?", label: 'Remarks (optional)'
 
-      .input
-        = f.label :email
-        = f.text_field :email, type: 'email', required: true, placeholder: 'you@organization.co'
+        = f.form_group do
+          = f.primary 'Contact me!', class: 'button'
+          br
+          br
+            em By clicking this button you accept the love and gratitude of us and our students.
 
-      .input
-        = f.label :twitter_handle, 'Twitter handle (optional)'
-        = f.text_field :twitter_handle, type: 'twitter_handle', required: false, placeholder: '@username'
-
-      .input
-        = f.label :website, 'Website (optional)'
-        = f.text_field :website, type: 'website', required: false, placeholder: 'http://'
-
-      .input
-        = f.label :role, 'What role would fit you best?'
-        - Speaker.roles.each do |value, text|
-          = f.label :role, value: value do
-            = f.radio_button :role, value, required: true
-            = text
-
-      .input
-        = f.label :bio, 'Biography (for your profile on the site)'
-        = f.text_area :bio, required: false, placeholder: "What's your experience?"
-
-      .input
-        = f.label :remarks, 'Remarks (optional)'
-        = f.text_area :remarks, required: false, placeholder: "Anything you'd like to share with the organisers?"
-
-      br
-      = f.submit 'Contact me!', class: 'button'
-      br
-      i.small By clicking this button you accept the love and gratitude of us and our students.
-
-- cache 'new-speaker-cta'
-  .mod-cta
-    .inner
-      h1 Contact us
-      p Want more details? Any concerns? Feel free to contact us.
-      p
-        | Email us on
-        =< mail_to 'speakers@developmentbootcamp.nl'
+  - cache 'new-speaker-cta'
+    .dbc-text-cta
+        .inner
+          .centered
+            h1
+              => fa_icon 'heart'
+              | Contact us
+            p Want more details? Any concerns? Feel free to contact us.
+            p = fa_icon 'leaf'
+            p
+              = mail_to 'speakers@developmentbootcamp.nl', 'Email us', class: 'button primary'

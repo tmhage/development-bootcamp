@@ -32,4 +32,13 @@ module ApplicationHelper
   def meta_image(image)
     content_for :meta_image, image_url(image)
   end
+
+  # Public: Whether or not to show the sidebar based on a configurable
+  # variable: @show_sidebar.
+  #
+  # Returns: boolean, default: true.
+  def show_sidebar?
+    return true if @show_sidebar.nil?
+    @show_sidebar
+  end
 end

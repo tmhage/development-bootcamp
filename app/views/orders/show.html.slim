@@ -1,10 +1,11 @@
-.mod-text
-  .inner
-    h1 Order & Payment
-    p
-      | Feel free to mail us at
-      strong =<> mail_to 'support@developmentbootcamp.nl'
-      | or call us on
-      strong =<> '+31681910218'
-      | if you have any questions.
-    = render @order
+.dbc-content
+  .dbc-container.dbc-text
+    .inner.text
+      h1 Order & Payment
+      .support-box
+        | Feel free to mail us at
+        strong =<> mail_to 'support@developmentbootcamp.nl'
+        | or call us on
+        strong =<> '+31681910218'
+        | if you have any questions.
+      = render @order

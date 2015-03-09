@@ -4,15 +4,18 @@ javascript:
   !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
   twttr.widgets.load();
 
-.mod-intro
-  .inner
-    h1 Thank you, #{@speaker.first_name}!
-    markdown:
-      Thank you for your interest in teaching Dev Bootcamp EU. We will contact you soon
-      to discuss the details. Additionally, you will receive an email invitation to join
-      our speakers mailing list. Feel free to join.
+.dbc-content
+  .dbc-container.dbc-text
+    .inner.centered
+      h1
+        => fa_icon 'check', class: 'green'
+        | Thank you, #{@speaker.first_name}!
+      markdown:
+        Thank you for your interest in teaching Dev Bootcamp EU. We will contact you soon
+        to discuss the details. Additionally, you will receive an email invitation to join
+        our speakers mailing list. Feel free to join.
 
-      In the meantime, you can follow our Twitter account to stay tuned.
+        In the meantime, you can follow our Twitter account to stay tuned.
 
-    p
-      a href="https://twitter.com/devbootcamps" class="twitter-follow-button" data-show-count="false" data-size="large" data-show-screen-name="false" Follow @devbootcamps
+      p
+        a href="https://twitter.com/devbootcamps" class="twitter-follow-button" data-show-count="false" data-size="large" data-show-screen-name="false" Follow @devbootcamps

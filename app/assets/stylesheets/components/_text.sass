@@ -1,0 +1,119 @@
+.dbc-text
+  padding-top: 8em
+  padding-bottom: 8em
+  color: darken($purple, 30%)
+
+  .green
+    color: $brand-success
+
+  .centered
+    text-align: center
+
+  .centered,
+  .normal,
+  .text
+    h1, h2, h3, h4
+      font-family: 'Courgette', cursive
+      color: $yellow
+
+    h2
+      font-size: 2em
+      padding-bottom: 0.2em
+      margin-bottom: 0.3em
+      border-bottom: 1px solid $yellow
+
+  .centered,
+  .normal,
+    font-size: 32px
+
+    p
+      font-weight: lighter
+      margin-bottom: 1em
+
+      .button
+        @extend .btn-lg
+
+  .block-with-image
+    .image
+      @extend .col-md-6
+      img
+        @extend .img-responsive
+        @extend .img-circle
+
+    .content
+      @extend .col-md-6
+      font-size: 22px
+
+      h2
+        font-size: 2em
+        margin-bottom: 0.8em
+        font-family: 'Courgette', cursive
+        color: $yellow
+
+      .button
+        @extend .btn-lg
+
+      p
+        margin-bottom: 1em
+
+.dbc-text-cta,
+.dbc-text-sponsors
+  @extend .dbc-text
+  font-family: 'Courgette', cursive
+
+  mark
+    color: $yellow
+    background: none
+
+  h1
+    font-size: 2em
+
+  p.subnote,
+  ul
+    font-family: $font-family-base
+
+  .sponsor-plan
+    @extend .col-md-6
+    @extend .col-md-offset-3
+
+    &.platinum
+      h2,h3
+        color: $purple
+
+    &.gold
+      h2,h3
+        color: $yellow
+
+    &.silver,
+    &.exclusive
+      h2,h3
+        color: $gray
+
+    &.exclusive
+      h2
+        color: $green
+
+.dbc-text-cta
+  background: $gray-darker
+  color: $gray-lighter
+
+  .button.default
+    border-color: $gray-lighter
+    color: $gray-lighter
+
+    &:hover
+      background: none
+
+.l-content > .dbc-text-cta
+  margin-left: -15px
+  margin-right: -15px
+
+@media (max-width: $screen-md-max)
+  .dbc-text
+    padding-top: 4em
+    paddin-bottom: 4em
+
+@media (max-width: $screen-sm-max)
+  .dbc-text
+    padding-top: 2em
+    paddin-bottom: 2em
