@@ -1,0 +1,26 @@
+.page-header
+  = link_to admin_discount_codes_path, :class => 'btn btn-default' do 
+    span.glyphicon.glyphicon-list-alt
+    |  Back 
+  = link_to edit_admin_discount_code_path(@discount_code), :class => 'btn btn-primary' do 
+    span.glyphicon.glyphicon-pencil
+    |  Edit 
+  h1
+    | Show discount_code
+dl.dl-horizontal
+  dt
+    | Code:
+  dd
+    = @discount_code.code
+  dt
+    | Discount percentage:
+  dd
+    = @discount_code.discount_percentage
+  dt
+    | Slug:
+  dd
+    = @discount_code.slug
+  dt
+    | Valid until:
+  dd
+    = @discount_code.valid_until

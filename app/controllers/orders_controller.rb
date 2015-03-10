@@ -17,6 +17,7 @@ class OrdersController < ApplicationController
     session[:order_params] ||= {}
     @order = Order.new(session[:order_params])
     @order.current_step = session[:order_step]
+    @order.promo_code = params[:promo] if params[:promo].present?
     respond_with(@order)
   end
 
@@ -99,7 +100,7 @@ class OrdersController < ApplicationController
   end
 
   def order_params
-    params.require(:order).permit(:price, :payed_at, :mollie_payment_id, :refunded_at, :mollie_refund_id,
+    params.require(:order).permit(:price, :promo_code, :payed_at, :mollie_payment_id, :refunded_at, :mollie_refund_id,
       :billing_name, :billing_email, :billing_address, :billing_postal, :billing_city, :billing_country,
       :billing_phone, :billing_company_name, :confirmed_at, :terms_and_conditions, cart: [:early_bird, :normal, :supporter],
       students_attributes: [:first_name, :last_name, :email, :twitter_handle, :github_handle, :birth_date, :preferred_level, :remarks, :allergies])
