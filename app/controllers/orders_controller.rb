@@ -17,6 +17,7 @@ class OrdersController < ApplicationController
     session[:order_params] ||= {}
     @order = Order.new(session[:order_params])
     @order.current_step = session[:order_step]
+    @order.promo_code = params[:promo] if params[:promo].present?
     respond_with(@order)
   end
 
