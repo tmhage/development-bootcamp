@@ -1,11 +1,44 @@
 .dbc-post
   padding-top: 2em !important
   padding-bottom: 2em !important
+  font-size: 1.2em
+
   .inner
     margin-top: 1em
     margin-bottom: 1em
+  .cover-image
+    position: relative
+    img
+      @extend .img-responsive
+
+    &:before
+      content: ""
+      top: 0
+      left: 0
+      bottom: 0
+      right: 0
+      position: absolute
+      z-index: +1
+      background: -moz-linear-gradient(top,  rgba(0,0,0,0) 30%, rgba(0,0,0,0.9) 100%)
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(40%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.9)))
+      background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 40%,rgba(0,0,0,0.9) 100%)
+      background: -o-linear-gradient(top,  rgba(0,0,0,0) 40%,rgba(0,0,0,0.9) 100%)
+      background: -ms-linear-gradient(top,  rgba(0,0,0,0) 40%,rgba(0,0,0,0.9) 100%)
+      background: linear-gradient(to bottom,  rgba(0,0,0,0) 40%,rgba(0,0,0,0.9) 100%)
+
+  .cover-overlay
+    position: relative
+    color: #fff
+    z-index: +1
+    padding-left: 2em
+    margin-top: -140px
+    padding-bottom: 60px
+
+    a:link, a:hover, a:visited
+      text-decoration: none
+      color: #fff
+
   .post-meta
-    @extend .inner
     .avatar
       @extend .col-xs-2
       img

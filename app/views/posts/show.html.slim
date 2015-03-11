@@ -7,17 +7,21 @@
   .dbc-content
     .dbc-container.dbc-text.dbc-post
       .inner
-        h1= @post.title
+        .cover-image = image_tag @post.cover_image.url(:big)
 
-      .inner
-        - if @post.user && @post.user.first_name
-          .post-meta
-            .avatar
-              => image_tag @post.user.gravatar_url(secure: true), class: "gravatar"
-            .author
-              = "#{@post.user.first_name} #{@post.user.last_name}"
-              br
-              => @post.created_at.strftime("%d %b %y")
+        .cover-overlay
+          h1= @post.title
+
+    .dbc-container.dbc-text.dbc-post
+      - if @post.user && @post.user.first_name
+        .inner.post-meta
+          .avatar
+            => image_tag @post.user.gravatar_url(secure: true), class: "gravatar"
+          .author
+            = "#{@post.user.first_name} #{@post.user.last_name}"
+            br
+            => @post.created_at.strftime("%d %b %y")
+
       .inner
         p = @post.content.sub(/<hr>/, '').html_safe
 
