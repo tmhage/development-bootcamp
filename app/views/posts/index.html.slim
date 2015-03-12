@@ -9,16 +9,20 @@
         - cache post do
           .dbc-container.dbc-text.dbc-post
             .inner
-              h2= link_to post.title, post
+              .cover-image = image_tag post.cover_image.url(:big)
 
-              - if post.user && post.user.first_name
-                .post-meta
-                  .avatar
-                    => image_tag post.user.gravatar_url(secure: true), class: "gravatar"
-                  .author
-                    = "#{post.user.first_name} #{post.user.last_name}"
-                    br
-                    => post.created_at.strftime("%d %b %y")
+              .cover-overlay
+                h2= link_to post.title, post
+
+          .dbc-container.dbc-text.dbc-post
+            - if post.user && post.user.first_name
+              .inner.post-meta
+                .avatar
+                  => image_tag post.user.gravatar_url(secure: true), class: "gravatar"
+                .author
+                  = "#{post.user.first_name} #{post.user.last_name}"
+                  br
+                  => post.created_at.strftime("%d %b %y")
             .inner
               = post.content.split("<hr>").first.html_safe
               p= link_to 'Read more', post, class: 'button primary'
