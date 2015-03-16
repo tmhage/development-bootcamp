@@ -7,16 +7,16 @@
   .dbc-page-header.sponsors
     .container-fluid
       .inner
-        /! Later: We are grateful to our sponsors. None of this would be possible without them!
-        h1 Sponsors
+        h1 Sponsors & Partners
 
         markdown:
-          To be able to **teach more people**, we are looking for the support to minimize
-          costs for participants without lowering the quality of the program we
-          are preparing.
+          Our sponsors and partners help us teach more people and keep the tickets affordable! We are very grateful
+          for their support in helping us teach code to more women, minorities, and students and keep it affordable
+          for them.
+
         p
           = link_to 'Sponsor plans', plans_sponsors_path, class: 'button primary'
-          = link_to 'Apply now!', new_sponsor_path, class: 'button default'
+          = link_to 'Donate now!', new_sponsor_path, class: 'button default'
 
 .dbc-content
   - cache cache_key_for_sponsors do
@@ -67,4 +67,4 @@
             p We are looking for more sponsors and partners. Would you like to collaborate with us? Check out our sponsor plans!
             p
               = link_to 'Check the plans', plans_sponsors_path, class: 'button primary'
-              = link_to 'Apply now!', new_sponsor_path, class: 'button default'
+              = link_to 'Donate now!', new_sponsor_path, class: 'button default'
