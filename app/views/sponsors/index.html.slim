@@ -50,7 +50,7 @@
           .inner
             - group.compact.each do |sponsor|
               - cache sponsor do
-                .sponsor
+                .block.sponsor
                   .logo
                     = image_tag sponsor.logo.thumb if sponsor.logo.present?
                     p
