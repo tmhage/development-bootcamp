@@ -21,3 +21,7 @@
 /.travis/*
 
 config/database.yml
+
+# Ignore Pow config files
+.powder
+.powenv
