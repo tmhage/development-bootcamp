@@ -9,8 +9,11 @@ h2
   - values = {}
 
 - @order.ticket_prices.each do |name, price|
+  - discounted_price = price
+  - if @order.has_valid_discount_code?
+    - discounted_price = discounted_price * (1 - (@order.discount_code.discount_percentage / 100.0))
   .row
-    = f.number_field :cart, name: "order[cart][#{name}]", id: "order_cart_#{name}", placeholder: 0, value: values[name], hide_label: true, append: "#{name.to_s.humanize} Ticket (€ #{@order.ticket_prices[name]}.-)#{ name == :early_bird ? '*' : ''}"
+    = f.number_field :cart, name: "order[cart][#{name}]", id: "order_cart_#{name}", placeholder: 0, value: values[name], hide_label: true, append: "#{name.to_s.humanize} Ticket (#{number_to_currency(discounted_price)}#{discounted_price == price ? '' : ", <strong>#{@order.discount_code.discount_percentage}% DISCOUNT</strong>"})#{ name == :early_bird ? '*' : ''}".html_safe
 
 .row
   = f.text_field :promo_code, label: 'Promo code (optional):'
