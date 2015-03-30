@@ -17,3 +17,5 @@ h2
 
 .row
   = f.text_field :promo_code, label: 'Promo code (optional):'
+div style="display:none"
+  = f.hidden_field :validate_promo_code, value: ''

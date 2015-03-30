@@ -3,7 +3,7 @@ require "Mollie/API/Client"
 class Order < ActiveRecord::Base
   has_paper_trail
 
-  attr_accessor :promo_code
+  attr_accessor :promo_code, :validate_promo_code
 
   belongs_to :discount_code
   has_many :students, inverse_of: :order
@@ -80,6 +80,10 @@ class Order < ActiveRecord::Base
       self.current_step = step
       valid?
     end
+  end
+
+  def validating_promo_code?
+    validate_promo_code.present?
   end
 
   def confirmed?
