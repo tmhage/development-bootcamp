@@ -28,12 +28,12 @@ describe Middleware::Domains do
     end
 
     describe 'on a .dev host' do
-      let(:url) { 'http://devbootcamp.nl.dev/some/path/that-we-don-t-care-exists' }
-      it { should eq 'http://www.devbootcamp.nl.dev/some/path/that-we-don-t-care-exists' }
+      let(:url) { 'http://developmentbootcamp.nl.dev/some/path/that-we-don-t-care-exists' }
+      it { should eq 'http://www.developmentbootcamp.nl.dev/some/path/that-we-don-t-care-exists' }
 
       describe 'and a custom port' do
-        let(:url) { 'http://devbootcamp.nl.dev:3000/some/path/that-we-don-t-care-exists' }
-        it { should eq 'http://www.devbootcamp.nl.dev:3000/some/path/that-we-don-t-care-exists' }
+        let(:url) { 'http://developmentbootcamp.nl.dev:3000/some/path/that-we-don-t-care-exists' }
+        it { should eq 'http://www.developmentbootcamp.nl.dev:3000/some/path/that-we-don-t-care-exists' }
       end
     end
 

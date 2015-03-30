@@ -3,7 +3,7 @@ require "Mollie/API/Client"
 class Order < ActiveRecord::Base
   has_paper_trail
 
-  attr_accessor :promo_code
+  attr_accessor :promo_code, :validate_promo_code
 
   belongs_to :discount_code
   has_many :students, inverse_of: :order
@@ -82,6 +82,10 @@ class Order < ActiveRecord::Base
     end
   end
 
+  def validating_promo_code?
+    validate_promo_code.present?
+  end
+
   def confirmed?
     persisted? && confirmed_at.present?
   end
@@ -131,10 +135,15 @@ class Order < ActiveRecord::Base
 
   def validate_discount_code
     return if promo_code.blank?
+    return if has_valid_discount_code?
+    errors.add(:promo_code, "is not a valid.")
+  end
+
+  def has_valid_discount_code?
+    return false if promo_code.blank?
     discount_code = DiscountCode.valid.find_by_code(promo_code)
     self.discount_code = discount_code if discount_code.present?
-    return if discount_code.present?
-    errors.add(:promo_code, "is not a valid.")
+    discount_code.present?
   end
 
   def validate_students_amount

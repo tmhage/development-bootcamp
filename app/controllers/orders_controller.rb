@@ -17,7 +17,12 @@ class OrdersController < ApplicationController
     session[:order_params] ||= {}
     @order = Order.new(session[:order_params])
     @order.current_step = session[:order_step]
-    @order.promo_code = params[:promo] if params[:promo].present?
+
+    if params[:promo].present?
+      @order.promo_code = params[:promo]
+      @order.validate_discount_code
+    end
+
     respond_with(@order)
   end
 
@@ -35,6 +40,9 @@ class OrdersController < ApplicationController
     elsif @order.last_step?
       finish_up_after_confirmation
       @order.save
+    elsif @order.validating_promo_code?
+      @order.validate_discount_code
+      @order.validate_promo_code = nil # reset
     else
       build_students
       @order.next_step if @order.valid?
@@ -48,7 +56,7 @@ class OrdersController < ApplicationController
       @order.students.each { |student| add_to_list(student) }
       redirect_to ticket_url(@order)
     else
-      render 'new'
+      render :new
     end
   end
 
@@ -101,7 +109,7 @@ class OrdersController < ApplicationController
 
   def order_params
     params.require(:order).permit(:price, :promo_code, :payed_at, :mollie_payment_id, :refunded_at, :mollie_refund_id,
-      :billing_name, :billing_email, :billing_address, :billing_postal, :billing_city, :billing_country,
+      :billing_name, :billing_email, :billing_address, :billing_postal, :billing_city, :billing_country, :validate_promo_code,
       :billing_phone, :billing_company_name, :confirmed_at, :terms_and_conditions, cart: [:early_bird, :normal, :supporter],
       students_attributes: [:first_name, :last_name, :email, :twitter_handle, :github_handle, :birth_date, :preferred_level, :remarks, :allergies])
   end
@@ -132,15 +140,9 @@ class OrdersController < ApplicationController
     amount_to_build.times { @order.students.build }
     students_to_take = @order.students.to_a.first(student_index)
     @order.students = []
-    logger.info "CURRENT STEP IS: #{(@order.current_step)}!"
-    logger.info "STUDENTS INDEX IS: #{(student_index)}!"
-    logger.info "CART SUM TICKETS IS: #{(@order.cart_sum_tickets)}!"
-    logger.info "AMOUNT TO BUILD IS: #{(amount_to_build)}!"
-    logger.info "STUDENTS TO TAKE SIZE IS: #{(students_to_take.size)}!"
     students_to_take.each do |student|
       @order.students << student
     end
-    logger.info "STUDENTS SIZE IS: #{(@order.students.size)}!"
   end
 
   def finish_up_after_confirmation
