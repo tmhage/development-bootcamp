@@ -12,6 +12,10 @@
         h2 Hi, meet the team!
         p We are working hard to use the knowledge we collected during the years in programming to save your time on the learning process. Check us on LinkedIn, connect with us and follow us on Twitter. We often share useful sources! Do not hesistate to contact us if you have any questions!
 
+        p
+          = link_to 'Subscribe to our newsletter', newsletter_path, class: 'button primary'
+          = link_to 'Follow us on Twitter', "https://twitter.com/devbootcamps", class: 'button default'
+
     .dbc-container.dbc-text
       .inner
         .block.team-member
@@ -98,6 +102,14 @@
             a href="https://twitter.com/RLNBoom" class="twitter-follow-button" data-show-count="false" data-size="large" data-show-screen-name="false" @RLNBoom
             br
             script type="IN/MemberProfile" data-id="https://www.linkedin.com/pub/rembert-boom/12/4bb/955" data-format="hover" data-text="Rembert Boom" data-related="false"
+
+    .dbc-container.dbc-text
+      .inner.centered
+        h2 Connect with us on Twitter
+
+        a.twitter-timeline data-widget-id="592297287927394304" href="https://twitter.com/devbootcamps"  Tweets by @devbootcamps
+        javascript:
+          !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
 
   javascript:
     !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
