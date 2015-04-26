@@ -8,6 +8,8 @@ class StaticPagesController < ApplicationController
 
   def team; end
 
+  def newsletter; end
+
   def code_of_conduct; end
 
   def cancellation_policy; end
