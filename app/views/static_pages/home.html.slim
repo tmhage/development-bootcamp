@@ -5,8 +5,9 @@
 .dbc-page-header.home
   .container-fluid
     .inner
-      h1 Learn to code in a week
-      p Beginner, intermediate, and advanced boot camps, each of one week.
+      h1 Get A Taste Of Code
+      p
+        strong Change your life around. Learn to write code.
       p
         => fa_icon 'map-marker'
         strong 12-18 July,
@@ -17,14 +18,51 @@
     .inner.centered
       h2
         => fa_icon 'cube'
-        | Learn to write code!
+        | A Unique Experience
       markdown:
-        Expert programmers and designers will share their best
-        practices with you. The invaluable ability to write code will change
-        your life around. In just one week!
+        Expert programmers and designers will give you a headstart
+        with immersive classes and workshops about the wonderful
+        world of code and the web.
       p
         = link_to 'Program', program_path, class: 'button primary'
         = link_to 'Tickets', tickets_path, class: 'button default'
+
+  .dbc-container.dbc-text-cta
+    .inner.normal
+      h1
+        => fa_icon 'sun-o'
+        | A day at our boot camp
+      ul.outline
+        li 9.00am Daily keynote by a high profile speaker
+        li 11.30am Morning workshop sessions in small teams
+        li 1.00pm Lunch (included)
+        li 2.00pm Afternoon workshop sessions in small teams
+        li 5.00pm Free time for dinner
+        li
+          | 8.00pm Evening sessions (additional
+          =<> link_to 'tickets', tickets_path
+          | for visitors)
+      p.subnote
+        small Other activities: party, hackathon, contest.
+      p
+        = link_to 'Program', program_path, class: 'button primary'
+        = link_to 'Tickets', tickets_path, class: 'button default'
+
+  .dbc-container.dbc-text
+    .inner.block-with-image
+      .image
+        = image_tag 'photos/engine-square.png'
+      .content
+        h2
+          => fa_icon 'wrench'
+          | Get in touch with your tech side
+        markdown:
+          [Level One](/program) will teach you the basics of programming, and
+          how to _think_ like programmer. By the end of the week, you will be
+          able to start writing small programs to make your lives easier.
+        p
+          = link_to 'Speakers', speakers_path, class: 'button primary'
+          = link_to 'Program', program_path, class: 'button default'
 
   .dbc-container.dbc-text-cta
     .inner.centered
@@ -48,7 +86,7 @@
           => fa_icon 'share-alt'
           | Follow our evening program
         markdown:
-          Experience the vibe of our bootcamps and sit in on our evening
+          Experience the vibe of our boot camp and sit in on our evening
           discussions, knowlegde sharing sessions, and student
           presentations.
 
@@ -58,46 +96,12 @@
           = link_to 'Tickets', tickets_path, class: 'button default'
 
   .dbc-container.dbc-text-cta
-    .inner.normal
-      h1
-        => fa_icon 'sun-o'
-        | A day at our bootcamp
-      ul.outline
-        li Daily keynote by a high profile expert speaker
-        li Morning workshop sessions in small teams
-        li Lunch cooked at the venue
-        li Afternoon workshop sessions in small teams
-        li Evening sessions (additional tickets for visitors)
-      p.subnote
-        small Other activities: sports, party, hackathon, contest.
-      p
-        = link_to 'Program', program_path, class: 'button primary'
-        = link_to 'Tickets', tickets_path, class: 'button default'
-
-  .dbc-container.dbc-text
-    .inner.block-with-image
-      .image
-        = image_tag 'photos/engine-square.png'
-      .content
-        h2
-          => fa_icon 'wrench'
-          | Join our team of experts
-        markdown:
-          Teaching is the best way to develop yourself and our industry!
-          Become a speaker for our keynotes or mentor for our workshop
-          sessions. Apply now.
-        p
-          = link_to 'Speakers', speakers_path, class: 'button primary'
-          = link_to 'Program', program_path, class: 'button default'
-
-  .dbc-container.dbc-text-cta
     .inner.centered
       p
         em
           | We brought decades of experience together in
           =<> link_to "three beautiful programs", program_path
-          | for new developers. The three combined, offer all the knowledge, tools,
-          | and network that you need to head out there by yourself and make a life out of this.
+          | for you. We offer you all the knowledge, tools, and network that you need to head out there and join the fast growing tech minded crowd.
       p
         center = fa_icon 'graduation-cap'
       p = link_to 'Read full program', program_path, class: 'button primary'
