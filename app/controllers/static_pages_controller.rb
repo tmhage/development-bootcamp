@@ -2,7 +2,9 @@ class StaticPagesController < ApplicationController
 
   before_filter :disable_sidebar
 
-  def home; end
+  def home
+    @sponsors = Sponsor.active
+  end
 
   def about; end
 
