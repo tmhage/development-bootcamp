@@ -4,7 +4,7 @@ h2
 
 = f.alert_message "Please fix the errors below."
 = f.text_field :billing_name, label: 'Full name'
-= f.text_field :billing_company_name, required: false, label: 'Company name (optional)'
+= f.text_field :billing_company_name, required: false, label: 'Company name (optional)', help: 'Not allowed for community tickets.'
 = f.text_field :billing_email, label: 'Email'
 = f.text_field :billing_address, label: 'Address'
 = f.text_field :billing_postal, label: 'Postal code'
