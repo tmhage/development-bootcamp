@@ -117,7 +117,7 @@ RSpec.describe Order, :type => :model do
         let(:discount_code) { create(:discount_code) }
         let(:promo_code) { discount_code.code }
         it { expect(order.discount_code).to eq discount_code }
-        it { byebug; expect(order.valid?).to be true }
+        it { expect(order.valid?).to be true }
 
         context 'but expired' do
           let(:discount_code) { create(:discount_code, valid_until: 1.minute.ago) }
