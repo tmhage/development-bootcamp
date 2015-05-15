@@ -6,3 +6,10 @@
       = f.submit 'Back', class: 'button default', name: 'back_button' unless @order.first_step?
       = f.submit 'Continue', class: 'button primary'
 
+markdown:
+  ```
+  cart_has_valid_ticket_types? #{@order.cart_has_valid_ticket_types?}
+  cart_sum_total #{@order.cart_sum_total}
+  min_ticket_price #{@order.min_ticket_price}
+  cart_has_positive_amounts_for_tickets? #{@order.cart_has_positive_amounts_for_tickets?}
+  ```

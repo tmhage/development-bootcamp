@@ -11,7 +11,7 @@ RSpec.describe "orders/new", :type => :view do
         render
 
         assert_select "form[action=?][method=?]", tickets_path, "post" do
-          assert_select "input#order_cart_early_bird[name=?]", "order[cart][early_bird]"
+          assert_select "input#order_cart_community[name=?]", "order[cart][community]"
           assert_select "input#order_cart_normal[name=?]", "order[cart][normal]"
           assert_select "input#order_cart_supporter[name=?]", "order[cart][supporter]"
 
