@@ -1,10 +1,10 @@
 h3 Tickets & Price
 
-- if @order.cart[:early_bird].present?
+- if @order.cart[:community].present?
   .input
-    => @order.cart[:early_bird]
-    strong Early Bird
-    |  tickets (#{number_to_currency(@order.ticket_prices[:early_bird])})
+    => @order.cart[:community]
+    strong Community
+    |  tickets (#{number_to_currency(@order.ticket_prices[:community])})
 - if @order.cart[:normal].present?
   .input
     => @order.cart[:normal]

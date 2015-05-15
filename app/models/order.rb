@@ -96,8 +96,8 @@ class Order < ActiveRecord::Base
 
   def ticket_prices
     {
-      early_bird: 1499,
-      normal: 1799,
+      community: 699,
+      normal: 1499,
       supporter: 1999
     }
   end
@@ -151,9 +151,15 @@ class Order < ActiveRecord::Base
     errors.add(:students, "You need to provide details for all #{cart_sum_tickets} students.")
   end
 
+  def min_ticket_price
+    minimum = ticket_prices.values.min
+    return minimum unless discount_code.present?
+    minimum * (discount_code.discount_percentage / 100.0)
+  end
+
   def cart_valid?
     cart_has_valid_ticket_types? &&
-      cart_sum_total >= ticket_prices.values.min &&
+      cart_sum_total >= min_ticket_price &&
         cart_has_positive_amounts_for_tickets?
   end
 

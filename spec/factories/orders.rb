@@ -14,7 +14,7 @@ FactoryGirl.define do
     billing_company_name { Faker::Company.name }
     terms_and_conditions true
     confirmed_at { Time.now - 6.minutes }
-    cart { { early_bird: 0, normal: 1, supporter: 0 } }
+    cart { { community: 1, normal: 0, supporter: 0 } }
 
     after(:build) do |order, evaluator|
       if order.cart_sum_tickets > 0
@@ -25,7 +25,7 @@ FactoryGirl.define do
 
   factory :order_step_tickets, class: 'Order' do
     current_step 'tickets'
-    cart { { early_bird: 0, normal: 1, supporter: 0 } }
+    cart { { community: 0, normal: 1, supporter: 0 } }
 
     factory :order_step_details, class: 'Order' do
       current_step 'details'
@@ -40,7 +40,7 @@ FactoryGirl.define do
       terms_and_conditions true
 
       factory :order_step_students, class: 'Order' do
-        cart { { early_bird: 0, normal: 1, supporter: 0 } }
+        cart { { community: 0, normal: 1, supporter: 0 } }
 
         after(:build) do |order, evaluator|
           if order.cart_sum_tickets > 0

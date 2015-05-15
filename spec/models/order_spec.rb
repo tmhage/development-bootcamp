@@ -136,11 +136,11 @@ RSpec.describe Order, :type => :model do
     describe 'order price' do
       let(:discount_code) { create(:discount_code, discount_percentage: 10) }
       let(:promo_code) { discount_code.code }
-      it { expect(order.cart_sum_total).to eq (0.9 * order.ticket_prices[:normal]).round(2) }
+      it { expect(order.cart_sum_total).to eq (0.9 * order.ticket_prices[:community]).round(2) }
 
       context 'different percentage' do
         let(:discount_code) { create(:discount_code, discount_percentage: 20) }
-        it { expect(order.cart_sum_total).to eq (0.8 * order.ticket_prices[:normal]).round(2) }
+        it { expect(order.cart_sum_total).to eq (0.8 * order.ticket_prices[:community]).round(2) }
       end
     end
   end

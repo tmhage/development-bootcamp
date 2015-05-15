@@ -42,3 +42,7 @@ en:
       party: Party Support sponsor
       dinner: Dinner Support sponsors
       hackathon: Hackathon sponsor
+
+  tickets:
+    one: ticket
+    other: tickets

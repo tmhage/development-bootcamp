@@ -8,15 +8,15 @@ h2
 - else
   - values = {}
 
+- trinkets = { community: { class: 'has-success', icon: 'users', help: 'Community Tickets are for individuals only, no corporate entities.' }, normal: { class: 'has-warning', icon: 'ticket', help: 'Normal tickets are for corporate customers or individuals who want to help our community efforts.' }, supporter: { class: 'has-error', icon: 'heart', help: 'Supporter tickets are for those who want to help our community efforts. All extra money that comes in goes back into the community effort to help more people code.' } }
+
 - @order.ticket_prices.each do |name, price|
   - discounted_price = price
   - if @order.has_valid_discount_code?
     - discounted_price = discounted_price * (1 - (@order.discount_code.discount_percentage / 100.0))
   .row
-    = f.number_field :cart, name: "order[cart][#{name}]", id: "order_cart_#{name}", placeholder: 0, value: values[name], hide_label: true, append: "#{name.to_s.humanize} Ticket (#{number_to_currency(discounted_price)}#{discounted_price == price ? '' : ", <strong>#{@order.discount_code.discount_percentage}% DISCOUNT</strong>"})#{ name == :early_bird ? '*' : ''}".html_safe
-.row
-  p.pull-right
-    strong Ticket prices including 21% VAT.
+    = f.number_field :cart, name: "order[cart][#{name}]", id: "order_cart_#{name}", placeholder: 0, value: values[name], hide_label: true, wrapper_class: trinkets[name][:class], append: "#{fa_icon(trinkets[name][:icon])} #{name.to_s.humanize} Ticket (#{number_to_currency(discounted_price)}#{discounted_price == price ? '' : ", <strong>#{@order.discount_code.discount_percentage}% DISCOUNT</strong>"})#{ name == :community ? '*' : ''}".html_safe, help: trinkets[name][:help]
+
 .row
   = f.text_field :promo_code, label: 'Promo code (optional):'
 div style="display:none"
