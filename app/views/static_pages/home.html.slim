@@ -116,23 +116,21 @@
   .dbc-content
     - cache cache_key_for_sponsors do
       - if @sponsors.where(plan: 'partner').count > 0
-        .dbc-container.dbc-text.dbc-sponsors#the-partners
+        .dbc-container.dbc-text.dbc-partners#the-partners
           .inner.text
             h2= t("plans.title.partners")
-          - @sponsors.where(plan: 'partner').order('name asc').in_groups_of(2) do |group|
-            .inner
-              - group.compact.each do |sponsor|
-                - cache sponsor do
-                  .block.sponsor
+          - @sponsors.where(plan: 'partner').order('name asc').each do |partner|
+              - cache partner do
+                .inner
+                  - partner_link = partner.website.present? ? partner.website : '#'
+                  .partner
                     .logo
-                      = image_tag sponsor.logo.thumb if sponsor.logo.present?
-                      p
-                        - if sponsor.website.present?
-                          = link_to sponsor.website do
-                            => fa_icon 'link'
+                      - if partner.logo.present?
+                        = link_to partner_link do
+                          = image_tag(partner.logo)
                     .bio
-                      h2 = sponsor.name
-                      p = sponsor.description.html_safe
+                      h2 = link_to partner.name, partner_link
+                      p = partner.description.html_safe
 
       .dbc-container.dbc-text.dbc-sponsors#the-sponsors
         .inner.text
