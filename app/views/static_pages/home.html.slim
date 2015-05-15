@@ -10,22 +10,87 @@
         strong Change your life around. Learn to write code.
       p
         => fa_icon 'map-marker'
-        strong 12-18 July,
-        =<> link_to 'Tobacco Theater', 'http://www.tobacco.nl'
-        | – Amsterdam
+        strong
+          | 12-18 July,
+          =< link_to 'Amsterdam Science Park', 'http://www.amsterdamsciencepark.nl/'
 .dbc-content
   .dbc-container.dbc-text
     .inner.centered
       h2
         => fa_icon 'cube'
-        | A Unique Experience
+        | Learn to code
+
       markdown:
-        Expert programmers and designers will give you a headstart
-        with immersive classes and workshops about the wonderful
-        world of code and the web.
+        Learn to code like we do. It's easy and fun! And it's the future,
+        because code is everywhere and we are so short on people who can code.
+
       p
         = link_to 'Program', program_path, class: 'button primary'
         = link_to 'Tickets', tickets_path, class: 'button default'
+
+  .dbc-container.dbc-text-cta
+    .inner.centered
+      p
+        | Most people who code never studied computer science. Most of them taught themselves. That was hard, but we make it
+        mark =<> 'easy'
+        | for you to
+        mark =< 'learn'
+        |.
+
+      p
+        center = fa_icon 'graduation-cap'
+      p = link_to 'Read full program', program_path, class: 'button primary'
+
+  .dbc-container.dbc-text
+    .inner.block-with-image
+      .image
+        = image_tag 'photos/engine-square.png'
+      .content
+        h2
+          => fa_icon 'wrench'
+          | Code is everywhere
+        markdown:
+          Every piece of technology that you use every day has software on it. Computers,
+          phones, cars, refrigerators, watches all run software large and small, complex
+          and simple. It makes sense to want to know a thing or two about what the
+          language is that all these devices that you use speak right?
+        p
+          = link_to 'Speakers', speakers_path, class: 'button primary'
+          = link_to 'Program', program_path, class: 'button default'
+
+  .dbc-container.dbc-text-cta
+    .inner.centered
+      p
+        | Once you know how it's done, you will see the
+        mark =< 'opportunities'
+        |. And they are
+        mark =< 'endless'
+        |.
+
+      p Programming is like any other thing in the world. It's not hard until you want to solve hard problems with it.
+
+      p = fa_icon 'leaf'
+      p = link_to 'Read full program', program_path, class: 'button primary'
+
+  .dbc-container.dbc-text
+    .inner.block-with-image
+      .image
+        = image_tag 'photos/nosy-people-square.png'
+      .content
+        h2
+          => fa_icon 'share-alt'
+          | Learn together
+        markdown:
+          It's more fun and inspiring to learn together. And
+          it goes a lot faster than learning code online.
+
+          We put real, working software engineers in front of
+          the classroom to give you the most up to date learning
+          experience available.
+
+        p
+          = link_to 'Program', program_path, class: 'button primary'
+          = link_to 'Tickets', tickets_path, class: 'button default'
 
   .dbc-container.dbc-text-cta
     .inner.normal
@@ -48,76 +113,50 @@
         = link_to 'Program', program_path, class: 'button primary'
         = link_to 'Tickets', tickets_path, class: 'button default'
 
-  .dbc-container.dbc-text
-    .inner.block-with-image
-      .image
-        = image_tag 'photos/engine-square.png'
-      .content
-        h2
-          => fa_icon 'wrench'
-          | Get in touch with your tech side
-        markdown:
-          [Level One](/program) will teach you the basics of programming, and
-          how to _think_ like programmer. By the end of the week, you will be
-          able to start writing small programs to make your lives easier.
-        p
-          = link_to 'Speakers', speakers_path, class: 'button primary'
-          = link_to 'Program', program_path, class: 'button default'
+  .dbc-content
+    - cache cache_key_for_sponsors do
+      - if @sponsors.where(plan: 'partner').count > 0
+        .dbc-container.dbc-text.dbc-partners#the-partners
+          .inner.text
+            h2= t("plans.title.partners")
+          - @sponsors.where(plan: 'partner').order('name asc').each do |partner|
+              - cache partner do
+                .inner
+                  - partner_link = partner.website.present? ? partner.website : '#'
+                  .partner
+                    .logo
+                      - if partner.logo.present?
+                        = link_to partner_link do
+                          = image_tag(partner.logo)
+                    .bio
+                      h2 = link_to partner.name, partner_link
+                      p = partner.description.html_safe
 
-  .dbc-container.dbc-text-cta
-    .inner.centered
-      p
-        em There is only so
-        mark =<> 'much'
-        | that you can
-        mark =<> 'learn'
-        | in an afternoon workshop, and teaching yourself how to code with online courses will not have you move too fast either. And we want you to move.
-        mark =< 'Fast'
-        | .
-      p = fa_icon 'leaf'
-      p = link_to 'Read full program', program_path, class: 'button primary'
+      .dbc-container.dbc-text.dbc-sponsors#the-sponsors
+        .inner.text
+          h2 Sponsors
+        - Sponsor.plans.keys.each do |plan|
+          - next if plan == 'partner'
+          - if @sponsors.where(plan: plan).count > 0
+            - @sponsors.where(plan: plan).order('name asc').in_groups_of(2) do |group|
+              .inner
+                - group.compact.each do |sponsor|
+                  - cache sponsor do
+                    .block.sponsor
+                      .logo
+                        = image_tag sponsor.logo.thumb if sponsor.logo.present?
+                         p
+                          - if sponsor.website.present?
+                            = link_to sponsor.website do
+                              => fa_icon 'link'
+                      .bio
+                        h2 = sponsor.name
+                        p = sponsor.description.html_safe
 
-  .dbc-container.dbc-text
-    .inner.block-with-image
-      .image
-        = image_tag 'photos/nosy-people-square.png'
-      .content
-        h2
-          => fa_icon 'share-alt'
-          | Follow our evening program
-        markdown:
-          Experience the vibe of our boot camp and sit in on our evening
-          discussions, knowlegde sharing sessions, and student
-          presentations.
-
-          These sessions will be open for visitors.
-        p
-          = link_to 'Program', program_path, class: 'button primary'
-          = link_to 'Tickets', tickets_path, class: 'button default'
-
-  .dbc-container.dbc-text-cta
-    .inner.centered
-      p
-        em
-          | We brought decades of experience together in
-          =<> link_to "three beautiful programs", program_path
-          | for you. We offer you all the knowledge, tools, and network that you need to head out there and join the fast growing tech minded crowd.
-      p
-        center = fa_icon 'graduation-cap'
-      p = link_to 'Read full program', program_path, class: 'button primary'
-
-  .dbc-container.dbc-text
-    .inner.block-with-image
-      .image
-        = image_tag 'photos/boat-square.png'
-      .content
-        h2
-          => fa_icon 'rocket'
-          | Invest in the future of software
-        markdown:
-          Our students learn to write code and they will be your future
-          clients. This is an excellent opportunity to bring your brand
-          to their attention. Check our sponsor plans.
-        p
-          = link_to 'Sponsors', sponsors_path, class: 'button primary'
-          = link_to 'Program', program_path, class: 'button default'
+    - cache 'sponsors-index-cta'
+      .dbc-container.dbc-text
+        .inner.centered
+            p
+              | We are looking for more sponsors and partners. Would you like to collaborate with us? Send us an
+              =< mail_to 'info@developmentbootcamp.nl', 'email'
+              |.

@@ -23,14 +23,6 @@
     ul.subnav
       = menu_item_for new_speaker_path, active: request.path == url_for(new_speaker_path) do
         | Become a Teacher
-  = menu_item_for sponsors_path do
-    => fa_icon 'star'
-    | Sponsors
-    ul.subnav
-      = menu_item_for plans_sponsors_path, active: request.path == url_for(plans_sponsors_path) do
-        | Sponsor Plans
-      = menu_item_for new_sponsor_path, active: request.path == url_for(new_sponsor_path) do
-        | Become a Sponsor
   = menu_item_for blog_index_path do
     => fa_icon 'pencil'
     | Blog
