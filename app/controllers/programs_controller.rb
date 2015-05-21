@@ -3,20 +3,27 @@ class ProgramsController < ApplicationController
 
   def index; end
 
-  def level_one; end
-  def level_two; end
-  def level_three; end
-  def level_four; end
+  def level_one
+    redirect_to program_path, status: :moved_permanently
+  end
+
+  def level_two
+    redirect_to program_path, status: :moved_permanently
+  end
+
+  def level_three
+    redirect_to program_path, status: :moved_permanently
+  end
+
+  def level_four
+    redirect_to program_path, status: :moved_permanently
+  end
 
   private
 
   def set_subnav
     @nav_items = {
-      'Overview' => program_path,
-      'Level 1' => program_level_1_path,
-      'Level 2' => program_level_2_path,
-      'Level 3' => program_level_3_path,
-      'Level 4' => program_level_4_path
+      'Overview' => program_path
     }
   end
 end

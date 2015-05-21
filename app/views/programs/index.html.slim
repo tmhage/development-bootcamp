@@ -6,19 +6,15 @@
   .dbc-page-header.program
     .container-fluid
       .inner
-        h1 Program Summer 2015 Development Bootcamp
+        h1 Program Summer 2015 Taste of Code
         p
           => fa_icon 'map-marker'
           strong
             | 12-18 July,
             =< link_to 'Amsterdam Science Park', 'http://www.amsterdamsciencepark.nl/'
-        p
-          | We brought decades of experience together in
-          =<> link_to "three beautiful programs", "#the-programs"
-          |  for new developers. The three combined, offer all the knowledge,
-          |  tools, and people that you need to head out there by yourself
-          |  and make a real salary out of this, and not just some crappy
-          |  internship.
+
+        p By the end of the week you will have built your own website, and you will know how to grow and maintain it.
+
         p
           = link_to 'Get tickets', tickets_path, class: 'button primary'
           = link_to 'Read full program', "#the-programs", class: 'button default'
@@ -29,102 +25,69 @@
       .inner.centered
         h2
           => fa_icon 'signal'
-          | The programs
+          | The program
 
         markdown:
-          These are the three levels and an impression of what their programs
-          will look like. _Disclaimer:_ We are still tweaking the structure of
-          the courses, so *these topics might change a little bit, but it
-          gives you an impression!*
+          A full week primer that teaches you to build and maintain your own personal site. You can use it to
+          do your personal branding (biography, blog, portfolio) or to start building on a business project
+          you might have. Up to you! We will help you get there.
 
-    .dbc-container
-      .inner
-        .block.beginner
-          h2
-            => fa_icon 'spin circle-o-notch'
-            | Level One
+          There's more. Keep scrolling.
 
-          markdown:
-            This is where you will write your first little programs. You will
-            see that just a few lines of code will soon become readable and
-            that you can do magical things with them!
+    .dbc-container.dbc-text-cta
+      .inner.normal
+        h2 A First Taste of Code
+        markdown:
+          In one week, we will cover all the basic parts of a web application. In the morning we start at 9am with a classroom lecture, followed by workshops the rest of the day until 5pm. We will pause only for lunch, coffee, and tea. During the evenings we will have various cool keynotes and presentations on lighter subjects between 8pm and 10pm.
 
-          ul
-            li The (UNIX) Terminal
-            li Version control with Git
-            li Basic programming
-            li Debugging your code
-            li OSS and the Gem ecosystem
-            li Object Oriented Programming
-            li Testing your Code with Code
-            li Programming Contest
-          p= link_to "Full program", program_level_1_path, class: "button default"
+          By the end of the week you will have built your own website, and you will know how to grow and maintain it. One year of hosting is included in the program so your website will stay online for that time and you will be able to show it to your friends, family, even start your own business maybe?
 
-        .block.intermediate
-          h2
-            => fa_icon 'spin cog'
-            | Level Two
+        p
+          = link_to 'Get tickets', tickets_path, class: 'button primary'
+          = link_to 'Or read on!', '#full-program', class: 'button default'
 
-          markdown:
-            This is where we are going to take your code for a spin around
-            the world! We're going to get familiar with the technologies
-            that drive the web!
+    .dbc-container.dbc-text#full-program
+      .inner.text
+        h1 The Full Program. In all it's glory.
+        markdown:
+          ### **Sunday 12th**. Frontend, or The Face of a Website
+          #### #{ fa_icon 'cubes fw' } Creating a structure for the page and linking it together with HTML
+          #### #{ fa_icon 'paint-brush fw' } Making it pretty and readable with styling, CSS
 
-          ul
-            li HTML, CSS
-            li Browsers and the Web (clinic)
-            li Fundamentals of Rails
-            li Scrum and planning requirements
-            li Database and associations
-            li TDD
-            li Basic JavaScript
-            li Hosting on PaaS
-            li Programming Contest
-          p= link_to "Full program", program_level_2_path, class: "button default"
+          ### **Monday 13th**.Behind the Scenes of Your Computer: The Terminal
+          #### #{ fa_icon 'keyboard-o fw' } Controlling your computer with text commands (remember The Matrix?)
+          #### #{ fa_icon 'terminal fw' } Connecting to a server that serves your website
+          #### #{ fa_icon 'history fw' } Tracking history and sharing code to work together.
 
-    .dbc-container
-      .inner
-        .block.advanced
-          h2
-            => fa_icon 'spin spinner'
-            | Level Three
+          ### **Tuesday 14th**. Basic Programming
+          #### #{ fa_icon 'diamond fw' } Meet Ruby: a new but simple language.
+          #### #{ fa_icon 'question-circle fw' } Create an oracle: ask your program any question, and it will answer
 
-          markdown:
-            This is where you start to piece everything together that you have
-            learned so far. We're going to deepen your knowledge and show you
-            what you need to know to become a professional!
+          ### **Wednesday 15th**: Loops and Breaks While We Wait
+          #### #{fa_icon 'spin refresh fw'} Looping around until the worlds starts to spin.
+          #### #{fa_icon 'rocket fw'} It's gonna be.. wait for it...!
 
-          ul
-            li Advanced CSS and SASS
-            li Ruby metaprogramming
-            li Hosting on VPS
-            li Networking and Security
-            li Advanced Rails and refactoring
-            li ElasticSearch (clinic)
-            li Background Jobs
-            li Making your first Gem
-            li Docker (clinic)
-            li RubyMotion (clinic)
-          p= link_to "Full program", program_level_3_path, class: "button default"
+          ### **Thursday 16th**: The Family Tree: Object Oriented Programming (OOP)
+          #### #{ fa_icon 'th fw' } Tragedy of the commons or: why OOP?
+          #### #{ fa_icon 'tree fw' } Who's child is this? And who are her ancestors?
 
-        .block.expert
-          h2
-            => fa_icon 'spin refresh'
-            | Level Four, your turn! :)
+          ### **Friday 17th**: Back to Front with Ruby on Rails
+          #### #{ fa_icon 'archive fw' } Super models never forget a thing: storing stuff
+          #### #{ fa_icon 'gamepad fw' } Freaky controllers control everything
+          #### #{ fa_icon 'eye fw' } Phew, what a view: back to the frontend
 
-          markdown:
-            This is where you will form a community of Bootcamp alumni! You will
-            share and learn from each other, build a network, and we will always
-            be around to help you get over the rough patches!
+          ### **Saturday 18th**: And The Winner Is...! A Contest!
+          #### #{ fa_icon 'laptop fw' } Hackathon: a marathon for hackers
+          #### #{ fa_icon 'trophy fw' } Demos & Prizes
+          #### #{ fa_icon 'tint fw' } Closing thoughts.
 
-          ul  
-            li Join the community!
-            li Do something that you love
-            li Connect with like-minded people
-            li Start your own project
-            li Keep on learning
-            li Find a job as a junior programmer
-            li Share it with others
-          p = link_to "Join the community", program_level_4_path, class: "button default"
+    .dbc-container.dbc-text
+      .inner.centered
+        h2 Ready to join us?
 
-    == render 'about_the_programs'
+        p This is the future. And you should be part of it! Tickets start at €699 for the full seven days.
+
+        p
+          = link_to 'Get tickets', tickets_path, class: 'button primary'
+          = link_to 'Newsletter', newsletter_path, class: 'button default'
+
