@@ -23,12 +23,14 @@ describe 'frontend routes', type: :routing do
         action: 'level_one'
       )
     end
+
     it 'routes to programs#level_two' do
       expect(get: '/program/level-2').to route_to(
         controller: 'programs',
         action: 'level_two'
       )
     end
+
     it 'routes to programs#level_three' do
       expect(get: '/program/level-3').to route_to(
         controller: 'programs',
