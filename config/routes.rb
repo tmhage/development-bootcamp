@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
   get '/tickets' => 'orders#new'
   get '/team' => 'static_pages#team'
+  get '/contact' => 'static_pages#contact'
   get '/newsletter' => 'static_pages#newsletter'
   get '/code-of-conduct' => 'static_pages#code_of_conduct'
 

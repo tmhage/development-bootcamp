@@ -17,4 +17,6 @@ class StaticPagesController < ApplicationController
   def cancellation_policy; end
 
   def terms_and_conditions; end
+
+  def contact; end
 end
