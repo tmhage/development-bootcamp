@@ -10,10 +10,11 @@ html
       meta name="robots" content=h(yield(:meta_robots))
     - unless yield(:meta_description).chomp.empty?
       meta name="description" content=h(yield(:meta_description))
+      meta property="og:description" content=h(yield(:meta_description))
     - unless yield(:meta_keywords).chomp.empty?
       meta name="keywords" content=h(yield(:meta_keywords))
-    - unless yield(:meta_image).chomp.empty?
-      meta property="og:image" content=h(yield(:meta_image))
+    - meta_image(image_url('photos/get-a-taste-of-code.jpg')) if yield(:meta_image).chomp.empty?
+    meta property="og:image" content=h(yield(:meta_image))
     link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"
     link rel="icon" href="/favicon.ico" type="image/x-icon"
 
