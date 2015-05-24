@@ -1,0 +1,70 @@
+.dbc-program
+  @extend .dbc-text
+
+  .inner.centered
+    h1
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif
+      font-size: 42px
+      color: #000
+
+    p
+      font-size: 1.2em
+
+  .dbc-day
+    @extend .col-md-4
+    @extend .col-sm-6
+    margin-bottom: $grid-gutter-width
+    color: #fff
+    font-size: 16px
+
+    &.day-one
+      .activity
+        background-color: #e92523
+    &.day-two
+      .activity
+        background-color: #fac21f
+    &.day-three
+      .activity
+        background-color: #e92523
+    &.day-four
+      .activity
+        background-color: #414141
+    &.day-five
+      .activity
+        background-color: #e92523
+    &.day-six
+      .activity
+        background-color: #8b1617
+    &.day-seven
+      .activity
+        background-color: #5a1a80
+
+    &.day-seven
+      @extend .col-md-offset-4
+      @extend .col-sm-offset-3
+
+    .date,
+    .topics
+      background: #000
+      padding: 1em
+
+    .date
+      font-weight: bold
+
+    .activity
+      height: 18em
+      padding: 1.8em
+
+      h2
+        margin: 0 0 0.5em 0
+
+      p
+        font-size: 18px
+        font-weight: lighter
+
+    .topics
+      height: 7em
+      color: #656565
+
+      ul
+        padding-left: 1.8em
