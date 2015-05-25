@@ -57,6 +57,7 @@ Rails.application.routes.draw do
   get '/sitemap.:format' => 'application#sitemap', constraints: { format: :xml }
 
   namespace :admin do
+    get '/' => 'orders#index'
     resources :discount_codes
     resources :posts, except: :show do
       member do

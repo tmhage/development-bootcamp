@@ -31,9 +31,11 @@
           = fa_icon 'heart fw'
           | Sponsors
           span.badge =< Sponsor.count
+        = menu_item_for admin_discount_codes_path do
+          = fa_icon 'heart fw'
+          | Promo codes
+          span.badge =< Sponsor.count
         = menu_item_for root_path do
-          = fa_icon 'home fw'
-          | Public website
+          = fa_icon 'desktop fw'
         = menu_item_for edit_user_registration_path do
           = fa_icon 'user fw'
-          | Account
