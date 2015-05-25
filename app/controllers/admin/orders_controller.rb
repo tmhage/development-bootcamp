@@ -25,6 +25,14 @@ class Admin::OrdersController < Admin::AdminController
     end
   end
 
+  def destroy
+    if @order && @order.destroy
+      redirect_to admin_orders_path, notice: 'Order destroyed successfully.'
+    else
+      redirect_to admin_orders_path, error: 'Could not destroy order, please try again.'
+    end
+  end
+
   def manually_paid
     if @order.update(manually_paid: true)
       flash[:notice] = 'Status set to manually paid'
