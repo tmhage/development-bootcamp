@@ -9,6 +9,7 @@
 
     p
       font-size: 1.2em
+      font-style: italic
 
   .dbc-day
     @extend .col-md-4
@@ -18,30 +19,37 @@
     font-size: 16px
 
     &.day-one
-      .activity
+      .activity, .image
         background-color: #e92523
     &.day-two
-      .activity
+      .activity, .image
         background-color: #fac21f
     &.day-three
-      .activity
+      .activity, .image
         background-color: #e92523
     &.day-four
-      .activity
+      .activity, .image
         background-color: #414141
     &.day-five
-      .activity
+      .activity, .image
         background-color: #e92523
     &.day-six
-      .activity
+      .activity, .image
         background-color: #8b1617
     &.day-seven
-      .activity
+      .activity, .image
         background-color: #5a1a80
 
     &.day-seven
       @extend .col-md-offset-4
       @extend .col-sm-offset-3
+
+    .image
+      padding: 1em 3.2em 2.2em
+      height: 15em
+
+      img
+        @extend .img-responsive
 
     .date,
     .topics
@@ -52,11 +60,11 @@
       font-weight: bold
 
     .activity
-      height: 18em
+      height: 11em
       padding: 1.8em
 
       h2
-        margin: 0 0 0.5em 0
+        margin: 0 0 0.3em 0
 
       p
         font-size: 18px
