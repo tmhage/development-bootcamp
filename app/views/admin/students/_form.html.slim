@@ -2,6 +2,9 @@
   = f.text_field :first_name, required: true
   = f.text_field :last_name, required: true
   = f.text_field :email, type: 'email', required: true
+  = f.form_group :owns_laptop, label: { text: 'Owns a laptop they can bring to class?' } do
+    = f.radio_button :owns_laptop, true, label: 'Yes'
+    = f.radio_button :owns_laptop, false, label: 'No'
   = f.text_field :twitter_handle, required: false, placeholder: '@username'
   = f.text_field :github_handle, required: false, placeholder: '@username'
   = f.date_select :birth_date, required: true, include_blank: true, start_year: 1890, end_year: (Date.today.year - 13), order: [:month, :day, :year]

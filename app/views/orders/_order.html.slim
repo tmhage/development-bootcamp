@@ -123,6 +123,10 @@ h3 Student Details
     =< student.birth_date && student.birth_date.to_formatted_s(:long)
 
   .input
+    strong Brings own laptop:
+    =< student.owns_laptop? ? 'Yes' : 'No'
+
+  .input
     strong Preferred level:
     =< student.preferred_level
 
