@@ -12,8 +12,8 @@
       font-style: italic
 
   .dbc-day
-    @extend .col-md-4
-    @extend .col-sm-6
+    @extend .col-lg-4
+    @extend .col-md-6
     margin-bottom: $grid-gutter-width
     color: #fff
     font-size: 16px
@@ -45,11 +45,15 @@
       @extend .col-sm-offset-3
 
     .image
+      margin-top: -2px
       padding: 1em 3.2em 2.2em
       height: 15em
+      text-align: center
 
       img
         @extend .img-responsive
+        max-height: 100%
+        margin: 0px auto
 
     .date,
     .topics
