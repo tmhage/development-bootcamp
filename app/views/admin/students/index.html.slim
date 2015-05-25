@@ -21,7 +21,9 @@
       .col-md-10
         p.bg-danger
           | Preferred Level:
-          =< student.preferred_level
+          =<> student.preferred_level
+          | Owns Laptop:
+          =< student.owns_laptop? ? 'Yes' : 'No'
         h4 Remarks
         p.bg-info= student.remarks
         p.pull-right= student.created_at.to_s(:long)
