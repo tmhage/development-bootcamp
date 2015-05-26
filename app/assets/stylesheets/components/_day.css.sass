@@ -1,0 +1,55 @@
+.dbc-day
+  @extend .dbc-text
+  backgroud: #212121
+
+  .inner.centered
+    h1
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif
+      font-size: 42px
+      color: #ffdb51
+
+    p
+      font-size: 1.2em
+
+  .dbc-daypart
+    @extend .col-md-4
+    @extend .col-sm-6
+    margin-bottom: $grid-gutter-width
+    margin-left: 0
+    margin-right: 0
+    color: #fff
+    font-size: 16px
+
+    &.part-one
+      background-color: #e92523
+    &.part-two
+      background-color: #01ac68
+    &.part-three
+      background-color: #006c56
+    &.part-four
+      background-color: #01ac68
+    &.part-five
+      background-color: #006c56
+    &.part-six
+      background-color: #8b1617
+
+    .time,
+    .activity
+      padding: 0.7em
+
+    .time
+      font-weight: bold
+
+    .activity
+      height: 18em
+
+      h2
+        margin: 0 0 0.3em 0
+
+      p
+        font-size: 18px
+        font-weight: bold
+
+
+      ul
+        padding-left: 1.8em
