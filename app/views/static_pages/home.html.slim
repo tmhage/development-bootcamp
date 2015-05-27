@@ -112,73 +112,51 @@
 
 
 
-.dbc-container.dbc-day#day-structure
-  .inner.centered
-    h1 A day at our bootcamp
+  .dbc-container.dbc-day#day-structure
+    .inner.centered
+      h1 A day at our bootcamp
 
-  .inner
-    .dbc-daypart.part-one
-      .time
-        | 9:00 AM
-      .activity
-        h2 Daily keynote by a high profile speaker
+    .inner
+      .dbc-daypart.part-one
+        .time
+          | 9:00 AM
+        .activity
+          h2 Daily keynote by a high profile speaker
 
-    .dbc-daypart.part-two
-      .time
-        | 11.30 AM
-      .activity
-        h2 Morning workshop sessions in small teams
+      .dbc-daypart.part-two
+        .time
+          | 11.30 AM
+        .activity
+          h2 Morning workshop sessions in small teams
 
-    .dbc-daypart.part-three
-      .time
-        | 1.00 PM
-      .activity
-        h2 Lunch
-        p included
+      .dbc-daypart.part-three
+        .time
+          | 1.00 PM
+        .activity
+          h2 Lunch
+          p included
 
-    .dbc-daypart.part-four
-      .time
-        | 2:00 PM
-      .activity
-        h2 Afternoon workshop sessions in small teams
+      .dbc-daypart.part-four
+        .time
+          | 2:00 PM
+        .activity
+          h2 Afternoon workshop sessions in small teams
 
-    .dbc-daypart.part-five
-      .time
-        | 5:00 PM
-      .activity
-        h2 Free time for dinner
+      .dbc-daypart.part-five
+        .time
+          | 5:00 PM
+        .activity
+          h2 Free time for dinner
 
-    .dbc-daypart.part-six
-      .time
-        | 8:00 PM
-      .activity
-        h2 Evening Sessions
-        p
-          | additional
-          =<> link_to 'tickets', tickets_path
-          | for visitors
-
-
-  /.dbc-container.dbc-text-cta
-  /  .inner.normal
-  /    h1
-  /      => fa_icon 'sun-o'
-  /      | A day at our boot camp
-  /    ul.outline
-  /      li 9.00am Daily keynote by a high profile speaker
-  /      li 11.30am Morning workshop sessions in small teams
-  /      li 1.00pm Lunch (included)
-  /      li 2.00pm Afternoon workshop sessions in small teams
-  /      li 5.00pm Free time for dinner
-  /      li
-  /        | 8.00pm Evening sessions (additional
-  /        =<> link_to 'tickets', tickets_path
-  /        | for visitors)
-      p.subnote
-        small Other activities: party, hackathon, contest.
-      p
-        = link_to 'Program', program_path, class: 'button primary'
-        = link_to 'Tickets', tickets_path, class: 'button default'
+      .dbc-daypart.part-six
+        .time
+          | 8:00 PM
+        .activity
+          h2 Evening Sessions
+          p
+            | additional
+            =<> link_to 'tickets', tickets_path
+            | for visitors
 
   .dbc-content
     - cache cache_key_for_sponsors do
