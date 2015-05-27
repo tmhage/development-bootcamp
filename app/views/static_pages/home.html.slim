@@ -164,6 +164,14 @@
             | for visitors
         .image
 
+    .inner.centered
+
+      p Other activities: Party, Hackathon, Contest
+
+      p
+        = link_to 'Program', program_path, class: 'button primary'
+        = link_to 'Tickets', tickets_path, class: 'button default'
+
   .dbc-content
     - cache cache_key_for_sponsors do
       - if @sponsors.where(plan: 'partner').count > 0
