@@ -1,0 +1,106 @@
+.dbc-day-at
+  @extend .dbc-text
+  background: #212121
+
+  .inner.centered
+    h1
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif
+      font-size: 2.4em
+      color: #ffdb51
+      margin-bottom: 2em
+
+    p
+      font-size: 1.2em
+
+  .dbc-daypart
+    @extend .col-md-4
+    @extend .col-sm-6
+    margin-bottom: $grid-gutter-width
+    margin-left: 0
+    margin-right: 0
+    color: #fff
+    font-size: 16px
+
+    &.part-one
+      background-color: #e92523
+
+      .activity
+        height: 8em
+
+      .image
+        background-image: image_url("day_at_bootcamp/daypart_01_keynote-speaker.png")
+        height: 14em
+
+    &.part-two
+      background-color: #01ac68
+
+      .image
+        background-image: image_url("day_at_bootcamp/daypart_02_morning-group.png")
+        background-position: bottom center
+
+    &.part-three
+      background-color: #006c56
+
+      .image
+        background-image: image_url("day_at_bootcamp/daypart_03_lunch.png")
+
+    &.part-four
+      background-color: #01ac68
+
+      .image
+        background-image: image_url("day_at_bootcamp/daypart_04_afternoon.png")
+        background-position: bottom center
+
+    &.part-five
+      background-color: #006c56
+
+      .image
+        background-image: image_url("day_at_bootcamp/daypart_05_dinner.png")
+        background-position: top center
+
+    &.part-six
+      background-color: #8b1617
+
+      .image
+        background-image: image_url("day_at_bootcamp/daypart_06_evening.png")
+        background-position: top center
+
+    .time,
+    .activity
+      padding: 0.8em
+
+    .time
+      font-weight: bold
+
+    .activity
+      height: 12em
+
+      h2
+        margin: 0 0 0.3em 0
+
+      p
+        font-size: 18px
+        font-weight: bold
+
+
+      ul
+        padding-left: 1.8em
+
+    .image
+      margin-top: -2px
+      padding: 0
+      height: 10em
+      text-align: center
+      background-size: 68%
+      background-position: center center
+      background-repeat: no-repeat
+
+      img
+        @extend .img-responsive
+        max-height: 100%
+        margin: 0px auto
+
+@media (max-width: $screen-sm-max)
+  .dbc-day-at .dbc-daypart .image
+    height: 14em
+    background-size: auto 80%

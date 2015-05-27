@@ -112,7 +112,7 @@
 
 
 
-  .dbc-container.dbc-day#day-structure
+  .dbc-container.dbc-day-at#day-structure
     .inner.centered
       h1 A day at our bootcamp
 
@@ -122,12 +122,14 @@
           | 9:00 AM
         .activity
           h2 Daily keynote by a high profile speaker
+        .image
 
       .dbc-daypart.part-two
         .time
           | 11.30 AM
         .activity
           h2 Morning workshop sessions in small teams
+        .image
 
       .dbc-daypart.part-three
         .time
@@ -135,18 +137,21 @@
         .activity
           h2 Lunch
           p included
+        .image
 
       .dbc-daypart.part-four
         .time
           | 2:00 PM
         .activity
           h2 Afternoon workshop sessions in small teams
+        .image
 
       .dbc-daypart.part-five
         .time
           | 5:00 PM
         .activity
           h2 Free time for dinner
+        .image
 
       .dbc-daypart.part-six
         .time
@@ -157,6 +162,7 @@
             | additional
             =<> link_to 'tickets', tickets_path
             | for visitors
+        .image
 
   .dbc-content
     - cache cache_key_for_sponsors do
