@@ -1,0 +1,85 @@
+.dbc-program
+  @extend .dbc-text
+
+  .inner.centered
+    h1
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif
+      font-size: 42px
+      color: #000
+
+    p
+      font-size: 1.2em
+      font-style: italic
+
+  .dbc-day
+    @extend .col-lg-4
+    @extend .col-md-6
+    margin-bottom: $grid-gutter-width
+    color: #fff
+    font-size: 16px
+
+    .day-inner
+      box-shadow: -1px 1px 30px 0px rgba(50, 50, 50, 0.21)
+
+    &.day-one
+      .activity, .image
+        background-color: #e92523
+    &.day-two
+      .activity, .image
+        background-color: #fac21f
+    &.day-three
+      .activity, .image
+        background-color: #e92523
+    &.day-four
+      .activity, .image
+        background-color: #414141
+    &.day-five
+      .activity, .image
+        background-color: #e92523
+    &.day-six
+      .activity, .image
+        background-color: #8b1617
+    &.day-seven
+      .activity, .image
+        background-color: #5a1a80
+
+    &.day-seven
+      @extend .col-md-offset-4
+      @extend .col-sm-offset-3
+
+    .image
+      margin-top: -2px
+      padding: 1em 3.2em 2.2em
+      height: 15em
+      text-align: center
+
+      img
+        @extend .img-responsive
+        max-height: 100%
+        margin: 0px auto
+
+    .date,
+    .topics
+      background: #000
+      padding: 1em
+
+    .date
+      font-weight: bold
+
+    .activity
+      height: 11em
+      padding: 1.8em
+
+      h2
+        margin: 0 0 0.3em 0
+
+      p
+        font-size: 18px
+        font-weight: lighter
+
+    .topics
+      height: 7em
+      color: #656565
+
+      ul
+        padding-left: 1.8em
