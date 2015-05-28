@@ -174,48 +174,23 @@
 
   .dbc-content
     - cache cache_key_for_sponsors do
-      - if @sponsors.where(plan: 'partner').count > 0
-        .dbc-container.dbc-text.dbc-partners#the-partners
-          .inner.text
-            h2= t("plans.title.partners")
-          - @sponsors.where(plan: 'partner').order('name asc').each do |partner|
-              - cache partner do
-                .inner
-                  - partner_link = partner.website.present? ? partner.website : '#'
-                  .partner
-                    .logo
-                      - if partner.logo.present?
-                        = link_to partner_link do
-                          = image_tag(partner.logo)
-                    .bio
-                      h2 = link_to partner.name, partner_link
-                      p = partner.description.html_safe
+      - if @sponsors.count > 0
+        .dbc-container.dbc-text.dbc-sponsors#the-partners
+          .inner.centered
+            p Partners
+            - @sponsors.order('name asc').each do |sponsor|
+              - cache sponsor do
+                - sponsor_link = sponsor.website.present? ? sponsor.website : '#'
+                - if sponsor.logo.present?
+                  .sponsor
+                    = link_to sponsor_link do
+                      = image_tag(sponsor.logo.thumb)
 
-      .dbc-container.dbc-text.dbc-sponsors#the-sponsors
-        .inner.text
-          h2 Sponsors
-        - Sponsor.plans.keys.each do |plan|
-          - next if plan == 'partner'
-          - if @sponsors.where(plan: plan).count > 0
-            - @sponsors.where(plan: plan).order('name asc').in_groups_of(2) do |group|
-              .inner
-                - group.compact.each do |sponsor|
-                  - cache sponsor do
-                    .block.sponsor
-                      .logo
-                        = image_tag sponsor.logo.thumb if sponsor.logo.present?
-                         p
-                          - if sponsor.website.present?
-                            = link_to sponsor.website do
-                              => fa_icon 'link'
-                      .bio
-                        h2 = sponsor.name
-                        p = sponsor.description.html_safe
 
     - cache 'sponsors-index-cta'
       .dbc-container.dbc-text
         .inner.centered
             p
-              | We are looking for more sponsors and partners. Would you like to collaborate with us? Send us an
+              | We are looking for more sponsors and partners to help us teach code. Would you like to collaborate with us? Send us an
               =< mail_to 'info@developmentbootcamp.nl', 'email'
               |.

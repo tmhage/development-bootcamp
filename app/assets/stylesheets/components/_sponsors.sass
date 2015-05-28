@@ -1,59 +1,14 @@
 .dbc-sponsors
-  @extend .dbc-speakers
+  background: $dark-purple
 
-.sponsor
-  @extend .speaker
+  p
+    color: $gray-lighter
 
-  .logo
-    @extend .avatar
+  .sponsor
+    @extend .col-sm-4
+    height: 100px
 
-@media (max-width: $screen-md-max)
-  .dbc-sponsors .sponsor
-    margin-top: 2em
-    .logo img
-      width: 50%
-
-@media (max-width: $screen-xs-max)
-  .dbc-sponsors .sponsor
-    .logo, .bio
-      padding-left: 0
-      padding-right: 0
-    .logo img
-      width: 75%
-
-.dbc-partners
-  .partner
-    margin: 30px 0
-
-    .logo
-      @extend .col-lg-3
-      text-align: center
-      img
-        margin: 0 auto
-        @extend .img-responsive
-
-    .bio
-      @extend .col-lg-9
-
-      h2
-        margin-top: 5px
-        font-size: 1.125em
-
-      p
-        font-size: 0.925em
-        font-weight: light
-
-@media (max-width: $screen-md-max)
-  .dbc-partners .partner
-    margin-top: 2em
-    .logo img
-      width: 50%
-
-@media (max-width: $screen-xs-max)
-  .dbc-partners .partner
-    .logo, .bio
-      padding-left: 0
-      padding-right: 0
-    .logo img
-      width: 75%
-      margin-bottom: 1em
+    img
+      @extend .img-responsive
+      max-height: 100px
+      margin: 0px auto
