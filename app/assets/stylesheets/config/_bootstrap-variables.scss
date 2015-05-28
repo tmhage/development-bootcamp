@@ -2,7 +2,6 @@
 // defaults to true if twbs-font-path function is present (no function => twbs-font-path('') parsed as string == right side)
 // in Sass 3.3 this can be improved with: function-exists(twbs-font-path)
 $bootstrap-sass-asset-helper: (twbs-font-path("") != unquote('twbs-font-path("")')) !default;
-@import url(https://fonts.googleapis.com/css?family=Courgette);
 
 //
 // Variables
@@ -25,12 +24,15 @@ $brand-info:            #5bc0de !default;
 $brand-warning:         #f0ad4e !default;
 $brand-danger:          #d9534f !default;
 
-$yellow:                #ffc600 !default;
-$light-yellow:          #ffe68d !default;
-$purple:                #603e96 !default;
-$green:                 #009966 !default;
-$red:                   #992222 !default;
-$blue:                  #2277cc !default;
+// the color scheme
+$red:                  #e92523 !default;
+$dark-red:             #8b1617 !default;
+$yellow:               #fac21f !default;
+$light-yellow:         #ffe68d !default;
+$purple:               #603e96 !default;
+$dark-purple:          #5a1a80 !default;
+$green:                #2eaa6c !default;
+$dark-green:           #205a44 !default;
 
 //== Page headers
 

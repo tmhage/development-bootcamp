@@ -1,0 +1,132 @@
+.dbc-day-at
+  @extend .dbc-text
+  background: $gray-darker
+  -webkit-box-shadow: -1px 1px 30px 0px rgba(50, 50, 50, 0.21)
+  -moz-box-shadow: -1px 1px 30px 0px rgba(50, 50, 50, 0.21)
+  box-shadow: -1px 1px 30px 0px rgba(50, 50, 50, 0.21)
+
+  .button
+    @extend .btn-lg
+
+    &.default
+      border-color: $gray-lighter
+      color: $gray-lighter
+
+      &:hover
+        background: none
+
+  .inner.centered
+    color: $gray-lighter
+
+    h1
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif
+      font-size: 1.5em
+      color: #ffffff
+      margin-bottom: 2em
+
+    p
+      font-size: 1.2em
+
+  .dbc-daypart
+    @extend .col-md-4
+    @extend .col-sm-6
+    margin-bottom: $grid-gutter-width
+    margin-left: 0
+    margin-right: 0
+    color: #fff
+    font-size: 16px
+    -webkit-box-shadow: -1px 1px 30px 0px rgba(50, 50, 50, 0.21)
+    -moz-box-shadow: -1px 1px 30px 0px rgba(50, 50, 50, 0.21)
+    box-shadow: -1px 1px 30px 0px rgba(50, 50, 50, 0.21)
+
+    &.part-one
+      background-color: $red
+
+      .activity
+        height: 8em
+
+      .image
+        background-image: image_url("day_at_bootcamp/daypart_01_keynote-speaker.png")
+        height: 14em
+
+    &.part-two
+      background-color: $green
+
+      .image
+        background-image: image_url("day_at_bootcamp/daypart_02_morning-group.png")
+        background-position: bottom center
+        background-size: 80%
+
+    &.part-three
+      background-color: $dark-green
+
+      .image
+        background-image: image_url("day_at_bootcamp/daypart_03_lunch.png")
+        background-size: 85%
+
+    &.part-four
+      background-color: $green
+
+      .image
+        background-image: image_url("day_at_bootcamp/daypart_04_afternoon.png")
+        background-position: bottom center
+        background-size: 80%
+
+    &.part-five
+      background-color: $dark-green
+
+      .image
+        background-image: image_url("day_at_bootcamp/daypart_05_dinner.png")
+        background-position: top center
+
+    &.part-six
+      background-color: $dark-red
+
+      .activity
+        height: 8em
+
+      .image
+        background-image: image_url("day_at_bootcamp/daypart_06_evening.png")
+        background-position: top center
+        height: 14em
+
+
+    .time,
+    .activity
+      padding: 0.8em
+
+    .time
+      font-weight: bold
+
+    .activity
+      height: 12em
+
+      h2
+        margin: 0 0 0.3em 0
+
+      p
+        font-size: 18px
+        font-weight: bold
+
+
+      ul
+        padding-left: 1.8em
+
+    .image
+      margin-top: -2px
+      padding: 0
+      height: 10em
+      text-align: center
+      background-size: 68%
+      background-position: center center
+      background-repeat: no-repeat
+
+      img
+        @extend .img-responsive
+        max-height: 100%
+        margin: 0px auto
+
+@media (max-width: $screen-sm-max)
+  .dbc-day-at .dbc-daypart .image
+    height: 14em
+    background-size: auto 80%

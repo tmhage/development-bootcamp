@@ -5,7 +5,7 @@
     h1
       font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif
       font-size: 42px
-      color: #000
+      color: $gray-darker
 
     p
       font-size: 1.2em
@@ -15,7 +15,7 @@
     @extend .col-lg-4
     @extend .col-md-6
     margin-bottom: $grid-gutter-width
-    color: #fff
+    color: $gray-lighter
     font-size: 16px
 
     .day-inner
@@ -23,25 +23,25 @@
 
     &.day-one
       .activity, .image
-        background-color: #e92523
+        background-color: $red
     &.day-two
       .activity, .image
-        background-color: #fac21f
+        background-color: $yellow
     &.day-three
       .activity, .image
-        background-color: #e92523
+        background-color: $red
     &.day-four
       .activity, .image
-        background-color: #414141
+        background-color: $dark-red
     &.day-five
       .activity, .image
-        background-color: #e92523
+        background-color: $red
     &.day-six
       .activity, .image
-        background-color: #8b1617
+        background-color: $dark-red
     &.day-seven
       .activity, .image
-        background-color: #5a1a80
+        background-color: $dark-green
 
     &.day-seven
       @extend .col-md-offset-4

@@ -64,7 +64,6 @@ ActiveRecord::Schema.define(version: 20150525090635) do
     t.uuid     "identifier"
     t.string   "stripe_token"
     t.json     "stripe_payload"
-    t.text     "qr_code"
     t.boolean  "terms_and_conditions"
     t.boolean  "manually_paid"
     t.boolean  "paid_by_creditcard"
