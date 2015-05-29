@@ -7,6 +7,16 @@ body
   background-color: #000
   font-weight: bold
   font-size: 18px
+  transition: all 0.4s ease
+
+  &.shrink
+    height: $dbc-navbar-height/1.6
+
+    .navbar-brand
+      margin-top: $dbc-navbar-height/8
+
+    ul.navbar-nav
+      margin-top: $dbc-navbar-height/8
 
   .navbar-brand
     margin-top: $dbc-navbar-height/3
