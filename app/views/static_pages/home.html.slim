@@ -177,7 +177,7 @@
       - if @sponsors.count > 0
         .dbc-container.dbc-text.dbc-sponsors#the-partners
           .inner.centered
-            p Partners
+            p Sponsors & Partners
             - @sponsors.order('name asc').each do |sponsor|
               - cache sponsor do
                 - sponsor_link = sponsor.website.present? ? sponsor.website : '#'
