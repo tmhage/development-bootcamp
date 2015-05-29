@@ -1,16 +1,17 @@
 .dbc-day-at
   @extend .dbc-text
-  background: $gray-darker
-  -webkit-box-shadow: -1px 1px 30px 0px rgba(50, 50, 50, 0.21)
-  -moz-box-shadow: -1px 1px 30px 0px rgba(50, 50, 50, 0.21)
-  box-shadow: -1px 1px 30px 0px rgba(50, 50, 50, 0.21)
+  background: $gray-lighter
+  -webkit-box-shadow: none
+  -moz-box-shadow: none
+  box-shadow: none
+  z-index 0
 
   .button
     @extend .btn-lg
 
     &.default
-      border-color: $gray-lighter
-      color: $gray-lighter
+      border-color: $gray-darker
+      color: $gray-darker
 
       &:hover
         background: none
@@ -21,10 +22,11 @@
     h1
       font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif
       font-size: 1.5em
-      color: #ffffff
+      color: $gray-darker
       margin-bottom: 2em
 
     p
+      color: $gray-darker
       font-size: 1.2em
 
   .dbc-daypart
@@ -35,9 +37,6 @@
     margin-right: 0
     color: #fff
     font-size: 16px
-    -webkit-box-shadow: -1px 1px 30px 0px rgba(50, 50, 50, 0.21)
-    -moz-box-shadow: -1px 1px 30px 0px rgba(50, 50, 50, 0.21)
-    box-shadow: -1px 1px 30px 0px rgba(50, 50, 50, 0.21)
 
     &.part-one
       background-color: $red

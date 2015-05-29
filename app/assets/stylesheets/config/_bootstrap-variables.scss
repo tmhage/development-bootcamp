@@ -36,10 +36,10 @@ $dark-green:           #205a44 !default;
 
 //== Page headers
 
-$dbc-navbar-height: 55px;
+$dbc-navbar-height: 120px;
 $dbc-page-header-height: 500px;
 $dbc-page-header-title-offset: 44px;
-$dbc-page-header-font-size: 24px;
+$dbc-page-header-font-size: 32px;
 
 //== Scaffolding
 //
@@ -370,7 +370,7 @@ $navbar-default-border:            darken($navbar-default-bg, 6.5%) !default;
 // Navbar links
 $navbar-default-link-color:                #333 !default;
 $navbar-default-link-hover-color:          #333 !default;
-$navbar-default-link-hover-bg:             darken($navbar-default-bg, 3%) !default;
+$navbar-default-link-hover-bg:             $gray-lighter !default;
 $navbar-default-link-active-color:         $yellow;
 $navbar-default-link-active-bg:            $purple;
 $navbar-default-link-disabled-color:       #ccc !default;
@@ -863,4 +863,3 @@ $page-header-border-color:    $gray-lighter !default;
 $dl-horizontal-offset:        $component-offset-horizontal !default;
 //** Horizontal line color.
 $hr-border:                   $gray-lighter !default;
-

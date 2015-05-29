@@ -2,28 +2,58 @@ body
   padding-top: $dbc-navbar-height
 
 .navbar
+  @extend .text-uppercase
   height: $dbc-navbar-height
-  background-color: $yellow
-  border-bottom: 5px solid $purple
+  background-color: #000
   font-weight: bold
+  font-size: 18px
 
   .navbar-brand
-    position: relative
-    z-index: 1000
+    margin-top: $dbc-navbar-height/3
+    color: $yellow
+    &:hover
+      color: $yellow
+
+  ul.navbar-nav
+    margin-top: $dbc-navbar-height/3
+
+.navbar-default
+  border: none
+
+.navbar-default .navbar-nav
+  &> li > a
+    color: $yellow
+
+  &> .alt-color
+    &> a
+      color: $green
+    &.active > a
+      background: $green
+      color: $gray-darker
+      &:hover
+        color: $green
+
+  &> .active > a
+    background: $yellow
+    color: $gray-darker
+    &:hover
+      background: darken($yellow, 10%)
+      color: $gray-darker
 
 .navbar-default .navbar-toggle
-  border-color: $purple
+  margin-top: 2.5em
+  background-color: #000
+  border-color: $yellow
   .icon-bar
-    background-color: $purple
+    background-color: $yellow
   &:focus
-    background-color: transparent
-    border-color: $purple
+    background-color: $yellow
     .icon-bar
-      background-color: $purple
+      background-color: $gray-darker
   &:hover
-    background-color: $purple
+    background-color: $yellow
     .icon-bar
-      background-color: $yellow
+      background-color: $gray-darker
 
 @media (max-width: $screen-xs-max)
   .navbar
@@ -33,7 +63,7 @@ body
     border: 0
     box-shadow: none
     z-index: 100
-    background: $yellow
+    background: $gray-darker
     padding: 0
 
     ul.navbar-nav

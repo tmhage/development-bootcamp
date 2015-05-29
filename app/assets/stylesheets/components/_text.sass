@@ -1,14 +1,14 @@
 .dbc-text
   padding-top: 8em
   padding-bottom: 8em
-  color: darken($purple, 30%)
+  color: $gray-darker
 
   &.ticket-info
     margin-top: -4em
     padding-top: 0
 
   .green
-    color: $brand-success
+    color: $green
 
   .centered
     text-align: center
@@ -16,38 +16,44 @@
   .centered,
   .normal,
   .text
-    h1, h2, h3, h4
-      color: $yellow
-
     h2
       font-size: 2em
       padding-bottom: 0.2em
       margin-bottom: 0.3em
-      border-bottom: 1px solid $yellow
 
   .centered,
   .normal,
+  .caps
     font-size: 32px
 
     p
       font-weight: lighter
       margin-bottom: 1em
+      letter-spacing: 2px
 
       .button
         @extend .btn-lg
+        border-radius: 0
+
+  .caps
+    font-weight: bold
+
   .text
     h4
       color: $gray-darker
 
   .block-with-image
     .image
-      @extend .col-md-6
+      @extend .col-lg-6
       img
         @extend .img-responsive
         @extend .img-circle
+        -webkit-box-shadow: -1px 1px 30px 0px rgba(50, 50, 50, 0.21)
+        -moz-box-shadow: -1px 1px 30px 0px rgba(50, 50, 50, 0.21)
+        box-shadow: -1px 1px 30px 0px rgba(50, 50, 50, 0.21)
 
     .content
-      @extend .col-md-6
+      @extend .col-lg-6
       font-size: 22px
 
       h2
@@ -61,13 +67,13 @@
       p
         margin-bottom: 1em
 
+      .button
+        @extend .btn-lg
+        border-radius: 0
+
 .dbc-text-cta,
 .dbc-text-sponsors
   @extend .dbc-text
-
-  mark
-    color: $yellow
-    background: none
 
   h1
     font-size: 2em
@@ -108,6 +114,19 @@
     &:hover
       background: none
 
+  &.alt-color
+    background: $dark-green
+
+    &.light-color
+      background: $green
+
+@media (max-width: $screen-xs-max)
+  .dbc-text-cta
+    &.alt-color-xs
+      background: $dark-green
+    &.alt-light-color-xs
+      background: $green
+
 .l-content > .dbc-text-cta
   margin-left: -15px
   margin-right: -15px
@@ -116,6 +135,9 @@
   .dbc-text
     padding-top: 4em
     paddin-bottom: 4em
+
+    .block-with-image .image
+      display: none
 
 @media (max-width: $screen-sm-max)
   .dbc-text
