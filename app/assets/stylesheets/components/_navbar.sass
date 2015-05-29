@@ -1,42 +1,110 @@
-body
-  padding-top: $dbc-navbar-height
+//body
+//  padding-top: $dbc-navbar-height
+
+//.navbar
+//  height: $dbc-navbar-height
+//  background-color: $yellow
+//  border-bottom: 5px solid $purple
+//  font-weight: bold
+//
+//  .navbar-brand
+//    position: relative
+//    z-index: 1000
+//
+//.navbar-default .navbar-toggle
+//  border-color: $purple
+//  .icon-bar
+//    background-color: $purple
+//  &:focus
+//    background-color: transparent
+//    border-color: $purple
+//    .icon-bar
+//      background-color: $purple
+//  &:hover
+//    background-color: $purple
+//    .icon-bar
+//      background-color: $yellow
+//
+//@media (max-width: $screen-xs-max)
+//  .navbar
+//    height: auto
+//    min-height: $dbc-navbar-height
+//  .navbar-collapse
+//    border: 0
+//    box-shadow: none
+//    z-index: 100
+//    background: $yellow
+//    padding: 0
+//
+//    ul.navbar-nav
+//      margin-left: 0
+//      margin-top: 25px
+//      margin-bottom: 0
+
+
+
+@media(min-width:768px)
+  .navbar-fixed-top
+    padding: 25px 0
+    -webkit-transition: padding 0.3s
+    -moz-transition: padding 0.3s
+    transition: padding 0.3s
+
+    .navbar-brand
+      font-size: 2em
+      -webkit-transition: all 0.3s
+      -moz-transition: all 0.3s
+      transition: all 0.3s
+
+  .navbar-fixed-top.navbar-shrink
+    padding: 15px 0
+    .navbar-brand
+      font-size: 1.5em
+
 
 .navbar
-  height: $dbc-navbar-height
-  background-color: $yellow
-  border-bottom: 5px solid $purple
-  font-weight: bold
+  font-family: "Montserrat", "Helvetica", Helvetica, Arial, sans-serif
+  text-transform: uppercase
+  font-weight: 700
 
-  .navbar-brand
-    position: relative
-    z-index: 1000
+  a:focus
+    outline: none
 
-.navbar-default .navbar-toggle
-  border-color: $purple
-  .icon-bar
-    background-color: $purple
-  &:focus
-    background-color: transparent
-    border-color: $purple
-    .icon-bar
-      background-color: $purple
-  &:hover
-    background-color: $purple
-    .icon-bar
-      background-color: $yellow
+  .navbar-nav
+    letter-spacing: 1px
+    li
+      a:focus
+        outline: none
 
-@media (max-width: $screen-xs-max)
-  .navbar
-    height: auto
-    min-height: $dbc-navbar-height
-  .navbar-collapse
-    border: 0
-    box-shadow: none
-    z-index: 100
-    background: $yellow
-    padding: 0
 
-    ul.navbar-nav
-      margin-left: 0
-      margin-top: 25px
-      margin-bottom: 0
+.navbar-default,
+.navbar-inverse
+  border: none
+
+
+section
+  padding: 100px 0
+  h2
+    margin: 0
+    font-size: 3em
+
+
+section.success
+  background: $brand-success
+  color: white
+
+  a,
+  a:hover,
+  a:focus,
+  a:active,
+  a.active
+    color: $light-yellow
+    outline: none
+
+
+@media(max-width:767px)
+  section
+    padding: 75px 0
+
+  section.first
+    padding-top: 75px
