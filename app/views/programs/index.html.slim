@@ -22,17 +22,15 @@
 
   .dbc-content
     .dbc-container.dbc-text#the-programs
-      .inner.centered
-        h2
-          => fa_icon 'signal'
-          | The program
+      .inner.caps
+          p
+            mark = 'A full week primer that teaches you to build and maintain your own personal site'
+            |.
+          p
+            | You can use it to do your personal branding (biography, blog, portfolio) or to start building on a business project you might have.
+            mark.alt-color =< 'Up to you! We will help you get there.'
 
-        markdown:
-          A full week primer that teaches you to build and maintain your own personal site. You can use it to
-          do your personal branding (biography, blog, portfolio) or to start building on a business project
-          you might have. Up to you! We will help you get there.
 
-          There's more. Keep scrolling.
 
     .dbc-container.dbc-program#full-program
       .inner.centered
@@ -148,7 +146,7 @@
                 li Demos and Prizes
                 li Closing thoughts
 
-    .dbc-container.dbc-text-cta
+    .dbc-container.dbc-text-cta.alt-color.light-color
       .inner.normal
         h2 A First Taste of Code
         markdown:
@@ -159,7 +157,7 @@
         p
           = link_to 'Get tickets', tickets_path, class: 'button primary'
 
-    .dbc-container.dbc-text
+    .dbc-container.dbc-text-cta.alt-color
       .inner.centered
         h2 Ready to join us?
 
@@ -168,4 +166,3 @@
         p
           = link_to 'Get tickets', tickets_path, class: 'button primary'
           = link_to 'Newsletter', newsletter_path, class: 'button default'
-
