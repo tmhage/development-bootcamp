@@ -20,6 +20,9 @@ body
     ul.navbar-nav
       margin-top: $dbc-navbar-height/8
 
+    .navbar-default .navbar-toggle
+      margin-top: $dbc-navbar-height/8
+
   .navbar-brand
     margin-top: $dbc-navbar-height/3
     color: $yellow
@@ -71,6 +74,17 @@ body
   .navbar
     height: auto
     min-height: $dbc-navbar-height
+
+    &.shrink
+      min-height: $dbc-navbar-height/1.6
+      .navbar-toggle
+        margin-top: $dbc-navbar-height/6
+
+      ul.navbar-nav
+        margin-left: 0
+        margin-top: $dbc-navbar-height/8
+        margin-bottom: 0
+
   .navbar-collapse
     border: 0
     box-shadow: none
