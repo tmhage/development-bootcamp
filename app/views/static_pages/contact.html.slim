@@ -4,15 +4,22 @@
 
 - cache 'contact-page' do
   .dbc-content
-    .dbc-container.dbc-text
+    .dbc-container.dbc-text-cta.alt-color.light-color
       .inner
-        h2 Contact, Location, and Getting There
+        h1 Contact, Location, and Getting There
 
         markdown:
           ### Contact
 
           Contact us any time at: #{mail_to "support@developmentbootcamp.nl"}.
 
+        h2 Map Location
+
+        iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2436.7869358646467!2d4.952404700000001!3d52.3561495!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c6094481e3bfeb%3A0xe7ebf26326a3be32!2sScience+Park+125%2C+1098+XG+Amsterdam!5e0!3m2!1sen!2snl!4v1432072548583" width="600" height="450" frameborder="0" style="border:0"
+
+    .dbc-container.dbc-text-cta.alt-color
+      .inner
+        markdown:
           ### Directions
 
           The Development Bootcamp takes place at the conference
@@ -25,5 +32,3 @@
           - Directions to [Science Park by public transport](http://www.amsterdamsciencepark.nl/location-facilities/directions/directions-by-public-transport/).
           - Directions to [Science Park by car](http://www.amsterdamsciencepark.nl/location-facilities/directions/directions-by-car/). Unlimited car parking on the premises for € 2,50 per day at the time. Parking tickets are available upon request.
           - [Directions](#{image_url("contact/Map_of_Amsterdam_Science_Park.pdf")}) on Science Park to the Bootcamp
-
-        iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2436.7869358646467!2d4.952404700000001!3d52.3561495!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c6094481e3bfeb%3A0xe7ebf26326a3be32!2sScience+Park+125%2C+1098+XG+Amsterdam!5e0!3m2!1sen!2snl!4v1432072548583" width="600" height="450" frameborder="0" style="border:0"
