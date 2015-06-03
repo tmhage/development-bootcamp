@@ -37,8 +37,9 @@ body
 
   .inner
     @extend .col-lg-8
-    @extend .col-md-9
-    @extend .col-md-offset-2
+    @extend .col-md-10
+    @extend .col-lg-offset-2
+    @extend .col-md-offset-1
 
   .navbar-brand
     font-weight: 250
@@ -70,6 +71,10 @@ body
     background-color: $yellow
     .icon-bar
       background-color: $gray-darker
+
+@media (max-width: $screen-sm-max)
+  .navbar
+    font-size: 0.9em
 
 @media (max-width: $screen-xs-max)
   .navbar
