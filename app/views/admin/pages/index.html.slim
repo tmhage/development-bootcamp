@@ -1,0 +1,28 @@
+.page-header
+  h1 Pages
+
+.actions
+  = link_to 'New page', new_admin_page_path, class: 'btn btn-primary pull-right'
+
+table.table
+  caption List of pages
+  thead
+    tr
+      th Title
+      th Status
+      th Actions
+
+    - @pages.each do |page|
+      tr
+        td= link_to page.title, edit_admin_page_path(page)
+        td
+          - if page.published?
+            span.label.label-success Published
+          - else
+            span.label.label-danger Unpublished
+        td
+          - if page.published?
+            => link_to 'Unpublish', unpublish_admin_page_path(page), method: :put
+          - else
+            => link_to 'Publish', publish_admin_page_path(page), method: :put
+          = link_to 'View', page

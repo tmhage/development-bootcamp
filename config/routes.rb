@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   get '/students/:id/check' => 'students#check_qr_code'
 
   resources :blog, controller: 'posts', only: [:index, :show]
+  resources :pages, only: [:show]
   resources :sponsors, only: [:index, :new, :create] do
     member do
       get :thanks
@@ -60,6 +61,12 @@ Rails.application.routes.draw do
     get '/' => 'orders#index'
     resources :discount_codes
     resources :posts, except: :show do
+      member do
+        put :publish
+        put :unpublish
+      end
+    end
+    resources :pages, except: :show do
       member do
         put :publish
         put :unpublish
