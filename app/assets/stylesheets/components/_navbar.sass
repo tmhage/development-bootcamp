@@ -35,22 +35,23 @@ body
 .navbar-default
   border: none
 
-.navbar-default .navbar-nav
-  &> li > a
-    color: $yellow
+  .inner
+    @extend .col-lg-8
+    @extend .col-md-9
+    @extend .col-md-offset-2
 
-  &> .alt-color
-    &> a
-      color: $green
-    &.active > a
-      background: $green
-      color: $gray-darker
-      &:hover
-        color: $green
+  .navbar-brand
+    font-weight: 250
+
+.navbar-default .navbar-nav
+  @extend .pull-right
+  &> li > a
+    color: $green
+    font-weight: 200
 
   &> .active > a
-    background: $yellow
-    color: $gray-darker
+    color: $gray-lighter
+    background: none
     &:hover
       background: darken($yellow, 10%)
       color: $gray-darker
