@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150525090635) do
+ActiveRecord::Schema.define(version: 20150601075708) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,6 +72,17 @@ ActiveRecord::Schema.define(version: 20150525090635) do
   end
 
   add_index "orders", ["discount_code_id"], name: "index_orders_on_discount_code_id", using: :btree
+
+  create_table "pages", force: true do |t|
+    t.string   "title"
+    t.string   "slug"
+    t.text     "body"
+    t.boolean  "published"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "pages", ["slug"], name: "index_pages_on_slug", unique: true, where: "(published = true)", using: :btree
 
   create_table "posts", force: true do |t|
     t.string   "title"

@@ -1,0 +1,15 @@
+= bootstrap_form_for @page, url: (@page.persisted? ? admin_page_path(@page) : admin_pages_path) do |f|
+
+  fieldset
+    = f.text_field :title, help: 'Careful! Changing the title changes the link to the page!'
+    = f.text_area :body, class: 'editor'
+
+  fieldset
+    legend Publishing
+    = f.radio_button :published?, 1, checked: @page.published?, label: 'Published'
+    = f.radio_button :published?, 0, checked: @page.unpublished?, label: 'Unpublished'
+
+  p
+    = link_to 'Cancel', admin_pages_path, class: 'btn btn-default'
+    |
+    = f.submit 'Save page', class: 'btn btn-primary'
