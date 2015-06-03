@@ -17,12 +17,14 @@
   = menu_item_for tickets_path do
     => fa_icon 'ticket'
     | Tickets
-  = menu_item_for speakers_path do
-    => fa_icon 'university'
-    | Speakers
-    ul.subnav
-      = menu_item_for new_speaker_path, active: request.path == url_for(new_speaker_path) do
-        | Become a Teacher
+  / = menu_item_for speakers_path do
+  /   => fa_icon 'university'
+  /   | Speakers
+  /   ul.subnav
+  /     = menu_item_for new_speaker_path, active: request.path == url_for(new_speaker_path) do
+  /       | Become a Teacher
   = menu_item_for blog_index_path do
     => fa_icon 'pencil'
     | Blog
+  = menu_item_for contact_path do
+    | Contact
