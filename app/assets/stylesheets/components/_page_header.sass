@@ -15,8 +15,8 @@
   color: #fff
 
   .inner
-    @extend .col-md-10
-    @extend .col-md-offset-1
+    @extend .col-md-8
+    @extend .col-md-offset-2
 
     h1
       font-size: 6.5rem
@@ -65,9 +65,13 @@
     .text
       @extend .col-lg-8
       @extend .col-md-8
+      padding-left: 0
 
-      mark.alt-color
-        color: $gray-darker
+      mark
+        padding: 0
+
+        &.alt-color
+          color: $gray-darker
 
   &.tickets
     background-image: image_url('photos/science-park-amsterdam-people.jpg')
