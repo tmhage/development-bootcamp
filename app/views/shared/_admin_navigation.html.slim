@@ -9,13 +9,16 @@
         span.icon-bar
       = link_to admin_posts_path, :class => 'navbar-brand' do
         = fa_icon "trophy fw"
-        | Development Bootcamp
+        | DBC
     .collapse.navbar-collapse
       ul.nav.navbar-nav
         = menu_item_for admin_orders_path do
           = fa_icon 'heart fw'
           | Orders
           span.badge =< Order.count
+        = menu_item_for admin_pages_path do
+          = fa_icon 'bookmark fw'
+          | Pages
         = menu_item_for admin_posts_path do
           = fa_icon 'bookmark fw'
           | Posts

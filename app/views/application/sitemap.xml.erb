@@ -43,12 +43,6 @@
     <priority>0.2</priority>
   </url>
   <url>
-    <loc><%= root_url %>team</loc>
-    <lastmod><%= File.ctime(Rails.root.join("app", "views", "static_pages", "team.html.slim")).strftime('%Y-%m-%d') %></lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  <url>
     <loc><%= root_url %>sponsors</loc>
     <lastmod><%= Sponsor.all.order("updated_at DESC").first.updated_at.strftime('%Y-%m-%d') %></lastmod>
     <changefreq>daily</changefreq>
@@ -70,6 +64,14 @@
     <url>
       <loc><%= root_url %>blog/<%= post.slug %></loc>
       <lastmod><%= post.updated_at.strftime('%Y-%m-%d') %></lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+    </url>
+  <% end %>
+  <% Page.published.each do |page| %>
+    <url>
+      <loc><%= root_url %>pages/<%= page.slug %></loc>
+      <lastmod><%= page.updated_at.strftime('%Y-%m-%d') %></lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.5</priority>
     </url>
