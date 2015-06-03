@@ -14,9 +14,9 @@ nav.navbar.navbar-default.navbar-fixed-top role="navigation"
       ul.nav.navbar-nav
         = menu_item_for root_url, active: request.path == root_path do
           | Home
-        = menu_item_for program_path, class: 'alt-color' do
+        = menu_item_for program_path do
           | Program
-        = menu_item_for tickets_path, class: 'alt-color light-color'
+        = menu_item_for tickets_path do
           | Tickets
         / = menu_item_for speakers_path do
         /   | Speakers
