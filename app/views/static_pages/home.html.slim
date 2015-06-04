@@ -7,20 +7,31 @@
     .inner
       .text
         h1
-          mark => 'Get a'
-          | Taste
+          | A Taste
           br
-          mark.alt-color of Code
+          | of Code
         p
-          | Change your life around
+          | Change your life around,
           br
-          strong Learn to write programs
+          | learn to write software!
         p
           => fa_icon 'map-marker'
           strong
-            | 12-18 July
+            | 12-18 July, 2015
             br
-            = link_to 'Amsterdam Science Park', 'http://www.amsterdamsciencepark.nl/'
+            mark = 'Amsterdam Science Park'
+
+        p
+          => fa_icon 'comments'
+          strong
+            | Visit to our
+            =< link_to 'Open Day', open_day_path
+            br
+            | on June 19, 2015
+
+        p
+          = link_to 'Open Day', open_day_path, class: 'button default'
+          = link_to 'Tickets', tickets_path, class: 'button primary'
       .image
 
 .dbc-content
@@ -33,8 +44,8 @@
         because code is everywhere and we are so short on people who can code.
 
       p
-        = link_to 'Program', program_path, class: 'button primary'
-        = link_to 'Tickets', tickets_path, class: 'button default'
+        = link_to 'Program', program_path, class: 'button default'
+        = link_to 'Tickets', tickets_path, class: 'button primary'
 
   .dbc-container.dbc-text
     .inner.caps

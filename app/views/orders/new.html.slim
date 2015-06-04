@@ -33,45 +33,45 @@
       = render 'order_steps'
       = render 'form'
 
-    - if @order.first_step?
-      .inner.text
-        .money-breakdown
-          h3
-            => fa_icon 'pie-chart fw'
-            | Where Your Money Goes
-
-          .row
-            .category
-              => fa_icon 'university fw'
-              strong Venue
-            .percentage
-              | 26%
-            .category
-              => fa_icon 'graduation-cap fw'
-              strong Teachers
-            .percentage
-              | 16%
-            .category
-              => fa_icon 'bar-chart fw'
-              strong Marketing
-            .percentage
-              | 3%
-          .row
-            .category
-              => fa_icon 'cutlery fw'
-              strong Catering
-            .percentage
-              | 26%
-            .category
-              => fa_icon 'users fw'
-              strong Other Staff
-            .percentage
-              | 24%
-            .category
-              => fa_icon 'video-camera fw'
-              strong Equipment
-            .percentage
-              | 5%
+    / - if @order.first_step?
+    /   .inner.text
+    /     .money-breakdown
+    /       h3
+    /         => fa_icon 'pie-chart fw'
+    /         | Where Your Money Goes
+    /
+    /       .row
+    /         .category
+    /           => fa_icon 'university fw'
+    /           strong Venue
+    /         .percentage
+    /           | 26%
+    /         .category
+    /           => fa_icon 'graduation-cap fw'
+    /           strong Teachers
+    /         .percentage
+    /           | 16%
+    /         .category
+    /           => fa_icon 'bar-chart fw'
+    /           strong Marketing
+    /         .percentage
+    /           | 3%
+    /       .row
+    /         .category
+    /           => fa_icon 'cutlery fw'
+    /           strong Catering
+    /         .percentage
+    /           | 26%
+    /         .category
+    /           => fa_icon 'users fw'
+    /           strong Other Staff
+    /         .percentage
+    /           | 24%
+    /         .category
+    /           => fa_icon 'video-camera fw'
+    /           strong Equipment
+    /         .percentage
+    /           | 5%
 
   - if @order.first_step?
     .dbc-container.dbc-text-cta.alt-color

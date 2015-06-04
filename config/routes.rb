@@ -17,10 +17,12 @@ Rails.application.routes.draw do
   get '/team' => 'static_pages#team'
   get '/contact' => 'static_pages#contact'
   get '/newsletter' => 'static_pages#newsletter'
-  get '/code-of-conduct' => 'static_pages#code_of_conduct'
 
+  get '/code-of-conduct' => 'static_pages#code_of_conduct'
   get '/terms-and-conditions' => 'static_pages#terms_and_conditions'
   get '/cancellation-policy' => 'static_pages#cancellation_policy'
+
+  get '/open-day' => 'static_pages#open_day'
 
   get '/students/:id/qr-code' => 'students#qr_code'
   get '/students/:id/check' => 'students#check_qr_code'
