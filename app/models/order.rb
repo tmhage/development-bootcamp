@@ -117,8 +117,9 @@ class Order < ActiveRecord::Base
   def cart_discount
     return 0 unless discount_code.present?
     ticket_total = ticket_prices.map do |type, price|
+      next 0 if type == :community
       cart[type].to_i * price
-    end.inject(&:+)
+    end.inject(0, &:+)
     ticket_total * (discount_code.discount_percentage / 100.0)
   end
 
