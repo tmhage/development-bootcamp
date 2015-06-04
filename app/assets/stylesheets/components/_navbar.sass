@@ -21,6 +21,9 @@ body
     .navbar-brand
       margin-top: $dbc-navbar-height/8
 
+      span
+        display: none
+
     ul.navbar-nav
       margin-top: $dbc-navbar-height/8
 
@@ -28,10 +31,14 @@ body
       margin-top: $dbc-navbar-height/8
 
   .navbar-brand
-    margin-top: $dbc-navbar-height/3
+    margin-top: $dbc-navbar-height/3 - 10px
     color: $yellow
     &:hover
       color: $yellow
+
+    span
+      display: block
+      color: $green
 
   ul.navbar-nav
     margin-top: $dbc-navbar-height/3
