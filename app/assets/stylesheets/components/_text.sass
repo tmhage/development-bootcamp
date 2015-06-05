@@ -46,6 +46,11 @@ h2
         @extend .btn-lg
         border-radius: 0
 
+        &.default
+          &:hover,
+          &:active
+            background: #000
+
   .caps
     font-weight: bold
 
@@ -121,10 +126,11 @@ h2
 
   .button.default
     border-color: $gray-lighter
-    color: $gray-lighter
+    color: $gray-darker
 
-    &:hover
-      background: none
+    &:hover,
+    &:active
+      background: $gray-light
 
   &.alt-color
     background: $dark-green
