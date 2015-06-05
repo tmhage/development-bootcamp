@@ -1,0 +1,42 @@
+#orderForm
+  .ticket
+    @extend .row
+
+    .ticket-description,
+    .ticket-img,
+    .ticket-price
+      background-color: $gray-darker
+      color: $gray-lighter
+      min-height: 215px
+      margin-bottom: 1em
+
+
+    .ticket-description
+      @extend .col-md-5
+      @extend .col-xs-8
+      border: 2px dashed $gray-lighter
+      border-width: 0 0 0 2px
+
+    .ticket-img
+      @extend .col-md-4
+
+    .ticket-price
+      @extend .col-md-3
+      @extend .col-xs-4
+      font-size: $font-size-h1
+      border: 2px dashed $gray-lighter
+      border-width: 0 0 0 2px
+
+      .price
+        margin-top: 1em
+
+      .discount
+        font-size: $font-size-large
+
+        &:after
+          content: " % discount"
+
+@media (max-width: $screen-sm-max)
+  #orderForm
+    .ticket .ticket-img
+      display: none
