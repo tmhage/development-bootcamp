@@ -64,7 +64,6 @@ body
     font-weight: 250
 
 .navbar-default .navbar-nav
-  @extend .pull-right
   &> li > a
     color: $green
     font-weight: 200
@@ -91,9 +90,17 @@ body
     .icon-bar
       background-color: $gray-darker
 
+@media (min-width: $screen-md-min)
+  .navbar-default .navbar-nav
+    float: right
+
 @media (max-width: $screen-sm-max)
   .navbar
     font-size: 0.9em
+
+    .navbar-brand
+      margin-top: $dbc-navbar-height/4 - 10px
+      font-size: 16px
 
 @media (max-width: $screen-xs-max)
   .navbar
@@ -101,13 +108,14 @@ body
     min-height: $dbc-navbar-height
 
     .navbar-brand
+      margin-top: $dbc-navbar-height/5 - 10px
       font-size: 14px
 
       span
         font-size: 12px
 
       img
-        height: 30px
+        display: none
 
     &.shrink
       min-height: $dbc-navbar-height/1.6
