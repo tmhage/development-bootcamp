@@ -6,16 +6,16 @@ h2 Choose your tickets
 - else
   - values = {}
 
-- trinkets = { community: { description: 'Community Tickets are for individuals only, no corporate entities.' }, normal: { description: 'Normal tickets are for corporate customers or individuals who want to help our community efforts.' }, supporter: { description: 'Supporter tickets are for those who want to help our community efforts. All extra money that comes in goes back into the community effort to help more people code.' } }
+- trinkets = { community: { description: 'Community Tickets are for individuals only, no corporate entities. <em>These tickets are not eligible for additional promotions</em>.' }, normal: { description: 'Normal tickets are for corporate customers or individuals who want to help our community efforts.' }, supporter: { description: 'Supporter tickets are for those who want to help our community efforts. All extra money that comes in goes back into the community effort to help more people code.' } }
 
 - @order.ticket_prices.each do |name, price|
   - discounted_price = price
   - if @order.has_valid_discount_code? && name != :community
     - discounted_price = discounted_price * (1 - (@order.discount_code.discount_percentage / 100.0))
-  .ticket class=trinkets[name]
+  .ticket class="#{name}-ticket"
     .ticket-description
       h3 = "#{name.to_s.humanize} Ticket"
-      p = trinkets[name][:description]
+      p = trinkets[name][:description].html_safe
 
       = f.number_field :cart, name: "order[cart][#{name}]", id: "order_cart_#{name}", placeholder: 0, value: values[name], hide_label: true
 

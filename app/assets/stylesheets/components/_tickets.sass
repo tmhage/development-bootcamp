@@ -25,16 +25,21 @@
       @extend .col-xs-4
       font-size: $font-size-h1
       border: 2px dashed $gray-lighter
-      border-width: 0 0 0 2px
+      border-width: 0 2px 0 2px
 
       .price
         margin-top: 1em
+        text-align: center
 
       .discount
         font-size: $font-size-large
+        line-height: 1em
+
+        &:before
+          content: "* incl. "
 
         &:after
-          content: " % discount"
+          content: "% discount"
 
 @media (max-width: $screen-sm-max)
   #orderForm
