@@ -33,7 +33,7 @@
 
       .discount
         font-size: $font-size-large
-        line-height: 1em
+
 
         &:before
           content: "* incl. "
@@ -43,5 +43,8 @@
 
 @media (max-width: $screen-sm-max)
   #orderForm
-    .ticket .ticket-img
-      display: none
+    .ticket
+      padding: 0 10px
+
+      .ticket-img
+        display: none
