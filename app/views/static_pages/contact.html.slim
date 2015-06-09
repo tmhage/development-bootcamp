@@ -5,28 +5,44 @@
 - cache 'contact-page' do
   .dbc-content
     .dbc-container.dbc-text-cta.alt-color.light-color
-      .inner
-        h1 Contact, Location, and Getting There
+      .inner.text
+        h1 Help and Support
+
+        p
+          | Need help? Got a question? Please check our
+          =<> link_to '/pages/faq' do
+            => fa_icon 'support fw'
+            | FAQ Page
+          | or send us an email at
+          =< mail_to "support@developmentbootcamp.nl"
+          | .
+
+        h2 Location of the Bootcamp
 
         markdown:
-          ### Contact
-
-          Contact us any time at: #{mail_to "support@developmentbootcamp.nl"}.
-
-        h2 Map Location
-
-        iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2436.7869358646467!2d4.952404700000001!3d52.3561495!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c6094481e3bfeb%3A0xe7ebf26326a3be32!2sScience+Park+125%2C+1098+XG+Amsterdam!5e0!3m2!1sen!2snl!4v1432072548583" width="600" height="450" frameborder="0" style="border:0"
-
-    .dbc-container.dbc-text-cta.alt-color
-      .inner
-        markdown:
-          ### Directions
-
           The Development Bootcamp takes place at the conference
           halls on the premises of the Amsterdam Science Park,
           located at **Science Park 125, Amsterdam**
-          ([vcard](#{image_url("contact/development-bootcamp.vcf")})). Amsterdam Science Park can
-          easily be reached by public transport ([train](http://ns.nl),
+          ([vcard](#{image_url("contact/development-bootcamp.vcf")})).
+
+          See directions at the bottom of this page.
+
+        p
+          strong
+            | » Please note that the
+            =<> link_to 'Open Day', open_day_path
+            | is not at Science Park, but at Rokin 75.
+
+        iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2436.7869358646467!2d4.952404700000001!3d52.3561495!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c6094481e3bfeb%3A0xe7ebf26326a3be32!2sScience+Park+125%2C+1098+XG+Amsterdam!5e0!3m2!1sen!2snl!4v1432072548583" width="600" height="450" frameborder="0" style="border:0"
+
+        p = link_to 'Google Maps', 'https://maps.google.com/maps?ll=52.356893,4.951899&z=16&t=m&hl=en-US&gl=NL&mapclient=embed&q=University%20of%20Amsterdam%20Science%20Park%20125%201098%20XG%20Amsterdam'
+
+    .dbc-container.dbc-text-cta.alt-color
+      .inner.text
+        markdown:
+          ### Directions
+
+          Amsterdam Science Park can easily be reached by public transport ([train](http://ns.nl),
           [tram](http://www.gvb.nl) or [bus](http://www.gvb.nl)) and by car:
 
           - Directions to [Science Park by public transport](http://www.amsterdamsciencepark.nl/location-facilities/directions/directions-by-public-transport/)
