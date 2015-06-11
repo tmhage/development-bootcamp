@@ -114,6 +114,14 @@ class Order < ActiveRecord::Base
     (ticket_total - cart_discount).round(2)
   end
 
+  def creditcard_fee
+    cart_sum_total * 0.029
+  end
+
+  def creditcard_total
+    cart_sum_total + creditcard_fee
+  end
+
   def cart_discount
     return 0 unless discount_code.present?
     ticket_total = ticket_prices.map do |type, price|
@@ -207,5 +215,26 @@ class Order < ActiveRecord::Base
     @mollie = Mollie::API::Client.new
     @mollie.setApiKey ENV['DB_MOLLY_KEY'] || ""
     @mollie
+  end
+
+  def charge_creditcard!
+    return false if paid? || stripe_token.blank?
+
+    Stripe.api_key = ENV['DB_STRIPE_SKEY']
+
+    # Create the charge on Stripe's servers - this will charge the user's card
+    begin
+      Stripe::Charge.create(
+        :amount => creditcard_total, # amount in cents, again
+        :currency => "eur",
+        :source => stripe_token,
+        :description => "Development Bootcamp Community Ticket"
+      )
+      return true
+    rescue Stripe::CardError => e
+      Appsignal.add_exception e
+    end
+
+    false
   end
 end

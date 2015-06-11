@@ -91,7 +91,7 @@ class OrdersController < ApplicationController
 
   def stripe_token
     if params[:stripeToken].present?
-      if @order.update(stripe_token: params[:stripeToken])
+      if @order.update(stripe_token: params[:stripeToken]) && @order.charge_creditcard!
         flash[:notice] = "Thank you for your registration!"
       else
         flash[:error] = "Sorry, your creditcard payment could not be processed, please contact us at support@developmentbootcamp.nl"
