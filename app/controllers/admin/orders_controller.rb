@@ -19,7 +19,7 @@ class Admin::OrdersController < Admin::AdminController
 
   def update
     if @order.update(order_params)
-      redirect_to @order
+      redirect_to admin_order_path(@order)
     else
       render 'edit'
     end
