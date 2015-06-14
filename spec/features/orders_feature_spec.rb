@@ -50,7 +50,7 @@ describe 'the ticket order process' do
             select 'Austria', from: 'order_billing_country'
             fill_in 'Phone', with: Faker::PhoneNumber.phone_number
             fill_in 'Company name', with: Faker::Company.name
-            check 'I have read and agree to the Terms and Cancellation Policy'
+            check 'I have read and agree to the Terms and Conditions, and the Cancellation Policy'
           end
 
           click_button 'Continue'
