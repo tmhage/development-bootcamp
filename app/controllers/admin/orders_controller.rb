@@ -1,5 +1,4 @@
 class Admin::OrdersController < Admin::AdminController
-  include TicketMailer
 
   before_action :set_order, only: [:show, :edit, :update, :destroy, :manually_paid, :paid_by_creditcard]
 
@@ -69,5 +68,9 @@ class Admin::OrdersController < Admin::AdminController
 
   def page_number
     (params[:page] || 1).to_i
+  end
+
+  def send_tickets!
+    TicketMailWorker.perform_async(@order.id)
   end
 end

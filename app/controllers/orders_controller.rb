@@ -1,5 +1,4 @@
 class OrdersController < ApplicationController
-  include TicketMailer
 
   before_filter :disable_sidebar
 
@@ -54,6 +53,7 @@ class OrdersController < ApplicationController
     if @order.persisted?
       flash[:notice] = "Thank you for your registration!"
       reset_order_session!
+      enqueue_payment_email!
       @order.students.each { |student| add_to_list(student) }
       redirect_to ticket_url(@order)
     else
@@ -154,5 +154,13 @@ class OrdersController < ApplicationController
   def reset_order_session!
     session.delete(:order_step)
     session.delete(:order_params)
+  end
+
+  def send_tickets!
+    TicketMailWorker.perform_async(@order.id)
+  end
+
+  def enqueue_payment_email!
+    FollowupMailWorker.perform_in(1.hour, @order.id)
   end
 end
