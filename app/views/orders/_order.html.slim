@@ -58,7 +58,7 @@ p
 
     p
       | Prefer credit card? Click the button below, but note that you will pay
-      |  a fee of 2.9% (#{number_to_currency(@order.cart_sum_total)} + Payment fee: #{number_to_currency(@order.cart_sum_total * 0.029)} = #{number_to_currency(@order.cart_sum_total * 1.029)})
+      |  a fee of 2.9% (#{number_to_currency(@order.cart_sum_total)} + Payment fee: #{number_to_currency(@order.creditcard_fee)} = #{number_to_currency(@order.creditcard_total)})
 
       = form_for @order, url: stripe_token_ticket_url(@order) do |f|
         script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="#{ENV['DB_STRIPE_PKEY']}" data-amount="#{(@order.cart_sum_total * 102.9).to_i}" data-name="Development Bootcamp Tickets" data-description="#{@order.identifier}" data-image="/devbootcamp.png" data-email="#{@order.billing_email}" data-customer="#{@order.identifier}"

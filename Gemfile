@@ -66,4 +66,5 @@ gem 'puma'
 gem 'appsignal'
 
 gem 'mollie-api-ruby'
+gem 'stripe'
 gem 'paper_trail'
