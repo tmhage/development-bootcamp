@@ -69,6 +69,7 @@ class OrdersController < ApplicationController
       @order.update(mollie_status: payment_status)
     end
   rescue Mollie::API::Exception => error
+    Appsignal.add_exception error
     Rails.logger.info error.message
   ensure
     render text: 'OK'
