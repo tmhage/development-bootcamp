@@ -3,8 +3,8 @@ class FollowupMailWorker < MailWorker
   sidekiq_options queue: :medium_high
 
   def perform(order_id)
-    template_name = 'Order Payment Followup'
-    template_slug = 'order-payment-followup'
+    @template_name = 'Order Payment Followup'
+    @template_slug = 'order-payment-followup'
 
     @order = Order.find(order_id)
     return if @order.paid?

@@ -3,8 +3,8 @@ class TicketMailWorker < MailWorker
   sidekiq_options queue: :high
 
   def perform(order_id)
-    template_name = 'Student Ticket'
-    template_slug = 'student-ticket'
+    @template_name = 'Student Ticket'
+    @template_slug = 'student-ticket'
 
     @order = Order.find(order_id)
     return unless @order.paid?
