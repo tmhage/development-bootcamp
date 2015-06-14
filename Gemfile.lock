@@ -487,6 +487,7 @@ DEPENDENCIES
   rails_12factor
   rb-fsevent
   redcarpet
+  rest-client
   rqrcode_png
   rspec-rails (~> 3.0.2)
   sass-rails (~> 4.0.3)

@@ -207,6 +207,12 @@ class Order < ActiveRecord::Base
     manually_paid? || paid_by_creditcard? || (payment && payment.paid?)
   end
 
+  def payment_method
+    return 'Creditcard' if paid_by_creditcard?
+    return 'iDeal' if (payment && payment.paid?)
+    'Manual'
+  end
+
   def mollie
     @mollie || setup_mollie
   end
@@ -236,5 +242,10 @@ class Order < ActiveRecord::Base
     end
 
     false
+  end
+
+  def create_invoice!
+    contact = Moneybird::Contact.create(self)
+    contact.create_invoice(self)
   end
 end
