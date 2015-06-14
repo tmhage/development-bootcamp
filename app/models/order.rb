@@ -245,7 +245,9 @@ class Order < ActiveRecord::Base
   end
 
   def create_invoice!
+    return if invoice_url.present?
     contact = Moneybird::Contact.create(self)
-    contact.create_invoice(self)
+    invoice = contact.create_invoice(self)
+    update(invoice_url: invoice.url)
   end
 end

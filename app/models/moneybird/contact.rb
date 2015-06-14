@@ -35,8 +35,4 @@ class Moneybird::Contact < Moneybird::Api
   def create_invoice(order)
     ::Moneybird::Invoice.create(id, order)
   end
-
-  def create_and_send_invoice!(order)
-    create_invoice.send!
-  end
 end

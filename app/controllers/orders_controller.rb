@@ -65,7 +65,7 @@ class OrdersController < ApplicationController
     @order = Order.find_by_mollie_payment_id(params[:id])
     if @order.present?
       payment_status = @order.payment.status
-      send_tickets! if @order.payment.paid? && @order.mollie_status != 'paid'
+      send_invoice_and_tickets! if @order.payment.paid? && @order.mollie_status != 'paid'
       @order.update(mollie_status: payment_status)
     end
   rescue Mollie::API::Exception => error
@@ -158,7 +158,8 @@ class OrdersController < ApplicationController
     session.delete(:order_params)
   end
 
-  def send_tickets!
+  def send_invoice_and_tickets!
+    InvoiceMailWorker.perform_async(@order.id)
     TicketMailWorker.perform_async(@order.id)
   end
 

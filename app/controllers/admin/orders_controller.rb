@@ -35,7 +35,7 @@ class Admin::OrdersController < Admin::AdminController
   def manually_paid
     if @order.update(manually_paid: true)
       flash[:notice] = 'Status set to manually paid'
-      send_tickets!
+      send_invoice_and_tickets!
     else
       flash[:error] = 'Could not update status, try again'
     end
@@ -45,7 +45,7 @@ class Admin::OrdersController < Admin::AdminController
   def paid_by_creditcard
     if @order.update(paid_by_creditcard: true)
       flash[:notice] = 'Status set to paid by creditcard'
-      send_tickets!
+      send_invoice_and_tickets!
     else
       flash[:error] = 'Could not update status, try again'
     end
@@ -70,7 +70,8 @@ class Admin::OrdersController < Admin::AdminController
     (params[:page] || 1).to_i
   end
 
-  def send_tickets!
+  def send_invoice_and_tickets!
+    InvoiceMailWorker.perform_async(@order.id)
     TicketMailWorker.perform_async(@order.id)
   end
 end

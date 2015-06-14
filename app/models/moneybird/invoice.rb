@@ -32,6 +32,15 @@ class Moneybird::Invoice < Moneybird::Api
     )
 
     invoice = new(response['invoice'])
+
+    execute(path: "/invoices/#{invoice.id}/send_invoice",
+      method: :put,
+      payload: {
+        invoice: { send_method: 'hand' }
+      }
+    )
+
+    find(invoice.id)
   end
 
   def self.find(id)
@@ -54,15 +63,6 @@ class Moneybird::Invoice < Moneybird::Api
       method: :put,
       payload: {
         invoice: options
-      }
-    )
-  end
-
-  def send!
-    execute(path: "/invoices/#{id}/send_invoice",
-      method: :put,
-      payload: {
-        invoice: { send_method: 'hand' }
       }
     )
   end

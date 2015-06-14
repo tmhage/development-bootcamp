@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150601075708) do
+ActiveRecord::Schema.define(version: 20150614191318) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,10 +64,12 @@ ActiveRecord::Schema.define(version: 20150601075708) do
     t.uuid     "identifier"
     t.string   "stripe_token"
     t.json     "stripe_payload"
+    t.text     "qr_code"
     t.boolean  "terms_and_conditions"
     t.boolean  "manually_paid"
     t.boolean  "paid_by_creditcard"
     t.integer  "discount_code_id"
+    t.text     "invoice_url"
   end
 
   add_index "orders", ["discount_code_id"], name: "index_orders_on_discount_code_id", using: :btree

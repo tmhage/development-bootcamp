@@ -9,6 +9,7 @@ RSpec.describe OrdersController, :type => :controller do
     before do
       expect(Order).to receive(:find_by_mollie_payment_id).with(order_id).and_return(order)
       expect(order).to receive(:payment).at_least(:once).and_return payment
+      expect(InvoiceMailWorker).to receive(:perform_async).with(order.id).and_return true
       expect(TicketMailWorker).to receive(:perform_async).with(order.id).and_return true
       post :webhook, id: order_id
     end
