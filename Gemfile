@@ -35,6 +35,7 @@ gem 'pronto-rubocop', require: false
 gem 'nokogiri', '1.6.4.1'
 gem 'rqrcode_png'
 gem 'mandrill-api'
+gem 'sidekiq'
 
 gem 'rails_12factor', group: :production
 
