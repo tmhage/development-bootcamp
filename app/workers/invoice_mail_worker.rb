@@ -7,7 +7,6 @@ class InvoiceMailWorker < MailWorker
     @template_slug = 'tickets-invoice'
 
     @order = Order.find(order_id)
-    return unless @order.paid?
     send_invoice!
   end
 

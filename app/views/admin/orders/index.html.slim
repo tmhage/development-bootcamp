@@ -8,6 +8,7 @@
     h3.bg-info
       = mail_to order.billing_email, order.billing_name
       span.pull-right
+        =<> link_to 'Send invoice', send_invoice_admin_order_path(order), method: :patch, class: 'btn btn-small'
         - if order.payment
           - if order.paid?
             span.label.label-success =<> 'Paid'

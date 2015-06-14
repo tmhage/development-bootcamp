@@ -1,6 +1,6 @@
 class Admin::OrdersController < Admin::AdminController
 
-  before_action :set_order, only: [:show, :edit, :update, :destroy, :manually_paid, :paid_by_creditcard]
+  before_action :set_order, only: [:show, :edit, :update, :destroy, :manually_paid, :paid_by_creditcard, :send_invoice]
 
   respond_to :html
 
@@ -50,6 +50,15 @@ class Admin::OrdersController < Admin::AdminController
       flash[:error] = 'Could not update status, try again'
     end
     redirect_to admin_orders_path
+  end
+
+  def send_invoice
+    if @order
+      InvoiceMailWorker.perform_async(@order.id)
+      redirect_to admin_orders_path, notice: 'Invoice queued for sending.'
+    else
+      redirect_to admin_orders_path, error: 'Could not find order, please try again.'
+    end
   end
 
   private ###########################################################################################

@@ -87,6 +87,7 @@ Rails.application.routes.draw do
       member do
         patch :manually_paid
         patch :paid_by_creditcard
+        patch :send_invoice
       end
     end
     resources :users, :except => :show
