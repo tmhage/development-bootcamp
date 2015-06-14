@@ -92,7 +92,8 @@ class OrdersController < ApplicationController
 
   def stripe_token
     if params[:stripeToken].present?
-      if @order.update(stripe_token: params[:stripeToken]) && @order.charge_creditcard!
+      if @order.update(stripe_token: params[:stripeToken])
+        enqueue_creditcard_charge!
         flash[:notice] = "Thank you for your registration!"
       else
         flash[:error] = "Sorry, your creditcard payment could not be processed, please contact us at support@developmentbootcamp.nl"
@@ -163,5 +164,9 @@ class OrdersController < ApplicationController
 
   def enqueue_payment_email!
     FollowupMailWorker.perform_in(1.hour, @order.id)
+  end
+
+  def enqueue_creditcard_charge!
+    CreditcardChargerWorker.perform_async(@order.id)
   end
 end
