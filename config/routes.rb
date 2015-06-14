@@ -61,6 +61,12 @@ Rails.application.routes.draw do
 
   namespace :admin do
     get '/' => 'orders#index'
+
+    require 'sidekiq/web'
+    authenticate :user do
+      mount Sidekiq::Web, at: "/sidekiq"
+    end
+
     resources :discount_codes
     resources :posts, except: :show do
       member do
