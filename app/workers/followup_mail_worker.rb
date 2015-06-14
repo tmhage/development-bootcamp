@@ -2,12 +2,12 @@ class FollowupMailWorker < MailWorker
 
   sidekiq_options queue: :medium_high
 
-  self.template_name = 'Order Payment Followup'
-  self.template_slug = 'order-payment-followup'
-
   def perform(order_id)
+    template_name = 'Order Payment Followup'
+    template_slug = 'order-payment-followup'
+
     @order = Order.find(order_id)
-    return if order.paid?
+    return if @order.paid?
     send_followup!
   end
 
@@ -18,7 +18,7 @@ class FollowupMailWorker < MailWorker
       merge_language: 'handlebars',
       subject: "#{@order.billing_name}, your order is not paid yet",
       from_name: "Development Bootcamp",
-      from_email: "support@developmentbootcamp.nl"
+      from_email: "support@developmentbootcamp.nl",
       html: template['html'],
       merge_vars: [{
        'rcpt' => @order.billing_email,
@@ -35,10 +35,6 @@ class FollowupMailWorker < MailWorker
         }
       ],
     }
-    Rails.logger.info mandril.messages.send(message)
-  end
-
-  def mandrill
-    @mandrill ||= Mandrill::API.new
+    Rails.logger.info mandrill.messages.send(message)
   end
 end

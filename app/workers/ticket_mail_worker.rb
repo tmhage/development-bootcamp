@@ -2,12 +2,12 @@ class TicketMailWorker < MailWorker
 
   sidekiq_options queue: :high
 
-  self.template_name = 'Student Ticket'
-  self.template_slug = 'student-ticket'
-
   def perform(order_id)
+    template_name = 'Student Ticket'
+    template_slug = 'student-ticket'
+
     @order = Order.find(order_id)
-    return unless order.paid?
+    return unless @order.paid?
     send_tickets!
   end
 
@@ -38,11 +38,7 @@ class TicketMailWorker < MailWorker
          }
        ],
       }
-      Rails.logger.info mandril.messages.send(message)
+      Rails.logger.info mandrill.messages.send(message)
     end
-  end
-
-  def mandrill
-    @mandrill ||= Mandrill::API.new
   end
 end

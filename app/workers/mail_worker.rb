@@ -3,11 +3,10 @@ require 'mandrill'
 class MailWorker
   include Sidekiq::Worker
 
-  self.template_name = 'Not Implemented'
-  self.template_slug = 'not-implemented'
+  attr_accessor :template_name, :template_slug
 
   def template
-    mandrill.templates.render self.class.template_name, [{:name => self.class.template_slug}]
+    mandrill.templates.render template_name, [{:name => template_slug}]
   end
 
   def perform(*params)
