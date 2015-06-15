@@ -25,13 +25,16 @@
 .dbc-content
   .dbc-container.dbc-form
     .inner.form#orderForm
+
+      = render 'form'
+      
       .support-box
         | Please mail us at
         strong =<> mail_to 'support@developmentbootcamp.nl'
         | if you have any questions.
 
       = render 'order_steps'
-      = render 'form'
+      
 
     / - if @order.first_step?
     /   .inner.text

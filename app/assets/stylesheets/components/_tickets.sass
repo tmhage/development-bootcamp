@@ -1,35 +1,72 @@
 #orderForm
   .ticket
     @extend .row
-
+    //shadow
+    -webkit-box-shadow: 10px 10px 99px -17px rgba(0,0,0,0.75)
+    -moz-box-shadow: 10px 10px 99px -17px rgba(0,0,0,0.75)
+    box-shadow: 10px 10px 99px -17px rgba(0,0,0,0.75)
+    margin-bottom: 2em
+    
+    
     .ticket-description,
     .ticket-img,
     .ticket-price
-      background-color: $gray-darker
       color: $gray-lighter
-      min-height: 215px
-      margin-bottom: 1em
+      min-height: 300px
+      
+      text-color: 000 !important
 
+    &.community-ticket .ticket-description
+      background-color: #333333
+
+    &.normal-ticket .ticket-description
+      background-color: $green
+
+    &.supporter-ticket .ticket-description
+      background-color: $dark-green
+
+    
 
     .ticket-description
       @extend .col-md-5
       @extend .col-xs-8
-      border: 2px dashed $gray-lighter
-      border-width: 0 0 0 2px
+      border: 4px dashed black
+      border-width: 0 0 0 3px
+
+
+      h3
+        font-size: $font-size-h1
+
+      p
+        font-size: 1.2em
+        font-weight: 300
+
+      
+
 
     .ticket-img
       @extend .col-md-4
+      background-repeat: no-repeat
+      background-size: 80%
+      background-position: center center
+      border: 4px dashed black
+      border-width: 0 3px 0 0
 
     .ticket-price
       @extend .col-md-3
       @extend .col-xs-4
       font-size: $font-size-h1
-      border: 2px dashed $gray-lighter
-      border-width: 0 2px 0 2px
+      border: 4px dashed darken($gray, 20%)
+      border-width: 0 3px 0 0px
+      background-image: image_url("tickets/ticket-slip.png")
+      background-position: center center
+      
 
       .price
-        margin-top: 1em
+        margin-top: 6em
         text-align: center
+        font-weight: 900
+
 
       .discount
         font-size: $font-size-large
@@ -41,10 +78,36 @@
         &:after
           content: "% discount"
 
+    &.community-ticket .ticket-img
+      background-image: image_url("tickets/community.png")
+      background-position: bottom center
+      background-color: #333333
+      
+
+    &.normal-ticket .ticket-img
+      background-image: image_url("tickets/normal.png")
+      background-color: $green
+
+    &.supporter-ticket .ticket-img
+      background-image: image_url("tickets/supporter.png")
+      background-color: $dark-green
+
+
+    
+
+
 @media (max-width: $screen-sm-max)
   #orderForm
     .ticket
-      padding: 0 10px
+      //padding: 0 10px
+      margin: 0 10px 20px 10px
+
+      .ticket-price
+        float: right
+    
 
       .ticket-img
         display: none
+
+
+
