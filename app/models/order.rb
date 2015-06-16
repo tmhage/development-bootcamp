@@ -115,7 +115,7 @@ class Order < ActiveRecord::Base
   end
 
   def creditcard_fee
-    cart_sum_total * 0.029
+    (cart_sum_total * 0.029).round(2)
   end
 
   def creditcard_total
@@ -231,7 +231,7 @@ class Order < ActiveRecord::Base
     # Create the charge on Stripe's servers - this will charge the user's card
     begin
       Stripe::Charge.create(
-        :amount => creditcard_total, # amount in cents, again
+        :amount => creditcard_total,
         :currency => "eur",
         :source => stripe_token,
         :description => "Development Bootcamp Community Ticket"

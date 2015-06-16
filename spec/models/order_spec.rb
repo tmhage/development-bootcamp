@@ -107,6 +107,19 @@ RSpec.describe Order, :type => :model do
     end
   end
 
+  describe '#creditcard_fee' do
+    it 'should be 2.9% of the cart sum total and rounded by 2 decimals' do
+      expect(order.creditcard_fee).to eq((0.029 * order.cart_sum_total).round(2))
+    end
+  end
+
+  describe '#creditcard_total' do
+    it 'should be the cart sum total plus the creditcard fee, in cents' do
+      expect(order).to receive(:creditcard_fee).and_return(10)
+      expect(order.creditcard_total).to eq(70900)
+    end
+  end
+
   describe 'discount code' do
     let(:order) { build(:order, promo_code: promo_code, cart: cart) }
     let(:cart) { { community: 1, normal: 0, supporter: 0 } }
