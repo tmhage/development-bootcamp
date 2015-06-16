@@ -119,7 +119,7 @@ class Order < ActiveRecord::Base
   end
 
   def creditcard_total
-    cart_sum_total + creditcard_fee
+    ((cart_sum_total + creditcard_fee).round(2) * 100).to_i
   end
 
   def cart_discount
