@@ -18,9 +18,10 @@ Rails.application.routes.draw do
   get '/contact' => 'static_pages#contact'
   get '/newsletter' => 'static_pages#newsletter'
 
-  get '/code-of-conduct' => 'static_pages#code_of_conduct'
-  get '/terms-and-conditions' => 'static_pages#terms_and_conditions'
-  get '/cancellation-policy' => 'static_pages#cancellation_policy'
+  get '/code-of-conduct' => 'pages#show', id: 'code-of-conduct'
+  get '/terms-and-conditions' => 'pages#show', id: 'terms-and-conditions'
+  get '/cancellation-policy' => 'pages#show', id: 'cancellation-policy'
+  get '/faq' => 'pages#show', id: 'faq'
 
   get '/open-day' => 'static_pages#open_day'
 
