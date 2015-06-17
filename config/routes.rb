@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   get '/newsletter' => 'static_pages#newsletter'
 
   get '/code-of-conduct' => 'pages#show', id: 'code-of-conduct'
-  get '/terms-and-conditions' => 'pages#show', id: 'terms-and-conditions'
+  get '/terms-and-conditions' => 'pages#show', id: 'terms-conditions'
   get '/cancellation-policy' => 'pages#show', id: 'cancellation-policy'
   get '/faq' => 'pages#show', id: 'faq'
 
