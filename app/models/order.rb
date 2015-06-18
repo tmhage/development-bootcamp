@@ -200,16 +200,25 @@ class Order < ActiveRecord::Base
 
   def payment
     return unless self.mollie_payment_id.present?
-    mollie.payments.get self.mollie_payment_id rescue nil
+    @payment ||= mollie.payments.get(self.mollie_payment_id) rescue nil
+    @payment ||= old_mollie.payments.get(self.mollie_payment_id) rescue nil
+    @payment
   end
 
   def paid?
-    manually_paid? || paid_by_creditcard? || (payment && payment.paid?)
+    return true if manually_paid? || paid_by_creditcard? || paid_by_ideal?
+
+    if payment && payment.paid?
+      store_ideal_payment_status
+      return true
+    end
+
+    false
   end
 
   def payment_method
     return 'Creditcard' if paid_by_creditcard?
-    return 'iDeal' if (payment && payment.paid?)
+    return 'iDeal' if paid_by_ideal? || (payment && payment.paid?)
     'Manual'
   end
 
@@ -217,10 +226,20 @@ class Order < ActiveRecord::Base
     @mollie || setup_mollie
   end
 
+  def old_mollie
+    @old_mollie || setup_old_mollie
+  end
+
   def setup_mollie
     @mollie = Mollie::API::Client.new
     @mollie.setApiKey ENV['DB_MOLLY_KEY'] || ""
     @mollie
+  end
+
+  def setup_old_mollie
+    @old_mollie = Mollie::API::Client.new
+    @old_mollie.setApiKey ENV['DB_OLD_MOLLY_KEY'] || ""
+    @old_mollie
   end
 
   def charge_creditcard!
@@ -249,5 +268,9 @@ class Order < ActiveRecord::Base
     contact = Moneybird::Contact.create(self)
     invoice = contact.create_invoice(self)
     update(invoice_url: invoice.url)
+  end
+
+  def store_ideal_payment_status
+    update(paid_by_ideal: true) if (payment && payment.paid?)
   end
 end

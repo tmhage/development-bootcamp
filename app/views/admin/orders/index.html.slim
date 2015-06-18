@@ -9,14 +9,14 @@
       = mail_to order.billing_email, order.billing_name
       span.pull-right
         =<> link_to 'Send invoice', send_invoice_admin_order_path(order), method: :patch, class: 'btn btn-small'
-        - if order.payment
-          - if order.paid?
-            span.label.label-success =<> 'Paid'
-          - else
-            span.label.label-warning =< order.payment.status
-            =<> link_to 'Manually Paid', manually_paid_admin_order_path(order), method: :patch, class: 'btn btn-small'
-            =<> link_to 'Paid by Creditcard', paid_by_creditcard_admin_order_path(order), method: :patch, class: 'btn btn-small'
-            = link_to 'Payment link', ticket_url(order), class: 'btn btn-primary'
+        - if order.paid?
+          span.label.label-success =<> 'Paid'
+        - elsif order.payment
+          span.label.label-warning =< order.payment.status
+        - else
+          =<> link_to 'Manually Paid', manually_paid_admin_order_path(order), method: :patch, class: 'btn btn-small'
+          =<> link_to 'Paid by Creditcard', paid_by_creditcard_admin_order_path(order), method: :patch, class: 'btn btn-small'
+          = link_to 'Payment link', ticket_url(order), class: 'btn btn-primary'
     - order.students.each do |student|
       .col-md-10
         .col-md-2
