@@ -20,15 +20,15 @@
             mark = 'Amsterdam Science Park'
 
         p
-          => fa_icon 'comments'
+          => fa_icon 'bullhorn'
           strong
-            | Visit our
-            =< link_to 'Open Day', open_day_path
+            | Last
+            =< link_to 'Community Tickets', tickets_path
             br
-            | on June 19, 2015
+            | now for sale!
 
         p
-          = link_to 'Open Day', open_day_path, class: 'button default'
+          = link_to 'Program', program_path, class: 'button default'
           = link_to 'Tickets', tickets_path, class: 'button primary'
       .image
 
