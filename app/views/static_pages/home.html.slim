@@ -45,63 +45,6 @@
         = link_to 'Program', program_path, class: 'button default'
         = link_to 'Tickets', tickets_path, class: 'button primary'
 
-  .dbc-container.dbc-text
-    .inner.caps
-      p
-        | Most people who code
-        mark =< 'never studied computer science.'
-        mark.alt-color =<> 'Most of them taught themselves.'
-        | That was hard, but we make it
-        mark =<> 'easy'
-        | for you to learn.
-
-      p = link_to 'Read full program', program_path, class: 'button primary'
-
-  .dbc-container.dbc-text-cta.alt-color.light-color
-    .inner.normal
-      h2 Code is Everywhere
-
-      markdown:
-        Every piece of technology that you use every day has software on it. Computers,
-        phones, cars, refrigerators, watches all run software large and small, complex
-        and simple. You probably want to play a role in that.
-
-      p
-        = link_to 'Program', program_path, class: 'button default'
-        = link_to 'Tickets', tickets_path, class: 'button primary'
-
-  .dbc-container.dbc-text
-    .inner.caps
-      p
-        mark.alt-color Once you know how it's done,
-        | you will see the opportunities.
-        mark =< 'And they are endless.'
-
-      p
-        mark.alt-color Programming is like any other thing in the world.
-        mark =<> "It's not hard"
-        | until you want to solve hard problems with it.
-
-      p = link_to 'Read full program', program_path, class: 'button primary'
-
-  .dbc-container.dbc-text-cta.alt-color
-    .inner.normal
-      h2 Learn Together
-
-      markdown:
-        It's more fun and inspiring to learn together. And
-        it goes a lot faster than learning code online.
-
-        We put real, working software engineers in front of
-        the classroom to give you the most up to date learning
-        experience available.
-
-      p
-        = link_to 'Program', program_path, class: 'button primary'
-        = link_to 'Tickets', tickets_path, class: 'button default'
-
-
-
   .dbc-container.dbc-text.dbc-day-at#day-structure
     .inner.normal
       h2 A Day at our Bootcamp
@@ -161,6 +104,61 @@
       p
         = link_to 'Program', program_path, class: 'button primary'
         = link_to 'Tickets', tickets_path, class: 'button default'
+
+  .dbc-container.dbc-text-cta.alt-color.light-color
+    .inner.normal
+      h2 Code is Everywhere
+
+      markdown:
+        Every piece of technology that you use every day has software on it. Computers,
+        phones, cars, refrigerators, watches all run software large and small, complex
+        and simple. You probably want to play a role in that.
+
+      p
+        = link_to 'Program', program_path, class: 'button default'
+        = link_to 'Tickets', tickets_path, class: 'button primary'
+
+  .dbc-container.dbc-text
+    .inner.caps
+      p
+        mark.alt-color Once you know how it's done,
+        | you will see the opportunities.
+        mark =< 'And they are endless.'
+
+      p
+        mark.alt-color Programming is like any other thing in the world.
+        mark =<> "It's not hard"
+        | until you want to solve hard problems with it.
+
+      p = link_to 'Read full program', program_path, class: 'button primary'
+
+  .dbc-container.dbc-text-cta.alt-color
+    .inner.normal
+      h2 Learn Together
+
+      markdown:
+        It's more fun and inspiring to learn together. And
+        it goes a lot faster than learning code online.
+
+        We put real, working software engineers in front of
+        the classroom to give you the most up to date learning
+        experience available.
+
+      p
+        = link_to 'Program', program_path, class: 'button primary'
+        = link_to 'Tickets', tickets_path, class: 'button default'
+
+  .dbc-container.dbc-text
+    .inner.caps
+      p
+        | Most people who code
+        mark =< 'never studied computer science.'
+        mark.alt-color =<> 'Most of them taught themselves.'
+        | That was hard, but we make it
+        mark =<> 'easy'
+        | for you to learn.
+
+      p = link_to 'Read full program', program_path, class: 'button primary'
 
   .dbc-content
     - cache 'testimonials-block' do
