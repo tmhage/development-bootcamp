@@ -1,5 +1,5 @@
 - title "Students Newsletter Subscription"
-- meta_description "Subscribe to our Student's newsletter. Zero to developer in three sessions of a week."
+- meta_description "Subscribe to our newsletter. Zero to developer in three sessions of a week."
 - meta_keywords "newsletter, updated, development, bootcamp, programming, learn, student"
 
 - cache 'newsletter-signup' do
@@ -7,26 +7,13 @@
   .dbc-content
     .dbc-container.dbc-text-cta.light-color.alt-color
       .inner.normal
-        h2 Subscribe to our Students Newsletter
+        h2
+          mark => fa_icon 'bullhorn'
+          | Subscribe to our
+          mark =< 'Newsletter'
         p Leave your details below and we will keep you updated on our events, study materials, and promotions.
 
-    .dbc-container.dbc-text
-      .inner
-        form#mc-embedded-subscribe-form.validate action="//developmentbootcamp.us9.list-manage.com/subscribe/post?u=f107d6a3948661d72e4628ba1&amp;id=aff9cced90" method="post" name="mc-embedded-subscribe-form" novalidate="" target="_blank"
-          h2 Subscribe to our mailing list
-          .form-group
-            label for="mce-EMAIL"
-              | Email Address
-              span.asterisk *
-            input#mce-EMAIL.required.email.form-control name="EMAIL" type="email" value="" /
-          .form-group
-            label for="mce-FNAME" First Name
-            input#mce-FNAME.form-control name="FNAME" type="text" value="" /
-          .form-group
-            label for="mce-LNAME"  Last Name
-            input#mce-LNAME.form-control name="LNAME" type="text" value="" /
-          /! real people should not fill this in and expect good things - do not remove this or risk form bot signups
-          div style=("position: absolute; left: -5000px;")
-            input name="b_f107d6a3948661d72e4628ba1_aff9cced90" tabindex="-1" type="text" value="" /
-          .clear
-            input#mc-embedded-subscribe.button.primary name="subscribe" type="submit" value="Subscribe" /
+        p
+          = link_to 'Subscribe', '#mc-embedded-subscribe-form', class: 'button primary'
+
+    = render 'shared/newsletter_form'
