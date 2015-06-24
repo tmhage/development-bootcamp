@@ -1,0 +1,4 @@
+h3 Tickets
+- @order.cart.each do |ticket, amount|
+  - next unless amount.present?
+  p = "#{ticket.humanize} Tickets: #{amount}"
