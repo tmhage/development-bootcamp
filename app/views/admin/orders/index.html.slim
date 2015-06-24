@@ -6,23 +6,27 @@
 - @orders.each do |order|
   .order.col-md-12
     h3.bg-info
-      = mail_to order.billing_email, order.billing_name
+      = link_to edit_admin_order_path(order) do
+        = order.billing_name
       span.pull-right
         =<> link_to 'Send invoice', send_invoice_admin_order_path(order), method: :patch, class: 'btn btn-small'
         - if order.paid?
           span.label.label-success =<> 'Paid'
         - elsif order.payment
           span.label.label-warning =< order.payment.status
-        - else
+        - unless order.paid?
           =<> link_to 'Manually Paid', manually_paid_admin_order_path(order), method: :patch, class: 'btn btn-small'
-          =<> link_to 'Paid by Creditcard', paid_by_creditcard_admin_order_path(order), method: :patch, class: 'btn btn-small'
-          = link_to 'Payment link', ticket_url(order), class: 'btn btn-primary'
+          = link_to 'Payment link', ticket_url(order), class: 'btn btn-small'
     - order.students.each do |student|
       .col-md-10
         .col-md-2
           .img-responsive= image_tag student.gravatar_url
         .col-md-10
-          p = mail_to student.email, "#{student.first_name} #{student.last_name}"
+          p = mail_to student.email do
+            => fa_icon 'envelope'
+            | Email
+          p = link_to edit_admin_student_path(student) do
+            = "#{student.first_name} #{student.last_name}"
           p.bg-danger
             | Preferred Level:
             =< student.preferred_level
