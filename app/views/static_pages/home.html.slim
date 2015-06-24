@@ -192,14 +192,13 @@
                   | Ruben Timmerman,
                   cite =< link_to 'Springest', 'https://www.springest.nl/'
 
-    - cache 'sponsors-index-cta'
+    - cache 'home-corporate-cta'
       .dbc-container.dbc-text
         .inner.caps
             p
               | People in all tech companies can benefit from programming skills.
               mark.alt-color =< "Would you like to join us with your colleagues?"
               =< mail_to 'info@developmentbootcamp.nl', 'Send us an email.'
-
 
     - cache cache_key_for_sponsors do
       - if @sponsors.count > 0
