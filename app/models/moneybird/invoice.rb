@@ -6,6 +6,8 @@ class Moneybird::Invoice < Moneybird::Api
 
     options[:description] = "*PLEASE NOTE*: This invoice is already paid via #{order.payment_method} and is just for your records." if order.paid?
 
+    options[:discount] = order.discount_code.discount_percentage if order.discount_code.present?
+
     response = execute(path: '/invoices',
       method: :post,
       payload: {
