@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :order do
     bootcamp
-    payed_at { Time.now - 5.minutes }
+    paid_at { Time.now - 5.minutes }
     mollie_payment_id { 'tr_WDqYK6vllg' }
     refunded_at { Time.now - 2.minutes }
     mollie_refund_id { 'tr_WDqYK6aarb' }
@@ -61,7 +61,7 @@ FactoryGirl.define do
 
             factory :order_step_paid, class: 'Order' do
               price { cart_sum_total }
-              payed_at { Time.now - 5.minutes }
+              paid_at { Time.now - 5.minutes }
 
               factory :order_step_refund, class: 'Order' do
                 mollie_refund_id { 'tr_WDqYK6aarb' }

@@ -6,8 +6,6 @@ class Moneybird::Invoice < Moneybird::Api
 
     options[:description] = "*PLEASE NOTE*: This invoice is already paid via #{order.payment_method} and is just for your records." if order.paid?
 
-    options[:discount] = order.discount_code.discount_percentage if order.discount_code.present?
-
     response = execute(path: '/invoices',
       method: :post,
       payload: {
@@ -46,6 +44,13 @@ class Moneybird::Invoice < Moneybird::Api
       )
     end
 
+    if order.cart_discount > 0
+      rows[rows.size.to_s] = row(
+        description: "Discount #{order.discount_code.discount_percentage}% on non-community tickets",
+        price: -(order.cart_discount)
+      )
+    end
+
     rows
   end
 
@@ -63,5 +68,33 @@ class Moneybird::Invoice < Moneybird::Api
     )
 
     new(response['invoice'])
+  end
+
+  def mark_paid!(paid_amount, payment_method, date)
+    puts id
+    puts({
+      payload: {
+        payments: [
+          {
+            payment_date: date.strftime("%Y-%m-%d"),
+            payment_method: payment_method.downcase,
+            price: paid_amount,
+            send_email: false
+          }
+        ]
+      }
+    })
+    execute(path: "api/v1.0/invoices/#{id}/payments",
+      method: :post,
+      payload: {
+        payment: {
+          payment_date: date.strftime("%Y-%m-%d"),
+          payment_method: payment_method.downcase,
+          price: paid_amount.round(2),
+          send_email: false
+        }
+      }
+    )
+    self.class.find(id)
   end
 end
