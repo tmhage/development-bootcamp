@@ -8,7 +8,7 @@ class Student < ActiveRecord::Base
   before_validation :create_identifier
 
   validates_presence_of :first_name, :last_name, :email,
-    :birth_date, :preferred_level, if: ->{ order.blank? || order.at_step_or_after('students-#{order.students.size -1}')}
+    :birth_date, if: ->{ order.blank? || order.at_step_or_after('students-#{order.students.size -1}')}
 
   def full_name
     "#{first_name} #{last_name}"

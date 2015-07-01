@@ -14,9 +14,6 @@
       th style="width: 30%; vertical-align: top; text-align: left;" Name:
       td style="vertical-align: top; text-align: left;" = "#{@student.first_name} #{@student.last_name}"
     tr
-      th style="width: 30%; vertical-align: top; text-align: left;" Preferred level:
-      td style="vertical-align: top; text-align: left;" = "Level #{@student.preferred_level}"
-    tr
       th style="width: 30%; vertical-align: top; text-align: left;" Twitter handle:
       td style="vertical-align: top; text-align: left;" = @student.twitter_handle.present? ? @student.twitter_handle : 'not filled in'
     tr

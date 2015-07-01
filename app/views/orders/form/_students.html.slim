@@ -22,8 +22,6 @@ h2
   = s.form_group :owns_laptop, label: { text: 'Do you own a laptop you can bring to class?' } do
     = s.radio_button :owns_laptop, true, label: 'Yes'
     = s.radio_button :owns_laptop, false, label: 'No'
-  - levels = [1].map{ |l| ["Level #{l}", l] }
-  = s.select :preferred_level, levels, include_blank: true
   = s.text_field :twitter_handle, required: false, placeholder: '@username', label: 'Twitter handle (optional)'
   = s.text_field :github_handle, required: false, placeholder: '@username', label: 'Github handle (optional)'
   = s.text_area :allergies, required: false, placeholder: "E.g. do you have any allergies, are you a vegan?", label: 'Dietary wishes (optional)'

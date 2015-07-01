@@ -72,7 +72,7 @@ class Admin::OrdersController < Admin::AdminController
       :billing_name, :billing_email, :billing_address, :billing_postal, :billing_city, :billing_country,
       :billing_phone, :billing_company_name, :confirmed_at, :terms_and_conditions,
       cart: [:community, :normal, :supporter],
-      students_attributes: [:first_name, :last_name, :email, :twitter_handle, :github_handle, :birth_date, :preferred_level, :remarks, :allergies, :owns_laptop])
+      students_attributes: [:first_name, :last_name, :email, :twitter_handle, :github_handle, :birth_date, :remarks, :allergies, :owns_laptop])
   end
 
   def page_number

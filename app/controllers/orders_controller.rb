@@ -120,7 +120,7 @@ class OrdersController < ApplicationController
       :billing_name, :billing_email, :billing_address, :billing_postal, :billing_city, :billing_country, :validate_promo_code,
       :billing_phone, :billing_company_name, :confirmed_at, :terms_and_conditions, :bootcamp_id, :select_bootcamp,
       cart: [:community, :normal, :supporter],
-      students_attributes: [:first_name, :last_name, :email, :twitter_handle, :github_handle, :birth_date, :preferred_level,
+      students_attributes: [:first_name, :last_name, :email, :twitter_handle, :github_handle, :birth_date,
         :remarks, :allergies, :owns_laptop])
   end
 

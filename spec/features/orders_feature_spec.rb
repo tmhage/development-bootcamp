@@ -75,7 +75,6 @@ describe 'the ticket order process' do
               select (1940..2000).to_a.sample, from: 'order_students_attributes_0_birth_date_1i'
               select 'January', from: 'order_students_attributes_0_birth_date_2i'
               select (1..28).to_a.sample, from: 'order_students_attributes_0_birth_date_3i'
-              select 'Level 1', from: 'Preferred level'
               fill_in 'Github handle', with: Faker::Internet.user_name
 
               click_button 'Continue'

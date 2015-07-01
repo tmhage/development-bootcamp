@@ -68,8 +68,6 @@ RSpec.describe "orders/new", :type => :view do
             assert_select "textarea#order_students_attributes_0_#{f}[name=?]", "order[students_attributes][0][#{f}]"
           end
 
-          assert_select "select#order_students_attributes_0_preferred_level[name=?]", "order[students_attributes][0][preferred_level]"
-
           assert_select "select#order_students_attributes_0_birth_date_1i[name=?]", "order[students_attributes][0][birth_date(1i)]"
           assert_select "select#order_students_attributes_0_birth_date_2i[name=?]", "order[students_attributes][0][birth_date(2i)]"
           assert_select "select#order_students_attributes_0_birth_date_3i[name=?]", "order[students_attributes][0][birth_date(3i)]"
@@ -77,7 +75,7 @@ RSpec.describe "orders/new", :type => :view do
           assert_select "input[type=text]", count: text_fields.size
           assert_select "input[type=email]", count: 1
           assert_select "textarea", count: text_areas.size
-          assert_select "select", count: 4
+          assert_select "select", count: 3
 
           assert_select "input[type=submit]", count: 2
           assert_select "input[type=submit]", value: "Continue"

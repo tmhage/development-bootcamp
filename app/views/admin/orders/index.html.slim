@@ -27,9 +27,6 @@
             | Email
           p = link_to edit_admin_student_path(student) do
             = "#{student.first_name} #{student.last_name}"
-          p.bg-danger
-            | Preferred Level:
-            =< student.preferred_level
           h4 Remarks
           p.bg-info= student.remarks
           p.pull-right= student.created_at.to_s(:long)
