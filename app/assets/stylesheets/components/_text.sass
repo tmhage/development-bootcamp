@@ -103,9 +103,14 @@ h2
 
     .beginner, .intermediate, .advanced
       @extend .col-md-4
+      min-height: 565px
 
       p
         font-size: 16px
+        min-height: 5em
+
+        &.description
+          min-height: 264px
 
       h3
         font-size: 1em
@@ -175,6 +180,19 @@ h2
       background: $dark-green
     &.alt-light-color-sm
       background: $green
+
+    .programs
+      .beginner
+        background: $gray-darker
+      .beginner, .intermediate, .advanced
+        padding: 2.6em 2em
+        min-height: 0
+
+        h3
+          font-size: 24px
+
+        p, p.description
+          min-height: 0
 
 .l-content > .dbc-text-cta
   margin-left: -15px
