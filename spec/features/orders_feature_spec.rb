@@ -4,6 +4,8 @@ describe 'the ticket order process' do
   let(:num_tickets) { 1 }
 
   before do
+    create(:bootcamp)
+
     visit '/tickets'
     expect(page).to have_content 'Choose your tickets'
 

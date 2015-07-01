@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe "orders/new", :type => :view do
   describe 'step:' do
     before { assign :order, order }
+    before { assign :bootcamps, create_list(:bootcamp, 2) }
 
     describe 'tickets' do
       let(:order) { build(:order_step_tickets) }

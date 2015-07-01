@@ -3,17 +3,19 @@ require "Mollie/API/Client"
 class Order < ActiveRecord::Base
   has_paper_trail
 
-  attr_accessor :promo_code, :validate_promo_code
+  attr_accessor :promo_code, :validate_promo_code, :select_bootcamp
 
   belongs_to :discount_code
   has_many :students, inverse_of: :order
 
-  validate :validate_cart
+  validate :validate_cart, unless: :selecting_bootcamp?
   validate :validate_discount_code
 
   validates_presence_of :identifier
 
-  validates_presence_of :cart
+  validates_presence_of :bootcamp
+
+  validates_presence_of :cart, unless: :selecting_bootcamp?
 
   validates_presence_of :billing_name, :billing_email, :billing_address,
                         :billing_postal, :billing_city, :billing_country,
@@ -24,6 +26,8 @@ class Order < ActiveRecord::Base
   validates :terms_and_conditions, inclusion: { in: [true], message: 'must be accepted.' }, if: ->{ at_step_or_after('details') }
 
   accepts_nested_attributes_for :students
+
+  belongs_to :bootcamp
 
   before_validation :create_identifier
 
@@ -86,6 +90,10 @@ class Order < ActiveRecord::Base
     validate_promo_code.present?
   end
 
+  def selecting_bootcamp?
+    select_bootcamp.present?
+  end
+
   def confirmed?
     persisted? && confirmed_at.present?
   end
@@ -95,11 +103,7 @@ class Order < ActiveRecord::Base
   end
 
   def ticket_prices
-    {
-      community: 699,
-      normal: 1499,
-      supporter: 1999
-    }
+    (bootcamp || Bootcamp.new).ticket_prices
   end
 
   def cart
@@ -173,14 +177,17 @@ class Order < ActiveRecord::Base
   end
 
   def cart_has_valid_ticket_types?
-    ((cart.keys.map(&:to_sym) - ticket_types) + (ticket_types - cart.keys.map(&:to_sym))).empty?
+    return true if ((cart.keys.map(&:to_sym) - ticket_types) + (ticket_types - cart.keys.map(&:to_sym))).empty?
+    return true if ((cart.select{|_,val| val.present?}.keys.map(&:to_sym) - ticket_types) + (ticket_types - cart.select{|_,val| val.present?}.keys.map(&:to_sym))).empty?
+    errors.add(:cart, "You have selected an invalid ticket type. Please reload this page and try again. #{ticket_types} #{cart}")
+    false
   end
 
   def cart_has_positive_amounts_for_tickets?
     return true if cart.values.select{|v| v.to_i >= 0 }.size == cart.values.size &&
       cart_sum_tickets > 0
     errors.add(:cart, "You can only order amounts of 1 or more tickets.")
-    return false
+    false
   end
 
   def create_identifier

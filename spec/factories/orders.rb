@@ -1,5 +1,6 @@
 FactoryGirl.define do
   factory :order do
+    bootcamp
     payed_at { Time.now - 5.minutes }
     mollie_payment_id { 'tr_WDqYK6vllg' }
     refunded_at { Time.now - 2.minutes }
@@ -24,6 +25,7 @@ FactoryGirl.define do
   end
 
   factory :order_step_tickets, class: 'Order' do
+    bootcamp
     current_step 'tickets'
     cart { { community: 0, normal: 1, supporter: 0 } }
 
