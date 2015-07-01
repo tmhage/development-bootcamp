@@ -1,7 +1,7 @@
 class Bootcamp < ActiveRecord::Base
   validates_presence_of :name, :level, :starts_at, :ends_at
   def name_with_dates
-    "#{name} - From #{starts_at.strftime("%b %d")} to #{ends_at.strftime("%b %d")}"
+    "#{name} - From #{starts_at.strftime("%b %d")} to #{ends_at.strftime("%b %d")}, #{ends_at.year}"
   end
 
   def level_name
