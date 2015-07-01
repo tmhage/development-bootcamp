@@ -11,10 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150618141227) do
+ActiveRecord::Schema.define(version: 20150701125843) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bootcamps", force: true do |t|
+    t.string   "name"
+    t.string   "location"
+    t.date     "starts_at"
+    t.date     "ends_at"
+    t.integer  "level"
+    t.integer  "community_price"
+    t.integer  "normal_price"
+    t.integer  "supporter_price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "discount_codes", force: true do |t|
     t.string   "code"
@@ -71,8 +84,10 @@ ActiveRecord::Schema.define(version: 20150618141227) do
     t.integer  "discount_code_id"
     t.text     "invoice_url"
     t.boolean  "paid_by_ideal",         default: false
+    t.integer  "bootcamp_id"
   end
 
+  add_index "orders", ["bootcamp_id"], name: "index_orders_on_bootcamp_id", using: :btree
   add_index "orders", ["discount_code_id"], name: "index_orders_on_discount_code_id", using: :btree
 
   create_table "pages", force: true do |t|

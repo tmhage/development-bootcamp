@@ -1,0 +1,39 @@
+.page-header
+  = link_to new_admin_bootcamp_path, :class => 'btn btn-primary' do
+    span.glyphicon.glyphicon-plus
+    |  New Bootcamp
+  h1
+    | Listing Bootcamps
+
+.table-responsive
+  table.table.table-striped.table-bordered.table-hover
+    thead
+      tr
+        th
+          | Name
+        th
+          | Location
+        th
+          | Starts At
+        th
+          | Ends At
+        th
+        th
+        th
+    tbody
+      - @bootcamps.each do | bootcamp |
+        tr
+          td
+            = "#{bootcamp.name} (#{bootcamp.level_name})"
+          td
+            = bootcamp.location
+          td
+            = bootcamp.starts_at
+          td
+            = bootcamp.ends_at
+          td
+            = link_to 'Show', [:admin, bootcamp]
+          td
+            = link_to 'Edit', edit_admin_bootcamp_path(bootcamp)
+          td
+            = link_to 'Destroy', [:admin, bootcamp], method: :delete, data: { confirm: 'Are you sure?' }
