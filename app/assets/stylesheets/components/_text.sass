@@ -98,6 +98,30 @@ h2
   h1
     font-size: 2em
 
+  .programs
+    @extend .row
+
+    .beginner, .intermediate, .advanced
+      @extend .col-md-4
+      min-height: 565px
+
+      p
+        font-size: 16px
+        min-height: 5em
+
+        &.description
+          min-height: 264px
+
+      h3
+        font-size: 1em
+
+    .beginner
+      background-color: $green
+    .intermediate
+      background-color: $dark-green
+    .advanced
+      background-color: $red
+
   p.subnote,
   ul
     font-family: $font-family-base
@@ -124,7 +148,9 @@ h2
         color: $dark-green
 
 .dbc-text-cta
-  background: $gray-darker
+  background-color: $gray-darker
+  background-image: image_url('backgrounds/text-cta.png')
+  background-position: center center
   color: $gray-lighter
 
   .button.default
@@ -154,6 +180,19 @@ h2
       background: $dark-green
     &.alt-light-color-sm
       background: $green
+
+    .programs
+      .beginner
+        background: $gray-darker
+      .beginner, .intermediate, .advanced
+        padding: 2.6em 2em
+        min-height: 0
+
+        h3
+          font-size: 24px
+
+        p, p.description
+          min-height: 0
 
 .l-content > .dbc-text-cta
   margin-left: -15px

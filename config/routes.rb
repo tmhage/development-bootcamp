@@ -69,6 +69,7 @@ Rails.application.routes.draw do
     end
 
     resources :discount_codes
+    resources :bootcamps
     resources :posts, except: :show do
       member do
         put :publish

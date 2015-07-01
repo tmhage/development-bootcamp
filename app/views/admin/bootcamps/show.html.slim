@@ -1,0 +1,26 @@
+.page-header
+  = link_to admin_bootcamps_path, :class => 'btn btn-default' do
+    span.glyphicon.glyphicon-list-alt
+    |  Back
+  = link_to edit_admin_bootcamp_path(@bootcamp), :class => 'btn btn-primary' do
+    span.glyphicon.glyphicon-pencil
+    |  Edit
+  h1
+    | Show Bootcamp
+dl.dl-horizontal
+  dt
+    | Name:
+  dd
+    = "#{@bootcamp.name} (#{@bootcamp.level_name})"
+  dt
+    | Location:
+  dd
+    = @bootcamp.location
+  dt
+    | Starts At:
+  dd
+    = @bootcamp.starts_at
+  dt
+    | Ends At:
+  dd
+    = @bootcamp.ends_at

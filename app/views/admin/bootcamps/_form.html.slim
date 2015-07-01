@@ -1,0 +1,44 @@
+= form_for([:admin, @bootcamp], :html => { :class => "form-horizontal" }) do |f|
+  - if @bootcamp.errors.any?
+    .alert.alert-danger.alert-dismissable
+      button.close type="button" data-dismiss="alert" aria-hidden="true"
+        | &times;
+      h4= "#{pluralize(@bootcamp.errors.count,"error")} prohibited this bootcamp from being saved:"
+      ul
+        - @bootcamp.errors.full_messages.each do |msg|
+          li= msg
+  .form-group
+    = f.label :name, :class => "col-sm-2 control-label"
+    .col-sm-10
+      = f.text_field :name, :class => "form-control"
+  .form-group
+    = f.label :level, :class => "col-sm-2 control-label"
+    .col-sm-10
+      = f.collection_select :level, LevelCollection.all, :id, :name, prompt: true, :class => "form-control"
+  .form-group
+    = f.label :location, :class => "col-sm-2 control-label"
+    .col-sm-10
+      = f.text_field :location, :class => "form-control"
+  .form-group
+    = f.label :starts_at, :class => "col-sm-2 control-label"
+    .col-sm-10
+      = f.date_select :starts_at, :class => "form-control"
+  .form-group
+    = f.label :ends_at, :class => "col-sm-2 control-label"
+    .col-sm-10
+      = f.date_select :ends_at, :class => "form-control"
+  .form-group
+    = f.label :community_price, :class => "col-sm-2 control-label"
+    .col-sm-10
+      = f.number_field :community_price, :class => "form-control", placeholder: @bootcamp.community_price
+  .form-group
+    = f.label :normal_price, :class => "col-sm-2 control-label"
+    .col-sm-10
+      = f.number_field :normal_price, :class => "form-control", placeholder: @bootcamp.normal_price
+  .form-group
+    = f.label :supporter_price, :class => "col-sm-2 control-label"
+    .col-sm-10
+      = f.number_field :supporter_price, :class => "form-control", placeholder: @bootcamp.supporter_price
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      = f.submit :class => "btn btn-primary"
