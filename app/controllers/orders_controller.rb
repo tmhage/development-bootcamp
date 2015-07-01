@@ -13,10 +13,12 @@ class OrdersController < ApplicationController
   end
 
   def new
+    @bootcamps = Bootcamp.where('starts_at > NOW()').order(starts_at: :asc)
     reset_order_session!
     session[:order_params] ||= {}
     @order = Order.new(session[:order_params])
     @order.current_step = session[:order_step]
+    @order.bootcamp = @bootcamps.first
 
     if params[:promo].present?
       @order.promo_code = params[:promo]
@@ -27,6 +29,7 @@ class OrdersController < ApplicationController
   end
 
   def create
+    @bootcamps = Bootcamp.where('starts_at > NOW()').order(starts_at: :asc)
     session[:order_params].deep_merge!(order_params) if order_params
 
     @order = Order.new(session[:order_params])
@@ -43,6 +46,8 @@ class OrdersController < ApplicationController
     elsif @order.validating_promo_code?
       @order.validate_discount_code
       @order.validate_promo_code = nil # reset
+    elsif @order.selecting_bootcamp?
+      @order.select_bootcamp = nil # reset
     else
       build_students
       @order.next_step if @order.valid?
@@ -113,8 +118,10 @@ class OrdersController < ApplicationController
   def order_params
     params.require(:order).permit(:price, :promo_code, :payed_at, :mollie_payment_id, :refunded_at, :mollie_refund_id,
       :billing_name, :billing_email, :billing_address, :billing_postal, :billing_city, :billing_country, :validate_promo_code,
-      :billing_phone, :billing_company_name, :confirmed_at, :terms_and_conditions, cart: [:community, :normal, :supporter],
-      students_attributes: [:first_name, :last_name, :email, :twitter_handle, :github_handle, :birth_date, :preferred_level, :remarks, :allergies, :owns_laptop])
+      :billing_phone, :billing_company_name, :confirmed_at, :terms_and_conditions, :bootcamp_id, :select_bootcamp,
+      cart: [:community, :normal, :supporter],
+      students_attributes: [:first_name, :last_name, :email, :twitter_handle, :github_handle, :birth_date, :preferred_level,
+        :remarks, :allergies, :owns_laptop])
   end
 
   def add_to_list(student)

@@ -10,6 +10,20 @@ class Bootcamp < ActiveRecord::Base
     _level.name
   end
 
+  def ticket_prices
+    if id == 1 || Rails.env.test?
+      {
+          community: community_price,
+          normal: normal_price,
+          supporter: supporter_price,
+      }
+    else
+      {
+        normal: normal_price
+      }
+    end
+  end
+
   def community_price
     read_attribute(:community_price) || 999
   end

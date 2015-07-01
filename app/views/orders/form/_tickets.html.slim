@@ -8,6 +8,10 @@ h2
 - else
   - values = {}
 
+- if @bootcamps.count > 0
+  .row#select_bootcamp
+    = f.collection_radio_buttons :bootcamp_id, @bootcamps, :id, :name_with_dates, prompt: true, label: 'Please select a date and level:'
+
 - trinkets = { community: { class: 'has-success', icon: 'users', help: 'Community Tickets are for individuals only, no corporate entities.' }, normal: { class: 'has-warning', icon: 'ticket', help: 'Through the corporate program we keep the community ticket price for individuals without access to financial assistance by employers as low as possible.' }, supporter: { class: 'has-error', icon: 'heart', help: 'Supporter tickets are for those who want to help our community efforts. All extra money that comes in goes back into the community effort to help more people code.' } }
 
 - @order.ticket_prices.each do |name, price|
@@ -15,9 +19,11 @@ h2
   - if @order.has_valid_discount_code? && name != :community
     - discounted_price = discounted_price * (1 - (@order.discount_code.discount_percentage / 100.0))
   .row
-    = f.number_field :cart, name: "order[cart][#{name}]", id: "order_cart_#{name}", placeholder: 0, value: values[name], hide_label: true, wrapper_class: trinkets[name][:class], append: "#{fa_icon(trinkets[name][:icon])} #{name.to_s.humanize} Ticket (#{number_to_currency(discounted_price)}#{discounted_price == price ? '' : ", <strong>#{@order.discount_code.discount_percentage}% DISCOUNT</strong>"})#{ name == :community ? '*' : ''}".html_safe, help: trinkets[name][:help]
+    = f.number_field :cart, name: "order[cart][#{name}]", id: "order_cart_#{name}", placeholder: 0, value: values[name], hide_label: true, wrapper_class: trinkets[name][:class], append: "#{fa_icon(trinkets[name][:icon])} #{name.to_s.humanize} Ticket (#{number_to_currency(discounted_price)}#{discounted_price == price ? '' : ", <strong>#{@order.discount_code.discount_percentage}% DISCOUNT</strong>"})#{ name == :community ? '*' : ''}".html_safe, help: @order.ticket_prices.size > 1 ? trinkets[name][:help] : nil
 
 .row
   = f.text_field :promo_code, label: 'Promo code (optional):'
+
 div style="display:none"
   = f.hidden_field :validate_promo_code, value: ''
+  = f.hidden_field :select_bootcamp, value: ''
