@@ -13,7 +13,7 @@ class OrdersController < ApplicationController
   end
 
   def new
-    @bootcamps = Bootcamp.where('starts_at > NOW()').order(starts_at: :asc)
+    @bootcamps = Bootcamp.published.recent
     reset_order_session!
     session[:order_params] ||= {}
     @order = Order.new(session[:order_params])

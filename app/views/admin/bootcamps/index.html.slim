@@ -32,7 +32,8 @@
           td
             = bootcamp.ends_at
           td
-            = link_to 'Show', [:admin, bootcamp]
+            = link_to 'Publish', publish_admin_bootcamp_path(bootcamp), method: :put if bootcamp.unpublished?
+            = link_to 'Unpublish', unpublish_admin_bootcamp_path(bootcamp), method: :put if bootcamp.published?
           td
             = link_to 'Edit', edit_admin_bootcamp_path(bootcamp)
           td
