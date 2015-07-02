@@ -70,6 +70,7 @@ describe 'the ticket order process' do
               fill_in 'First name', with: Faker::Name.first_name
               fill_in 'Last name', with: Faker::Name.last_name
               fill_in 'Email', with: Faker::Internet.email
+              fill_in 'Phone number', with: Faker::PhoneNumber.phone_number
               fill_in 'Twitter handle', with: Faker::Internet.user_name
               fill_in 'Remarks', with: Faker::Lorem.paragraph(4)
               select (1940..2000).to_a.sample, from: 'order_students_attributes_0_birth_date_1i'

@@ -122,7 +122,7 @@ class OrdersController < ApplicationController
       :billing_phone, :billing_company_name, :confirmed_at, :terms_and_conditions, :bootcamp_id, :select_bootcamp,
       cart: [:community, :normal, :supporter],
       students_attributes: [:first_name, :last_name, :email, :twitter_handle, :github_handle, :birth_date,
-        :remarks, :allergies, :owns_laptop])
+        :remarks, :allergies, :owns_laptop, :phone_number])
   end
 
   def add_to_list(student)
