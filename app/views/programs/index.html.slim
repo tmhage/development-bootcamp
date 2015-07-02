@@ -6,18 +6,23 @@
   .dbc-page-header.program
     .container-fluid
       .inner
-        h1 Program Summer 2015
+        h1 Program 2015
         p
           => fa_icon 'map-marker'
           strong
-            | 12-18 July,
-            =< link_to 'Amsterdam Science Park', 'http://www.amsterdamsciencepark.nl/'
+            | 12-18 July
+            mark =< 'Amsterdam Science Park'
+          br
+          => fa_icon 'map-marker'
+          strong
+            | 25-31 Oct
+            mark =< 'Rokin, Amsterdam'
 
         p By the end of the week you will have built your own website, and you will know how to grow and maintain it.
 
         p
           = link_to 'Get tickets', tickets_path, class: 'button primary'
-          = link_to 'Read full program', "#the-programs", class: 'button default'
+          = link_to 'Read full program', "#full-program", class: 'button default'
           = link_to 'Newsletter', newsletter_path, class: 'button default'
 
   .dbc-content
@@ -26,16 +31,7 @@
           p
             mark = 'A full week'
             |  primer that teaches you to build and maintain
-            mark.alt-color =< 'your own personal site.'
-          p
-            | Use it to do
-            mark.alt-color =< ' your personal branding: biography, blog, portfolio.'
-            |  Or start building on
-            mark = ' a business project you might have.'
-            |  Up to you!
-            mark.alt-color =< 'We will help you get there.'
-
-
+            mark.alt-color =< 'your own website or web app.'
 
     .dbc-container.dbc-program#full-program
       .inner.centered
@@ -151,6 +147,8 @@
                 li Demos and Prizes
                 li Closing thoughts
 
+    = render 'shared/day_at_bootcamp'
+
     .dbc-container.dbc-text-cta.alt-color.light-color
       .inner.normal
         h2 A First Taste of Code
@@ -171,5 +169,3 @@
         p
           = link_to 'Get tickets', tickets_path, class: 'button primary'
           = link_to 'Newsletter', newsletter_path, class: 'button default'
-
-    = render 'shared/future_bootcamps'
