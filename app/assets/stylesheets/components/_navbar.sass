@@ -21,9 +21,11 @@ body
     .navbar-brand
       margin-top: $dbc-navbar-height/8
 
-      span,
       img
-        display: none
+        height: 20px
+
+      span
+        opacity: 0
 
     ul.navbar-nav
       margin-top: $dbc-navbar-height/8
@@ -35,6 +37,8 @@ body
     margin-top: $dbc-navbar-height/3 - 10px
     color: $yellow
     font-size: 20px
+    transition: all 0.4s ease
+
     &:hover
       color: $yellow
 
@@ -42,14 +46,17 @@ body
       height: 40px
       float: left
       margin-right: 0.6em
+      transition: all 0.4s ease
 
     span
       font-size: 18px
       display: block
       color: $green
+      transition: all 0.4s ease
 
   ul.navbar-nav
     margin-top: $dbc-navbar-height/3
+    transition: all 0.4s ease
 
 .navbar-default
   border: none
