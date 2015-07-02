@@ -1,0 +1,59 @@
+.dbc-container.dbc-text.dbc-day-at#day-structure
+  .inner.centered
+    h2 A Day at our Bootcamp
+    p We will keep you busy
+
+  .inner
+    .dbc-daypart.part-one
+      .time
+        | 9:00 AM
+      .activity
+        h2 Daily keynote by a high profile speaker
+      .image
+
+    .dbc-daypart.part-two
+      .time
+        | 11.30 AM
+      .activity
+        h2 Morning workshop sessions in small teams
+      .image
+
+    .dbc-daypart.part-three
+      .time
+        | 1.00 PM
+      .activity
+        h2 Lunch
+        p included
+      .image
+
+    .dbc-daypart.part-four
+      .time
+        | 2:00 PM
+      .activity
+        h2 Afternoon workshop sessions in small teams
+      .image
+
+    .dbc-daypart.part-five
+      .time
+        | 5:00 PM
+      .activity
+        h2 Free time for dinner
+      .image
+
+    .dbc-daypart.part-six
+      .time
+        | 8:00 PM
+      .activity
+        h2 Evening Sessions
+        p
+          | additional
+          =<> link_to 'tickets', tickets_path
+          | for visitors
+      .image
+
+  .inner.centered
+    p
+      = link_to 'Program', program_path, class: 'button primary'
+      = link_to 'Tickets', tickets_path, class: 'button default'
+
+    p Other activities: Party, Hackathon, Contest

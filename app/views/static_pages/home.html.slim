@@ -18,10 +18,11 @@
 
 .dbc-content
   .dbc-container.dbc-text-cta.alt-light-color-sm
-    .inner.normal#programs
+    .inner.centered#programs
       h2 Three Levels
       p Choose Yours!
 
+    .inner.normal
       .programs
         .beginner
           h3 Beginner Bootcamp
@@ -63,63 +64,7 @@
           p
             = link_to 'Program', program_path, class: 'button primary'
 
-  .dbc-container.dbc-text.dbc-day-at#day-structure
-    .inner.centered
-      h2 A Day at our Bootcamp
-      p Other activities: Party, Hackathon, Contest
-
-    .inner
-      .dbc-daypart.part-one
-        .time
-          | 9:00 AM
-        .activity
-          h2 Daily keynote by a high profile speaker
-        .image
-
-      .dbc-daypart.part-two
-        .time
-          | 11.30 AM
-        .activity
-          h2 Morning workshop sessions in small teams
-        .image
-
-      .dbc-daypart.part-three
-        .time
-          | 1.00 PM
-        .activity
-          h2 Lunch
-          p included
-        .image
-
-      .dbc-daypart.part-four
-        .time
-          | 2:00 PM
-        .activity
-          h2 Afternoon workshop sessions in small teams
-        .image
-
-      .dbc-daypart.part-five
-        .time
-          | 5:00 PM
-        .activity
-          h2 Free time for dinner
-        .image
-
-      .dbc-daypart.part-six
-        .time
-          | 8:00 PM
-        .activity
-          h2 Evening Sessions
-          p
-            | additional
-            =<> link_to 'tickets', tickets_path
-            | for visitors
-        .image
-
-    .inner.centered
-      p
-        = link_to 'Program', program_path, class: 'button primary'
-        = link_to 'Tickets', tickets_path, class: 'button default'
+  = render 'shared/day_at_bootcamp'
 
   .dbc-container.dbc-text-cta.alt-color.light-color
     .inner.normal
@@ -185,7 +130,7 @@
               = image_tag 'testimonials/alexander-klopping.jpg'
             .text
               blockquote
-                q Summer camps like these are a great start to learn programming.
+                q Bootcamps like these are a great start to learn programming.
                 footer
                   | Alexander Klöpping,
                   cite =< link_to 'Blendle', 'https://blendle.com'
