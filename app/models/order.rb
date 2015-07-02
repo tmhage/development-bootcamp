@@ -271,10 +271,25 @@ class Order < ActiveRecord::Base
   end
 
   def create_invoice!
-    return if invoice_url.present?
+    return if invoiced?
     contact = Moneybird::Contact.create(self)
     invoice = contact.create_invoice(self)
-    update(invoice_url: invoice.url)
+    update(invoice_url: invoice.url, invoice_id: invoice.id)
+  end
+
+  def mark_invoice_paid!
+    return false unless paid?
+    create_invoice! unless invoiced?
+    Moneybird::Invoice.find(invoice_id).mark_paid!(invoice_amount, payment_method, paid_at)
+  end
+
+  def invoiced?
+    invoice_url.present?
+  end
+
+  def invoice_amount
+    return creditcard_total if paid_by_creditcard?
+    cart_sum_total
   end
 
   def store_ideal_payment_status

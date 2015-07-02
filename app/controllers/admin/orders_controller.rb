@@ -68,7 +68,7 @@ class Admin::OrdersController < Admin::AdminController
   end
 
   def order_params
-    params.require(:order).permit(:price, :payed_at, :mollie_payment_id, :refunded_at, :mollie_refund_id,
+    params.require(:order).permit(:price, :paid_at, :mollie_payment_id, :refunded_at, :mollie_refund_id,
       :billing_name, :billing_email, :billing_address, :billing_postal, :billing_city, :billing_country,
       :billing_phone, :billing_company_name, :confirmed_at, :terms_and_conditions,
       cart: [:community, :normal, :supporter],

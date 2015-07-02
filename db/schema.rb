@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(version: 20150701125843) do
 
   create_table "orders", force: true do |t|
     t.decimal  "price"
-    t.datetime "payed_at"
+    t.datetime "paid_at"
     t.string   "mollie_payment_id"
     t.string   "refunded_at"
     t.string   "mollie_refund_id"
@@ -84,6 +84,7 @@ ActiveRecord::Schema.define(version: 20150701125843) do
     t.integer  "discount_code_id"
     t.text     "invoice_url"
     t.boolean  "paid_by_ideal",         default: false
+    t.integer  "invoice_id"
     t.integer  "bootcamp_id"
   end
 

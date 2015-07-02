@@ -70,8 +70,12 @@ class OrdersController < ApplicationController
     @order = Order.find_by_mollie_payment_id(params[:id])
     if @order.present?
       payment_status = @order.payment.status
-      send_invoice_and_tickets! if @order.payment.paid? && @order.mollie_status != 'paid'
-      @order.update(mollie_status: payment_status)
+      if @order.payment.paid? && @order.mollie_status != 'paid'
+        @order.update(paid_at: Time.now, mollie_status: payment_status)
+        send_invoice_and_tickets!
+      else
+        @order.update(mollie_status: payment_status)
+      end
     end
   rescue Mollie::API::Exception => error
     Appsignal.add_exception error
@@ -81,19 +85,16 @@ class OrdersController < ApplicationController
   end
 
   def stripe_webhook
-    # This will fail, but we will see it in AppSignal and be able to fix it properly.
-    # Stripe's webhook tests are useless.
     if params[:object] == 'event'
       if params[:type] == 'charge.succeeded'
-        @order.payed_at = Time.now
+        @order.paid_at = Time.now
         @order.stripe_payload = params
         @order.save!
       end
     end
   end
 
-  def thanks
-  end
+  def thanks; end
 
   def stripe_token
     if params[:stripeToken].present?
@@ -116,7 +117,7 @@ class OrdersController < ApplicationController
   end
 
   def order_params
-    params.require(:order).permit(:price, :promo_code, :payed_at, :mollie_payment_id, :refunded_at, :mollie_refund_id,
+    params.require(:order).permit(:price, :promo_code, :paid_at, :mollie_payment_id, :refunded_at, :mollie_refund_id,
       :billing_name, :billing_email, :billing_address, :billing_postal, :billing_city, :billing_country, :validate_promo_code,
       :billing_phone, :billing_company_name, :confirmed_at, :terms_and_conditions, :bootcamp_id, :select_bootcamp,
       cart: [:community, :normal, :supporter],
