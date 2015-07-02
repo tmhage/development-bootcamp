@@ -166,6 +166,7 @@ ActiveRecord::Schema.define(version: 20150702080436) do
     t.integer  "order_id"
     t.uuid     "identifier"
     t.boolean  "owns_laptop",     default: false
+    t.text     "phone_number"
   end
 
   add_index "students", ["identifier"], name: "index_students_on_identifier", using: :btree

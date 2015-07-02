@@ -18,6 +18,7 @@ h2
   = s.text_field :first_name
   = s.text_field :last_name
   = s.text_field :email, type: 'email', placeholder: 'you@organization.co'
+  = s.text_field :phone_number
   = s.date_select :birth_date, include_blank: true, start_year: 1940, end_year: (Date.today.year - 13), order: [:month, :day, :year]
   = s.form_group :owns_laptop, label: { text: 'Do you own a laptop you can bring to class?' } do
     = s.radio_button :owns_laptop, true, label: 'Yes'

@@ -55,7 +55,7 @@ RSpec.describe "orders/new", :type => :view do
         render
 
         assert_select "form[action=?][method=?]", tickets_path, "post" do
-          text_fields = [:first_name, :last_name, :twitter_handle, :github_handle]
+          text_fields = [:first_name, :last_name, :twitter_handle, :github_handle, :phone_number]
           text_areas = [:remarks, :allergies]
 
           text_fields.each do |f|
