@@ -8,5 +8,6 @@ FactoryGirl.define do
     community_price { 699 }
     normal_price { 1499 }
     supporter_price { 1999 }
+    published_at { Date.yesterday }
   end
 end
