@@ -119,6 +119,14 @@ h3 Student Details
     =< student.email
 
   .input
+    strong Phone number:
+    =< student.phone_number
+
+  .input
+    strong Own laptop?
+    =< student.owns_laptop? ? 'Yes' : 'No'
+
+  .input
     strong Birth date:
     =< student.birth_date && student.birth_date.to_formatted_s(:long)
 
