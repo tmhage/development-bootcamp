@@ -6,7 +6,10 @@ class Bootcamp < ActiveRecord::Base
   before_validation :set_unpublished, if: :should_unpublish?
 
   def self.published
-    where('starts_at >= ? AND published_at <= ?', Date.today, Date.today)
+    where(
+      'published_at IS NOT NULL AND starts_at >= ? AND published_at <= ?',
+      Date.today, Date.today
+    )
   end
 
   def self.recent
@@ -28,7 +31,7 @@ class Bootcamp < ActiveRecord::Base
   end
 
   def unpublished?
-    published_at.nil? || published_at < Date.today
+    published_at.nil? || published_at > Date.today
   end
 
   def publish!
@@ -74,6 +77,6 @@ class Bootcamp < ActiveRecord::Base
   end
 
   def should_unpublish?
-    unpublish
+    unpublish.to_i > 0
   end
 end
