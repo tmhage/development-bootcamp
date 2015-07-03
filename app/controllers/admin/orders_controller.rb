@@ -5,7 +5,7 @@ class Admin::OrdersController < Admin::AdminController
   respond_to :html
 
   def index
-    @orders = Order.joins(:students).order(created_at: :desc).page(page_number).per(10)
+    @orders = Order.includes(:discount_code, :students).order(created_at: :desc).page(page_number).per(10)
     respond_with(@orders)
   end
 
