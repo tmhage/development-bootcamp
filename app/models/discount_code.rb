@@ -11,4 +11,8 @@ class DiscountCode < ActiveRecord::Base
     return if code.blank? || slug.present?
     self.slug = code.parameterize
   end
+
+  def track_click!
+    update(clicks: clicks.to_i + 1)
+  end
 end

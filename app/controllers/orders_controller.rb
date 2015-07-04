@@ -20,10 +20,7 @@ class OrdersController < ApplicationController
     @order.current_step = session[:order_step]
     @order.bootcamp = @bootcamps.first
 
-    if params[:promo].present?
-      @order.promo_code = params[:promo]
-      @order.validate_discount_code
-    end
+    track_discount_code!
 
     respond_with(@order)
   end
@@ -177,5 +174,18 @@ class OrdersController < ApplicationController
 
   def enqueue_creditcard_charge!
     CreditcardChargerWorker.perform_async(@order.id)
+  end
+
+  def track_discount_code!
+    return unless params[:promo].present? || session[:discount_code_tracked].present?
+
+    @order.promo_code = params[:promo] || session[:discount_code_tracked]
+    @order.validate_discount_code
+    return if @order.discount_code.blank?
+
+    return if session[:discount_code_tracked] == @order.discount_code.code
+
+    @order.discount_code.track_click!
+    session[:discount_code_tracked] = @order.discount_code.code
   end
 end
