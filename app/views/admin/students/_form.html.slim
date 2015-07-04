@@ -10,6 +10,7 @@
   = f.text_field :github_handle, required: false, placeholder: '@username'
   = f.date_select :birth_date, required: true, include_blank: true, start_year: 1890, end_year: (Date.today.year - 13), order: [:month, :day, :year]
   = f.text_area :remarks
+  = f.text_area :allergies, label: 'Dietary wishes:'
 
   p
     = link_to 'Cancel', admin_students_path, class: 'btn btn-default'

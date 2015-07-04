@@ -31,6 +31,8 @@
             = "#{student.first_name} #{student.last_name}"
           h4 Remarks
           p.bg-info= student.remarks
+          h4 Dietary Wishes
+          p.bg-warning= student.allergies
           p.pull-right= student.created_at.to_s(:long)
     .col-md-2
       p= link_to 'Edit', edit_admin_order_path(order)
