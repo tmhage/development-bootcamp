@@ -4,26 +4,72 @@
 
 - cache 'programs-index' do
   .dbc-page-header.program
-    .container-fluid
-      .inner
-        h1 Program 2015
-        p
-          => fa_icon 'map-marker'
-          strong
-            | 12-18 July
-            mark =< 'Amsterdam Science Park'
-          br
-          => fa_icon 'map-marker'
-          strong
-            | 25-31 Oct
-            mark =< 'Rokin, Amsterdam'
+      .container-fluid
+        .inner
+          h1 Bootcamps include:
 
-        p By the end of the week you will have built your own website, and you will know how to grow and maintain it.
+          markdown:
+            - Daily Keynotes & Workshops
+            - Evening Sessions
+            - Coding Contest
+            - Certificate upon completion of the program
+            - Healthy lunch
 
-        p
-          = link_to 'Get tickets', tickets_path, class: 'button primary'
-          = link_to 'Read full program', "#full-program", class: 'button default'
-          = link_to 'Newsletter', newsletter_path, class: 'button default'
+          p
+            = link_to 'Register now', '#orderForm', class: 'button primary'
+            = link_to 'Check our program', program_path, class: 'button default'
+
+  = render 'shared/day_at_bootcamp'
+
+
+  .dbc-content
+  .dbc-container.dbc-text-cta.alt-light-color-sm
+    .inner.centered#programs
+      h2 Three Levels
+      p Choose Yours!
+
+    .inner.normal
+      .programs
+        .beginner
+          h3 Beginner Bootcamp
+          p
+            => fa_icon 'calendar'
+            strong
+              mark => '12-18 July, 2015'
+              small
+                em and other dates..
+          p.description This will teach you the basics of  programming, and how to think like a programmer. By the end of the week, you will be able to start writing small programs to make your live easier and you will have built your first interactive website.
+
+          p
+            = link_to 'Program', program_path, class: 'button primary'
+
+        .intermediate
+          h3 Intermediate Bootcamp
+          p
+            => fa_icon 'calendar'
+            strong
+              mark => '22-28 November, 2015'
+              small
+                em and other dates..
+          p.description Your code will come alive on the internet, where the world will be able to see what you built. An exciting week, after which you will have built a couple of applications, and released them to the public internet.
+
+          p
+            = link_to 'Program', program_path, class: 'button primary'
+
+        .advanced
+          h3 Advanced Bootcamp
+          p
+            => fa_icon 'calendar'
+            strong
+              mark => '20-26 March, 2016'
+              small
+                em and other dates..
+          p.description This will prepare you for the professional programming world out there. You will add more complicated technology to your applications, and you will learn  about the latest hi-tech developments and how to use them.
+
+
+          p
+            = link_to 'Program', program_path, class: 'button primary'
+
 
   .dbc-content
     .dbc-container.dbc-text#the-programs
@@ -147,7 +193,19 @@
                 li Demos and Prizes
                 li Closing thoughts
 
-    = render 'shared/day_at_bootcamp'
+
+    .dbc-container.dbc-program#intermidiate-program
+      .inner.centered
+        h1 The Intermediate Program
+        p Coming soon!
+
+
+    .dbc-container.dbc-program#advanced-program
+      .inner.centered
+        h1 The Advanced Program
+        p Coming soon!
+
+
 
     .dbc-container.dbc-text-cta.alt-color.light-color
       .inner.normal
