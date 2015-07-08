@@ -2,18 +2,13 @@ h2
   font-weight: 900 !important
   font-size: 1.5em !important
 
-
-
 .dbc-text
-  padding-top: 8em
-  padding-bottom: 8em
+  padding-top: 4em
+  padding-bottom: 4em
   color: $gray-darker
-  //shadow
   -webkit-box-shadow: 10px 10px 99px -17px rgba(0,0,0,0.75)
   -moz-box-shadow: 10px 10px 99px -17px rgba(0,0,0,0.75)
   box-shadow: 10px 10px 99px -17px rgba(0,0,0,0.75)
-
-
 
   &.ticket-info
     padding-top: 0
@@ -24,8 +19,12 @@ h2
   .centered
     text-align: center
 
+  .justified
+    text-align: justify
+
   .centered,
   .normal,
+  .justified,
   .text
     h2
       font-size: 2em
@@ -34,6 +33,7 @@ h2
 
   .centered,
   .normal,
+  .justified,
   .caps
     font-size: 32px
 
@@ -212,7 +212,8 @@ h2
     paddin-bottom: 2em
 
     .normal,
-    .centered
+    .centered,
+    .justified
       font-size: 18px
 
   .inner.caps

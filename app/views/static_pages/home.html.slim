@@ -17,55 +17,18 @@
           = link_to 'Read More', '#programs', class: 'button primary'
 
 .dbc-content
-  .dbc-container.dbc-text-cta.alt-light-color-sm
-    .inner.centered#programs
-      h2 Three Levels
-      p Choose Yours!
+  .dbc-container.dbc-text
+    .inner.caps
+      p
+        mark.alt-color Programming is like any other thing in the world.
+        mark =<> "It's not hard"
+        | until you want to solve hard problems with it.
 
-    .inner.normal
-      .programs
-        .beginner
-          h3 Beginner Bootcamp
-          p
-            => fa_icon 'calendar'
-            strong
-              mark => '12-18 July, 2015'
-              small
-                em and other dates..
-          p.description This will teach you the basics of  programming, and how to think like a programmer. By the end of the week, you will be able to start writing small programs to make your live easier and you will have built your first interactive website.
-
-          p
-            = link_to 'Program', program_path, class: 'button primary'
-
-        .intermediate
-          h3 Intermediate Bootcamp
-          p
-            => fa_icon 'calendar'
-            strong
-              mark => '22-28 November, 2015'
-              small
-                em and other dates..
-          p.description Your code will come alive on the internet, where the world will be able to see what you built. An exciting week, after which you will have built a couple of applications, and released them to the public internet.
-
-          p
-            = link_to 'Program', program_path, class: 'button primary'
-
-        .advanced
-          h3 Advanced Bootcamp
-          p
-            => fa_icon 'calendar'
-            strong
-              mark => '20-26 March, 2016'
-              small
-                em and other dates..
-          p.description This will prepare you for the professional programming world out there. You will add more complicated technology to your applications, and you will learn  about the latest hi-tech developments and how to use them.
-
-
-          p
-            = link_to 'Program', program_path, class: 'button primary'
+  = render 'programs/three_levels'
 
   = render 'shared/day_at_bootcamp'
 
+.dbc-content
   .dbc-container.dbc-text-cta.alt-color.light-color
     .inner.normal
       h2 Code is Everywhere
@@ -75,23 +38,12 @@
         phones, cars, refrigerators, watches all run software large and small, complex
         and simple. You probably want to play a role in that.
 
-      p
-        = link_to 'Program', program_path, class: 'button default'
-        = link_to 'Tickets', tickets_path, class: 'button primary'
-
   .dbc-container.dbc-text
     .inner.caps
-      p
-        mark.alt-color Once you know how it's done,
-        | you will see the opportunities.
-        mark =< 'And they are endless.'
-
       p
         mark.alt-color Programming is like any other thing in the world.
         mark =<> "It's not hard"
         | until you want to solve hard problems with it.
-
-      p = link_to 'Read full program', program_path, class: 'button primary'
 
   .dbc-container.dbc-text-cta.alt-color
     .inner.normal
@@ -105,10 +57,6 @@
         the classroom to give you the most up to date learning
         experience available.
 
-      p
-        = link_to 'Program', program_path, class: 'button primary'
-        = link_to 'Tickets', tickets_path, class: 'button default'
-
   .dbc-container.dbc-text
     .inner.caps
       p
@@ -119,59 +67,67 @@
         mark =<> 'easy'
         | for you to learn.
 
-      p = link_to 'Read full program', program_path, class: 'button primary'
+.dbc-content
+  - cache 'testimonials-block' do
+    .dbc-container.dbc-text-cta.alt-color.light-color.dbc-testimonials#testimonials
+      .inner.centered
+        .testimonial
+          .avatar
+            = image_tag 'testimonials/alexander-klopping.jpg'
+          .text
+            blockquote
+              q Bootcamps like these are a great start to learn programming.
+              footer
+                | Alexander Klöpping,
+                cite =< link_to 'Blendle', 'https://blendle.com'
+        .testimonial
+          .avatar
+            = image_tag 'testimonials/neelie-kroes.jpg'
+          .text
+            blockquote
+              q A magnificent initiative!
+              footer
+                | Neelie Kroes,
+                cite =< link_to 'Startup Delta', 'http://startupdelta.org'
+        .testimonial
+          .avatar
+            = image_tag 'testimonials/ruben-timmerman.jpg'
+          .text
+            blockquote
+              q I reserved a spot at my company for the best student!
+              footer
+                | Ruben Timmerman,
+                cite =< link_to 'Springest', 'https://www.springest.nl/'
 
-  .dbc-content
-    - cache 'testimonials-block' do
-      .dbc-container.dbc-text-cta.alt-color.light-color.dbc-testimonials#testimonials
+  - cache 'home-corporate-cta'
+    .dbc-container.dbc-text
+      .inner.caps
+          p
+            | People in all tech companies can benefit from programming skills.
+            mark.alt-color =< "Would you like to join us with your colleagues?"
+            =< mail_to 'info@developmentbootcamp.nl', 'Send us an email.'
+
+  - cache cache_key_for_sponsors do
+    - if @sponsors.count > 0
+      .dbc-container.dbc-text-cta.alt-color.dbc-sponsors#the-partners
         .inner.centered
-          .testimonial
-            .avatar
-              = image_tag 'testimonials/alexander-klopping.jpg'
-            .text
-              blockquote
-                q Bootcamps like these are a great start to learn programming.
-                footer
-                  | Alexander Klöpping,
-                  cite =< link_to 'Blendle', 'https://blendle.com'
-          .testimonial
-            .avatar
-              = image_tag 'testimonials/neelie-kroes.jpg'
-            .text
-              blockquote
-                q A magnificent initiative!
-                footer
-                  | Neelie Kroes,
-                  cite =< link_to 'Startup Delta', 'http://startupdelta.org'
-          .testimonial
-            .avatar
-              = image_tag 'testimonials/ruben-timmerman.jpg'
-            .text
-              blockquote
-                q I reserved a spot at my company for the best student!
-                footer
-                  | Ruben Timmerman,
-                  cite =< link_to 'Springest', 'https://www.springest.nl/'
+          p Sponsors & Partners
+          - @sponsors.order('name asc').each do |sponsor|
+            - cache sponsor do
+              - sponsor_link = sponsor.website.present? ? sponsor.website : '#'
+              - if sponsor.logo.present?
+                .sponsor
+                  = link_to sponsor_link do
+                    = image_tag(sponsor.logo.thumb)
 
-    - cache 'home-corporate-cta'
-      .dbc-container.dbc-text
-        .inner.caps
-            p
-              | People in all tech companies can benefit from programming skills.
-              mark.alt-color =< "Would you like to join us with your colleagues?"
-              =< mail_to 'info@developmentbootcamp.nl', 'Send us an email.'
+  = render 'shared/newsletter_form'
 
-    - cache cache_key_for_sponsors do
-      - if @sponsors.count > 0
-        .dbc-container.dbc-text-cta.alt-color.dbc-sponsors#the-partners
-          .inner.centered
-            p Sponsors & Partners
-            - @sponsors.order('name asc').each do |sponsor|
-              - cache sponsor do
-                - sponsor_link = sponsor.website.present? ? sponsor.website : '#'
-                - if sponsor.logo.present?
-                  .sponsor
-                    = link_to sponsor_link do
-                      = image_tag(sponsor.logo.thumb)
+  .dbc-container.dbc-text-cta.alt-color.light-color
+    .inner.centered
+      h2 Ready to join us?
 
-    = render 'shared/newsletter_form'
+      p This is the future. And you should be part of it! Get your tickets for the full seven days.
+
+      p
+        = link_to 'Get tickets', tickets_path, class: 'button primary'
+        = link_to 'Check Programs', program_path, class: 'button default'
