@@ -1,51 +1,50 @@
 - link_programs = true if link_programs.nil?
 
-- cache 'program-three-levels', link_programs do
-  .dbc-container.dbc-text-cta.alt-light-color-sm
-    .inner.centered#programs
-      h2 Three Levels
-      p Choose Yours!
+.dbc-container.dbc-text-cta.alt-light-color-sm
+  .inner.centered#programs
+    h2 Three Levels
+    p Choose Yours!
 
-    .inner.normal
-      .programs
-        .beginner
-          h3 Beginner Bootcamp
+  .inner.normal
+    .programs
+      .beginner
+        h3 Beginner Bootcamp
+        p
+          => fa_icon 'calendar'
+          strong
+            mark => '12-18 July, 2015'
+            small
+              em and other dates..
+        p.description This will teach you the basics of  programming, and how to think like a programmer. By the end of the week, you will be able to start writing small programs to make your live easier and you will have built your first interactive website.
+
+        - if link_programs
           p
-            => fa_icon 'calendar'
-            strong
-              mark => '12-18 July, 2015'
-              small
-                em and other dates..
-          p.description This will teach you the basics of  programming, and how to think like a programmer. By the end of the week, you will be able to start writing small programs to make your live easier and you will have built your first interactive website.
+            = link_to 'Program', program_path, class: 'button primary'
 
-          - if link_programs
-            p
-              = link_to 'Program', program_path, class: 'button primary'
+      .intermediate
+        h3 Intermediate Bootcamp
+        p
+          => fa_icon 'calendar'
+          strong
+            mark => '22-28 November, 2015'
+            small
+              em and other dates..
+        p.description Your code will come alive on the internet, where the world will be able to see what you built. An exciting week, after which you will have built a couple of applications, and released them to the public internet.
 
-        .intermediate
-          h3 Intermediate Bootcamp
+        - if link_programs
           p
-            => fa_icon 'calendar'
-            strong
-              mark => '22-28 November, 2015'
-              small
-                em and other dates..
-          p.description Your code will come alive on the internet, where the world will be able to see what you built. An exciting week, after which you will have built a couple of applications, and released them to the public internet.
+            = link_to 'Program', program_path, class: 'button primary'
 
-          - if link_programs
-            p
-              = link_to 'Program', program_path, class: 'button primary'
+      .advanced
+        h3 Advanced Bootcamp
+        p
+          => fa_icon 'calendar'
+          strong
+            mark => '20-26 March, 2016'
+            small
+              em and other dates..
+        p.description This will prepare you for the professional programming world out there. You will add more complicated technology to your applications, and you will learn  about the latest hi-tech developments and how to use them.
 
-        .advanced
-          h3 Advanced Bootcamp
+        - if link_programs
           p
-            => fa_icon 'calendar'
-            strong
-              mark => '20-26 March, 2016'
-              small
-                em and other dates..
-          p.description This will prepare you for the professional programming world out there. You will add more complicated technology to your applications, and you will learn  about the latest hi-tech developments and how to use them.
-
-          - if link_programs
-            p
-              = link_to 'Program', program_path, class: 'button primary'
+            = link_to 'Program', program_path, class: 'button primary'
