@@ -6,26 +6,20 @@
   .dbc-page-header.program
     .container-fluid
       .inner
-        h1 Program 2015
-        p
-          => fa_icon 'map-marker'
-          strong
-            | 12-18 July
-            mark =< 'Amsterdam Science Park'
-          br
-          => fa_icon 'map-marker'
-          strong
-            | 25-31 Oct
-            mark =< 'Rokin, Amsterdam'
+        h1 Three Unique Programs
 
-        p By the end of the week you will have built your own website, and you will know how to grow and maintain it.
+        markdown:
+          - Beginner Bootcamp - A first taste of code
+          - Intemediate Bootcamp - Building web applications
+          - Advanced Bootcamp - Growing your code base
 
         p
-          = link_to 'Get tickets', tickets_path, class: 'button primary'
-          = link_to 'Read full program', "#full-program", class: 'button default'
-          = link_to 'Newsletter', newsletter_path, class: 'button default'
+          = link_to 'Read more', '#full-program', class: 'button primary'
+          = link_to 'Register now', tickets_path, class: 'button default'
 
   .dbc-content
+    = render 'three_levels', link_programs: false
+
     .dbc-container.dbc-text#the-programs
       .inner.caps
           p
@@ -36,7 +30,11 @@
     .dbc-container.dbc-program#full-program
       .inner.centered
         h1 The Beginner Program
-        p Intermediate and Advanced programs coming soon!
+        p A First Taste of Code
+
+      .inner.justified
+        p We will cover all the basic parts of a web application. By the end of the week you will have built your own website, and you will know how to grow and maintain it.
+        p One year of hosting is included in the program so your website will stay online for that time and you will be able to show it to your friends, family, or even start your own business maybe?
 
       .inner
         .dbc-day.day-one
@@ -147,24 +145,34 @@
                 li Demos and Prizes
                 li Closing thoughts
 
+    .dbc-container.dbc-program#intermidiate-program
+      .inner.centered
+        h1 The Intermediate Program
+        p Coming soon!
+
+    .dbc-container.dbc-program#advanced-program
+      .inner.centered
+        h1 The Advanced Program
+        p Coming soon!
+
     = render 'shared/day_at_bootcamp'
 
     .dbc-container.dbc-text-cta.alt-color.light-color
       .inner.normal
-        h2 A First Taste of Code
+        h2 Bootcamps include:
+
         markdown:
-          In one week, we will cover all the basic parts of a web application. In the morning we start at 9am with a classroom lecture, followed by workshops the rest of the day until 5pm. We will pause only for lunch, coffee, and tea. During the evenings we will have various cool keynotes and presentations on lighter subjects between 8pm and 10pm.
-
-          By the end of the week you will have built your own website, and you will know how to grow and maintain it. One year of hosting is included in the program so your website will stay online for that time and you will be able to show it to your friends, family, even start your own business maybe?
-
-        p
-          = link_to 'Get tickets', tickets_path, class: 'button primary'
+          - Daily Keynotes & Workshops
+          - Evening Sessions
+          - Coding Contest
+          - Certificate upon completion of the program
+          - Healthy lunch
 
     .dbc-container.dbc-text-cta.alt-color
       .inner.centered
         h2 Ready to join us?
 
-        p This is the future. And you should be part of it! Tickets start at €699 for the full seven days.
+        p This is the future. And you should be part of it! Get your tickets for the full seven days.
 
         p
           = link_to 'Get tickets', tickets_path, class: 'button primary'

@@ -2,16 +2,22 @@
   @extend .dbc-text
   background-color: $gray-dark
 
-  .inner.centered
-    h1
-      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif
-      font-size: 42px
-      color: $gray-lighter
+  .inner
+    &.centered
+      h1
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif
+        font-size: 42px
+        color: $gray-lighter
 
-    p
-      font-size: 1.2em
-      font-style: italic
-      color: $gray-lighter
+      p
+        font-size: 1.2em
+        font-style: italic
+        color: $gray-lighter
+
+    &.normal,
+    &.justified
+      p, h1
+        color: $gray-lighter
 
   .dbc-day
     @extend .col-lg-4
@@ -84,3 +90,10 @@
 
       ul
         padding-left: 1.8em
+
+
+.dbc-program#intermidiate-program
+  background-color: $red
+
+.dbc-program#advanced-program
+  background-color: $dark-red
