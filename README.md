@@ -1,7 +1,7 @@
 # Development Bootcamp Website
 
 ![Development
-Bootcamp](https://www.developmentbootcamp.nl/assets/bootcamp-logo-1ea505a897b5aaed29435b4bbeea6e20.png)
+Bootcamp](https://raw.githubusercontent.com/devbootcamps/website/master/app/assets/images/headers/taste-of-code-camp-home-xs.png)
 
 ![build status](https://travis-ci.org/devbootcamps/website.svg)
 [![Code
