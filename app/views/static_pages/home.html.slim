@@ -14,16 +14,17 @@
           | in just one week!
 
         p
+          mark
+           strong => 'COMING UP'
+          | OPEN DAY Sept. 24
+          br
+          | BEGINNER BOOTCAMP Oct. 25-31
+
+        p
           = link_to 'Read More', '#programs', class: 'button primary'
           = link_to 'Open Day', open_day_path, class: 'button default'
 
 .dbc-content
-  .dbc-container.dbc-text
-    .inner.caps
-      p
-        mark.alt-color Programming is like any other thing in the world.
-        mark =<> "It's not hard"
-        | until you want to solve hard problems with it.
 
   = render 'programs/three_levels'
 
