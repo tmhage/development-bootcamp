@@ -13,7 +13,7 @@ class OrdersController < ApplicationController
   end
 
   def new
-    @bootcamps = Bootcamp.published.recent
+    @bootcamps = Bootcamp.published.by_date
     reset_order_session!
     session[:order_params] ||= {}
     @order = Order.new(session[:order_params])
