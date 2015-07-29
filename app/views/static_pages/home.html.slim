@@ -18,7 +18,9 @@
            strong => 'COMING UP'
           | OPEN DAY Sept. 24
           br
-          | BEGINNER BOOTCAMP Oct. 25-31
+          = @next_bootcamp.name.upcase
+          br
+          = @next_bootcamp.readable_date_range
 
         p
           = link_to 'Read More', '#programs', class: 'button primary'

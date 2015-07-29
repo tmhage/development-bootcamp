@@ -12,8 +12,24 @@ class Bootcamp < ActiveRecord::Base
     )
   end
 
-  def self.recent
+  def self.beginner
+    where(level: 1)
+  end
+
+  def self.intermediate
+    where(level: 2)
+  end
+
+  def self.advanced
+    where(level: 3)
+  end
+
+  def self.by_date
     order(starts_at: :asc)
+  end
+
+  def readable_date_range
+    "#{starts_at.day}-#{ends_at.day} #{ends_at.strftime("%b")}, #{ends_at.year}"
   end
 
   def name_with_dates

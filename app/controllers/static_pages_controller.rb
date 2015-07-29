@@ -4,6 +4,7 @@ class StaticPagesController < ApplicationController
 
   def home
     @sponsors = Sponsor.active
+    @next_bootcamp = Bootcamp.published.by_date.first
   end
 
   def about; end

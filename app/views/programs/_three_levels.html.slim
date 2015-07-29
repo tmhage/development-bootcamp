@@ -12,9 +12,13 @@
         p
           => fa_icon 'calendar'
           strong
-            mark => '12-18 July, 2015'
-            small
-              em and other dates..
+            - if  beginner = Bootcamp.published.beginner.by_date.first
+              mark => beginner.readable_date_range
+            - else
+              mark => "To be announced soon"
+            - if Bootcamp.published.beginner.count > 1
+              small
+                em and other dates..
         p.description This will teach you the basics of  programming, and how to think like a programmer. By the end of the week, you will be able to start writing small programs to make your live easier and you will have built your first interactive website.
 
         - if link_programs
@@ -26,9 +30,13 @@
         p
           => fa_icon 'calendar'
           strong
-            mark => '22-28 November, 2015'
-            small
-              em and other dates..
+            - if  intermediate = Bootcamp.published.intermediate.by_date.first
+              mark => intermediate.readable_date_range
+            - else
+              mark => "To be announced soon"
+            - if Bootcamp.published.intermediate.count > 1
+              small
+                em and other dates..
         p.description Your code will come alive on the internet, where the world will be able to see what you built. An exciting week, after which you will have built a couple of applications, and released them to the public internet.
 
         - if link_programs
@@ -40,9 +48,13 @@
         p
           => fa_icon 'calendar'
           strong
-            mark => '20-26 March, 2016'
-            small
-              em and other dates..
+            - if  advanced = Bootcamp.published.advanced.by_date.first
+              mark => advanced.readable_date_range
+            - else
+              mark => "To be announced soon"
+            - if Bootcamp.published.advanced.count > 1
+              small
+                em and other dates..
         p.description This will prepare you for the professional programming world out there. You will add more complicated technology to your applications, and you will learn  about the latest hi-tech developments and how to use them.
 
         - if link_programs
