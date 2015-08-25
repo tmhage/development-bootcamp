@@ -26,7 +26,7 @@ class OrdersController < ApplicationController
   end
 
   def create
-    @bootcamps = Bootcamp.where('starts_at > NOW()').order(starts_at: :asc)
+    @bootcamps = Bootcamp.published.by_date
     session[:order_params].deep_merge!(order_params) if order_params
 
     @order = Order.new(session[:order_params])
