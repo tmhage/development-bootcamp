@@ -30,8 +30,6 @@ gem 'devise'
 gem 'devise-bootstrap-views'
 gem 'bootstrap-generators', '~> 3.2.0'
 gem 'bower-rails'
-gem 'pronto'
-gem 'pronto-rubocop', require: false
 gem 'nokogiri', '1.6.4.1'
 gem 'rqrcode_png'
 gem 'mandrill-api'
@@ -48,6 +46,8 @@ end
 gem 'codeclimate-test-reporter', group: :test, require: nil
 
 group :development, :test do
+  gem 'pronto'
+  gem 'pronto-rubocop', require: false
   gem 'spring-commands-rspec'
   gem 'guard-rspec'
   gem 'rb-fsevent'
