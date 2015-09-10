@@ -32,7 +32,7 @@ class Moneybird::Invoice < Moneybird::Api
 
       rows[rows.size.to_s] = row(
         amount: "#{amount}x",
-        description: "Development Bootcamp #{ticket.humanize} Ticket",
+        description: "#{ticket.humanize} Ticket for #{order.bootcamp.name_with_dates}",
         price: order.ticket_prices[ticket.to_sym]
       )
     end
