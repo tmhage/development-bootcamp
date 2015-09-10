@@ -4,6 +4,7 @@ class Bootcamp < ActiveRecord::Base
   validates_presence_of :name, :level, :starts_at, :ends_at
 
   before_validation :set_unpublished, if: :should_unpublish?
+  has_many :orders
 
   def self.published
     where(

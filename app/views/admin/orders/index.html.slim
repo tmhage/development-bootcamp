@@ -8,8 +8,15 @@
     h3.bg-info
       = link_to edit_admin_order_path(order) do
         = order.billing_name
+    p
+      - if order.bootcamp.present?
+        span.label.label-info
+          => fa_icon 'graduation-cap'
+          = order.bootcamp.name_with_dates
       span.pull-right
-        =<> link_to 'Send invoice', send_invoice_admin_order_path(order), method: :patch, class: 'btn btn-small'
+        =<> link_to send_invoice_admin_order_path(order), method: :patch, class: 'btn btn-small' do
+          => fa_icon 'envelope'
+          = 'Send invoice'
         - if order.paid?
           span.label.label-success =<> 'Paid'
           - if order.discount_code.present?
