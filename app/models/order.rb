@@ -146,7 +146,7 @@ class Order < ActiveRecord::Base
   def student_discount_code_percentages
     return [0] unless discount_code.present?
     students.map do |student|
-      next [discount_code.discount_percentage] unless discount_code.student == student
+      next [discount_code.discount_percentage] unless discount_code.student && discount_code.student.email == student.email
       multiplier = [(discount_code.orders.count - 1), 1].max
       discount_code.discount_percentage * multiplier
     end.flatten
