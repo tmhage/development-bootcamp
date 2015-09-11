@@ -31,6 +31,8 @@ class Order < ActiveRecord::Base
 
   before_validation :create_identifier
 
+  after_save :reset_discount_codes
+
   def to_param
     self.identifier
   end
@@ -311,5 +313,9 @@ class Order < ActiveRecord::Base
 
   def store_ideal_payment_status
     update(paid_by_ideal: true) if (payment && payment.paid?)
+  end
+
+  def reset_discount_codes
+    students.map(&:reset_discount_code!)
   end
 end
