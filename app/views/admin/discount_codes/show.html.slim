@@ -24,3 +24,7 @@ dl.dl-horizontal
     | Valid until:
   dd
     = @discount_code.valid_until
+  dt
+    | Student:
+  dd
+    = @discount_code.student && @discount_code.student.full_name

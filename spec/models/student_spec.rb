@@ -25,4 +25,17 @@ RSpec.describe Student, :type => :model do
       it { should eq 'foo' }
     end
   end
+
+  describe 'ensure_discount_code' do
+    let(:student) { create(:student) }
+    it { expect(student.discount_codes.first).to be_present }
+    it { expect(student.discount_codes.first).to be_valid }
+  end
+
+  describe 'reset_discount_code' do
+    let(:student) { create(:student) }
+    it { expect { student.reset_discount_code! }.to change { student.discount_codes.count }.from(1).to(2) }
+    it { expect { student.reset_discount_code! }.not_to change { student.discount_codes.valid.count } }
+    it { expect { student.reset_discount_code! }.to change { student.current_discount_code.id }.by(1) }
+  end
 end

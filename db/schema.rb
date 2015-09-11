@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150711191511) do
+ActiveRecord::Schema.define(version: 20150911184006) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,9 +38,11 @@ ActiveRecord::Schema.define(version: 20150711191511) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "clicks"
+    t.integer  "student_id"
   end
 
   add_index "discount_codes", ["slug"], name: "index_discount_codes_on_slug", using: :btree
+  add_index "discount_codes", ["student_id"], name: "index_discount_codes_on_student_id", using: :btree
 
   create_table "friendly_id_slugs", force: true do |t|
     t.string   "slug",                      null: false
@@ -79,6 +81,7 @@ ActiveRecord::Schema.define(version: 20150711191511) do
     t.uuid     "identifier"
     t.string   "stripe_token"
     t.json     "stripe_payload"
+    t.text     "qr_code"
     t.boolean  "terms_and_conditions"
     t.boolean  "manually_paid"
     t.boolean  "paid_by_creditcard"

@@ -4,7 +4,7 @@ class Admin::DiscountCodesController < Admin::AdminController
   respond_to :html
 
   def index
-    @discount_codes = DiscountCode.all
+    @discount_codes = DiscountCode.includes(:student).all
     respond_with(@discount_codes)
   end
 
@@ -38,10 +38,10 @@ class Admin::DiscountCodesController < Admin::AdminController
 
   private
     def set_discount_code
-      @discount_code = DiscountCode.find(params[:id])
+      @discount_code = DiscountCode.includes(:student).find(params[:id])
     end
 
     def discount_code_params
-      params.require(:discount_code).permit(:code, :discount_percentage, :slug, :valid_until)
+      params.require(:discount_code).permit(:code, :discount_percentage, :slug, :valid_until, :student_id)
     end
 end

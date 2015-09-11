@@ -20,6 +20,8 @@
         th
           | Valid until
         th
+          | Student
+        th
         th
         th
     tbody
@@ -35,6 +37,8 @@
             = discount_code.orders.count
           td
             = discount_code.valid_until
+          td
+            = discount_code.student && discount_code.student.full_name
           td
             = link_to 'Show', [:admin, discount_code]
           td

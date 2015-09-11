@@ -24,5 +24,9 @@
     .col-sm-10
       = f.datetime_select :valid_until, :class => "form-control"
   .form-group
+    = f.label :student, :class => "col-sm-2 control-label"
+    .col-sm-10
+      = f.select :student_id, Student.all.map{|s| [s.full_name, s.id] }, :class => "form-control"
+  .form-group
     .col-sm-offset-2.col-sm-10
       = f.submit :class => "btn btn-primary"
