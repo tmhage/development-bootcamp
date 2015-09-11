@@ -147,6 +147,24 @@ RSpec.describe Order, :type => :model do
       end
     end
 
+    describe 'student_discount_code_percentages' do
+      let(:discount_code) { create(:discount_code, discount_percentage: 10) }
+      let(:promo_code) { discount_code.code }
+      it { expect(order.student_discount_code_percentages).to eq [10] }
+
+      context 'when one of the students has multiple orders on their discount code' do
+        let(:cart) { { community: 1, normal: 1, supporter: 1 } }
+        let!(:students) { create_list(:student, 3) }
+        let(:discount_code) { students.first.current_discount_code }
+        let(:promo_code) { discount_code.code }
+        let(:current_order) { create(:order, promo_code: promo_code, cart: cart) }
+        let!(:previous_orders) { create_list(:order, 2, promo_code: promo_code) }
+        before { current_order.student_ids = students.map(&:id) }
+        it { expect(current_order.student_discount_code_percentages).to eq [20, 10, 10] }
+        it { expect(current_order.cart_discount.round(2)).to eq((current_order.ticket_prices[:normal]*0.2+current_order.ticket_prices[:supporter]*0.1).round(2)) }
+      end
+    end
+
     describe 'order price' do
       let(:discount_code) { create(:discount_code, discount_percentage: 10) }
       let(:promo_code) { discount_code.code }

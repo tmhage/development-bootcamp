@@ -127,12 +127,29 @@ class Order < ActiveRecord::Base
   end
 
   def cart_discount
-    return 0 unless discount_code.present?
-    ticket_total = ticket_prices.map do |type, price|
-      next 0 if type == :community
-      cart[type].to_i * price
-    end.inject(0, &:+)
-    ticket_total * (discount_code.discount_percentage / 100.0)
+    percentages = student_discount_code_percentages
+    discount_amounts = []
+
+    cart.keys.each do |type|
+      if type == "community" || percentages.size == 0
+        discount_amounts << 0
+      else
+        cart[type].to_i.times do
+           discount_amounts << (ticket_prices[type.to_sym] * (percentages.shift / 100.0))
+        end
+      end
+    end
+
+    discount_amounts.inject(0, :+)
+  end
+
+  def student_discount_code_percentages
+    return [0] unless discount_code.present?
+    students.map do |student|
+      next [discount_code.discount_percentage] unless discount_code.student == student
+      multiplier = [(discount_code.orders.count - 1), 1].max
+      discount_code.discount_percentage * multiplier
+    end.flatten
   end
 
   def cart_sum_tickets
