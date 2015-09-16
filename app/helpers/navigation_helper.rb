@@ -25,11 +25,13 @@ module NavigationHelper
     content_tag(:li, link_to(content, object), options)
   end
 
-  def menu_dropdown_for(path, &block)
-    content_tag(:li,
-      link_to(capture(&block), path,
-        class: 'dropdown-toggle', 'aria-expanded' => false, 'data-toggle' => 'dropdown', role: 'button'),
-        class: "#{request.path.match(url_for(path)) ? 'active' : ''}")
+  def menu_dropdown_for(name, options = {}, &block)
+    content_tag(:li) do
+      options[:class] = [options[:class], 'dropdown-toggle'].compact.uniq.join(' ')
+      content_tag(:a, name.html_safe,
+                  options.merge({href: '#', 'aria-expanded' => false, 'data-toggle' => 'dropdown', role: 'button'})) +
+      content_tag(:ul, capture(&block))
+    end
   end
 
   def navigation_cache_key

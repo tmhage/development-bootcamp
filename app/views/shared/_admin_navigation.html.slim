@@ -10,7 +10,7 @@
       = link_to admin_posts_path, :class => 'navbar-brand' do
         = fa_icon "trophy fw"
         | DBC
-    .collapse.navbar-collapse
+    .collapse.navbar-collapse.navigation
       ul.nav.navbar-nav
         = menu_item_for admin_orders_path do
           = fa_icon 'heart fw'
@@ -22,14 +22,19 @@
         = menu_item_for admin_posts_path do
           = fa_icon 'bookmark fw'
           | Posts
-        = menu_item_for admin_speakers_path do
-          = fa_icon 'heart fw'
-          | Speakers
-          span.badge =< Speaker.count
-        = menu_item_for admin_sponsors_path do
-          = fa_icon 'heart fw'
-          | Sponsors
-          span.badge =< Sponsor.count
+        = menu_dropdown_for('People') do
+          = menu_item_for admin_students_path do
+            = fa_icon 'heart fw'
+            | Speakers
+          = menu_item_for admin_speakers_path do
+            = fa_icon 'heart fw'
+            | Speakers
+          = menu_item_for admin_sponsors_path do
+            = fa_icon 'heart fw'
+            | Sponsors
+          = menu_item_for admin_support_path do
+            = fa_icon 'lifesaver fw'
+            | Import from Helpscout
         = menu_item_for admin_discount_codes_path do
           = fa_icon 'heart fw'
           | Promo codes
