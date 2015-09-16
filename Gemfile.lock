@@ -219,6 +219,8 @@ GEM
       guard (~> 2.1)
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
+    helpscout (0.0.5)
+      httparty
     hike (1.2.3)
     hitimes (1.2.2)
     httparty (0.13.3)
@@ -471,6 +473,7 @@ DEPENDENCIES
   gibbon
   gravtastic
   guard-rspec
+  helpscout
   jbuilder (~> 2.0)
   jquery-rails
   kaminari

@@ -68,6 +68,9 @@ Rails.application.routes.draw do
       mount Sidekiq::Web, at: "/sidekiq"
     end
 
+    get 'support' => "support#index"
+    post 'support/mailchimp'
+
     resources :discount_codes
     resources :bootcamps do
       member do

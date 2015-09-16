@@ -1,0 +1,22 @@
+= bootstrap_form_for :helpscout, url: admin_support_mailchimp_path do |f|
+  .page-header
+    = f.submit 'Export customers', :class => 'btn btn-primary' do
+    h1
+      | Listing Customers
+
+  .table-responsive
+    table.table.table-striped.table-bordered.table-hover
+      thead
+        tr
+          th
+            | Select
+          th
+            | Name
+      tbody
+        - @helpscout_customers.each do | customer |
+          tr
+            td style="width: 2em"
+              input type="checkbox" name="helpscout[ids][]" value=customer.id
+            td
+              => customer.firstName
+              = customer.lastName

@@ -36,6 +36,7 @@ gem 'rqrcode_png'
 gem 'mandrill-api'
 gem 'sidekiq'
 gem 'sinatra'
+gem 'helpscout'
 
 gem 'rails_12factor', group: :production
 

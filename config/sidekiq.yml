@@ -4,4 +4,4 @@
   - ['medium_low']
   - ['low']
   - ['default']
-:concurrency: <%= ENV['WORKERS'] || 4 %>
+:concurrency: <%= ENV['MAX_THREADS'] || 4 %>
