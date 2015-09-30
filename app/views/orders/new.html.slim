@@ -2,7 +2,7 @@
 - meta_description "Get your tickets to learn about all the basic parts of a web application. In the morning we start at 9am with a classroom lecture, followed by workshops the rest of the day until 5pm. We will pause only for lunch, coffee, and tea. During the evenings we will have various cool keynotes and presentations on lighter subjects between 8pm and 10pm."
 - meta_keywords "registration, tickets, pricing, development, bootcamp, programming, learn, teach, sponsor"
 
-- if @order.current_step == 'tickets'
+- if @order.current_step == 'tickets' && session[:order_params].empty?
   - cache 'students-list-intro' do
     .dbc-page-header.tickets
       .container-fluid
