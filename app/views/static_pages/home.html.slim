@@ -15,16 +15,19 @@
 
         p
           mark
-           strong => 'COMING UP'
-          | OPEN DAY Sept. 24
+            strong => 'COMING UP'
           br
-          = @next_bootcamp.name.upcase
+          | » OPEN EVENING
+          br
+          | October 8th
+          br
+          = "» #{@next_bootcamp.name.upcase}"
           br
           = @next_bootcamp.readable_date_range
 
         p
           = link_to 'Read More', '#programs', class: 'button primary'
-          = link_to 'Open Day', open_day_path, class: 'button default'
+          = link_to 'Open Evening', open_day_path, class: 'button default'
 
 .dbc-content
 

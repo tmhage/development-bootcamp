@@ -7,26 +7,28 @@
   .dbc-content
     .dbc-container.dbc-text-cta.light-color.alt-color
       .inner.normal
-        h2 Visit Our Open Day!
+        h2 Visit Our Open Evening!
         p
           | Leave your details below to register for our
           strong
-            mark =<> 'Open Day'
+            mark =<> 'Open Evening'
           | on
           strong
-            mark =<> 'September 24'
+            mark =<> 'October 8th'
           | at
           strong
             mark =<> 'Rokin 75'
           | in Amsterdam. It will be a chance for you to ask all your questions.
 
         ul
-          li 15:00  — Keynote by Wouter de Vos
-          li 16:00  — Workshop
-          li 17:00  — Q&A and drinks!
+          li 19:00  — Doors Open
+          li 19:30  — Keynote by Wouter de Vos
+          li 20:00  — Workshop
+          li 21:00  — Q&A and drinks!
 
         p
-          = link_to 'RSVP Here', 'https://www.facebook.com/events/907990522613616/', class: 'btn btn-primary'
+          => link_to 'RSVP Here', 'https://www.facebook.com/events/1655064774705305/', class: 'button primary'
+          | or leave your details below.
 
         h3 &nbsp;
         iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2435.994430153673!2d4.893208999999993!3d52.370521!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c609c0ebbf6257%3A0xa8a5fb830684642e!2sRokin+75%2C+1012+KL+Amsterdam!5e0!3m2!1sen!2snl!4v1433436323983" width="600" height="450" frameborder="0" style="border:0"
@@ -34,7 +36,7 @@
     .dbc-container.dbc-text
       .inner
         form#mc-embedded-subscribe-form.validate action="//developmentbootcamp.us9.list-manage.com/subscribe/post?u=f107d6a3948661d72e4628ba1&amp;id=aff9cced90" method="post" name="mc-embedded-subscribe-form" novalidate="" target="_blank"
-          h2 Register for our Open Day
+          h2 Register for our Open Evening
           .form-group
             label for="mce-EMAIL"
               | Email Address
@@ -55,5 +57,5 @@
           .clear
             input#mc-embedded-subscribe.button.primary name="subscribe" type="submit" value="Register" /
             | or
-            =<> link_to 'RSVP', 'https://www.facebook.com/events/907990522613616/'
+            =<> link_to 'RSVP', 'https://www.facebook.com/events/1655064774705305/'
             | on Facebook.
