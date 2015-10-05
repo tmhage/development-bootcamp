@@ -6,7 +6,7 @@ h3 Students
     .col-md-2
       .img-responsive= image_tag student.gravatar_url
     .col-md-10
-      p = mail_to student.email do
+      p = link_to "https://secure.helpscout.net/mailbox/cc832e3adfe530e1/new-ticket/522398/?email=#{student.email}&name=#{student.full_name}&phone=#{student.phone_number}" do
         => fa_icon 'envelope'
         | Email
       p = link_to edit_admin_student_path(student) do
