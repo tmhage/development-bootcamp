@@ -17,6 +17,18 @@
   .inner
     @extend .col-md-8
     @extend .col-md-offset-2
+    padding-bottom: 2em
+
+    img
+      @extend .img-responsive
+
+    .left
+      @extend .col-sm-6
+      @extend .col-md-push-6
+
+    .right
+      @extend .col-sm-6
+      @extend .col-md-pull-6
 
     h1
       font-size: 6.5rem
@@ -32,19 +44,19 @@
       i.fa
         color: $yellow
 
-      .button
-        @extend .btn-lg
+    .button
+      @extend .btn-lg
 
-        &.primary
-          color: $gray-darker
+      &.primary
+        color: $gray-darker
 
-        &.default
-          color: $gray-lighter
-          border-color: $gray-lighter
+      &.default
+        color: $gray-lighter
+        border-color: $gray-lighter
 
-          &:hover,
-          &:active
-            background: #000
+        &:hover,
+        &:active
+          background: #000
 
     ul, h4
       top: $dbc-page-header-title-offset + $dbc-page-header-font-size
@@ -56,16 +68,15 @@
       color: $yellow
 
   &.home
-    background-image: image_url("headers/taste-of-code-camp-home.png")
-    background-size: auto 78%
-    background-position: 75% bottom
-    background-color: $green
+    background-image: image_url("home/1800-blackboard.png")
+    background-size: cover
+    background-position: 25% bottom
+    background-color: #333
     padding-bottom: 0
 
     .text
-      @extend .col-lg-8
-      @extend .col-md-8
-      padding-left: 0
+      p
+        letter-spacing: 2px
 
       mark
         padding: 0
@@ -88,7 +99,6 @@
 @media (max-width: $screen-sm-max)
   .dbc-page-header.home
     background-color: $gray-darker
-    background-image: image_url("headers/taste-of-code-camp-home-xs.png")
 
     .text mark.alt-color
       color: $green

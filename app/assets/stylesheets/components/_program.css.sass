@@ -1,6 +1,26 @@
+.programs
+  @extend .row
+
+  .program
+    @extend .col-sm-4
+    padding-bottom: 2em
+
+    .beginner,
+    .intermediate,
+    .advanced
+      @extend .thumbnail
+      border: 0
+
+      h3
+        display: block
+        line-height: 1.2em
+        height: 2em
+
+      img
+        @extend .img-circle
+
 .dbc-program
   @extend .dbc-text
-  background-color: $gray-dark
 
   .inner
     &.centered
@@ -90,10 +110,3 @@
 
       ul
         padding-left: 1.8em
-
-
-.dbc-program#intermidiate-program
-  background-color: $red
-
-.dbc-program#advanced-program
-  background-color: $dark-red

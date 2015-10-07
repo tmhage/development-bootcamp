@@ -3,32 +3,21 @@
 - meta_keywords "development, bootcamp, programming, learn, teach, sponsor"
 
 .dbc-page-header.home
-  .container-fluid
+  .dbc-page
     .inner
-      .text
-        h1
-          | Development Bootcamp
-        p
-          | Develop your coding skills
-          br
-          | in just one week!
-
-        p
-          mark
-            strong => 'COMING UP'
-          br
-          | » OPEN EVENING
-          br
-          | December 10th
-          - if @next_bootcamp
+      .row
+        .text.left
+          h1
+            | Development Bootcamp
+          p
+            | Develop your coding skills
             br
-            = "» #{@next_bootcamp.name.upcase}"
-            br
-            = @next_bootcamp.readable_date_range
+            | in just one week!
 
-        p
-          = link_to 'Read More', '#programs', class: 'button primary'
-          = link_to 'Open Evening', open_day_path, class: 'button default'
+          = link_to "Learn Programming", '#programs', class: 'button primary'
+
+        .img.right
+          = image_tag "home/bootcamp-levels.png"
 
 .dbc-content
 

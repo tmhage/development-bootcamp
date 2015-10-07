@@ -1,33 +1,8 @@
 .button
   @extend .btn
-  border-radius: 10px !important
-  padding: 20px 35px !important
-  border: 0 !important
-  min-width: 172px
-  margin: 15px 30px 30px 0
-  font-weight: 300
-  font-family: $font-family-base
-  text-transform: uppercase
-  //shadow
-  -webkit-box-shadow: 10px 10px 99px -17px rgba(0,0,0,0.75)
-  -moz-box-shadow: 10px 10px 99px -17px rgba(0,0,0,0.75)
-  box-shadow: 10px 10px 99px -17px rgba(0,0,0,0.75)
-
 
   &.primary
     @extend .btn-primary
 
   &.default
     @extend .btn-default
-    background: $gray-darker
-    color: $gray-lighter
-
-
-.dbc-text-cta .button
-  &.default
-    background: $gray-lighter
-    color: $gray-darker
-
-    &:hover
-      background: $gray-light
-      color: $gray-lighter
