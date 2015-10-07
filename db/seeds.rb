@@ -10,6 +10,10 @@ require 'factory_girl_rails'
 
 include ActionDispatch::TestProcess
 
+FactoryGirl.create :bootcamp, name: 'Beginner Bootcamp'
+FactoryGirl.create :bootcamp, name: 'Intermediate Bootcamp'
+FactoryGirl.create :bootcamp, name: 'Advanced Bootcamp'
+
 FactoryGirl.create :user, email: 'admin@developmentbootcamp.nl'
 FactoryGirl.create_list :sponsor, 5, :active
 FactoryGirl.create_list :sponsor, 5, hiring: true
