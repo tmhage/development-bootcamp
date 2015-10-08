@@ -23,43 +23,17 @@
 
   = render 'programs/three_levels'
 
-  = render 'shared/day_at_bootcamp'
-
-.dbc-content
-  .dbc-container.dbc-text-cta.alt-color.light-color
-    .inner.normal
-      h2 Code is Everywhere
-
-      markdown:
-        Computers, phones, cars, refrigerators, watches… Every piece of technology
-        that you use every day runs on software.
-
-  .dbc-container.dbc-text
-    .inner.caps
-      p
-        mark.alt-color Programming
-        mark =<> "is not hard"
-        | until you want to solve hard problems with it.
-
-  .dbc-container.dbc-text-cta.alt-color
-    .inner.normal
-      h2 Learn Together
-      p It's fun and inspiring, and a lot faster than learning on your own.
-
-  .dbc-container.dbc-text
-    .inner.caps
-      p
-        | Most people who code
-        mark =< 'never studied computer science.'
-        mark.alt-color =<> 'Most of them taught themselves.'
-        | That was hard, but we make it
-        mark =<> 'easy'
-        | for you to learn.
+  = render 'programs/workshop'
 
 .dbc-content
   - cache 'testimonials-block' do
-    .dbc-container.dbc-text-cta.alt-color.light-color.dbc-testimonials#testimonials
-      .inner.centered
+    .dbc-container.dbc-testimonials
+      .inner.centered#testimonials
+        .block-title
+          h2
+            | What others
+            span say about us
+
         .testimonial
           .avatar
             = image_tag 'testimonials/alexander-klopping.jpg'
@@ -88,35 +62,20 @@
                 | Ruben Timmerman,
                 cite =< link_to 'Springest', 'https://www.springest.nl/'
 
-  - cache 'home-corporate-cta'
-    .dbc-container.dbc-text
-      .inner.caps
-          p
-            | People in all tech companies can benefit from programming skills.
-            mark.alt-color =< "Would you like to join us with your colleagues?"
-            =< mail_to 'info@developmentbootcamp.nl', 'Send us an email.'
-
   - cache cache_key_for_sponsors do
     - if @sponsors.count > 0
-      .dbc-container.dbc-text-cta.alt-color.dbc-sponsors#the-partners
+      .dbc-container#the-partners
         .inner.centered
-          p Sponsors & Partners
-          - @sponsors.order('name asc').each do |sponsor|
-            - cache sponsor do
-              - sponsor_link = sponsor.website.present? ? sponsor.website : '#'
-              - if sponsor.logo.present?
-                .sponsor
-                  = link_to sponsor_link do
-                    = image_tag(sponsor.logo.thumb)
+          .dbc-sponsors
+            .row
+              h2
+                | Sponsors
+                span and partners
 
-  = render 'shared/newsletter_form'
-
-  .dbc-container.dbc-text-cta.alt-color.light-color
-    .inner.centered
-      h2 Ready to join us?
-
-      p This is the future. And you should be part of it! Get your tickets for the full seven days.
-
-      p
-        = link_to 'Get tickets', tickets_path, class: 'button primary'
-        = link_to 'Check Programs', program_path, class: 'button default'
+              - @sponsors.order('name asc').each do |sponsor|
+                - cache sponsor do
+                  - sponsor_link = sponsor.website.present? ? sponsor.website : '#'
+                  - if sponsor.logo.present?
+                    .sponsor
+                      = link_to sponsor_link do
+                        = image_tag(sponsor.logo.thumb)
