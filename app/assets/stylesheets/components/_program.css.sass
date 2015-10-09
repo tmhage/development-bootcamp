@@ -22,36 +22,21 @@
 .dbc-program
   @extend .dbc-text
 
-  .inner
-    &.centered
-      h1
-        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif
-        font-size: 42px
-        color: $gray-lighter
-
-      p
-        font-size: 1.2em
-        font-style: italic
-        color: $gray-lighter
-
-    &.normal,
-    &.justified
-      p, h1
-        color: $gray-lighter
+  .description
+    @extend .col-sm-6
 
   .dbc-day
-    @extend .col-lg-4
-    @extend .col-md-6
+    @extend .col-sm-6
     margin-bottom: $grid-gutter-width
     color: $gray-lighter
     font-size: 16px
 
-    .day-inner
-      box-shadow: -1px 1px 30px 0px rgba(50, 50, 50, 0.21)
 
     &.day-one
+      @extend .col-sm-6
       .activity, .image
         background-color: $red
+
     &.day-two
       .activity, .image
         background-color: $yellow
@@ -70,9 +55,6 @@
     &.day-seven
       .activity, .image
         background-color: $dark-green
-
-    &.day-seven
-      @extend .col-md-offset-4
 
     .image
       margin-top: -2px
