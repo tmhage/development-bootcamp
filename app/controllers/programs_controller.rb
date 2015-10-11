@@ -4,6 +4,7 @@ class ProgramsController < ApplicationController
   def index; end
 
   def level_one
+    @bootcamps = Bootcamp.beginner.published
   end
 
   def level_two

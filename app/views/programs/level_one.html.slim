@@ -9,17 +9,20 @@
         .block-title
           h2
             | Beginner Bootcamp
-            span a kickstart into coding
+            span your kickstart into coding
 
       .inner
         .row
           .description
             markdown:
               The Beginner Bootcamp is a unique kickstart into the world
-              of coding. It is for all of you who start coding from scratch.
+              of coding. It is for all of you who start coding with little or
+              no experience.
+
               Whether you want to understand a bit more about programming or
               want to start changing your career around, this is the best
-              primer you could possibly get.
+              primer you can get: it's cheap, it's short, it's fun, and you
+              learn from the best.
 
               We will cover all the basic parts of a web application. By the
               end of the week you will have built your own website, and you
@@ -28,6 +31,21 @@
               One year of hosting is included in the program so your website
               will stay online for that time and you will be able to show it
               to your friends, family, or even start your own business maybe?
+
+              Check out the topics on this page. Right now, most of them might
+              seem very foreign to you, but soon you will understand all of this,
+              and it will only take you 7 days, plus our help.
+
+              Don't linger any longer, enroll in our bootcamp!
+
+            #enroll.callout.callout-warning
+              h4 Upcoming dates
+
+              ul.bootcamp-dates
+                - @bootcamps.each do |bootcamp|
+                  li = bootcamp.name_with_dates
+
+              = link_to 'Enroll now', tickets_path, class: 'button primary'
 
           .dbc-day.day-one
             .day-inner
@@ -137,5 +155,40 @@
                   li A Contest!
                   li Demos and Prizes
                   li Closing thoughts
+        .row
+          .col-xs-12
+            #examples.callout.callout-info
+              h3 What you can do after 7 days
+
+              p Wondering what others built after only a week of learning to code? Check out the apps they built in a couple of hours during their last Hackathon. They are not perfect, nor are they finished, but it's pretty impressive considering they started with zero experience!
+
+              h4 Examples from former students
+
+              ul
+                li = link_to 'Pomodoro Parrot', 'http://pomodoro.cloud.codaisseur.org', target: :blank
+                li = link_to 'Coffee News', 'http://coffeenews.cloud.codaisseur.org', target: :blank
+                li = link_to 'Beer of the Week', 'http://beer.cloud.codaisseur.org/', target: :blank
+                li = link_to 'Got Sacked?', 'http://gotsacked.cloud.codaisseur.org/', target: :blank
+
+            #enroll2.callout.callout-warning
+              h4 Upcoming dates
+
+              ul.bootcamp-dates
+                - @bootcamps.each do |bootcamp|
+                  li = bootcamp.name_with_dates
+
+              = link_to 'Enroll now', tickets_path, class: 'button primary'
+
       .inner.program.collapsed
+        .well
+          h3
+            | Intermediate Bootcamp
+            span build applications that matter
+          p = link_to 'Intermediate program', program_level_2_path, class: 'button'
+
       .inner.program.collapsed
+        .well
+          h3
+            | Advanced Bootcamp
+            span reach professionalism
+          p = link_to 'Advanced program', program_level_3_path, class: 'button'

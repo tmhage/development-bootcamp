@@ -3,85 +3,26 @@
 - meta_keywords "program, beginner, development, bootcamp, programming, learn, teach, sponsor"
 
 - cache 'programs-index' do
-  .dbc-page-header.program
-    .container-fluid
-      .inner
-        h1 Three Unique Programs
-
-        markdown:
-          - Beginner Bootcamp - A first taste of code
-          - Intermediate Bootcamp - Building web applications
-          - Advanced Bootcamp - Growing your code base
-
-        p
-          = link_to 'Read more', '#full-program', class: 'button primary'
-          = link_to 'Register now', tickets_path, class: 'button default'
-
   .dbc-content
     = render 'three_levels', link_programs: false
 
-    .dbc-container.dbc-text#the-programs
-      .inner.caps
-          p
-            mark = 'A full week'
-            |  primer that teaches you how to build and maintain
-            mark.alt-color =< 'your own website or web app.'
-
-    .dbc-container.dbc-program#full-program
-      .inner.centered
-        h1 The Beginner Program
-        p A First Taste of Code
-
-      .inner.justified
-        p We will cover all the basic parts of a web application. By the end of the week you will have built your own website, and you will know how to grow and maintain it.
-        p One year of hosting is included in the program so your website will stay online for that time and you will be able to show it to your friends, family, or even start your own business maybe?
-
-      .inner
-        .dbc-day.day-one
-          .day-inner
-            .date
-              | DAY 1
-              .pull-right Sunday
-            .activity
-              h2 Frontend
-              p The Face of a Website
-            .image
-              = image_tag 'program/day1-frontend.png'
-            .topics
-              ul
-                li Page structure with HTML
-                li Styling and design with CSS
-
-
-    .dbc-container.dbc-program#intermidiate-program
-      .inner.centered
-        h1 The Intermediate Program
-        p Coming soon!
-
-    .dbc-container.dbc-program#advanced-program
-      .inner.centered
-        h1 The Advanced Program
-        p Coming soon!
-
     = render 'shared/day_at_bootcamp'
 
-    .dbc-container.dbc-text-cta.alt-color.light-color
-      .inner.normal
-        h2 Bootcamps include:
+    .dbc-container
+      .inner
+        .dbc-dark
+          .row
+            .text.left
+              h2
+                | The Full Package
+                span all included
 
-        markdown:
-          - Daily Keynotes & Workshops
-          - Evening Sessions
-          - Coding Contest
-          - Certificate upon completion of the program
-          - Healthy lunch
+              markdown:
+                - Daily Keynotes & Workshops
+                - Evening Sessions
+                - Coding Contest
+                - Certificate upon completion of the program
+                - Healthy lunch
 
-    .dbc-container.dbc-text-cta.alt-color
-      .inner.centered
-        h2 Ready to join us?
-
-        p This is the future. And you should be part of it! Get your tickets for the full seven days.
-
-        p
-          = link_to 'Get tickets', tickets_path, class: 'button primary'
-          = link_to 'Newsletter', newsletter_path, class: 'button default'
+            .img.right
+              = image_tag 'photos/laptop-square.png'
