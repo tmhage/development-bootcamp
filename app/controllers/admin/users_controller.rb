@@ -7,6 +7,7 @@ class Admin::UsersController < Admin::AdminController
 
   def new
     @user = User.new
+    @user.build_user_profile
   end
 
   def create
@@ -22,7 +23,15 @@ class Admin::UsersController < Admin::AdminController
   def edit; end
 
   def update
-    if @user.update(user_params)
+    update_params = user_params
+    logger.debug update_params
+
+    if update_params["password"].blank?
+      update_params.delete("password")
+      update_params.delete("password_confirmation")
+    end
+
+    if @user.update(update_params)
       redirect_to admin_users_path, notice: 'User updated successfully'
     else
       render :edit
@@ -38,11 +47,14 @@ class Admin::UsersController < Admin::AdminController
   private
 
   def user_params
-    params.require(:user).permit(:id, :email, :password, :password_confirmation, :first_name, :last_name)
+    params.require(:user).permit(
+      :id, :email, :password, :password_confirmation, :first_name, :last_name,
+      user_profile_attributes: [:role, :twitter_handle, :linkedin_url, :github_handle, :core, :teacher, :coach])
   end
 
   def load_user
     @user = User.find(params[:id])
+    @user.user_profile || @user.build_user_profile
   end
 
   def page_number

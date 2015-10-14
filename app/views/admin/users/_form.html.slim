@@ -2,9 +2,19 @@
   = f.text_field :first_name
   = f.text_field :last_name
   = f.email_field :email, required: true
-  = f.password_field :password, required: true
-  = f.password_field :password_confirmation, required: true
+  = f.password_field :password, required: @user.new_record?
+  = f.password_field :password_confirmation, required: @user.new_record?
+
+  h3 Profile
+  = f.fields_for :user_profile do |p|
+    = p.text_field :role, required: true
+    = p.text_field :twitter_handle
+    = p.text_area :linkedin_url
+    = p.text_field :github_handle
+    = p.check_box :core
+    = p.check_box :teacher
+    = p.check_box :coach
   p
     = link_to 'Cancel', admin_users_path, class: 'btn btn-default'
     |
-    = f.submit 'Save', class: 'btn btn-primary'
+    = f.primary 'Save'
