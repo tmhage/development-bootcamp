@@ -70,7 +70,7 @@ if [[ -z "${deployer}" ]]; then
 fi
 
 if [[ -z "${GIT_SHA}" ]]; then
-    app_version="${GIT_SHA}"
+    app_version=`git rev-parse HEAD` || ""
 else
     app_version="unknown"
     error "Unable to extract application version from source GIT_SHA env variable"

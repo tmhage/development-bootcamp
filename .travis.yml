@@ -22,6 +22,7 @@ after_success:
 - cat .travis/host_key >> ~/.ssh/known_hosts
 - git remote add deis ssh://git@deis.cloud.codaisseur.com:2222/latest-sandwich.git
 - 'if [ "${TRAVIS_PULL_REQUEST}" = "false" ] && [ "${TRAVIS_BRANCH}" = "master" ]; then git push deis master; fi'
+- 'if [ "${TRAVIS_PULL_REQUEST}" = "false" ] && [ "${TRAVIS_BRANCH}" = "master" ]; then bundle exec rake deploy:notify; fi'
 notifications:
   slack:
     secure: KbFf1e6G6k1Z4mGNkOm+jmyciCF1yjtQbjgEkEroSMuwM++SGq8yoQHurWVbItbofB+vyA7owCrCSUrIYEpQSSLqoo8EcrHIykif+sWXKzJCpjEE/WseP6nzKMXovYRzUTWMLzv5axtLHwAxy169xkP+vMbAKt/lSNVKrkJB6G0=
