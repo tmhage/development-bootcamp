@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users, :skip => [:registrations]
+
   as :user do
     get 'users/edit' => 'devise/registrations#edit', :as => 'edit_user_registration'
     put 'users/:id' => 'devise/registrations#update', :as => 'user_registration'
@@ -28,7 +29,7 @@ Rails.application.routes.draw do
   get '/students/:id/qr-code' => 'students#qr_code'
   get '/students/:id/check' => 'students#check_qr_code'
 
-  resources :blog, controller: 'posts', only: [:index, :show]
+  # resources :blog, controller: 'posts', only: [:index, :show]
   resources :pages, only: [:show]
   resources :sponsors, only: [:index, :new, :create] do
     member do
@@ -75,12 +76,12 @@ Rails.application.routes.draw do
         put :unpublish
       end
     end
-    resources :posts, except: :show do
-      member do
-        put :publish
-        put :unpublish
-      end
-    end
+    # resources :posts, except: :show do
+    #   member do
+    #     put :publish
+    #     put :unpublish
+    #   end
+    # end
     resources :pages, except: :show do
       member do
         put :publish

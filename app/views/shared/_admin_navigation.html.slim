@@ -7,7 +7,7 @@
         span.icon-bar
         span.icon-bar
         span.icon-bar
-      = link_to admin_posts_path, :class => 'navbar-brand' do
+      = link_to admin_pages_path, :class => 'navbar-brand' do
         = fa_icon "trophy fw"
         | DBC
     .collapse.navbar-collapse
@@ -19,9 +19,6 @@
         = menu_item_for admin_pages_path do
           = fa_icon 'bookmark fw'
           | Pages
-        = menu_item_for admin_posts_path do
-          = fa_icon 'bookmark fw'
-          | Posts
         = menu_item_for admin_speakers_path do
           = fa_icon 'heart fw'
           | Speakers
