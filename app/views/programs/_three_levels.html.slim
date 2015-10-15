@@ -2,66 +2,36 @@
   .inner.centered#programs
     .block-title
       h2
-        | Three Levels
-        span Choose Yours!
+        | The Bootcamp Program
+        span each of one week
 
   .inner
     .programs
       .program
         .beginner
-          h3 Beginner Bootcamp
           = image_tag "program/beginner.png", alt: "beginner program"
           .caption
-            p
-              => fa_icon 'calendar'
-              strong
-                - if  beginner = Bootcamp.published.beginner.by_date.first
-                  mark => beginner.readable_date_range
-                - else
-                  mark => "To be announced soon"
-                - if Bootcamp.published.beginner.count > 1
-                  small
-                    em and other dates..
-            p.description This will teach you the basics of  programming, and how to think like a programmer. By the end of the week, you will be able to start writing small programs to make your live easier and you will have built your first interactive website.
-
+            h2
+              | Beginner Bootcamp
+              span €999
             p
               = link_to 'Full program', program_level_1_path, class: 'button primary'
       .program
         .intermediate
-          h3 Intermediate Bootcamp
           = image_tag "program/intermediate.png", alt: "intermediate program"
           .caption
-            p
-              => fa_icon 'calendar'
-              strong
-                - if  intermediate = Bootcamp.published.intermediate.by_date.first
-                  mark => intermediate.readable_date_range
-                - else
-                  mark => "To be announced soon"
-                - if Bootcamp.published.intermediate.count > 1
-                  small
-                    em and other dates..
-            p.description Your code will come alive on the internet, where the world will be able to see what you built. An exciting week, after which you will have built a couple of applications, and released them to the public internet.
-
+            h2
+              | Intermediate Bootcamp
+              span €1199
             p
               = link_to 'Full program', program_level_2_path, class: 'button primary'
 
       .program
         .advanced
-          h3 Advanced Bootcamp
           = image_tag "program/advanced.png", alt: "advanced program"
           .caption
-            p
-              => fa_icon 'calendar'
-              strong
-                - if  advanced = Bootcamp.published.advanced.by_date.first
-                  mark => advanced.readable_date_range
-                - else
-                  mark => "To be announced soon"
-                - if Bootcamp.published.advanced.count > 1
-                  small
-                    em and other dates..
-            p.description This will prepare you for the professional programming world out there. You will add more complicated technology to your applications, and you will learn  about the latest hi-tech developments and how to use them.
-
+            h2
+              | Advanced Bootcamp
+              span €1399
             p
               = link_to 'Full program', program_level_3_path, class: 'button primary'

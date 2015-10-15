@@ -8,21 +8,28 @@
       .row
         .text.left
           h1
-            | Development Bootcamp
-          p
-            | Develop your coding skills
+            /| From beginner to
+            | Learn the most wanted
             br
-            | in just one week!
+            /| junior developer
+            | skill right now
 
-          = link_to "Learn Programming", '#programs', class: 'button primary'
+          p Become a junior developer or tech hybrid
+
+          => link_to "Get a free taste", program_path, class: 'button primary', id: 'home-cta-one'
+          = link_to "Enroll now", tickets_path, class: 'button primary', id: 'home-cta-two'
 
         .img.right
           = image_tag "home/bootcamp-levels.png"
+  .bottom-bar
+    .inner
+      nav
+        ul
+          li = link_to 'broaden your horizon', '#'
+          li = link_to 'start a new career', '#'
+          li = link_to 'deepen your skills', '#'
 
 .dbc-content
-
-  = render 'programs/three_levels'
-
   = render 'programs/workshop'
 
 .dbc-content

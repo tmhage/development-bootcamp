@@ -14,6 +14,37 @@
   min-height: $dbc-page-header-height
   color: #fff
 
+  .bottom-bar
+    @extend .row
+    background-color: $purple
+    color: $gray-lighter
+    font-size: 24px
+    font-weight: 100
+    font-style: italic
+    text-align: center
+
+    .inner
+      padding-bottom: 0
+
+      ul
+        margin: 0
+        padding: 0
+        list-style: none
+
+        li
+          display: inline
+
+          &::after
+            content: '•'
+          &:last-child
+            &::after
+              content: ''
+
+          a:link,
+          a:hover
+            color: $gray-lighter
+            text-decoration: none
+
   .inner
     @extend .col-md-8
     @extend .col-md-offset-2
@@ -31,7 +62,7 @@
       @extend .col-md-pull-6
 
     h1
-      font-size: 6.5rem
+      font-size: 4.5rem
       font-weight: 900
       bottom: 0
 
