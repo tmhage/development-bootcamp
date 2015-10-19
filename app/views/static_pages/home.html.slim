@@ -57,3 +57,25 @@
               footer
                 | Ruben Timmerman,
                 cite =< link_to 'Springest', 'https://www.springest.nl/'
+
+  .dbc-content
+    .dbc-container.taste-of-code-teaser
+      .inner
+        .image
+          = image_tag 'program/taste-of-code.png', alt: 'Taste of Code'
+
+        .text
+          h2 Taste of Code
+
+          p
+            | Interested in learning about programming? Join one of our free Taste
+              of Code workshops!
+
+          p
+            | Dive into the fascinating world of code for a few hours. You will
+              see how powerful code can be, and how much fun it is to write it.
+
+          p Our next Taste of Code will be held at Tomtom in Amsterdam.
+
+          p
+            = link_to "Register now", tickets_path, class: 'button primary'
