@@ -6,21 +6,18 @@
   .dbc-page
     .inner
       .row
-        .text.left
+        .text.right
           h1
-            /| From beginner to
             | Learn the most wanted
             br
-            /| junior developer
             | skill right now
 
-          p Become a junior developer or tech hybrid
+          p The fastest way to junior developer or tech hybrid
 
-          => link_to "Get a free taste", program_path, class: 'button primary', id: 'home-cta-one'
-          = link_to "Enroll now", tickets_path, class: 'button primary', id: 'home-cta-two'
+          .cta
+            => link_to "Get a free taste", program_path, class: 'button primary', id: 'home-cta-one'
+            = link_to "Enroll now", tickets_path, class: 'button default', id: 'home-cta-two'
 
-        .img.right
-          = image_tag "home/bootcamp-levels.png"
   .bottom-bar
     .inner
       nav
@@ -28,9 +25,6 @@
           li = link_to 'broaden your horizon', '#'
           li = link_to 'start a new career', '#'
           li = link_to 'deepen your skills', '#'
-
-.dbc-content
-  = render 'programs/workshop'
 
 .dbc-content
   - cache 'testimonials-block' do
@@ -68,21 +62,3 @@
               footer
                 | Ruben Timmerman,
                 cite =< link_to 'Springest', 'https://www.springest.nl/'
-
-  - cache cache_key_for_sponsors do
-    - if @sponsors.count > 0
-      .dbc-container#the-partners
-        .inner.centered
-          .dbc-sponsors
-            .row
-              h2
-                | Sponsors
-                span and partners
-
-              - @sponsors.order('name asc').each do |sponsor|
-                - cache sponsor do
-                  - sponsor_link = sponsor.website.present? ? sponsor.website : '#'
-                  - if sponsor.logo.present?
-                    .sponsor
-                      = link_to sponsor_link do
-                        = image_tag(sponsor.logo.thumb)

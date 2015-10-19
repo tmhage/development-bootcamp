@@ -3,7 +3,6 @@ class StaticPagesController < ApplicationController
   before_filter :disable_sidebar
 
   def home
-    @sponsors = Sponsor.active
     @next_bootcamp = Bootcamp.published.by_date.first
   end
 

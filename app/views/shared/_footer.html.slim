@@ -45,6 +45,17 @@
             br
             span Bank: NL90ABNA0401849279
 
+        - cache cache_key_for_sponsors do
+          - if @sponsors.count > 0
+            .sponsors#the-partners
+              - @sponsors.order('name asc').each do |sponsor|
+                - cache sponsor do
+                  - sponsor_link = sponsor.website.present? ? sponsor.website : '#'
+                  - if sponsor.logo.present?
+                    .sponsor
+                      = link_to sponsor_link do
+                        = image_tag(sponsor.logo.thumb)
+
       .bottom
         p
           => link_to 'Code of conduct', code_of_conduct_path

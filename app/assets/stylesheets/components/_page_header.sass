@@ -46,8 +46,7 @@
             text-decoration: none
 
   .inner
-    @extend .col-md-8
-    @extend .col-md-offset-2
+    @extend .col-md-12
     padding-bottom: 2em
 
     img
@@ -55,11 +54,9 @@
 
     .left
       @extend .col-sm-6
-      @extend .col-md-push-6
 
     .right
       @extend .col-sm-6
-      @extend .col-md-pull-6
 
     h1
       font-size: 4.5rem
@@ -78,34 +75,24 @@
     .button
       @extend .btn-lg
 
-      &.primary
-        color: $gray-darker
-
-      &.default
-        color: $gray-lighter
-        border-color: $gray-lighter
-
-        &:hover,
-        &:active
-          background: #000
-
     ul, h4
       top: $dbc-page-header-title-offset + $dbc-page-header-font-size
       padding-bottom: 1em
 
-    a:link,
-    a:visited,
-    a:hover
-      color: $yellow
+    .cta
+      .button.default
+        background-color: transparent
+        border: 0
 
   &.home
-    background-image: image_url("home/1800-blackboard.png")
+    background-image: image_url("home/1800-hipster-desk.png")
     background-size: cover
     background-position: 25% bottom
     background-color: #333
     padding-bottom: 0
 
     .text
+      @extend .col-sm-offset-6
       p
         letter-spacing: 2px
 
@@ -128,18 +115,5 @@
     background-image: image_url('backgrounds/cover-red.png')
 
 @media (max-width: $screen-sm-max)
-  .dbc-page-header.home
-    background-color: $gray-darker
-
-    .text mark.alt-color
-      color: $green
-
-    .button.default
-      background-color: $gray-lighter
-      color: $gray !important
-      &:hover
-        color: $gray-lighter !important
-        background-color: $gray
-
-    h1
-      font-size: 1.2em
+  h1
+    font-size: 1.2em

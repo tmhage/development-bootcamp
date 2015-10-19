@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   layout :set_layout
 
   before_filter :configure_permitted_parameters, if: :devise_controller?
+  before_filter :load_sponsors
 
   protect_from_forgery with: :exception
 
@@ -39,5 +40,9 @@ class ApplicationController < ActionController::Base
 
   def disable_sidebar
     @show_sidebar = false
+  end
+
+  def load_sponsors
+    @sponsors = Sponsor.active
   end
 end
