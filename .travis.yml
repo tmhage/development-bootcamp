@@ -20,7 +20,7 @@ after_success:
 - eval `ssh-agent -s`
 - ssh-add .travis/dokku
 - cat .travis/host_key >> ~/.ssh/known_hosts
-- git remote add deis ssh://git@deis.cloud.codaisseur.com:2222/junior-umbrella.git
+- git remote add deis ssh://git@deis.cloud.codaisseur.com:2222/latest-sandwich.git
 - 'if [ "${TRAVIS_PULL_REQUEST}" = "false" ] && [ "${TRAVIS_BRANCH}" = "master" ]; then git push deis master; fi'
 notifications:
   slack:
