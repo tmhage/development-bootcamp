@@ -19,11 +19,12 @@
           br
           | » OPEN EVENING
           br
-          | October 29th
-          br
-          = "» #{@next_bootcamp.name.upcase}"
-          br
-          = @next_bootcamp.readable_date_range
+          | December 10th
+          - if @next_bootcamp
+            br
+            = "» #{@next_bootcamp.name.upcase}"
+            br
+            = @next_bootcamp.readable_date_range
 
         p
           = link_to 'Read More', '#programs', class: 'button primary'
