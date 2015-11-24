@@ -15,8 +15,7 @@ class Moneybird::Api
   def self.default_options
     {
       method: :get,
-      user: ENV['MONEYBIRD_USER'],
-      password: ENV['MONEYBIRD_PASSWORD']
+      Authorization: "Bearer #{ENV['MONEYBIRD_API_KEY']}"
     }
   end
 
