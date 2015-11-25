@@ -8,20 +8,41 @@
       .row
         .text.right
           h1
-            | Learn the most wanted
+            = t('.learn_the_most_wanted')
             br
-            | skill right now
+            = t('.skill_right_now')
 
-          p The fastest way to junior developer or tech hybrid
+          p = t('.tagline')
 
           .cta
-            => link_to "Enroll now", tickets_path, class: 'button primary', id: 'home-cta-two'
-            = link_to "Get a free taste", program_path, class: 'button default', id: 'home-cta-one'
+            => link_to t(:cta_courses), program_path, class: 'button primary', id: 'home-cta-two'
+            = link_to t(:cta_open_day), open_day_path, class: 'button default', id: 'home-cta-one'
 
   .bottom-bar
     .inner
       nav
         ul
-          li = link_to 'broaden your horizon', '#'
-          li = link_to 'start a new career', '#'
-          li = link_to 'deepen your skills', '#'
+          li = link_to t('.takeaway1'), program_path
+          li = link_to t('.takeaway2'), program_path
+          li = link_to t('.takeaway3'), program_path
+
+.dbc-content
+  .dbc-container.dbc-three-col
+    .inner
+      .row
+        .col
+          .circle 1
+          p = t('.three_reasons_one')
+        .col
+          .circle 2
+          p = t('.three_reasons_two')
+        .col
+          .circle 3
+          p = t('.three_reasons_three')
+
+.dbc-content
+  .dbc-container.dbc-quote
+    .inner
+      .row
+        blockquote
+          p = "“#{t('.quote')}”"

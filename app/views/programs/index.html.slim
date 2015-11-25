@@ -4,25 +4,88 @@
 
 - cache 'programs-index' do
   .dbc-content
-    = render 'three_levels', link_programs: false
-
-    = render 'shared/day_at_bootcamp'
-
-    .dbc-container
+    .dbc-container.dbc-page-heading
       .inner
-        .dbc-dark
-          .row
-            .text.left
-              h2
-                | The Full Package
-                span all included
+        .row
+          h1= t '.title'
 
-              markdown:
-                - Daily Keynotes & Workshops
-                - Evening Sessions
-                - Coding Contest
-                - Certificate upon completion of the program
-                - Healthy lunch
+    .dbc-container.dbc-three-col
+      .inner
+        .row
+          .col
+            .circle 1
+            h2 = link_to t(:beginner_bootcamp), program_level_1_path
+            p = t :beginner_bootcamp_intro
+            p = link_to t(:full_program), program_level_1_path
 
-            .img.right
-              = image_tag 'photos/laptop-square.png'
+          .col
+            .circle 2
+            h2 = link_to t(:intermediate_bootcamp), program_level_2_path
+            p = t :intermediate_bootcamp_intro
+            p = link_to t(:full_program), program_level_2_path
+
+          .col
+            .circle 3
+            h2 = link_to t(:advanced_bootcamp), program_level_3_path
+            p = t :advanced_bootcamp_intro
+            p = link_to t(:full_program), program_level_3_path
+
+        .row
+          h2 = t :frontend_web_bootcamp
+          p = t :frontend_web_bootcamp_intro
+
+    .dbc-container.dbc-three-col
+      .inner
+        .row
+          h2 = t '.heading_our_team'
+
+        .row
+          .col.team-member
+            .avatar
+              = image_tag 'team/reindert-jan.jpg'
+            h3 Reindert-Jan Ekker
+            p Teaching coordinator
+          .col.team-member
+            .avatar
+              = image_tag 'team/wouter.png'
+            h3 Wouter de Vos
+            p Teaching coordinator
+
+          .col.team-member
+            .avatar
+              = image_tag 'team/joost.jpg'
+            h3 Joost Elfering
+            p Programming Teacher
+
+          .col.team-member
+            .avatar
+              = image_tag 'team/miriam.png'
+            h3 Miriam Tocino
+            p Programming Teacher
+
+          .col.team-member
+            .avatar
+              = image_tag 'team/paul.png'
+            h3 Paul Tondeur
+            p HTML & CSS Teacher
+
+          .col.team-member
+            .avatar
+              = image_tag 'team/ben.png'
+            h3 Benjamin Udink ten Cate
+            p Programming Teacher
+
+          .col.team-member
+            .avatar
+              = image_tag 'team/jovana.jpg'
+            h3 Jovana Tokic
+            p Coach
+
+          .col.team-member
+            .avatar
+              = image_tag 'team/vincent.jpeg'
+            h3 Vincent Oord
+            p Coach
+
+  .dbc-container.dbc-three-col
+    .inner

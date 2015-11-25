@@ -46,3 +46,41 @@ en:
   tickets:
     one: ticket
     other: tickets
+
+  beginner_bootcamp: Beginner Bootcamp
+  beginner_bootcamp_intro: ...teaches you the basics of programming, and how to think like a programmer. By the end of the week, you will be able to start writing small programs to make your live easier and you will have built your first interactive website.
+
+  intermediate_bootcamp: Intermediate Bootcamp
+  intermediate_bootcamp_intro: ...teaches you about building and deploying different types of web applications. On the frontend you learn to build interactive components with Javascript. On the backend we teach you to store and retrieve data from databases.
+
+  advanced_bootcamp: Advanced Bootcamp
+  advanced_bootcamp_intro: ...prepares you for the professional programming world out there. You will add more complicated technology to your applications, and you will learn about the latest hi-tech developments and how to use them.
+
+  frontend_web_bootcamp: Frontend Web Bootcamp
+  frontend_web_bootcamp_intro: ...teaches you to create templates that can be used directly on existing Wordpress sites or any other CMS. Learn to add Javascript to increase interaction and engage with your target audience. Integrate 3rd party tools to measure engagement and A/B-test behavior.
+
+  cta_courses: Courses
+  cta_open_day: Open Evening
+
+  static_pages:
+    home:
+      # Page Header
+      learn_the_most_wanted: Learn the most wanted
+      skill_right_now: skill right now
+      tagline: The fastest way to junior developer or tech hybrid
+
+      # Bottom Bar
+      takeaway1: broaden your horizon
+      takeaway2: start a new career
+      takeaway3: extend your skills
+
+      # Three Reasons to Enroll
+      three_reasons_one: Code is everywhere. People in all industries can benefit from learning code to boost their productivity and e-skills.
+      three_reasons_two: We offer results-driven immersive boot camps to give you a kickstart into the world of modern day software engineering for the web.
+      three_reasons_three: Learn to build web applications from industry experts. Choose from entry level beginner courses all the way up to advanced courses that prepare you for a new career.
+
+      quote: You will unlock a certain way of thinking and looking at things that is fun and fascinating. A programmer’s mind is a joy forever.
+
+  programs:
+    index:
+      title: Our Curriculum
