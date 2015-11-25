@@ -1,0 +1,12 @@
+#enroll.callout.callout-warning
+  h4 = t(:upcoming_dates)
+
+  - if @bootcamps.any?
+    ul.bootcamp-dates
+      - @bootcamps.each do |bootcamp|
+        li = bootcamp.name_with_dates
+
+    = link_to t(:cta_enroll_now), tickets_path, class: 'button primary'
+  - else
+    p.text-muted = t(:no_bootcamps_planned)
+    p = link_to t(:cta_newsletter_signup), newsletter_path, class: 'button default'

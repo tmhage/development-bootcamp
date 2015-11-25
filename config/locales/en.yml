@@ -48,19 +48,99 @@ en:
     other: tickets
 
   beginner_bootcamp: Beginner Bootcamp
+  beginner_bootcamp_tagline: your kickstart into coding
   beginner_bootcamp_intro: ...teaches you the basics of programming, and how to think like a programmer. By the end of the week, you will be able to start writing small programs to make your live easier and you will have built your first interactive website.
+  beginner_program: Beginner Program
+  beginner_bootcamp_description: |
+    The Beginner Bootcamp is a unique kickstart into the world
+    of coding. It is for all of you who start coding with little or
+    no experience.
+
+    Whether you want to understand a bit more about programming or
+    want to start changing your career around, this is the best
+    primer you can get: it's cheap, it's short, it's fun, and you
+    learn from the best.
+
+    We will cover all the basic parts of a web application. By the
+    end of the week you will have built your own website, and you
+    will know how to grow and maintain it.
+
+    One year of hosting is included in the program so your website
+    will stay online for that time and you will be able to show it
+    to your friends, family, or even start your own business maybe?
+
+    Check out the topics on this page. Right now, most of them might
+    seem very foreign to you, but soon you will understand all of this,
+    and it will only take you 7 days, plus our help.
+
+    Don't linger any longer, enroll in our bootcamp!
 
   intermediate_bootcamp: Intermediate Bootcamp
+  intermediate_bootcamp_tagline: build applications that matter
   intermediate_bootcamp_intro: ...teaches you about building and deploying different types of web applications. On the frontend you learn to build interactive components with Javascript. On the backend we teach you to store and retrieve data from databases.
+  intermediate_program: Intermediate Program
+  intermediate_bootcamp_description: |
+    To become a true web developer, you need to make miles and you will, this
+    week! Every day of the week we look at a certain part of an application:
+    interactive frontend with Javascript, the database, deploying your app to a
+    server, etc. The result of each day is a live and kicking web application
+    that works.
+
+    We cover everything that’s needed to build rich applications that implement
+    the necessary functionality and logic to start at least a very interesting
+    side project, but quite possibly even the first version of an online
+    business.
+
+    Not only do you learn the necessary skills, but also the industry standard
+    ways to solve common functionality like allowing users to create accounts
+    and sign in, image uploads, and more.
+
+    Intermediate Bootcamp is the ultimate follow-up of the Beginner Bootcamp.
+    If you have not completed our Beginner Bootcamp, but still got some basic
+    programming skills, we might still take you in as a student. Please contact
+    us so we can schedule a call with you to determine your current level.
+    There is a good chance that we ask you to do some pre-work before we take
+    you in.
 
   advanced_bootcamp: Advanced Bootcamp
+  advanced_bootcamp_tagline: reach professionalism
   advanced_bootcamp_intro: ...prepares you for the professional programming world out there. You will add more complicated technology to your applications, and you will learn about the latest hi-tech developments and how to use them.
+  advanced_program: Advanced Program
+  advanced_bootcamp_description: |
+    To become a professional web developer, you need to have more than
+    programming skills. You need to be able to work together in a team, how an
+    application is designed, built, secured, and maintained. You also need to
+    know a little bit about the environment your applications need to run:
+    services.
+
+    In Advanced Bootcamp we cover agile product development techniques,
+    design/UX, and working together on code with git flow. We will also build a
+    more complex, production-ready application.
+
+    After Advanced Bootcamp, you are ready to become a Junior developer at one
+    of the thousands of companies in the Netherlands and abroad that are dying
+    to have you. They will take you in and train you more so you can follow your
+    true passion to build beautiful interfaces or systems that make our world go
+    round.
+
+    Advanced Bootcamp is the ultimate follow-up of the Intermediate Bootcamp.
+    If you have not completed our Intermediate Bootcamp, but still got some
+    programming skills, we might still take you in as a student. Please contact
+    us so we can schedule a call with you to determine your current level.
+    There is a good chance that we ask you to do some pre-work before we take
+    you in.
 
   frontend_web_bootcamp: Frontend Web Bootcamp
   frontend_web_bootcamp_intro: ...teaches you to create templates that can be used directly on existing Wordpress sites or any other CMS. Learn to add Javascript to increase interaction and engage with your target audience. Integrate 3rd party tools to measure engagement and A/B-test behavior.
 
   cta_courses: Courses
   cta_open_day: Open Evening
+  cta_newsletter_signup: Sign up for the Newsletter
+  cta_enroll_now: Enroll now
+
+  upcoming_dates: Upcoming Dates
+  no_bootcamps_planned: Currently, we have no Bootcamps planned, sign up for the newsletter below so we can keep you informed about upcoming dates.
+  other_bootcamps: Other Bootcamps
 
   static_pages:
     home:
@@ -84,3 +164,4 @@ en:
   programs:
     index:
       title: Our Curriculum
+      our_teachers: Our Teachers

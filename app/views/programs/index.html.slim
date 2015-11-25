@@ -13,19 +13,19 @@
       .inner
         .row
           .col
-            .circle 1
+            .circle.beginner 1
             h2 = link_to t(:beginner_bootcamp), program_level_1_path
             p = t :beginner_bootcamp_intro
             p = link_to t(:full_program), program_level_1_path
 
           .col
-            .circle 2
+            .circle.intermediate 2
             h2 = link_to t(:intermediate_bootcamp), program_level_2_path
             p = t :intermediate_bootcamp_intro
             p = link_to t(:full_program), program_level_2_path
 
           .col
-            .circle 3
+            .circle.advanced 3
             h2 = link_to t(:advanced_bootcamp), program_level_3_path
             p = t :advanced_bootcamp_intro
             p = link_to t(:full_program), program_level_3_path
@@ -37,7 +37,7 @@
     .dbc-container.dbc-three-col
       .inner
         .row
-          h2 = t '.heading_our_team'
+          h2 = t '.our_teachers'
 
         .row
           .col.team-member

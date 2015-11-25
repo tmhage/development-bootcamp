@@ -2,6 +2,10 @@
   margin-top: 6em
   margin-bottom: 4em
 
+  h2
+    text-align: center
+    margin-bottom: 0.8em
+
   .col
     @extend .col-md-4
     text-align: center
@@ -20,3 +24,10 @@
       font-size: 50px
       line-height: 3px
       text-indent: -12px
+
+      &.beginner
+        background-color: $brand-success
+      &.intermediate
+        background-color: $brand-warning
+      &.advanced
+        background-color: $brand-danger

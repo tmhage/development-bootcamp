@@ -8,9 +8,11 @@ class ProgramsController < ApplicationController
   end
 
   def level_two
+    @bootcamps = Bootcamp.intermediate.published
   end
 
   def level_three
+    @bootcamps = Bootcamp.advanced.published
   end
 
   def level_four
