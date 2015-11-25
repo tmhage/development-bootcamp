@@ -16,7 +16,7 @@
 
   .bottom-bar
     @extend .row
-    background-color: $purple
+    background-color: $brand-primary
     color: $gray-lighter
     font-size: 24px
     font-weight: 100
@@ -75,10 +75,13 @@
       padding-bottom: 1em
 
       i.fa
-        color: $yellow
+        color: $brand-primary
 
     .button
       @extend .btn-lg
+
+      &.default
+        color: #fff !important
 
     ul, h4
       top: $dbc-page-header-title-offset + $dbc-page-header-font-size
@@ -87,7 +90,7 @@
     .cta
       .button.default
         background-color: transparent
-        border: 0
+        border: 1px solid #fff
 
   &.home
     background-image: image_url("home/1800-hipster-desk.png")

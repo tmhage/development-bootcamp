@@ -12,18 +12,6 @@ $bootstrap-sass-asset-helper: (twbs-font-path("") != unquote('twbs-font-path("")
 //
 //## Gray and brand colors for use across Bootstrap.
 
-$gray-darker:            lighten(#000, 13.5%) !default; // #222
-$gray-dark:              lighten(#000, 20%) !default;   // #333
-$gray:                   lighten(#000, 33.5%) !default; // #555
-$gray-light:             lighten(#000, 46.7%) !default; // #777
-$gray-lighter:           lighten(#000, 93.5%) !default; // #eee
-
-$brand-primary:         #603e96 !default;
-$brand-success:         #5cb85c !default;
-$brand-info:            #5bc0de !default;
-$brand-warning:         #f0ad4e !default;
-$brand-danger:          #d9534f !default;
-
 // the color scheme
 $red:                  #e92523 !default;
 $dark-red:             #8b1617 !default;
@@ -33,6 +21,18 @@ $purple:               #603e96 !default;
 $dark-purple:          #5a1a80 !default;
 $green:                #2eaa6c !default;
 $dark-green:           #205a44 !default;
+
+$gray-darker:            lighten(#000, 13.5%) !default; // #222
+$gray-dark:              lighten(#000, 20%) !default;   // #333
+$gray:                   lighten(#000, 33.5%) !default; // #555
+$gray-light:             lighten(#000, 46.7%) !default; // #777
+$gray-lighter:           lighten(#000, 93.5%) !default; // #eee
+
+$brand-primary:         $green !default;
+$brand-success:         #5cb85c !default;
+$brand-info:            #5bc0de !default;
+$brand-warning:         #f0ad4e !default;
+$brand-danger:          #d9534f !default;
 
 //$green:                #f05a4b !default;
 //$dark-green:           #bf191d !default;
@@ -165,13 +165,13 @@ $table-border-color:            #ddd !default;
 
 $btn-font-weight:                normal !default;
 
-$btn-default-color:              $yellow !default;
-$btn-default-bg:                 $brand-primary !default;
+$btn-default-color:              $brand-primary !default;
+$btn-default-bg:                 #fff !default;
 $btn-default-border:             darken($brand-primary, 5%) !default;
 
-$btn-primary-color:              $brand-primary !default;
-$btn-primary-bg:                 $yellow !default;
-$btn-primary-border:             darken($yellow, 5%) !default;
+$btn-primary-color:              $gray-lighter !default;
+$btn-primary-bg:                 $brand-primary !default;
+$btn-primary-border:             darken($brand-primary, 5%) !default;
 
 $btn-success-color:              #fff !default;
 $btn-success-bg:                 $brand-success !default;
@@ -375,7 +375,7 @@ $navbar-default-link-color:                #333 !default;
 $navbar-default-link-hover-color:          #333 !default;
 $navbar-default-link-hover-bg:             $gray-lighter !default;
 $navbar-default-link-active-color:         $yellow;
-$navbar-default-link-active-bg:            $purple;
+$navbar-default-link-active-bg:            $brand-primary;
 $navbar-default-link-disabled-color:       #ccc !default;
 $navbar-default-link-disabled-bg:          transparent !default;
 
