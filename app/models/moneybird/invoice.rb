@@ -6,7 +6,7 @@ class Moneybird::Invoice < Moneybird::Api
 
     options[:description] = "*PLEASE NOTE*: This invoice is already paid via #{order.payment_method} and is just for your records." if order.paid?
 
-    response = execute(path: '/invoices',
+    response = execute(path: '/sales_invoices',
       method: :post,
       payload: {
         invoice: options.merge(contact_id: contact_id, prices_are_incl_tax: true)
@@ -15,7 +15,7 @@ class Moneybird::Invoice < Moneybird::Api
 
     invoice = new(response['invoice'])
 
-    execute(path: "/invoices/#{invoice.id}/send_invoice",
+    execute(path: "/sales_invoices/#{invoice.id}/send_invoice",
       method: :put,
       payload: {
         invoice: { send_method: 'hand' }
@@ -31,7 +31,7 @@ class Moneybird::Invoice < Moneybird::Api
       next false unless amount.present?
 
       rows[rows.size.to_s] = row(
-        amount: "#{amount}x",
+        amount: "#{amount} x",
         description: "#{ticket.humanize} Ticket for #{order.bootcamp.name_with_dates}",
         price: order.ticket_prices[ticket.to_sym]
       )
@@ -46,7 +46,7 @@ class Moneybird::Invoice < Moneybird::Api
 
     if order.cart_discount > 0
       rows[rows.size.to_s] = row(
-        description: "Discount #{order.discount_code.discount_percentage}% on non-community tickets",
+        description: "Discount #{order.discount_code.discount_percentage}%",
         price: -(order.cart_discount)
       )
     end
@@ -56,7 +56,7 @@ class Moneybird::Invoice < Moneybird::Api
 
   def self.row(options = {})
     row_defaults = {
-      amount: "1x", tax_rate_id: 562244
+      amount: "1 x", tax_rate_id: "137438981644092939"
     }
 
     row_defaults.merge(options)
