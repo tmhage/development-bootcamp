@@ -137,10 +137,17 @@ en:
   cta_open_day: Open Evening
   cta_newsletter_signup: Sign up for the Newsletter
   cta_enroll_now: Enroll now
+  cta_apply_now: Apply now
 
   upcoming_dates: Upcoming Dates
   no_bootcamps_planned: Currently, we have no Bootcamps planned, sign up for the newsletter below so we can keep you informed about upcoming dates.
   other_bootcamps: Other Bootcamps
+
+  scholarship_program: Scholarship Program
+  scholarship_program_intro: |
+    Are you working at a start-up, self-employed, unemployed or otherwise lacking financial backing?
+
+    Subject to availability, eligible students can participate in the %{course} for less than one third of the regular fee through Development Bootcamp’s Scholarship Program. The program is powered by leading tech-companies. Apply and tell us your story.
 
   static_pages:
     home:

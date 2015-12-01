@@ -1,6 +1,6 @@
 module MarkdownHelper
-  def tmd(translation_key)
-    text = t(translation_key)
+  def tmd(translation_key, options = {})
+    text = t(translation_key, options)
 
     render_options = {
       # will remove from the output HTML tags inputted by user
