@@ -16,28 +16,28 @@
         .row
           .col
             .circle.beginner 1
-            h2 = link_to t(:beginner_bootcamp), program_level_1_path
+            h2 = link_to t(:beginner_bootcamp), courses_beginner_bootcamp_path
             p = t :beginner_bootcamp_intro
-            p = link_to t(:full_program), program_level_1_path, class: 'button default'
+            p = link_to t(:full_program), courses_beginner_bootcamp_path, class: 'button default'
 
           .col
             .circle.intermediate 2
-            h2 = link_to t(:intermediate_bootcamp), program_level_2_path
+            h2 = link_to t(:intermediate_bootcamp), courses_intermediate_bootcamp_path
             p = t :intermediate_bootcamp_intro
-            p = link_to t(:full_program), program_level_2_path, class: 'button default'
+            p = link_to t(:full_program), courses_intermediate_bootcamp_path, class: 'button default'
 
           .col
             .circle.advanced 3
-            h2 = link_to t(:advanced_bootcamp), program_level_3_path
+            h2 = link_to t(:advanced_bootcamp), courses_advanced_bootcamp_path
             p = t :advanced_bootcamp_intro
-            p = link_to t(:full_program), program_level_3_path, class: 'button default'
+            p = link_to t(:full_program), courses_advanced_bootcamp_path, class: 'button default'
 
         .row
           .col.middle
             .circle.frontend Y
-            h2 = link_to t(:frontend_bootcamp), program_frontend_bootcamp_path
+            h2 = link_to t(:frontend_bootcamp), courses_frontend_bootcamp_path
             p = t :frontend_bootcamp_intro
-            p = link_to t(:full_program), program_frontend_bootcamp_path, class: 'button default'
+            p = link_to t(:full_program), courses_frontend_bootcamp_path, class: 'button default'
 
     .dbc-container.dbc-three-col
       .inner

@@ -16,7 +16,7 @@
 
         p
           = link_to 'Apply now', new_speaker_path, class: 'button primary'
-          = link_to 'Check Programs', program_path, class: 'button default'
+          = link_to 'Check Programs', courses_path, class: 'button default'
 
 .dbc-content
   - cache cache_key_for_speakers do
@@ -47,5 +47,5 @@
           p Stay tuned. To be announced shortly.
           p
             = link_to 'Newsletter', newsletter_path, class: 'button default'
-            = link_to 'Check Programs', program_path, class: 'button primary'
+            = link_to 'Check Programs', courses_path, class: 'button primary'
 

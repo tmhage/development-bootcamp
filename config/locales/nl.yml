@@ -19,43 +19,40 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
-  language: "English"
+nl:
+  language: "Dutch"
   activerecord:
     models:
       sponsor: Sponsor
     attributes:
       sponsor:
-        name: Organization name
+        name: Bedrijfsnaam
         email: Email
-        remarks: Remarks
-        activated_at: Activate
-      order:
-        billing_name: Full name
-        billing_company_name: Company name
-        billing_email: Email
-        billing_address: Address
-        billing_postal: Postal code
-        billing_city: City
-        billing_country: Country
-        billing_phone: Phone number
-      student:
-        allergies: Dietary wishes
-
+        remarks: Opmerkingen
+        activated_at: Activeren
   number:
      currency:
         format:
           unit: '€'
 
+  routes:
+    new: nieuw
+    create: creeer
+    edit: bewerk
+    destroy: verwijder
+
+    enroll: aanmelden
+    courses: cursussen
+
   nav_home: Home
-  nav_courses: Courses
-  nav_enroll: Enroll
+  nav_courses: Cursussen
+  nav_enroll: Aanmelden
   nav_blog: Blog
   nav_support: Support
 
   plans:
     title:
-      platinum: Platinum sponsors
+      platinum: Platina sponsors
       gold: Gold sponsors
       silver: Silver sponsors
       party: Party Support sponsor
@@ -149,96 +146,36 @@ en:
     There is a good chance that we ask you to do some pre-work before we take
     you in.
 
-  frontend_bootcamp: Frontend Web Bootcamp
-  frontend_bootcamp_tagline: interactive and engaging
-  frontend_bootcamp_intro: ...teaches you to create templates that can be used directly on existing Wordpress sites or any other CMS. Learn to add Javascript to increase interaction and engage with your target audience. Integrate 3rd party tools to measure engagement and A/B-test behavior.
-  frontend_bootcamp_program: Frontend Web Program
-  frontend_bootcamp_description: |
-    The Frontend Web Bootcamp offers a unique opportunity to improve your tech
-    literacy. You will learn all the skills to make beautiful, engaging websites
-    that are easy to build.
+  frontend_web_bootcamp: Frontend Web Bootcamp
+  frontend_web_bootcamp_intro: ...teaches you to create templates that can be used directly on existing Wordpress sites or any other CMS. Learn to add Javascript to increase interaction and engage with your target audience. Integrate 3rd party tools to measure engagement and A/B-test behavior.
 
-    In contrast to the other Bootcamps we offer, the focus is more on what the
-    eye can see than on the code itself. It is a perfect way to compliment your
-    existing (digital) skills or get a head start into becoming a frontent
-    developer.
+  cta_courses: Cursussen
+  cta_open_day: Open Avond
+  cta_newsletter_signup: Geef je op voor de Nieuwsbrief
+  cta_enroll_now: Schrijf nu in
+  cta_apply_now: Vraag nu aan
 
-    Whether you are an online marketeer who wants to be able to
-    create a simple, but engaging site, a product manager who wants to hack a
-    feature together before it goes into the formal development process, or
-    perhaps a UX designer who wants to A/B-test a few alternatives: this course
-    is the most valuable around.
+  upcoming_dates: Aankomende Data
+  no_bootcamps_planned: Momenteel hebben we geen Bootcamps gepland, meld je hieronder aan voor de nieuwsbrief zodat we je op de hoogte kunnen houden zodra er weer nieuwe bootcamps gepland worden.
+  other_bootcamps: Andere Bootcamps
 
-    We will teach you things you can actually _use_! Change an existing Wordpress
-    template? Sure! Just make a few design tweaks? Of course! A fully functional
-    web application with a database? Oh yeah, why not?!
-
-    Have a look at upcoming dates and enroll now. You will not regret it, or as
-    our students often say: "When in doubt, do it!"
-
-  cta_courses: Courses
-  cta_open_day: Open Evening
-  cta_newsletter_signup: Sign up for the Newsletter
-  cta_enroll_now: Enroll now
-  cta_apply_now: Apply now
-
-  this_is_an_immersive_course: '_This is an immersive, full time, 7 day course that starts on Sunday and ends en Saturday._'
-  this_is_a_weekly_course: '_This is a weekly course that takes 7 weeks: one class per week and some homework on the weekends._'
-
-  please_fix_errors_below: Please fix the errors below.
-  please_mail_support: Please don't hesitate to email us at %{support_mail} if you have any questions or feedback! We would love to know :)
-
-  # Generic form strings
-  form_optional: Optional
-  form_email_placeholder: you@organization.co
-  form_label_yes: 'Yes'
-  form_label_no: 'No'
-
-  upcoming_dates: Upcoming Dates
-  no_bootcamps_planned: Currently, we have no %{level} Bootcamps planned, sign up for the newsletter below so we can keep you informed about upcoming dates.
-  other_bootcamps: Other Bootcamps
-  incompany_cta: We also offer this course in-company! [Contact](%{contact_url}) us if you want to enroll with a few colleagues and we will come to you.
-
-  scholarship_program: Scholarship Program
+  scholarship_program: Scholarship Programma
   scholarship_program_intro: |
     Are you working at a start-up, self-employed, unemployed or otherwise lacking financial backing?
 
     Subject to availability, eligible students can participate in the %{course} for less than one third of the regular fee through Development Bootcamp’s Scholarship Program. The program is powered by leading tech-companies. Apply and tell us your story.
 
-  # Ticket order steps
-  title_enroll_now: Enroll Now
-  title_tickets_include: Tickets Include
-  tickets_include_list: |
-    - Daily Keynotes & Workshops Sunday - Saturday
-    - Healthy lunch on Sunday - Saturday
-    - Evening Sessions Sunday - Friday
-    - Coding Contest with great prizes
-    - Certificate upon completion of the program
-
-  title_pick_seats: Pick a Ticket!
-  tickets_intro: |
-    Select the level you want, and the number of seats you need on the class.
-  valid_on: Valid
-  label_accept_terms: I have read and agree to the %{terms}, and the %{conditions}
-  change_order: Change order
-
-  billing_details: Billing details
-  student_details: Student Details %{current} / %{total}
-  you_selected_bootcamp:
-    one: 'You selected: %{count} ticket for %{bootcamp} on:'
-    other: 'You selected: %{count} tickets for %{bootcamp} on:'
-
   static_pages:
     home:
       # Page Header
-      learn_the_most_wanted: Learn the most wanted
-      skill_right_now: skill right now
-      tagline: The fastest way to junior developer or tech hybrid
+      learn_the_most_wanted: Leer de meest gevraagde
+      skill_right_now: skill van dit moment
+      tagline: De snelste weg naar junior developer of tech hybrid
 
       # Bottom Bar
-      takeaway1: broaden your horizon
-      takeaway2: start a new career
-      takeaway3: extend your skills
+      takeaway1: verbreed je horizon
+      takeaway2: start een nieuwe carrière
+      takeaway3: leer nieuwe skills
 
       # Three Reasons to Enroll
       three_reasons_one_heading: Code is everywhere.
@@ -250,20 +187,7 @@ en:
 
       quote: You will learn a way of thinking and looking at things that is fun and fascinating. A programmer’s mind is a joy forever.
 
-    team:
-      our_team: Our Team
-
   programs:
     index:
-      title: Courses
-      subtitle: the full curriculum
-      our_teachers: Our Teachers
-
-  orders:
-    form:
-      tickets:
-        placeholder_promo_code: Do you have a promo code? Paste it here..
-      students:
-        do_you_own_laptop: Do you own a laptop you can bring to class?
-        placeholder_allergies: E.g. do you have any allergies, are you a vegan?
-        placeholder_remarks: Anything you'd like to add?
+      title: Ons Curriculum
+      our_teachers: Onze Docenten

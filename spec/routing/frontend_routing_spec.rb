@@ -10,7 +10,7 @@ describe 'frontend routes', type: :routing do
     end
   end
 
-  describe 'program_path' do
+  describe 'courses_path' do
     it 'routes to programs#index' do
       expect(get: '/program').to route_to(
         controller: 'programs',
@@ -45,7 +45,7 @@ describe 'frontend routes', type: :routing do
     end
   end
 
-  describe 'tickets_path' do
+  describe 'enroll_path' do
     it 'routes to orders#new' do
       expect(get: '/tickets').to route_to(
         controller: 'orders',

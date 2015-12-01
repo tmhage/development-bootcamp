@@ -335,6 +335,9 @@ GEM
     rest-client (1.7.2)
       mime-types (>= 1.16, < 3.0)
       netrc (~> 0.7)
+    route_translator (4.1.0)
+      actionpack (>= 3.2, < 5.0)
+      activesupport (>= 3.2, < 5.0)
     rqrcode (0.4.2)
     rqrcode_png (0.1.5)
       chunky_png
@@ -490,6 +493,7 @@ DEPENDENCIES
   rb-fsevent
   redcarpet
   rest-client
+  route_translator
   rqrcode_png
   rspec-rails (~> 3.0.2)
   sass-rails (~> 4.0.3)
@@ -503,3 +507,6 @@ DEPENDENCIES
   uglifier (>= 1.3.0)
   webmock
   wysiwyg-rails
+
+BUNDLED WITH
+   1.10.6
