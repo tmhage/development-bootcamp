@@ -37,8 +37,11 @@ nav.navbar.navbar-inverse.navbar-fixed-top
           = menu_item_for admin_users_path do
             = fa_icon 'users fw'
             | Team
+          = menu_item_for admin_students_path do
+            = fa_icon 'mortar-board fw'
+            | Students
           = menu_item_for admin_speakers_path do
-            = fa_icon 'heart fw'
+            = fa_icon 'bullhorn fw'
             | Speakers
         = menu_item_for root_path do
           = fa_icon 'desktop fw'
