@@ -142,13 +142,6 @@
                 li = link_to 'Beer of the Week', 'http://beer.cloud.codaisseur.org/', target: :blank
                 li = link_to 'Got Sacked?', 'http://gotsacked.cloud.codaisseur.org/', target: :blank
 
-            #enroll2.callout.callout-warning
-              h4 Upcoming dates
-
-              ul.bootcamp-dates
-                - @bootcamps.each do |bootcamp|
-                  li = bootcamp.name_with_dates
-
-              = link_to 'Enroll now', tickets_path, class: 'button primary'
+            = render 'enroll_cta'
 
       = render 'other_bootcamps', current_level: :intermediate
