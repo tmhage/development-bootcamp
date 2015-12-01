@@ -63,13 +63,6 @@
         padding: 0
         width: 0
         height: 0
-        /* ie6 height fix */
-        font-size: 0
-        line-height: 0
-        /* ie6 transparent fix */
-        _border-right-color: pink
-        _border-left-color: pink
-        _filter: chroma(color=pink)
 
         &.border-notch
           border-right-color: $brand-warning
@@ -92,3 +85,21 @@
             padding: 0 20px 0 0
             height: 0.6em
             margin-top: -0.3em
+
+@media (max-width: $screen-sm-max)
+  .reviews .review .review-text
+    .notch
+      border-top: 0
+      border-left: 10px solid transparent
+      border-right: 10px solid transparent
+      border-bottom: 10px solid lighten($brand-warning, 20%)
+      top: -10px
+      left: 47%
+
+      &.border-notch
+        border-top: 0
+        border-left: 10px solid transparent
+        border-right: 10px solid transparent
+        border-bottom: 10px solid $brand-warning
+        top: -11px
+        left: 47%
