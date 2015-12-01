@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get '/program/level-2' => 'programs#level_two'
   get '/program/level-3' => 'programs#level_three'
   get '/program/level-4' => 'programs#level_four'
+  get '/program/frontend-bootcamp' => 'programs#frontend_bootcamp'
 
   get '/tickets' => 'orders#new'
   get '/team' => 'static_pages#team'
@@ -69,6 +70,7 @@ Rails.application.routes.draw do
       mount Sidekiq::Web, at: "/sidekiq"
     end
 
+    resources :reviews
     resources :discount_codes
     resources :bootcamps do
       member do

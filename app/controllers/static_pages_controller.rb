@@ -4,6 +4,10 @@ class StaticPagesController < ApplicationController
 
   def home
     @next_bootcamp = Bootcamp.published.by_date.first
+    @reviews = Review.where(language: I18n.locale)
+      .joins(:student, :bootcamp)
+      .order(original_date: :desc)
+      .limit(3)
   end
 
   def about; end

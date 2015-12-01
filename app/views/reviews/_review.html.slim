@@ -1,0 +1,24 @@
+.col.review itemscope=true itemtype="http://schema.org/Review"
+  .author
+    = image_tag review.avatar
+    .rating itemprop="reviewRating" itemscope=true itemtype="http://schema.org/Rating"
+      span class="review-rating rating--#{review.rating}"
+      br
+      | (
+      span itemprop="ratingValue" => review.rating
+      | / 10)
+
+  .review-text itemprop="itemReviewed" itemscope=true itemtype="http://schema.org/Course"
+    i.notch.border-notch
+    i.notch
+    blockquote
+      p
+        span itemprop="reviewBody" = review.body
+        br
+        br
+        span itemprop="author" itemscope=true itemtype="http://schema.org/Person"
+          strong itemprop="name" =< review.student.full_name
+          | ,
+          span itemprop="name" =<> review.bootcamp && review.bootcamp.name
+          span itemprop="publisher" itemscope=true itemtype="http://schema.org/Organization"
+            meta itemprop="name" value="Codaisseur"

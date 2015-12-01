@@ -27,18 +27,35 @@
           li = link_to t('.takeaway3'), program_path
 
 .dbc-content
-  .dbc-container.dbc-three-col
+  .dbc-container.dbc-two-col.three-reasons
     .inner
       .row
         .col
           .circle 1
-          p = t('.three_reasons_one')
+        .col
+          p
+            => t('.three_reasons_one_heading')
+            span = t('.three_reasons_one')
+      .row
         .col
           .circle 2
-          p = t('.three_reasons_two')
+        .col
+          p
+            => t('.three_reasons_two_heading')
+            span = t('.three_reasons_two')
+      .row
         .col
           .circle 3
-          p = t('.three_reasons_three')
+        .col
+          p
+            => t('.three_reasons_three_heading')
+            span = t('.three_reasons_three')
+
+  - if @reviews.any?
+    .dbc-container.reviews
+      .inner
+        .row
+          = render @reviews
 
 .dbc-content
   .dbc-container.dbc-quote
