@@ -1,6 +1,11 @@
 module NavigationHelper
   VERSION = "v1"
 
+  def dropdown_counter
+    @dropdown_counter ||= 0
+    @dropdown_counter += 1
+  end
+
   def menu_item_for(*args, &block)
     if block_given?
       object = args[0]
@@ -25,11 +30,17 @@ module NavigationHelper
     content_tag(:li, link_to(content, object), options)
   end
 
-  def menu_dropdown_for(path, &block)
-    content_tag(:li,
-      link_to(capture(&block), path,
-        class: 'dropdown-toggle', 'aria-expanded' => false, 'data-toggle' => 'dropdown', role: 'button'),
-        class: "#{request.path.match(url_for(path)) ? 'active' : ''}")
+  def menu_dropdown_for(name, options = {}, &block)
+    counter = dropdown_counter
+    content_tag(:li, class: "dropdown", id: "dropdown-#{counter}") do
+      options[:class] = [options[:class], 'dropdown-toggle'].compact.uniq.join(' ')
+      content_tag(:a,
+        options.merge({href: '#', 'aria-expanded' => false, 'aria-haspopup' => true, 'data-toggle' => "dropdown", role: 'button'})) do
+          name.html_safe +
+          content_tag(:span, '', class: 'caret')
+        end +
+      content_tag(:ul, capture(&block), class: 'dropdown-menu',  role: "menu")
+    end
   end
 
   def navigation_cache_key

@@ -12,6 +12,7 @@
 //
 //= require jquery/dist/jquery.min
 //= require jquery-ujs/src/rails
-//= require bootstrap-sass/assets/javascripts/bootstrap-sprockets
 //= require bootstrap
-//= require_tree ./frontend
+//= require froala_editor.min
+//= require plugins/block_styles.min
+//= require_tree ./admin
