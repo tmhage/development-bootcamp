@@ -14,7 +14,7 @@
             => fa_icon('calendar fw')
             span = @order.bootcamp.readable_date_range
           p
-            = link_to t(:change_order), tickets_path, class: 'button default'
+            = link_to t(:change_order), courses_path, class: 'button default'
 
       = render 'order_steps'
 
