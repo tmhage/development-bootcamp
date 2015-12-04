@@ -62,7 +62,7 @@ class Bootcamp < ActiveRecord::Base
   end
 
   def ticket_prices
-    if id == 1 || Rails.env.test?
+    if Rails.env.test?
       {
           community: community_price,
           normal: normal_price,
