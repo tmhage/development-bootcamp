@@ -185,9 +185,13 @@ en:
     Select the level you want, and the number of seats you need on the class.
   valid_on: Valid
   label_accept_terms: I have read and agree to the %{terms}, and the %{conditions}
+  change_order: Change order
 
   billing_details: Billing details
   student_details: Student Details %{current} / %{total}
+  you_selected_bootcamp:
+    one: 'You selected: %{count} ticket for %{bootcamp} on:'
+    other: 'You selected: %{count} tickets for %{bootcamp} on:'
 
   static_pages:
     home:

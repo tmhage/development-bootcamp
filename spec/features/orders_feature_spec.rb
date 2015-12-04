@@ -1,33 +1,37 @@
 require 'rails_helper'
 
 describe 'the ticket order process' do
+  let(:num_supporter_tickets) { 0 }
+  let(:num_community_tickets) { 0 }
   let(:num_tickets) { 1 }
 
   before do
     create(:bootcamp)
 
     visit '/tickets'
-    expect(page).to have_content 'Choose your tickets'
+    expect(page).to have_content 'Pick a Ticket!'
 
     within('#orderForm') do
+      fill_in 'order_cart_community', with: num_community_tickets
       fill_in 'order_cart_normal', with: num_tickets
+      fill_in 'order_cart_supporter', with: num_supporter_tickets
     end
 
     click_button 'Continue'
   end
 
-  describe 'Choose your tickets' do
+  describe 'Pick a Ticket!' do
     context 'when no tickets are selected' do
       let(:num_tickets) { 0 }
 
       it 'should post and not render billing details, but stay on the ticket page' do
-        expect(page).to have_content 'Choose your tickets'
+        expect(page).to have_content 'Please select 1 or more tickets'
       end
     end
 
     context 'when tickets ARE selected' do
       it 'posts and renders billing details' do
-        expect(page).to have_content 'Billing Details'
+        expect(page).to have_content I18n.t(:billing_details)
       end
 
       context 'when two tickets were selected' do
@@ -41,7 +45,7 @@ describe 'the ticket order process' do
 
       context 'Billing Details' do
         before do
-          expect(page).to have_content 'Billing Details'
+          expect(page).to have_content I18n.t(:billing_details)
 
           within('#orderForm') do
             fill_in 'Full name', with: Faker::Name.name

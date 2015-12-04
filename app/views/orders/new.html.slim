@@ -5,6 +5,17 @@
 .dbc-content
   .dbc-container.dbc-form
     .inner#orderForm
+      - unless @order.current_step == 'tickets'
+        .support-box
+          p
+            => fa_icon 'check fw'
+            = t(:you_selected_bootcamp, count: @order.cart_sum_tickets, bootcamp: @order.bootcamp.name)
+          p.date
+            => fa_icon('calendar fw')
+            span = @order.bootcamp.readable_date_range
+          p
+            = link_to t(:change_order), tickets_path, class: 'button default'
+
       = render 'order_steps'
 
       = render 'form'
