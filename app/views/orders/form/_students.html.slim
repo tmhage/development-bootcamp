@@ -10,20 +10,20 @@
 
 h2
   => fa_icon 'user fw'
-  | Student Details (#{student_number + 1} / #{@order.cart_sum_tickets})
+  = t(:student_details, current: student_number + 1, total: @order.cart_sum_tickets)
 
-= f.alert_message "Please fix the errors below."
+= f.alert_message t(:please_fix_errors_below)
 
 = f.fields_for :students, @order.students[student_number], child_index: student_number do |s|
   = s.text_field :first_name
   = s.text_field :last_name
-  = s.text_field :email, type: 'email', placeholder: 'you@organization.co'
+  = s.text_field :email, type: 'email', placeholder: t(:form_email_placeholder)
   = s.text_field :phone_number
   = s.date_select :birth_date, include_blank: true, start_year: 1940, end_year: (Date.today.year - 13), order: [:month, :day, :year]
-  = s.form_group :owns_laptop, label: { text: 'Do you own a laptop you can bring to class?' } do
-    = s.radio_button :owns_laptop, true, label: 'Yes'
-    = s.radio_button :owns_laptop, false, label: 'No'
-  = s.text_field :twitter_handle, required: false, placeholder: '@username', label: 'Twitter handle (optional)'
-  = s.text_field :github_handle, required: false, placeholder: '@username', label: 'Github handle (optional)'
-  = s.text_area :allergies, required: false, placeholder: "E.g. do you have any allergies, are you a vegan?", label: 'Dietary wishes (optional)'
-  = s.text_area :remarks, required: false, placeholder: "Anything you'd like to add?", label: 'Remarks (optional)'
+  = s.form_group :owns_laptop, label: { text: t('.do_you_own_laptop') } do
+    = s.radio_button :owns_laptop, true, label: t(:form_label_yes)
+    = s.radio_button :owns_laptop, false, label: t(:form_label_no)
+  = s.text_field :twitter_handle, required: false, placeholder: '@username', help: t(:form_optional)
+  = s.text_field :github_handle, required: false, placeholder: '@username', help: t(:form_optional)
+  = s.text_area :allergies, required: false, placeholder: t('.placeholder_allergies'), help: t(:form_optional)
+  = s.text_area :remarks, required: false, placeholder: t('.placeholder_remarks'), help: t(:form_optional)

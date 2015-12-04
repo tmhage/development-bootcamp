@@ -2,32 +2,26 @@
 - meta_description "Get your tickets to learn about all the basic parts of a web application. In the morning we start at 9am with a classroom lecture, followed by workshops the rest of the day until 5pm. We will pause only for lunch, coffee, and tea. During the evenings we will have various cool keynotes and presentations on lighter subjects between 8pm and 10pm."
 - meta_keywords "registration, tickets, pricing, development, bootcamp, programming, learn, teach, sponsor"
 
-- if @order.current_step == 'tickets' && (session[:order_params].blank? || session[:order_params].empty?)
-  - cache 'students-list-intro' do
-    .dbc-page-header.tickets
-      .container-fluid
-        .inner
-          h1 Register now
-
-          h4  Tickets include:
-
-          markdown:
-            - Daily Keynotes & Workshops Sunday - Saturday
-            - Healthy lunch on Sunday - Saturday
-            - Evening Sessions Sunday - Friday
-            - Coding Contest with great prizes
-            - Certificate upon completion of the program
-
-          p
-            = link_to 'Register now', '#orderForm', class: 'button primary'
-            = link_to 'Check our programs', program_path, class: 'button default'
 .dbc-content
   .dbc-container.dbc-form
-    .inner.form#orderForm
-      .support-box
-        | Please mail us at
-        strong =<> mail_to 'support@developmentbootcamp.nl'
-        | if you have any questions.
-
+    .inner#orderForm
       = render 'order_steps'
+
       = render 'form'
+
+      .support-box
+        - support_mail = capture do
+          strong =<> mail_to 'support@developmentbootcamp.nl'
+        => fa_icon 'support'
+        = t(:please_mail_support, support_mail: support_mail).html_safe
+
+- if @order.current_step == 'tickets'
+  .dbc-content
+    .dbc-container.dbc-two-col
+      .inner
+        .col
+          = image_tag 'program/workshop.png', class: 'img-responsive img-circle', style: "height: 200px; margin: 1em auto"
+
+        .col
+          h3 = t(:title_tickets_include)
+          = tmd(:tickets_include_list)

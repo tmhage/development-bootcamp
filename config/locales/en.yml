@@ -29,6 +29,18 @@ en:
         email: Email
         remarks: Remarks
         activated_at: Activate
+      order:
+        billing_name: Full name
+        billing_company_name: Company name
+        billing_email: Email
+        billing_address: Address
+        billing_postal: Postal code
+        billing_city: City
+        billing_country: Country
+        billing_phone: Phone number
+      student:
+        allergies: Dietary wishes
+
   number:
      currency:
         format:
@@ -139,6 +151,15 @@ en:
   cta_enroll_now: Enroll now
   cta_apply_now: Apply now
 
+  please_fix_errors_below: Please fix the errors below.
+  please_mail_support: Please don't hesitate to email us at %{support_mail} if you have any questions or feedback! We would love to know :)
+
+  # Generic form strings
+  form_optional: Optional
+  form_email_placeholder: you@organization.co
+  form_label_yes: 'Yes'
+  form_label_no: 'No'
+
   upcoming_dates: Upcoming Dates
   no_bootcamps_planned: Currently, we have no Bootcamps planned, sign up for the newsletter below so we can keep you informed about upcoming dates.
   other_bootcamps: Other Bootcamps
@@ -148,6 +169,25 @@ en:
     Are you working at a start-up, self-employed, unemployed or otherwise lacking financial backing?
 
     Subject to availability, eligible students can participate in the %{course} for less than one third of the regular fee through Development Bootcamp’s Scholarship Program. The program is powered by leading tech-companies. Apply and tell us your story.
+
+  # Ticket order steps
+  title_enroll_now: Enroll Now
+  title_tickets_include: Tickets Include
+  tickets_include_list: |
+    - Daily Keynotes & Workshops Sunday - Saturday
+    - Healthy lunch on Sunday - Saturday
+    - Evening Sessions Sunday - Friday
+    - Coding Contest with great prizes
+    - Certificate upon completion of the program
+
+  title_pick_seats: Pick a Ticket!
+  tickets_intro: |
+    Select the level you want, and the number of seats you need on the class.
+  valid_on: Valid
+  label_accept_terms: I have read and agree to the %{terms}, and the %{conditions}
+
+  billing_details: Billing details
+  student_details: Student Details %{current} / %{total}
 
   static_pages:
     home:
@@ -175,3 +215,12 @@ en:
     index:
       title: Our Curriculum
       our_teachers: Our Teachers
+
+  orders:
+    form:
+      tickets:
+        placeholder_promo_code: Do you have a promo code? Paste it here..
+      students:
+        do_you_own_laptop: Do you own a laptop you can bring to class?
+        placeholder_allergies: E.g. do you have any allergies, are you a vegan?
+        placeholder_remarks: Anything you'd like to add?

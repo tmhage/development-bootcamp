@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
   protected
 
   def page_not_found(exception = nil)
-    if /(jpe?g|png|gif)/i === request.path
+    if /\.(jpe?g|png|gif)/i === request.path
       render text: "404 Not Found", status: 404
     else
       respond_to do |format|
