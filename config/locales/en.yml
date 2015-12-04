@@ -243,6 +243,9 @@ en:
 
       quote: You will learn a way of thinking and looking at things that is fun and fascinating. A programmer’s mind is a joy forever.
 
+    team:
+      our_team: Our Team
+
   programs:
     index:
       title: Courses
