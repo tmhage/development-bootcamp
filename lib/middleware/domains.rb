@@ -6,16 +6,12 @@ class Middleware::Domains
   def call(env)
     request = Rack::Request.new(env)
 
-    sanitized_url = sanitize(request.url)
-
-    if request.url == sanitized_url
-      @app.call(env)
+    if request.host.match(/\.nl(\.dev)?$/)
+      I18n.locale = :nl
     else
-      [301, { "Location" => sanitized_url, 'Content-Type' => Rack::Mime.mime_type(::File.extname(sanitized_url)) }, [%Q(Redirecting to <a href="#{sanitized_url}">#{sanitized_url}</a>)]]
+      I18n.locale = :en
     end
-  end
 
-  def sanitize(url)
-    url.sub(/^http:\/\/(www\.)?([a-z]+\.)([a-z]{2,3})(\.[a-z]+)?([0-9:]+)?(\/.*)?$/, 'http://www.\2nl\4\5\6')
+    @app.call(env)
   end
 end

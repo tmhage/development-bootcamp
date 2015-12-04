@@ -1,11 +1,7 @@
+I18n.default_locale = :en
 I18n.available_locales= [:en, :nl]
 
 RouteTranslator.config do |config|
-  config.host_locales =
-    {
-      '*.nl'                 => :nl,
-      '*.com'                => :en,
-      '*.nl.dev'             => :nl,
-      '*.com.dev'            => :en,
-    }
+  config.force_locale = false
+  config.locale_param_key = :locale
 end

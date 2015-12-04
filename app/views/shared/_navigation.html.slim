@@ -19,3 +19,7 @@ nav.navbar.navbar-default.navbar-fixed-top role="navigation"
           = t(:nav_blog)
         = menu_item_for contact_path do
           = t(:nav_support)
+
+      ul.nav.navbar-nav.navbar-right
+        li = link_to 'English', root_en_url(host: Rails.application.config.hosts[:en]) unless I18n.locale == :en
+        li = link_to 'Dutch', root_nl_url(host: Rails.application.config.hosts[:nl]) unless I18n.locale == :nl

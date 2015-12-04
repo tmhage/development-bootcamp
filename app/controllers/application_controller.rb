@@ -13,6 +13,19 @@ class ApplicationController < ActionController::Base
 
   protected
 
+  def set_locale_from_url
+    begin
+      if request.host.match(/\.nl(\.dev)?$/)
+        I18n.locale = :nl
+      else
+        I18n.locale = :en
+      end
+      yield
+    ensure
+      I18n.locale = :en
+    end
+  end
+
   def page_not_found(exception = nil)
     if /\.(jpe?g|png|gif)/i === request.path
       render text: "404 Not Found", status: 404
