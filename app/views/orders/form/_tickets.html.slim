@@ -4,8 +4,9 @@
 - else
   - values = {}
 
-  h2 = t(:title_pick_seats)
-  = tmd(:tickets_intro)
+  .block-title
+    h2 = t(:title_pick_seats)
+    = tmd(:tickets_intro)
 
 - if @bootcamps.count > 0
   .tickets#select_bootcamp

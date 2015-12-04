@@ -1,6 +1,7 @@
-h2
-  => fa_icon 'globe fw'
-  = t(:billing_details)
+.block-title
+  h2
+    => fa_icon 'globe fw'
+    = t(:billing_details)
 
 = f.alert_message t(:please_fix_errors_below)
 = f.text_field :billing_name

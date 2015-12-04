@@ -1,0 +1,131 @@
+- title "Frontend Bootcamp - Frontend Coding for Beginners"
+- meta_description "Learn the first steps of writing code in an awesome program of just one week. Build a full app in HTML, CSS, and JavaScript."
+- meta_keywords "program, frontend, beginner, coding, contest, job, development, bootcamp, programming, learn, teach, sponsor"
+
+- cache 'programs/frontend' do
+  .dbc-program
+    .dbc-container
+      .inner#program
+        .block-title
+          h2
+            = t(:frontend_bootcamp)
+            span = t(:frontend_bootcamp_tagline)
+
+      .inner
+        .row
+          .description
+            = tmd(:frontend_bootcamp_description)
+
+            = render 'enroll_cta'
+
+            .course-type
+              .icon = fa_icon('clock-o')
+              = tmd(:this_is_a_weekly_course)
+
+          .dbc-day.day-one
+            .day-inner
+              .date
+                | WEEK 1
+              .activity
+                h2 Basic Frontend
+                p The Face of a Website
+              .image
+                = image_tag 'program/day1-frontend.png'
+              .topics
+                ul
+                  li Page structure with HTML
+                  li Meta tags
+                  li Styling and design with CSS
+
+        .row
+          .dbc-day.day-two
+            .day-inner
+              .date
+                | WEEK 2
+              .activity
+                h2 Advanced CSS
+                p Advanced Styling and Animation
+              .image
+                = image_tag 'program/day2-terminal.png'
+              .topics
+                ul
+                  li Web fonts
+                  li Advanced styling
+                  li Animation with CSS
+
+          .dbc-day.day-three
+            .day-inner
+              .date
+                | WEEK 3
+              .activity
+                h2 Basic Programming
+                p Meet JavaScript
+              .image
+                = image_tag 'program/day3-ruby.png'
+              .topics
+                ul
+                  li Meet JavaScript, a new language
+                  li Create a photo caroussel
+
+          .dbc-day.day-four
+            .day-inner
+              .date
+                | WEEK 4
+              .activity
+                h2 jQuery
+                p Plug it in
+              .image
+                = image_tag 'program/day4-loops.png'
+              .topics
+                ul
+                  li Using jQuery plugins
+                  li It's gonna be... wait for it!
+
+          .dbc-day.day-five
+            .day-inner
+              .date
+                | WEEK 5
+              .activity
+                h2 Wordpress
+                p Write Your Own Templates
+              .image
+                = image_tag 'program/day5-oop.png'
+              .topics
+                ul
+                  li Wordpress Templates
+                  li Partials
+
+          .dbc-day.day-six
+            .day-inner
+              .date
+                | WEEK 6
+              .activity
+                h2 MeteorJS
+                p A Full Web App
+              .image
+                = image_tag 'program/day6-ror.png'
+              .topics
+                ul
+                  li Models
+                  li Controllers
+                  li Views
+
+          .dbc-day.day-seven
+            .day-inner
+              .date
+                | WEEK 7
+              .activity
+                h2 Hackathon:
+                p And the Winner is..!
+              .image
+                = image_tag 'program/day7-hackathon.png'
+              .topics
+                ul
+                  li A Contest!
+                  li Demos and Prizes
+                  li Closing thoughts
+        .row
+          .col-xs-12
+            = render 'enroll_cta'
+
+      = render 'other_bootcamps', current_level: :frontend

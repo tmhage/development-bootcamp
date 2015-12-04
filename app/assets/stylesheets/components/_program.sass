@@ -35,12 +35,34 @@
       background-color: $brand-warning
     &.advanced
       background-color: $brand-danger
+    &.frontend
+      background-color: $purple
 
     h3
       margin-bottom: 1em
 
   .description
     @extend .col-sm-6
+
+    .course-type
+      border: 1px solid $gray-lighter
+      border-radius: 5px
+      border-left: 4px solid $brand-success
+      padding: 1em
+      margin: 1em 0
+
+      .icon
+        float: left
+        padding: 0 5px 0 0
+        color: $gray-light
+
+  .incompany-cta
+    margin-top: 1em
+
+  #enroll
+    .button
+      @extend .btn-lg
+      margin-bottom: 2em
 
   .dbc-day
     @extend .col-sm-6

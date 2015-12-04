@@ -8,9 +8,10 @@
     - @order.students[student_number].last_name ||= name.join(' ')
     - @order.students[student_number].email ||= @order.billing_email
 
-h2
-  => fa_icon 'user fw'
-  = t(:student_details, current: student_number + 1, total: @order.cart_sum_tickets)
+.block-title
+  h2
+    => fa_icon 'user fw'
+    = t(:student_details, current: student_number + 1, total: @order.cart_sum_tickets)
 
 = f.alert_message t(:please_fix_errors_below)
 

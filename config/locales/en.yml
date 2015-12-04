@@ -142,14 +142,41 @@ en:
     There is a good chance that we ask you to do some pre-work before we take
     you in.
 
-  frontend_web_bootcamp: Frontend Web Bootcamp
-  frontend_web_bootcamp_intro: ...teaches you to create templates that can be used directly on existing Wordpress sites or any other CMS. Learn to add Javascript to increase interaction and engage with your target audience. Integrate 3rd party tools to measure engagement and A/B-test behavior.
+  frontend_bootcamp: Frontend Web Bootcamp
+  frontend_bootcamp_tagline: interactive and engaging
+  frontend_bootcamp_intro: ...teaches you to create templates that can be used directly on existing Wordpress sites or any other CMS. Learn to add Javascript to increase interaction and engage with your target audience. Integrate 3rd party tools to measure engagement and A/B-test behavior.
+  frontend_bootcamp_program: Frontend Web Program
+  frontend_bootcamp_description: |
+    The Frontend Web Bootcamp offers a unique opportunity to improve your tech
+    literacy. You will learn all the skills to make beautiful, engaging websites
+    that are easy to build.
+
+    In contrast to the other Bootcamps we offer, the focus is more on what the
+    eye can see than on the code itself. It is a perfect way to compliment your
+    existing (digital) skills or get a head start into becoming a frontent
+    developer.
+
+    Whether you are an online marketeer who wants to be able to
+    create a simple, but engaging site, a product manager who wants to hack a
+    feature together before it goes into the formal development process, or
+    perhaps a UX designer who wants to A/B-test a few alternatives: this course
+    is the most valuable around.
+
+    We will teach you things you can actually _use_! Change an existing Wordpress
+    template? Sure! Just make a few design tweaks? Of course! A fully functional
+    web application with a database? Oh yeah, why not?!
+
+    Have a look at upcoming dates and enroll now. You will not regret it, or as
+    our students often say: "When in doubt, do it!"
 
   cta_courses: Courses
   cta_open_day: Open Evening
   cta_newsletter_signup: Sign up for the Newsletter
   cta_enroll_now: Enroll now
   cta_apply_now: Apply now
+
+  this_is_an_immersive_course: '_This is an immersive, full time, 7 day course that starts on Sunday and ends en Saturday._'
+  this_is_a_weekly_course: '_This is a weekly course that takes 7 weeks: one class per week and some homework on the weekends._'
 
   please_fix_errors_below: Please fix the errors below.
   please_mail_support: Please don't hesitate to email us at %{support_mail} if you have any questions or feedback! We would love to know :)
@@ -161,8 +188,9 @@ en:
   form_label_no: 'No'
 
   upcoming_dates: Upcoming Dates
-  no_bootcamps_planned: Currently, we have no Bootcamps planned, sign up for the newsletter below so we can keep you informed about upcoming dates.
+  no_bootcamps_planned: Currently, we have no %{level} Bootcamps planned, sign up for the newsletter below so we can keep you informed about upcoming dates.
   other_bootcamps: Other Bootcamps
+  incompany_cta: We also offer this course in-company! [Contact](%{contact_url}) us if you want to enroll with a few colleagues and we will come to you.
 
   scholarship_program: Scholarship Program
   scholarship_program_intro: |

@@ -25,6 +25,10 @@ class Bootcamp < ActiveRecord::Base
     where(level: 3)
   end
 
+  def self.frontend
+    where(level: 99)
+  end
+
   def self.by_date
     order(starts_at: :asc)
   end
