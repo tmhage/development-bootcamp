@@ -2,6 +2,9 @@
   .author
     = image_tag review.avatar
     .rating itemprop="reviewRating" itemscope=true itemtype="http://schema.org/Rating"
+      - if review.student && review.student.occupation.present?
+        span.text-muted = review.student.occupation
+        br
       span class="review-rating rating--#{review.rating}"
       br
       | (
