@@ -3,7 +3,7 @@
 - meta_keywords "development, bootcamp, programming, learn, teach, sponsor"
 - meta_image @post.cover_image.url(:thumb) if @post.cover_image.present?
 
-- cache @post do
+- cache [I18n.locale, @post] do
   .dbc-content
     .dbc-container.dbc-text-cta.alt-color.light-color.dbc-post
       .inner

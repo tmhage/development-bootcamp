@@ -2,7 +2,7 @@
 - meta_description "General Terms and Conditions in plain English and Dutch. We teach code at our boot camp. In one week, we will teach you all the basic parts of a web application."
 - meta_keywords "terms, conditions, development, bootcamp, programming, learn, teach, sponsor"
 
-- cache 'terms-and-conditions-page' do
+- cache [I18n.locale, 'terms-and-conditions-page'] do
   .dbc-content
     .dbc-container.dbc-text
       .inner.text

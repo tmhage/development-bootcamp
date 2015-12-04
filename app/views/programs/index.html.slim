@@ -2,7 +2,7 @@
 - meta_description "In one week, we will cover all the basic parts of a web application. In the morning we start at 9am with a classroom lecture, followed by workshops the rest of the day until 5pm. We will pause only for lunch, coffee, and tea. During the evenings we will have various cool keynotes and presentations on lighter subjects between 8pm and 10pm."
 - meta_keywords "program, beginner, development, bootcamp, programming, learn, teach, sponsor"
 
-- cache 'programs-index' do
+- cache [I18n.locale, 'programs-index'] do
   .dbc-content
     .dbc-container
       .inner

@@ -3,7 +3,7 @@
 - meta_keywords "sponsors, development, bootcamp, programming, learn, teach, sponsor"
 
 
-- cache 'sponsors-intro' do
+- cache [I18n.locale, 'sponsors-intro'] do
   .dbc-page-header.sponsors
     .container-fluid
       .inner
@@ -19,7 +19,7 @@
           = link_to 'Donate now!', new_sponsor_path, class: 'button default'
 
 .dbc-content
-  - cache cache_key_for_sponsors do
+  - cache [I18n.locale, cache_key_for_sponsors] do
     .dbc-container.dbc-text.dbc-sponsors#the-sponsors
 
       - Sponsor.plans.keys.each do |plan|
@@ -30,7 +30,7 @@
           - @sponsors.where(plan: plan).in_groups_of(2) do |group|
             .inner
               - group.compact.each do |sponsor|
-                - cache sponsor do
+                - cache [I18n.locale, sponsor] do
                   .block.sponsor
                     .logo
                       = image_tag sponsor.logo.thumb if sponsor.logo.present?
@@ -49,7 +49,7 @@
         - @sponsors.where(plan: 'partner').in_groups_of(2) do |group|
           .inner
             - group.compact.each do |sponsor|
-              - cache sponsor do
+              - cache [I18n.locale, sponsor] do
                 .block.sponsor
                   .logo
                     = image_tag sponsor.logo.thumb if sponsor.logo.present?

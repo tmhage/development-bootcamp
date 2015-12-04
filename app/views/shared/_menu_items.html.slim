@@ -1,4 +1,4 @@
-- cache "menu-items/#{request.path}" do
+- cache [I18n.locale, "menu-items/#{request.path}"] do
   = menu_item_for root_url, active: request.path == root_path do
     => fa_icon 'home'
     = t(:nav_home)

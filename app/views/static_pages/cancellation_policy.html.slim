@@ -2,7 +2,7 @@
 - meta_description "Should you have to cancel your registration for any reason please let us now. We have a simple cancellation policy in plain English. We teach code at our boot camp. In one week, we will teach you all the basic parts of a web application."
 - meta_keywords "cancellation policy, development, bootcamp, programming, learn, teach, sponsor"
 
-- cache 'cancellation-policy-page' do
+- cache [I18n.locale, 'cancellation-policy-page'] do
   .dbc-content
     .dbc-container.dbc-text
       .inner.normal
