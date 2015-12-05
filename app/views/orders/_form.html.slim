@@ -1,4 +1,4 @@
-= bootstrap_form_for @order, url: '/tickets' do |f|
+= bootstrap_form_for @order, url: enroll_path do |f|
   = render "orders/form/#{@order.current_step.split('-').first}", f: f
 
   .actions
