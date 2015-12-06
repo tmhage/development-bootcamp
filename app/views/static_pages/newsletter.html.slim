@@ -9,11 +9,14 @@
       .inner.normal
         h2
           mark => fa_icon 'bullhorn'
-          | Subscribe to our
-          mark =< 'Newsletter'
-        p Leave your details below and we will keep you updated on our events, study materials, and promotions.
+
+          - newsletter = capture do
+            mark =< t(:newsletter)
+          = t('.title', newsletter: newsletter).html_safe
+
+        p = t('.newsletter_intro')
 
         p
-          = link_to 'Subscribe', '#mc-embedded-subscribe-form', class: 'button primary'
+          = link_to t(:cta_subscribe), '#mc-embedded-subscribe-form', class: 'button default'
 
     = render 'shared/newsletter_form'

@@ -3,21 +3,21 @@
     .inner
       .sections
         nav.section
-          strong Navigation
+          strong = t(:footer_navigation)
           ul
             = render "shared/menu_items"
             = menu_item_for team_path do
               | About us
 
         .section.social
-          strong Follow us
+          strong = t(:footer_follow_us)
           ul
-            li = link_to "Newsletter", "/newsletter"
+            li = link_to t(:nav_newsletter), newsletter_path
             li = link_to "Twitter", "https://twitter.com/codaisseur"
             li = link_to "Facebook", "https://www.facebook.com/developmentbootcamp"
             li = link_to "LinkedIn", "https://www.linkedin.com/company/development-bootcamp"
             li = link_to "Github", "https://github.com/devbootcamps"
-            li = link_to "Sitemap", "/sitemap.xml"
+            li = link_to "Sitemap", sitemap_path(format: :xml)
 
         .section.vcard
           strong.fn Development Bootcamp
@@ -60,9 +60,9 @@
         p
           => link_to 'Code of conduct', code_of_conduct_path
           | •
-          =<> link_to 'Terms & Conditions', '/terms-and-conditions'
+          =<> link_to 'Terms & Conditions', terms_and_conditions_path
           | •
-          =<> link_to 'Cancellation policy', '/cancellation-policy'
+          =<> link_to 'Cancellation policy', cancellation_policy_path
           | • © 2014 -
           =< Time.now.year
           =< link_to 'Codaisseur BV', 'http://www.codaisseur.com'

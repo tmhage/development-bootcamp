@@ -2,16 +2,16 @@
   .dbc-container
     .inner
       form#mc-embedded-subscribe-form.validate action="//developmentbootcamp.us9.list-manage.com/subscribe/post?u=f107d6a3948661d72e4628ba1&amp;id=aff9cced90" method="post" name="mc-embedded-subscribe-form" novalidate="" target="_blank"
-        h2 Subscribe to our Newsletter
+        h2 = t('.title')
         .form-group
-          label for="mce-FNAME" First Name
+          label for="mce-FNAME" = t('.first_name')
           input#mce-FNAME.form-control name="FNAME" type="text" value="" /
         .form-group
-          label for="mce-LNAME"  Last Name
+          label for="mce-LNAME" = t('.last_name')
           input#mce-LNAME.form-control name="LNAME" type="text" value="" /
         .form-group
           label for="mce-EMAIL"
-            | Email Address
+            = t('.email')
             span.asterisk *
           input#mce-EMAIL.required.email.form-control name="EMAIL" type="email" value="" /
         /! real people should not fill this in and expect good things - do not remove this or risk form bot signups
@@ -20,4 +20,4 @@
         .clear
           input#mc-embedded-subscribe.button.primary name="subscribe" type="submit" value="Subscribe" /
           p
-            em You will receive an email to confirm your email address and subscription.
+            em = t('.form_hint')

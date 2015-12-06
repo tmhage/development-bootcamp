@@ -52,6 +52,7 @@ en:
   nav_enroll: Enroll
   nav_blog: Blog
   nav_support: Support
+  nav_newsletter: Newsletter
 
   plans:
     title:
@@ -181,12 +182,15 @@ en:
   cta_newsletter_signup: Sign up for the Newsletter
   cta_enroll_now: Enroll now
   cta_apply_now: Apply now
+  cta_subscribe: Subscribe now
 
   this_is_an_immersive_course: '_This is an immersive, full time, 7 day course that starts on Sunday and ends en Saturday._'
   this_is_a_weekly_course: '_This is a weekly course that takes 7 weeks: one class per week and some homework on the weekends._'
 
   please_fix_errors_below: Please fix the errors below.
   please_mail_support: Please don't hesitate to email us at %{support_mail} if you have any questions or feedback! We would love to know :)
+
+  newsletter: Newsletter
 
   # Generic form strings
   form_optional: Optional
@@ -253,6 +257,18 @@ en:
     team:
       our_team: Our Team
 
+    newsletter:
+      title: Subscribe to our %{newsletter}
+      newsletter_intro: Leave your details below and we will keep you updated on our events, study materials, and promotions.
+
+  shared:
+    newsletter_form:
+      title: Subscribe to our Newsletter
+      first_name: First name
+      last_name: Last name
+      email: Email address
+      form_hint: You will receive an email to confirm your email address and subscription.
+
   programs:
     index:
       title: Courses
@@ -267,3 +283,6 @@ en:
         do_you_own_laptop: Do you own a laptop you can bring to class?
         placeholder_allergies: E.g. do you have any allergies, are you a vegan?
         placeholder_remarks: Anything you'd like to add?
+
+  footer_follow_us: Follow Us
+  footer_navigation: Navigation

@@ -46,12 +46,14 @@ nl:
 
     enroll: aanmelden
     courses: cursussen
+    newsletter: nieuwsbrief
 
   nav_home: Home
   nav_courses: Cursussen
   nav_enroll: Aanmelden
   nav_blog: Blog
   nav_support: Support
+  nav_newsletter: Nieuwsbrief
 
   plans:
     title:
@@ -155,8 +157,24 @@ nl:
   cta_courses: Cursussen
   cta_open_day: Open Avond
   cta_newsletter_signup: Geef je op voor de Nieuwsbrief
-  cta_enroll_now: Schrijf nu in
+  cta_enroll_now: Schrijf je nu in
   cta_apply_now: Vraag nu aan
+  cta_subscribe: Meld je nu aan
+
+  this_is_an_immersive_course: '_This is an immersive, full time, 7 day course that starts on Sunday and ends en Saturday._'
+  this_is_a_weekly_course: '_This is a weekly course that takes 7 weeks: one class per week and some homework on the weekends._'
+
+  please_fix_errors_below: Please fix the errors below.
+  please_mail_support: Please don't hesitate to email us at %{support_mail} if you have any questions or feedback! We would love to know :)
+
+  newsletter: Nieuwsbrief
+  newsletter_intro: Leave your details below and we will keep you updated on our events, study materials, and promotions.
+
+  # Generic form strings
+  form_optional: Optioneel
+  form_email_placeholder: jij@organisatie.co
+  form_label_yes: 'Ja'
+  form_label_no: 'Nee'
 
   upcoming_dates: Aankomende Data
   no_bootcamps_planned: Momenteel hebben we geen Bootcamps gepland, meld je hieronder aan voor de nieuwsbrief zodat we je op de hoogte kunnen houden zodra er weer nieuwe bootcamps gepland worden.
@@ -190,7 +208,56 @@ nl:
 
       quote: You will learn a way of thinking and looking at things that is fun and fascinating. A programmer’s mind is a joy forever.
 
+    # Ticket order steps
+    title_enroll_now: Schrijf nu in
+    title_tickets_include: Tickets zijn inclusief
+    tickets_include_list: |
+      - Daily Keynotes & Workshops Sunday - Saturday
+      - Healthy lunch on Sunday - Saturday
+      - Evening Sessions Sunday - Friday
+      - Coding Contest with great prizes
+      - Certificate upon completion of the program
+
+    title_pick_seats: Kies een ticket!
+    tickets_intro: |
+      Select the level you want, and the number of seats you need on the class.
+    valid_on: Valid
+    label_accept_terms: I have read and agree to the %{terms}, and the %{conditions}
+    change_order: Change order
+
+    billing_details: Billing details
+    student_details: Student Details %{current} / %{total}
+    you_selected_bootcamp:
+      one: 'You selected: %{count} ticket for %{bootcamp} on:'
+      other: 'You selected: %{count} tickets for %{bootcamp} on:'
+
+    team:
+      our_team: Ons Team
+
+    newsletter:
+      title: Schrijf je in voor onze %{newsletter}
+
+  shared:
+    newsletter_form:
+      title: Meld je aan voor de Nieuwsbrief
+      first_name: Voornaam
+      last_name: Achternaam
+      email: Emailadres
+      form_hint: Je ontvangt een email om je emailadres en inschrijving te bevestigen.
+
   programs:
     index:
       title: Ons Curriculum
       our_teachers: Onze Docenten
+
+  orders:
+    form:
+      tickets:
+        placeholder_promo_code: Heb je een kortingscode? Plak hem hier..
+      students:
+        do_you_own_laptop: Heb je een laptop die je mee kunt nemen naar de lessen?
+        placeholder_allergies: Heb je allergieën, ben je veganist?
+        placeholder_remarks: Nog iets toe te voegen?
+
+  footer_follow_us: Volg ons
+  footer_navigation: Navigatie
