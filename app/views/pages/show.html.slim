@@ -10,4 +10,9 @@
         p.meta
           | Last updated:
           =< l(@page.updated_at, format: :short)
-        p = @page.body.html_safe
+
+        - if I18n.locale == :nl && @page.dutch_version.present?
+          p = @page.dutch_version.html_safe
+
+        - else
+          p = @page.body.html_safe

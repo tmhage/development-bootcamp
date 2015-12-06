@@ -34,6 +34,9 @@ nl:
      currency:
         format:
           unit: '€'
+  time:
+    formats:
+      short: '%e-%_m-%y %H:%M'
 
   routes:
     new: nieuw
