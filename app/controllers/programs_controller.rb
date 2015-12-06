@@ -18,10 +18,6 @@ class ProgramsController < ApplicationController
     @bootcamps = Bootcamp.advanced.published
   end
 
-  def level_four
-    redirect_to courses_path, status: :moved_permanently
-  end
-
   def frontend_bootcamp
     @level = 'Frontend'
     @bootcamps = Bootcamp.frontend.published
