@@ -382,12 +382,12 @@ nl:
       meta_keywords: "programma, terminal, unix, git, testen, wedstrijd, baan, bootcamp, programmeren, leren, tech hybrid, junior developer"
 
     level_two:
-      title: "Intermediate Development Bootcamp - Programmeren voor Beginners"
+      page_title: "Intermediate Development Bootcamp - Programmeren voor Beginners"
       meta_description: "Leer de eerste regels code schrijven tijdens een geweldig programma van één week. Van nul naar junior developer in drie cursussen van één week."
       meta_keywords: "programma, terminal, unix, git, testen, wedstrijd, baan, bootcamp, programmeren, leren, tech hybrid, junior developer"
 
     level_three:
-      title: "Advanced Development Bootcamp - Programmeren voor Beginners"
+      page_title: "Advanced Development Bootcamp - Programmeren voor Beginners"
       meta_description: "Leer de eerste regels code schrijven tijdens een geweldig programma van één week. Van nul naar junior developer in drie cursussen van één week."
       meta_keywords: "programma, terminal, unix, git, testen, wedstrijd, baan, bootcamp, programmeren, leren, tech hybrid, junior developer"
 
