@@ -1,129 +1,83 @@
-- title "Meet the team"
-- meta_description "Meet the team of Development Bootcamp. We teach code at our boot camp. In one week, we will teach you all the basic parts of a web application."
-- meta_keywords "team, people, development, bootcamp, programming, learn, teach, sponsor"
+- title t('.page_title')
+- meta_description t('.meta_description')
+- meta_keywords t('.meta_keywords')
 
-- cache 'team-page' do
-
-  script src="//platform.linkedin.com/in.js" type="text/javascript"
-
+- cache [I18n.locale, 'team-page'] do
   .dbc-content
-    .dbc-container.dbc-text-cta.alt-color
-      .inner.normal
-        h2 Hi, meet the team!
-        p We are working hard to use the knowledge we collected during the years in programming to save your time on the learning process. Check us on LinkedIn, connect with us and follow us on Twitter. We often share useful sources! Do not hesistate to contact us if you have any questions!
-
-    .dbc-container.dbc-text-cta.alt-color.light-color
+    .dbc-container.dbc-three-col
       .inner
-        .block.team-member
-          .avatar
-            = image_tag 'team/wouter.jpeg'
-          h2 Wouter de Vos
-          p Founder and teaching coordinator
+        .row
+          h2 = t '.our_team'
 
-          p
-            a href="https://twitter.com/wrdevos" class="twitter-follow-button" data-show-count="false" data-size="large" data-show-screen-name="false" @wrdevos
-            br
-            script type="IN/MemberProfile" data-id="https://www.linkedin.com/in/wouterdevos" data-format="hover" data-text="Wouter de Vos" data-related="false"
+        .row
+          .col.team-member
+            .avatar
+              = image_tag 'team/wouter.png'
+            h3 Wouter de Vos
+            p Founder & Teaching coordinator
 
-        .block.team-member
-          .avatar
-            = image_tag 'team/rembert.jpg'
-          h2 Rembert Boom
-          p Legal and operations
+          .col.team-member
+            .avatar
+              = image_tag 'team/rembert.jpg'
+            h3 Rembert Boom
+            p Co-founder & COO
 
-          p
-            a href="https://twitter.com/RLNBoom" class="twitter-follow-button" data-show-count="false" data-size="large" data-show-screen-name="false" @RLNBoom
-            br
-            script type="IN/MemberProfile" data-id="https://www.linkedin.com/pub/rembert-boom/12/4bb/955" data-format="hover" data-text="Rembert Boom" data-related="false"
+          .col.team-member
+            .avatar
+              = image_tag 'team/rayta.png'
+            h3 Rayta van Rijswijk
+            p Online Marketing
 
-      .inner
-        .block.team-member
-          .avatar
-            = image_tag 'team/jovana.jpg'
-          h2 Jovana Tokic
-          p Designer and coach
+          .col.team-member
+            .avatar
+              = image_tag 'team/reindert-jan.jpg'
+            h3 Reindert-Jan Ekker
+            p Teaching coordinator
 
-          p
-            a href="https://twitter.com/SaveAndSaclony" class="twitter-follow-button" data-show-count="false" data-size="large" data-show-screen-name="false" @SaveAndSaclony
-            br
-            script type="IN/MemberProfile" data-id="https://nl.linkedin.com/in/jovanatokic" data-format="hover" data-text="Jovana Tokic" data-related="false"
+          .col.team-member
+            .avatar
+              = image_tag 'team/joost.jpg'
+            h3 Joost Elfering
+            p Programming Teacher
 
-        .block.team-member
-          .avatar
-            = image_tag 'team/vincent.jpeg'
-          h2 Vincent Oord
-          p Developer and coach
+          .col.team-member
+            .avatar
+              = image_tag 'team/miriam.png'
+            h3 Miriam Tocino
+            p Programming Teacher
 
-          p
-            a href="https://twitter.com/vindia" class="twitter-follow-button" data-show-count="false" data-size="large" data-show-screen-name="false" @vindia
-            br
-            script type="IN/MemberProfile" data-id="https://www.linkedin.com/in/vincentoord" data-format="hover" data-text="Vincent Oord" data-related="false"
+          .col.team-member
+            .avatar
+              = image_tag 'team/paul.png'
+            h3 Paul Tondeur
+            p HTML & CSS Teacher
 
-      .inner
-        .block.team-member
-          .avatar
-            = image_tag 'team/reindert-jan.jpg'
-          h2 Reindert-Jan Ekker
-          p Teaching coordinator
+          .col.team-member
+            .avatar
+              = image_tag 'team/ben.png'
+            h3 Benjamin Udink ten Cate
+            p Programming Teacher
 
-          p
-            a href="https://twitter.com/rjekker" class="twitter-follow-button" data-show-count="false" data-size="large" data-show-screen-name="false" @rjekker
-            br
-            script type="IN/MemberProfile" data-id="https://www.linkedin.com/in/rjekker" data-format="hover" data-text="Reindert-Jan Ekker" data-related="false"
+          .col.team-member
+            .avatar
+              = image_tag 'team/jovana.jpg'
+            h3 Jovana Tokic
+            p Coach
 
-        .block.team-member
-          .avatar
-            = image_tag 'team/rayta.png'
-          h2 Rayta van Rijswijk
-          p Social media and sales
+          .col.team-member
+            .avatar
+              = image_tag 'team/vincent.jpeg'
+            h3 Vincent Oord
+            p Coach
 
-          p
-            a href="https://twitter.com/raytalks" class="twitter-follow-button" data-show-count="false" data-size="large" data-show-screen-name="false" @raytalks
-            br
-            script type="IN/MemberProfile" data-id="https://nl.linkedin.com/in/rayta" data-format="hover" data-text="Rayta van Rijswijk" data-related="false"
+          .col.team-member
+            .avatar
+              = image_tag 'team/anna.png'
+            h3 Anna Liebermann
+            p Operational Assistant
 
-      .inner
-        .block.team-member
-          .avatar
-            = image_tag 'team/peter.jpg'
-          h2 Peter Koelewijn
-          p Online marketing
-
-          p
-            a href="https://twitter.com/vinofresco" class="twitter-follow-button" data-show-count="false" data-size="large" data-show-screen-name="false" @vinofresco
-            br
-            script type="IN/MemberProfile" data-id="https://www.linkedin.com/in/vinofresco" data-format="hover" data-text="Peter Koelewijn" data-related="false"
-
-        .block.team-member
-          .avatar
-            = image_tag 'team/joost.jpg'
-          h2 Joost Elfering
-          p Teacher
-
-          p
-            a href="https://twitter.com/yopefonic" class="twitter-follow-button" data-show-count="false" data-size="large" data-show-screen-name="false" @yopefonic
-            br
-            script type="IN/MemberProfile" data-id="https://www.linkedin.com/in/joostelfering" data-format="hover" data-text="Joost Elfering" data-related="false"
-
-      .inner
-        .block.team-member
-          .avatar
-            = image_tag 'team/johan.jpg'
-          h2 Johan Ong
-          p Online marketing
-
-          p
-            a href="https://twitter.com/jong25" class="twitter-follow-button" data-show-count="false" data-size="large" data-show-screen-name="false" @jong25
-            br
-            script type="IN/MemberProfile" data-id="https://www.linkedin.com/in/jjckong" data-format="hover" data-text="Johan Ong" data-related="false"
-
-        .block.team-member
-          .avatar
-            = image_tag 'team/jon.jpg'
-          h2 Jon Woodroof
-          p Sales
-
-          p
-            a href="https://twitter.com/twotoneams" class="twitter-follow-button" data-show-count="false" data-size="large" data-show-screen-name="false" @twotoneams
-            br
-            script type="IN/MemberProfile" data-id="https://www.linkedin.com/in/twotone" data-format="hover" data-text="Jon Woodroof" data-related="false"
+          .col.team-member
+            .avatar
+              = image_tag 'team/andrew.png'
+            h3 Andrew Harisson
+            p Product Concepts & Advisor

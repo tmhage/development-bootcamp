@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   layout :set_layout
 
   before_filter :configure_permitted_parameters, if: :devise_controller?
+  before_filter :load_sponsors
 
   protect_from_forgery with: :exception
 
@@ -12,8 +13,21 @@ class ApplicationController < ActionController::Base
 
   protected
 
+  def set_locale_from_url
+    begin
+      if request.host.match(/\.nl(\.dev)?$/)
+        I18n.locale = :nl
+      else
+        I18n.locale = :en
+      end
+      yield
+    ensure
+      I18n.locale = :en
+    end
+  end
+
   def page_not_found(exception = nil)
-    if /(jpe?g|png|gif)/i === request.path
+    if /\.(jpe?g|png|gif)/i === request.path
       render text: "404 Not Found", status: 404
     else
       respond_to do |format|
@@ -39,5 +53,9 @@ class ApplicationController < ActionController::Base
 
   def disable_sidebar
     @show_sidebar = false
+  end
+
+  def load_sponsors
+    @sponsors = Sponsor.active
   end
 end

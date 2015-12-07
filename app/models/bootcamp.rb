@@ -25,6 +25,10 @@ class Bootcamp < ActiveRecord::Base
     where(level: 3)
   end
 
+  def self.frontend
+    where(level: 99)
+  end
+
   def self.by_date
     order(starts_at: :asc)
   end
@@ -62,7 +66,7 @@ class Bootcamp < ActiveRecord::Base
   end
 
   def ticket_prices
-    if id == 1 || Rails.env.test?
+    if Rails.env.test?
       {
           community: community_price,
           normal: normal_price,

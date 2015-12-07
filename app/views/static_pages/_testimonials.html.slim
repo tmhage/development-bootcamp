@@ -1,0 +1,30 @@
+  - cache [I18n.locale, 'testimonials-block'] do
+    .dbc-container.dbc-testimonials
+      .inner.centered#testimonials
+        .testimonial
+          .avatar
+            = image_tag 'testimonials/alexander-klopping.jpg'
+          .text
+            blockquote
+              q Bootcamps like these are a great start to learn programming.
+              footer
+                | Alexander Klöpping,
+                cite =< link_to 'Blendle', 'https://blendle.com'
+        .testimonial
+          .avatar
+            = image_tag 'testimonials/neelie-kroes.jpg'
+          .text
+            blockquote
+              q A magnificent initiative!
+              footer
+                | Neelie Kroes,
+                cite =< link_to 'Startup Delta', 'http://startupdelta.org'
+        .testimonial
+          .avatar
+            = image_tag 'testimonials/ruben-timmerman.jpg'
+          .text
+            blockquote
+              q I reserved a spot at my company for the best student!
+              footer
+                | Ruben Timmerman,
+                cite =< link_to 'Springest', 'https://www.springest.nl/'

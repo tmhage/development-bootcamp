@@ -11,7 +11,7 @@ RSpec.describe "orders/new", :type => :view do
       it "renders new order form" do
         render
 
-        assert_select "form[action=?][method=?]", tickets_path, "post" do
+        assert_select "form[action=?][method=?]", enroll_path, "post" do
           assert_select "input#order_cart_community[name=?]", "order[cart][community]"
           assert_select "input#order_cart_normal[name=?]", "order[cart][normal]"
           assert_select "input#order_cart_supporter[name=?]", "order[cart][supporter]"
@@ -28,7 +28,7 @@ RSpec.describe "orders/new", :type => :view do
       it "renders new order form" do
         render
 
-        assert_select "form[action=?][method=?]", tickets_path, "post" do
+        assert_select "form[action=?][method=?]", enroll_path, "post" do
           fields = %w(billing_name billing_email billing_address billing_postal billing_city
             billing_phone billing_company_name)
 
@@ -54,7 +54,7 @@ RSpec.describe "orders/new", :type => :view do
       it "renders new order form" do
         render
 
-        assert_select "form[action=?][method=?]", tickets_path, "post" do
+        assert_select "form[action=?][method=?]", enroll_path, "post" do
           text_fields = [:first_name, :last_name, :twitter_handle, :github_handle, :phone_number]
           text_areas = [:remarks, :allergies]
 

@@ -1,0 +1,47 @@
+.page-header
+  = link_to new_admin_review_path, :class => 'btn btn-primary' do
+    span.glyphicon.glyphicon-plus
+    |  New Review
+
+  h1 Listing Reviews
+
+.table-responsive
+  table.table.table-striped.table-bordered.table-hover
+    thead
+      tr
+        th
+          | Student
+        th
+          | Avatar
+        th
+          | Rating
+        th
+          | Bootcamp
+        th
+          | Original date
+        th
+          | Language
+        th
+        th
+        th
+    tbody
+      - @reviews.each do | review |
+        tr
+          td
+            = review.student.full_name
+          td
+            = image_tag review.avatar
+          td
+            = review.rating
+          td
+            = review.bootcamp.name_with_dates
+          td
+            = review.original_date
+          td
+            = review.language
+          td
+            = link_to 'Show', [:admin, review]
+          td
+            = link_to 'Edit', edit_admin_review_path(review)
+          td
+            = link_to 'Destroy', [:admin, review], method: :delete, data: { confirm: 'Are you sure?' }

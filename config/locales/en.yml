@@ -20,6 +20,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  language: "English"
   activerecord:
     models:
       sponsor: Sponsor
@@ -29,20 +30,404 @@ en:
         email: Email
         remarks: Remarks
         activated_at: Activate
+      order:
+        billing_name: Full name
+        billing_company_name: Company name
+        billing_email: Email
+        billing_address: Address
+        billing_postal: Postal code
+        billing_city: City
+        billing_country: Country
+        billing_phone: Phone number
+      student:
+        allergies: Dietary wishes
+
   number:
      currency:
         format:
           unit: '€'
 
-  plans:
-    title:
-      platinum: Platinum sponsors
-      gold: Gold sponsors
-      silver: Silver sponsors
-      party: Party Support sponsor
-      dinner: Dinner Support sponsors
-      hackathon: Hackathon sponsor
+  nav_home: Home
+  nav_courses: Courses
+  nav_enroll: Enroll
+  nav_blog: Blog
+  nav_support: Support
+  nav_newsletter: Newsletter
+  nav_team: Team
 
   tickets:
     one: ticket
     other: tickets
+
+  beginner_bootcamp: Beginner Bootcamp
+  beginner_bootcamp_tagline: your kickstart into coding
+  beginner_bootcamp_intro: ...teaches you the basics of programming, and how to think like a programmer. By the end of the week, you will be able to start writing small programs to make your live easier and you will have built your first interactive website.
+  beginner_program: Beginner Program
+  beginner_bootcamp_description: |
+    The Beginner Bootcamp is a unique kickstart into the world
+    of coding. It is for all of you who start coding with little or
+    no experience.
+
+    Whether you want to understand a bit more about programming or
+    want to start changing your career around, this is the best
+    primer you can get: it's cheap, it's short, it's fun, and you
+    learn from the best.
+
+    We will cover all the basic parts of a web application. By the
+    end of the week you will have built your own website, and you
+    will know how to grow and maintain it.
+
+    One year of hosting is included in the program so your website
+    will stay online for that time and you will be able to show it
+    to your friends, family, or even start your own business maybe?
+
+    Check out the topics on this page. Right now, most of them might
+    seem very foreign to you, but soon you will understand all of this,
+    and it will only take you 7 days, plus our help.
+
+    Don't linger any longer, enroll in our bootcamp!
+
+  intermediate_bootcamp: Intermediate Bootcamp
+  intermediate_bootcamp_tagline: build applications that matter
+  intermediate_bootcamp_intro: ...teaches you about building and deploying different types of web applications. On the frontend you learn to build interactive components with Javascript. On the backend we teach you to store and retrieve data from databases.
+  intermediate_program: Intermediate Program
+  intermediate_bootcamp_description: |
+    To become a true web developer, you need to make miles and you will, this
+    week! Every day of the week we look at a certain part of an application:
+    interactive frontend with Javascript, the database, deploying your app to a
+    server, etc. The result of each day is a live and kicking web application
+    that works.
+
+    We cover everything that’s needed to build rich applications that implement
+    the necessary functionality and logic to start at least a very interesting
+    side project, but quite possibly even the first version of an online
+    business.
+
+    Not only do you learn the necessary skills, but also the industry standard
+    ways to solve common functionality like allowing users to create accounts
+    and sign in, image uploads, and more.
+
+    Intermediate Bootcamp is the ultimate follow-up of the Beginner Bootcamp.
+    If you have not completed our Beginner Bootcamp, but still got some basic
+    programming skills, we might still take you in as a student. Please contact
+    us so we can schedule a call with you to determine your current level.
+    There is a good chance that we ask you to do some pre-work before we take
+    you in.
+
+  advanced_bootcamp: Advanced Bootcamp
+  advanced_bootcamp_tagline: reach professionalism
+  advanced_bootcamp_intro: ...prepares you for the professional programming world out there. You will add more complicated technology to your applications, and you will learn about the latest hi-tech developments and how to use them.
+  advanced_program: Advanced Program
+  advanced_bootcamp_description: |
+    To become a professional web developer, you need to have more than
+    programming skills. You need to be able to work together in a team, how an
+    application is designed, built, secured, and maintained. You also need to
+    know a little bit about the environment your applications need to run:
+    services.
+
+    In Advanced Bootcamp we cover agile product development techniques,
+    design/UX, and working together on code with git flow. We will also build a
+    more complex, production-ready application.
+
+    After Advanced Bootcamp, you are ready to become a Junior developer at one
+    of the thousands of companies in the Netherlands and abroad that are dying
+    to have you. They will take you in and train you more so you can follow your
+    true passion to build beautiful interfaces or systems that make our world go
+    round.
+
+    Advanced Bootcamp is the ultimate follow-up of the Intermediate Bootcamp.
+    If you have not completed our Intermediate Bootcamp, but still got some
+    programming skills, we might still take you in as a student. Please contact
+    us so we can schedule a call with you to determine your current level.
+    There is a good chance that we ask you to do some pre-work before we take
+    you in.
+
+  frontend_bootcamp: Frontend Web Bootcamp
+  frontend_bootcamp_tagline: interactive and engaging
+  frontend_bootcamp_intro: ...teaches you to create templates that can be used directly on existing Wordpress sites or any other CMS. Learn to add Javascript to increase interaction and engage with your target audience. Integrate 3rd party tools to measure engagement and A/B-test behavior.
+  frontend_bootcamp_program: Frontend Web Program
+  frontend_bootcamp_description: |
+    The Frontend Web Bootcamp offers a unique opportunity to improve your tech
+    literacy. You will learn all the skills to make beautiful, engaging websites
+    that are easy to build.
+
+    In contrast to the other Bootcamps we offer, the focus is more on what the
+    eye can see than on the code itself. It is a perfect way to compliment your
+    existing (digital) skills or get a head start into becoming a frontent
+    developer.
+
+    Whether you are an online marketeer who wants to be able to
+    create a simple, but engaging site, a product manager who wants to hack a
+    feature together before it goes into the formal development process, or
+    perhaps a UX designer who wants to A/B-test a few alternatives: this course
+    is the most valuable around.
+
+    We will teach you things you can actually _use_! Change an existing Wordpress
+    template? Sure! Just make a few design tweaks? Of course! A fully functional
+    web application with a database? Oh yeah, why not?!
+
+    Have a look at upcoming dates and enroll now. You will not regret it, or as
+    our students often say: "When in doubt, do it!"
+
+  cta_courses: Courses
+  cta_open_evening: Open Evening
+  cta_newsletter_signup: Sign up for the Newsletter
+  cta_enroll_now: Enroll now
+  cta_apply_now: Apply now
+  cta_subscribe: Subscribe now
+
+  this_is_an_immersive_course: '_This is an immersive, full time, 7 day course that starts on Sunday and ends en Saturday._'
+  this_is_a_weekly_course: '_This is a weekly course that takes 7 weeks: one class per week and some homework on the weekends._'
+
+  please_fix_errors_below: Please fix the errors below.
+  please_mail_support: Please don't hesitate to email us at %{support_mail} if you have any questions or feedback! We would love to know :)
+
+  newsletter: Newsletter
+  open_evening: Open Evening
+
+  # Generic form strings
+  form_optional: Optional
+  form_email_placeholder: you@organization.co
+  form_label_yes: 'Yes'
+  form_label_no: 'No'
+  back_button: Back
+  continue_button: Continue
+
+  label_full_name: Full name
+  label_company_name: Company name
+  label_address: Address
+  label_postal_code: Postal code
+  label_city: City
+  label_country: Country
+  label_name: Name
+  label_email: Email address
+  label_phone: Phone number
+  label_bring_laptop: Brings own laptop?
+  label_birth_date: Birth date
+  label_dietary_wishes: Dietary wishes
+  label_none: None
+  label_remarks: Remarks
+  label_not_filled: Not filled in
+  label_last_updated: "Last updated:"
+
+  # Payment Status
+  CANCELLED: CANCELLED
+  EXPIRED: EXPIRED
+  PAID: PAID
+
+  upcoming_dates: Upcoming Dates
+  no_bootcamps_planned: Currently, we have no %{level} Bootcamps planned, sign up for the newsletter below so we can keep you informed about upcoming dates.
+  other_bootcamps: Other Bootcamps
+  incompany_cta: We also offer this course in-company! [Contact](%{contact_url}) us if you want to enroll with a few colleagues and we will come to you.
+
+  scholarship_program: Scholarship Program
+  scholarship_program_intro: |
+    Are you working at a start-up, self-employed, unemployed or otherwise lacking financial backing?
+
+    Subject to availability, eligible students can participate in the %{course} for less than one third of the regular fee through Development Bootcamp’s Scholarship Program. The program is powered by leading tech-companies. Apply and tell us your story.
+
+  # Ticket order steps
+  title_enroll_now: Enroll Now
+  title_tickets_include: Tickets Include
+  tickets_include_list: |
+    - Daily Keynotes & Workshops Sunday - Saturday
+    - Healthy lunch on Sunday - Saturday
+    - Evening Sessions Sunday - Friday
+    - Coding Contest with great prizes
+    - Certificate upon completion of the program
+
+  title_pick_seats: Pick a Ticket!
+  tickets_intro: |
+    Select the level you want, and the number of seats you need on the class.
+  valid_on: Valid
+  label_accept_terms: I have read and agree to the %{terms}, and the %{conditions}
+  change_order: Change order
+
+  billing_details: Billing details
+  student_details: Student Details %{current} / %{total}
+  you_selected_bootcamp:
+    one: 'You selected: %{count} ticket for %{bootcamp} on:'
+    other: 'You selected: %{count} tickets for %{bootcamp} on:'
+
+  static_pages:
+    home:
+      page_title: Home - Learn Programming
+      meta_description: Learn code, the most wanted skill right now. We offer you the fastest way to junior developer or tech hybrid.
+      meta_keywords: development, bootcamp, programming, learn, teach, sponsor
+
+      # Page Header
+      learn_the_most_wanted: Learn the most wanted
+      skill_right_now: skill right now
+      tagline: The fastest way to junior developer or tech hybrid
+
+      # Bottom Bar
+      takeaway1: broaden your horizon
+      takeaway2: start a new career
+      takeaway3: extend your skills
+
+      # Three Reasons to Enroll
+      three_reasons_one_heading: Code is everywhere.
+      three_reasons_one: People in all industries can benefit from learning code to boost their productivity and e-skills.
+      three_reasons_two_heading: We offer you a kickstart
+      three_reasons_two: into the world of modern day software engineering for the web with immersive and results-driven boot camps.
+      three_reasons_three_heading: Learn to build web applications
+      three_reasons_three:  from industry experts. Choose from entry level beginner courses all the way up to advanced courses that prepare you for a new career.
+
+      quote: You will learn a way of thinking and looking at things that is fun and fascinating. A programmer’s mind is a joy forever.
+
+    team:
+      our_team: Our Team
+      page_title: Meet the team
+      meta_description: Meet the team of Development Bootcamp! We all teach code at our Bootcamps.
+      meta_keywords: team, people, development, bootcamp, programming, learn, teach, sponsor
+
+    newsletter:
+      title: Subscribe to our %{newsletter}
+      page_title: Student Newsletter Subscription
+      meta_description: Subscribe to Codaisseur's Development Bootcamp Newsletter to stay updated on new course dates, learning materials, and events.
+      meta_keywords: subscribe, newsletter, updated, development, bootcamp, programming, learn, student, code
+      newsletter_intro: Subscribe to Codaisseur's Development Bootcamp Newsletter about code and programming to stay updated on new course dates, learning materials, and events.
+
+    contact:
+      page_title: Help and Support
+      meta_description: Need help? Got a question? Please check our FAQ Page or send us an email.
+      meta_keywords: contact, location, amsterdam, development, bootcamp, programming, learn, tech, code
+      title: Help & Support
+      content: |
+        Need help? Got a question? Please check our %{faq} or send us an email
+        at %{support_mail}.
+      faq_page: FAQ Page
+
+    open_evening:
+      page_title: Open Evening
+      meta_description: Come to our Open Day to meet the team and do a little taste of what is to come.
+      meta_keywords: open day, development, bootcamp, programming, learn, student
+      title: Visit Our Open Evening!
+      intro_text: |
+        Leave your details below to register for our %{open_evening} on %{date} at %{location_info}.
+
+        It will be the chance for you to ask all your questions.
+
+      schedule: |
+        * 20:00  — Doors Open
+        * 20:30  — Welcome and Keynote by Wouter de Vos
+        * 21:15  — Q&A and drinks!
+
+      rsvp_here: RSVP Here
+      leave_details_below: or leave your details below
+      register_for_open_evening: Register for our Open Evening
+      email: Email address
+      first_name: First name
+      last_name: Last name
+      phone: Phone number
+      register: Register
+      or_rsvp_on_fb: or %{rsvp} on Facebook.
+
+  shared:
+    newsletter_form:
+      title: Subscribe to our Newsletter
+      first_name: First name
+      last_name: Last name
+      email: Email address
+      form_hint: You will receive an email to confirm your email address and subscription.
+
+  programs:
+    index:
+      page_title: "Learn to code: Programming Courses"
+      meta_description: "Check out all of our Development Bootcamps to learn programming. We teach you the fastest way to learn code: the most wanted skill right now!"
+      meta_keywords: "courses, program, beginner, development, bootcamp, programming, learn, teach, sponsor"
+      title: Programming Courses
+      subtitle: the full curriculum
+      our_teachers: Our Teachers
+      meet_rest_team: Meet the rest of the %{team}.
+
+    frontend_bootcamp:
+      page_title: "Frontend Bootcamp - Learn Frontend Development for Beginners"
+      meta_description: "Learn the first steps of writing code in an awesome program of just one week. Build a full app in HTML, CSS, and JavaScript."
+      meta_keywords: "program, frontend, beginner, coding, contest, job, development, bootcamp, programming, learn, teach, sponsor"
+
+    level_one:
+      page_title: "Beginner Development Bootcamp - Learn Coding for Beginners"
+      meta_description: "Learn the first steps of writing code in an awesome program of just one week. Zero to developer in three sessions of a week."
+      meta_keywords: "program, terminal, unix, git, testing, contest, job, development, bootcamp, programming, learn, teach, sponsor"
+
+    level_two:
+      page_title: "Intermediate Development Bootcamp - Learn Coding for Beginners"
+      meta_description: "Learn the first steps of writing code in an awesome program of just one week. Zero to developer in three sessions of a week."
+      meta_keywords: "program, terminal, unix, git, testing, contest, job, development, bootcamp, programming, learn, teach, sponsor"
+
+    level_three:
+      page_title: "Advanced Development Bootcamp - Coding for Beginners"
+      meta_description: "Learn the first steps of writing code in an awesome program of just one week. Zero to developer in three sessions of a week."
+      meta_keywords: "program, terminal, unix, git, testing, contest, job, development, bootcamp, programming, learn, teach, sponsor"
+
+  orders:
+    form:
+      tickets:
+        placeholder_promo_code: Do you have a promo code? Paste it here..
+      students:
+        do_you_own_laptop: Do you own a laptop you can bring to class?
+        placeholder_allergies: E.g. do you have any allergies, are you a vegan?
+        placeholder_remarks: Anything you'd like to add?
+      confirmation:
+        title: Confirmation
+        use_back_button_to_fix: You can use the back button below to change your input.
+        please_check: Please check your details carefully. If everything looks good, you can proceed to checkout.
+        click_continue: Click "%{continue}" to proceed to checkout. Click "%{back}" to make changes.
+    order:
+      total_discount_promo: "Total discount promo code '%{promo}':"
+      total_price: "Total price:"
+      pay_now: 'Pay now!'
+      prefer_creditcard: "Prefer credit card? Click the button below, but note that you will pay a fee of 2.9% (%{total} + Payment fee: %{payment_fee} = %{creditcard_total})"
+      payment_information: |
+        Click the button below to make the payment. If someone else needs to make the payment for you,
+        just send them the link to this page.
+
+        If the price is too high for you, we might be able to help you out by allowing you to pay in installments.
+        Send us an email with your request _and a link to this page_ at support@developmentbootcamp.nl and we
+        will contact you as soon as we can.
+      your_order_was_cancelled_expired: "Your order was %{status}. You can try make a new payment below:"
+      thank_you_processed: Thank you, your payment will be processed
+      email_when_processed: You will receive an email as soon as we have processed your payment.
+      below_overview_details: Below is an overview of the details you provided.
+      student_details: Student Details
+
+    new:
+      page_title: "Enroll - Tickets and Pricing"
+      meta_description: Enroll in our Development Bootcamps! Get your tickets to learn programming.
+      meta_keywords: enroll, registration, tickets, pricing, development, bootcamp, programming, learn, teach, sponsor
+
+    show:
+      title: Order & Payment
+    thanks:
+      title: Thank you for your %{order_or_payment}, %{name}!
+      order: order
+      payment: payment
+      paid_message:
+        one: Your payment was processed, and you will receive your ticket shortly by email to **%{billing_email}**.
+        other: Your payment was processed, and you will receive your %{count} tickets shortly by email to **%{billing_email}**.
+      individual_students_sent: "Individual tickets will also be sent to the individual students: **%{student_emails}**."
+      cancelled_message: |
+        Your payment was **cancelled**. If this was a mistake, please retry your payment by clicking
+        the payment button below.
+      pay_now: 'Pay now!'
+      expired_message: |
+        Your payment has **expired**. Please refresh this page and retry your payment by clicking
+        the payment button below.
+      still_open_message: |
+        You will receive an email with more information as soon as we have processed your
+        payment.
+      payment_error_message: |
+        So sorry, something went wrong and we were not able to track your payment. If you did not pay,
+        please click the button below to make a payment. If you _did_ already pay, however,
+        you should _not_ pay again! Contact us via phone or email. Details below.
+      any_questions: |
+        If you have _any_ questions about your order, the program, or
+        anything else we might be able to help you with, feel free to contact us:
+
+        %{email}: [support@developmentbootcamp.nl](mailto:support@developmentbootcamp.nl)
+
+        %{phone}: **+31681910218**
+
+  footer_follow_us: Follow Us
+  footer_navigation: Navigation

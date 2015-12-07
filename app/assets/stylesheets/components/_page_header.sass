@@ -14,12 +14,58 @@
   min-height: $dbc-page-header-height
   color: #fff
 
+  .bottom-bar
+    @extend .row
+    background-color: $brand-primary
+    color: $gray-lighter
+    font-size: 24px
+    font-weight: 100
+    font-style: italic
+    text-align: center
+    padding-top: 0.6em
+    padding-bottom: 0.6em
+    margin-right: 0
+    margin-bottom: 6em
+
+    .inner
+      padding-bottom: 0
+
+      ul
+        margin: 0
+        padding: 0
+        list-style: none
+
+        li
+          display: inline
+
+          &::after
+            font-size: 18px
+            content: ' • '
+          &:last-child
+            &::after
+              content: ''
+
+          a:link,
+          a:visited,
+          a:hover
+            color: $gray-lighter
+            text-decoration: none
+
   .inner
-    @extend .col-md-8
-    @extend .col-md-offset-2
+    @extend .col-md-12
+    padding-bottom: 2em
+
+    img
+      @extend .img-responsive
+
+    .left
+      @extend .col-sm-6
+
+    .right
+      @extend .col-sm-6
 
     h1
-      font-size: 6.5rem
+      font-size: 4.5rem
       font-weight: 900
       bottom: 0
 
@@ -30,42 +76,34 @@
       padding-bottom: 1em
 
       i.fa
-        color: $yellow
+        color: $brand-primary
 
-      .button
-        @extend .btn-lg
+    .button
+      @extend .btn-lg
 
-        &.primary
-          color: $gray-darker
-
-        &.default
-          color: $gray-lighter
-          border-color: $gray-lighter
-
-          &:hover,
-          &:active
-            background: #000
+      &.default
+        color: #fff !important
 
     ul, h4
       top: $dbc-page-header-title-offset + $dbc-page-header-font-size
       padding-bottom: 1em
 
-    a:link,
-    a:visited,
-    a:hover
-      color: $yellow
+    .cta
+      .button.default
+        background-color: transparent
+        border: 1px solid #fff
 
   &.home
-    background-image: image_url("headers/taste-of-code-camp-home.png")
-    background-size: auto 78%
-    background-position: 75% bottom
-    background-color: $green
+    background-image: image_url("home/1800-hipster-desk.png")
+    background-size: cover
+    background-position: 25% bottom
+    background-color: #333
     padding-bottom: 0
 
     .text
-      @extend .col-lg-8
-      @extend .col-md-8
-      padding-left: 0
+      @extend .col-sm-offset-6
+      p
+        letter-spacing: 2px
 
       mark
         padding: 0
@@ -86,19 +124,5 @@
     background-image: image_url('backgrounds/cover-red.png')
 
 @media (max-width: $screen-sm-max)
-  .dbc-page-header.home
-    background-color: $gray-darker
-    background-image: image_url("headers/taste-of-code-camp-home-xs.png")
-
-    .text mark.alt-color
-      color: $green
-
-    .button.default
-      background-color: $gray-lighter
-      color: $gray !important
-      &:hover
-        color: $gray-lighter !important
-        background-color: $gray
-
-    h1
-      font-size: 1.2em
+  h1
+    font-size: 1.2em

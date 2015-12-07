@@ -1,0 +1,5 @@
+- cache [I18n.locale, 'scholarship-program'] do
+  #scholarship.callout.callout-success
+    h4 = t(:scholarship_program)
+    = tmd(:scholarship_program_intro, course: course)
+    p = link_to t(:cta_apply_now), '#', class: 'button default'

@@ -1,53 +1,67 @@
-- cache 'footer' do
+- cache [I18n.locale, 'footer', Time.now.year] do
   .footer
     .inner
       .sections
         nav.section
-          strong Navigation
+          strong = t(:footer_navigation)
           ul
             = render "shared/menu_items"
-            = menu_item_for team_path do
-              | About us
+            = menu_item_for t(:nav_team), team_path
 
         .section.social
-          strong Follow us
+          strong = t(:footer_follow_us)
           ul
-            li = link_to "Newsletter", "/newsletter"
+            li = link_to t(:nav_newsletter), newsletter_path
             li = link_to "Twitter", "https://twitter.com/codaisseur"
             li = link_to "Facebook", "https://www.facebook.com/developmentbootcamp"
             li = link_to "LinkedIn", "https://www.linkedin.com/company/development-bootcamp"
             li = link_to "Github", "https://github.com/devbootcamps"
-            li = link_to "Sitemap", "/sitemap.xml"
+            li = link_to "Sitemap", sitemap_path(format: :xml)
 
         .section.vcard
           strong.fn Development Bootcamp
           br
-          span.title Codaisseur BV, Amsterdam NL
+          span.title Codaisseur BV
           p.adr
             span.email
               = link_to "info@developmentbootcamp.nl", "mailto:info@developmentbootcamp.nl"
             br
-            span.street-address Rokin 75
-            span.postal-code , 1012 KL
+            span.street-address Weesperstraat 61
             br
-            span.locality Amsterdam
-            span.region , NH
+            span.postal-code 1018 VN
+            span.locality  Amsterdam
+            br
+            span.country The Netherlands
             br
             | Phone:
-            span.phone-number +31681910218
-            br
+            span.phone-number  +31681910218
+
+        .section.company-details
+          p
             span KvK: 63359359
             br
             span VAT ID: NL855202907B01
             br
             span Bank: NL90ABNA0401849279
 
+        - cache [I18n.locale, cache_key_for_sponsors] do
+          - if @sponsors.count > 0
+            .sponsors#the-partners
+              - @sponsors.order('name asc').each do |sponsor|
+                - cache [I18n.locale, sponsor] do
+                  - sponsor_link = sponsor.website.present? ? sponsor.website : '#'
+                  - if sponsor.logo.present?
+                    .sponsor
+                      = link_to sponsor_link do
+                        = image_tag(sponsor.logo.thumb)
+
       .bottom
         p
           => link_to 'Code of conduct', code_of_conduct_path
           | •
-          =<> link_to 'Terms & Conditions', '/terms-and-conditions'
+          =<> link_to 'Terms & Conditions', terms_and_conditions_path
           | •
-          =<> link_to 'Cancellation policy', '/cancellation-policy'
-          | • © 2014
+          =<> link_to 'Cancellation policy', cancellation_policy_path
+          | • © 2014 -
+          =< Time.now.year
           =< link_to 'Codaisseur BV', 'http://www.codaisseur.com'

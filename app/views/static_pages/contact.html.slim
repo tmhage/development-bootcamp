@@ -1,31 +1,16 @@
-- title "Contact, Location, and Getting There"
-- meta_description "Contact details, Science Park Amsterdam, route and facilities"
-- meta_keywords "contact, location, science park, amsterdam, development, bootcamp, programming, learn, teach"
+- title t('.page_title')
+- meta_description t('.meta_description')
+- meta_keywords t('.meta_keywords')
 
-- cache 'contact-page' do
+- cache [I18n.locale, 'contact-page'] do
   .dbc-content
     .dbc-container.dbc-text-cta.alt-color.light-color
       .inner.text
-        h1 Help and Support
+        h1 = t('.title')
 
-        p
-          | Need help? Got a question? Please check our
-          =<> link_to '/pages/faq' do
+        - faq = capture do
+          = link_to '/pages/faq' do
             => fa_icon 'support fw'
-            | FAQ Page
-          | or send us an email at
-          =< mail_to "support@developmentbootcamp.nl"
-          | .
+            = t('.faq_page')
 
-        h2 Location of the Bootcamp
-
-        markdown:
-          The Development Bootcamp takes place at The View,
-          located at the top floor of **Rokin 75, Amsterdam**.
-
-          Rokin 75 can easily be reached by public transport ([train](http://ns.nl),
-          [tram](http://www.gvb.nl) or [bus](http://www.gvb.nl)).
-
-        iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2435.994430153673!2d4.893208999999993!3d52.370521!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c609c0ebbf6257%3A0xa8a5fb830684642e!2sRokin+75%2C+1012+KL+Amsterdam!5e0!3m2!1sen!2snl!4v1433436323983" width="600" height="450" frameborder="0" style="border:0"
-
-        p = link_to 'Google Maps', 'https://maps.google.com/maps?ll=52.370521,4.893209&z=16&t=m&hl=en-US&gl=NL&mapclient=embed&q=Rokin%2075%201012%20KL%20Amsterdam'
+        = (tmd('.content') % { faq: faq, support_mail: mail_to("support@developmentbootcamp.nl") }).html_safe

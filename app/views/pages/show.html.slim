@@ -1,13 +1,26 @@
-- title @page.title
-- meta_description truncate(strip_tags(@page.body), length: 130)
+- if I18n.locale == :nl && @page.dutch_title.present?
+  - title @page.dutch_title
+- else
+  - title @page.title
+
+- if I18n.locale == :nl && @page.dutch_version.present?
+  - meta_description truncate(strip_tags(@page.dutch_version), length: 130)
+- else
+  - meta_description truncate(strip_tags(@page.body), length: 130)
+
 - meta_keywords "development, bootcamp, programming, learn, teach, sponsor"
 
-- cache @page do
+- cache [I18n.locale, @page] do
   .dbc-content
     .dbc-container.dbc-text.dbc-page
       .inner
-        h1= @page.title
+        h1= I18n.locale == :nl && @page.dutch_title.present? ? @page.dutch_title : @page.title
         p.meta
-          | Last updated:
+          = t(:label_last_updated)
           =< l(@page.updated_at, format: :short)
-        p = @page.body.html_safe
+
+        - if I18n.locale == :nl && @page.dutch_version.present?
+          p = @page.dutch_version.html_safe
+
+        - else
+          p = @page.body.html_safe

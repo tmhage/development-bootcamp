@@ -1,6 +1,5 @@
 nav.navbar.navbar-default.navbar-fixed-top role="navigation"
   .inner
-
     .navbar-header
       button.navbar-toggle.collapsed data-target="#navbar-collapse" data-toggle="collapse" type="button"
         span.sr-only Toggle navigation
@@ -8,21 +7,19 @@ nav.navbar.navbar-default.navbar-fixed-top role="navigation"
         span.icon-bar
         span.icon-bar
       = link_to root_path, class: "navbar-brand"
-        = image_tag 'codaisseur.png'
         | Development Bootcamp
-        span by Codaisseur
 
     #navbar-collapse.collapse.navbar-collapse
       ul.nav.navbar-nav
-        = menu_item_for root_url, active: request.path == root_path do
-          | Home
-        = menu_item_for program_path do
-          | Programs
-        = menu_item_for tickets_path do
-          | Tickets
-        / = menu_item_for speakers_path do
-        /   | Speakers
+        = menu_item_for courses_path do
+          = t(:nav_courses)
+        = menu_item_for enroll_path do
+          = t(:nav_enroll)
         = menu_item_for 'http://www.codaisseur.com' do
-          | Blog
+          = t(:nav_blog)
         = menu_item_for contact_path do
-          | Support
+          = t(:nav_support)
+
+      ul.nav.navbar-nav.navbar-right.language-switcher
+        li.language = link_to 'English', root_en_url(host: Rails.application.config.hosts[:en]), hreflang: :en, class: :en unless I18n.locale == :en
+        li.language = link_to 'Dutch', root_nl_url(host: Rails.application.config.hosts[:nl]), hreflang: :nl, class: :nl unless I18n.locale == :nl

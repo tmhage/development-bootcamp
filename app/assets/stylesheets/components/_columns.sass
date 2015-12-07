@@ -1,0 +1,34 @@
+.dbc-three-col,
+.dbc-two-col
+  margin-top: 2em
+  margin-bottom: 4em
+
+  h2
+    text-align: center
+    margin-bottom: 0.8em
+
+.dbc-three-col
+  .col
+    @extend .col-md-4
+    text-align: center
+    margin-bottom: 4em
+
+    &.middle
+      @extend .col-md-offset-4
+
+.dbc-two-col
+  .col
+    @extend .col-md-6
+    text-align: left
+
+  &.three-reasons .col
+    p
+      font-size: 1.8em
+      font-style: italic
+      font-weight: 900
+      color: $gray-light
+
+      span
+        font-size: 0.8em
+        font-weight: normal
+        color: $gray-darker

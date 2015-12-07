@@ -1,133 +1,65 @@
-- title "Home"
-- meta_description "Learn to write code and change your life around. We teach programming at our boot camp for everyone. It's easy and fun! And it's the future, because code is everywhere and we are so short on people who can code."
-- meta_keywords "development, bootcamp, programming, learn, teach, sponsor"
+- title t('.page_title')
+- meta_description t('.meta_description')
+- meta_keywords t('.meta_keywords')
 
 .dbc-page-header.home
-  .container-fluid
+  .dbc-page
     .inner
-      .text
-        h1
-          | Development Bootcamp
-        p
-          | Develop your coding skills
-          br
-          | in just one week!
-
-        p
-          mark
-            strong => 'COMING UP'
-          br
-          | » OPEN EVENING
-          br
-          | December 10th
-          - if @next_bootcamp
+      .row
+        .text.right
+          h1
+            = t('.learn_the_most_wanted')
             br
-            = "» #{@next_bootcamp.name.upcase}"
-            br
-            = @next_bootcamp.readable_date_range
+            = t('.skill_right_now')
 
-        p
-          = link_to 'Read More', '#programs', class: 'button primary'
-          = link_to 'Open Evening', open_day_path, class: 'button default'
+          p = t('.tagline')
 
-.dbc-content
+          .cta
+            => link_to t(:cta_courses), courses_path, class: 'button primary', id: 'home-cta-two'
+            = link_to t(:cta_open_evening), open_evening_path, class: 'button default', id: 'home-cta-one'
 
-  = render 'programs/three_levels'
-
-  = render 'shared/day_at_bootcamp'
-
-.dbc-content
-  .dbc-container.dbc-text-cta.alt-color.light-color
-    .inner.normal
-      h2 Code is Everywhere
-
-      markdown:
-        Computers, phones, cars, refrigerators, watches… Every piece of technology
-        that you use every day runs on software.
-
-  .dbc-container.dbc-text
-    .inner.caps
-      p
-        mark.alt-color Programming
-        mark =<> "is not hard"
-        | until you want to solve hard problems with it.
-
-  .dbc-container.dbc-text-cta.alt-color
-    .inner.normal
-      h2 Learn Together
-      p It's fun and inspiring, and a lot faster than learning on your own.
-
-  .dbc-container.dbc-text
-    .inner.caps
-      p
-        | Most people who code
-        mark =< 'never studied computer science.'
-        mark.alt-color =<> 'Most of them taught themselves.'
-        | That was hard, but we make it
-        mark =<> 'easy'
-        | for you to learn.
+  .bottom-bar
+    .inner
+      nav
+        ul
+          li = link_to t('.takeaway1'), courses_path
+          li = link_to t('.takeaway2'), courses_path
+          li = link_to t('.takeaway3'), courses_path
 
 .dbc-content
-  - cache 'testimonials-block' do
-    .dbc-container.dbc-text-cta.alt-color.light-color.dbc-testimonials#testimonials
-      .inner.centered
-        .testimonial
-          .avatar
-            = image_tag 'testimonials/alexander-klopping.jpg'
-          .text
-            blockquote
-              q Bootcamps like these are a great start to learn programming.
-              footer
-                | Alexander Klöpping,
-                cite =< link_to 'Blendle', 'https://blendle.com'
-        .testimonial
-          .avatar
-            = image_tag 'testimonials/neelie-kroes.jpg'
-          .text
-            blockquote
-              q A magnificent initiative!
-              footer
-                | Neelie Kroes,
-                cite =< link_to 'Startup Delta', 'http://startupdelta.org'
-        .testimonial
-          .avatar
-            = image_tag 'testimonials/ruben-timmerman.jpg'
-          .text
-            blockquote
-              q I reserved a spot at my company for the best student!
-              footer
-                | Ruben Timmerman,
-                cite =< link_to 'Springest', 'https://www.springest.nl/'
-
-  - cache 'home-corporate-cta'
-    .dbc-container.dbc-text
-      .inner.caps
+  .dbc-container.dbc-two-col.three-reasons
+    .inner
+      .row
+        .col
+          .circle.beginner 1
+        .col
           p
-            | People in all tech companies can benefit from programming skills.
-            mark.alt-color =< "Would you like to join us with your colleagues?"
-            =< mail_to 'info@developmentbootcamp.nl', 'Send us an email.'
+            => t('.three_reasons_one_heading')
+            span = t('.three_reasons_one')
+      .row
+        .col
+          .circle.intermediate 2
+        .col
+          p
+            => t('.three_reasons_two_heading')
+            span = t('.three_reasons_two')
+      .row
+        .col
+          .circle.advanced 3
+        .col
+          p
+            => t('.three_reasons_three_heading')
+            span = t('.three_reasons_three')
 
-  - cache cache_key_for_sponsors do
-    - if @sponsors.count > 0
-      .dbc-container.dbc-text-cta.alt-color.dbc-sponsors#the-partners
-        .inner.centered
-          p Sponsors & Partners
-          - @sponsors.order('name asc').each do |sponsor|
-            - cache sponsor do
-              - sponsor_link = sponsor.website.present? ? sponsor.website : '#'
-              - if sponsor.logo.present?
-                .sponsor
-                  = link_to sponsor_link do
-                    = image_tag(sponsor.logo.thumb)
+  - if @reviews.any?
+    .dbc-container.reviews
+      .inner
+        .row
+          = render @reviews
 
-  = render 'shared/newsletter_form'
-
-  .dbc-container.dbc-text-cta.alt-color.light-color
-    .inner.centered
-      h2 Ready to join us?
-
-      p This is the future. And you should be part of it! Get your tickets for the full seven days.
-
-      p
-        = link_to 'Get tickets', tickets_path, class: 'button primary'
-        = link_to 'Check Programs', program_path, class: 'button default'
+.dbc-content
+  .dbc-container.dbc-quote
+    .inner
+      .row
+        blockquote
+          p = "“#{t('.quote')}”"

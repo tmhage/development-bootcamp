@@ -1,23 +1,22 @@
 h2
   => fa_icon 'check fw'
-  | Confirmation
+  = t('.title')
 
-= f.alert_message "Please fix the errors below."
+= f.alert_message t(:please_fix_errors_below)
 
 - if @order.errors.full_messages.any?
   - if @order.errors.full_messages.size == 1 && @order.errors[:terms_and_conditions].present?
     = render 'orders/form/accept_terms', f: f
   - else
-    h3.form-error You can use the back button below to change your input.
+    h3.form-error = t('.use_back_button_to_fix')
   p
     br
 
 - else
-  markdown:
-    Please check your details carefully. If everything looks good, you can proceed to checkout.
+  p = t('.please_check')
 
   = render @order
 
-  p Click "Continue" to proceed to checkout. Click "Back" to make changes.
+  p = t('.click_continue', continue: t(:continue_button), back: t(:back_button))
 
 = f.hidden_field :confirmed_at, value: DateTime.now

@@ -48,6 +48,6 @@ class Admin::StudentsController < Admin::AdminController
   def student_params
     params.require(:student).
       permit(:first_name, :last_name, :email, :twitter_handle, :github_handle,
-        :birth_date, :remarks, :owns_laptop, :phone_number, :allergies)
+        :birth_date, :remarks, :owns_laptop, :phone_number, :allergies, :occupation)
   end
 end

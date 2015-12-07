@@ -1,0 +1,34 @@
+.inner
+  h3 = t(:other_bootcamps)
+
+- unless current_level == :beginner
+  .inner.program.collapsed
+    .well.beginner
+      h3
+        = t(:beginner_bootcamp)
+        span = t(:beginner_bootcamp_tagline)
+      p = link_to t(:beginner_program), courses_beginner_bootcamp_path, class: 'button'
+
+- unless current_level == :intermediate
+  .inner.program.collapsed
+    .well.intermediate
+      h3
+        = t(:intermediate_bootcamp)
+        span = t(:intermediate_bootcamp_tagline)
+      p = link_to t(:intermediate_program), courses_intermediate_bootcamp_path, class: 'button'
+
+- unless current_level == :advanced
+  .inner.program.collapsed
+    .well.advanced
+      h3
+        = t(:advanced_bootcamp)
+        span = t(:advanced_bootcamp_tagline)
+      p = link_to t(:advanced_program), courses_advanced_bootcamp_path, class: 'button'
+
+- unless current_level == :frontend
+  .inner.program.collapsed
+    .well.frontend
+      h3
+        = t(:frontend_bootcamp)
+        span = t(:frontend_bootcamp_tagline)
+      p = link_to t(:frontend_program), courses_frontend_bootcamp_path, class: 'button'

@@ -1,0 +1,26 @@
+.dbc-testimonials
+  margin-top: 100px
+  .testimonial
+    @extend .col-sm-4
+
+    blockquote
+      border: none
+      text-align: center
+
+      q
+        display: block
+        height: 3em
+
+      footer
+        margin-top: 2em
+        color: $gray-darker
+
+        &:before
+          display: none
+
+    .avatar
+      img
+        @extend .img-responsive
+        @extend .img-circle
+        max-width: 150px
+        margin: 0px auto

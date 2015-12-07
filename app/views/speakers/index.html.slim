@@ -2,7 +2,7 @@
 - meta_description "Meet the teachers of Development Bootcamp. Excellent folks who are willing to help voluntarily to bring programming to a broader community. In one week, they will teach you about all the basic parts of a web application."
 - meta_keywords "speakers, development, bootcamp, programming, learn, teach, speaker"
 
-- cache 'speakers-index-intro' do
+- cache [I18n.locale, 'speakers-index-intro'] do
   .dbc-page-header.speakers
     .container-fluid
       .inner
@@ -16,10 +16,10 @@
 
         p
           = link_to 'Apply now', new_speaker_path, class: 'button primary'
-          = link_to 'Check Programs', program_path, class: 'button default'
+          = link_to 'Check Programs', courses_path, class: 'button default'
 
 .dbc-content
-  - cache cache_key_for_speakers do
+  - cache [I18n.locale, cache_key_for_speakers] do
     .dbc-container.dbc-text.dbc-speakers#the-speakers
       .inner.text
         h2 Speakers
@@ -28,7 +28,7 @@
         - @speakers.in_groups_of(2) do |group|
           .inner
             - group.compact.each do |speaker|
-              - cache speaker do
+              - cache [I18n.locale, speaker] do
                 .block.speaker
                   .avatar
                     = image_tag speaker.gravatar_url(size: 512, secure: true), class: "gravatar"
@@ -47,5 +47,5 @@
           p Stay tuned. To be announced shortly.
           p
             = link_to 'Newsletter', newsletter_path, class: 'button default'
-            = link_to 'Check Programs', program_path, class: 'button primary'
+            = link_to 'Check Programs', courses_path, class: 'button primary'
 

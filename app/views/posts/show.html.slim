@@ -3,7 +3,7 @@
 - meta_keywords "development, bootcamp, programming, learn, teach, sponsor"
 - meta_image @post.cover_image.url(:thumb) if @post.cover_image.present?
 
-- cache @post do
+- cache [I18n.locale, @post] do
   .dbc-content
     .dbc-container.dbc-text-cta.alt-color.light-color.dbc-post
       .inner
@@ -29,5 +29,5 @@
       .inner.centered
         h1 Like what you've been reading?
         p Learn more about coding during our Development Bootcamp!
-        = link_to 'Read full program', program_path, class: 'button primary'
-        = link_to 'Get tickets', tickets_path, class: 'button default'
+        = link_to 'Read full program', courses_path, class: 'button primary'
+        = link_to 'Get tickets', enroll_path, class: 'button default'

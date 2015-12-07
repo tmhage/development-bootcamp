@@ -2,55 +2,67 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc><%= root_url %></loc>
-    <lastmod><%= File.ctime(Rails.root.join("app", "views", "static_pages", "about.html.slim")).strftime('%Y-%m-%d') %></lastmod>
+    <lastmod><%= File.ctime(Rails.root.join("app", "views", "static_pages", "home.html.slim")).strftime('%Y-%m-%d') %></lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc><%= root_url %>program</loc>
+    <loc><%= courses_url %></loc>
     <lastmod><%= File.ctime(Rails.root.join("app", "views", "programs", "index.html.slim")).strftime('%Y-%m-%d') %></lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   <url>
-    <loc><%= root_url %>program/level-1</loc>
+    <loc><%= courses_beginner_bootcamp_url %></loc>
     <lastmod><%= File.ctime(Rails.root.join("app", "views", "programs", "level_one.html.slim")).strftime('%Y-%m-%d') %></lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   <url>
-    <loc><%= root_url %>program/level-2</loc>
+    <loc><%= courses_intermediate_bootcamp_url %></loc>
     <lastmod><%= File.ctime(Rails.root.join("app", "views", "programs", "level_two.html.slim")).strftime('%Y-%m-%d') %></lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   <url>
-    <loc><%= root_url %>program/level-3</loc>
+    <loc><%= courses_advanced_bootcamp_url %></loc>
     <lastmod><%= File.ctime(Rails.root.join("app", "views", "programs", "level_three.html.slim")).strftime('%Y-%m-%d') %></lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   <url>
-    <loc><%= root_url %>program/level-4</loc>
-    <lastmod><%= File.ctime(Rails.root.join("app", "views", "programs", "level_four.html.slim")).strftime('%Y-%m-%d') %></lastmod>
+    <loc><%= courses_frontend_bootcamp_url %></loc>
+    <lastmod><%= File.ctime(Rails.root.join("app", "views", "programs", "frontend_bootcamp.html.slim")).strftime('%Y-%m-%d') %></lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   <url>
-    <loc><%= root_url %>tickets</loc>
-    <lastmod><%= File.ctime(Rails.root.join("app", "views", "static_pages", "tickets.html.slim")).strftime('%Y-%m-%d') %></lastmod>
+    <loc><%= enroll_url %></loc>
+    <lastmod><%= File.ctime(Rails.root.join("app", "views", "orders", "new.html.slim")).strftime('%Y-%m-%d') %></lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   <url>
-    <loc><%= root_url %>sponsors</loc>
-    <lastmod><%= Sponsor.all.order("updated_at DESC").first.updated_at.strftime('%Y-%m-%d') %></lastmod>
-    <changefreq>daily</changefreq>
+    <loc><%= contact_url %></loc>
+    <lastmod><%= File.ctime(Rails.root.join("app", "views", "static_pages", "contact.html.slim")).strftime('%Y-%m-%d') %></lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  <url>
+    <loc><%= team_url %></loc>
+    <lastmod><%= File.ctime(Rails.root.join("app", "views", "static_pages", "team.html.slim")).strftime('%Y-%m-%d') %></lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  <url>
+    <loc><%= newsletter_url %></loc>
+    <lastmod><%= File.ctime(Rails.root.join("app", "views", "static_pages", "newsletter.html.slim")).strftime('%Y-%m-%d') %></lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   <% Page.published.each do |page| %>
     <url>
-      <loc><%= root_url %>pages/<%= page.slug %></loc>
+      <loc><%= page_url(page) %></loc>
       <lastmod><%= page.updated_at.strftime('%Y-%m-%d') %></lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.5</priority>

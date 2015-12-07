@@ -15,57 +15,40 @@ noscript
 .dbc-content
   .dbc-container.dbc-text
     .inner.text
-      h1 Thank you for your #{@order.payment && @order.payment.paid? ? 'payment' : 'order'}, #{@order.billing_name}!
+      h1 = t('.title', name: @order.billing_name, payment_or_order: @order.payment && @order.payment.paid? ? t('.payment') : t('.order'))
 
       - if @order.payment && @order.payment.paid?
-        markdown:
-          Your payment was processed, and you will receive your #{@order.cart_sum_tickets} #{t('tickets', count: @order.cart_sum_tickets)} shortly by email to **#{@order.billing_email}**.
+        = tmd('.paid_message', count: @order.cart_sum_tickets, billing_email: @order.billing_email)
 
         - if @order.cart_sum_tickets > 1
-          markdown:
-            Individual tickets will also be sent to the individual students: **#{@order.students.pluck(:email).to_sentence}**.
+          = tmd('.individual_students_sent', student_emails: @order.students.pluck(:email).to_sentence)
 
         - if Rails.env.production?
           javascript:
             var google_conversion_value = #{@order.cart_sum_total.to_f};
 
       - elsif @order.payment && @order.payment.cancelled?
-        markdown:
-          Your payment was **cancelled**. If this was a mistake, please retry your payment by clicking
-          the payment button below.
+        = tmd('.cancelled_message')
 
-        p = payment_link_to 'Pay now!', @order, class: 'button primary'
+        p = payment_link_to t('.pay_now'), @order, class: 'button primary'
 
       - elsif @order.payment && @order.payment.expired?
-        markdown:
-          Your payment has **expired**. If this was unintentional, please retry your payment by clicking
-          the payment button below.
+        = tmd('.expired_message')
 
-        p = payment_link_to 'Pay now!', @order, class: 'button primary'
+        p = payment_link_to t('.pay_now'), @order, class: 'button primary'
 
       - elsif @order.payment && @order.payment.open?
-        markdown:
-          You will receive an email with more information as soon as we have processed your
-          payment.
+        = tmd('.still_open_message')
 
       - else
-        markdown:
-          So sorry, something went wrong and we were not able to track your payment. If you did not pay,
-          please click the button below to make a payment. If you _did_ already pay, however,
-          you should _not_ pay again! Contact us via phone or email. Details below.
+        = tmd('.payment_error_message')
 
-        p = payment_link_to 'Pay now!', @order, class: 'button primary'
+        p = payment_link_to t('.pay_now'), @order, class: 'button primary'
 
       p
        br
 
       .support-box
-        markdown:
-          If you have _any_ questions about your order, the program, or
-          anything else we might be able to help you with, feel free to contact us:
-
-          Email: [support@developmentbootcamp.nl](mailto:support@developmentbootcamp.nl)
-
-          Phone: **+31681910218**
+        = tmd('.any_questions', email: t(:label_email), phone: t(:label_phone))
 
     = javascript_include_tag '//www.googleadservices.com/pagead/conversion.js'

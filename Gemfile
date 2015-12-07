@@ -36,15 +36,16 @@ gem 'rqrcode_png'
 gem 'mandrill-api'
 gem 'sidekiq'
 gem 'sinatra'
+gem 'route_translator'
 
-gem 'rails_12factor', group: :production
+group :production, :staging do
+  gem 'rails_12factor'
+end
 
 group :development do
   gem 'spring'
   gem 'quiet_assets'
 end
-
-gem 'codeclimate-test-reporter', group: :test, require: nil
 
 group :development, :test do
   gem 'pronto'
@@ -62,6 +63,7 @@ group :test do
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'webmock'
+  gem 'codeclimate-test-reporter', require: nil
 end
 
 gem 'puma'

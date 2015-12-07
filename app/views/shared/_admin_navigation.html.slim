@@ -1,5 +1,5 @@
-.navbar.navbar-inverse.navbar-fixed-top
-  .container
+nav.navbar.navbar-inverse.navbar-fixed-top
+  .container-fluid
     .navbar-header
       button.navbar-toggle type='button' data-toggle='collapse' data-target='.navbar-collapse'
         span.sr-only
@@ -10,32 +10,39 @@
       = link_to admin_pages_path, :class => 'navbar-brand' do
         = fa_icon "trophy fw"
         | DBC
-    .collapse.navbar-collapse
+    #admin-navbar.collapse.navbar-collapse
       ul.nav.navbar-nav
         = menu_item_for admin_orders_path do
           = fa_icon 'heart fw'
           | Orders
           span.badge =< Order.count
-        = menu_item_for admin_pages_path do
-          = fa_icon 'bookmark fw'
-          | Pages
-        = menu_item_for admin_speakers_path do
-          = fa_icon 'heart fw'
-          | Speakers
-          span.badge =< Speaker.count
-        = menu_item_for admin_sponsors_path do
-          = fa_icon 'heart fw'
-          | Sponsors
-          span.badge =< Sponsor.count
-        = menu_item_for admin_discount_codes_path do
-          = fa_icon 'heart fw'
-          | Promo codes
+        = menu_dropdown_for 'Content' do
+          = menu_item_for admin_pages_path do
+            = fa_icon 'bookmark fw'
+            | Pages
+          = menu_item_for admin_reviews_path do
+            = fa_icon 'star fw'
+            | Reviews
         = menu_item_for admin_bootcamps_path do
           = fa_icon 'mortar-board fw'
           | Bootcamps
-        = menu_item_for admin_users_path do
-          = fa_icon 'users fw'
-          | Team
+        = menu_dropdown_for 'Marketing' do
+          = menu_item_for admin_sponsors_path do
+            = fa_icon 'heart fw'
+            | Sponsors
+          = menu_item_for admin_discount_codes_path do
+            = fa_icon 'heart fw'
+            | Promo codes
+        = menu_dropdown_for 'People' do
+          = menu_item_for admin_users_path do
+            = fa_icon 'users fw'
+            | Team
+          = menu_item_for admin_students_path do
+            = fa_icon 'mortar-board fw'
+            | Students
+          = menu_item_for admin_speakers_path do
+            = fa_icon 'bullhorn fw'
+            | Speakers
         = menu_item_for root_path do
           = fa_icon 'desktop fw'
         = menu_item_for edit_user_registration_path do

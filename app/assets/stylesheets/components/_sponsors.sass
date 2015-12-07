@@ -1,15 +1,14 @@
-.dbc-sponsors
-  background: $dark-purple
+.footer
+  .sponsors
+    @extend .row
+    text-align: center
 
-  p
-    color: $gray-lighter
+    .sponsor
+      display: inline-block
+      margin-right: 2em
+      height: 45px
 
-  .sponsor
-    @extend .col-xs-6
-    @extend .col-sm-4
-    height: 100px
-
-    img
-      @extend .img-responsive
-      max-height: 100px
-      margin: 0px auto
+      img
+        @extend .img-responsive
+        max-height: 45px
+        margin: 0px auto

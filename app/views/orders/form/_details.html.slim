@@ -1,14 +1,15 @@
-h2
-  => fa_icon 'globe fw'
-  | Billing Details
+.block-title
+  h2
+    => fa_icon 'globe fw'
+    = t(:billing_details)
 
-= f.alert_message "Please fix the errors below."
-= f.text_field :billing_name, label: 'Full name'
-= f.text_field :billing_company_name, required: false, label: 'Company name (optional)', help: 'Not allowed for community tickets.'
-= f.text_field :billing_email, label: 'Email'
-= f.text_field :billing_address, label: 'Address'
-= f.text_field :billing_postal, label: 'Postal code'
-= f.text_field :billing_city, label: 'City'
-= f.country_select :billing_country, priority_countries: ['NL', 'DE', 'BE', 'GB'], label: 'Country'
-= f.text_field :billing_phone, label: 'Phone number'
+= f.alert_message t(:please_fix_errors_below)
+= f.text_field :billing_name
+= f.text_field :billing_company_name, required: false, help: t(:form_optional)
+= f.text_field :billing_email
+= f.text_field :billing_address
+= f.text_field :billing_postal
+= f.text_field :billing_city
+= f.country_select :billing_country, priority_countries: ['NL', 'DE', 'BE', 'GB']
+= f.text_field :billing_phone
 = render 'orders/form/accept_terms', f: f

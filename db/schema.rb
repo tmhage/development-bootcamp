@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151014102444) do
+ActiveRecord::Schema.define(version: 20151207110936) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -102,6 +102,8 @@ ActiveRecord::Schema.define(version: 20151014102444) do
     t.boolean  "published"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "dutch_version"
+    t.string   "dutch_title"
   end
 
   add_index "pages", ["slug"], name: "index_pages_on_slug", unique: true, where: "(published = true)", using: :btree
@@ -120,6 +122,21 @@ ActiveRecord::Schema.define(version: 20151014102444) do
 
   add_index "posts", ["slug"], name: "index_posts_on_slug", unique: true, using: :btree
   add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
+
+  create_table "reviews", force: true do |t|
+    t.integer  "student_id"
+    t.string   "avatar"
+    t.integer  "rating"
+    t.integer  "bootcamp_id"
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "language"
+    t.datetime "original_date"
+  end
+
+  add_index "reviews", ["bootcamp_id"], name: "index_reviews_on_bootcamp_id", using: :btree
+  add_index "reviews", ["student_id"], name: "index_reviews_on_student_id", using: :btree
 
   create_table "speakers", force: true do |t|
     t.string   "first_name"
@@ -170,6 +187,7 @@ ActiveRecord::Schema.define(version: 20151014102444) do
     t.uuid     "identifier"
     t.boolean  "owns_laptop",     default: false
     t.text     "phone_number"
+    t.string   "occupation"
   end
 
   add_index "students", ["identifier"], name: "index_students_on_identifier", using: :btree

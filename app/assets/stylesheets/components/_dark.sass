@@ -1,0 +1,35 @@
+.dbc-dark
+  .row
+    background-color: $gray-dark
+    color: $gray-lighter
+    border-radius: 4px
+
+  h2
+    font-size: 2.4em !important
+    letter-spacing: 2px
+
+    span
+      color: $gray-light
+
+  p
+    @extend .text-muted
+    font-size: 1.1em
+
+  .text,
+  .img
+    padding-top: 2em
+    padding-bottom: 2em
+
+  img
+    @extend .img-responsive
+
+  .left
+    @extend .col-sm-6
+    @extend .col-md-push-6
+
+    h2
+      margin-top: 0
+
+  .right
+    @extend .col-sm-6
+    @extend .col-md-pull-6

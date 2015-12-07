@@ -1,167 +1,153 @@
-- title "Program Level One - Beginner Week"
-- meta_description "Learn the first steps of writing code in an awesome program of just one week. Zero to developer in three sessions of a week."
-- meta_keywords "program, terminal, unix, git, testing, contest, job, development, bootcamp, programming, learn, teach, sponsor"
+- title t('.page_title')
+- meta_description t('.meta_description')
+- meta_keywords t('.meta_keywords')
 
-- cache 'programs/level-1' do
-  .dbc-page-header.program
-    .container-fluid
+- cache [I18n.locale, 'programs/level-1'] do
+  .dbc-program
+    .dbc-container
+      .inner#program
+        .block-title
+          h2
+            = t(:beginner_bootcamp)
+            span = t(:beginner_bootcamp_tagline)
+
       .inner
-        h1#level-one Level One. Beginner Week.
+        .row
+          .description
 
-        markdown:
-          During the first week of classes, you will learn everything you need
-          to start your journey as a programmer. You will learn many, many basics
-          that will help you find your way around all the most widely used tools,
-          but most importantly:
+            = tmd(:beginner_bootcamp_description)
 
-          **We will teach you how to THINK like a programmer.**
+            = render 'enroll_cta'
 
-        p
-          = link_to "Read on", "#start", class: "button primary"
-          = link_to "Other Programs", program_path, class: "button default"
+            .course-type
+              .icon = fa_icon('clock-o')
+              = tmd(:this_is_an_immersive_course)
 
-  .dbc-content.dbc-workshop.beginner
-    .dbc-container.dbc-text#start
-      .inner.normal
+          .dbc-day.day-one
+            .day-inner
+              .date
+                | DAY 1
+                .pull-right Sunday
+              .activity
+                h2 Frontend
+                p The Face of a Website
+              .image
+                = image_tag 'courses/day1-frontend.png'
+              .topics
+                ul
+                  li Page structure with HTML
+                  li Styling and design with CSS
 
-        h2
-          => fa_icon 'circle-o-notch'
-          | Level One outcome
-        markdown:
-          - Navigate around the workspace using command line
-          - Maintain the versions of your code
-          - Use object oriented programming approach
-          - Implement functionalities using Ruby
-          - Be comfortable with automated tests
+        .row
+          .dbc-day.day-two
+            .day-inner
+              .date
+                | DAY 2
+                .pull-right Monday
+              .activity
+                h2 Terminal
+                p Behind the Scenes
+              .image
+                = image_tag 'courses/day2-terminal.png'
+              .topics
+                ul
+                  li Text commands
+                  li Connecting to servers
+                  li Sharing code with repos
 
-        br
+          .dbc-day.day-three
+            .day-inner
+              .date
+                | DAY 3
+                .pull-right Tuesday
+              .activity
+                h2 Basic Programming
+                p Meet Ruby
+              .image
+                = image_tag 'courses/day3-ruby.png'
+              .topics
+                ul
+                  li Meet Ruby, a new language
+                  li Create an Oracle
 
-        p
-          = link_to "Buy Tickets", tickets_path, class: "button primary"
-          = link_to "Read on", "#read-on", class: "button default"
+          .dbc-day.day-four
+            .day-inner
+              .date
+                | DAY 4
+                .pull-right Wednesday
+              .activity
+                h2 Loops and Breaks
+                p While We Wait
+              .image
+                = image_tag 'courses/day4-loops.png'
+              .topics
+                ul
+                  li Loops make your head spin
+                  li It's gonna be... wait for it!
 
-    .dbc-container.dbc-text-cta
-      .inner.block-with-image#read-on
-        .image
-          h1 = fa_icon "terminal fw 4x"
-        .content
-          h2 The (UNIX) Terminal
+          .dbc-day.day-five
+            .day-inner
+              .date
+                | DAY 5
+                .pull-right Thursday
+              .activity
+                h2 Object Oriented Programming
+                p The Family Tree
+              .image
+                = image_tag 'courses/day5-oop.png'
+              .topics
+                ul
+                  li Why OOP?
+                  li Structure and history
 
-          markdown:
-            This is the first of many things that you will need to get used to:
-            The Terminal. We will help you understand the power of this **window into the heart of
-            a computer**. You will learn about powerful tools that you will never forget
-            and will make the rest of your life behind a computer a lot easier.
+          .dbc-day.day-six
+            .day-inner
+              .date
+                | DAY 6
+                .pull-right Friday
+              .activity
+                h2 Back to Front
+                p With Ruby on Rails
+              .image
+                = image_tag 'courses/day6-ror.png'
+              .topics
+                ul
+                  li Models
+                  li Controllers
+                  li Views
 
-            Practical example: Creating directories and moving around using your command line.
+          .dbc-day.day-seven
+            .day-inner
+              .date
+                | DAY 7
+                .pull-right Saturday
+              .activity
+                h2 Hackathon:
+                p And the Winner is..!
+              .image
+                = image_tag 'courses/day7-hackathon.png'
+              .topics
+                ul
+                  li A Contest!
+                  li Demos and Prizes
+                  li Closing thoughts
+        .row
+          .col-xs-12
+            #examples.callout.callout-info
+              h3 What you can do after 7 days
 
-    .dbc-container.dbc-text
-      .inner.block-with-image
-        .image
-          h1 = fa_icon "code-fork fw 4x"
-        .content
-          h2 Version Control with Git
+              p Wondering what others built after only a week of learning to code? Check out the apps they built in a couple of hours during their last Hackathon. They are not perfect, nor are they finished, but it's pretty impressive considering they started with zero experience!
 
-          markdown:
-            Ever lost some valuable work due to a backup failure? How about accidentally
-            deleted a file? What about collaboration? Working with multiple
-            people on the same file from different parts of the world in different time zones.
+              h4 Examples from former students
 
-            **Withouth proper versioning software, programming would be an extremely expensive, and
-            very frustrating hobby**. Git is a widely adopted, and certainly one of the best systems
-            around. The power of Git is another thing that you will never do without after you
-            mastered it in our classes.
+              ul
+                li = link_to 'Pomodoro Parrot', 'http://pomodoro.cloud.codaisseur.org', target: :blank
+                li = link_to 'Coffee News', 'http://coffeenews.cloud.codaisseur.org', target: :blank
+                li = link_to 'Beer of the Week', 'http://beer.cloud.codaisseur.org/', target: :blank
+                li = link_to 'Got Sacked?', 'http://gotsacked.cloud.codaisseur.org/', target: :blank
 
-            Practical example: Create and maintain your own repository.
+            = render 'enroll_cta'
 
-    .dbc-container.dbc-text-cta
-      .inner.block-with-image
-        .image
-          h1 = fa_icon "group fw 4x"
-        .content
-          h2 Open Source Software (clinic)
+            = render 'scholarship_program', course: 'Beginner Bootcamp'
 
-          markdown:
-            Sharing is caring. Developers have known this for decades already, and there is an enormous
-            amount of **freely available software around that can help you**. Did you know that most websites
-            run on free, Open Source software?
-
-    .dbc-container.dbc-text
-      .inner.block-with-image
-        .image
-          h1 = fa_icon "code fw 4x"
-        .content
-          h2 Object Oriented Programming
-
-          markdown:
-            What do a Circle, a Square, and a Triangle have in common? They are all Shapes! Learn about
-            **defining objects, and how they relate to others**.
-
-            The object-oriented programming paradigm help us create more **modular software** design and **increases reusability** compared to some other programming paradigms. We will help you find out what that actually means and how can we take advantage of it.
-
-    .dbc-container.dbc-text-cta
-      .inner.block-with-image
-        .image
-          h1 = fa_icon "code fw 4x"
-        .content
-          h2 Basic programming
-
-          markdown:
-            In the first programming classes you will learn about the **building blocks of a program**:
-            variables, data types, output, and iterating over collections that hold data.
-
-            You will learn the basics of programming and a new language! This may sound hard, but it
-            is not! It is just like English, and **you will see that you can write simple programs that
-            can do stuff for you after just a couple of hours**!
-
-            Practical example: Holidays countdown: Writing a small program that calculates how many days are left till your summer holidays.
-
-    .dbc-container.dbc-text
-      .inner.block-with-image
-        .image
-          h1 = fa_icon "check fw 4x"
-        .content
-          h2 Testing your Code with Code
-
-          markdown:
-            How do you check that the code you wrote actually works? **Did you know you can write programs to
-            test your programs**? See how your code comes to live with the basics of testing code.
-
-            Amount of bugs should be as low as possible and **testing** is one of the mechanisms that can help you out in **writing better code**. How should it be done and what is important will be covered in this session.
-
-            Practical example: Test the code for the holiday countdown.
-
-    .dbc-container.dbc-text-cta
-      .inner.block-with-image
-        .image
-          h1 = fa_icon "trophy fw 4x"
-        .content
-          h2 Programming Contest
-
-          markdown:
-            On this last day, you will **work together on a real programming contest**.
-            You will use everything you have learned in this entire week to
-            collaborate with fellow students. There will be prizes for you if
-            you win that might just change your life!
-
-    .dbc-container.dbc-text
-      .inner.centered
-        h2
-          => fa_icon 'check'
-          | Prerequisites
-
-        markdown:
-          None! :) Well.. You are eager to know about writing code and you are
-          willing to spend some time and money on it. A learning program packed
-          with new knowledge does not scare you.
-
-          *Keywords: Basic Programming, Git, Terminal*
-
-          Not your level? Check out other programs below:
-
-        p
-          = link_to "Level 1", program_level_1_path, class: "button primary"
-          = link_to "Level 2", program_level_2_path, class: "button default"
-          = link_to "Level 3", program_level_3_path, class: "button default"
-
-    = render 'static_pages/cta_students'
+      = render 'other_bootcamps', current_level: :beginner

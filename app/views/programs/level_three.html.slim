@@ -1,183 +1,149 @@
-- title "Program Level Three - Advanced Week"
-- meta_description "Learn the first steps of writing code in an awesome program of just one week. Zero to developer in three sessions of a week."
-- meta_keywords "program, contest, job, development, bootcamp, programming, learn, teach, sponsor"
+- title t('.page_title')
+- meta_description t('.meta_description')
+- meta_keywords t('.meta_keywords')
 
-- cache 'programs/level-3' do
-  .dbc-page-header.program
-    .container-fluid
+- cache [I18n.locale, 'programs/level-2'] do
+  .dbc-program
+    .dbc-container
+      .inner#program
+        .block-title
+          h2
+            = t(:advanced_bootcamp)
+            span = t(:advanced_bootcamp_tagline)
+
       .inner
-        h1#level-three Level Three.
+        .row
+          .description
+            = tmd(:advanced_bootcamp_description)
 
-        markdown:
-          You have been around for a while, web development and Ruby are something
-          you work with on daily basis but you would love to learn more? With this program
-          you will dive deeper into what you already know.
+            = render 'enroll_cta'
 
-        p
-          = link_to "Read on", "#start", class: "button primary"
-          = link_to "Other Programs", program_path, class: "button default"
+            .course-type
+              .icon = fa_icon('clock-o')
+              = tmd(:this_is_an_immersive_course)
 
-  .dbc-content.dbc-workshop.advanced
-    .dbc-container.dbc-text#start
-      .inner.normal
-        h2
-          => fa_icon 'spinner'
-          | Level Three outcome
-        markdown:
-          - Learn about and use advanced technologies
-          - Develop your first full stack application
-          - Sharpen your skills to a professional level
-          - Connect with professional developers
-          - Hopefully find that internship to get going!
+          .dbc-day.day-one
+            .day-inner
+              .date
+                | DAY 1
+                .pull-right Sunday
+              .activity
+                h2 Javascript II
+                p Advanced Javascript
+              .image
+                = image_tag 'courses/day1-frontend.png'
+              .topics
+                ul
+                  li Single page applications
 
-        br
+        .row
+          .dbc-day.day-two
+            .day-inner
+              .date
+                | DAY 2
+                .pull-right Monday
+              .activity
+                h2 Backend Javascript
+                p Front to Back
+              .image
+                = image_tag 'courses/day2-terminal.png'
+              .topics
+                ul
+                  li NodeJS and NPM
+                  li ExpressJS
 
-        p
-          = link_to "Buy Tickets", tickets_path, class: "button primary"
-          = link_to "Read on", "#read-on", class: "button default"
+          .dbc-day.day-three
+            .day-inner
+              .date
+                | DAY 3
+                .pull-right Tuesday
+              .activity
+                h2 Websockets
+                p Realtime Updates
+              .image
+                = image_tag 'courses/day4-loops.png'
+              .topics
+                ul
+                  li Using Websockets
+                  li Securing Websockets
 
-    .dbc-container.dbc-text-cta
-      .inner.block-with-image#read-on
-        .image
-          h1 = fa_icon "css3 fw 4x"
-        .content
-          h2 Advanced CSS and SASS
+          .dbc-day.day-four
+            .day-inner
+              .date
+                | DAY 4
+                .pull-right Wednesday
+              .activity
+                h2 Delayed Jobs
+                p While We Wait
+              .image
+                = image_tag 'courses/day4-loops.png'
+              .topics
+                ul
+                  li Speed things up with delayed jobs
+                  li It's gonna be... wait for it!
 
-          markdown:
-            You have a clear vision of how is your system going to look like, you
-            created some **mock-ups** and wrote down the **user stories**. Modular
-            approach is very important and in this lesson we will see how to extract
-            the mockup elements into **components** and how to create nice and neat
-            **CSS** file structure and organize code. Sytem has to be flexible enough
-            to adapt to a new view as soon as it gets extended.
+          .dbc-day.day-five
+            .day-inner
+              .date
+                | DAY 5
+                .pull-right Thursday
+              .activity
+                h2 Object Oriented Javascript
+                p The Family Tree
+              .image
+                = image_tag 'courses/day5-oop.png'
+              .topics
+                ul
+                  li Why OOP?
+                  li Intro to Coffeescript
 
-            **Practical example**: Implement Button as a component in a form module.
+          .dbc-day.day-six
+            .day-inner
+              .date
+                | DAY 6
+                .pull-right Friday
+              .activity
+                h2 Back to Front
+                p With MeteorJS
+              .image
+                = image_tag 'courses/day6-ror.png'
+              .topics
+                ul
+                  li Full stack Javascript
+                  li NoSQL databases
 
-    .dbc-container.dbc-text
-      .inner.block-with-image
-        .image
-          h1 = fa_icon "dot-circle-o fw 4x"
-        .content
-          h2 Ruby metaprogramming
+          .dbc-day.day-seven
+            .day-inner
+              .date
+                | DAY 7
+                .pull-right Saturday
+              .activity
+                h2 Hackathon:
+                p And the Winner is..!
+              .image
+                = image_tag 'courses/day7-hackathon.png'
+              .topics
+                ul
+                  li A Contest!
+                  li Demos and Prizes
+                  li Closing thoughts
+        .row
+          .col-xs-12
+            #examples.callout.callout-info
+              h3 What you can do after 7 days
 
-          markdown:
-            **Metaprogramming** is approach to programming where the code we write
-            operates on the **code itself** rather than on **data**. It is important to
-            understand how **powerful** this is since it involves **inspecting** and
-            **modifying** a program during **runtime** using constructs exposed by
-            the language.
+              p Wondering what others built after only a week of learning to code? Check out the apps they built in a couple of hours during their last Hackathon. They are not perfect, nor are they finished, but it's pretty impressive considering they started with zero experience!
 
-            In this lesson we will **challenge** ourselves with some **metaprogramming**
-            and prove that it can be very useful if implemented properly.
+              h4 Examples from former students
 
-            **Practical example**: Define a class without a class and def
+              ul
+                li = link_to 'Pomodoro Parrot', 'http://pomodoro.cloud.codaisseur.org', target: :blank
+                li = link_to 'Coffee News', 'http://coffeenews.cloud.codaisseur.org', target: :blank
+                li = link_to 'Beer of the Week', 'http://beer.cloud.codaisseur.org/', target: :blank
+                li = link_to 'Got Sacked?', 'http://gotsacked.cloud.codaisseur.org/', target: :blank
 
-    .dbc-container.dbc-text-cta
-      .inner.block-with-image
-        .image
-          h1 = fa_icon "cloud-upload fw 4x"
-        .content
-          h2 Hosting on a VPS
+            = render 'enroll_cta'
 
-          markdown:
-            Web applications can grow rapidly, the PaaS solution you used in the
-            beginning might not suite your needs a year after, maybe the **cost** grew
-            up enormously or maybe you just wish **more control** over your **web
-            application**.
-            Well, time to migrate to the **VPS**! In this lesson we will teach you
-            how to setup the **server** from scratch, what is important and how to
-            **automate** the entire development process.
+            = render 'scholarship_program', course: 'Advanced Bootcamp'
 
-            **Practical example**: Deploy an app to VPS of choice
-
-    .dbc-container.dbc-text
-      .inner.block-with-image
-        .image
-          h1 = fa_icon "lock fw 4x"
-        .content
-          h2 Networking and Security
-
-          markdown:
-            Since everything is in the **cloud** how can you, as a developer, make sure
-            **no data is harmed** and everything is well **protected?** There are provisions
-            and policies  defined that **prevent and monitor unauthorized access**,
-            misuse, modification, or denial of a computer network and
-            network-accessible resources.
-
-            What tools can you use to be warned about **security flaws** and potential
-            **threats**? How can you **configure** your server and what can you do with your
-            Rails application in order to keep it **safe and untouched**?
-
-            **Practical example**: Identify the weak spot in the presented Rails
-            application.
-
-    .dbc-container.dbc-text-cta
-      .inner.block-with-image
-        .image
-          h1 = fa_icon "recycle fw 4x"
-        .content
-          h2 Advanced Rails and refactoring
-
-          markdown:
-            As you are developing your codebase can get bigger and messier. One of
-            the important concepts of Rails is to keep it **DRY** and if you ever worked
-            on a big project you know how important it is to respect conventions
-            and **best practices** in order to keep it maintainable.
-            This session will be all about best practices in Rails. What **tools** can
-            you use to help yourself, what should you do and what  should you not
-            even think about. How to **slim** your controllers, use **concerns**, how
-            should a **model** look like?
-
-            Time for some **refactoring**!
-
-            **Practical example**: Refactor existing project using the Rails best practices
-
-    .dbc-container.dbc-text
-      .inner.block-with-image
-        .image
-          h1 = fa_icon "compress fw 4x"
-        .content
-          h2 Background jobs
-
-          markdown:
-            Is your system very slow lately? There is a lot of things going on and
-            some **processes** do not depend on user? Maybe you should use a help from the
-            **background workers**?
-
-            All about background jobs will be covered within this topic. What is usually
-            a **backround job**, what **tools** to use, how to do **schedule** them?
-            What to do when your system depends on **third party services**, and much more!
-
-            **Practical example**: Implement simple web crawler that updates data
-            in your database
-
-    .dbc-container.dbc-text
-      .inner.centered
-        h2
-          => fa_icon 'check'
-          | Prerequisites
-
-        markdown:
-          You know how to maintain versions of the codebase and
-          you know your way around the command line. You know what OOP stands for
-          and how to apply it using Ruby. You see automated tests as just a part
-          of the development process. Besides Ruby programing language you know
-          how to write and combine HTML components and CSS.
-
-          You created a Rails application, you understand how MVC works and
-          creating attractive and friendly user interfaces is not an issue. You
-          know how to recognize system requirements, organize your database and
-          associate models. Javascript is your friend and you already have a web
-          application running on some PaaS.
-
-          *Keywords: Command line, Git, Ruby, OOP, MiniTest, Rails, MVC, ERB,
-          HTTP, CSS, Javascript, TDD, BDD, PaaS, Database, ActiveRecord*
-
-          Not your level? Check out other programs below:
-
-        p
-          = link_to "Level 1", program_level_1_path, class: "button default"
-          = link_to "Level 2", program_level_2_path, class: "button default"
-          = link_to "Level 3", program_level_3_path, class: "button primary"
-
-    = render 'static_pages/cta_students'
+      = render 'other_bootcamps', current_level: :advanced

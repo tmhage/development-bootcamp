@@ -1,28 +1,41 @@
-h2
-  => fa_icon 'ticket fw'
-  | Choose your tickets
-
-= f.alert_message "Please fix the errors below."
+= f.alert_message t(:please_fix_errors_below)
 - if @order.cart.present?
   - values = @order.cart
 - else
   - values = {}
 
+  .block-title
+    h2 = t(:title_pick_seats)
+    = tmd(:tickets_intro)
+
 - if @bootcamps.count > 0
-  .row#select_bootcamp
-    = f.collection_radio_buttons :bootcamp_id, @bootcamps, :id, :name_with_dates, prompt: true, label: 'Please select a date and level:'
+  .tickets#select_bootcamp
+    = f.hidden_field :bootcamp_id
+    - @bootcamps.each do |bootcamp|
+      .ticket class="#{bootcamp.level_name} #{@order.bootcamp_id == bootcamp.id ? "ticket-selected" : ""}" data-bootcamp-id=bootcamp.id
+        .outer role="button"
+          .tear.tear-top
+          .inset
+            h4 = bootcamp.name
+            p.date
+              => fa_icon('calendar')
+              span = bootcamp.readable_date_range
 
-- trinkets = { community: { class: 'has-success', icon: 'users', help: 'Community Tickets are for individuals only, no corporate entities.' }, normal: { class: 'has-warning', icon: 'ticket', help: 'Through the corporate program we keep the community ticket price for individuals without access to financial assistance by employers as low as possible.' }, supporter: { class: 'has-error', icon: 'heart', help: 'Supporter tickets are for those who want to help our community efforts. All extra money that comes in goes back into the community effort to help more people code.' } }
+            - bootcamp.ticket_prices.each do |name, price|
+              - discounted_price = price.to_f
+              - if @order.has_valid_discount_code? && name != :community
+                - discounted_price = discounted_price * (1 - (@order.discount_code.discount_percentage / 100.0))
+              = f.number_field :cart, name: "order[cart][#{name}]", id: "order_cart_#{name}", placeholder: 1, value: values[name] || 1, hide_label: true
+              p.price data-price=discounted_price.to_f = number_to_currency((@order.cart && @order.cart[name]) ? @order.cart[name].to_i * discounted_price : discounted_price)
+              - if discounted_price < price
+                p
+                  .old-price data-old-price=price.to_f = number_to_currency(price)
+                  strong.discount #{@order.discount_code.discount_percentage}% DISCOUNT
 
-- @order.ticket_prices.each do |name, price|
-  - discounted_price = price
-  - if @order.has_valid_discount_code? && name != :community
-    - discounted_price = discounted_price * (1 - (@order.discount_code.discount_percentage / 100.0))
-  .row
-    = f.number_field :cart, name: "order[cart][#{name}]", id: "order_cart_#{name}", placeholder: 0, value: values[name], hide_label: true, wrapper_class: trinkets[name][:class], append: "#{fa_icon(trinkets[name][:icon])} #{@order.ticket_prices.size > 1 ? name.to_s.humanize : ''} Tickets (#{number_to_currency(discounted_price)}#{discounted_price == price ? '' : ", <strong>#{@order.discount_code.discount_percentage}% DISCOUNT</strong>"})#{ name == :community ? '*' : ''}".html_safe, help: @order.ticket_prices.size > 1 ? trinkets[name][:help] : nil
+          .tear.tear-bottom
 
 .row
-  = f.text_field :promo_code, label: 'Promo code (optional):'
+  = f.text_field :promo_code, label: false, placeholder: t('.placeholder_promo_code')
 
 div style="display:none"
   = f.hidden_field :validate_promo_code, value: ''

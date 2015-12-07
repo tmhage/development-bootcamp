@@ -1,0 +1,40 @@
+= form_for([:admin, @review], :html => { :class => "form-horizontal" }) do |f|
+  - if @review.errors.any?
+    .alert.alert-danger.alert-dismissable
+      button.close type="button" data-dismiss="alert" aria-hidden="true"
+        | &times;
+      h4= "#{pluralize(@review.errors.count,"error")} prohibited this Review from being saved:"
+      ul
+        - @review.errors.full_messages.each do |msg|
+          li= msg
+  .form-group
+    = f.label :student, :class => "col-sm-2 control-label"
+    .col-sm-10
+      = f.select :student_id, Student.all.map{|s| [s.full_name, s.id] }, :class => "form-control"
+  .form-group
+    = f.label :avatar, :class => "col-sm-2 control-label"
+    .col-sm-10
+      = f.text_field :avatar, :class => "form-control"
+  .form-group
+    = f.label :rating, :class => "col-sm-2 control-label"
+    .col-sm-10
+      = f.number_field :rating, :class => "form-control"
+  .form-group
+    = f.label :bootcamp, :class => "col-sm-2 control-label"
+    .col-sm-10
+      = f.select :bootcamp_id, Bootcamp.all.map{|b| [b.name_with_dates, b.id] }, :class => "form-control"
+  .form-group
+    = f.label :body, :class => "col-sm-2 control-label"
+    .col-sm-10
+      = f.text_area :body, :class => "form-control"
+  .form-group
+    = f.label :original_date, :class => "col-sm-2 control-label"
+    .col-sm-10
+      = f.date_select :original_date, :class => "form-control"
+  .form-group
+    = f.label :language, :class => "col-sm-2 control-label"
+    .col-sm-10
+      = f.select :language, [:en, :nl], :class => "form-control"
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      = f.submit :class => "btn btn-primary"

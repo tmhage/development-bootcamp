@@ -1,0 +1,38 @@
+.page-header
+  = link_to admin_reviews_path, :class => 'btn btn-default' do
+    span.glyphicon.glyphicon-list-alt
+    |  Back
+  = link_to edit_admin_review_path(@review), :class => 'btn btn-primary' do
+    span.glyphicon.glyphicon-pencil
+    |  Edit
+  h1
+    | Show Review
+dl.dl-horizontal
+  dt
+    | Student:
+  dd
+    = @review.student.full_name
+  dt
+    | Avatar:
+  dd
+    = @review.avatar
+  dt
+    | Rating:
+  dd
+    = @review.rating
+  dt
+    | Bootcamp:
+  dd
+    = @review.bootcamp.name_with_dates
+  dt
+    | Body:
+  dd
+    = @review.body
+  dt
+    | Original date:
+  dd
+    = @review.original_date
+  dt
+    | Language:
+  dd
+    = @review.language

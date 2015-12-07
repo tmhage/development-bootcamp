@@ -14,10 +14,4 @@
 //= require jquery-ujs/src/rails
 //= require bootstrap-sass/assets/javascripts/bootstrap-sprockets
 //= require bootstrap
-//= require froala_editor.min
-//= require plugins/block_styles.min
-//= require jquery.countdown.min
-//= require_tree .
-
-
-$('#countdown').countdown({ date: '7/12/2015 13:00:00' });
+//= require_tree ./frontend

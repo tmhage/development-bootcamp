@@ -4,26 +4,30 @@ class ProgramsController < ApplicationController
   def index; end
 
   def level_one
-    redirect_to program_path, status: :moved_permanently
+    @level = 'Beginner'
+    @bootcamps = Bootcamp.beginner.published
   end
 
   def level_two
-    redirect_to program_path, status: :moved_permanently
+    @level = 'Intermediate'
+    @bootcamps = Bootcamp.intermediate.published
   end
 
   def level_three
-    redirect_to program_path, status: :moved_permanently
+    @level = 'Advanced'
+    @bootcamps = Bootcamp.advanced.published
   end
 
-  def level_four
-    redirect_to program_path, status: :moved_permanently
+  def frontend_bootcamp
+    @level = 'Frontend'
+    @bootcamps = Bootcamp.frontend.published
   end
 
   private
 
   def set_subnav
     @nav_items = {
-      'Overview' => program_path
+      'Overview' => courses_path
     }
   end
 end
