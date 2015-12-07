@@ -134,17 +134,17 @@
         .row
           .col-xs-12
             #examples.callout.callout-info
-              h3 What you can do after 7 days
+              h3 = t('.what_you_can_build')
 
-              p Wondering what others built after only a week of learning to code? Check out the apps they built in a couple of hours during their last Hackathon. They are not perfect, nor are they finished, but it's pretty impressive considering they started with zero experience!
+              p = t('.wondering_what_others_built')
 
-              h4 Examples from former students
+              h4 = t('.examples_of_former_students')
 
               ul
-                li = link_to 'Pomodoro Parrot', 'http://pomodoro.cloud.codaisseur.org', target: :blank
-                li = link_to 'Coffee News', 'http://coffeenews.cloud.codaisseur.org', target: :blank
-                li = link_to 'Beer of the Week', 'http://beer.cloud.codaisseur.org/', target: :blank
-                li = link_to 'Got Sacked?', 'http://gotsacked.cloud.codaisseur.org/', target: :blank
+                li = link_to 'Pomodoro Parrot', 'http://pomodoro.cloud.codaisseur.com', target: :blank
+                / li = link_to 'Coffee News', 'http://coffeenews.cloud.codaisseur.com', target: :blank
+                li = link_to 'Beer of the Week', 'http://beer.cloud.codaisseur.com/', target: :blank
+                li = link_to 'Got Sacked?', 'http://gotsacked.cloud.codaisseur.com/', target: :blank
 
             = render 'enroll_cta'
 

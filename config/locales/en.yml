@@ -350,6 +350,9 @@ en:
       page_title: "Beginner Development Bootcamp - Learn Coding for Beginners"
       meta_description: "Learn the first steps of writing code in an awesome program of just one week. Zero to developer in three sessions of a week."
       meta_keywords: "program, terminal, unix, git, testing, contest, job, development, bootcamp, programming, learn, teach, sponsor"
+      what_you_can_build: What you can do after 7 days
+      wondering_what_others_built: Wondering what others built after only a week of learning to code? Check out the apps they built in a couple of hours during their last Hackathon. They are not perfect, nor are they finished, but it's pretty impressive considering they started with zero experience!
+      examples_of_former_students: Examples from former students
 
     level_two:
       page_title: "Intermediate Development Bootcamp - Learn Coding for Beginners"

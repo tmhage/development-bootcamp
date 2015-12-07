@@ -369,6 +369,9 @@ nl:
       page_title: "Beginner Development Bootcamp - Programmeren voor Beginners"
       meta_description: "Learn the first steps of writing code in an awesome program of just one week. Van nul naar junior developer in drie cursussen van één week."
       meta_keywords: "programma, terminal, unix, git, testen, wedstrijd, baan, bootcamp, programmeren, leren, tech hybrid, junior developer"
+      what_you_can_build: Wat je kan na 7 dagen
+      wondering_what_others_built: Vraag je je af wat anderen gebouwd hebben na maar een week leren coderen? Bekijk de apps die ze bouwden in een paar uur tijdens hun laatste dag Hackathon. Ze zijn natuurlijk niet perfect en ze zijn ook niet helemaal af, maar het geeft je een goed idee van hoe ontzettend veel je kunt leren na zeven dagen als je nog nooit hebt geprogrammeerd!
+      examples_of_former_students: Voorbeelden van oud-studenten
 
     level_two:
       page_title: "Intermediate Development Bootcamp - Programmeren voor Beginners"
