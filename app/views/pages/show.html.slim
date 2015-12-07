@@ -14,7 +14,7 @@
   .dbc-content
     .dbc-container.dbc-text.dbc-page
       .inner
-        h1= @page.title
+        h1= I18n.locale == :nl && @page.dutch_title.present? ? @page.dutch_title : @page.title
         p.meta
           = t(:label_last_updated)
           =< l(@page.updated_at, format: :short)
