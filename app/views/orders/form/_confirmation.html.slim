@@ -2,7 +2,7 @@ h2
   => fa_icon 'check fw'
   = t('.title')
 
-= f.alert_message = t(:please_fix_errors_below)
+= f.alert_message t(:please_fix_errors_below)
 
 - if @order.errors.full_messages.any?
   - if @order.errors.full_messages.size == 1 && @order.errors[:terms_and_conditions].present?
