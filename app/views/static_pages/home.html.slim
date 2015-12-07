@@ -56,6 +56,11 @@
       .inner
         .row
           = render @reviews
+        .row
+          p.pull-right style="margin-top: 1.2em"
+            | Reviews via:
+            =< link_to 'https://www.springest.nl/codaisseur-development-bootcamp#ervaringen' do
+              = image_tag 'springest-logo.png', alt: 'Springest', style: 'height: 2.2em; margin-top: -1.2em'
 
 .dbc-content
   .dbc-container.dbc-quote
