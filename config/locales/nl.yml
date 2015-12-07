@@ -32,15 +32,15 @@ nl:
         activated_at: Activeren
       order:
         billing_name: Volledige naam
-        billing_company_name: Company name
+        billing_company_name: Bedrijfsnaam
         billing_email: Email
-        billing_address: Address
-        billing_postal: Postal code
-        billing_city: City
-        billing_country: Country
-        billing_phone: Phone number
+        billing_address: Adres
+        billing_postal: Postcode
+        billing_city: Stad
+        billing_country: Land
+        billing_phone: Telefoonnummer
       student:
-        allergies: Dietary wishes
+        allergies: Dieetwensen
 
   number:
      currency:
@@ -52,7 +52,7 @@ nl:
 
   routes:
     new: nieuw
-    create: creeer
+    create: creëer
     edit: bewerk
     destroy: verwijder
 
@@ -74,114 +74,108 @@ nl:
     other: tickets
 
   beginner_bootcamp: Beginner Bootcamp
-  beginner_bootcamp_tagline: your kickstart into coding
-  beginner_bootcamp_intro: ...teaches you the basics of programming, and how to think like a programmer. By the end of the week, you will be able to start writing small programs to make your live easier and you will have built your first interactive website.
-  beginner_program: Beginner Program
+  beginner_bootcamp_tagline: jouw programmeer kickstart
+  beginner_bootcamp_intro: ...leert je de basisbeginselen van programmeren en te denken als programmeur. Aan het einde van de week kan je kleine programma's schrijven die je leven makkelijker maken en heb je je eerste interactive website gebouwd.
+  beginner_program: Beginner Programma
   beginner_bootcamp_description: |
-    The Beginner Bootcamp is a unique kickstart into the world
-    of coding. It is for all of you who start coding with little or
-    no experience.
+    De Beginner Bootcamp is een unieke kickstart in de wereld van het programmeren. Het is bedoeld voor diegenen met geen of beperkte programmeer ervaring.
 
-    Whether you want to understand a bit more about programming or
-    want to start changing your career around, this is the best
-    primer you can get: it's cheap, it's short, it's fun, and you
-    learn from the best.
+    Of je nu iets meer wilt begrijpen van programmeren of de basis wilt leggen voor een carriere switch, dit is de beste inleiding die je je kan wensen: het is betaalbaar, kort, leuk en je leert van de beste.
 
-    We will cover all the basic parts of a web application. By the
-    end of the week you will have built your own website, and you
-    will know how to grow and maintain it.
+    We laten alle standaardonderdelen van een web applicatie aan bod komen. Aan het einde van de week heb je je eigen website gebouwd en weet je hoe je deze kan uitbreiden en onderhouden.
 
-    One year of hosting is included in the program so your website
-    will stay online for that time and you will be able to show it
-    to your friends, family, or even start your own business maybe?
+    Een jaar hosting is inbegrepen in de cursus, dus jouw website blijft gedurende die tijd online en je kunt hem laten zien aan je vrienden, familie, of zelfs je eigen bedrijf ermee beginnen misschien?
 
-    Check out the topics on this page. Right now, most of them might
-    seem very foreign to you, but soon you will understand all of this,
-    and it will only take you 7 days, plus our help.
+    Bekijk de onderwerpen of deze website. Nu zullen de meesten je vreemd voorkomen, maar binnenkort begrijp je dit allemaal. En dat allemaal in 7 dagen, met onze hulp.
 
-    Don't linger any longer, enroll in our bootcamp!
+    Treuzel niet langer en schrijf je in voor de Bootcamp!
 
   intermediate_bootcamp: Intermediate Bootcamp
-  intermediate_bootcamp_tagline: build applications that matter
-  intermediate_bootcamp_intro: ...teaches you about building and deploying different types of web applications. On the frontend you learn to build interactive components with Javascript. On the backend we teach you to store and retrieve data from databases.
+  intermediate_bootcamp_tagline: bouw applicaties die er toe doen
+  intermediate_bootcamp_intro: ...leert je over het bouwen en deployen van verschillende types web applicaties. Aan de frontend leer je hoe je interactive componenten kan bouwen met Javascript. Aan de backend leer je hoe je data opslaat in en oproepet uit databases.
   intermediate_program: Intermediate Program
   intermediate_bootcamp_description: |
-    To become a true web developer, you need to make miles and you will, this
-    week! Every day of the week we look at a certain part of an application:
-    interactive frontend with Javascript, the database, deploying your app to a
-    server, etc. The result of each day is a live and kicking web application
-    that works.
+    Om een echte web programmeur te worden moet je mijlen maken en dat zul je
+    zeker doen deze week! Elke dag zullen we kijken naar een ander aspect van
+    een applicatie: interactieve frondend met Javascript, de database, het
+    deployen van je applicatie naar een server, etc. Het eindresultaat van de
+    week is een goed werkende en volwaardige web applicatie.
 
-    We cover everything that’s needed to build rich applications that implement
-    the necessary functionality and logic to start at least a very interesting
-    side project, but quite possibly even the first version of an online
-    business.
+    We behandelen alles dat nodig is om uitgebreide webapplicaties te bouwen met
+    de noodzakelijke functionaliteit en logica om op zn minst een
+    interessant project te vormen, maar misschien ook wel de eerste versie van je online
+    bedrijf.
 
-    Not only do you learn the necessary skills, but also the industry standard
-    ways to solve common functionality like allowing users to create accounts
-    and sign in, image uploads, and more.
+    Niet alleen leer je noodzakelijke vaardigheden, maar ook de industrie
+    standaarden om functionaliteit toe te voegen, zoals gebruikersaccounts
+    log in, foto's uploaden, en meer.
 
-    Intermediate Bootcamp is the ultimate follow-up of the Beginner Bootcamp.
-    If you have not completed our Beginner Bootcamp, but still got some basic
-    programming skills, we might still take you in as a student. Please contact
-    us so we can schedule a call with you to determine your current level.
-    There is a good chance that we ask you to do some pre-work before we take
-    you in.
+    De Intermediate Bootcamp is de ultieme opvolger van de Beginner Bootcamp.
+    Als je de Beginner Bootcamp niet hebt afgerond, maar al beschikt over enige
+    programmeerkennis dan kan je eventueel direct meedoen aan de Intermediate
+    Bootcamp. Neem contact met ons op om een gesprek met ons in te plannen om
+    je huidige niveau vast te stellen. Mogelijk vragen we je om je verder voor
+    te bereiden voordat we je aanmelding accepteren.
 
   advanced_bootcamp: Advanced Bootcamp
-  advanced_bootcamp_tagline: reach professionalism
-  advanced_bootcamp_intro: ...prepares you for the professional programming world out there. You will add more complicated technology to your applications, and you will learn about the latest hi-tech developments and how to use them.
-  advanced_program: Advanced Program
+  advanced_bootcamp_tagline: wordt een pro
+  advanced_bootcamp_intro: |
+    ...bereid je voor op de de wereld van beroepsprogrammeurs. Je gaat
+    complexere technieken toevoegen aan je applicaties en je leert over de
+    nieuwste hi-tech ontwikkelingen en hoe deze te gebruiken.
   advanced_bootcamp_description: |
-    To become a professional web developer, you need to have more than
-    programming skills. You need to be able to work together in a team, how an
-    application is designed, built, secured, and maintained. You also need to
-    know a little bit about the environment your applications need to run:
-    services.
+    Om een beroepsprogrammeur te worden moet je over meer beschikken dan
+    programmeerkennis. Je moet goed kunnen samenwerken in een team, weten hoe
+    je een applicatie ontwerpt, bouwt, beveiligd en onderhoud. Je moet ook iets
+    weten over de omgeving waarop je applicatie draait: services.
 
-    In Advanced Bootcamp we cover agile product development techniques,
-    design/UX, and working together on code with git flow. We will also build a
-    more complex, production-ready application.
+    Tijdens de Advanced Bootcamp behandelen we agile product ontwikkeling
+    technieken, design/UX, en het samen schrijven van code met git flow. Ook
+    bouw je een ingewikeldere, production-ready applicatie.
 
-    After Advanced Bootcamp, you are ready to become a Junior developer at one
-    of the thousands of companies in the Netherlands and abroad that are dying
-    to have you. They will take you in and train you more so you can follow your
-    true passion to build beautiful interfaces or systems that make our world go
-    round.
+    Na de Advanced Bootcamp ben je ervoor klaar om als junior developer aan de
+    slag te gaan bij een van de vele bedrijven in Nederland en daarbuiten die
+    hard op zoek zijn naar programmeertalent. Zij zullen je de kans geven om
+    verder te trainen en je passie te volgen voor het bouwen van mooie
+    interfaces en systemen die de wereld laten draaien.
 
-    Advanced Bootcamp is the ultimate follow-up of the Intermediate Bootcamp.
-    If you have not completed our Intermediate Bootcamp, but still got some
-    programming skills, we might still take you in as a student. Please contact
-    us so we can schedule a call with you to determine your current level.
-    There is a good chance that we ask you to do some pre-work before we take
-    you in.
+    De Advanced Bootcamp sluit perfect aan op de Intermediate Bootcamp.
+    Als je de Intermediate Bootcamp niet hebt afgerond, maar al beschikt over enige
+    programmeerkennis dan kan je eventueel direct meedoen aan de Advanced
+    Bootcamp. Neem contact met ons op om een gesprek met ons in te plannen om
+    je huidige niveau vast te stellen. Mogelijk vragen we je om je verder voor
+    te bereiden voordat we je aanmelding accepteren.
 
   frontend_bootcamp: Frontend Web Bootcamp
-  frontend_bootcamp_tagline: interactive and engaging
-  frontend_bootcamp_intro: ...teaches you to create templates that can be used directly on existing Wordpress sites or any other CMS. Learn to add Javascript to increase interaction and engage with your target audience. Integrate 3rd party tools to measure engagement and A/B-test behavior.
-  frontend_bootcamp_program: Frontend Web Program
+  frontend_bootcamp_tagline: interactiev en innemend
+  frontend_bootcamp_intro: |
+    ...leert je om templates te maken die je direct kan
+    gebruiken in bestaande Wordpress sites of ieder ander CMS. Leer hoe je
+    Javascript gebruikt om interactie te vergroten en je doelgroep te bereiken.
+    Integrate 3rd party tools to measure engagement and A/B-test behavior.
+  frontend_bootcamp_program: Frontend Web Programma
   frontend_bootcamp_description: |
-    The Frontend Web Bootcamp offers a unique opportunity to improve your tech
-    literacy. You will learn all the skills to make beautiful, engaging websites
-    that are easy to build.
+    De Frontend Web Bootcamp bied een unieke kans om je technische kennis te
+    vergroten. Je leert alle vaardigheden om moeiteloos mooie,
+    innemende websites te maken.
 
-    In contrast to the other Bootcamps we offer, the focus is more on what the
-    eye can see than on the code itself. It is a perfect way to compliment your
-    existing (digital) skills or get a head start into becoming a frontent
-    developer.
+    In tegenstelling tot de andere Bootcamps die wij bieden, ligt de focus hier
+    meer op datgene wat het oog kan zien dan op de code zelf. Het is de perfecte
+    manier om je bestaande (digitale) vaardigheden aan te vullen of een goede
+    start om je verder te ontwikkelen als frontend developer.
 
-    Whether you are an online marketeer who wants to be able to
-    create a simple, but engaging site, a product manager who wants to hack a
-    feature together before it goes into the formal development process, or
-    perhaps a UX designer who wants to A/B-test a few alternatives: this course
-    is the most valuable around.
+    Of je nu een online marketeer bent die eenvoudige, maar innemende sites wilt
+    maken, een product manager die bepaalde functionaliteit wil uitproberen
+    vooruitlopend op het formele ontwikkelproces, of een UX designer die een paar
+    mogelijkheden A/B wil testen: dit is de beste cursus die er is.
 
-    We will teach you things you can actually _use_! Change an existing Wordpress
-    template? Sure! Just make a few design tweaks? Of course! A fully functional
-    web application with a database? Oh yeah, why not?!
+    Wij leren je de dingen die je daadwerkelijk kan _gebruiken_! Verander een
+    bestaande Wordpress template? Geen probleem! Tweak het design?
+    Vanzelfsprekend! Een complete functionele webapplicatie? Oke, waarom ook
+    niet!
 
-    Have a look at upcoming dates and enroll now. You will not regret it, or as
-    our students often say: "When in doubt, do it!"
+    Bekijk de volgende cursusdata en schrijf je in. Je zult er geen spijt van
+    krijgen. Zoals onze studenten vaak zeggen: "Bij twijfel, doen!"
 
   cta_courses: Cursussen
   cta_open_evening: Open Avond
@@ -190,11 +184,12 @@ nl:
   cta_apply_now: Vraag nu aan
   cta_subscribe: Meld je nu aan
 
-  this_is_an_immersive_course: '_This is an immersive, full time, 7 day course that starts on Sunday and ends en Saturday._'
-  this_is_a_weekly_course: '_This is a weekly course that takes 7 weeks: one class per week and some homework on the weekends._'
+  this_is_an_immersive_course: '_Dit is intensieve, voltijd, 7 dagense cursus
+  die begint op zondag en eindigt op zaterdag_'
+  this_is_a_weekly_course: '_Dit is wekelijkse cursus van 7 weken: 1 les per week en wat huiswerk voor tijdens het weekend._'
 
-  please_fix_errors_below: Please fix the errors below.
-  please_mail_support: Please don't hesitate to email us at %{support_mail} if you have any questions or feedback! We would love to know :)
+  please_fix_errors_below: Corrigeer de onderstaande foutmeldingen.
+  please_mail_support: Aarzel niet om eventuele vragen of feedback te mailen naar %{support_mail} ! We horen het graag! :)
 
   newsletter: Nieuwsbrief
   open_evening: Open Avond
@@ -230,49 +225,60 @@ nl:
   PAID: BETAALD
 
   upcoming_dates: Aankomende Data
-  no_bootcamps_planned: Momenteel hebben we geen Bootcamps gepland, meld je hieronder aan voor de nieuwsbrief zodat we je op de hoogte kunnen houden zodra er weer nieuwe bootcamps gepland worden.
+  no_bootcamps_planned: |
+    Momenteel hebben we geen Bootcamps gepland, meld je hieronder aan voor de
+    nieuwsbrief zodat we je op de hoogte kunnen houden zodra er weer nieuwe
+    bootcamps gepland worden.
   other_bootcamps: Andere Bootcamps
-  incompany_cta: We also offer this course in-company! [Contact](%{contact_url}) us if you want to enroll with a few colleagues and we will come to you.
+  incompany_cta: |
+    Deze cursus is ook beschikbaar als in-company training!
+    Neem [Contact](%{contact_url}) als jij met je collega's wilt deelnemen.
 
   scholarship_program: Scholarship Programma
   scholarship_program_intro: |
-    Are you working at a start-up, self-employed, unemployed or otherwise lacking financial backing?
+    Werk je bij een start-up, ben je zelfstandig, werkloos of heb je anderzinds
+    financiele steun nodig?
 
-    Subject to availability, eligible students can participate in the %{course} for less than one third of the regular fee through Development Bootcamp’s Scholarship Program. The program is powered by leading tech-companies. Apply and tell us your story.
+    Afhankelijk van de beschikbaarheid kunnen studenten die daarvoor in aanmerking
+    komen aan de %{course} deelnemen voor minder dan een derde van de gebruikelijke
+    prijs via Development Bootcamp's Scholarship Programma. Dit programma wordt
+    mede mogelijk gemaakt door toonaangevende tech bedrijven. Schrijf je in en
+    vertel ons jouw verhaal.
 
   # Ticket order steps
   title_enroll_now: Schrijf nu in
   title_tickets_include: Tickets zijn inclusief
   tickets_include_list: |
-    - Daily Keynotes & Workshops Sunday - Saturday
-    - Healthy lunch on Sunday - Saturday
-    - Evening Sessions Sunday - Friday
-    - Coding Contest with great prizes
-    - Certificate upon completion of the program
+    - Dagelijkse Keynotes & Workshops, zondag - zaterdag
+    - Gezonde lunch, zondag - zaterdag
+    - Evening Sessions, zondag - vrijdag
+    - programmeerwedstrijd met mooie prijzen
+    - certificaat bij het succesvol afronden van de cursus
 
   title_pick_seats: Kies een ticket!
   tickets_intro: |
-    Select the level you want, and the number of seats you need on the class.
-  valid_on: Valid
-  label_accept_terms: I have read and agree to the %{terms}, and the %{conditions}
-  change_order: Change order
+    Kies jouw niveau, en het aantal deelnemerplaatsen dat je wilt reserveren.
+  valid_on: geldig
+  label_accept_terms: |
+    Ik heb de %{terms} en %{conditions} gelezen en stem hiermee in.
+  change_order: Wijzig je bestelling
 
-  billing_details: Billing details
-  student_details: Student Details %{current} / %{total}
+  billing_details: Betaal gegevens
+  student_details: Student gegevens %{current} / %{total}
   you_selected_bootcamp:
-    one: 'You selected: %{count} ticket for %{bootcamp} on:'
-    other: 'You selected: %{count} tickets for %{bootcamp} on:'
+    one: 'Jouw bestelling: %{count} ticket voor %{bootcamp} op:'
+    other: 'Jouw bestelling: %{count} tickets voor %{bootcamp} op:'
 
   static_pages:
     home:
       page_title: Home - Leer Programmeren
-      meta_description: Learn code, the most wanted skill right now. We offer you the fastest way to junior developer or tech hybrid.
-      meta_keywords: development, bootcamp, programming, learn, teach, sponsor
+      meta_description: Leer programmeren, de meest gewilde vaardigheid op dit moment. De snelste manier om tech-hybrid of junior programmeur te worden.
+      meta_keywords: coden, bootcamp, programmeren, leren, vaardigheid, tech-hybrid, junior programmeur
 
       # Page Header
       learn_the_most_wanted: Leer de meest gevraagde
       skill_right_now: skill van dit moment
-      tagline: De snelste weg naar junior developer of tech hybrid
+      tagline: De snelste weg naar tech hybrid of junior developer
 
       # Bottom Bar
       takeaway1: verbreed je horizon
@@ -280,62 +286,72 @@ nl:
       takeaway3: leer nieuwe skills
 
       # Three Reasons to Enroll
-      three_reasons_one_heading: Code is everywhere.
-      three_reasons_one: People in all industries can benefit from learning code to boost their productivity and e-skills.
-      three_reasons_two_heading: We offer you a kickstart
-      three_reasons_two: into the world of modern day software engineering for the web with immersive and results-driven boot camps.
-      three_reasons_three_heading: Learn to build web applications
-      three_reasons_three:  from industry experts. Choose from entry level beginner courses all the way up to advanced courses that prepare you for a new career.
+      three_reasons_one_heading: Software is overal.
+      three_reasons_one: Mensen in alle bedrijfstakken kunnen profiteren van programmeerkennis om hun productiviteit te verhogen en e-vaardigheden te verbeteren.
+      three_reasons_two_heading: We geven je een kickstart
+      three_reasons_two: in de wereld van het web-based programmeren op dit moment met intensieve en resultaat gerichte bootcamps.
+      three_reasons_three_heading: Leer web applicaties te bouwen
+      three_reasons_three:  van professionals. Maak je keuze tussen beginner cursussen op instap niveau en meer geavanceerde cursussen die je voor bereiden op een nieuwe carrière.
 
-      quote: You will learn a way of thinking and looking at things that is fun and fascinating. A programmer’s mind is a joy forever.
+      quote: Je leert een nieuwe manier van denken en kijken naar dingen die zowel leuk als boeiend is. A programmer’s mind is a joy forever!
 
     team:
       our_team: Ons Team
-      page_title: Student Newsletter Subscription
-      meta_description: Subscribe to Codaisseur's Development Bootcamp Newsletter to stay updated on new course dates, learning materials, and events.
+      page_title: Student Newsletter Inschrijving
+      meta_description: |
+        Schrijf je in voor de niewsbrief van Codaisseur's Development Bootcamp
+        en blijf op de hoogte van nieuwe cursusdata, lesmateriaal, en evenementen.
       meta_keywords: subscribe, newsletter, updated, development, bootcamp, programming, learn, student, code
 
     newsletter:
       title: Schrijf je in voor onze %{newsletter}
       page_title: Nieuwsbrief Studenten Inschrijven
-      meta_description: Schrijf je in voor Codaisseur's Development Bootcamp Niewsbrief en we houden je op de hoogte van nieuwe data, lesmateriaal en events.
-      meta_keywords: inschrijven, nieuwsbrief, development, bootcamp, code, programmeren, leren, student
-      newsletter_intro: Schrijf je in voor Codaisseur's Development Bootcamp Niewsbrief over code en programmeren en we houden je op de hoogte van nieuwe data, lesmateriaal en events.
+      meta_description: |
+        Schrijf je in voor Codaisseur's Development Bootcamp Niewsbrief en we
+        houden je op de hoogte van nieuwe data, lesmateriaal en events.
+      meta_keywords: |
+        inschrijven, nieuwsbrief, development, bootcamp, code, programmeren,
+        leren, student
+      newsletter_intro: |
+        Schrijf je in voor Codaisseur's Development Bootcamp Niewsbrief over
+        code en programmeren en we houden je op de hoogte van nieuwe data,
+        lesmateriaal en evenementen.
 
     contact:
-      page_title: Help & Support
-      meta_description: Need help? Got a question? Please check our FAQ Page or send us an email.
-      meta_keywords: contact, location, amsterdam, development, bootcamp, programming, learn, tech, code
-      title: Help & Support
+      page_title: Hulp & Assistentie
+      meta_description: Hulp nodig? Heb je een vraag? Bekijk onze FAQ Page of stuur een email.
+      meta_keywords: contact, locatie, amsterdam, development, bootcamp, programmeren, leren, tech, code
+      title: Hulp & Assistentie
       content: |
-        Need help? Got a question? Please check our %{faq} or send us an email
-        at %{support_mail}.
+        Hulp nodig? Heb je een vraag? Bekijk onze  %{faq} of stuur een email naar
+         %{support_mail}.
       faq_page: pagina met veelgestelde vragen
 
     open_evening:
       page_title: Open Avond
-      meta_description: Come to our Open Day to meet the team and do a little taste of what is to come.
-      meta_keywords: open day, development, bootcamp, programming, learn, student
-      title: Visit Our Open Evening!
+      meta_description: |
+       Kom naar onze open avond, ontmoet het team en ervaar wat wij te bieden h.
+      meta_keywords: open dag, development, bootcamp, programmeren, leren, student
+      title: Bezoek Onze Open Avond!
       intro_text: |
-        Leave your details below to register for our %{open_evening} on %{date} at %{location_info}.
+        Laat hier je gevens achter om je te registeren voor de %{open_evening} op %{date} aan de %{location_info}.
 
-        It will be the chance for you to ask all your questions.
+        Het is jouw kans om al je eventuele vragen te stellen.
 
       schedule: |
-        * 20:00  — Doors Open
-        * 20:30  — Welcome and Keynote by Wouter de Vos
-        * 21:15  — Q&A and drinks!
+        * 20:00  — Deuren open
+        * 20:30  — Welkom en Keynote door Wouter de Vos
+        * 21:15  — Q&A en borrel!
 
-      rsvp_here: RSVP Here
-      leave_details_below: or leave your details below
-      register_for_open_evening: Register for our Open Evening
+      rsvp_here: RSVP Hier
+      leave_details_below: of laat je gegevens hieronder achter
+      register_for_open_evening: Registreer voor de Open Avond
       email: Email address
-      first_name: First name
-      last_name: Last name
-      phone: Phone number
-      register: Register
-      or_rsvp_on_fb: or %{rsvp} on Facebook.
+      first_name: Voornaam
+      last_name: Achternaam
+      phone: Telefoonnummer
+      register: Registreer
+      or_rsvp_on_fb: of %{rsvp} op Facebook.
 
   shared:
     newsletter_form:
@@ -348,32 +364,32 @@ nl:
   programs:
     index:
       page_title: "Leer Programmeren: Programmeercursussen"
-      meta_description: "Check out all of our Development Bootcamps to learn programming. We teach you the fastest way to learn code: the most wanted skill right now!"
-      meta_keywords: "courses, program, beginner, development, bootcamp, programming, learn, teach, sponsor"
+      meta_description: "Bekijk alle Development Bootcamps. De snelste weg om te leren programmeren: de meest gewilde vaardigheid van dit moment!"
+      meta_keywords: "cursussen, programma, beginner, ontwikkeling, bootcamp, programmeren, leren, junior developer, tech hybrid"
       title: Programmeercursussen
       subtitle: ons volledige curriculum
       our_teachers: Onze Docenten
       meet_rest_team: Meet the rest of the %{team}.
 
     frontend_bootcamp:
-      page_title: "Frontend Bootcamp - Learn Frontend Development for Beginners"
-      meta_description: "Learn the first steps of writing code in an awesome program of just one week. Build a full app in HTML, CSS, and JavaScript."
-      meta_keywords: "program, frontend, beginner, coding, contest, job, development, bootcamp, programming, learn, teach, sponsor"
+      page_title: "Frontend Bootcamp - Frontend Programmeren voor Beginners"
+      meta_description: "Leer de eerste regels code schrijven tijdens een geweldig programma van één dag per week gedurende zeven weken . Bouw een hele app in HTML, CSS, and JavaScript."
+      meta_keywords: "programma, frontend, beginner, ontwikkelen, wedstrijd, baan, bootcamp, programmeren, leren, tech hybrid, junior developer"
 
     level_one:
-      page_title: "Beginner Development Bootcamp - Learn Coding for Beginners"
-      meta_description: "Learn the first steps of writing code in an awesome program of just one week. Zero to developer in three sessions of a week."
-      meta_keywords: "program, terminal, unix, git, testing, contest, job, development, bootcamp, programming, learn, teach, sponsor"
+      page_title: "Beginner Development Bootcamp - Programmeren voor Beginners"
+      meta_description: "Learn the first steps of writing code in an awesome program of just one week. Van nul naar junior developer in drie cursussen van één week."
+      meta_keywords: "programma, terminal, unix, git, testen, wedstrijd, baan, bootcamp, programmeren, leren, tech hybrid, junior developer"
 
     level_two:
-      title: "Intermediate Development Bootcamp - Learn Coding for Beginners"
-      meta_description: "Learn the first steps of writing code in an awesome program of just one week. Zero to developer in three sessions of a week."
-      meta_keywords: "program, terminal, unix, git, testing, contest, job, development, bootcamp, programming, learn, teach, sponsor"
+      title: "Intermediate Development Bootcamp - Programmeren voor Beginners"
+      meta_description: "Leer de eerste regels code schrijven tijdens een geweldig programma van één week. Van nul naar junior developer in drie cursussen van één week."
+      meta_keywords: "programma, terminal, unix, git, testen, wedstrijd, baan, bootcamp, programmeren, leren, tech hybrid, junior developer"
 
     level_three:
-      title: "Advanced Development Bootcamp - Coding for Beginners"
-      meta_description: "Learn the first steps of writing code in an awesome program of just one week. Zero to developer in three sessions of a week."
-      meta_keywords: "program, terminal, unix, git, testing, contest, job, development, bootcamp, programming, learn, teach, sponsor"
+      title: "Advanced Development Bootcamp - Programmeren voor Beginners"
+      meta_description: "Leer de eerste regels code schrijven tijdens een geweldig programma van één week. Van nul naar junior developer in drie cursussen van één week."
+      meta_keywords: "programma, terminal, unix, git, testen, wedstrijd, baan, bootcamp, programmeren, leren, tech hybrid, junior developer"
 
   orders:
     form:
@@ -385,31 +401,33 @@ nl:
         placeholder_remarks: Nog iets toe te voegen?
       confirmation:
         title: Confirmation
-        use_back_button_to_fix: You can use the back button below to change your input.
-        please_check: Please check your details carefully. If everything looks good, you can proceed to checkout.
-        click_continue: Click "%{continue}" to proceed to checkout. Click "%{back}" to make changes.
+        use_back_button_to_fix: gebruik de terug knop hieronder om je ingevoerde gegevens te wijzigen.
+        please_check: Controleer je gegevens voordat je afrekend.
+        click_continue: Klik "%{continue}" om af te rekenen. Klik "%{back}" om wijzigen door te voeren.
     order:
-      total_discount_promo: "Total discount promo code '%{promo}':"
-      total_price: "Total price:"
-      pay_now: 'Pay now!'
-      prefer_creditcard: "Prefer credit card? Click the button below, but note that you will pay a fee of 2.9% (%{total} + Payment fee: %{payment_fee} = %{creditcard_total})"
+      total_discount_promo: "Totale korting via kortingscode '%{promo}':"
+      total_price: "Totaal prijs:"
+      pay_now: 'Betalen!'
+      prefer_creditcard: "Wil je betalen met creditcard? Klik op de knop hieronder (2.9% bijkomende kosten). (%{total} + Payment fee: %{payment_fee} = %{creditcard_total})"
       payment_information: |
-        Click the button below to make the payment. If someone else needs to make the payment for you,
-        just send them the link to this page.
+        Betaal via de onderstaande knop. Of deel deze link met degene die de betaling voor jou verricht.
 
-        If the price is too high for you, we might be able to help you out by allowing you to pay in installments.
-        Send us an email with your request _and a link to this page_ at support@developmentbootcamp.nl and we
-        will contact you as soon as we can.
-      your_order_was_cancelled_expired: "Your order was %{status}. You can try make a new payment below:"
-      thank_you_processed: Thank you, your payment will be processed
-      email_when_processed: You will receive an email as soon as we have processed your payment.
-      below_overview_details: Below is an overview of the details you provided.
-      student_details: Student Details
+        Als je het hele bedrag niet in een keer kan voldoen kan, dan accepteren wij
+        onder voorwaarden betaling in termijnen. Stuur een email met je verzoek en
+        een link naar deze pagina naar support@developmentbootcamp.nl en wij nemen
+        contact met je op.
+      your_order_was_cancelled_expired: "Je bestelling %{status}. Probeer hieronder opnieuw te betalen:"
+      thank_you_processed: Dank, je betaling wordt verwerkt.
+      email_when_processed: Je ontvangt een email zodra je betaling is verwerkt.
+      below_overview_details: |
+        Zie hieronder een overzicht van de door jouw
+        verstrekte gegevens.
+      student_details: Student gegevens
 
     new:
-      page_title: "Enroll - Tickets and Pricing"
-      meta_description: Enroll in our Development Bootcamps! Get your tickets to learn programming.
-      meta_keywords: enroll, registration, tickets, pricing, development, bootcamp, programming, learn, teach, sponsor
+      page_title: "Inschrijven - Kaartjes en Prijzen"
+      meta_description: Schrijf je in voor onze Development Bootcamps! Verkrijg jouw kaartjes om te leren programmeren.
+      meta_keywords: inschrijven, registratie, kaartjes, prijzen, programmeren, bootcamp, programmeren, leren, junior developer, tech hybrid
 
     show:
       title: Bestelling & Betaling
