@@ -298,24 +298,15 @@ nl:
     team:
       our_team: Ons Team
       page_title: Student Newsletter Inschrijving
-      meta_description: |
-        Schrijf je in voor de niewsbrief van Codaisseur's Development Bootcamp
-        en blijf op de hoogte van nieuwe cursusdata, lesmateriaal, en evenementen.
+      meta_description: Maak kennis met het Development Bootcamp team van Codaisseur! Wij geven les in programmeren.
       meta_keywords: subscribe, newsletter, updated, development, bootcamp, programming, learn, student, code
 
     newsletter:
       title: Schrijf je in voor onze %{newsletter}
       page_title: Nieuwsbrief Studenten Inschrijven
-      meta_description: |
-        Schrijf je in voor Codaisseur's Development Bootcamp Niewsbrief en we
-        houden je op de hoogte van nieuwe data, lesmateriaal en events.
-      meta_keywords: |
-        inschrijven, nieuwsbrief, development, bootcamp, code, programmeren,
-        leren, student
-      newsletter_intro: |
-        Schrijf je in voor Codaisseur's Development Bootcamp Niewsbrief over
-        code en programmeren en we houden je op de hoogte van nieuwe data,
-        lesmateriaal en evenementen.
+      meta_description: Schrijf je in voor Codaisseur's Development Bootcamp Niewsbrief en we houden je op de hoogte van nieuwe data, lesmateriaal en events.
+      meta_keywords: inschrijven, nieuwsbrief, development, bootcamp, code, programmeren, leren, student
+      newsletter_intro: Schrijf je in voor Codaisseur's Development Bootcamp Niewsbrief over code en programmeren en we houden je op de hoogte van nieuwe data, lesmateriaal en evenementen.
 
     contact:
       page_title: Hulp & Assistentie
@@ -323,14 +314,12 @@ nl:
       meta_keywords: contact, locatie, amsterdam, development, bootcamp, programmeren, leren, tech, code
       title: Hulp & Assistentie
       content: |
-        Hulp nodig? Heb je een vraag? Bekijk onze  %{faq} of stuur een email naar
-         %{support_mail}.
+        Hulp nodig? Heb je een vraag? Bekijk onze  %{faq} of stuur een email naar %{support_mail}.
       faq_page: pagina met veelgestelde vragen
 
     open_evening:
       page_title: Open Avond
-      meta_description: |
-       Kom naar onze open avond, ontmoet het team en ervaar wat wij te bieden h.
+      meta_description: Kom naar onze open avond, ontmoet het team en ervaar wat wij te bieden h.
       meta_keywords: open dag, development, bootcamp, programmeren, leren, student
       title: Bezoek Onze Open Avond!
       intro_text: |
@@ -346,7 +335,7 @@ nl:
       rsvp_here: RSVP Hier
       leave_details_below: of laat je gegevens hieronder achter
       register_for_open_evening: Registreer voor de Open Avond
-      email: Email address
+      email: Emailadres
       first_name: Voornaam
       last_name: Achternaam
       phone: Telefoonnummer
