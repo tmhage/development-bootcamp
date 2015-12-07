@@ -1,8 +1,8 @@
-- title "Frontend Bootcamp - Frontend Coding for Beginners"
-- meta_description "Learn the first steps of writing code in an awesome program of just one week. Build a full app in HTML, CSS, and JavaScript."
-- meta_keywords "program, frontend, beginner, coding, contest, job, development, bootcamp, programming, learn, teach, sponsor"
+- title t('.page_title')
+- meta_description t('.meta_description')
+- meta_keywords t('.meta_keywords')
 
-- cache 'programs/frontend' do
+- cache [I18n.locale, 'programs/frontend'] do
   .dbc-program
     .dbc-container
       .inner#program
@@ -30,7 +30,7 @@
                 h2 Basic Frontend
                 p The Face of a Website
               .image
-                = image_tag 'program/day1-frontend.png'
+                = image_tag 'courses/day1-frontend.png'
               .topics
                 ul
                   li Page structure with HTML
@@ -46,7 +46,7 @@
                 h2 Advanced CSS
                 p Advanced Styling and Animation
               .image
-                = image_tag 'program/day2-terminal.png'
+                = image_tag 'courses/day2-terminal.png'
               .topics
                 ul
                   li Web fonts
@@ -61,7 +61,7 @@
                 h2 Basic Programming
                 p Meet JavaScript
               .image
-                = image_tag 'program/day3-ruby.png'
+                = image_tag 'courses/day3-ruby.png'
               .topics
                 ul
                   li Meet JavaScript, a new language
@@ -75,7 +75,7 @@
                 h2 jQuery
                 p Plug it in
               .image
-                = image_tag 'program/day4-loops.png'
+                = image_tag 'courses/day4-loops.png'
               .topics
                 ul
                   li Using jQuery plugins
@@ -89,7 +89,7 @@
                 h2 Wordpress
                 p Write Your Own Templates
               .image
-                = image_tag 'program/day5-oop.png'
+                = image_tag 'courses/day5-oop.png'
               .topics
                 ul
                   li Wordpress Templates
@@ -103,7 +103,7 @@
                 h2 MeteorJS
                 p A Full Web App
               .image
-                = image_tag 'program/day6-ror.png'
+                = image_tag 'courses/day6-ror.png'
               .topics
                 ul
                   li Models
@@ -118,7 +118,7 @@
                 h2 Hackathon:
                 p And the Winner is..!
               .image
-                = image_tag 'program/day7-hackathon.png'
+                = image_tag 'courses/day7-hackathon.png'
               .topics
                 ul
                   li A Contest!

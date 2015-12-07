@@ -1,8 +1,8 @@
-- title "Beginner Bootcamp - Coding for Beginners"
-- meta_description "Learn the first steps of writing code in an awesome program of just one week. Zero to developer in three sessions of a week."
-- meta_keywords "program, terminal, unix, git, testing, contest, job, development, bootcamp, programming, learn, teach, sponsor"
+- title t('.page_title')
+- meta_description t('.meta_description')
+- meta_keywords t('.meta_keywords')
 
-- cache 'programs/level-1' do
+- cache [I18n.locale, 'programs/level-1'] do
   .dbc-program
     .dbc-container
       .inner#program
@@ -32,7 +32,7 @@
                 h2 Frontend
                 p The Face of a Website
               .image
-                = image_tag 'program/day1-frontend.png'
+                = image_tag 'courses/day1-frontend.png'
               .topics
                 ul
                   li Page structure with HTML
@@ -48,7 +48,7 @@
                 h2 Terminal
                 p Behind the Scenes
               .image
-                = image_tag 'program/day2-terminal.png'
+                = image_tag 'courses/day2-terminal.png'
               .topics
                 ul
                   li Text commands
@@ -64,7 +64,7 @@
                 h2 Basic Programming
                 p Meet Ruby
               .image
-                = image_tag 'program/day3-ruby.png'
+                = image_tag 'courses/day3-ruby.png'
               .topics
                 ul
                   li Meet Ruby, a new language
@@ -79,7 +79,7 @@
                 h2 Loops and Breaks
                 p While We Wait
               .image
-                = image_tag 'program/day4-loops.png'
+                = image_tag 'courses/day4-loops.png'
               .topics
                 ul
                   li Loops make your head spin
@@ -94,7 +94,7 @@
                 h2 Object Oriented Programming
                 p The Family Tree
               .image
-                = image_tag 'program/day5-oop.png'
+                = image_tag 'courses/day5-oop.png'
               .topics
                 ul
                   li Why OOP?
@@ -109,7 +109,7 @@
                 h2 Back to Front
                 p With Ruby on Rails
               .image
-                = image_tag 'program/day6-ror.png'
+                = image_tag 'courses/day6-ror.png'
               .topics
                 ul
                   li Models
@@ -125,7 +125,7 @@
                 h2 Hackathon:
                 p And the Winner is..!
               .image
-                = image_tag 'program/day7-hackathon.png'
+                = image_tag 'courses/day7-hackathon.png'
               .topics
                 ul
                   li A Contest!

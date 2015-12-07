@@ -1,6 +1,6 @@
-- title "Home"
-- meta_description "Learn to write code and change your life around. We teach programming at our boot camp for everyone. It's easy and fun! And it's the future, because code is everywhere and we are so short on people who can code."
-- meta_keywords "development, bootcamp, programming, learn, teach, sponsor"
+- title t('.page_title')
+- meta_description t('.meta_description')
+- meta_keywords t('.meta_keywords')
 
 .dbc-page-header.home
   .dbc-page
@@ -15,16 +15,16 @@
           p = t('.tagline')
 
           .cta
-            => link_to t(:cta_courses), program_path, class: 'button primary', id: 'home-cta-two'
-            = link_to t(:cta_open_day), open_day_path, class: 'button default', id: 'home-cta-one'
+            => link_to t(:cta_courses), courses_path, class: 'button primary', id: 'home-cta-two'
+            = link_to t(:cta_open_evening), open_evening_path, class: 'button default', id: 'home-cta-one'
 
   .bottom-bar
     .inner
       nav
         ul
-          li = link_to t('.takeaway1'), program_path
-          li = link_to t('.takeaway2'), program_path
-          li = link_to t('.takeaway3'), program_path
+          li = link_to t('.takeaway1'), courses_path
+          li = link_to t('.takeaway2'), courses_path
+          li = link_to t('.takeaway3'), courses_path
 
 .dbc-content
   .dbc-container.dbc-two-col.three-reasons

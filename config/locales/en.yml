@@ -20,6 +20,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  language: "English"
   activerecord:
     models:
       sponsor: Sponsor
@@ -46,14 +47,13 @@ en:
         format:
           unit: '€'
 
-  plans:
-    title:
-      platinum: Platinum sponsors
-      gold: Gold sponsors
-      silver: Silver sponsors
-      party: Party Support sponsor
-      dinner: Dinner Support sponsors
-      hackathon: Hackathon sponsor
+  nav_home: Home
+  nav_courses: Courses
+  nav_enroll: Enroll
+  nav_blog: Blog
+  nav_support: Support
+  nav_newsletter: Newsletter
+  nav_team: Team
 
   tickets:
     one: ticket
@@ -170,10 +170,11 @@ en:
     our students often say: "When in doubt, do it!"
 
   cta_courses: Courses
-  cta_open_day: Open Evening
+  cta_open_evening: Open Evening
   cta_newsletter_signup: Sign up for the Newsletter
   cta_enroll_now: Enroll now
   cta_apply_now: Apply now
+  cta_subscribe: Subscribe now
 
   this_is_an_immersive_course: '_This is an immersive, full time, 7 day course that starts on Sunday and ends en Saturday._'
   this_is_a_weekly_course: '_This is a weekly course that takes 7 weeks: one class per week and some homework on the weekends._'
@@ -181,11 +182,38 @@ en:
   please_fix_errors_below: Please fix the errors below.
   please_mail_support: Please don't hesitate to email us at %{support_mail} if you have any questions or feedback! We would love to know :)
 
+  newsletter: Newsletter
+  open_evening: Open Evening
+
   # Generic form strings
   form_optional: Optional
   form_email_placeholder: you@organization.co
   form_label_yes: 'Yes'
   form_label_no: 'No'
+  back_button: Back
+  continue_button: Continue
+
+  label_full_name: Full name
+  label_company_name: Company name
+  label_address: Address
+  label_postal_code: Postal code
+  label_city: City
+  label_country: Country
+  label_name: Name
+  label_email: Email address
+  label_phone: Phone number
+  label_bring_laptop: Brings own laptop?
+  label_birth_date: Birth date
+  label_dietary_wishes: Dietary wishes
+  label_none: None
+  label_remarks: Remarks
+  label_not_filled: Not filled in
+  label_last_updated: "Last updated:"
+
+  # Payment Status
+  CANCELLED: CANCELLED
+  EXPIRED: EXPIRED
+  PAID: PAID
 
   upcoming_dates: Upcoming Dates
   no_bootcamps_planned: Currently, we have no %{level} Bootcamps planned, sign up for the newsletter below so we can keep you informed about upcoming dates.
@@ -223,6 +251,10 @@ en:
 
   static_pages:
     home:
+      page_title: Home - Learn Programming
+      meta_description: Learn code, the most wanted skill right now. We offer you the fastest way to junior developer or tech hybrid.
+      meta_keywords: development, bootcamp, programming, learn, teach, sponsor
+
       # Page Header
       learn_the_most_wanted: Learn the most wanted
       skill_right_now: skill right now
@@ -245,12 +277,89 @@ en:
 
     team:
       our_team: Our Team
+      page_title: Meet the team
+      meta_description: Meet the team of Development Bootcamp! We all teach code at our Bootcamps.
+      meta_keywords: team, people, development, bootcamp, programming, learn, teach, sponsor
+
+    newsletter:
+      title: Subscribe to our %{newsletter}
+      page_title: Student Newsletter Subscription
+      meta_description: Subscribe to Codaisseur's Development Bootcamp Newsletter to stay updated on new course dates, learning materials, and events.
+      meta_keywords: subscribe, newsletter, updated, development, bootcamp, programming, learn, student, code
+      newsletter_intro: Subscribe to Codaisseur's Development Bootcamp Newsletter about code and programming to stay updated on new course dates, learning materials, and events.
+
+    contact:
+      page_title: Help and Support
+      meta_description: Need help? Got a question? Please check our FAQ Page or send us an email.
+      meta_keywords: contact, location, amsterdam, development, bootcamp, programming, learn, tech, code
+      title: Help & Support
+      content: |
+        Need help? Got a question? Please check our %{faq} or send us an email
+        at %{support_mail}.
+      faq_page: FAQ Page
+
+    open_evening:
+      page_title: Open Evening
+      meta_description: Come to our Open Day to meet the team and do a little taste of what is to come.
+      meta_keywords: open day, development, bootcamp, programming, learn, student
+      title: Visit Our Open Evening!
+      intro_text: |
+        Leave your details below to register for our %{open_evening} on %{date} at %{location_info}.
+
+        It will be the chance for you to ask all your questions.
+
+      schedule: |
+        * 20:00  — Doors Open
+        * 20:30  — Welcome and Keynote by Wouter de Vos
+        * 21:15  — Q&A and drinks!
+
+      rsvp_here: RSVP Here
+      leave_details_below: or leave your details below
+      register_for_open_evening: Register for our Open Evening
+      email: Email address
+      first_name: First name
+      last_name: Last name
+      phone: Phone number
+      register: Register
+      or_rsvp_on_fb: or %{rsvp} on Facebook.
+
+  shared:
+    newsletter_form:
+      title: Subscribe to our Newsletter
+      first_name: First name
+      last_name: Last name
+      email: Email address
+      form_hint: You will receive an email to confirm your email address and subscription.
 
   programs:
     index:
-      title: Courses
+      page_title: "Learn to code: Programming Courses"
+      meta_description: "Check out all of our Development Bootcamps to learn programming. We teach you the fastest way to learn code: the most wanted skill right now!"
+      meta_keywords: "courses, program, beginner, development, bootcamp, programming, learn, teach, sponsor"
+      title: Programming Courses
       subtitle: the full curriculum
       our_teachers: Our Teachers
+      meet_rest_team: Meet the rest of the %{team}.
+
+    frontend_bootcamp:
+      page_title: "Frontend Bootcamp - Learn Frontend Development for Beginners"
+      meta_description: "Learn the first steps of writing code in an awesome program of just one week. Build a full app in HTML, CSS, and JavaScript."
+      meta_keywords: "program, frontend, beginner, coding, contest, job, development, bootcamp, programming, learn, teach, sponsor"
+
+    level_one:
+      page_title: "Beginner Development Bootcamp - Learn Coding for Beginners"
+      meta_description: "Learn the first steps of writing code in an awesome program of just one week. Zero to developer in three sessions of a week."
+      meta_keywords: "program, terminal, unix, git, testing, contest, job, development, bootcamp, programming, learn, teach, sponsor"
+
+    level_two:
+      page_title: "Intermediate Development Bootcamp - Learn Coding for Beginners"
+      meta_description: "Learn the first steps of writing code in an awesome program of just one week. Zero to developer in three sessions of a week."
+      meta_keywords: "program, terminal, unix, git, testing, contest, job, development, bootcamp, programming, learn, teach, sponsor"
+
+    level_three:
+      page_title: "Advanced Development Bootcamp - Coding for Beginners"
+      meta_description: "Learn the first steps of writing code in an awesome program of just one week. Zero to developer in three sessions of a week."
+      meta_keywords: "program, terminal, unix, git, testing, contest, job, development, bootcamp, programming, learn, teach, sponsor"
 
   orders:
     form:
@@ -260,3 +369,65 @@ en:
         do_you_own_laptop: Do you own a laptop you can bring to class?
         placeholder_allergies: E.g. do you have any allergies, are you a vegan?
         placeholder_remarks: Anything you'd like to add?
+      confirmation:
+        title: Confirmation
+        use_back_button_to_fix: You can use the back button below to change your input.
+        please_check: Please check your details carefully. If everything looks good, you can proceed to checkout.
+        click_continue: Click "%{continue}" to proceed to checkout. Click "%{back}" to make changes.
+    order:
+      total_discount_promo: "Total discount promo code '%{promo}':"
+      total_price: "Total price:"
+      pay_now: 'Pay now!'
+      prefer_creditcard: "Prefer credit card? Click the button below, but note that you will pay a fee of 2.9% (%{total} + Payment fee: %{payment_fee} = %{creditcard_total})"
+      payment_information: |
+        Click the button below to make the payment. If someone else needs to make the payment for you,
+        just send them the link to this page.
+
+        If the price is too high for you, we might be able to help you out by allowing you to pay in installments.
+        Send us an email with your request _and a link to this page_ at support@developmentbootcamp.nl and we
+        will contact you as soon as we can.
+      your_order_was_cancelled_expired: "Your order was %{status}. You can try make a new payment below:"
+      thank_you_processed: Thank you, your payment will be processed
+      email_when_processed: You will receive an email as soon as we have processed your payment.
+      below_overview_details: Below is an overview of the details you provided.
+      student_details: Student Details
+
+    new:
+      page_title: "Enroll - Tickets and Pricing"
+      meta_description: Enroll in our Development Bootcamps! Get your tickets to learn programming.
+      meta_keywords: enroll, registration, tickets, pricing, development, bootcamp, programming, learn, teach, sponsor
+
+    show:
+      title: Order & Payment
+    thanks:
+      title: Thank you for your %{order_or_payment}, %{name}!
+      order: order
+      payment: payment
+      paid_message:
+        one: Your payment was processed, and you will receive your ticket shortly by email to **%{billing_email}**.
+        other: Your payment was processed, and you will receive your %{count} tickets shortly by email to **%{billing_email}**.
+      individual_students_sent: "Individual tickets will also be sent to the individual students: **%{student_emails}**."
+      cancelled_message: |
+        Your payment was **cancelled**. If this was a mistake, please retry your payment by clicking
+        the payment button below.
+      pay_now: 'Pay now!'
+      expired_message: |
+        Your payment has **expired**. Please refresh this page and retry your payment by clicking
+        the payment button below.
+      still_open_message: |
+        You will receive an email with more information as soon as we have processed your
+        payment.
+      payment_error_message: |
+        So sorry, something went wrong and we were not able to track your payment. If you did not pay,
+        please click the button below to make a payment. If you _did_ already pay, however,
+        you should _not_ pay again! Contact us via phone or email. Details below.
+      any_questions: |
+        If you have _any_ questions about your order, the program, or
+        anything else we might be able to help you with, feel free to contact us:
+
+        %{email}: [support@developmentbootcamp.nl](mailto:support@developmentbootcamp.nl)
+
+        %{phone}: **+31681910218**
+
+  footer_follow_us: Follow Us
+  footer_navigation: Navigation

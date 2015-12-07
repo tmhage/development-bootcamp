@@ -8,7 +8,7 @@ describe 'the ticket order process' do
   before do
     create(:bootcamp)
 
-    visit '/tickets'
+    visit '/enroll'
     expect(page).to have_content 'Pick a Ticket!'
 
     within('#orderForm') do

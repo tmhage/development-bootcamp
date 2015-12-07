@@ -1,6 +1,6 @@
-- title "Tickets and Pricing"
-- meta_description "Get your tickets to learn about all the basic parts of a web application. In the morning we start at 9am with a classroom lecture, followed by workshops the rest of the day until 5pm. We will pause only for lunch, coffee, and tea. During the evenings we will have various cool keynotes and presentations on lighter subjects between 8pm and 10pm."
-- meta_keywords "registration, tickets, pricing, development, bootcamp, programming, learn, teach, sponsor"
+- title t('.page_title')
+- meta_description t('.meta_description')
+- meta_keywords t('.meta_keywords')
 
 .dbc-content
   .dbc-container.dbc-form
@@ -14,7 +14,7 @@
             => fa_icon('calendar fw')
             span = @order.bootcamp.readable_date_range
           p
-            = link_to t(:change_order), tickets_path, class: 'button default'
+            = link_to t(:change_order), courses_path, class: 'button default'
 
       = render 'order_steps'
 
@@ -31,7 +31,7 @@
     .dbc-container.dbc-two-col
       .inner
         .col
-          = image_tag 'program/workshop.png', class: 'img-responsive img-circle', style: "height: 200px; margin: 1em auto"
+          = image_tag 'courses/workshop.png', class: 'img-responsive img-circle', style: "height: 200px; margin: 1em auto"
 
         .col
           h3 = t(:title_tickets_include)

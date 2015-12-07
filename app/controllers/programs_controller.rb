@@ -18,10 +18,6 @@ class ProgramsController < ApplicationController
     @bootcamps = Bootcamp.advanced.published
   end
 
-  def level_four
-    redirect_to program_path, status: :moved_permanently
-  end
-
   def frontend_bootcamp
     @level = 'Frontend'
     @bootcamps = Bootcamp.frontend.published
@@ -31,7 +27,7 @@ class ProgramsController < ApplicationController
 
   def set_subnav
     @nav_items = {
-      'Overview' => program_path
+      'Overview' => courses_path
     }
   end
 end

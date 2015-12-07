@@ -41,12 +41,12 @@ h2
 
       .button
         @extend .btn-lg
-        border-radius: 0
 
         &.default
+          background: none
           &:hover,
           &:active
-            background: $gray-light
+            background: lighten($green, 10%)
 
   .caps
     font-weight: 900
@@ -83,10 +83,6 @@ h2
 
       p
         margin-bottom: 1em
-
-      .button
-        @extend .btn-lg
-        border-radius: 0
 
 .dbc-text-cta,
 .dbc-text-sponsors
@@ -128,11 +124,6 @@ h2
 
   .button.default
     border-color: $gray-lighter
-    color: $gray-darker
-
-    &:hover,
-    &:active
-      background: $gray-light
 
   &.alt-color
     background: $dark-green
@@ -140,7 +131,8 @@ h2
     a:link,
     a:hover,
     a:visited
-      color: $brand-warning
+      color: $gray-lighter
+      background-color: none
 
     &.light-color
       background: $green

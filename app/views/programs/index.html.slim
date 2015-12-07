@@ -1,8 +1,8 @@
-- title "Program"
-- meta_description "In one week, we will cover all the basic parts of a web application. In the morning we start at 9am with a classroom lecture, followed by workshops the rest of the day until 5pm. We will pause only for lunch, coffee, and tea. During the evenings we will have various cool keynotes and presentations on lighter subjects between 8pm and 10pm."
-- meta_keywords "program, beginner, development, bootcamp, programming, learn, teach, sponsor"
+- title t('.page_title')
+- meta_description t('.meta_description')
+- meta_keywords t('.meta_keywords')
 
-- cache 'programs-index' do
+- cache [I18n.locale, 'programs-index'] do
   .dbc-content
     .dbc-container
       .inner
@@ -16,28 +16,28 @@
         .row
           .col
             .circle.beginner 1
-            h2 = link_to t(:beginner_bootcamp), program_level_1_path
+            h2 = link_to t(:beginner_bootcamp), courses_beginner_bootcamp_path
             p = t :beginner_bootcamp_intro
-            p = link_to t(:full_program), program_level_1_path, class: 'button default'
+            p = link_to t(:full_program), courses_beginner_bootcamp_path, class: 'button default'
 
           .col
             .circle.intermediate 2
-            h2 = link_to t(:intermediate_bootcamp), program_level_2_path
+            h2 = link_to t(:intermediate_bootcamp), courses_intermediate_bootcamp_path
             p = t :intermediate_bootcamp_intro
-            p = link_to t(:full_program), program_level_2_path, class: 'button default'
+            p = link_to t(:full_program), courses_intermediate_bootcamp_path, class: 'button default'
 
           .col
             .circle.advanced 3
-            h2 = link_to t(:advanced_bootcamp), program_level_3_path
+            h2 = link_to t(:advanced_bootcamp), courses_advanced_bootcamp_path
             p = t :advanced_bootcamp_intro
-            p = link_to t(:full_program), program_level_3_path, class: 'button default'
+            p = link_to t(:full_program), courses_advanced_bootcamp_path, class: 'button default'
 
         .row
           .col.middle
             .circle.frontend Y
-            h2 = link_to t(:frontend_bootcamp), program_frontend_bootcamp_path
+            h2 = link_to t(:frontend_bootcamp), courses_frontend_bootcamp_path
             p = t :frontend_bootcamp_intro
-            p = link_to t(:full_program), program_frontend_bootcamp_path, class: 'button default'
+            p = link_to t(:full_program), courses_frontend_bootcamp_path, class: 'button default'
 
     .dbc-container.dbc-three-col
       .inner
@@ -91,6 +91,15 @@
               = image_tag 'team/vincent.jpeg'
             h3 Vincent Oord
             p Coach
+
+          .col.team-member
+            .avatar
+              = image_tag 'team/question-mark.png'
+            h3 You?
+            p Apply for Teaching/Coaching!
+
+        .row
+          center = t('.meet_rest_team', team: link_to('team', team_path)).html_safe
 
   .dbc-container.dbc-three-col
     .inner

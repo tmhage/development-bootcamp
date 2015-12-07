@@ -1,11 +1,8 @@
-- title "Meet the team"
-- meta_description "Meet the team of Development Bootcamp. We teach code at our boot camp. In one week, we will teach you all the basic parts of a web application."
-- meta_keywords "team, people, development, bootcamp, programming, learn, teach, sponsor"
+- title t('.page_title')
+- meta_description t('.meta_description')
+- meta_keywords t('.meta_keywords')
 
-- cache 'team-page' do
-
-  script src="//platform.linkedin.com/in.js" type="text/javascript"
-
+- cache [I18n.locale, 'team-page'] do
   .dbc-content
     .dbc-container.dbc-three-col
       .inner

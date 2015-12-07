@@ -1,34 +1,34 @@
-- title "Open Day"
-- meta_description "Come to our Open Day to meet the team and do a little taste of what is to come."
-- meta_keywords "open day, development, bootcamp, programming, learn, student"
+- title t('.page_title')
+- meta_description t('.meta_description')
+- meta_keywords t('.meta_keywords')
 
-- cache 'open-day' do
+- cache [I18n.locale, 'open-day'] do
 
   .dbc-content
     .dbc-container.dbc-text-cta.light-color.alt-color
       .inner.normal
-        h2 Visit Our Open Evening!
-        p
-          | Leave your details below to register for our
-          strong
-            mark =<> 'Open Evening'
-          | on
-          strong
-            mark =<> 'December 10th'
-          | at
-          strong
-            mark =<> 'Minddistrict'
-            strong Jan Evertsenstraat 749, 1061 XZ Amsterdam
-          | . It will be a chance for you to ask all your questions.
+        h2 = t('.title')
 
-        ul
-          li 20:00  — Doors Open
-          li 20:30  — Welcome and Keynote by Wouter de Vos
-          li 21:15  — Q&A and drinks!
+        - open_evening = capture do
+          strong
+            mark = t(:open_evening)
+
+        - date = capture do
+          strong
+            mark = 'December 10th'
+
+        - location_info = capture do
+          strong
+            mark => 'Minddistrict'
+            | Jan Evertsenstraat 749, 1061 XZ Amsterdam
+
+        p = t('.intro_text', open_evening: open_evening, date: date, location_info: location_info).html_safe
+
+        = tmd('.schedule')
 
         p
-          => link_to 'RSVP Here', 'https://www.facebook.com/events/1645651045702555/', class: 'button primary'
-          | or leave your details below.
+          => link_to t('.rsvp_here'), 'https://www.facebook.com/events/1645651045702555/', class: 'button default'
+          = t('.leave_details_below')
 
         h3 &nbsp;
         iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9744.19008928516!2d4.8354527!3d52.3695583!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x79b08dc3a2d19f7b!2sMinddistrict!5e0!3m2!1sen!2snl!4v1448225622412" width="600" height="450" frameborder="0" style="border:0"
@@ -36,26 +36,24 @@
     .dbc-container.dbc-text
       .inner
         form#mc-embedded-subscribe-form.validate action="//developmentbootcamp.us9.list-manage.com/subscribe/post?u=f107d6a3948661d72e4628ba1&amp;id=aff9cced90" method="post" name="mc-embedded-subscribe-form" novalidate="" target="_blank"
-          h2 Register for our Open Evening
+          h2 = t('.register_for_open_evening')
           .form-group
             label for="mce-EMAIL"
-              | Email Address
+              = t('.email')
               span.asterisk *
             input#mce-EMAIL.required.email.form-control name="EMAIL" type="email" value="" /
           .form-group
-            label for="mce-FNAME" First Name
+            label for="mce-FNAME" = t('.first_name')
             input#mce-FNAME.form-control name="FNAME" type="text" value="" /
           .form-group
-            label for="mce-LNAME"  Last Name
+            label for="mce-LNAME" = t('.last_name')
             input#mce-LNAME.form-control name="LNAME" type="text" value="" /
           .form-group
-            label for="mce-PHONE"  Phone Number
+            label for="mce-PHONE" = t('.phone')
             input#mce-PHONE.form-control name="PHONE" type="text" value="" /
           /! real people should not fill this in and expect good things - do not remove this or risk form bot signups
           div style=("position: absolute; left: -5000px;")
             input name="b_f107d6a3948661d72e4628ba1_aff9cced90" tabindex="-1" type="text" value="" /
           .clear
-            input#mc-embedded-subscribe.button.primary name="subscribe" type="submit" value="Register" /
-            | or
-            =<> link_to 'RSVP', 'https://www.facebook.com/events/1645651045702555/'
-            | on Facebook.
+            input#mc-embedded-subscribe.button.primary.btn-lg name="subscribe" type="submit" value=t('.register')
+            =< t('.or_rsvp_on_fb', rsvp: link_to('RSVP', 'https://www.facebook.com/events/1645651045702555/')).html_safe

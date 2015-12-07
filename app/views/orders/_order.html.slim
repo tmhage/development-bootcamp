@@ -17,10 +17,10 @@ h3 Tickets & Price
     |  tickets (#{number_to_currency(@order.ticket_prices[:supporter])})
 - if @order.discount_code.present?
   .input
-    strong = "Total discount promo code '#{@order.discount_code.code}':"
+    strong = t('.total_discount_promo', promo: @order.discount_code.code)
     =< number_to_currency(@order.cart_discount)
 .input
-  strong Total price:
+  strong = t('.total_price')
   =< number_to_currency(@order.cart_sum_total)
 
 p
@@ -28,11 +28,10 @@ p
 
 - if @order.confirmed?
   - if @order.mollie_status.blank? && @order.stripe_token.blank?
-    p = payment_link_to 'Pay now!', order, class: 'button primary'
+    p = payment_link_to t('.pay_now'), order, class: 'button primary'
 
     p
-      | Prefer credit card? Click the button below, but note that you will pay
-      |  a fee of 2.9% (#{number_to_currency(@order.cart_sum_total)} + Payment fee: #{number_to_currency(@order.creditcard_fee)} = #{number_to_currency(@order.creditcard_total / 100.0)})
+      = t('.prefer_creditcard', total: number_to_currency(@order.cart_sum_total), payment_fee: number_to_currency(@order.creditcard_fee), creditcard_total: number_to_currency(@order.creditcard_total / 100.0))
 
       = form_for @order, url: stripe_token_ticket_url(@order) do |f|
         script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="#{ENV['DB_STRIPE_PKEY']}" data-amount="#{(@order.cart_sum_total * 102.9).to_i}" data-name="Development Bootcamp Tickets" data-description="#{@order.identifier}" data-image="/devbootcamp.png" data-email="#{@order.billing_email}" data-customer="#{@order.identifier}" data-currency="eur"
@@ -40,114 +39,101 @@ p
     p
       br
 
-    markdown:
-      Click the button below to make the payment. If someone else needs to make the payment for you,
-      just send them the link to this page.
-
-      If the price is too high for you, we might be able to help you out by allowing you to pay in installments.
-      Send us an email with your request _and a link to this page_ at support@developmentbootcamp.nl and we
-      will contact you as soon as we can.
+    = tmd('.payment_information')
 
   - elsif @order.payment
     h4 = "Status: #{@order.payment.status.upcase}"
 
     - if %w(CANCELLED EXPIRED).include? @order.payment.status.upcase
-      p Your order was #{@order.payment.status.upcase}. You can try make a new payment below:
+      p = t('.your_order_was_cancelled_expired', status: t(@order.payment.status.upcase))
 
-    p = payment_link_to 'Pay now!', order, class: 'button primary'
+    p = payment_link_to t('.pay_now'), order, class: 'button primary'
 
-    p
-      | Prefer credit card? Click the button below, but note that you will pay
-      |  a fee of 2.9% (#{number_to_currency(@order.cart_sum_total)} + Payment fee: #{number_to_currency(@order.creditcard_fee)} = #{number_to_currency(@order.creditcard_total / 100.0)})
+    p = t('.prefer_creditcard', total: number_to_currency(@order.cart_sum_total), payment_fee: number_to_currency(@order.creditcard_fee), creditcard_total: number_to_currency(@order.creditcard_total / 100.0))
 
-      = form_for @order, url: stripe_token_ticket_url(@order) do |f|
-        script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="#{ENV['DB_STRIPE_PKEY']}" data-amount="#{(@order.cart_sum_total * 102.9).to_i}" data-name="Development Bootcamp Tickets" data-description="#{@order.identifier}" data-image="/devbootcamp.png" data-email="#{@order.billing_email}" data-customer="#{@order.identifier}" data-currency="eur"
+    = form_for @order, url: stripe_token_ticket_url(@order) do |f|
+      script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="#{ENV['DB_STRIPE_PKEY']}" data-amount="#{(@order.cart_sum_total * 102.9).to_i}" data-name="Development Bootcamp Tickets" data-description="#{@order.identifier}" data-image="/devbootcamp.png" data-email="#{@order.billing_email}" data-customer="#{@order.identifier}" data-currency="eur"
 
   - else
-    h4 Thank you, your payment will be processed
-    markdown:
-      You will receive an email as soon as we have processed your payment.
+    h4 = t('.thank_you_processed')
+    p = t('.email_when_processed')
 
-p Below is an overview of the details you provided.
+p = t('.below_overview_details')
 
-h3 Billing Details
+h3 = t(:billing_details)
 .input
-  strong Full name:
+  strong = t(:label_full_name)
   =< @order.billing_name
 
 - if @order.billing_company_name.present?
   .input
-    strong Company name:
+    strong = t(:label_company_name)
     =< @order.billing_company_name
 
 .input
-  strong Email:
+  strong = t(:label_email)
   =< @order.billing_email
 
 .input
-  strong Address:
+  strong = t(:label_address)
   =< @order.billing_address
 
 .input
-  strong Postal code:
+  strong = t(:label_postal_code)
   =< @order.billing_postal
 
 .input
-  strong City:
+  strong = t(:label_city)
   =< @order.billing_city
 
 .input
-  strong Country:
+  strong = t(:label_country)
   =< @order.billing_country
 
 .input
-  strong Phone number:
+  strong = t(:label_phone)
   =< @order.billing_phone
 p
   br
 
-h3 Student Details
+h3 = t('.student_details')
 
 - @order.students.each do |student|
   .input
-    strong Name:
+    strong = t(:label_name)
     =< student.first_name
     =< student.last_name
 
   .input
-    strong Email:
+    strong = t(:label_email)
     =< student.email
 
   .input
-    strong Phone number:
+    strong = t(:label_phone)
     =< student.phone_number
 
   .input
-    strong Own laptop?
-    =< student.owns_laptop? ? 'Yes' : 'No'
+    strong = t(:label_bring_laptop)
+    =< student.owns_laptop? ? t(:form_label_yes) : t(:form_label_no)
 
   .input
-    strong Birth date:
+    strong = t(:label_birth_date)
     =< student.birth_date && student.birth_date.to_formatted_s(:long)
 
   .input
-    strong Brings own laptop:
-    =< student.owns_laptop? ? 'Yes' : 'No'
-
-  .input
     strong Twitter handle:
-    =< student.twitter_handle || 'not filled in'
+    =< student.twitter_handle || t(:label_not_filled)
 
   .input
     strong Github handle:
-    =< student.github_handle || 'not filled in'
+    =< student.github_handle || t(:label_not_filled)
 
   .input
-    strong Dietary wishes:
-    =< student.allergies || 'none'
+    strong = t(:label_dietary_wishes)
+    =< student.allergies || t(:label_none)
 
   .input
-    strong Remarks:
-    =< student.remarks || 'none'
+    strong = t(:label_remarks)
+    =< student.remarks || t(:label_none)
   p
     br

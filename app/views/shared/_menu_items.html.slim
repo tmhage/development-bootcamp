@@ -1,30 +1,12 @@
-- cache "menu-items/#{request.path}" do
+- cache [I18n.locale, "menu-items/#{request.path}"] do
   = menu_item_for root_url, active: request.path == root_path do
     => fa_icon 'home'
-    | Home
-  = menu_item_for program_path do
+    = t(:nav_home)
+  = menu_item_for courses_path do
     => fa_icon 'graduation-cap'
-    | Program
-    ul.subnav
-      = menu_item_for program_level_1_path, active: request.path == url_for(program_level_1_path) do
-        | Beginner
-      = menu_item_for program_level_2_path, active: request.path == url_for(program_level_2_path) do
-        | Intermediate
-      = menu_item_for program_level_3_path, active: request.path == url_for(program_level_3_path) do
-        | Advanced
-      = menu_item_for program_level_4_path, active: request.path == url_for(program_level_4_path) do
-        | Alumni
-  = menu_item_for tickets_path do
+    = t(:nav_courses)
+  = menu_item_for enroll_path do
     => fa_icon 'ticket'
-    | Tickets
-  / = menu_item_for speakers_path do
-  /   => fa_icon 'university'
-  /   | Speakers
-  /   ul.subnav
-  /     = menu_item_for new_speaker_path, active: request.path == url_for(new_speaker_path) do
-  /       | Become a Teacher
-  / = menu_item_for blog_index_path do
-  /   => fa_icon 'pencil'
-  /   | Blog
+    = t(:nav_enroll)
   = menu_item_for contact_path do
-    | Contact
+    = t(:nav_support)

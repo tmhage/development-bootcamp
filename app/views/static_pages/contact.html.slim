@@ -1,18 +1,16 @@
-- title "Contact, Location, and Getting There"
-- meta_description "Contact details, Science Park Amsterdam, route and facilities"
-- meta_keywords "contact, location, science park, amsterdam, development, bootcamp, programming, learn, teach"
+- title t('.page_title')
+- meta_description t('.meta_description')
+- meta_keywords t('.meta_keywords')
 
-- cache 'contact-page' do
+- cache [I18n.locale, 'contact-page'] do
   .dbc-content
     .dbc-container.dbc-text-cta.alt-color.light-color
       .inner.text
-        h1 Help and Support
+        h1 = t('.title')
 
-        p
-          | Need help? Got a question? Please check our
-          =<> link_to '/pages/faq' do
+        - faq = capture do
+          = link_to '/pages/faq' do
             => fa_icon 'support fw'
-            | FAQ Page
-          | or send us an email at
-          =< mail_to "support@developmentbootcamp.nl"
-          | .
+            = t('.faq_page')
+
+        = (tmd('.content') % { faq: faq, support_mail: mail_to("support@developmentbootcamp.nl") }).html_safe

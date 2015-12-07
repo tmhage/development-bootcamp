@@ -2,7 +2,9 @@
 
   fieldset
     = f.text_field :title, help: 'Careful! Changing the title changes the link to the page!'
+    = f.text_field :dutch_title
     = f.text_area :body, class: 'editor'
+    = f.text_area :dutch_version, class: 'editor'
 
   fieldset
     legend Publishing

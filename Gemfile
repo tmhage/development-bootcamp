@@ -36,6 +36,7 @@ gem 'rqrcode_png'
 gem 'mandrill-api'
 gem 'sidekiq'
 gem 'sinatra'
+gem 'route_translator'
 
 group :production, :staging do
   gem 'rails_12factor'
