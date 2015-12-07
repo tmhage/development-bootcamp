@@ -1,11 +1,11 @@
 .dbc-content
   .dbc-container.dbc-text
     .inner.text
-      h1 Order & Payment
+      h1 = t('.title')
       .support-box
-        | Feel free to mail us at
-        strong =<> mail_to 'support@developmentbootcamp.nl'
-        | or call us on
-        strong =<> '+31681910218'
-        | if you have any questions.
+        - support_mail = capture do
+          strong =<> mail_to 'support@developmentbootcamp.nl'
+        => fa_icon 'support'
+        = t(:please_mail_support, support_mail: support_mail).html_safe
+
       = render @order

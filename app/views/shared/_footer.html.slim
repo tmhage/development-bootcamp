@@ -6,8 +6,7 @@
           strong = t(:footer_navigation)
           ul
             = render "shared/menu_items"
-            = menu_item_for team_path do
-              | About us
+            = menu_item_for t(:nav_team), team_path
 
         .section.social
           strong = t(:footer_follow_us)

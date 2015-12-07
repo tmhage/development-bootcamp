@@ -1,6 +1,6 @@
-- title "Program"
-- meta_description "In one week, we will cover all the basic parts of a web application. In the morning we start at 9am with a classroom lecture, followed by workshops the rest of the day until 5pm. We will pause only for lunch, coffee, and tea. During the evenings we will have various cool keynotes and presentations on lighter subjects between 8pm and 10pm."
-- meta_keywords "program, beginner, development, bootcamp, programming, learn, teach, sponsor"
+- title t('.page_title')
+- meta_description t('.meta_description')
+- meta_keywords t('.meta_keywords')
 
 - cache [I18n.locale, 'programs-index'] do
   .dbc-content
@@ -91,6 +91,15 @@
               = image_tag 'team/vincent.jpeg'
             h3 Vincent Oord
             p Coach
+
+          .col.team-member
+            .avatar
+              = image_tag 'team/question-mark.png'
+            h3 You?
+            p Apply for Teaching/Coaching!
+
+        .row
+          center = t('.meet_rest_team', team: link_to('team', team_path)).html_safe
 
   .dbc-container.dbc-three-col
     .inner

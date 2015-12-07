@@ -13,5 +13,8 @@ class DevelopmentBootcamp::Application < Rails::Application
 
     # Rewrite old /tickets path to /enroll
     r301 '/tickets', '/enroll'
+
+    # Rewrite old /open-day path to /open-evening
+    r301 '/open-day', '/open-evening'
   end
 end

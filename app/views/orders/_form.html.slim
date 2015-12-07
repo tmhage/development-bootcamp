@@ -3,5 +3,5 @@
 
   .actions
     = f.form_group do
-      => f.submit 'Back', class: 'button default', name: 'back_button' unless @order.first_step?
-      = f.submit 'Continue', class: 'button primary'
+      => f.submit t(:back_button), class: 'button default', name: 'back_button' unless @order.first_step?
+      = f.submit t(:continue_button), class: 'button primary'

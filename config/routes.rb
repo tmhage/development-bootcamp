@@ -25,7 +25,7 @@ Rails.application.routes.draw do
     get '/cancellation-policy' => 'pages#show', id: 'cancellation-policy', as: :cancellation_policy
     get '/faq' => 'pages#show', id: 'faq', as: :faq
 
-    get '/open-day' => 'static_pages#open_day', as: :open_day
+    get '/open-evening' => 'static_pages#open_evening', as: :open_evening
 
     get '/students/:id/qr-code' => 'students#qr_code'
     get '/students/:id/check' => 'students#check_qr_code'

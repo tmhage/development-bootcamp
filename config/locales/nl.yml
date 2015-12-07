@@ -54,6 +54,7 @@ nl:
   nav_blog: Blog
   nav_support: Support
   nav_newsletter: Nieuwsbrief
+  nav_team: Team
 
   plans:
     title:
@@ -155,7 +156,7 @@ nl:
   frontend_web_bootcamp_intro: ...teaches you to create templates that can be used directly on existing Wordpress sites or any other CMS. Learn to add Javascript to increase interaction and engage with your target audience. Integrate 3rd party tools to measure engagement and A/B-test behavior.
 
   cta_courses: Cursussen
-  cta_open_day: Open Avond
+  cta_open_evening: Open Avond
   cta_newsletter_signup: Geef je op voor de Nieuwsbrief
   cta_enroll_now: Schrijf je nu in
   cta_apply_now: Vraag nu aan
@@ -168,13 +169,37 @@ nl:
   please_mail_support: Please don't hesitate to email us at %{support_mail} if you have any questions or feedback! We would love to know :)
 
   newsletter: Nieuwsbrief
-  newsletter_intro: Leave your details below and we will keep you updated on our events, study materials, and promotions.
+  open_evening: Open Avond
 
   # Generic form strings
   form_optional: Optioneel
   form_email_placeholder: jij@organisatie.co
   form_label_yes: 'Ja'
   form_label_no: 'Nee'
+  back_button: Terug
+  continue_button: Doorgaan
+
+  label_full_name: Volledige naam
+  label_company_name: Bedrijfsnaam
+  label_address: Adres
+  label_postal_code: Postcode
+  label_city: Stad
+  label_country: Land
+  label_name: Naam
+  label_email: Emailadres
+  label_phone: Telefoonnummer
+  label_bring_laptop: Neemt eigen laptop mee?
+  label_birth_date: Geboortedatum
+  label_dietary_wishes: Dieetwensen
+  label_none: Geen
+  label_remarks: Opmerkingen
+  label_not_filled: Niet ingevuld
+  label_last_updated: "Laatst bewerkt:"
+
+  # Payment Status
+  CANCELLED: GEANNULEERD
+  EXPIRED: VERLOPEN
+  PAID: BETAALD
 
   upcoming_dates: Aankomende Data
   no_bootcamps_planned: Momenteel hebben we geen Bootcamps gepland, meld je hieronder aan voor de nieuwsbrief zodat we je op de hoogte kunnen houden zodra er weer nieuwe bootcamps gepland worden.
@@ -186,8 +211,35 @@ nl:
 
     Subject to availability, eligible students can participate in the %{course} for less than one third of the regular fee through Development Bootcamp’s Scholarship Program. The program is powered by leading tech-companies. Apply and tell us your story.
 
+  # Ticket order steps
+  title_enroll_now: Schrijf nu in
+  title_tickets_include: Tickets zijn inclusief
+  tickets_include_list: |
+    - Daily Keynotes & Workshops Sunday - Saturday
+    - Healthy lunch on Sunday - Saturday
+    - Evening Sessions Sunday - Friday
+    - Coding Contest with great prizes
+    - Certificate upon completion of the program
+
+  title_pick_seats: Kies een ticket!
+  tickets_intro: |
+    Select the level you want, and the number of seats you need on the class.
+  valid_on: Valid
+  label_accept_terms: I have read and agree to the %{terms}, and the %{conditions}
+  change_order: Change order
+
+  billing_details: Billing details
+  student_details: Student Details %{current} / %{total}
+  you_selected_bootcamp:
+    one: 'You selected: %{count} ticket for %{bootcamp} on:'
+    other: 'You selected: %{count} tickets for %{bootcamp} on:'
+
   static_pages:
     home:
+      page_title: Home
+      meta_description: Learn code, the most wanted skill right now. We offer you the fastest way to junior developer or tech hybrid.
+      meta_keywords: development, bootcamp, programming, learn, teach, sponsor
+
       # Page Header
       learn_the_most_wanted: Leer de meest gevraagde
       skill_right_now: skill van dit moment
@@ -208,34 +260,53 @@ nl:
 
       quote: You will learn a way of thinking and looking at things that is fun and fascinating. A programmer’s mind is a joy forever.
 
-    # Ticket order steps
-    title_enroll_now: Schrijf nu in
-    title_tickets_include: Tickets zijn inclusief
-    tickets_include_list: |
-      - Daily Keynotes & Workshops Sunday - Saturday
-      - Healthy lunch on Sunday - Saturday
-      - Evening Sessions Sunday - Friday
-      - Coding Contest with great prizes
-      - Certificate upon completion of the program
-
-    title_pick_seats: Kies een ticket!
-    tickets_intro: |
-      Select the level you want, and the number of seats you need on the class.
-    valid_on: Valid
-    label_accept_terms: I have read and agree to the %{terms}, and the %{conditions}
-    change_order: Change order
-
-    billing_details: Billing details
-    student_details: Student Details %{current} / %{total}
-    you_selected_bootcamp:
-      one: 'You selected: %{count} ticket for %{bootcamp} on:'
-      other: 'You selected: %{count} tickets for %{bootcamp} on:'
-
     team:
       our_team: Ons Team
+      page_title: Student Newsletter Subscription
+      meta_description: Subscribe to Codaisseur's Development Bootcamp Newsletter to stay updated on new course dates, learning materials, and events.
+      meta_keywords: subscribe, newsletter, updated, development, bootcamp, programming, learn, student, code
 
     newsletter:
       title: Schrijf je in voor onze %{newsletter}
+      page_title: Nieuwsbrief Studenten Inschrijven
+      meta_description: Schrijf je in voor Codaisseur's Development Bootcamp Niewsbrief en we houden je op de hoogte van nieuwe data, lesmateriaal en events.
+      meta_keywords: inschrijven, nieuwsbrief, development, bootcamp, code, programmeren, leren, student
+      newsletter_intro: Schrijf je in voor Codaisseur's Development Bootcamp Niewsbrief over code en programmeren en we houden je op de hoogte van nieuwe data, lesmateriaal en events.
+
+    contact:
+      page_title: Help & Support
+      meta_description: Need help? Got a question? Please check our FAQ Page or send us an email.
+      meta_keywords: contact, location, amsterdam, development, bootcamp, programming, learn, tech, code
+      title: Help & Support
+      content: |
+        Need help? Got a question? Please check our %{faq} or send us an email
+        at %{support_mail}.
+      faq_page: pagina met veelgestelde vragen
+
+    open_evening:
+      page_title: Open Avond
+      meta_description: Come to our Open Day to meet the team and do a little taste of what is to come.
+      meta_keywords: open day, development, bootcamp, programming, learn, student
+      title: Visit Our Open Evening!
+      intro_text: |
+        Leave your details below to register for our %{open_evening} on %{date} at %{location_info}.
+
+        It will be the chance for you to ask all your questions.
+
+      schedule: |
+        * 20:00  — Doors Open
+        * 20:30  — Welcome and Keynote by Wouter de Vos
+        * 21:15  — Q&A and drinks!
+
+      rsvp_here: RSVP Here
+      leave_details_below: or leave your details below
+      register_for_open_evening: Register for our Open Evening
+      email: Email address
+      first_name: First name
+      last_name: Last name
+      phone: Phone number
+      register: Register
+      or_rsvp_on_fb: or %{rsvp} on Facebook.
 
   shared:
     newsletter_form:
@@ -247,8 +318,18 @@ nl:
 
   programs:
     index:
-      title: Ons Curriculum
+      page_title: "Leer Programmeren: Programmeercursussen"
+      meta_description: "Check out all of our Development Bootcamps to learn programming. We teach you the fastest way to learn code: the most wanted skill right now!"
+      meta_keywords: "courses, program, beginner, development, bootcamp, programming, learn, teach, sponsor"
+      title: Programmeercursussen
+      subtitle: ons volledige curriculum
       our_teachers: Onze Docenten
+      meet_rest_team: Meet the rest of the %{team}.
+
+    frontend_bootcamp:
+      page_title: "Frontend Bootcamp - Frontend Coding for Beginners"
+      meta_description: "Learn the first steps of writing code in an awesome program of just one week. Build a full app in HTML, CSS, and JavaScript."
+      meta_keywords: "program, frontend, beginner, coding, contest, job, development, bootcamp, programming, learn, teach, sponsor"
 
   orders:
     form:
@@ -258,6 +339,64 @@ nl:
         do_you_own_laptop: Heb je een laptop die je mee kunt nemen naar de lessen?
         placeholder_allergies: Heb je allergieën, ben je veganist?
         placeholder_remarks: Nog iets toe te voegen?
+      confirmation:
+        title: Confirmation
+        use_back_button_to_fix: You can use the back button below to change your input.
+        please_check: Please check your details carefully. If everything looks good, you can proceed to checkout.
+        click_continue: Click "%{continue}" to proceed to checkout. Click "%{back}" to make changes.
+    order:
+      total_discount_promo: "Total discount promo code '%{promo}':"
+      total_price: "Total price:"
+      pay_now: 'Pay now!'
+      prefer_creditcard: "Prefer credit card? Click the button below, but note that you will pay a fee of 2.9% (%{total} + Payment fee: %{payment_fee} = %{creditcard_total})"
+      payment_information: |
+        Click the button below to make the payment. If someone else needs to make the payment for you,
+        just send them the link to this page.
+
+        If the price is too high for you, we might be able to help you out by allowing you to pay in installments.
+        Send us an email with your request _and a link to this page_ at support@developmentbootcamp.nl and we
+        will contact you as soon as we can.
+      your_order_was_cancelled_expired: "Your order was %{status}. You can try make a new payment below:"
+      thank_you_processed: Thank you, your payment will be processed
+      email_when_processed: You will receive an email as soon as we have processed your payment.
+      below_overview_details: Below is an overview of the details you provided.
+      student_details: Student Details
+
+    new:
+      page_title: "Enroll - Tickets and Pricing"
+      meta_description: Enroll in our Development Bootcamps! Get your tickets to learn programming.
+      meta_keywords: enroll, registration, tickets, pricing, development, bootcamp, programming, learn, teach, sponsor
+
+    show:
+      title: Bestelling & Betaling
+    thanks:
+      title: Bedankt voor je %{order_or_payment}, %{name}!
+      order: bestelling
+      payment: betaling
+      paid_message:
+        one: Je betaling is verwerkt en je ontvangt je ticket binnen enkele minuten per email op **%{billing_email}**.
+        other: Je betaling is verwerkt en je ontvangt je %{count} tickets binnen enkele minuten per email op **%{billing_email}**.
+      individual_students_sent: "De tickets worden ook naar de individuele studenten gestuurd: **%{student_emails}**."
+      cancelled_message: |
+        Je betaling is **geannuleerd**. Als dit een vergissing was, probeer dan opnieuw je betaling
+        te doen via de knop hieronder.
+      pay_now: 'Nu Betalen'
+      expired_message: |
+        Je betaling is **verlopen**. Herlaad de pagina en klik op de betaalknop hieronder om alsnog te betalen.
+      still_open_message: |
+        Je ontvangt een email met meer informatie zodra we je betaling hebben verwerkt.
+      payment_error_message: |
+        Sorry, er is iets mis gegaan waardoor we je betaling niet konden verwerken. Als je nog niet betaald
+        hebt, klik dan op de betaalknop hieronder om het opnieuw te proberen. Als je _wel al hebt betaald_,
+        betaal dan **niet nog een keer**! :) Neem in dat geval contact op via telefoon of email. Gegevens
+        staan hieronder.
+      any_questions: |
+        Als je vragen hebt (wat dan ook!) over je bestelling, het programma, of iets anders
+        waar we je misschien mee kunnen helpen, voel je vrij om contact met ons te zoeken:
+
+        %{email}: [support@developmentbootcamp.nl](mailto:support@developmentbootcamp.nl)
+
+        %{phone}: **+31681910218**
 
   footer_follow_us: Volg ons
   footer_navigation: Navigatie

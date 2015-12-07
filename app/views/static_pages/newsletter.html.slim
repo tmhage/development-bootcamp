@@ -1,9 +1,8 @@
-- title "Students Newsletter Subscription"
-- meta_description "Subscribe to our newsletter. Zero to developer in three sessions of a week."
-- meta_keywords "newsletter, updated, development, bootcamp, programming, learn, student"
+- title t('.page_title')
+- meta_description t('.meta_description')
+- meta_keywords t('.meta_keywords')
 
 - cache [I18n.locale, 'newsletter-signup'] do
-
   .dbc-content
     .dbc-container.dbc-text-cta.light-color.alt-color
       .inner.normal
@@ -12,9 +11,10 @@
 
           - newsletter = capture do
             mark =< t(:newsletter)
+
           = t('.title', newsletter: newsletter).html_safe
 
-        p = t('.newsletter_intro')
+        = tmd('.newsletter_intro')
 
         p
           = link_to t(:cta_subscribe), '#mc-embedded-subscribe-form', class: 'button default'
