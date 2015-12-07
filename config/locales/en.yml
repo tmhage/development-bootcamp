@@ -55,15 +55,6 @@ en:
   nav_newsletter: Newsletter
   nav_team: Team
 
-  plans:
-    title:
-      platinum: Platinum sponsors
-      gold: Gold sponsors
-      silver: Silver sponsors
-      party: Party Support sponsor
-      dinner: Dinner Support sponsors
-      hackathon: Hackathon sponsor
-
   tickets:
     one: ticket
     other: tickets
@@ -260,7 +251,7 @@ en:
 
   static_pages:
     home:
-      page_title: Home
+      page_title: Home - Learn Programming
       meta_description: Learn code, the most wanted skill right now. We offer you the fastest way to junior developer or tech hybrid.
       meta_keywords: development, bootcamp, programming, learn, teach, sponsor
 
@@ -437,7 +428,6 @@ en:
         %{email}: [support@developmentbootcamp.nl](mailto:support@developmentbootcamp.nl)
 
         %{phone}: **+31681910218**
-
 
   footer_follow_us: Follow Us
   footer_navigation: Navigation
