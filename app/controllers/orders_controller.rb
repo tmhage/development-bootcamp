@@ -57,7 +57,7 @@ class OrdersController < ApplicationController
       reset_order_session!
       enqueue_payment_email!
       @order.students.each { |student| add_to_list(student) }
-      redirect_to ticket_url(@order)
+      redirect_to enroll_url(@order)
     else
       render :new
     end
@@ -104,7 +104,7 @@ class OrdersController < ApplicationController
     else
       flash[:error] = "Sorry, your creditcard payment could not be processed, please try again or contact us at support@developmentbootcamp.nl"
     end
-    redirect_to ticket_url(@order)
+    redirect_to enroll_url(@order)
   end
 
   private ###########################################################################################
