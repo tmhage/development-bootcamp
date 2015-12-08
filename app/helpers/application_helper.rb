@@ -43,7 +43,7 @@ module ApplicationHelper
   end
 
   def localized_cache(*args, &block)
-    cache [I18n.locale, File.ctime(Rails.root.join("config", "locales", "#{I18n.locale}.yml"))] + args do
+    cache [I18n.locale, File.mtime(Rails.root.join("config", "locales", "#{I18n.locale}.yml"))] + args do
       yield block
     end
   end
