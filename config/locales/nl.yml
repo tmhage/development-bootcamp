@@ -75,20 +75,33 @@ nl:
 
   beginner_bootcamp: Beginner Bootcamp
   beginner_bootcamp_tagline: jouw programmeer kickstart
-  beginner_bootcamp_intro: ...leert je de basisbeginselen van programmeren en te denken als programmeur. Aan het einde van de week kan je kleine programma's schrijven die je leven makkelijker maken en heb je je eerste interactive website gebouwd.
+  beginner_bootcamp_intro: |
+    ...leer de basisbeginselen van programmeren en, belangrijker nog, te denken
+    als programmeur. Aan het einde van de week kan je kleine programma's
+    schrijven die je leven makkelijker maken. Je hebt je eerste interactive
+    website gebouwd.
   beginner_program: Beginner Programma
   beginner_bootcamp_description: |
-    De Beginner Bootcamp is een unieke kickstart in de wereld van het programmeren. Het is bedoeld voor diegenen met geen of beperkte programmeer ervaring.
+    De Beginner Bootcamp is een unieke kickstart in de wereld van het
+    programmeren. Voorkennis van programmeren is niet noodzakelijk.
 
-    Of je nu iets meer wilt begrijpen van programmeren of de basis wilt leggen voor een carriere switch, dit is de beste inleiding die je je kan wensen: het is betaalbaar, kort, leuk en je leert van de beste.
+    Of je nu iets meer wilt begrijpen van programmeren of de basis wilt leggen
+    voor een carriere switch, dit is de beste inleiding die je je kan wensen:
+    je leert van de beste, het is kort en krachtig, en vooral heel erg leuk!
 
-    We laten alle standaardonderdelen van een web applicatie aan bod komen. Aan het einde van de week heb je je eigen website gebouwd en weet je hoe je deze kan uitbreiden en onderhouden.
+    We laten alle standaardonderdelen van een web applicatie aan bod komen.
+    Aan het einde van de week heb je je eigen website gebouwd en weet je hoe je
+    deze kan uitbreiden en onderhouden.
 
-    Een jaar hosting is inbegrepen in de cursus, dus jouw website blijft gedurende die tijd online en je kunt hem laten zien aan je vrienden, familie, of zelfs je eigen bedrijf ermee beginnen misschien?
+    Een jaar hosting is inbegrepen in de cursus, dus jouw website blijft
+    gedurende die tijd online en je kunt hem laten zien aan je vrienden en
+    familie, of misschien wel gebruiken om je eigen bedrijf te starten.
 
-    Bekijk de onderwerpen of deze website. Nu zullen de meesten je vreemd voorkomen, maar binnenkort begrijp je dit allemaal. En dat allemaal in 7 dagen, met onze hulp.
+    De hieronder genoemde onderwerpen zullen je nu nog vreemd voorkomen, maar
+    binnenkort begrijp je dit allemaal. En dat allemaal in slechts zeven dagen.
+    Met een beetje hulp van ons natuurlijk.
 
-    Treuzel niet langer en schrijf je in voor de Bootcamp!
+    Wacht niet langer en schrijf je in voor de Bootcamp!
 
   intermediate_bootcamp: Intermediate Bootcamp
   intermediate_bootcamp_tagline: bouw applicaties die er toe doen
@@ -101,10 +114,10 @@ nl:
     deployen van je applicatie naar een server, etc. Het eindresultaat van de
     week is een goed werkende en volwaardige web applicatie.
 
-    We behandelen alles dat nodig is om uitgebreide webapplicaties te bouwen met
-    de noodzakelijke functionaliteit en logica om op zn minst een
-    interessant project te vormen, maar misschien ook wel de eerste versie van je online
-    bedrijf.
+    We behandelen alles dat je nodig hebt om uitgebreide webapplicaties te
+    bouwen.Met behulp van complexere logica en uitgebreide functionaliteit kan je
+    interessante projecten opzetten. Wellicht kan je je project zelf uitbouwen
+    een eerste versie van jouw online bussiness.
 
     Niet alleen leer je noodzakelijke vaardigheden, maar ook de industrie
     standaarden om functionaliteit toe te voegen, zoals gebruikersaccounts
@@ -147,7 +160,7 @@ nl:
     te bereiden voordat we je aanmelding accepteren.
 
   frontend_bootcamp: Frontend Web Bootcamp
-  frontend_bootcamp_tagline: interactiev en innemend
+  frontend_bootcamp_tagline: interactief en innemend
   frontend_bootcamp_intro: |
     ...leert je om templates te maken die je direct kan
     gebruiken in bestaande Wordpress sites of ieder ander CMS. Leer hoe je
@@ -232,7 +245,8 @@ nl:
   other_bootcamps: Andere Bootcamps
   incompany_cta: |
     Deze cursus is ook beschikbaar als in-company training!
-    Neem [Contact](%{contact_url}) op als jij met je collega's wilt deelnemen.
+    Neem [Contact](%{contact_url}) met ons op als jij met je collega's
+    wilt deelnemen.
 
   scholarship_program: Scholarship Programma
   scholarship_program_intro: |
@@ -249,11 +263,10 @@ nl:
   title_enroll_now: Schrijf nu in
   title_tickets_include: Tickets zijn inclusief
   tickets_include_list: |
-    - Dagelijkse Keynotes & Workshops, zondag - zaterdag
-    - Gezonde lunch, zondag - zaterdag
-    - Evening Sessions, zondag - vrijdag
-    - programmeerwedstrijd met mooie prijzen
+    - Dagelijkse Keynotes & Workshops
+    - Programmeerwedstrijd met mooie prijzen
     - certificaat bij het succesvol afronden van de cursus
+    - Gezonde lunch
 
   title_pick_seats: Kies een ticket!
   tickets_intro: |
@@ -263,7 +276,7 @@ nl:
     Ik heb de %{terms} en %{conditions} gelezen en stem hiermee in.
   change_order: Wijzig je bestelling
 
-  billing_details: Betaal gegevens
+  billing_details: Betaalgegevens
   student_details: Student gegevens %{current} / %{total}
   you_selected_bootcamp:
     one: 'Jouw bestelling: %{count} ticket voor %{bootcamp} op:'
@@ -287,13 +300,15 @@ nl:
 
       # Three Reasons to Enroll
       three_reasons_one_heading: Software is overal.
-      three_reasons_one: Mensen in alle bedrijfstakken kunnen profiteren van programmeerkennis om hun productiviteit te verhogen en e-vaardigheden te verbeteren.
+      three_reasons_one: Iedereen kan profiteren van programmeerkennis. Verbeter je e-vaardigheden en verhoog je productiviteit.
       three_reasons_two_heading: We geven je een kickstart
-      three_reasons_two: in de wereld van het web-based programmeren op dit moment met intensieve en resultaat gerichte bootcamps.
-      three_reasons_three_heading: Leer web applicaties te bouwen
-      three_reasons_three:  van professionals. Maak je keuze tussen beginner cursussen op instap niveau en meer geavanceerde cursussen die je voor bereiden op een nieuwe carrière.
+      three_reasons_two: in de huidige wereld van het web-based programmeren met intensieve en resultaat gerichte bootcamps.
+      three_reasons_three_heading: Leer web applicaties bouwen
+      three_reasons_three:  |
+        van professionals. Van cursussen op instap niveau tot meer
+        geavanceerde cursussen die je voorbereiden op een nieuwe carrière. De keuze is aan jou.
 
-      quote: Je leert een nieuwe manier van denken en kijken naar dingen die zowel leuk als boeiend is. A programmer’s mind is a joy forever!
+      quote: Je leert op een andere manier kijken naar dingen. A programmer’s mind is a joy forever!
 
     team:
       our_team: Ons Team
@@ -355,8 +370,8 @@ nl:
       page_title: "Leer Programmeren: Programmeercursussen"
       meta_description: "Bekijk alle Development Bootcamps. De snelste weg om te leren programmeren: de meest gewilde vaardigheid van dit moment!"
       meta_keywords: "cursussen, programma, beginner, ontwikkeling, bootcamp, programmeren, leren, junior developer, tech hybrid"
-      title: Programmeercursussen
-      subtitle: ons volledige curriculum
+      title: Alle programmeercursussen
+      subtitle: op een rijtje
       our_teachers: Onze Docenten
       meet_rest_team: Meet the rest of the %{team}.
 
@@ -367,7 +382,7 @@ nl:
 
     level_one:
       page_title: "Beginner Development Bootcamp - Programmeren voor Beginners"
-      meta_description: "Learn the first steps of writing code in an awesome program of just one week. Van nul naar junior developer in drie cursussen van één week."
+      meta_description: "Leer de eerste regels code schrijven tijdens een geweldig programma van één week. Van nul naar junior developer in drie cursussen van één week."
       meta_keywords: "programma, terminal, unix, git, testen, wedstrijd, baan, bootcamp, programmeren, leren, tech hybrid, junior developer"
       what_you_can_build: Wat je kan na 7 dagen
       wondering_what_others_built: Vraag je je af wat anderen gebouwd hebben na maar een week leren coderen? Bekijk de apps die ze bouwden in een paar uur tijdens hun laatste dag Hackathon. Ze zijn natuurlijk niet perfect en ze zijn ook niet helemaal af, maar het geeft je een goed idee van hoe ontzettend veel je kunt leren na zeven dagen als je nog nooit hebt geprogrammeerd!
