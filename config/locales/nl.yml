@@ -232,7 +232,7 @@ nl:
   other_bootcamps: Andere Bootcamps
   incompany_cta: |
     Deze cursus is ook beschikbaar als in-company training!
-    Neem [Contact](%{contact_url}) als jij met je collega's wilt deelnemen.
+    Neem [Contact](%{contact_url}) op als jij met je collega's wilt deelnemen.
 
   scholarship_program: Scholarship Programma
   scholarship_program_intro: |
@@ -242,7 +242,7 @@ nl:
     Afhankelijk van de beschikbaarheid kunnen studenten die daarvoor in aanmerking
     komen aan de %{course} deelnemen voor minder dan een derde van de gebruikelijke
     prijs via Development Bootcamp's Scholarship Programma. Dit programma wordt
-    mede mogelijk gemaakt door toonaangevende tech bedrijven. Schrijf je in en
+    mede mogelijk gemaakt door toonaangevende tech bedrijven. Meld je aan en
     vertel ons jouw verhaal.
 
   # Ticket order steps
