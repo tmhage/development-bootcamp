@@ -113,7 +113,8 @@ describe 'frontend routes', type: :routing do
         expect(get: '/blog/foobar').to route_to(
           controller: 'posts',
           action: 'show',
-          id: 'foobar'
+          id: 'foobar',
+          locale: 'en'
         )
       end
     end

@@ -15,8 +15,10 @@ class PostsController < ApplicationController
     if @post.language.to_sym != I18n.locale
       other_locale = I18n.locale == :en ? :nl : :en
       redirect_to blog_url(@post, host: Rails.application.config.hosts[other_locale]).sub('/nl/', '/'), status: :moved_permanently
-    else
+    elsif @post.published?
       render :show
+    else
+      page_not_found
     end
   end
 
