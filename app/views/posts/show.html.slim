@@ -3,7 +3,7 @@
 - meta_keywords "development, bootcamp, programming, learn, teach, sponsor"
 - meta_image @post.cover_image.url(:thumb) if @post.cover_image.present?
 
-- cache [I18n.locale, @post] do
+- localized_cache [@post] do
   .dbc-content
     .dbc-container.dbc-post
       .cover-image style="background-image: url('#{image_url @post.cover_image.url(:big)}')"

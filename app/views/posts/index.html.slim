@@ -2,11 +2,11 @@
 - meta_description "We blog about learning code and our boot camp. In one week, we will teach you all the basic parts of a web application."
 - meta_keywords "blog, development, bootcamp, programming, learn, teach, sponsor"
 
-- cache [I18n.locale, cache_key_for_posts] do
+- localized_cache [cache_key_for_posts] do
   .dbc-content
     - if @posts.any?
       - @posts.each do |post|
-        - cache [I18n.locale, post] do
+        - localized_cache [post] do
           .dbc-container.dbc-post
             .cover-image style="background-image: url('#{image_url post.cover_image.url(:big)}')"
               .inner
