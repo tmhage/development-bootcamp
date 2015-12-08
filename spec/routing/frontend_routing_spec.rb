@@ -98,6 +98,27 @@ describe 'frontend routes', type: :routing do
     end
   end
 
+  describe 'blog routing' do
+    it 'should route to posts#index' do
+      describe 'blog index route' do
+        expect(get: '/blog').to route_to(
+          controller: 'posts',
+          action: 'index'
+        )
+      end
+    end
+
+    describe 'blog post route' do
+      it 'should route to posts#show' do
+        expect(get: '/blog/foobar').to route_to(
+          controller: 'posts',
+          action: 'show',
+          id: 'foobar'
+        )
+      end
+    end
+  end
+
   describe 'sitemap_path' do
     it 'routes to application#sitemap' do
       expect(get: '/sitemap.xml').to route_to(
