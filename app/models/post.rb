@@ -11,13 +11,15 @@ class Post < ActiveRecord::Base
   def self.published
     where(
       "published_at < ? AND ( unpublished_at IS NULL OR unpublished_at > ? )",
-      DateTime.now, DateTime.now)
+      DateTime.now, DateTime.now).
+      where(language: I18n.locale)
   end
 
   def self.unpublished
     where(
       "published_at > ? OR unpublished_at < ? OR published_at IS NULL",
-      DateTime.now, DateTime.now)
+      DateTime.now, DateTime.now).
+      where(language: I18n.locale)
   end
 
   def self.recent

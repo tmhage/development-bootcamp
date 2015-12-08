@@ -11,7 +11,13 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.published.friendly.find(params[:id])
+    @post = Post.friendly.find(params[:id])
+    if @post.language.to_sym != I18n.locale
+      other_locale = I18n.locale == :en ? :nl : :en
+      redirect_to blog_url(@post, host: Rails.application.config.hosts[other_locale]).sub('/nl/', '/'), status: :moved_permanently
+    else
+      render :show
+    end
   end
 
   private
