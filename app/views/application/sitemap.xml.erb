@@ -60,6 +60,26 @@
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
+  <url>
+    <loc><%= root_url %>sponsors/new</loc>
+    <lastmod><%= File.ctime(Rails.root.join("app", "views", "sponsors", "new.html.slim")).strftime('%Y-%m-%d') %></lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  <url>
+    <loc><%= root_url %>blog</loc>
+    <lastmod><%= Post.all.order("updated_at DESC").first.updated_at.strftime('%Y-%m-%d') %></lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.2</priority>
+  </url>
+  <% Post.published.each do |post| %>
+    <url>
+      <loc><%= root_url %>blog/<%= post.slug %></loc>
+      <lastmod><%= post.updated_at.strftime('%Y-%m-%d') %></lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.5</priority>
+    </url>
+  <% end %>
   <% Page.published.each do |page| %>
     <url>
       <loc><%= page_url(page) %></loc>

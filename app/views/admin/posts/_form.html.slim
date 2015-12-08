@@ -1,6 +1,7 @@
 = bootstrap_form_for @post, url: (@post.persisted? ? admin_post_path(@post) : admin_posts_path), file: true do |f|
 
   fieldset
+    = f.select :language, [:en, :nl]
     = f.text_field :title
     = f.text_area :content, class: 'editor'
 
