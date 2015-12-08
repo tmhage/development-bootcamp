@@ -22,7 +22,8 @@ after_success:
 - cat .travis/host_key >> ~/.ssh/known_hosts
 - git remote add deis ssh://git@deis.cloud.codaisseur.com:2222/latest-sandwich.git
 - 'if [ "${TRAVIS_PULL_REQUEST}" = "false" ] && [ "${TRAVIS_BRANCH}" = "master" ]; then git push deis master; fi'
-- 'if [ "${TRAVIS_PULL_REQUEST}" = "false" ] && [ "${TRAVIS_BRANCH}" = "master" ]; then bundle exec rake deploy:notify; fi'
+- "AUTHOR=`git --no-pager show -s --format='%an'` bundle exec rake \"deploy:notify[${AUTHOR}]\""
+- "if [ \"${TRAVIS_PULL_REQUEST}\" = \"false\" ] && [ \"${TRAVIS_BRANCH}\" = \"master\" ]; then AUTHOR=`git --no-pager show -s --format='%an'` bundle exec rake \"deploy:notify[${AUTHOR}]\"; fi"
 notifications:
   slack:
     secure: KbFf1e6G6k1Z4mGNkOm+jmyciCF1yjtQbjgEkEroSMuwM++SGq8yoQHurWVbItbofB+vyA7owCrCSUrIYEpQSSLqoo8EcrHIykif+sWXKzJCpjEE/WseP6nzKMXovYRzUTWMLzv5axtLHwAxy169xkP+vMbAKt/lSNVKrkJB6G0=
@@ -31,3 +32,4 @@ env:
   - secure: LUWZaXQHHW/x1PCKk4EnRHvoXtu55lh9l0jM+V3EIKkd6K7tvVe5M2VyfFssOKZlgKR466o7lspaFF4t3pS/zqhpjS/R7FgE5ckN8fc0z7ZOLk5Rm6ZtcBpy/pyhBcnA+rcsvDQH9sqyfeB3QQ95KZnvws0SgLC5eO2KHQQMndU=
   - secure: b6YTYmYhpgtyZbtE9CGN2Ql8Gnsla6D2Q9IJtC6AhJGYdZ2MbTnjt9P2AaYrwgFXBV9OnktjJwaiUfgrYZyG0BBQ1Zv0lBgKuZ5obyTrpdP1+wr2mpiDaeXwG7Rmm9sd6xxxaWZ6/vQLPsoOboVL2HFEA3ljaEtn9LKNv4QkMjE=
   - secure: cVAOtpSvxPoteo/pqZ2Ux2A2EEifuyffH432dDlp/2UWhejnGhxmhjBeFPjUDeughcFdnMzE1EsGloieSepNvD7kqIC6w7CR7SmdXsmOciMEz92Xr5TmVDIzhIoEuGij1BA7vH1hu0IoTn+m6HVOCBTvlag42o0IcDWAZkNVvfg=
+  - secure: "CDzfftGXwyqEyY/a3RZAZ8s9rNKZG09Ih6jOXzMgJ7M1HQjJxaanDwgZj+j9pUqPMctGPSofE8gziC7omjFQtUdJriLOSip4wgBmfy9lIAwFgE6b2FgQL0NrNqdDXKhkSUWrQdi5xxUeeVrTFko4vD9PAkClS3DGrUVV52vv32I="
