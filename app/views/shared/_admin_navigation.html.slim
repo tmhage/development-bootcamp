@@ -17,6 +17,9 @@ nav.navbar.navbar-inverse.navbar-fixed-top
           | Orders
           span.badge =< Order.count
         = menu_dropdown_for 'Content' do
+          = menu_item_for admin_posts_path do
+            = fa_icon 'edit fw'
+            | Blog
           = menu_item_for admin_pages_path do
             = fa_icon 'bookmark fw'
             | Pages
