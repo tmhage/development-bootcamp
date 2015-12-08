@@ -137,6 +137,22 @@ h2
     &.light-color
       background: $green
 
+      a:link,
+      a:hover,
+      a:visited
+        color: $brand-warning
+        background-color: none
+        font-weight: bold
+
+        &.button
+          color: $gray-lighter
+          font-weight: normal
+
+          &.primary
+            color: $brand-primary
+            background-color: $gray-lighter
+            border-color: darken($brand-primary, 10%)
+
 @media (max-width: $screen-xs-max)
   .dbc-text-cta
     &.alt-color-xs

@@ -6,11 +6,13 @@
   .inner
     margin-top: 1em
     margin-bottom: 1em
+
   .cover-image
     position: relative
-    img
-      @extend .img-responsive
-      width: 100%
+    background-size: cover
+    background-repeat: no-repeat
+    min-height: 300px
+    padding-bottom: 25px
 
     &:before
       content: ""
@@ -32,8 +34,13 @@
     color: #fff
     z-index: +1
     padding-left: 2em
-    margin-top: -140px
-    padding-bottom: 60px
+    margin-top: 6em
+    margin-bottom: 1em
+    width: 85%
+    text-shadow: 1px 1px 1px #000
+
+    h1
+      font-size: 3.4em
 
     a:link, a:hover, a:visited
       text-decoration: none
@@ -48,3 +55,7 @@
     .author
       padding-top: 1em
       @extend .col-xs-8
+
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max)
+  .dbc-post > .inner > .cover-overlay
+    width: 100%

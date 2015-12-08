@@ -7,14 +7,12 @@
     - if @posts.any?
       - @posts.each do |post|
         - cache [I18n.locale, post] do
-          .dbc-container.dbc-text.dbc-post
-            .inner
-              .cover-image = image_tag post.cover_image.url(:big)
+          .dbc-container.dbc-post
+            .cover-image style="background-image: url('#{image_url post.cover_image.url(:big)}')"
+              .inner
+                .cover-overlay
+                  h1= link_to post.title, post
 
-              .cover-overlay
-                h2= link_to post.title, post
-
-          .dbc-container.dbc-text-cta.alt-color.light-color.dbc-post
             - if post.user && post.user.first_name
               .inner.post-meta
                 .avatar

@@ -5,12 +5,11 @@
 
 - cache [I18n.locale, @post] do
   .dbc-content
-    .dbc-container.dbc-text-cta.alt-color.light-color.dbc-post
-      .inner
-        .cover-image = image_tag @post.cover_image.url(:big)
-
-        .cover-overlay
-          h1= @post.title
+    .dbc-container.dbc-post
+      .cover-image style="background-image: url('#{image_url @post.cover_image.url(:big)}')"
+        .inner
+          .cover-overlay
+            h1= @post.title
 
     .dbc-container.dbc-text.dbc-post
       - if @post.user && @post.user.first_name
@@ -25,9 +24,10 @@
       .inner
         p = @post.content.sub(/<hr>/, '').html_safe
 
-    .dbc-text-cta
+    .dbc-text-cta.alt-color.light-color
       .inner.centered
-        h1 Like what you've been reading?
-        p Learn more about coding during our Development Bootcamp!
-        = link_to 'Read full program', courses_path, class: 'button primary'
-        = link_to 'Get tickets', enroll_path, class: 'button default'
+        h2 = t('.like_what_you_read')
+        = tmd('.learn_more_cta', courses_path: courses_path)
+        p
+          => link_to t(:cta_courses), courses_path, class: 'button primary'
+          = link_to t(:cta_enroll_now), enroll_path, class: 'button default'
