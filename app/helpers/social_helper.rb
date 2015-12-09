@@ -10,4 +10,14 @@ module SocialHelper
       }
     )
   end
+
+  def tweet_button
+    link_to "Tweet", "https://twitter.com/share",
+      class: "twitter-share-button",
+      data: {
+        via: "devbootcamps",
+        related: "codaisseur",
+        hashtags: "nltech"
+      }
+  end
 end
