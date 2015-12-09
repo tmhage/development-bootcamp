@@ -472,5 +472,8 @@ nl:
       like_what_you_read: "Leuk stuk gelezen?"
       learn_more_cta: Leer meer over code tijdens onze Development Bootcamp! Check ons volledige [cursusaanbod](%{courses_path}).
 
+  reviews_from_students: Ervaringen van onze studenten
+  here_is_what_students_say: Dit is wat onze studenten over ons zeggen.
+
   footer_follow_us: Volg ons
   footer_navigation: Navigatie

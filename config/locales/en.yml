@@ -437,5 +437,8 @@ en:
       like_what_you_read: "Like what you've been reading?"
       learn_more_cta: Learn more about coding during our Development Bootcamp! Check out our [courses](%{courses_path}).
 
+  reviews_from_students: Reviews from our Students
+  here_is_what_students_say: Here's what our students say about us.
+
   footer_follow_us: Follow Us
   footer_navigation: Navigation
