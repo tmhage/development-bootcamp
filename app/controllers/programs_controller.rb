@@ -5,22 +5,22 @@ class ProgramsController < ApplicationController
 
   def level_one
     @level = 'Beginner'
-    @bootcamps = Bootcamp.beginner.published
+    @bootcamps = Bootcamp.beginner.published.by_date
   end
 
   def level_two
     @level = 'Intermediate'
-    @bootcamps = Bootcamp.intermediate.published
+    @bootcamps = Bootcamp.intermediate.published.by_date
   end
 
   def level_three
     @level = 'Advanced'
-    @bootcamps = Bootcamp.advanced.published
+    @bootcamps = Bootcamp.advanced.published.by_date
   end
 
   def frontend_bootcamp
     @level = 'Frontend'
-    @bootcamps = Bootcamp.frontend.published
+    @bootcamps = Bootcamp.frontend.published.by_date
   end
 
   private
