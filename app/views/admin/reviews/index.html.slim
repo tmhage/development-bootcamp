@@ -28,13 +28,13 @@
       - @reviews.each do | review |
         tr
           td
-            = review.student.full_name
+            = review.student && review.student.full_name
           td
             = image_tag review.avatar
           td
             = review.rating
           td
-            = review.bootcamp.name_with_dates
+            = review.bootcamp && review.bootcamp.name_with_dates
           td
             = review.original_date
           td

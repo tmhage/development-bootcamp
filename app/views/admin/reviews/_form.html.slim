@@ -11,6 +11,7 @@
     = f.label :student, :class => "col-sm-2 control-label"
     .col-sm-10
       = f.select :student_id, Student.all.map{|s| [s.full_name, s.id] }, :class => "form-control"
+      =< @review.springest_author
   .form-group
     = f.label :avatar, :class => "col-sm-2 control-label"
     .col-sm-10
