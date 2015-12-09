@@ -56,6 +56,20 @@
       padding-top: 1em
       @extend .col-xs-8
 
+  .social
+    @extend .col-xs-12
+    padding-top: 1em
+    padding-bottom: 1em
+    border: 1px solid $gray-lighter
+    border-radius: 5px
+
+  .content
+    img,
+    iframe
+      display: block
+      max-width: 100%
+      margin: 2em auto
+
 @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max)
   .dbc-post > .inner > .cover-overlay
     width: 100%

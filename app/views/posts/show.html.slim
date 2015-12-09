@@ -22,6 +22,10 @@
             => @post.created_at.strftime("%d %b %y")
 
       .inner
+        .social
+          = like_button
+
+      .inner.content
         p = @post.content.sub(/<hr>/, '').html_safe
 
     .dbc-container.dbc-text-cta.alt-color.light-color

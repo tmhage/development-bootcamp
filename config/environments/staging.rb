@@ -26,4 +26,9 @@ DevelopmentBootcamp::Application.configure do
     en: 'staging.developmentbootcamp.com',
     nl: 'staging.developmentbootcamp.nl'
   }
+
+  config.facebook_id = {
+    en: '1706631842883019',
+    nl: '872347686220061'
+  }
 end

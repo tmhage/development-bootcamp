@@ -39,4 +39,9 @@ Rails.application.configure do
     en: 'www.developmentbootcamp.com.dev',
     nl: 'www.developmentbootcamp.nl.dev'
   }
+
+  config.facebook_id = {
+    en: '1706631842883019',
+    nl: '872347686220061'
+  }
 end
