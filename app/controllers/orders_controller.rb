@@ -9,7 +9,6 @@ class OrdersController < ApplicationController
   respond_to :html
 
   def show
-    respond_with(@order)
   end
 
   def new
@@ -21,8 +20,6 @@ class OrdersController < ApplicationController
     @order.bootcamp = @bootcamps.first
 
     track_discount_code!
-
-    respond_with(@order)
   end
 
   def create
@@ -58,7 +55,7 @@ class OrdersController < ApplicationController
       reset_order_session!
       enqueue_payment_email!
       @order.students.each { |student| add_to_list(student) }
-      redirect_to enroll_url(@order)
+      redirect_to order_url(@order)
     else
       render :new
     end
