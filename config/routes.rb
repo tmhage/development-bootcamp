@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     get '/courses/frontend-bootcamp' => 'programs#frontend_bootcamp', as: :courses_frontend_bootcamp
 
     get '/enroll' => 'orders#new', as: :enroll
+    get '/order/:id' => 'orders#show', as: :order
     get '/team' => 'static_pages#team', as: :team
     get '/contact' => 'static_pages#contact', as: :contact
     get '/newsletter' => 'static_pages#newsletter', as: :newsletter

@@ -15,7 +15,7 @@ noscript
 .dbc-content
   .dbc-container.dbc-text
     .inner.text
-      h1 = t('.title', name: @order.billing_name, payment_or_order: @order.payment && @order.payment.paid? ? t('.payment') : t('.order'))
+      h1 = t('.title', name: @order.billing_name, order_or_payment: @order.payment && @order.payment.paid? ? t('.payment') : t('.order'))
 
       - if @order.payment && @order.payment.paid?
         = tmd('.paid_message', count: @order.cart_sum_tickets, billing_email: @order.billing_email)
