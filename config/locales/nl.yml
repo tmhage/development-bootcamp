@@ -469,7 +469,7 @@ nl:
 
   posts:
     show:
-      like_what_you_read: "Vind je het leuk wat je net gelezen hebt?"
+      like_what_you_read: "Leuk stuk gelezen?"
       learn_more_cta: Leer meer over code tijdens onze Development Bootcamp! Check ons volledige [cursusaanbod](%{courses_path}).
 
   footer_follow_us: Volg ons

@@ -24,7 +24,7 @@
       .inner
         p = @post.content.sub(/<hr>/, '').html_safe
 
-    .dbc-text-cta.alt-color.light-color
+    .dbc-container.dbc-text-cta.alt-color.light-color
       .inner.centered
         h2 = t('.like_what_you_read')
         = tmd('.learn_more_cta', courses_path: courses_path)
