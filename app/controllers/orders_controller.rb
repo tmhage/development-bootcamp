@@ -27,6 +27,7 @@ class OrdersController < ApplicationController
 
   def create
     @bootcamps = Bootcamp.published.by_date
+    session[:order_params] ||= {}
     session[:order_params].deep_merge!(order_params) if order_params
 
     @order = Order.new(session[:order_params])
