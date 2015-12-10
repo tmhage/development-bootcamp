@@ -34,7 +34,7 @@ class Bootcamp < ActiveRecord::Base
   end
 
   def readable_date_range
-    "#{starts_at.day}-#{ends_at.day} #{ends_at.strftime("%b")}, #{ends_at.year}"
+    "#{starts_at.day} #{starts_at.strftime("%b")}-#{ends_at.day} #{ends_at.strftime("%b")}, #{ends_at.year}"
   end
 
   def name_with_dates
