@@ -175,6 +175,8 @@ class OrdersController < ApplicationController
   end
 
   def track_discount_code!
+    params[:promo] ||= 'DECEMBER_PROMO' if Date.today <= Date.parse('15-12-31') # TODO: cleanup!
+
     return unless params[:promo].present? || session[:discount_code_tracked].present?
 
     @order.promo_code = params[:promo] || session[:discount_code_tracked]
