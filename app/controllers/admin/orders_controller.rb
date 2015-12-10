@@ -5,7 +5,10 @@ class Admin::OrdersController < Admin::AdminController
   respond_to :html
 
   def index
-    @orders = Order.includes(:discount_code, :students, :bootcamp).order(created_at: :desc).page(page_number).per(10)
+    @orders = Order.includes(:discount_code, :students, :bootcamp).
+      order('bootcamps.starts_at desc, orders.created_at desc').
+      page(page_number).per(10)
+
     respond_with(@orders)
   end
 
