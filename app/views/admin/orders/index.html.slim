@@ -12,7 +12,10 @@
       - if order.bootcamp.present?
         span.label.label-info
           => fa_icon 'graduation-cap'
-          = order.bootcamp.name_with_dates
+          => order.bootcamp.name_with_dates
+          - bootcamp_counts ||= {}
+          - bootcamp_counts[order.bootcamp.id] ||= order.bootcamp.orders.count
+          = "(#{bootcamp_counts[order.bootcamp.id]})"
       span.pull-right
         =<> link_to send_invoice_admin_order_path(order), method: :patch, class: 'btn btn-small' do
           => fa_icon 'envelope'

@@ -8,6 +8,10 @@ class Moneybird::Api
     options = default_options.merge(options)
     result = RestClient::Request.execute(options)
     JSON.parse(result)
+  rescue JSON::ParserError => e
+    # Sometimes Moneybird just gives a status back
+    return true if result.to_i == 200
+    false
   end
 
   private
