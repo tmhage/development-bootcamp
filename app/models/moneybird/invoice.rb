@@ -6,19 +6,28 @@ class Moneybird::Invoice < Moneybird::Api
 
     options[:description] = "*PLEASE NOTE*: This invoice is already paid via #{order.payment_method} and is just for your records." if order.paid?
 
+    payload = {
+      sales_invoice: options.merge(
+        contact_id: contact_id,
+        prices_are_incl_tax: true,
+        document_style_id: '137438981859051050',
+        workflow_id: '137438981703861781',
+      )
+    }
+
+    puts payload
+
     response = execute(path: '/sales_invoices',
       method: :post,
-      payload: {
-        invoice: options.merge(contact_id: contact_id, prices_are_incl_tax: true)
-      }
+      payload: payload
     )
 
-    invoice = new(response['invoice'])
+    invoice = new(response)
 
     execute(path: "/sales_invoices/#{invoice.id}/send_invoice",
       method: :put,
       payload: {
-        invoice: { send_method: 'hand' }
+        sales_invoice: { send_method: 'hand' }
       }
     )
 
@@ -63,11 +72,11 @@ class Moneybird::Invoice < Moneybird::Api
   end
 
   def self.find(id)
-    response = execute(path: "/invoices/#{id}",
+    response = execute(path: "/sales_invoices/#{id}",
       method: :get
     )
 
-    new(response['invoice'])
+    new(response)
   end
 
   def mark_paid!(paid_amount, payment_method, date)
@@ -84,13 +93,13 @@ class Moneybird::Invoice < Moneybird::Api
         ]
       }
     })
-    execute(path: "api/v1.0/invoices/#{id}/payments",
+    execute(path: "api/v2/sales_invoices/#{id}/register_payment",
       method: :post,
       payload: {
         payment: {
-          payment_date: date.strftime("%Y-%m-%d"),
+          payment_date: Time.now.iso8601,
           payment_method: payment_method.downcase,
-          price: paid_amount.round(2),
+          price: paid_amount.to_f.round(2),
           send_email: false
         }
       }

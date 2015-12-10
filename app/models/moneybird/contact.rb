@@ -21,7 +21,7 @@ class Moneybird::Contact < Moneybird::Api
       }
     )
 
-    new(response['contact'])
+    new(response)
   end
 
   def self.find(id)
@@ -29,10 +29,10 @@ class Moneybird::Contact < Moneybird::Api
       method: :get
     )
 
-    new(response['invoice'])
+    new(response['contact'])
   end
 
   def create_invoice(order)
-    ::Moneybird::Invoice.create(id, order)
+    ::Moneybird::Invoice.create(self.id, order)
   end
 end
