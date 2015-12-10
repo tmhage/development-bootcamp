@@ -1,0 +1,58 @@
+.page-header
+  = link_to admin_scholarships_path, :class => 'btn btn-default' do 
+    span.glyphicon.glyphicon-list-alt
+    |  Back 
+  = link_to edit_admin_scholarship_path(@admin_scholarship), :class => 'btn btn-primary' do 
+    span.glyphicon.glyphicon-pencil
+    |  Edit 
+  h1
+    | Show admin_scholarship
+dl.dl-horizontal
+  dt
+    | First name:
+  dd
+    = @admin_scholarship.first_name
+  dt
+    | Last name:
+  dd
+    = @admin_scholarship.last_name
+  dt
+    | Email:
+  dd
+    = @admin_scholarship.email
+  dt
+    | Phone:
+  dd
+    = @admin_scholarship.phone
+  dt
+    | Gender:
+  dd
+    = @admin_scholarship.gender
+  dt
+    | Birth date:
+  dd
+    = @admin_scholarship.birth_date
+  dt
+    | Employment status:
+  dd
+    = @admin_scholarship.employment_status
+  dt
+    | Reason:
+  dd
+    = @admin_scholarship.reason
+  dt
+    | Future plans:
+  dd
+    = @admin_scholarship.future_plans
+  dt
+    | Full program:
+  dd
+    = @admin_scholarship.full_program
+  dt
+    | Traineeship:
+  dd
+    = @admin_scholarship.traineeship
+  dt
+    | Bootcamp:
+  dd
+    = @admin_scholarship.bootcamp

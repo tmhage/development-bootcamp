@@ -1,0 +1,60 @@
+= form_for(@admin_scholarship, :html => { :class => "form-horizontal" }) do |f|
+  - if @admin_scholarship.errors.any?
+    .alert.alert-danger.alert-dismissable
+      button.close type="button" data-dismiss="alert" aria-hidden="true" 
+        | &times;
+      h4= "#{pluralize(@admin_scholarship.errors.count,"error")} prohibited this admin_scholarship from being saved:"
+      ul
+        - @admin_scholarship.errors.full_messages.each do |msg|
+          li= msg
+  .form-group
+    = f.label :first_name, :class => "col-sm-2 control-label"
+    .col-sm-10
+      = f.text_field :first_name, :class => "form-control"
+  .form-group
+    = f.label :last_name, :class => "col-sm-2 control-label"
+    .col-sm-10
+      = f.text_field :last_name, :class => "form-control"
+  .form-group
+    = f.label :email, :class => "col-sm-2 control-label"
+    .col-sm-10
+      = f.text_field :email, :class => "form-control"
+  .form-group
+    = f.label :phone, :class => "col-sm-2 control-label"
+    .col-sm-10
+      = f.text_field :phone, :class => "form-control"
+  .form-group
+    = f.label :gender, :class => "col-sm-2 control-label"
+    .col-sm-10
+      = f.number_field :gender, :class => "form-control"
+  .form-group
+    = f.label :birth_date, :class => "col-sm-2 control-label"
+    .col-sm-10
+      = f.date_select :birth_date, :class => "form-control"
+  .form-group
+    = f.label :employment_status, :class => "col-sm-2 control-label"
+    .col-sm-10
+      = f.number_field :employment_status, :class => "form-control"
+  .form-group
+    = f.label :reason, :class => "col-sm-2 control-label"
+    .col-sm-10
+      = f.text_area :reason, :class => "form-control"
+  .form-group
+    = f.label :future_plans, :class => "col-sm-2 control-label"
+    .col-sm-10
+      = f.text_area :future_plans, :class => "form-control"
+  .form-group
+    = f.label :full_program, :class => "col-sm-2 control-label"
+    .col-sm-10
+      = f.number_field :full_program, :class => "form-control"
+  .form-group
+    = f.label :traineeship, :class => "col-sm-2 control-label"
+    .col-sm-10
+      = f.number_field :traineeship, :class => "form-control"
+  .form-group
+    = f.label :bootcamp, :class => "col-sm-2 control-label"
+    .col-sm-10
+      = f.text_field :bootcamp, :class => "form-control"
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      = f.submit :class => "btn btn-primary"
