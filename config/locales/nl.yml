@@ -169,7 +169,7 @@ nl:
     Integrate 3rd party tools to measure engagement and A/B-test behavior.
   frontend_bootcamp_program: Frontend Web Programma
   frontend_bootcamp_description: |
-    De Frontend Web Bootcamp bied een unieke kans om je technische kennis te
+    De Frontend Web Bootcamp biedt een unieke kans om je technische kennis te
     vergroten. Je leert alle vaardigheden om moeiteloos mooie,
     innemende websites te maken.
 
@@ -410,7 +410,7 @@ nl:
       confirmation:
         title: Confirmation
         use_back_button_to_fix: gebruik de terug knop hieronder om je ingevoerde gegevens te wijzigen.
-        please_check: Controleer je gegevens voordat je afrekend.
+        please_check: Controleer je gegevens voordat je afrekent.
         click_continue: Klik "%{continue}" om af te rekenen. Klik "%{back}" om wijzigen door te voeren.
     order:
       total_discount_promo: "Totale korting via kortingscode '%{promo}':"

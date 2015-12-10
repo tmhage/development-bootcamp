@@ -154,7 +154,7 @@ en:
 
     In contrast to the other Bootcamps we offer, the focus is more on what the
     eye can see than on the code itself. It is a perfect way to compliment your
-    existing (digital) skills or get a head start into becoming a frontent
+    existing (digital) skills or to get a headstart into becoming a frontend
     developer.
 
     Whether you are an online marketeer who wants to be able to
@@ -165,9 +165,9 @@ en:
 
     We will teach you things you can actually _use_! Change an existing Wordpress
     template? Sure! Just make a few design tweaks? Of course! A fully functional
-    web application with a database? Oh yeah, why not?!
+    web application with a database? Oh yeah, why not!
 
-    Have a look at upcoming dates and enroll now. You will not regret it, or as
+    Have a look at upcoming dates and enroll now. You will not regret it. As
     our students often say: "When in doubt, do it!"
 
   cta_courses: Courses
@@ -253,8 +253,8 @@ en:
   static_pages:
     home:
       page_title: Home - Learn Programming
-      meta_description: Learn code, the most wanted skill right now. We offer you the fastest way to junior developer or tech hybrid.
-      meta_keywords: development, bootcamp, programming, learn, teach, sponsor
+      meta_description: Learn code, the most wanted skill right now. We offer you the fastest way to tech hybrid or junior developer.
+      meta_keywords: development, bootcamp, programming, learn, teach, tech hybrid, junior developer
 
       # Page Header
       learn_the_most_wanted: Learn the most wanted
@@ -307,7 +307,7 @@ en:
       intro_text: |
         Leave your details below to register for our %{open_evening} on %{date} at %{location_info}.
 
-        It will be the chance for you to ask all your questions.
+        It will be the chance for you to ask all the questions you may have.
 
       schedule: |
         * 20:00  — Doors Open
@@ -351,17 +351,14 @@ en:
       page_title: "Beginner Development Bootcamp - Learn Coding for Beginners"
       meta_description: "Learn the first steps of writing code in an awesome program of just one week. Zero to developer in three sessions of a week."
       meta_keywords: "program, terminal, unix, git, testing, contest, job, development, bootcamp, programming, learn, teach, sponsor"
-      what_you_can_build: What you can do after 7 days
-      wondering_what_others_built: Wondering what others built after only a week of learning to code? Check out the apps they built in a couple of hours during their last Hackathon. They are not perfect, nor are they finished, but it's pretty impressive considering they started with zero experience!
-      examples_of_former_students: Examples from former students
 
     level_two:
-      page_title: "Intermediate Development Bootcamp - Learn Coding for Beginners"
+      title: "Intermediate Development Bootcamp - Learn Coding for Beginners"
       meta_description: "Learn the first steps of writing code in an awesome program of just one week. Zero to developer in three sessions of a week."
       meta_keywords: "program, terminal, unix, git, testing, contest, job, development, bootcamp, programming, learn, teach, sponsor"
 
     level_three:
-      page_title: "Advanced Development Bootcamp - Coding for Beginners"
+      title: "Advanced Development Bootcamp - Coding for Beginners"
       meta_description: "Learn the first steps of writing code in an awesome program of just one week. Zero to developer in three sessions of a week."
       meta_keywords: "program, terminal, unix, git, testing, contest, job, development, bootcamp, programming, learn, teach, sponsor"
 
