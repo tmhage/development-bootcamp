@@ -64,12 +64,14 @@ class OrdersController < ApplicationController
   def webhook
     @order = Order.find_by_mollie_payment_id(params[:id])
     if @order.present?
-      payment_status = @order.payment.status
-      if @order.payment.paid? && @order.mollie_status != 'paid'
-        @order.update(paid_at: Time.now, mollie_status: payment_status)
-        send_invoice_and_tickets!
-      else
-        @order.update(mollie_status: payment_status)
+      if @order.payment.present?
+        payment_status = @order.payment.status
+        if @order.payment.paid? && @order.mollie_status != 'paid'
+          @order.update(paid_at: Time.now, mollie_status: payment_status)
+          send_invoice_and_tickets!
+        else
+          @order.update(mollie_status: payment_status)
+        end
       end
     end
   rescue Mollie::API::Exception => error
