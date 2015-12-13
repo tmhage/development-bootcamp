@@ -27,13 +27,14 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def page_not_found(exception = nil)
+  def page_not_found(exception = nil, mixpanel_params = {})
     if /\.(jpe?g|png|gif)/i === request.path
       render text: "404 Not Found", status: 404
     else
       respond_to do |format|
         format.html do
-          mixpanel.track '[error] 404', title: @page.title
+          mixpanel_params.merge!({url: request.original_url})
+          mixpanel.track '[error] 404', mixpanel_params
           render template: "errors/404", layout: 'application', status: 404
         end
 
