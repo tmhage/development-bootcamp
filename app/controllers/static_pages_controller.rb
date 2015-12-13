@@ -8,13 +8,22 @@ class StaticPagesController < ApplicationController
       .joins(:student, :bootcamp)
       .order(original_date: :desc)
       .limit(3)
+    mixpanel.track '[visits] Home Page'
   end
 
-  def team; end
+  def team
+    mixpanel.track '[visits] Team Page'
+  end
 
-  def newsletter; end
+  def newsletter
+    mixpanel.track '[visits] Newsletter Page'
+  end
 
-  def open_evening; end
+  def open_evening
+    mixpanel.track '[visits] Open Evening Page'
+  end
 
-  def contact; end
+  def contact
+    mixpanel.track '[visits] Help & Support Page'
+  end
 end

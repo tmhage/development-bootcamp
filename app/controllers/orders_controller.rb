@@ -19,6 +19,7 @@ class OrdersController < ApplicationController
     @order.current_step = session[:order_step]
     @order.bootcamp = @bootcamps.first
 
+    mixpanel.track '[visits] Order Page'
     track_discount_code!
   end
 
@@ -26,6 +27,8 @@ class OrdersController < ApplicationController
     @bootcamps = Bootcamp.published.by_date
     session[:order_params] ||= {}
     session[:order_params].deep_merge!(order_params) if order_params
+
+    mixpanel.track 'Order Ticket', order_params
 
     @order = Order.new(session[:order_params])
 

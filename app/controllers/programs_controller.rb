@@ -1,30 +1,36 @@
 class ProgramsController < ApplicationController
   before_filter :set_subnav
 
-  def index; end
+  def index
+    mixpanel.track '[visits] Course Index'
+  end
 
   def level_one
     @level = 'Beginner'
     @bootcamps = Bootcamp.beginner.published.by_date
     set_reviews(1)
+    mixpanel.track '[visits] Course Page', level: @level
   end
 
   def level_two
     @level = 'Intermediate'
     @bootcamps = Bootcamp.intermediate.published.by_date
     set_reviews(2)
+    mixpanel.track '[visits] Course Page', level: @level
   end
 
   def level_three
     @level = 'Advanced'
     @bootcamps = Bootcamp.advanced.published.by_date
     set_reviews(3)
+    mixpanel.track '[visits] Course Page', level: @level
   end
 
   def frontend_bootcamp
     @level = 'Frontend'
     @bootcamps = Bootcamp.frontend.published.by_date
     set_reviews(99)
+    mixpanel.track '[visits] Course Page', level: @level
   end
 
   private

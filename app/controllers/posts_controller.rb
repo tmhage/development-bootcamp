@@ -8,6 +8,8 @@ class PostsController < ApplicationController
     if page_number > 1 && @posts.count == 0
       page_not_found and return
     end
+
+    mixpanel.track '[visits] Blog Index'
   end
 
   def show
@@ -16,6 +18,7 @@ class PostsController < ApplicationController
       other_locale = I18n.locale == :en ? :nl : :en
       redirect_to blog_url(@post, host: Rails.application.config.hosts[other_locale]).sub('/nl/', '/'), status: :moved_permanently
     elsif @post.published?
+      mixpanel.track '[visits] Blog Post', title: @post.title
       render :show
     else
       page_not_found

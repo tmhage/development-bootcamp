@@ -74,3 +74,5 @@ gem 'stripe'
 gem 'paper_trail'
 
 gem 'rest-client'
+
+gem 'mengpaneel'

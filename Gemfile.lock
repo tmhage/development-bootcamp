@@ -247,11 +247,15 @@ GEM
     mandrill-api (1.0.53)
       excon (>= 0.16.0, < 1.0)
       json (>= 1.7.7, < 2.0)
+    mengpaneel (0.0.2)
+      activesupport
+      mixpanel-ruby
     method_source (0.8.2)
     mime-types (2.4.3)
     mini_magick (4.0.2)
     mini_portile (0.6.2)
     minitest (5.5.1)
+    mixpanel-ruby (2.2.0)
     mollie-api-ruby (1.1.3)
       json (~> 1.8)
       rest-client (~> 1.6)
@@ -478,6 +482,7 @@ DEPENDENCIES
   jquery-rails
   kaminari
   mandrill-api
+  mengpaneel
   mini_magick
   mollie-api-ruby
   nokogiri (= 1.6.4.1)

@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  include Mengpaneel::Controller
 
   layout :set_layout
 
