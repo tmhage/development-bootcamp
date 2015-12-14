@@ -246,6 +246,18 @@ nl:
         billing_phone: Telefoonnummer
       student:
         allergies: Dieetwensen
+      scholarship:
+        first_name: Voornaam
+        last_name: Achternaam
+        email: Email
+        phone: Telefoonnummer
+        birth_date: Geboortedatum
+        employment_status: Huidig dienstverband
+        full_program: Ja, ik ben beschikbaar om 5 weken het intensieve programma te volgen
+        traineeship: Ja, ik ben beschikbaar en zal 2 jaar deelnemen aan het full time traineeship programma
+        education_level: Opleidingsniveau
+        reason: Leg in een paar woorden uit waarom je mee wilt doen
+        future_plans: Leg in een paar woorden uit hoe je je toekomst ziet na ons programma
 
   routes:
     new: nieuw
