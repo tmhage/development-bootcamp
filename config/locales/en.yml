@@ -515,6 +515,13 @@ en:
         more depth and if all goes well, you will get a live interview (in person or
         via Skype).
 
+      are_you_an_employer: Are You an Employer?
+      employer_looking_for_devs: |
+        Are you an employer looking for developers? And are you interested to hire
+        our trainees? Send us an email and we'll get in touch with you.
+
+        [support@developmentbootcamp.nl](mailto:support@developmentbootcamp.nl)
+
     form:
       application_form_title: Application Form
       opportunity_lifetime: the opportunity of a lifetime

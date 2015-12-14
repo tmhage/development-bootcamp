@@ -745,6 +745,14 @@ nl:
         wat dieper op de zaken in te gaan en elkaar wat beter te leren kennen (bij ons op
         kantoor in Amsterdam of via Skype).
 
+      are_you_an_employer: Ben je een werkgever?
+      employer_looking_for_devs: |
+        Ben je een werkgever op zoek naar developers? En ben je geïnteresseerd in
+        onze trainees? Stuur ons een email en we nemen contact met je op over de
+        mogelijkheden.
+
+        [support@developmentbootcamp.nl](mailto:support@developmentbootcamp.nl)
+
     form:
       application_form_title: Aanmeldformulier
       opportunity_lifetime: de kans van je leven

@@ -22,8 +22,15 @@
       .jumbotron
         h1 = t('.title')
         = tmd('.intro_text')
+        p
+          => link_to t('.how_does_this_work'), '#how_this_works', class: 'button primary'
+          = link_to t(:cta_apply_now), '#formStart', class: 'button default'
 
-      .callout.callout-info
+      .well
+        h2 = t('.are_you_an_employer')
+        = tmd('.employer_looking_for_devs')
+
+      .callout.callout-info#how_this_works
         h2 = t('.how_does_this_work')
         = tmd('.how_this_works', price: number_to_currency(500), courses_path: courses_path, beginner_bootcamp_path: courses_beginner_bootcamp_path, intermediate_bootcamp_path: courses_intermediate_bootcamp_path, advanced_bootcamp_path: courses_advanced_bootcamp_path)
 
