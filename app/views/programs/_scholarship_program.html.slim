@@ -2,4 +2,4 @@
   #scholarship.callout.callout-success
     h4 = t(:scholarship_program)
     = tmd(:scholarship_program_intro, course: course)
-    p = mail_to 'support@developmentbootcamp.nl?subject=Scholarship', t(:cta_apply_now), class: 'button default'
+    p = link_to t(:cta_apply_now), apply_scholarships_path, class: 'button primary'

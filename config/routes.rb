@@ -31,6 +31,13 @@ Rails.application.routes.draw do
     get '/students/:id/qr-code' => 'students#qr_code'
     get '/students/:id/check' => 'students#check_qr_code'
 
+    resources :scholarships, only: [:create] do
+      collection do
+        get :apply
+        get :thanks
+      end
+    end
+
     resources :blog, controller: 'posts', only: [:index, :show]
     resources :pages, only: [:show]
     resources :sponsors, only: [:index, :new, :create] do
@@ -73,6 +80,7 @@ Rails.application.routes.draw do
     end
 
     resources :reviews
+    resources :scholarships
     resources :discount_codes
     resources :bootcamps do
       member do

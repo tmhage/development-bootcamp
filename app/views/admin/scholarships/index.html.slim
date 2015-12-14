@@ -1,0 +1,53 @@
+.page-header
+  = link_to new_admin_scholarship_path, :class => 'btn btn-primary' do
+    span.glyphicon.glyphicon-plus
+    |  New Scholarship
+  h1
+    | Listing scholarships
+
+.table-responsive
+  table.table.table-striped.table-bordered.table-hover
+    thead
+      tr
+        th
+          | Status
+        th
+          | Name
+        th
+          | Phone
+        th
+          | Gender
+        th
+          | Birth date
+        th
+          | Employment status
+        th
+          | Applied at
+        th
+        th
+        th
+    tbody
+      - @scholarships.each do | scholarship |
+        tr class="scholarship-row--#{scholarship.status}"
+          td
+            = scholarship.status
+          td
+            = mail_to scholarship.email do
+              => scholarship.first_name
+              = scholarship.last_name
+          td
+            = scholarship.phone
+          td
+            = scholarship.gender
+          td
+            = scholarship.birth_date
+          td
+            = scholarship.employment_status
+          td
+            = scholarship.created_at.to_formatted_s(:short)
+          td
+            = link_to 'Show', [:admin, scholarship]
+          td
+            = link_to 'Edit', edit_admin_scholarship_path(scholarship)
+          td
+            = link_to 'Destroy', [:admin, scholarship], method: :delete, data: { confirm: 'Are you sure?' }

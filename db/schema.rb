@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151210150658) do
+ActiveRecord::Schema.define(version: 20151210174238) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -141,6 +141,27 @@ ActiveRecord::Schema.define(version: 20151210150658) do
   add_index "reviews", ["bootcamp_id"], name: "index_reviews_on_bootcamp_id", using: :btree
   add_index "reviews", ["springest_id"], name: "index_reviews_on_springest_id", using: :btree
   add_index "reviews", ["student_id"], name: "index_reviews_on_student_id", using: :btree
+
+  create_table "scholarships", force: true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "phone"
+    t.string   "gender"
+    t.date     "birth_date"
+    t.string   "education_level"
+    t.string   "employment_status"
+    t.text     "reason"
+    t.text     "future_plans"
+    t.boolean  "full_program"
+    t.boolean  "traineeship"
+    t.string   "status",            default: "new"
+    t.integer  "bootcamp_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "scholarships", ["bootcamp_id"], name: "index_scholarships_on_bootcamp_id", using: :btree
 
   create_table "speakers", force: true do |t|
     t.string   "first_name"

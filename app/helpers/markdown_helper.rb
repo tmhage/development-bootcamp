@@ -7,9 +7,9 @@ module MarkdownHelper
       filter_html:     true,
       # will insert <br /> tags in paragraphs where are newlines
       # (ignored by default)
-      hard_wrap:       true,
+      hard_wrap:       false,
       # hash for extra link options, for example 'nofollow'
-      link_attributes: { rel: 'nofollow' }
+      # link_attributes: { rel: 'nofollow' }
       # more
       # will remove <img> tags from output
       # no_images: true

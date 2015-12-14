@@ -1,0 +1,37 @@
+- title t('.page_title')
+- meta_description t('.meta_description')
+- meta_keywords t('.meta_keywords')
+
+.dbc-content
+  .dbc-container.dbc-form
+    .inner#ApplicationForm
+      - if @scholarship.errors.any?
+        .alert.alert-danger
+          button.close type="button" data-dismiss="alert" aria-hidden="true"
+            | &times;
+          h4= t(:please_fix_errors_below)
+          ul
+            - @scholarship.errors.full_messages.each do |msg|
+              li= msg
+      .support-box
+        - support_mail = capture do
+          strong =<> mail_to 'support@developmentbootcamp.nl'
+        => fa_icon 'support'
+        = t(:please_mail_support, support_mail: support_mail).html_safe
+
+      .jumbotron
+        h1 = t('.title')
+        = tmd('.intro_text')
+        p
+          => link_to t('.how_does_this_work'), '#how_this_works', class: 'button primary'
+          = link_to t(:cta_apply_now), '#formStart', class: 'button default'
+
+      .well
+        h2 = t('.are_you_an_employer')
+        = tmd('.employer_looking_for_devs')
+
+      .callout.callout-info#how_this_works
+        h2 = t('.how_does_this_work')
+        = tmd('.how_this_works', price: number_to_currency(500), courses_path: courses_path, beginner_bootcamp_path: courses_beginner_bootcamp_path, intermediate_bootcamp_path: courses_intermediate_bootcamp_path, advanced_bootcamp_path: courses_advanced_bootcamp_path)
+
+      = render 'form'

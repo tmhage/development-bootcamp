@@ -1,0 +1,45 @@
+.block-title#formStart
+  h2
+    = t('.application_form_title')
+    span = t('.opportunity_lifetime')
+
+.inner
+  = bootstrap_form_for(@scholarship, :html => { :class => "form-horizontal" }) do |f|
+    = f.form_group do
+      = f.text_field :first_name
+
+    = f.form_group do
+      = f.text_field :last_name
+
+    = f.form_group do
+      = f.text_field :email
+
+    = f.form_group do
+      = f.text_field :phone
+
+    = f.form_group :gender, label: { text: I18n.t(:label_gender)} do
+      - gender_select_options.each do |label, value|
+        p = f.radio_button :gender, value, label: label, inline: true
+
+    = f.form_group do
+      =f.date_select :birth_date, include_blank: true, start_year: (Date.today.year - 55), end_year: (Date.today.year - 13), order: [:day, :month, :year]
+
+    = f.form_group do
+      = f.select :employment_status, employment_select_options, include_blank: true
+
+    = f.form_group do
+      = f.text_field :education_level
+
+    = f.form_group do
+      = f.text_area :reason
+
+    = f.form_group do
+      = f.text_area :future_plans
+
+    = f.form_group do
+      = f.label t('.please_accept_the_following')
+      = f.check_box :full_program
+      = f.check_box :traineeship
+
+    = f.form_group do
+      = f.submit t('.button_apply_now'), :class => "btn btn-primary btn-lg"
