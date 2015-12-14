@@ -12,8 +12,8 @@ describe Scholarship do
   it { is_expected.to validate_presence_of(:reason) }
   it { is_expected.to validate_presence_of(:future_plans) }
 
-  it { is_expected.to validate_acceptance_of(:full_program) }
-  it { is_expected.to validate_acceptance_of(:traineeship) }
+  it { is_expected.to validate_inclusion_of(:full_program).in_array([true]) }
+  it { is_expected.to validate_inclusion_of(:traineeship).in_array([true]) }
 
   it { is_expected.to validate_inclusion_of(:gender).in_array(Scholarship::GENDERS) }
   it { is_expected.to validate_inclusion_of(:status).in_array(Scholarship::STATI) }
