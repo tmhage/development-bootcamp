@@ -453,7 +453,7 @@ en:
     apply:
       title: Our Scholarship & Trainee Program
       subtitle: Become a full stack developer and land a job
-      page_title: Our Scholarship & Trainee Program - Become a full stack developer and land a job
+      page_title: Become a full stack developer for %{price} and land a job! - Our Scholarship & Trainee Program
       meta_description: |
         Codaisseur offers you a scholarship program to become a full stack web
         developer and a 2 year traineeship with a good salary while you grow to

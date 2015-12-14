@@ -692,7 +692,7 @@ nl:
     apply:
       title: Ons Scholarship & Trainee Programma
       subtitle: Wordt een full stack developer met baangarantie
-      page_title: Ons Scholarship & Trainee Programma - Wordt een full stack developer met baangarantie
+      page_title: Wordt een full stack developer voor %{price}, met baangarantie! - Ons Scholarship & Trainee Programma
       meta_description: |
         Codaisseur biedt je een scholarship programma aan om een web developer
         te worden met een 2-jarig traineeship en een goed salaris terwijl je uitgroeit
