@@ -449,16 +449,16 @@ nl:
     Neem [Contact](%{contact_url}) met ons op als jij met je collega's
     wilt deelnemen.
 
-  scholarship_program: Scholarship Programma
+  scholarship_program: Scholarship & Traineeship Programma
   scholarship_program_intro: |
-    Werk je bij een start-up, ben je zelfstandig, werkloos of heb je anderzinds
-    financiele steun nodig?
+    **Wil je een professionele developer worden?**
 
-    Afhankelijk van de beschikbaarheid kunnen studenten die daarvoor in aanmerking
-    komen aan de %{course} deelnemen voor minder dan een derde van de gebruikelijke
-    prijs via Development Bootcamp's Scholarship Programma. Dit programma wordt
-    mede mogelijk gemaakt door toonaangevende tech bedrijven. Meld je aan en
-    vertel ons jouw verhaal.
+    Codaisseur biedt je een scholarship programma aan om te leren programmeren en
+    een web developer te worden met een 2-jarig traineeship en een goed salaris terwijl
+    je uitgroeit tot senior niveau full stack developer.
+
+    Dit programma wordt mede mogelijk gemaakt door toonaangevende tech bedrijven.
+    Meld je aan en vertel ons jouw verhaal.
 
   # Ticket order steps
   title_enroll_now: Schrijf nu in

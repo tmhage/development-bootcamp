@@ -228,11 +228,15 @@ en:
   other_bootcamps: Other Bootcamps
   incompany_cta: We also offer this course in-company! [Contact](%{contact_url}) us if you want to enroll with a few colleagues and we will come to you.
 
-  scholarship_program: Scholarship Program
+  scholarship_program: Scholarship & Traineeship Program
   scholarship_program_intro: |
-    Are you working at a start-up, self-employed, unemployed or otherwise lacking financial backing?
+      **Want to become a professional developer?**
 
-    Subject to availability, eligible students can participate in the %{course} for less than one third of the regular fee through Development Bootcamp’s Scholarship Program. The program is powered by leading tech-companies. Apply and tell us your story.
+      Codaisseur and partners offer you a scholarship program to become a full stack web
+      developer and a 2 year traineeship with a good salary while you grow to
+      senior level.
+
+      The program is powered by leading tech-companies. Apply and tell us your story.
 
   # Ticket order steps
   title_enroll_now: Enroll Now
