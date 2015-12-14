@@ -4,7 +4,7 @@
     span = t('.opportunity_lifetime')
 
 .inner
-  = bootstrap_form_for(@scholarship, :html => { :class => "form-horizontal" }) do |f|
+  = bootstrap_form_for(@scholarship) do |f|
     = f.form_group do
       = f.text_field :first_name
 

@@ -33,5 +33,6 @@
       .callout.callout-info#how_this_works
         h2 = t('.how_does_this_work')
         = tmd('.how_this_works', price: number_to_currency(500), courses_path: courses_path, beginner_bootcamp_path: courses_beginner_bootcamp_path, intermediate_bootcamp_path: courses_intermediate_bootcamp_path, advanced_bootcamp_path: courses_advanced_bootcamp_path)
-
-      = render 'form'
+    .row
+      .col-xs-12
+        = render 'form'
