@@ -1,0 +1,13 @@
+- title t('.page_title')
+
+.dbc-content
+  .dbc-container
+    .inner.text
+      .jumbotron
+        h1
+          = t('.title')
+          span = t(:scholarship_application_sent_successfully)
+
+        = tmd('.thank_you_message')
+        p
+          = link_to t(:cta_newsletter_signup), newsletter_path, class: 'button primary btn-lg'

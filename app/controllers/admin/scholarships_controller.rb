@@ -1,47 +1,49 @@
 class Admin::ScholarshipsController < Admin::AdminController
-  before_action :set_admin_scholarship, only: [:show, :edit, :update, :destroy]
+  before_action :set_scholarship, only: [:show, :edit, :update, :destroy]
 
   respond_to :html
 
   def index
-    @admin_scholarships = Admin::Scholarship.all
-    respond_with(@admin_scholarships)
+    @scholarships = Scholarship.order(created_at: :desc)
+    respond_with(@scholarships)
   end
 
   def show
-    respond_with(@admin_scholarship)
+    respond_with(@scholarship)
   end
 
   def new
-    @admin_scholarship = Admin::Scholarship.new
-    respond_with(@admin_scholarship)
+    @scholarship = Scholarship.new
+    respond_with(@scholarship)
   end
 
   def edit
   end
 
   def create
-    @admin_scholarship = Admin::Scholarship.new(scholarship_params)
-    @admin_scholarship.save
-    respond_with(@admin_scholarship)
+    @scholarship = Scholarship.new(scholarship_params)
+    @scholarship.save
+    respond_with(:admin, @scholarship)
   end
 
   def update
-    @admin_scholarship.update(scholarship_params)
-    respond_with(@admin_scholarship)
+    @scholarship.update(scholarship_params)
+    redirect_to admin_scholarships_path
   end
 
   def destroy
-    @admin_scholarship.destroy
-    respond_with(@admin_scholarship)
+    @scholarship.destroy
+    respond_with(@scholarship)
   end
 
   private
-    def set_admin_scholarship
-      @admin_scholarship = Admin::Scholarship.find(params[:id])
+    def set_scholarship
+      @scholarship = Scholarship.find(params[:id])
     end
 
-    def admin_scholarship_params
-      params.require(:admin_scholarship).permit(:first_name, :last_name, :email, :phone, :gender, :birth_date, :employment_status, :reason, :future_plans, :full_program, :traineeship, :bootcamp_id, :approved)
+    def scholarship_params
+      params.require(:scholarship).permit(:first_name, :last_name, :email, :phone,
+        :gender, :birth_date, :employment_status, :reason, :future_plans,
+        :education_level, :full_program, :traineeship, :status, :bootcamp_id)
     end
 end

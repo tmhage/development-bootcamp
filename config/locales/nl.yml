@@ -258,6 +258,8 @@ nl:
     newsletter: nieuwsbrief
     open_evening: open-avond
 
+    apply: solliciteren
+
   nav_home: Home
   nav_courses: Cursussen
   nav_enroll: Aanmelden
@@ -673,5 +675,103 @@ nl:
   reviews_from_students: Ervaringen van onze studenten
   here_is_what_students_say: Dit is wat onze studenten over ons zeggen.
 
+  scholarships:
+    apply:
+      title: Ons Scholarship & Trainee Programma
+      subtitle: Wordt een full stack developer met baangarantie
+      page_title: Ons Scholarship & Trainee Programma - Wordt een full stack developer met baangarantie
+      meta_description: |
+        Codaisseur biedt je een scholarship programma aan om een web developer
+        te worden met een 2-jarig traineeship en een goed salaris terwijl je uitgroeit
+        tot senior niveau full stack developer.
+      meta_keywords: scholarship, traineeship, trainee, leer programmeren, code, developer, full stack, development, bootcamp
+      intro_text: |
+        Codaisseur biedt je een scholarship programma aan om te leren programmeren en
+        een web developer te worden met een 2-jarig traineeship en een goed salaris terwijl
+        je uitgroeit tot senior niveau full stack developer.
+
+        Vul het formulier onderaan de pagina in om te solliciteren naar ons unieke
+        traineeship programma!
+
+      how_does_this_work: Hoe het werkt
+
+      how_this_works: |
+        Voor maar %{price} krijg je het volgende van ons:
+
+        - **5 full time weken intensieve training**
+        tot je op het niveau zit van full stack junior developer.
+        - Daarna krijg je een **tweejarig traineeship** bij een gaaf tech bedrijf en krijg je
+        een goed salaris. Tijdens deze twee jaar **trainen we je nog 1 dag per maand** om je **verder
+        op te leiden tot senior developer**.
+        - Na twee jaar ben je **vrij om te solliciteren waar je wilt** of om te blijven werken bij het bedrijf
+        waar je je traineeship hebt gedaan.
+
+        ### Wat je bij ons leert
+
+        Bekijk ons [cursusaanbod](%{courses_path}), en dan specifiek de pagina's
+        over de [Beginner](%{beginner_bootcamp_path}), [Intermediate](%{intermediate_bootcamp_path})
+        en [Advanced](%{advanced_bootcamp_path}) Bootcamps. In vijf weken leer je
+        alles uit die drie programma's en meer!
+
+        #### Kan dat dan in 5 weken?
+
+        Ja, dat kan! Ons programma is ontwikkeld door senior developers en getrainde
+        docenten. Het is **de beste deal die je ooit zult krijgen**.
+
+        ### Baangarantie
+
+        We bieden je een opleiding en een baan bij een gaaf tech bedrijf. Dit kan
+        een groot bedrijf zijn, of een startup. Gedurende de twee jaar die je daar
+        werkt krijg je **een goed salaris** en **training on the job** van ons,
+        onze partners en het bedrijf waar je voor werkt om je zo snel mogelijk op het
+        niveau van **senior developer** te krijgen.
+
+        _Als we je om wat voor reden dan ook geen baan of traineeship aan kunnen bieden
+        krijg je van ons je geld terug_.
+
+        ### Waarom we dit doen
+
+        **De tech industry heeft mensen zoals jij hard nodig**: mensen die
+        programmeur willen worden. Wij weten dat, omdat we zelf al heel lang in
+        die branche werken. En door je deze kans te bieden, hopen we jou, de bedrijven
+        waar je voor gaat werken en de economie een boost te kunnen geven.
+
+        ### Hoe je mee doet
+
+        Vul het formulier hieronder in als je serieus bent en ons programma echt wilt
+        volgen. Wij komen dan zo snel mogelijk bij je terug om je telefonisch een interview
+        af te nemen. Als alles goed gaat nodigen we je uit voor een sollicitatiegesprek om
+        wat dieper op de zaken in te gaan en elkaar wat beter te leren kennen (bij ons op
+        kantoor in Amsterdam of via Skype).
+
+    form:
+      application_form_title: Aanmeldformulier
+      opportunity_lifetime: de kans van je leven
+      please_accept_the_following: "Je dient akkoord te gaan met de volgende voorwaarden:"
+      button_apply_now: Aanmelding verzenden
+
+    thanks:
+      page_title: Bedankt voor je aanmelding!
+      title: Dank je wel!
+      thank_you_message: |
+        Bedankt dat je de tijd genomen hebt het formulier in te vullen. We komen zo
+        snel mogelijk bij je terug via email om een afspraak in te plannen voor het
+        telefonisch interview.
+
+        Ondertussen kun je je vast aanmelden voor onze nieuwsbrief met studiemateriaal en
+        aankondigingen van dingen die we organiseren om mensen te helpen leren coden.
+
   footer_follow_us: Volg ons
   footer_navigation: Navigatie
+
+  scholarship_application_sent_successfully: |
+    Je scholarshipaanmelding is verzonden
+
+  label_gender: Geslacht
+  male: Man
+  female: Vrouw
+
+  unemployed: Werkloos
+  fulltime: Full-time in dienst
+  parttime: Part-time in dienst
+  entrepeneur: Ondernemer / ZZP'er

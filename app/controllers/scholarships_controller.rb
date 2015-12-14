@@ -1,29 +1,30 @@
 class ScholarshipsController < ApplicationController
-  before_action :set_scholarship, only: [:show]
-
   respond_to :html
 
-  def show
+  def thanks
+    session[:scholarship_application_id] ||= 0
+    @scholarship = Scholarship.find(session[:scholarship_application_id])
     respond_with(@scholarship)
   end
 
-  def new
+  def apply
     @scholarship = Scholarship.new
-    respond_with(@scholarship)
   end
 
   def create
     @scholarship = Scholarship.new(scholarship_params)
-    @scholarship.save
-    respond_with(@scholarship)
+    if @scholarship.save
+      session[:scholarship_application_id] = @scholarship.id
+      redirect_to thanks_scholarships_path
+    else
+      render :apply
+    end
   end
 
   private
-    def set_scholarship
-      @scholarship = Scholarship.find(params[:id])
-    end
-
     def scholarship_params
-      params.require(:scholarship).permit(:first_name, :last_name, :email, :phone, :gender, :birth_date, :employment_status, :reason, :future_plans, :full_program, :traineeship, :bootcamp_id)
+      params.require(:scholarship).permit(:first_name, :last_name, :email, :phone,
+        :gender, :birth_date, :employment_status, :reason, :future_plans,
+        :education_level, :full_program, :traineeship)
     end
 end

@@ -1,1 +1,0 @@
-json.extract! @admin_scholarship, :id, :first_name, :last_name, :email, :phone, :gender, :birth_date, :employment_status, :reason, :future_plans, :full_program, :traineeship, :bootcamp_id, :created_at, :updated_at

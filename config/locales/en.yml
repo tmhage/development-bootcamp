@@ -41,6 +41,12 @@ en:
         billing_phone: Phone number
       student:
         allergies: Dietary wishes
+      scholarship:
+        full_program: Yes, I will make myself available for the 5 week immersive program
+        traineeship: Yes, I am available for, and will participate in the 2 year, full time traineeship
+        education_level: Level of education
+        reason: Please explain in a few words why you want to participate
+        future_plans: Please explain in a few words what your future plans will be after you joined our program
 
   number:
      currency:
@@ -438,5 +444,98 @@ en:
   reviews_from_students: Reviews from our Students
   here_is_what_students_say: Here's what our students say about us.
 
+  scholarships:
+    apply:
+      title: Our Scholarship & Trainee Program
+      subtitle: Become a full stack developer and land a job
+      page_title: Our Scholarship & Trainee Program - Become a full stack developer and land a job
+      meta_description: |
+        Codaisseur offers you a scholarship program to become a full stack web
+        developer and a 2 year traineeship with a good salary while you grow to
+        senior level.
+      meta_keywords: scholarship, traineeship, trainee, learn programming, code, developer, full stack, development, bootcamp
+      intro_text: |
+        Codaisseur and partners offer you a scholarship program to become a full stack web
+        developer and a 2 year traineeship with a good salary while you grow to
+        senior level.
+
+        Fill out the form below to apply for the traineeship program!
+
+      how_does_this_work: How this works
+
+      how_this_works: |
+        For only %{price}, you will get the following:
+
+        - **5 full time weeks of immersive training**
+        to get you to the level of a full stack junior developer.
+        - After that, you will get a **two year traineeship** at a cool tech company and you will
+        earn a good salary. During these two years, we will train you for one day
+        per month until you are at the level of a senior developer.
+        - After two years, you are **free to apply anywhere you want** or keep working
+        at the company you did your traineeship.
+
+        ### What you will learn
+
+        Have a look at our [courses](%{courses_path}) page, specifically the pages
+        about [Beginner](%{beginner_bootcamp_path}), [Intermediate](%{intermediate_bootcamp_path}),
+        and [Advanced](%{advanced_bootcamp_path}) Bootcamps. In five weeks, you
+        will learn all of that and a little more.
+
+        #### Is that possible in 5 weeks?
+
+        Yes, it is. Our program is developed by senior developers and trained teaching
+        experts. It's just the **best value you can get**.
+
+        ### Job Guarantee
+
+        We offer you training and a job at a cool tech company. This can be a
+        corporate or a startup. During this time, you will receive a **good salary**
+        and **training on the job**, provided by us, our partners, and the company
+        you work for to get you to the level of a **senior developer**.
+
+        _If somehow we won't be able to find you a job or traineeship, you will get
+        your money back_.
+
+        ### Why we do this
+
+        **The tech industry is dying for people like you** who want to learn to become
+        a programmer. We know, because we have been in that business for a long
+        time. By offering you this opportunity, we hope to help you, the companies
+        you will work for, and the economy in general.
+
+        ### How to get in
+
+        Please apply below if you're serious about joining our scholarship program.
+        We will follow up with a phone call after that to discuss your application in
+        more depth and if all goes well, you will get a live interview (in person or
+        via Skype).
+
+    form:
+      application_form_title: Application Form
+      opportunity_lifetime: the opportunity of a lifetime
+      please_accept_the_following: "Please accept the following conditions:"
+      button_apply_now: Send Application
+
+    thanks:
+      page_title: Thank you for your Application
+      title: Thank you!
+      thank_you_message: |
+        Thanks for taking the time to fill out the application, we will get back to you via email to plan a phone interview.
+
+        In the meantime, stay updated on learning materials and events by subscribing to our
+        newsletter.
+
   footer_follow_us: Follow Us
   footer_navigation: Navigation
+
+  scholarship_application_sent_successfully: |
+    Your scholarship application was sent successfully
+
+  label_gender: Gender
+  male: Male
+  female: Female
+
+  unemployed: Unemployed
+  fulltime: Full time employed
+  parttime: Part time employed
+  entrepeneur: Entrepeneur / Freelancer

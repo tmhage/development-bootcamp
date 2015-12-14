@@ -1,20 +1,18 @@
 .page-header
-  = link_to new_admin_scholarship_path, :class => 'btn btn-primary' do 
+  = link_to new_admin_scholarship_path, :class => 'btn btn-primary' do
     span.glyphicon.glyphicon-plus
     |  New Scholarship
   h1
-    | Listing admin_scholarships
+    | Listing scholarships
 
 .table-responsive
   table.table.table-striped.table-bordered.table-hover
     thead
       tr
         th
-          | First name
+          | Status
         th
-          | Last name
-        th
-          | Email
+          | Name
         th
           | Phone
         th
@@ -24,48 +22,32 @@
         th
           | Employment status
         th
-          | Reason
-        th
-          | Future plans
-        th
-          | Full program
-        th
-          | Traineeship
-        th
-          | Bootcamp
+          | Applied at
         th
         th
         th
     tbody
-      - @admin_scholarships.each do | admin_scholarship |
-        tr
+      - @scholarships.each do | scholarship |
+        tr class="scholarship-row--#{scholarship.status}"
           td
-            = admin_scholarship.first_name
+            = scholarship.status
           td
-            = admin_scholarship.last_name
+            = mail_to scholarship.email do
+              => scholarship.first_name
+              = scholarship.last_name
           td
-            = admin_scholarship.email
+            = scholarship.phone
           td
-            = admin_scholarship.phone
+            = scholarship.gender
           td
-            = admin_scholarship.gender
+            = scholarship.birth_date
           td
-            = admin_scholarship.birth_date
+            = scholarship.employment_status
           td
-            = admin_scholarship.employment_status
+            = scholarship.created_at.to_formatted_s(:short)
           td
-            = admin_scholarship.reason
+            = link_to 'Show', [:admin, scholarship]
           td
-            = admin_scholarship.future_plans
+            = link_to 'Edit', edit_admin_scholarship_path(scholarship)
           td
-            = admin_scholarship.full_program
-          td
-            = admin_scholarship.traineeship
-          td
-            = admin_scholarship.bootcamp
-          td
-            = link_to 'Show', admin_scholarship
-          td
-            = link_to 'Edit', edit_admin_scholarship_path(admin_scholarship) 
-          td
-            = link_to 'Destroy', admin_scholarship, method: :delete, data: { confirm: 'Are you sure?' } 
+            = link_to 'Destroy', [:admin, scholarship], method: :delete, data: { confirm: 'Are you sure?' }
