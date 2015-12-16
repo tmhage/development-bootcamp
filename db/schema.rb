@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151210174238) do
+ActiveRecord::Schema.define(version: 20151216093137) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -126,7 +126,7 @@ ActiveRecord::Schema.define(version: 20151210174238) do
 
   create_table "reviews", force: true do |t|
     t.integer  "student_id"
-    t.string   "avatar"
+    t.string   "original_avatar"
     t.integer  "rating"
     t.integer  "bootcamp_id"
     t.text     "body"
@@ -136,6 +136,7 @@ ActiveRecord::Schema.define(version: 20151210174238) do
     t.datetime "original_date"
     t.integer  "springest_id"
     t.string   "springest_author"
+    t.string   "avatar"
   end
 
   add_index "reviews", ["bootcamp_id"], name: "index_reviews_on_bootcamp_id", using: :btree
