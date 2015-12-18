@@ -29,5 +29,10 @@ module DevelopmentBootcamp
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     config.i18n.default_locale = :en
+
+    config.analytics_id = {
+      nl: 'UA-56824731-1',
+      en: 'UA-56824731-3'
+    }
   end
 end
