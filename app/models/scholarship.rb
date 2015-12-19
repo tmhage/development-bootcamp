@@ -7,7 +7,7 @@ class Scholarship < ActiveRecord::Base
     :birth_date, :education_level, :employment_status, :reason,
     :future_plans
 
-  validates_inclusion_of :full_program, :traineeship, in: [true]
+  #validates_inclusion_of :full_program, :traineeship, in: [true]
 
   validates_inclusion_of :gender, in: GENDERS
   validates_inclusion_of :status, in: STATI

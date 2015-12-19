@@ -1,0 +1,28 @@
+.block-intro
+  font-size: 2em
+  color: $gray-darker
+  font-weight: lighter
+  letter-spacing: 1px
+
+  .button
+    margin-right: 1em
+
+  p.ctas
+    margin-top: 1.2em
+
+
+.col.intro p
+  font-size: 1.6em
+
+@media (min-width: $screen-md-min)
+  .block-intro .button
+    @extend .btn-lg
+    margin-right: 1em
+
+@media (max-width: $screen-sm-min)
+  .block-intro
+    font-size: 1.2em
+    font-weight: normal
+
+  .col.intro p
+    font-size: 1.1em

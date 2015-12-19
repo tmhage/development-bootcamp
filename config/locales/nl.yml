@@ -280,7 +280,7 @@ nl:
   nav_newsletter: Nieuwsbrief
   nav_team: Team
   nav_december_discount: 15% korting
-  nav_scholarships: Scholarships
+  nav_scholarships: Traineeship
 
   tickets:
     one: ticket
@@ -461,7 +461,7 @@ nl:
     Neem [Contact](%{contact_url}) met ons op als jij met je collega's
     wilt deelnemen.
 
-  scholarship_program: Scholarship & Traineeship Programma
+  scholarship_program: Traineeship Programmeren met Baangarantie
   scholarship_program_intro: |
     **Wil je een professionele developer worden?**
 
@@ -469,7 +469,6 @@ nl:
     een web developer te worden met een 2-jarig traineeship en een goed salaris terwijl
     je uitgroeit tot senior niveau full stack developer.
 
-    Dit programma wordt mede mogelijk gemaakt door toonaangevende tech bedrijven.
     Meld je aan en vertel ons jouw verhaal.
 
   # Ticket order steps
@@ -690,85 +689,80 @@ nl:
 
   scholarships:
     apply:
-      title: Ons Scholarship & Trainee Programma
-      subtitle: Wordt een full stack developer met baangarantie
-      page_title: Wordt een full stack developer voor %{price}, met baangarantie! - Ons Scholarship & Trainee Programma
+      title: Traineeship Programmeren voor Beginners
+      subtitle: word web-developer met baangarantie!
+      page_title: Opleiding web-developer voor %{price}, met baangarantie! - Scholarship & Traineeship Programmeren
       meta_description: |
-        Codaisseur biedt je een scholarship programma aan om een web developer
-        te worden met een 2-jarig traineeship en een goed salaris terwijl je uitgroeit
-        tot senior niveau full stack developer.
-      meta_keywords: scholarship, traineeship, trainee, leer programmeren, code, developer, full stack, development, bootcamp
+        Codaisseur biedt een uniek traineeship aan waarbinnen je eerst wordt opgeleid
+        tot junior web developer en vervolgens in twee jaar uitgroeit tot ervaren programmeur.
+        Interesse? Solliciteer nu.
+      meta_keywords: scholarship, traineeship, trainee, leer programmeren, traineeship programmeren, programmeren voor beginners, code, developer, full stack, development, bootcamp
       intro_text: |
-        Codaisseur biedt je een scholarship programma aan om te leren programmeren en
-        een web developer te worden met een 2-jarig traineeship en een goed salaris terwijl
-        je uitgroeit tot senior niveau full stack developer.
-
-        Vul het formulier onderaan de pagina in om te solliciteren naar ons unieke
-        traineeship programma!
+        Codaisseur biedt een uniek traineeship aan waarbinnen je eerst wordt opgeleid
+        tot junior web developer en vervolgens in twee jaar uitgroeit tot ervaren programmeur.
+        Interesse? Solliciteren kan via het formulier hieronder.
 
       how_does_this_work: Hoe het werkt
+      answer_to_all_questions: antwoord op al je vragen
 
-      how_this_works: |
-        Voor maar %{price} krijg je het volgende van ons:
+      col_why: |
+        ## Waarom?
 
-        - **5 full time weken intensieve training**
-        tot je op het niveau zit van full stack junior developer.
-        - Daarna krijg je een **tweejarig traineeship** bij een gaaf tech bedrijf en krijg je
-        een goed salaris. Tijdens deze twee jaar **trainen we je nog 1 dag per maand** om je **verder
-        op te leiden tot senior developer**.
-        - Na twee jaar ben je **vrij om te solliciteren waar je wilt** of om te blijven werken bij het bedrijf
-        waar je je traineeship hebt gedaan.
+        De tech-industry heeft jou nodig! Zonder goed getrainde developers kunnen bedrijven niet groeien.
 
-        ### Wat je bij ons leert
+      col_how: |
+        ## Hoe?
+
+        Wij leiden jou in 5 weken op tot junior developer tijdens een intensieve bootcamp.
+        In je traineeship verzorgen wij je verdere opleiding.
+
+      col_what: |
+        ## Wat?
+
+        Je gaat voor aan de slag bij een tech-bedrijf. Dat kan een groot bedrijf zijn,
+        maar ook een start-up. Jouw voorkeur hierin is mede bepalend. In twee jaar groei
+        je daar uit van beginner tot ervaren developer.
+
+      col_money: |
+        ## €?
+
+        Vooraf betaal je een eigen bijdrage van €500. Tijdens je traineeship ontvang je via ons een marktconform salaris.
+
+      col_when: |
+        ## Wanneer?
+
+        De 5-weekse boot camp vangt aan op 31 januari 2016 en eindigt 4 maart 2016. Lessen vinden plaats van maandag t/m vrijdag. Daarnaast heb je ook les op zondag 31 januari en zaterdag 6 februari. Lesdagen beginnen om 9:00 uur en eindigen 19:00 uur.
+
+      col_language: |
+        ## EN/NL?
+
+        Als programmeur werk je vaak in een internationale omgeving. Om je hierop voor te bereiden is al ons lesmateriaal in het engels. Ook lessen worden in het engels gegeven.
+
+      col_what_do_i_learn: |
+        ## Wat leer ik?
 
         Bekijk ons [cursusaanbod](%{courses_path}), en dan specifiek de pagina's
         over de [Beginner](%{beginner_bootcamp_path}), [Intermediate](%{intermediate_bootcamp_path})
         en [Advanced](%{advanced_bootcamp_path}) Bootcamps. In vijf weken leer je
         alles uit die drie programma's en meer!
 
-        #### Kan dat dan in 5 weken?
+      col_can_this_work: |
+        ## Kan dat in 5 weken?
 
         Ja, dat kan! Ons programma is ontwikkeld door senior developers en getrainde
-        docenten. Het is **de beste deal die je ooit zult krijgen**.
+        docenten.
 
-        ### Baangarantie
+      col_can_i_do_this: |
+        ## Kan ik dit?
 
-        We bieden je een opleiding en een baan bij een gaaf tech bedrijf. Dit kan
-        een groot bedrijf zijn, of een startup. Gedurende de twee jaar die je daar
-        werkt krijg je **een goed salaris** en **training on the job** van ons,
-        onze partners en het bedrijf waar je voor werkt om je zo snel mogelijk op het
-        niveau van **senior developer** te krijgen.
+        Voor dit traineeship is een relevante vooropleiding of ervaring met programmeren niet noodzakelijk.
 
-        _Als we je om wat voor reden dan ook geen baan of traineeship aan kunnen bieden
-        krijg je van ons je geld terug_.
+      commitment: |
+        Dit programma is zeer intensief en vraagt commitment, van ons en bovenal van jou. Op basis van
+        geschiktheid en motivatie maken wij daarom een selectie uit alle aanmeldingen. Een gesprek op ons kantoor
+        in Amsterdam of via Skype kan onderdeel uitmaken van dit selectieproces.
 
-        ### Startdatum en lestijden
-
-        Op **zondag 31 januari om 9:00 uur** start het trainingsprogramma. Je kunt
-        je hieronder direct aanmelden voor die datum. Als je geïnteresseerd bent in
-        toekomstige startdata, laat het ons dan weten bij je motivatie zodat we je
-        daarover op de hoogte kunnen houden.
-
-        Met uitzondering van de eerste week waarin we zondag t/m zaterdag van 9:00 tot
-        19:00 uur les hebben, zal het lesprogramma van maandag t/m vrijdag zijn en van
-        9:00 tot 18:00 uur.
-
-        **Alle lessen worden in het engels gegeven**.
-
-        ### Waarom we dit doen
-
-        **De tech industry heeft mensen zoals jij hard nodig**: mensen die
-        programmeur willen worden. Wij weten dat, omdat we zelf al heel lang in
-        die branche werken. En door je deze kans te bieden, hopen we jou, de bedrijven
-        waar je voor gaat werken en de economie een boost te kunnen geven.
-
-        ### Hoe je mee doet
-
-        Vul het formulier hieronder in als je serieus bent en ons programma echt wilt
-        volgen. Wij komen dan zo snel mogelijk bij je terug om je telefonisch een interview
-        af te nemen. Als alles goed gaat nodigen we je uit voor een sollicitatiegesprek om
-        wat dieper op de zaken in te gaan en elkaar wat beter te leren kennen (bij ons op
-        kantoor in Amsterdam of via Skype).
+        Houd er rekening mee dat er maar een beperkt aantal plaatsen beschikbaar zijn.
 
       are_you_an_employer: Ben je een werkgever?
       employer_looking_for_devs: |
