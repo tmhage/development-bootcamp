@@ -83,11 +83,12 @@
         = render 'form'
 
       .row
-        .block-intro
+        .inner
           p &nbsp;
           = tmd('.commitment')
           p &nbsp;
 
+      .row
         .support-box
           - support_mail = capture do
             strong =<> mail_to 'support@developmentbootcamp.nl'
