@@ -61,7 +61,7 @@ en:
   nav_newsletter: Newsletter
   nav_team: Team
   nav_december_discount: 15% discount!
-  nav_scholarships: Scholarships
+  nav_scholarships: Traineeship
 
   tickets:
     one: ticket
@@ -228,15 +228,15 @@ en:
   other_bootcamps: Other Bootcamps
   incompany_cta: We also offer this course in-company! [Contact](%{contact_url}) us if you want to enroll with a few colleagues and we will come to you.
 
-  scholarship_program: Scholarship & Traineeship Program
+  scholarship_program: Traineeship Programming with Job Guarantee
   scholarship_program_intro: |
       **Want to become a professional developer?**
 
-      Codaisseur and partners offer you a scholarship program to become a full stack web
-      developer and a 2 year traineeship with a good salary while you grow to
+      Codaisseur offers you a scholarship program to learn to code and become a
+      web developer with a 2 year traineeship and a good salary while you grow to
       senior level.
 
-      The program is powered by leading tech-companies. Apply and tell us your story.
+      Apply and tell us your story.
 
   # Ticket order steps
   title_enroll_now: Enroll Now
@@ -451,82 +451,83 @@ en:
 
   scholarships:
     apply:
-      title: Our Scholarship & Trainee Program
-      subtitle: Become a full stack developer and land a job
-      page_title: Become a full stack developer for %{price} and land a job! - Our Scholarship & Trainee Program
+      title: Traineeship Programming for Beginners
+      subtitle: become a web developer and land a job!
+      page_title: Web programming course for %{price} with job guarantee! - Our Scholarship & Trainee Program
       meta_description: |
-        Codaisseur offers you a scholarship program to become a full stack web
-        developer and a 2 year traineeship with a good salary while you grow to
-        senior level.
-      meta_keywords: scholarship, traineeship, trainee, learn programming, code, developer, full stack, development, bootcamp
+        Codaisseur offers you a unique traineeship in which we teach you to become a junior
+        web developer. After that, we offer you a 2 year job with a good salary while you grow to
+        senior level. Interested? Apply now.
+      meta_keywords: scholarship, traineeship, trainee, learn programming, beginner, code, developer, full stack, development, bootcamp
       intro_text: |
-        Codaisseur and partners offer you a scholarship program to become a full stack web
-        developer and a 2 year traineeship with a good salary while you grow to
-        senior level.
-
-        Fill out the form below to apply for the traineeship program!
+        Codaisseur offers you a unique traineeship in which we teach you to become a junior
+        web developer. After that, we offer you a 2 year job with a good salary while you grow to
+        senior level. Interested? Fill out the form below to apply!
 
       how_does_this_work: How this works
+      answer_to_all_questions: answers to all your questions
 
-      how_this_works: |
-        For only %{price}, you will get the following:
+      col_why: |
+        ## Why?
 
-        - **5 full time weeks of immersive training**
-        to get you to the level of a full stack junior developer.
-        - After that, you will get a **two year traineeship** at a cool tech company and you will
-        earn a good salary. During these two years, we will train you for one day
-        per month until you are at the level of a senior developer.
-        - After two years, you are **free to apply anywhere you want** or keep working
-        at the company you did your traineeship.
+        The tech industry needs you! Without well trained developers, companies can not grow.
 
-        ### What you will learn
+      col_how: |
+        ## How?
+
+        Prior to your traineeship you are trained to the level of junior developer during a 5-week intensive bootcamp by
+        senior developers and experienced teachers. During your traineeship we educate you further.
+
+      col_what: |
+        ## What?
+
+        You will be working at a tech-company for two years. This might be a large company or a
+        start-up. Your preference in this  will be taken into account. During your time there you
+        will become an experienced developer.
+
+      col_money: |
+        ## €?
+
+        You yourself contribute a €500 fee in advance. During your traineeship you receive a competitive salary by us.
+
+      col_when: |
+        ## When?
+
+        The 5-week boot camp starts on January 31, 2016 en concludes on March 4, 2016.
+        Classes are Monday to Friday. You will also have classes on Sunday, January 31st
+        and Saturday, February 6th. Class starts at 9am and ends at 7pm.
+
+      col_language: |
+        ## EN/NL?
+
+        As a developer you are likely to work in an international environment. To better
+        prepare you for this, classes and course materials are provided in English.
+
+      col_what_do_i_learn: |
+        ## What will I learn?
 
         Have a look at our [courses](%{courses_path}) page, specifically the pages
         about [Beginner](%{beginner_bootcamp_path}), [Intermediate](%{intermediate_bootcamp_path}),
         and [Advanced](%{advanced_bootcamp_path}) Bootcamps. In five weeks, you
         will learn all of that and a little more.
 
-        #### Is that possible in 5 weeks?
+      col_can_this_work: |
+        ## Is that possible?
 
-        Yes, it is. Our program is developed by senior developers and trained teaching
-        experts. It's just the **best value you can get**.
+        Yes, it is! You are taught by senior developers and committed teaching
+        experts.
 
-        ### Job Guarantee
+      col_can_i_do_this: |
+        ## Can I do this?
 
-        We offer you training and a job at a cool tech company. This can be a
-        corporate or a startup. During this time, you will receive a **good salary**
-        and **training on the job**, provided by us, our partners, and the company
-        you work for to get you to the level of a **senior developer**.
+        You do not need any relevant prior education or experierience in software development
+        for our program. However this program requires a lot of commitment. Based on aptitude
+        and motivation we will make a selection amongst all applicants.
 
-        _If somehow we won't be able to find you a job or traineeship, you will get
-        your money back_.
+      commitment: |
+        An interview at our office in Amsterdam or over Skype may be part of the selection process.
 
-        ### Start Dates and Schedule
-
-        The training program starts on **Sunday, January 31st at 9:00 am**. You can
-        apply for that date below. If you're interested in future dates, please let
-        us know in your application where you write about your motivation so we can
-        keep you updated on that.
-
-        The first week, the schedule is from Sunday until Saturday from 9am
-        until 7pm. For the following four weeks, the schedule is from Monday
-        until Friday and from 9am until 6pm.
-
-        **All courses will be in English**.
-
-        ### Why we do this
-
-        **The tech industry is dying for people like you** who want to learn to become
-        a programmer. We know, because we have been in that business for a long
-        time. By offering you this opportunity, we hope to help you, the companies
-        you will work for, and the economy in general.
-
-        ### How to get in
-
-        Please apply below if you're serious about joining our scholarship program.
-        We will follow up with a phone call after that to discuss your application in
-        more depth and if all goes well, you will get a live interview (in person or
-        via Skype).
+        Please know that there are only limited seats available.
 
       are_you_an_employer: Are You an Employer?
       employer_looking_for_devs: |
