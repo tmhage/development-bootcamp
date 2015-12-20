@@ -31,9 +31,10 @@
             => link_to t('.rsvp_here'), @open_day.facebook_event_url, class: 'button default'
             = t('.leave_details_below')
 
-    .dbc-container.dbc-text
-      .inner
-        = @open_day.google_maps_iframe
+    - if @open_day.present?
+      .dbc-container.dbc-text
+        .inner
+          = @open_day.google_maps_iframe
 
     .dbc-container.dbc-text
       .inner
