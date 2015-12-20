@@ -554,10 +554,9 @@ nl:
 
         Het is jouw kans om al je eventuele vragen te stellen.
 
-      schedule: |
-        * 20:00  — Deuren open
-        * 20:30  — Welkom en Keynote door Wouter de Vos
-        * 21:15  — Q&A en borrel!
+      no_open_days_planned: |
+        We hebben momenteel geen Open Avonden gepland. Registreer hieronder om op de hoogte te
+        blijven van nieuw geplande evenementen.
 
       rsvp_here: RSVP Hier
       leave_details_below: of laat je gegevens hieronder achter

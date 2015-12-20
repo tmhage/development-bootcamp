@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  namespace :admin do
+  end
+
   localized do
     devise_for :users, :skip => [:registrations]
 
@@ -103,6 +106,7 @@ Rails.application.routes.draw do
     resources :sponsors, except: :show
     resources :speakers, except: :show
     resources :students, except: :show
+    resources :open_days, except: :show
     resources :orders, except: :show do
       member do
         patch :manually_paid

@@ -1,0 +1,32 @@
+.page-header
+  = link_to new_admin_open_day_path, :class => 'btn btn-primary' do
+    span.glyphicon.glyphicon-plus
+    |  New Open day
+  h1
+    | Listing Open Days
+
+.table-responsive
+  table.table.table-striped.table-bordered.table-hover
+    thead
+      tr
+        th
+          | Starts at
+        th
+          | Address
+        th
+          | Facebook event
+        th
+        th
+    tbody
+      - @open_days.each do | open_day |
+        tr
+          td
+            = open_day.starts_at
+          td
+            = open_day.address
+          td
+            = link_to 'Facebook', open_day.facebook_event_url
+          td
+            = link_to 'Edit', edit_admin_open_day_path(open_day)
+          td
+            = link_to 'Destroy', [:admin, open_day], method: :delete, data: { confirm: 'Are you sure?' }

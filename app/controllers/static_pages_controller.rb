@@ -21,6 +21,9 @@ class StaticPagesController < ApplicationController
 
   def open_evening
     mixpanel.track '[visits] Open Evening Page'
+    @open_day = OpenDay.upcoming.first
+    @open_day = OpenDay.order(starts_at: :desc).first if @open_day.blank?
+    @open_day = @open_day.decorate if @open_day.present?
   end
 
   def contact

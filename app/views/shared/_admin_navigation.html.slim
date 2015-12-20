@@ -30,6 +30,9 @@ nav.navbar.navbar-inverse.navbar-fixed-top
           = fa_icon 'mortar-board fw'
           | Bootcamps
         = menu_dropdown_for 'Marketing' do
+          = menu_item_for admin_open_days_path do
+            = fa_icon 'heart fw'
+            | Open Evenings
           = menu_item_for admin_sponsors_path do
             = fa_icon 'heart fw'
             | Sponsors
