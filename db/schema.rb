@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151216093137) do
+ActiveRecord::Schema.define(version: 20151220085453) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,31 @@ ActiveRecord::Schema.define(version: 20151216093137) do
     t.datetime "updated_at"
     t.date     "published_at"
   end
+
+  create_table "companies", force: true do |t|
+    t.string   "name"
+    t.string   "website"
+    t.string   "chamber_of_commerce_registration"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "phone"
+    t.text     "address"
+    t.string   "postal_code"
+    t.string   "city"
+    t.string   "country"
+    t.text     "reason"
+    t.integer  "company_size"
+    t.integer  "development_team_size"
+    t.integer  "traineeships_positions"
+    t.text     "company_profile"
+    t.boolean  "english_speakers_ok"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "slug"
+  end
+
+  add_index "companies", ["slug"], name: "index_companies_on_slug", using: :btree
 
   create_table "discount_codes", force: true do |t|
     t.string   "code"
@@ -56,6 +81,18 @@ ActiveRecord::Schema.define(version: 20151216093137) do
   add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
+
+  create_table "open_days", force: true do |t|
+    t.datetime "starts_at"
+    t.text     "address"
+    t.text     "description_en"
+    t.text     "description_nl"
+    t.string   "facebook_event_url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.float    "latitude"
+    t.float    "longitude"
+  end
 
   create_table "orders", force: true do |t|
     t.decimal  "price"

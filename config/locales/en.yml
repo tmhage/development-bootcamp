@@ -320,10 +320,9 @@ en:
 
         It will be the chance for you to ask all the questions you may have.
 
-      schedule: |
-        * 20:00  — Doors Open
-        * 20:30  — Welcome and Keynote by Wouter de Vos
-        * 21:15  — Q&A and drinks!
+      no_open_days_planned: |
+        We currently have no Open Evenings planned. Please register below to stay tuned on newly
+        planned events.
 
       rsvp_here: RSVP Here
       leave_details_below: or leave your details below
