@@ -4,7 +4,7 @@ class Admin::ScholarshipsController < Admin::AdminController
   respond_to :html
 
   def index
-    @scholarships = Scholarship.order(created_at: :desc)
+    @scholarships = Scholarship.all.order(created_at: :desc).decorate
     respond_with(@scholarships)
   end
 

@@ -33,9 +33,8 @@
           td
             = scholarship.status
           td
-            = mail_to scholarship.email do
-              => scholarship.first_name
-              = scholarship.last_name
+            = link_to scholarship.helpscout_url, target: :blank do
+              => scholarship.full_name
           td
             = scholarship.phone
           td

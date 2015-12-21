@@ -1,5 +1,5 @@
 class Scholarship < ActiveRecord::Base
-  STATI = %w(new pending approved declined)
+  STATI = %w(new pending approved signed cancelled declined)
   GENDERS = %w(male female)
   EMPLOYMENT_STATI = %w(unemployed fulltime parttime entrepeneur)
 
