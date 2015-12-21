@@ -1,5 +1,5 @@
 class Scholarship < ActiveRecord::Base
-  STATI = %w(new pending interview approved signed rejected cancelled)
+  STATI = %w(new unsure pending interview approved signed rejected cancelled)
   GENDERS = %w(male female)
   EMPLOYMENT_STATI = %w(unemployed fulltime parttime entrepeneur)
 
