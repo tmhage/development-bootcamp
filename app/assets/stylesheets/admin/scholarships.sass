@@ -1,11 +1,25 @@
 tr.scholarship-row--new
   @extend .info
 
-tr.scholarship-row--pending
+tr.scholarship-row--pending,
+tr.scholarship-row--unsure,
+tr.scholarship-row--interview
   @extend .warning
 
-tr.scholarship-row--approved
+tr.scholarship-row--approved,
+tr.scholarship-row--signed,
   @extend .success
 
-tr.scholarship-row--declined
+tr.scholarship-row--declined,
+tr.scholarship-row--rejected
   @extend .danger
+
+tr.scholarship-row--cancelled
+  background-color: $gray-light
+  text-decoration: line-through
+
+tr.scholarship-row--unsure
+  font-style: italic
+
+tr.scholarship-row--interview
+  font-weight: bold
