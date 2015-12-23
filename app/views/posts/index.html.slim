@@ -4,6 +4,11 @@
 
 - localized_cache [cache_key_for_posts] do
   .dbc-content
+    .inner
+      center
+        h1
+          | Blog
+          span Development Bootcamp
     - if @posts.any?
       - @posts.each do |post|
         - localized_cache [post] do
@@ -11,7 +16,7 @@
             .cover-image style="background-image: url('#{image_url post.cover_image.url(:big)}')"
               .inner
                 .cover-overlay
-                  h1= link_to post.title, post
+                  h2= link_to post.title, post
 
             - if post.user && post.user.first_name
               .inner.post-meta
