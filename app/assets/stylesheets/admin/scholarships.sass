@@ -1,12 +1,15 @@
 tr.scholarship-row--new
   @extend .info
 
-tr.scholarship-row--pending,
+tr.scholarship-row--planning-interview,
 tr.scholarship-row--unsure,
-tr.scholarship-row--interview
+tr.scholarship-row--interview-planned,
+tr.scholarship-row--send-assignment,
+tr.scholarship-row--to-be-rejected
   @extend .warning
 
-tr.scholarship-row--approved,
+tr.scholarship-row--send-contract,
+tr.scholarship-row--contract-sent,
 tr.scholarship-row--signed,
   @extend .success
 
@@ -18,8 +21,16 @@ tr.scholarship-row--cancelled
   color: $gray-light
   text-decoration: line-through
 
-tr.scholarship-row--unsure
+tr.scholarship-row--unsure,
+tr.scholarship-row--doing-assignment,
+tr.scholarship-row--send-assignment,
+tr.scholarship-row--to-be-rejected
   font-style: italic
 
-tr.scholarship-row--interview
+tr.scholarship-row--send-contract,
+tr.scholarship-row--send-assignment,
+tr.scholarship-row--to-be-rejected
   font-weight: bold
+
+  td:first-child *::before
+    content: '* '

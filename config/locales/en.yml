@@ -53,6 +53,8 @@ en:
         format:
           unit: '€'
 
+  ago: ago
+
   nav_home: Home
   nav_courses: Courses
   nav_enroll: Enroll
