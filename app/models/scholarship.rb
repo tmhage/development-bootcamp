@@ -1,7 +1,21 @@
 class Scholarship < ActiveRecord::Base
   include Notable
 
-  STATI = %w(new unsure pending interview approved signed rejected cancelled)
+  STATI = [
+    'new',
+    'unsure',
+    'planning interview',
+    'interview planned',
+    'send assignment',
+    'doing assignment',
+    'send contract',
+    'contract sent',
+    'signed',
+    'to be rejected',
+    'rejected',
+    'cancelled'
+  ]
+
   GENDERS = %w(male female)
   EMPLOYMENT_STATI = %w(unemployed fulltime parttime entrepeneur)
 
@@ -21,11 +35,15 @@ class Scholarship < ActiveRecord::Base
     select("
       scholarships.*,
       CASE WHEN scholarships.status = 'new' THEN 99
-      WHEN scholarships.status = 'unsure' THEN 98
-      WHEN scholarships.status = 'pending' THEN 16
-      WHEN scholarships.status = 'interview' THEN 14
-      WHEN scholarships.status = 'approved' THEN 11
-      WHEN scholarships.status = 'signed' THEN 10
+      WHEN scholarships.status = 'send assignment' THEN 98
+      WHEN scholarships.status = 'to be rejected' THEN 97
+      WHEN scholarships.status = 'send contract' THEN 96
+      WHEN scholarships.status = 'planning interview' THEN 15
+      WHEN scholarships.status = 'interview planned' THEN 13
+      WHEN scholarships.status = 'doing assignment' THEN 12
+      WHEN scholarships.status = 'contract sent' THEN 10
+      WHEN scholarships.status = 'signed' THEN 9
+      WHEN scholarships.status = 'unsure' THEN 3
       WHEN scholarships.status = 'rejected' THEN 1
       WHEN scholarships.status = 'declined' THEN 1
       WHEN scholarships.status = 'cancelled' THEN 0

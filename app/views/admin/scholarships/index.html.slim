@@ -28,7 +28,7 @@
         th
     tbody
       - @scholarships.each do | scholarship |
-        tr class="scholarship-row--#{scholarship.status}"
+        tr class="scholarship-row--#{scholarship.status.parameterize}"
           td
             = link_to scholarship.status, [:admin, scholarship]
           td
