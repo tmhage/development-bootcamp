@@ -24,7 +24,7 @@ class FollowupMailWorker < MailWorker
        'rcpt' => @order.billing_email,
        'vars' => [
           { name: 'name', content: @order.billing_name, },
-          { name: 'payment_link', content: "https://www.developmentbootcamp.nl/tickets/#{@order.identifier}", },
+          { name: 'payment_link', content: "https://www.developmentbootcamp.com/enroll/#{@order.identifier}", },
           { name: 'order_date', content: @order.created_at, }
        ]
       }],
