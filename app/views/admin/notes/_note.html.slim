@@ -5,6 +5,6 @@
     .body
       .meta
         => time_ago_in_words(note.created_at)
-        | ago
+        = t(:ago)
 
       = note.body.html_safe
