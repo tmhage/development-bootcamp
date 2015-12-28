@@ -9,6 +9,7 @@ class Admin::ScholarshipsController < Admin::AdminController
   end
 
   def show
+    @note = @scholarship.notes.build
     respond_with(@scholarship)
   end
 
@@ -28,7 +29,7 @@ class Admin::ScholarshipsController < Admin::AdminController
 
   def update
     @scholarship.update(scholarship_params)
-    redirect_to admin_scholarships_path
+    respond_with(:admin, @scholarship)
   end
 
   def destroy
@@ -44,6 +45,7 @@ class Admin::ScholarshipsController < Admin::AdminController
     def scholarship_params
       params.require(:scholarship).permit(:first_name, :last_name, :email, :phone,
         :gender, :birth_date, :employment_status, :reason, :future_plans,
-        :education_level, :full_program, :traineeship, :status, :bootcamp_id)
+        :education_level, :full_program, :traineeship, :status, :bootcamp_id,
+        notes_attributes: [:body, :user_id])
     end
 end

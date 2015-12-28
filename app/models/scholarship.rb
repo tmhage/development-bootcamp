@@ -1,4 +1,6 @@
 class Scholarship < ActiveRecord::Base
+  include Notable
+
   STATI = %w(new unsure pending interview approved signed rejected cancelled)
   GENDERS = %w(male female)
   EMPLOYMENT_STATI = %w(unemployed fulltime parttime entrepeneur)
