@@ -26,12 +26,11 @@
           | Applied at
         th
         th
-        th
     tbody
       - @scholarships.each do | scholarship |
         tr class="scholarship-row--#{scholarship.status}"
           td
-            = scholarship.status
+            = link_to scholarship.status, [:admin, scholarship]
           td
             = link_to scholarship.helpscout_url, target: :blank do
               => scholarship.full_name
@@ -45,8 +44,6 @@
             = scholarship.employment_status
           td
             = scholarship.created_at.to_formatted_s(:short)
-          td
-            = link_to 'Show', [:admin, scholarship]
           td
             = link_to 'Edit', edit_admin_scholarship_path(scholarship)
           td

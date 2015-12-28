@@ -1,10 +1,10 @@
 .page-header
-  = link_to admin_scholarships_path, :class => 'btn btn-default' do 
+  = link_to admin_scholarships_path, :class => 'btn btn-default' do
     span.glyphicon.glyphicon-list-alt
-    |  Back 
-  = link_to edit_admin_scholarship_path(@scholarship), :class => 'btn btn-primary' do 
+    |  Back
+  = link_to edit_admin_scholarship_path(@scholarship), :class => 'btn btn-primary' do
     span.glyphicon.glyphicon-pencil
-    |  Edit 
+    |  Edit
   h1
     | Show scholarship
 dl.dl-horizontal
@@ -56,3 +56,15 @@ dl.dl-horizontal
     | Bootcamp:
   dd
     = @scholarship.bootcamp
+
+h3 Notes
+
+.notes
+  = render @scholarship.notes
+
+= bootstrap_form_for [:admin, @scholarship] do |f|
+  = render '/admin/notes/form', f: f
+  = f.form_group do
+    = f.select :status, Scholarship::STATI
+  = f.form_group do
+    = f.submit 'Submit'

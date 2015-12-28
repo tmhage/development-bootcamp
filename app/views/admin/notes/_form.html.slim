@@ -1,0 +1,3 @@
+= f.fields_for :notes, @note do |n|
+  = n.text_area :body, class: :editor, label: 'Leave a note', placeholder: 'Leave a note'
+  = n.hidden_field :user_id, value: current_user.id

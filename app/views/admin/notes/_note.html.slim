@@ -1,0 +1,10 @@
+- if note.persisted?
+  .note
+    .avatar
+      = image_tag note.user.gravatar_url, class: 'img-responsive img-circle'
+    .body
+      .meta
+        => time_ago_in_words(note.created_at)
+        | ago
+
+      = note.body.html_safe
