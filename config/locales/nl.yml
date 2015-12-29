@@ -447,7 +447,8 @@ nl:
   label_remarks: Opmerkingen
   label_not_filled: Niet ingevuld
   label_last_updated: "Laatst bewerkt:"
-  label_no_experience: Geen ervaring
+  label_no_experience: Nee, geen van allen, programmeren is nieuw voor mij
+  label_other: Anders
 
   # Payment Status
   CANCELLED: GEANNULEERD
@@ -787,7 +788,7 @@ nl:
       please_accept_the_following: "Je dient akkoord te gaan met de volgende voorwaarden:"
       button_apply_now: Aanmelding verzenden
       any_experience_at_all: |
-        Heb je wel eens met een van deze technieken gewerkt? (geen vereiste)
+        Heb je wel eens met een van deze technieken gewerkt?
 
     thanks:
       page_title: Bedankt voor je aanmelding!

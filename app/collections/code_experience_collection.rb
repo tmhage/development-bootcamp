@@ -2,7 +2,6 @@ class CodeExperienceCollection < BaseCollection
 
   def self.collection
     [
-      { name: I18n.t(:label_no_experience), id: 'none' },
       { name: 'HTML/CSS', id: 'html_css' },
       { name: 'JavaScript', id: 'javascript' },
       { name: 'Backend JavaScript', id: 'backend_js' },
@@ -11,7 +10,8 @@ class CodeExperienceCollection < BaseCollection
       { name: 'PHP', id: 'php' },
       { name: 'SQL/Databases', id: 'sql' },
       { name: 'Bash', id: 'bash' },
-      { name: 'Other', id: 'other' }
+      { name: 'Other', id: I18n.t(:label_other) },
+      { name: I18n.t(:label_no_experience), id: 'none' }
     ]
   end
 end
