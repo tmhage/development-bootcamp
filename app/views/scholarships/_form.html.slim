@@ -31,10 +31,16 @@
       = f.text_field :education_level
 
     = f.form_group do
+      = f.text_field :linked_in_profile_url, placeholder: 'https://www.linkedin.com/in/yourname'
+
+    = f.form_group do
       = f.text_area :reason
 
     = f.form_group do
       = f.text_area :future_plans
+
+    = f.form_group label: { text: t('.any_experience_at_all') } do
+      = f.collection_check_boxes :coding_experience, CodeExperienceCollection.all, :id, :name, hide_label: true
 
     = f.form_group do
       = f.submit t('.button_apply_now'), :class => "btn btn-primary btn-lg"

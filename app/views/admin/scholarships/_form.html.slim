@@ -33,6 +33,9 @@
     = f.text_field :education_level
 
   = f.form_group do
+    = f.text_field :linked_in_profile_url
+
+  = f.form_group do
     = f.text_area :reason
 
   = f.form_group do
@@ -42,6 +45,9 @@
     = f.label t('.please_accept_the_following')
     = f.check_box :full_program
     = f.check_box :traineeship
+
+  = f.form_group do
+    = f.collection_check_boxes :coding_experience, CodeExperienceCollection.all, :id, :name
 
   = f.form_group do
     = f.select :status, Scholarship::STATI
