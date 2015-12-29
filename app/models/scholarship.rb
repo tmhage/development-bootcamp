@@ -23,6 +23,8 @@ class Scholarship < ActiveRecord::Base
     :birth_date, :education_level, :employment_status, :reason,
     :future_plans, :coding_experience, :linked_in_profile_url
 
+  validates_format_of :phone, with: /\A\+?[0-9\s\-\(\)]+\z/, on: :create
+
   #validates_inclusion_of :full_program, :traineeship, in: [true]
 
   validates_inclusion_of :gender, in: GENDERS
