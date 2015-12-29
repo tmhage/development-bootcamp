@@ -30,6 +30,9 @@
     = f.form_group do
       = f.text_field :education_level
 
+    = f.form_group label: { text: t('.any_experience_at_all') } do
+      = f.collection_check_boxes :coding_experience, CodeExperienceCollection.all, :id, :name
+
     = f.form_group do
       = f.text_area :reason
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151228214035) do
+ActiveRecord::Schema.define(version: 20151229081827) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -209,6 +209,7 @@ ActiveRecord::Schema.define(version: 20151228214035) do
     t.integer  "bootcamp_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "coding_experience", default: [],    array: true
   end
 
   add_index "scholarships", ["bootcamp_id"], name: "index_scholarships_on_bootcamp_id", using: :btree

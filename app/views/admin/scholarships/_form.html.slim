@@ -44,6 +44,9 @@
     = f.check_box :traineeship
 
   = f.form_group do
+    = f.collection_check_boxes :coding_experience, CodeExperienceCollection.all, :id, :name
+
+  = f.form_group do
     = f.select :status, Scholarship::STATI
 
   = f.form_group do

@@ -47,6 +47,7 @@ en:
         education_level: Level of education
         reason: Please explain in a few words why you want to participate
         future_plans: Please explain in a few words what your future plans will be after you joined our program
+        coding_experience: Coding experience
 
   number:
      currency:
@@ -219,6 +220,7 @@ en:
   label_remarks: Remarks
   label_not_filled: Not filled in
   label_last_updated: "Last updated:"
+  label_no_experience: No prior experience
 
   # Payment Status
   CANCELLED: CANCELLED
@@ -542,6 +544,8 @@ en:
       opportunity_lifetime: the opportunity of a lifetime
       please_accept_the_following: "Please accept the following conditions:"
       button_apply_now: Send Application
+      any_experience_at_all: |
+        Do you have any experience at all with any of the following? (totally OK if you don't)
 
     thanks:
       page_title: Thank you for your Application

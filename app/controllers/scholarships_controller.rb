@@ -27,6 +27,6 @@ class ScholarshipsController < ApplicationController
     def scholarship_params
       params.require(:scholarship).permit(:first_name, :last_name, :email, :phone,
         :gender, :birth_date, :employment_status, :reason, :future_plans,
-        :education_level, :full_program, :traineeship)
+        :education_level, :full_program, :traineeship, :coding_experience)
     end
 end
