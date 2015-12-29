@@ -46,6 +46,7 @@ class Admin::ScholarshipsController < Admin::AdminController
       params.require(:scholarship).permit(:first_name, :last_name, :email, :phone,
         :gender, :birth_date, :employment_status, :reason, :future_plans,
         :education_level, :full_program, :traineeship, :status, :bootcamp_id,
-        coding_experience: [], notes_attributes: [:body, :user_id])
+        :linked_in_profile_url, coding_experience: [],
+        notes_attributes: [:body, :user_id])
     end
 end

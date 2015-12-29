@@ -60,6 +60,13 @@ dl.dl-horizontal
     | Coding Experience:
   dd
     = CodeExperienceCollection.find_all(@scholarship.coding_experience).map(&:name).to_sentence
+  dt
+    | LinkedIn Profile:
+  dd
+    - if @scholarship.linked_in_profile_url.present?
+      = link_to @scholarship.linked_in_profile_url, @scholarship.linked_in_profile_url
+    - else
+      | Not provided
 
 h3 Notes
 

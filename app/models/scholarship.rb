@@ -21,7 +21,7 @@ class Scholarship < ActiveRecord::Base
 
   validates_presence_of :first_name, :last_name, :email, :phone, :gender,
     :birth_date, :education_level, :employment_status, :reason,
-    :future_plans, :coding_experience
+    :future_plans, :coding_experience, :linked_in_profile_url
 
   #validates_inclusion_of :full_program, :traineeship, in: [true]
 

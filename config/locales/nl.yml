@@ -259,6 +259,7 @@ nl:
         reason: Leg in een paar woorden uit waarom je mee wilt doen
         future_plans: Leg in een paar woorden uit hoe je je toekomst ziet na ons programma
         coding_experience: Ervaring met code
+        linked_in_profile_url: Link naar je LinkedIn profiel
 
   routes:
     new: nieuw

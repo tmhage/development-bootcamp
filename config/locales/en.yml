@@ -48,6 +48,7 @@ en:
         reason: Please explain in a few words why you want to participate
         future_plans: Please explain in a few words what your future plans will be after you joined our program
         coding_experience: Coding experience
+        linked_in_profile_url: Link to your LinkedIn profile
 
   number:
      currency:
