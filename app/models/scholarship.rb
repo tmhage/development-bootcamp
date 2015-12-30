@@ -21,7 +21,9 @@ class Scholarship < ActiveRecord::Base
 
   validates_presence_of :first_name, :last_name, :email, :phone, :gender,
     :birth_date, :education_level, :employment_status, :reason,
-    :future_plans, :coding_experience, :linked_in_profile_url
+    :future_plans
+
+  validates_presence_of :linked_in_profile_url, :coding_experience, on: :create
 
   validates_format_of :phone, with: /\A\+?[0-9\s\-\(\)]+\z/, on: :create
 
