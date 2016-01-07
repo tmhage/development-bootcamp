@@ -13,7 +13,8 @@ class Scholarship < ActiveRecord::Base
     'signed',
     'to be rejected',
     'rejected',
-    'cancelled'
+    'cancelled',
+    'next time'
   ]
 
   GENDERS = %w(male female)
@@ -47,8 +48,9 @@ class Scholarship < ActiveRecord::Base
       WHEN scholarships.status = 'doing assignment' THEN 12
       WHEN scholarships.status = 'contract sent' THEN 10
       WHEN scholarships.status = 'signed' THEN 9
-      WHEN scholarships.status = 'unsure' THEN 3
-      WHEN scholarships.status = 'rejected' THEN 1
+      WHEN scholarships.status = 'unsure' THEN 4
+      WHEN scholarships.status = 'next time' THEN 3
+      WHEN scholarships.status = 'rejected' THEN 2
       WHEN scholarships.status = 'declined' THEN 1
       WHEN scholarships.status = 'cancelled' THEN 0
       END AS status_code").order("status_code DESC, created_at ASC")
