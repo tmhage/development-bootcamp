@@ -33,6 +33,10 @@ dl.dl-horizontal
   dd
     = @scholarship.birth_date
   dt
+    | Education Level:
+  dd
+    = @scholarship.education_level
+  dt
     | Employment status:
   dd
     = @scholarship.employment_status
@@ -69,6 +73,10 @@ dl.dl-horizontal
       | Not provided
 
 h3 Notes
+
+p
+  = link_to @scholarship.helpscout_url, target: :blank do
+    = "Email via Helpscout"
 
 .notes
   = render @scholarship.notes
