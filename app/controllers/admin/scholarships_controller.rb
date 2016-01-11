@@ -39,7 +39,7 @@ class Admin::ScholarshipsController < Admin::AdminController
 
   private
     def set_scholarship
-      @scholarship = Scholarship.find(params[:id])
+      @scholarship = Scholarship.find(params[:id]).decorate
     end
 
     def scholarship_params
