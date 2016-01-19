@@ -551,7 +551,8 @@ en:
       page_title: Thank you for your Application
       title: Thank you!
       thank_you_message: |
-        Thanks for taking the time to fill out the application, we will get back to you via email to plan a phone interview.
+        Thanks for taking the time to fill out the application. Within a couple
+        of minutes, you will receive an email with next steps.
 
         In the meantime, stay updated on learning materials and events by subscribing to our
         newsletter.
@@ -560,7 +561,7 @@ en:
   footer_navigation: Navigation
 
   scholarship_application_sent_successfully: |
-    Your scholarship application was sent successfully
+    We received your scholarship application successfully
 
   label_gender: Gender
   male: Male
