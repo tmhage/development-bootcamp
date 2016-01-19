@@ -731,13 +731,13 @@ nl:
       col_money: |
         ## €?
 
-        Vooraf betaal je een eigen bijdrage van €500. Tijdens je traineeship ontvang je via
+        Vooraf betaal je een eigen bijdrage van %{price}. Tijdens je traineeship ontvang je via
         ons een marktconform salaris.
 
       col_when: |
         ## Wanneer?
 
-        De eerstvolgende 5-weekse boot camp vangt aan op 3 April 2016 en eindigt 6 mei 2016. Lessen
+        Het eerstvolgende 7-weekse programma vangt aan op 3 april 2016 en eindigt 6 mei 2016. Lessen
         vinden plaats van maandag t/m vrijdag. Daarnaast heb je ook les op zondag 3 april
         en zaterdag 9 april. Lesdagen beginnen om 9:00 uur en eindigen 19:00 uur.
 
@@ -772,7 +772,7 @@ nl:
         Een gesprek op ons kantoor in Amsterdam of via Skype kan onderdeel uitmaken
         van het selectieproces.
 
-        Houd er rekening mee dat er maar een beperkt aantal plaatsen beschikbaar zijn.
+        Houd er rekening mee dat er maar een beperkt aantal plaatsen beschikbaar is.
 
       are_you_an_employer: Ben je een werkgever?
       employer_looking_for_devs: |
