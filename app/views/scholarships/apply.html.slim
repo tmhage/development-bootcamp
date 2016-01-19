@@ -1,4 +1,4 @@
-- title t('.page_title', price: number_to_currency(500, precision: 0))
+- title t('.page_title', price: number_to_currency(Scholarship::PRICE, precision: 0))
 - meta_description t('.meta_description')
 - meta_keywords t('.meta_keywords')
 
@@ -51,7 +51,7 @@
       .row
         .col.intro
           .circle.beginner €
-          = tmd('.col_money')
+          = tmd('.col_money', price: number_to_currency(Scholarship::PRICE, precision: 0))
 
         .col.intro
           .circle.intermediate
@@ -67,7 +67,7 @@
         .col.intro
           .circle.frontend
             = fa_icon 'book fw'
-          = tmd('.col_what_do_i_learn', price: number_to_currency(500, precision: 0), courses_path: courses_path, beginner_bootcamp_path: courses_beginner_bootcamp_path, intermediate_bootcamp_path: courses_intermediate_bootcamp_path, advanced_bootcamp_path: courses_advanced_bootcamp_path)
+          = tmd('.col_what_do_i_learn', courses_path: courses_path, beginner_bootcamp_path: courses_beginner_bootcamp_path, intermediate_bootcamp_path: courses_intermediate_bootcamp_path, advanced_bootcamp_path: courses_advanced_bootcamp_path)
 
         .col.intro
           .circle.beginner

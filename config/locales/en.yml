@@ -491,14 +491,14 @@ en:
       col_money: |
         ## €?
 
-        You yourself contribute a €500 fee in advance. During your traineeship you receive a competitive salary by us.
+        You yourself contribute a %{price} fee in advance. During your traineeship you receive a competitive salary by us.
 
       col_when: |
         ## When?
 
-        The next 5-week boot camp starts on April 3, 2016 en concludes on May 6, 2016.
-        Classes are Monday to Friday. You will also have classes on Sunday, April 3rd
-        and Saturday, April 9th. Class starts at 9am and ends at 7pm.
+        The next 7-week program starts on April 3, 2016 en concludes on May 6, 2016.
+        Classes are Monday to Friday. You will also have classes on Sunday, April 3
+        and Saturday, April 9. Class starts at 9am and ends at 7pm.
 
       col_language: |
         ## EN/NL?

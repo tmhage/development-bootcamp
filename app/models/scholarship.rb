@@ -1,6 +1,8 @@
 class Scholarship < ActiveRecord::Base
   include Notable
 
+  PRICE = 750.0
+
   STATI = [
     'new',
     'unsure',
