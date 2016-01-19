@@ -17,6 +17,7 @@ class ScholarshipsController < ApplicationController
     @scholarship = Scholarship.new(scholarship_params)
     if @scholarship.save
       session[:scholarship_application_id] = @scholarship.id
+      TraineeshipMailWorker.perform_async(@scholarship.id)
       redirect_to thanks_scholarships_path
     else
       render :apply
