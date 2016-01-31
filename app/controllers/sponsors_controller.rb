@@ -34,13 +34,11 @@ class SponsorsController < ApplicationController
   end
 
   def add_to_list(sponsor)
-    gb = Gibbon::API.new
-    gb.lists.subscribe({
-      :id => MailingLists::SPONSORS,
-      email: {
-        email: sponsor.email
-      },
-      merge_vars: {
+    gb = Gibbon::Request.new
+    gb.lists(MailingLists::SPONSORS).members.create({
+      email_address: sponsor.email,
+      status: :subscribed,
+      merge_fields: {
         FNAME: sponsor.first_name,
         LNAME: sponsor.last_name
       }

@@ -35,13 +35,11 @@ class SpeakersController < ApplicationController
   end
 
   def add_to_list(speaker)
-    gb = Gibbon::API.new
-    gb.lists.subscribe({
-      :id => MailingLists::SPEAKERS,
-      email: {
-        email: speaker.email,
-      },
-      merge_vars: {
+    gb = Gibbon::Request.new
+    gb.lists(MailingLists::SPEAKERS).members.create({
+      email_address: speaker.email,
+      status: :subscribed,
+      merge_fields: {
         FNAME: speaker.first_name,
         LNAME: speaker.last_name
       }

@@ -126,13 +126,11 @@ class OrdersController < ApplicationController
   end
 
   def add_to_list(student)
-    gb = Gibbon::API.new
-    gb.lists.subscribe({
-      :id => MailingLists::STUDENTS,
-      email: {
-        email: student.email
-      },
-      merge_vars: {
+    gb = Gibbon::Request.new
+    gb.lists(MailingLists::STUDENTS).members.create({
+      email_address: student.email,
+      status: :subscribed,
+      merge_fields: {
         FNAME: student.first_name,
         LNAME: student.last_name
       }

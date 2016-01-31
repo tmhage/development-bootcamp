@@ -9,7 +9,7 @@ class SeedStudentsToMailingList < ActiveRecord::Migration
   end
 
   def add_to_list(student)
-    gb = Gibbon::API.new
+    gb = Gibbon::Request.new
     gb.lists.subscribe({
       id: MailingLists::PARTICIPANTS,
       email: {
