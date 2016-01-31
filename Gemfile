@@ -77,3 +77,5 @@ gem 'rest-client'
 gem 'geocoder'
 
 gem 'mengpaneel'
+
+gem 'signaturit-sdk'
