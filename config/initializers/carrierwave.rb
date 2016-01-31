@@ -1,10 +1,9 @@
-require 'fog/aws/storage'
 require 'carrierwave'
 
 CarrierWave.configure do |config|
   config.enable_processing = true unless Rails.env.test?
   if Rails.env.production?
-    config.storage = :fog
+    config.fog_provider = 'fog/aws'
     config.fog_credentials = {
       provider: 'AWS',
       aws_access_key_id: ENV['AWS_ACCESS_KEY_ID'] || 'xxx',
