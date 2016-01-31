@@ -4,7 +4,15 @@ require "codeclimate-test-reporter"
 CodeClimate::TestReporter.start
 require 'spec_helper'
 require File.expand_path("../../config/environment", __FILE__)
+
 require 'shoulda/matchers'
+Shoulda::Matchers.configure do |config|
+  config.integrate do |with|
+    with.test_framework :rspec
+    with.library :rails
+  end
+end
+
 require 'rspec/rails'
 require 'capybara/rails'
 require 'capybara/rspec'

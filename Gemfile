@@ -55,16 +55,16 @@ group :development, :test do
   gem 'guard-rspec'
   gem 'rb-fsevent'
   gem 'byebug'
+  gem 'rspec-rails'
 end
 
 group :test do
   gem 'capybara'
-  gem 'shoulda-matchers', require: false
-  gem 'rspec-rails', '~> 3.0.2'
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'webmock'
   gem 'codeclimate-test-reporter', require: nil
+  gem 'shoulda-matchers'
 end
 
 gem 'puma'

@@ -1,4 +1,3 @@
-require 'celluloid'
 require 'sidekiq'
 require 'sidekiq/web'
 require 'sidekiq/processor'
