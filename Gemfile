@@ -22,6 +22,7 @@ gem 'gibbon'
 gem 'draper'
 gem 'friendly_id', '~> 5.0.0'
 gem 'kaminari'
+gem "fog"
 gem "fog-aws"
 gem 'carrierwave'
 gem 'mini_magick'
