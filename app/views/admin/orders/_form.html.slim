@@ -9,5 +9,6 @@ h2 Billing Details
   = f.text_field :billing_city
   = f.country_select :billing_country, priority_countries: ['NL', 'DE', 'BE', 'GB']
   = f.text_field :billing_phone
+  = f.select :bootcamp_id, Bootcamp.by_date.map{|b| [b.name_with_dates, b.id] }
   = f.check_box :terms_and_conditions
   = f.primary

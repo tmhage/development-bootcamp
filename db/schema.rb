@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151229202221) do
+ActiveRecord::Schema.define(version: 20160202135849) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -211,6 +211,8 @@ ActiveRecord::Schema.define(version: 20151229202221) do
     t.datetime "updated_at"
     t.text     "coding_experience",     default: [],    array: true
     t.text     "linked_in_profile_url"
+    t.text     "address"
+    t.string   "city"
   end
 
   add_index "scholarships", ["bootcamp_id"], name: "index_scholarships_on_bootcamp_id", using: :btree
@@ -269,6 +271,18 @@ ActiveRecord::Schema.define(version: 20151229202221) do
 
   add_index "students", ["identifier"], name: "index_students_on_identifier", using: :btree
   add_index "students", ["order_id"], name: "index_students_on_order_id", using: :btree
+
+  create_table "trainee_contracts", force: true do |t|
+    t.integer  "scholarship_id"
+    t.string   "signature_id"
+    t.text     "status"
+    t.boolean  "signed",         default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "trainee_contracts", ["scholarship_id"], name: "index_trainee_contracts_on_scholarship_id", using: :btree
+  add_index "trainee_contracts", ["signature_id"], name: "index_trainee_contracts_on_signature_id", using: :btree
 
   create_table "user_profiles", force: true do |t|
     t.integer  "user_id"

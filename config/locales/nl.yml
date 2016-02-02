@@ -260,6 +260,8 @@ nl:
         future_plans: Leg in een paar woorden uit hoe je je toekomst ziet na ons programma
         coding_experience: Ervaring met code
         linked_in_profile_url: Link naar je LinkedIn profiel
+        address: Adres
+        city: Woonplaats
 
   routes:
     new: nieuw

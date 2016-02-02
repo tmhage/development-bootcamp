@@ -19,6 +19,12 @@
   = f.form_group do
     = f.text_field :phone
 
+  = f.form_group do
+    = f.text_field :address
+
+  = f.form_group do
+    = f.text_field :city
+
   = f.form_group :gender, label: { text: I18n.t(:label_gender)} do
     - gender_select_options.each do |label, value|
       p = f.radio_button :gender, value, label: label, inline: true
