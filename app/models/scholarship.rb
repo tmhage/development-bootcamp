@@ -57,4 +57,8 @@ class Scholarship < ActiveRecord::Base
       WHEN scholarships.status = 'cancelled' THEN 0
       END AS status_code").order("status_code DESC, created_at ASC")
   end
+
+  def create_contract!
+    TraineeContract.create(scholarship: self)
+  end
 end

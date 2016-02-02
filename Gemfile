@@ -79,4 +79,4 @@ gem 'geocoder'
 
 gem 'mengpaneel'
 
-gem 'signaturit-sdk'
+gem 'hellosign-ruby-sdk'
