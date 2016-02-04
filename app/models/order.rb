@@ -37,6 +37,21 @@ class Order < ActiveRecord::Base
     self.identifier
   end
 
+  def to_moneybird
+    order_name = billing_name.split(" ")
+
+    {
+      firstname: order_name.shift,
+      lastname: order_name.join(" "),
+      email: billing_email,
+      address1: billing_address,
+      country: billing_country,
+      city: billing_city,
+      company_name: billing_company_name,
+      zipcode: billing_postal
+    }
+  end
+
   def current_step
     @current_step || steps.first
   end
