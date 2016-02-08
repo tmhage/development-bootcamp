@@ -262,6 +262,7 @@ nl:
         linked_in_profile_url: Link naar je LinkedIn profiel
         address: Adres
         city: Woonplaats
+        zip_code: Postcode
 
   routes:
     new: nieuw

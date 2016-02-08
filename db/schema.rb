@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160202135849) do
+ActiveRecord::Schema.define(version: 20160208165514) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -213,6 +213,7 @@ ActiveRecord::Schema.define(version: 20160202135849) do
     t.text     "linked_in_profile_url"
     t.text     "address"
     t.string   "city"
+    t.string   "zip_code"
   end
 
   add_index "scholarships", ["bootcamp_id"], name: "index_scholarships_on_bootcamp_id", using: :btree

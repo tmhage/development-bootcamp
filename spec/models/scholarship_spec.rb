@@ -13,6 +13,7 @@ describe Scholarship do
   it { is_expected.to validate_presence_of(:future_plans) }
   it { is_expected.to validate_presence_of(:address) }
   it { is_expected.to validate_presence_of(:city) }
+  it { is_expected.to validate_presence_of(:zip_code) }
 
   # it { is_expected.to validate_inclusion_of(:full_program).in_array([true]) }
   # it { is_expected.to validate_inclusion_of(:traineeship).in_array([true]) }
