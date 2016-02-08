@@ -42,7 +42,7 @@ en:
       student:
         allergies: Dietary wishes
       scholarship:
-        full_program: Yes, I will make myself available for the 5 week immersive program
+        full_program: Yes, I will make myself available for the 7 week immersive program
         traineeship: Yes, I am available for, and will participate in the 2 year, full time traineeship
         education_level: Level of education
         reason: Please explain in a few words why you want to participate
@@ -478,7 +478,7 @@ en:
       col_how: |
         ## How?
 
-        Prior to your traineeship you are trained to the level of junior developer during a 5-week intensive bootcamp by
+        Prior to your traineeship you are trained to the level of junior developer during a 7-week intensive bootcamp by
         senior developers and experienced teachers. During your traineeship we educate you further.
 
       col_what: |

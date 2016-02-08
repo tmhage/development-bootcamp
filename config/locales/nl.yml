@@ -253,7 +253,7 @@ nl:
         phone: Telefoonnummer
         birth_date: Geboortedatum
         employment_status: Huidig dienstverband
-        full_program: Ja, ik ben beschikbaar om 5 weken het intensieve programma te volgen
+        full_program: Ja, ik ben beschikbaar om 7 weken het intensieve programma te volgen
         traineeship: Ja, ik ben beschikbaar en zal 2 jaar deelnemen aan het full time traineeship programma
         education_level: Opleidingsniveau
         reason: Leg in een paar woorden uit waarom je mee wilt doen
@@ -720,7 +720,7 @@ nl:
       col_how: |
         ## Hoe?
 
-        Wij leiden jou in 5 weken op tot junior developer tijdens een intensieve bootcamp.
+        Wij leiden jou in 7 weken op tot junior developer tijdens een intensieve bootcamp.
         Tijdens je traineeship verzorgen wij je verdere opleiding.
 
       col_what: |
