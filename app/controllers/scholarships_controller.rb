@@ -29,6 +29,6 @@ class ScholarshipsController < ApplicationController
       params.require(:scholarship).permit(:first_name, :last_name, :email, :phone,
         :gender, :birth_date, :employment_status, :reason, :future_plans,
         :education_level, :full_program, :traineeship, :linked_in_profile_url,
-        :address, :city, coding_experience: [])
+        :address, :city, :zip_code, coding_experience: [])
     end
 end

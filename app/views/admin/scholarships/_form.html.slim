@@ -23,6 +23,9 @@
     = f.text_field :address
 
   = f.form_group do
+    = f.text_field :zip_code
+
+  = f.form_group do
     = f.text_field :city
 
   = f.form_group :gender, label: { text: I18n.t(:label_gender)} do
