@@ -755,7 +755,7 @@ nl:
 
         Bekijk ons [cursusaanbod](%{courses_path}), en dan specifiek de pagina's
         over de [Beginner](%{beginner_bootcamp_path}), [Intermediate](%{intermediate_bootcamp_path})
-        en [Advanced](%{advanced_bootcamp_path}) Bootcamps. In vijf weken leer je
+        en [Advanced](%{advanced_bootcamp_path}) Bootcamps. In zeven weken leer je
         alles uit die drie programma's en meer!
 
       col_can_this_work: |
