@@ -45,10 +45,10 @@ en:
         full_program: Yes, I will make myself available for the 7 week immersive program
         traineeship: Yes, I am available for, and will participate in the 2 year, full time traineeship
         education_level: Level of education
-        reason: Please explain in a few words why you want to participate
-        future_plans: Please explain in a few words what your future plans will be after you joined our program
+        reason: Please explain why you are interested in participating (300 words max)
+        future_plans: Please explain what your future plans will be after you joined our program (300 words max)
         coding_experience: Coding experience
-        linked_in_profile_url: Link to your LinkedIn profile
+        linked_in_profile_url: Your LinkedIn profile
 
   number:
      currency:
@@ -222,7 +222,7 @@ en:
   label_not_filled: Not filled in
   label_last_updated: "Last updated:"
   label_no_experience: No, not at all, coding is new for me
-  label_other: Other
+  label_other: Other coding experience
 
   # Payment Status
   CANCELLED: CANCELLED
@@ -458,7 +458,7 @@ en:
       subtitle: become a web developer and land a job!
       page_title: Web programming course for %{price} with job guarantee! - Our Scholarship & Trainee Program
       meta_description: |
-        Codaisseur offers you a unique traineeship in which we teach you to become a junior
+        Codaisseur offers you a unique traineeship. First we teach you to become a junior
         web developer. After that, we offer you a 2 year job with a good salary while you grow to
         senior level. Interested? Apply now.
       meta_keywords: scholarship, traineeship, trainee, learn programming, beginner, code, developer, full stack, development, bootcamp
