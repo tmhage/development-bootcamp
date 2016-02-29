@@ -36,6 +36,8 @@ class Scholarship < ActiveRecord::Base
   validates_inclusion_of :status, in: STATI
   validates_inclusion_of :employment_status, in: EMPLOYMENT_STATI
 
+  after_save :create_moneybird_contact!, if: :status_changed?
+
   belongs_to :bootcamp
 
   def self.by_status
@@ -64,5 +66,10 @@ class Scholarship < ActiveRecord::Base
       lastname: last_name,
       email: email
     }
+  end
+
+  def create_moneybird_contact!
+    return unless status == 'send contract'
+    Moneybird::Contact.create(self)
   end
 end
