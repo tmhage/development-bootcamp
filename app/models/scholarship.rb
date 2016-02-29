@@ -16,7 +16,10 @@ class Scholarship < ActiveRecord::Base
     'to be rejected',
     'rejected',
     'cancelled',
-    'next time'
+    'next time',
+    'in training',
+    'graduated batch #1',
+    'failed batch #1'
   ]
 
   GENDERS = %w(male female)
@@ -57,6 +60,9 @@ class Scholarship < ActiveRecord::Base
       WHEN scholarships.status = 'rejected' THEN 2
       WHEN scholarships.status = 'declined' THEN 1
       WHEN scholarships.status = 'cancelled' THEN 0
+      WHEN scholarships.status = 'in training' THEN -1
+      WHEN scholarships.status = 'graduated batch #1' THEN -2
+      WHEN scholarships.status = 'failed batch #1' THEN -3
       END AS status_code").order("status_code DESC, created_at ASC")
   end
 
