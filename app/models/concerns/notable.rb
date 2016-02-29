@@ -3,6 +3,6 @@ module Notable
 
   included do
     has_many :notes, as: :notable
-    accepts_nested_attributes_for :notes, reject_if: :all_blank
+    accepts_nested_attributes_for :notes, reject_if: ->(note) { note[:body].blank? }
   end
 end
