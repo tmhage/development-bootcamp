@@ -2,7 +2,7 @@
 - meta_description t('.meta_description')
 - meta_keywords t('.meta_keywords')
 
-- localized_cache ['programs/level-2'] do
+- localized_cache @reviews.map(&:updated_at) + @bootcamps.map(&:updated_at) + ['programs/level-2'] do
   .dbc-program
     .dbc-container
       .inner#program
