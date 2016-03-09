@@ -96,7 +96,9 @@
             .avatar
               = image_tag 'team/question-mark.png'
             h3 You?
-            p Apply for Teaching/Coaching!
+            p
+              strong => mail_to "teachers@codaisseur.com", "Apply"
+              | for Teaching/Coaching!
 
         .row
           center = t('.meet_rest_team', team: link_to('team', team_path)).html_safe
