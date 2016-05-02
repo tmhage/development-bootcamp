@@ -19,24 +19,3 @@
       = render 'order_steps'
 
       = render 'form'
-
-      .support-box
-        - support_mail = capture do
-          strong =<> mail_to 'support@developmentbootcamp.nl'
-        => fa_icon 'support'
-        = t(:please_mail_support, support_mail: support_mail).html_safe
-
-- if @order.current_step == 'tickets'
-  .dbc-content
-    .dbc-container.dbc-two-col
-      .inner
-        .col
-          = image_tag 'courses/workshop.png', class: 'img-responsive img-circle', style: "height: 200px; margin: 1em auto"
-
-        .col
-          h3 = t(:title_tickets_include)
-          = tmd(:tickets_include_list)
-
-    .dbc-container
-      .inner
-        = render '/programs/scholarship_program', course: 'Development Bootcamp'
