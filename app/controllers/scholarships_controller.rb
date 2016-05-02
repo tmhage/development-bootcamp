@@ -11,6 +11,7 @@ class ScholarshipsController < ApplicationController
   def apply
     @scholarship = Scholarship.new
     mixpanel.track '[visits] Scholarship Application Page'
+    redirect_to "https://www.codaisseur.com/"
   end
 
   def redirect
