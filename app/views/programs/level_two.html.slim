@@ -25,7 +25,7 @@
               => tweet_button
               = like_button
 
-          .dbc-day.day-one
+          .dbc-day.day-two
             .day-inner
               .date
                 | DAY 1
@@ -34,7 +34,7 @@
                 h2 Back to Front
                 p With Ruby on Rails
               .image
-                = image_tag 'courses/day6-ror.png'
+                = image_tag 'courses/ror2.png'
               .topics
                 ul
                   li Deployment
@@ -57,7 +57,7 @@
                   li Storing data in a relational database
                   li Mapping with Active Record
 
-          .dbc-day.day-three
+          .dbc-day.day-two
             .day-inner
               .date
                 | DAY 3
@@ -72,7 +72,7 @@
                   li Intro to testing methodologies
                   li Implement test driven development (TDD) practices
 
-          .dbc-day.day-four
+          .dbc-day.day-two
             .day-inner
               .date
                 | DAY 4
@@ -87,7 +87,7 @@
                   li User sign-ups
                   li Personalize your site
 
-          .dbc-day.day-five
+          .dbc-day.day-two
             .day-inner
               .date
                 | DAY 5
@@ -100,37 +100,79 @@
               .topics
                 ul
                   li Handle file uploads and process images
-                  li Send and recieve emails within your application
+                  li Send and receive emails within your application
 
-          .dbc-day.day-six
+          .dbc-day.day-two
             .day-inner
               .date
                 | DAY 6
-                .pull-right Friday
+                .pull-right Monday
               .activity
-                h2 JSON APIs
-                p With Ruby on Rails
+                h2 AJAX Requests
+                p Basic Javascript Usage
               .image
-                = image_tag 'courses/day6-ror.png'
+                = image_tag 'courses/arrow2.png'
               .topics
                 ul
-                  li Create a RESTful API
+                  li Introduction to Javascript
+                  li Use AJAX to refresh partials
 
-          .dbc-day.day-seven
+          .dbc-day.day-two
             .day-inner
               .date
                 | DAY 7
-                .pull-right Saturday
+                .pull-right Tuesday
               .activity
-                h2 Hackathon:
-                p And the Winner is..!
+                h2 Databases
+                p Understanding the Difference 
               .image
-                = image_tag 'courses/day7-hackathon.png'
+                = image_tag 'courses/database.png'
               .topics
                 ul
-                  li Team based challenge!
-                  li Demos (ship it!)
-                  li Closing thoughts
+                  li Relational and non-relational databases
+                  
+          .dbc-day.day-two
+            .day-inner
+              .date
+                | DAY 8
+                .pull-right Wednesday
+              .activity
+                h2 Javascript II
+                p Advanced Javascript
+              .image
+                = image_tag 'courses/application2.png'
+              .topics
+                ul
+                  li Single page applications
+
+          .dbc-day.day-two
+            .day-inner
+              .date
+                | DAY 9
+                .pull-right Thursday
+              .activity
+                h2 JSON APIs
+                p with Ruby on Rails 
+              .image
+                = image_tag 'courses/ror2.png'
+              .topics
+                ul
+                  li Create a RESTful API
+                  
+        .dbc-day.day-two
+          .day-inner
+            .date
+              | DAY 10
+              .pull-right Friday
+            .activity
+              h2 Integration Testing
+              p  
+            .image
+              = image_tag 'courses/integration_testing.png'
+            .topics
+              ul
+                li 
+          
         .row
           .col-xs-12
             = render 'enroll_cta'
