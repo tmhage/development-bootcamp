@@ -417,8 +417,10 @@ nl:
   cta_apply_now: Ja, graag!
   cta_subscribe: Meld je nu aan
 
-  this_is_an_immersive_course: '_Dit is intensieve, voltijd, 7 dagense cursus
+  immersive_course_beginner: '_Dit is intensieve, voltijd, 7 dagense cursus
   die begint op zondag en eindigt op zaterdag_'
+  immersive_course_intermediate: '_Dit is een intensieve, full-time cursus van 10 dagen verspreid over twee weken. Lessen vinden plaats van maandag t/m vrijdag gedurende beide weken._'
+  immersive_course_advanced: '_Dit is een intensieve, full-time cursus van 101dagen verspreid over twee weken. Lessen vinden plaats van maandag t/m vrijdag gedurende de eerste week en van maandag t/m zaterdag gedurende de tweede week._'
   this_is_a_weekly_course: '_Dit is wekelijkse cursus van 7 weken: 1 les per week en wat huiswerk voor tijdens het weekend._'
 
   please_fix_errors_below: Corrigeer de onderstaande foutmeldingen.
