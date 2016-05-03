@@ -24,11 +24,3 @@
         = t(:advanced_bootcamp)
         span = t(:advanced_bootcamp_tagline)
       p = link_to t(:advanced_program), courses_advanced_bootcamp_path, class: 'button'
-
-- unless current_level == :frontend
-  .inner.program.collapsed
-    .well.frontend
-      h3
-        = t(:frontend_bootcamp)
-        span = t(:frontend_bootcamp_tagline)
-      p = link_to t(:frontend_program), courses_frontend_bootcamp_path, class: 'button'
