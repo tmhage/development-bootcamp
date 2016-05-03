@@ -20,9 +20,6 @@
       th style="width: 30%; vertical-align: top; text-align: left;" Github handle:
       td style="vertical-align: top; text-align: left;" = @student.github_handle.present? ? @student.github_handle : 'not filled in'
     tr
-      th style="width: 30%; vertical-align: top; text-align: left;" Dietary wishes:
-      td style="vertical-align: top; text-align: left;" = @student.allergies.present? ? @student.allergies : 'none'
-    tr
       th style="width: 30%; vertical-align: top; text-align: left;" QR Code:
       td style="vertical-align: top; text-align: left;" = image_tag (root_url + "students/#{@student.identifier}/qr-code.png"), width: 250, height: 250, alt: 'QR Code'
 
