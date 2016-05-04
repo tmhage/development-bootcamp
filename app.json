@@ -55,10 +55,12 @@
       "required": true
     },
     "RACK_ENV": {
-      "required": true
+      "required": true,
+      "value": "staging"
     },
     "RAILS_ENV": {
-      "required": true
+      "required": true,
+      "value": "staging"
     },
     "REDIS_PROVIDER": {
       "required": true
