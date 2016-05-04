@@ -38,6 +38,7 @@ Rails.application.routes.draw do
       collection do
         get :apply
         get :thanks
+        get :redirect
       end
     end
 
