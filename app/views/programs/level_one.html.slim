@@ -20,12 +20,12 @@
 
             .course-type
               .icon = fa_icon('clock-o')
-              = tmd(:this_is_an_immersive_course)
+              = tmd(:immersive_course_beginner)
 
               => tweet_button
               = like_button
 
-          .dbc-day.day-one
+          .dbc-day.day-seven
             .day-inner
               .date
                 | DAY 1
@@ -34,75 +34,74 @@
                 h2 Frontend
                 p The Face of a Website
               .image
-                = image_tag 'courses/day1-frontend.png'
+                = image_tag 'courses/html.png'
               .topics
                 ul
                   li Page structure with HTML
                   li Styling and design with CSS
 
         .row
-          .dbc-day.day-two
+          .dbc-day.day-seven
             .day-inner
               .date
                 | DAY 2
                 .pull-right Monday
               .activity
-                h2 Terminal
-                p Behind the Scenes
-              .image
-                = image_tag 'courses/day2-terminal.png'
-              .topics
-                ul
-                  li Text commands
-                  li Connecting to servers
-                  li Sharing code with repos
-
-          .dbc-day.day-three
-            .day-inner
-              .date
-                | DAY 3
-                .pull-right Tuesday
-              .activity
                 h2 Basic Programming
                 p Meet Ruby
               .image
-                = image_tag 'courses/day3-ruby.png'
+                = image_tag 'courses/ruby1.png'
               .topics
                 ul
                   li Meet Ruby, a new language
                   li Create an Oracle
 
-          .dbc-day.day-four
+          .dbc-day.day-seven
             .day-inner
               .date
-                | DAY 4
-                .pull-right Wednesday
+                | DAY 3
+                .pull-right Tuesday
               .activity
                 h2 Loops and Breaks
                 p While We Wait
               .image
-                = image_tag 'courses/day4-loops.png'
+                = image_tag 'courses/arrow1.png'
               .topics
                 ul
                   li Loops make your head spin
                   li It's gonna be... wait for it!
 
-          .dbc-day.day-five
+          .dbc-day.day-seven
             .day-inner
               .date
-                | DAY 5
-                .pull-right Thursday
+                | DAY 4
+                .pull-right Wednesday
               .activity
                 h2 Object Oriented Programming
                 p The Family Tree
               .image
-                = image_tag 'courses/day5-oop.png'
+                = image_tag 'courses/oop.png'
               .topics
                 ul
                   li Why OOP?
                   li Structure and history
 
-          .dbc-day.day-six
+          .dbc-day.day-seven
+            .day-inner
+              .date
+                | DAY 5
+                .pull-right Thursday
+              .activity
+                h2 Git and Sinatra
+                p Time to collaborate
+              .image
+                = image_tag 'courses/git.png'
+              .topics
+                ul
+                  li Sharing code with repos
+                  li Intro to web application frameworks
+
+          .dbc-day.day-seven
             .day-inner
               .date
                 | DAY 6
@@ -111,12 +110,11 @@
                 h2 Back to Front
                 p With Ruby on Rails
               .image
-                = image_tag 'courses/day6-ror.png'
+                = image_tag 'courses/ror1.png'
               .topics
                 ul
-                  li Models
-                  li Controllers
-                  li Views
+                  li Continuation with frameworks
+                  li MVC
 
           .dbc-day.day-seven
             .day-inner
@@ -124,14 +122,14 @@
                 | DAY 7
                 .pull-right Saturday
               .activity
-                h2 Hackathon:
+                h2 Hackathon
                 p And the Winner is..!
               .image
-                = image_tag 'courses/day7-hackathon.png'
+                = image_tag 'courses/hackathon1.png'
               .topics
                 ul
-                  li A Contest!
-                  li Demos and Prizes
+                  li Team based challenge!
+                  li Demos (ship it!) & Prizes
                   li Closing thoughts
         .row
           .col-xs-12

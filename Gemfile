@@ -37,7 +37,6 @@ gem 'mandrill-api'
 gem 'sidekiq'
 gem 'sinatra'
 gem 'route_translator'
-gem 'asset_sync'
 
 group :production, :staging do
   gem 'rails_12factor'

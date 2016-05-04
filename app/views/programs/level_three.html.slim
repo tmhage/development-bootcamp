@@ -20,115 +20,173 @@
 
             .course-type
               .icon = fa_icon('clock-o')
-              = tmd(:this_is_an_immersive_course)
+              = tmd(:immersive_course_advanced)
 
               => tweet_button
               = like_button
 
-          .dbc-day.day-one
+          .dbc-day.day-four
             .day-inner
               .date
                 | DAY 1
-                .pull-right Sunday
+                .pull-right Monday
               .activity
-                h2 Javascript II
-                p Advanced Javascript
+                h2 Javascript
+                p Recap
               .image
-                = image_tag 'courses/day1-frontend.png'
+                = image_tag 'courses/js2.png'
               .topics
-                ul
-                  li Single page applications
+              
 
-        .row
-          .dbc-day.day-two
+          .dbc-day.day-four
             .day-inner
               .date
                 | DAY 2
-                .pull-right Monday
+                .pull-right Tuesday
               .activity
-                h2 Backend Javascript
-                p Front to Back
+                h2 ReactJS
+                p A New Hope
               .image
-                = image_tag 'courses/day2-terminal.png'
+                = image_tag 'courses/reactjs.png'
               .topics
                 ul
-                  li NodeJS and NPM
-                  li ExpressJS
+                  li Introduction to ReactJS
 
-          .dbc-day.day-three
+        .row
+          .dbc-day.day-four
             .day-inner
               .date
                 | DAY 3
-                .pull-right Tuesday
+                .pull-right Wednesday
               .activity
-                h2 Websockets
-                p Realtime Updates
+                h2 React II
+                p React Strikes Back
               .image
-                = image_tag 'courses/day4-loops.png'
+                = image_tag 'courses/reactjs.png'
               .topics
                 ul
-                  li Using Websockets
-                  li Securing Websockets
+                  li Reactify your views with React components
 
           .dbc-day.day-four
             .day-inner
               .date
                 | DAY 4
-                .pull-right Wednesday
+                .pull-right Thursday
               .activity
-                h2 Delayed Jobs
-                p While We Wait
+                h2 React III
+                p Return of the React
               .image
-                = image_tag 'courses/day4-loops.png'
+                = image_tag 'courses/reactjs.png'
               .topics
                 ul
-                  li Speed things up with delayed jobs
-                  li It's gonna be... wait for it!
+                  li Reactify your views with React components
 
-          .dbc-day.day-five
+          .dbc-day.day-four
             .day-inner
               .date
                 | DAY 5
-                .pull-right Thursday
+                .pull-right Friday
               .activity
-                h2 Object Oriented Javascript
-                p The Family Tree
+                h2 Testing
+                p In Javascript
               .image
-                = image_tag 'courses/day5-oop.png'
+                = image_tag 'courses/mocha.png'
               .topics
                 ul
-                  li Why OOP?
-                  li Intro to Coffeescript
+                  li Framework testing with Mocha & Chai
+                  li Browser testing with PhantomJS
 
-          .dbc-day.day-six
+          .dbc-day.day-four
             .day-inner
               .date
                 | DAY 6
-                .pull-right Friday
+                .pull-right Monday
               .activity
-                h2 Back to Front
-                p With MeteorJS
+                h2 Feathers
+                p With ReactJS
               .image
-                = image_tag 'courses/day6-ror.png'
+                = image_tag 'courses/feathersjs.png'
               .topics
                 ul
-                  li Full stack Javascript
-                  li NoSQL databases
-
-          .dbc-day.day-seven
+                  li Build an app in record time
+          
+          .dbc-day.day-four
             .day-inner
               .date
                 | DAY 7
+                .pull-right Tuesday
+              .activity
+                h2 Feathers II
+                p With ReactJS
+              .image
+                = image_tag 'courses/feathersjs.png'
+              .topics
+                ul
+                  li Rock
+                  li Paper
+                  li Scissors
+          
+          
+          .dbc-day.day-four
+            .day-inner
+              .date
+                | DAY 8
+                .pull-right Wednesday
+              .activity
+                h2 Websockets
+                p Realtime Updates
+              .image
+                = image_tag 'courses/arrow3.png'
+              .topics
+                ul
+                  li Using websockets
+                  li Securing websockets
+          
+          .dbc-day.day-four
+            .day-inner
+              .date
+                | DAY 9
+                .pull-right Thursday
+              .activity
+                h2 Brainstorm
+                p For the Hackathon
+              .image
+                = image_tag 'courses/brainstorm.png'
+              .topics
+                ul
+                  li Ask any questions
+                  li Come up with a plan
+
+          .dbc-day.day-four
+            .day-inner
+              .date
+                | DAY 10
+                .pull-right Friday
+              .activity
+                h2 Hackathon
+                p Challenge Accepted!
+              .image
+                = image_tag 'courses/hackathon2.png'
+              .topics
+                ul
+                  li Team based challenge!
+                  li Little sleep
+                  li Lots of coffee
+
+          .dbc-day.day-four
+            .day-inner
+              .date
+                | DAY 11
                 .pull-right Saturday
               .activity
                 h2 Hackathon:
                 p And the Winner is..!
               .image
-                = image_tag 'courses/day7-hackathon.png'
+                = image_tag 'courses/hackathon2.png'
               .topics
                 ul
-                  li A Contest!
-                  li Demos and Prizes
+                  li Conclusion
+                  li Demos (ship it!)
                   li Closing thoughts
         .row
           .col-xs-12

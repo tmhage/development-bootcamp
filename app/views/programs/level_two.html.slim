@@ -20,116 +20,159 @@
 
             .course-type
               .icon = fa_icon('clock-o')
-              = tmd(:this_is_an_immersive_course)
+              = tmd(:immersive_course_intermediate)
 
               => tweet_button
               = like_button
 
-          .dbc-day.day-one
+          .dbc-day.day-two
             .day-inner
               .date
                 | DAY 1
-                .pull-right Sunday
+                .pull-right Monday
               .activity
-                h2 Ruby on Rails II
-                p The Full Framework
+                h2 Back to Front
+                p With Ruby on Rails
               .image
-                = image_tag 'courses/day6-ror.png'
+                = image_tag 'courses/ror2.png'
               .topics
                 ul
-                  li Refresh your Rails knowledge
-                  li Dive deeper into Rails
+                  li Deployment
+                  li Pull requests
+                  li Code reviews
 
         .row
           .dbc-day.day-two
             .day-inner
               .date
                 | DAY 2
-                .pull-right Monday
+                .pull-right Tuesday
+              .activity
+                h2 Models and Records
+                p Know Who's Who in the Zoo
+              .image
+                = image_tag 'courses/model.png'
+              .topics
+                ul
+                  li Storing data in a relational database
+                  li Mapping with Active Record
+
+          .dbc-day.day-two
+            .day-inner
+              .date
+                | DAY 3
+                .pull-right Wednesday
+              .activity
+                h2 Testing
+                p For Success
+              .image
+                = image_tag 'courses/testing.png'
+              .topics
+                ul
+                  li Unit testing
+                  li TDD with Rspec
+
+          .dbc-day.day-two
+            .day-inner
+              .date
+                | DAY 4
+                .pull-right Thursday
               .activity
                 h2 Authentication
                 p User Accounts
               .image
-                = image_tag 'courses/day5-oop.png'
+                = image_tag 'courses/authentication.png'
               .topics
                 ul
-                  li User Signups
-                  li Personalizing your site
+                  li User sign-ups
+                  li Personalize your site
 
-          .dbc-day.day-three
-            .day-inner
-              .date
-                | DAY 3
-                .pull-right Tuesday
-              .activity
-                h2 File Uploads
-                p and image processing
-              .image
-                = image_tag 'courses/day3-ruby.png'
-              .topics
-                ul
-                  li Handle file uploads properly
-                  li Process uploaded images
-
-          .dbc-day.day-four
-            .day-inner
-              .date
-                | DAY 4
-                .pull-right Wednesday
-              .activity
-                h2 AJAX Requests
-                p Basic Javascript Usage
-              .image
-                = image_tag 'courses/day4-loops.png'
-              .topics
-                ul
-                  li Introduction to Javascript
-                  li Use AJAX to refresh partials
-
-          .dbc-day.day-five
+          .dbc-day.day-two
             .day-inner
               .date
                 | DAY 5
-                .pull-right Thursday
+                .pull-right Friday
               .activity
-                h2 Data Modeling
-                p The Family Tree
+                h2 File Uploads
+                p and Mailers
               .image
-                = image_tag 'courses/day5-oop.png'
+                = image_tag 'courses/uploads.png'
               .topics
                 ul
-                  li Storing data in a relational database
-                  li More advanced database queries
+                  li Handle file uploads and process images
+                  li Send and receive emails within your application
 
-          .dbc-day.day-six
+          .dbc-day.day-two
             .day-inner
               .date
                 | DAY 6
-                .pull-right Friday
+                .pull-right Monday
               .activity
-                h2 JSON APIs
-                p With Ruby on Rails
+                h2 Javascript I
+                p Basic Javascript Usage
               .image
-                = image_tag 'courses/day6-ror.png'
+                = image_tag 'courses/arrow2.png'
               .topics
                 ul
-                  li Create a RESTful API
+                  li Introduction to Javascript
+                  li Use AJAX and JQuery to refresh partials
 
-          .dbc-day.day-seven
+          .dbc-day.day-two
             .day-inner
               .date
                 | DAY 7
-                .pull-right Saturday
+                .pull-right Tuesday
               .activity
-                h2 Hackathon:
-                p And the Winner is..!
+                h2 Databases
+                p Understanding the Difference 
               .image
-                = image_tag 'courses/day7-hackathon.png'
+                = image_tag 'courses/database1.png'
               .topics
                 ul
-                  li A Contest!
-                  li Demos and Prizes
-                  li Closing thoughts
+                  li Relational and non-relational databases
+                  
+          .dbc-day.day-two
+            .day-inner
+              .date
+                | DAY 8
+                .pull-right Wednesday
+              .activity
+                h2 Javascript II
+                p Advanced Javascript
+              .image
+                = image_tag 'courses/js.png'
+              .topics
+                ul
+                  li Single page applications
+
+          .dbc-day.day-two
+            .day-inner
+              .date
+                | DAY 9
+                .pull-right Thursday
+              .activity
+                h2 JSON APIs
+                p with Ruby on Rails 
+              .image
+                = image_tag 'courses/ror2.png'
+              .topics
+                ul
+                  li Create a RESTful API
+                  
+        .dbc-day.day-two
+          .day-inner
+            .date
+              | DAY 10
+              .pull-right Friday
+            .activity
+              h2 Testing
+              p Integration Style
+            .image
+              = image_tag 'courses/integration_testing.png'
+            .topics
+              ul
+                li Ensuring components work well together
+        
         .row
           .col-xs-12
             = render 'enroll_cta'
