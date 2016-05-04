@@ -1,0 +1,92 @@
+{
+  "name": "developmentbootcamp",
+  "scripts": {
+  },
+  "env": {
+    "APPSIGNAL_PUSH_API_KEY": {
+      "required": true
+    },
+    "AWS_ACCESS_KEY_ID": {
+      "required": true
+    },
+    "AWS_SECRET_ACCESS_KEY": {
+      "required": true
+    },
+    "BUILDPACK_URL": {
+      "required": true
+    },
+    "COMPILE_TASKS": {
+      "required": true
+    },
+    "DB_MAILCHIMP_API_KEY": {
+      "required": true
+    },
+    "DB_MOLLY_KEY": {
+      "required": true
+    },
+    "DB_OLD_MOLLY_KEY": {
+      "required": true
+    },
+    "DB_STRIPE_PKEY": {
+      "required": true
+    },
+    "DB_STRIPE_SKEY": {
+      "required": true
+    },
+    "DEVISE_SECRET": {
+      "required": true
+    },
+    "HELPSCOUT_API_KEY": {
+      "required": true
+    },
+    "LANG": {
+      "required": true
+    },
+    "MANDRILL_APIKEY": {
+      "required": true
+    },
+    "MONEYBIRD_BASEURL": {
+      "required": true
+    },
+    "MONEYBIRD_PASSWORD": {
+      "required": true
+    },
+    "MONEYBIRD_USER": {
+      "required": true
+    },
+    "RACK_ENV": {
+      "required": true
+    },
+    "RAILS_ENV": {
+      "required": true
+    },
+    "REDIS_PROVIDER": {
+      "required": true
+    },
+    "SECRET_KEY_BASE": {
+      "required": true
+    },
+    "SPRINGEST_API_KEY": {
+      "required": true
+    }
+  },
+  "formation": {
+    "worker": {
+      "quantity": 1
+    },
+    "web": {
+      "quantity": 1
+    }
+  },
+  "addons": [
+    "memcachier",
+    "heroku-postgresql",
+    "redistogo",
+    "ssl"
+  ],
+  "buildpacks": [
+    {
+      "url": "https://github.com/foxycoder/heroku-buildpack-ruby-db-migrate-asset-cache"
+    }
+  ]
+}
