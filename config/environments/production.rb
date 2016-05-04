@@ -51,10 +51,14 @@ Rails.application.configure do
   # config.logger = ActiveSupport::TaggedLogging.new(SyslogLogger.new)
 
   # Use a different cache store in production.
-  config.cache_store = :dalli_store, (ENV['MEMCACHE_SERVERS'] || 'localhost:11211'), {
-    namespace: 'development_bootcamp',
-    compress: true,
-    pool_size: Integer(ENV['MAX_THREADS'] || 16)
+  config.cache_store = :dalli_store,
+                    (ENV["MEMCACHIER_SERVERS"] || "localhost:11211").split(","),
+                    {:username => ENV["MEMCACHIER_USERNAME"],
+                     :password => ENV["MEMCACHIER_PASSWORD"],
+                     :failover => true,
+                     :socket_timeout => 1.5,
+                     :socket_failure_delay => 0.2,
+                     pool_size: Integer(ENV['MAX_THREADS'] || 16)
   }
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
