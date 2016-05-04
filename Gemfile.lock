@@ -33,6 +33,10 @@ GEM
       rack
       thread_safe
     arel (5.0.1.20140414130214)
+    asset_sync (1.1.0)
+      activemodel
+      fog (>= 1.8.0)
+      unf
     ast (2.0.0)
     astrolabe (1.3.0)
       parser (>= 2.2.0.pre.3, < 3.0)
@@ -440,6 +444,9 @@ GEM
     uglifier (2.7.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.2)
     warden (1.2.3)
       rack (>= 1.0)
     webmock (1.20.4)
@@ -456,6 +463,7 @@ PLATFORMS
 
 DEPENDENCIES
   appsignal
+  asset_sync
   bootstrap-generators (~> 3.2.0)
   bootstrap_form
   bower-rails
@@ -516,4 +524,4 @@ DEPENDENCIES
   wysiwyg-rails
 
 BUNDLED WITH
-   1.10.6
+   1.11.2
