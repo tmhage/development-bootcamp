@@ -12,16 +12,6 @@ before_script:
 - RAILS_ENV=test bundle exec rake db:drop db:create db:migrate
 script:
 - bundle exec rspec spec/
-after_success:
-- mkdir -p .travis
-- openssl aes-256-cbc -K $encrypted_ebbfec5e58e4_key -iv $encrypted_ebbfec5e58e4_iv -in dokku.gz.enc -out .travis/dokku.gz -d
-- gunzip .travis/dokku.gz
-- chmod 600 .travis/dokku*
-- eval `ssh-agent -s`
-- ssh-add .travis/dokku
-- cat .travis/host_key >> ~/.ssh/known_hosts
-- git remote add deis ssh://git@deis.cloud.codaisseur.com:2222/latest-sandwich.git
-- 'if [ "${TRAVIS_PULL_REQUEST}" = "false" ] && [ "${TRAVIS_BRANCH}" = "master" ]; then git push deis master; fi'
 notifications:
   slack:
     secure: KbFf1e6G6k1Z4mGNkOm+jmyciCF1yjtQbjgEkEroSMuwM++SGq8yoQHurWVbItbofB+vyA7owCrCSUrIYEpQSSLqoo8EcrHIykif+sWXKzJCpjEE/WseP6nzKMXovYRzUTWMLzv5axtLHwAxy169xkP+vMbAKt/lSNVKrkJB6G0=
