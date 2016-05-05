@@ -28,9 +28,8 @@ class ProgramsController < ApplicationController
 
   def frontend_bootcamp
     @level = 'Frontend'
-    @bootcamps = Bootcamp.frontend.published.by_date
-    set_reviews(99)
     mixpanel.track '[visits] Course Page', level: @level
+    redirect_to courses_path, notice: t(:course_no_longer_exists), status: :moved_permanently
   end
 
   private

@@ -287,6 +287,8 @@ nl:
   nav_december_discount: 15% korting
   nav_scholarships: Traineeship
 
+  course_no_longer_exists: "Deze cursus wordt niet meer gegeven."
+
   tickets:
     one: ticket
     other: tickets
