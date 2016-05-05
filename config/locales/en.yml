@@ -39,8 +39,6 @@ en:
         billing_city: City
         billing_country: Country
         billing_phone: Phone number
-      student:
-        allergies: Dietary wishes
       scholarship:
         full_program: Yes, I will make myself available for the 7 week immersive program
         traineeship: Yes, I am available for, and will participate in the 2 year, full time traineeship
@@ -383,7 +381,6 @@ en:
         placeholder_promo_code: Do you have a promo code? Paste it here..
       students:
         do_you_own_laptop: Do you own a laptop you can bring to class?
-        placeholder_allergies: E.g. do you have any allergies, are you a vegan?
         placeholder_remarks: Anything you'd like to add?
       confirmation:
         title: Confirmation

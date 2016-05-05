@@ -244,8 +244,6 @@ nl:
         billing_city: Stad
         billing_country: Land
         billing_phone: Telefoonnummer
-      student:
-        allergies: Dieetwensen
       scholarship:
         first_name: Voornaam
         last_name: Achternaam
@@ -624,7 +622,6 @@ nl:
         placeholder_promo_code: Heb je een kortingscode? Plak hem hier..
       students:
         do_you_own_laptop: Heb je een laptop die je mee kunt nemen naar de lessen?
-        placeholder_allergies: Heb je allergieën, ben je veganist?
         placeholder_remarks: Nog iets toe te voegen?
       confirmation:
         title: Confirmation
