@@ -65,6 +65,8 @@ en:
   nav_december_discount: 15% discount!
   nav_scholarships: Traineeship
 
+  course_no_longer_exists: "This course no longer exists."
+
   tickets:
     one: ticket
     other: tickets
