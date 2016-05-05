@@ -22,6 +22,11 @@ class StudentsController < ApplicationController
   end
 
   def load_student
-    @student = Student.find_by_identifier(params[:id])
+    # Mail template editor gives us this instead of a real ID
+    if params[:id] == "{{ student_identifier }}"
+      @student = Student.first
+    else
+      @student = Student.find_by_identifier(params[:id])
+    end
   end
 end
