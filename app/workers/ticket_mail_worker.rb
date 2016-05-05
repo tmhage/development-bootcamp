@@ -27,7 +27,6 @@ class TicketMailWorker < MailWorker
            { name: 'first_name', content: student.first_name, },
            { name: 'last_name', content: student.last_name, },
            { name: 'level', content: @order.bootcamp.level_name, },
-           { name: 'dietary_wishes', content: student.allergies || 'none', },
            { name: 'student_identifier', content: student.identifier, },
            { name: 'start_date', content: @order.bootcamp.starts_at.strftime("%B %e"), }
         ]

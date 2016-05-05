@@ -56,7 +56,7 @@ RSpec.describe "orders/new", :type => :view do
 
         assert_select "form[action=?][method=?]", enroll_path, "post" do
           text_fields = [:first_name, :last_name, :twitter_handle, :github_handle, :phone_number]
-          text_areas = [:remarks, :allergies]
+          text_areas = [:remarks]
 
           text_fields.each do |f|
             assert_select "input#order_students_attributes_0_#{f}[name=?]", "order[students_attributes][0][#{f}]"
