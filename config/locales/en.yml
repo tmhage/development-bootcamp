@@ -254,7 +254,11 @@ en:
 
   title_pick_seats: Pick a Ticket!
   tickets_intro: |
-    Select the level you want, and the number of seats you need on the class.
+    Select the level you want and the number of seats required for the course.
+  tickets_caution: |
+    Please note that all courses run from 9:30am to 6:00pm and take place in our training facility located at Weesperstraat 61 in Amsterdam. The
+    duration of each course varies; as such please review the respective [course page] (%{courses_url}) to ensure you understand the
+    time-requirements before purchasing.
   valid_on: Valid
   label_accept_terms: I have read and agree to the %{terms}, and the %{conditions}
   change_order: Change order
