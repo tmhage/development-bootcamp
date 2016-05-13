@@ -8,6 +8,9 @@
     h1 = t(:title_pick_seats)
     = tmd(:tickets_intro)
 
+  .ticket-caution
+    = tmd(:tickets_caution, courses_url: courses_path)
+ 
 - if @bootcamps.count > 0
   .tickets#select_bootcamp
     = f.hidden_field :bootcamp_id

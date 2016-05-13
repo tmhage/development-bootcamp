@@ -188,11 +188,10 @@ en:
   cta_apply_now: Yes please!
   cta_subscribe: Subscribe now
 
-  immersive_course_beginner: '_This is an immersive, full-time, 7 day course that starts on Sunday and ends on Saturday._'
-  immersive_course_intermediate: '_This is an immersive, full-time, 10 day course spanning a two week period. Classes run Monday to Friday during both weeks._'
-  immersive_course_advanced: '_This is an immersive, full-time, 11 day course spanning a two week period. Classes run Monday to Friday during the first week and Monday to Saturday during the second week._'
-  this_is_a_weekly_course: '_This is a weekly course that takes 7 weeks: one class per week and some homework on the weekends._'
-
+  immersive_course_beginner: '_This is an immersive, full-time, 7 day course that starts on Sunday and ends on Saturday. Classes start at 9:30am and end at 6:00pm and take place out our training facility located at Weesperstraat 61 in Amsterdam._'
+  immersive_course_intermediate: '_This is an immersive, full-time, 10 day course spanning a two week period.  Classes start at 9:30am and end at 6:00pm (Monday to Friday) and take place out our training facility located at Weesperstraat 61 in Amsterdam._'
+  immersive_course_advanced: '_This is an immersive, full-time, 11 day course spanning a two week period. Classes run Monday to Friday during the first week and Monday to Saturday during the second week,
+  9:30am to 6:30pm from our training facility located at Weesperstraat 61 in Amsterdam._'
   please_fix_errors_below: Please fix the errors below.
   please_mail_support: Please don't hesitate to email us at %{support_mail} if you have any questions or feedback! We would love to know :)
 
@@ -255,7 +254,11 @@ en:
 
   title_pick_seats: Pick a Ticket!
   tickets_intro: |
-    Select the level you want, and the number of seats you need on the class.
+    Select the level you want and the number of seats required for the course.
+  tickets_caution: |
+    Please note that all courses run from 9:30am to 6:00pm and take place in our training facility located at Weesperstraat 61 in Amsterdam. The
+    duration of each course varies; as such please review the respective [course page] (%{courses_url}) to ensure you understand the
+    time-requirements.
   valid_on: Valid
   label_accept_terms: I have read and agree to the %{terms}, and the %{conditions}
   change_order: Change order
