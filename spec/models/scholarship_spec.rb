@@ -21,4 +21,13 @@ describe Scholarship do
   it { is_expected.to validate_inclusion_of(:gender).in_array(Scholarship::GENDERS) }
   it { is_expected.to validate_inclusion_of(:status).in_array(Scholarship::STATI) }
   it { is_expected.to validate_inclusion_of(:employment_status).in_array(Scholarship::EMPLOYMENT_STATI) }
+
+  describe "#create_moneybird_contact!" do
+    let!(:scholarship) { create(:scholarship) }
+
+    it "triggers when status is set to 'send contract'" do
+      expect(MoneybirdWorker).to receive(:perform_async).with(:create_contact, :scholarship, scholarship.id)
+      scholarship.update(status: 'send contract')
+    end
+  end
 end
