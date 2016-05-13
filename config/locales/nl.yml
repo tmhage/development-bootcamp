@@ -493,6 +493,10 @@ nl:
   title_pick_seats: Kies een ticket!
   tickets_intro: |
     Kies jouw niveau, en het aantal deelnemerplaatsen dat je wilt reserveren.
+  tickets_caution: |
+    Alle cursusdagen zijn van 9:30 tot 18:00 en worden gegeven op onze trainingslocatie
+    aan de Weesperstraat 61 in Amsterdam. De duur van de cursussen verschilt. Op de
+    respectievelijke cursuspagina vind je alle lesdagen.
   valid_on: geldig
   label_accept_terms: |
     Ik heb de %{terms} en %{conditions} gelezen en stem hiermee in.
