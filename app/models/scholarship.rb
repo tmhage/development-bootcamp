@@ -31,9 +31,7 @@ class Scholarship < ActiveRecord::Base
 
   validates_presence_of :linked_in_profile_url, :coding_experience, :address, :city, :zip_code, on: :create
 
-  validates_format_of :phone, with: /\A\+?[0-9\s\-\(\)]+\z/, on: :create
-
-  #validates_inclusion_of :full_program, :traineeship, in: [true]
+  validates_format_of :phone, with: /\A\+?[0-9\s\-\.x\(\)]+\z/, on: :create
 
   validates_inclusion_of :gender, in: GENDERS
   validates_inclusion_of :status, in: STATI
@@ -76,6 +74,6 @@ class Scholarship < ActiveRecord::Base
 
   def create_moneybird_contact!
     return unless status == 'send contract'
-    Moneybird::Contact.create(self)
+    MoneybirdWorker.perform_async(:create_contact, :scholarship, id)
   end
 end

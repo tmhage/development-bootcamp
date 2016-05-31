@@ -45,6 +45,10 @@ end
 group :development do
   gem 'spring'
   gem 'quiet_assets'
+  gem 'guard-rspec'
+  gem 'spring-commands-rspec'
+  gem 'rb-fsevent'
+  gem 'terminal-notifier-guard'
 end
 
 group :development, :test do
