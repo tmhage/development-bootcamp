@@ -1,6 +1,7 @@
 require "Mollie/API/Client"
 
 class Order < ActiveRecord::Base
+  include KpiSeries
   has_paper_trail
 
   attr_accessor :promo_code, :validate_promo_code, :select_bootcamp

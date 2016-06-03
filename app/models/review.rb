@@ -1,4 +1,5 @@
 class Review < ActiveRecord::Base
+  include KpiSeries
   mount_uploader :avatar, ReviewAvatarUploader
 
   belongs_to :student

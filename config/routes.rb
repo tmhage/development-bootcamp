@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  namespace :admin do
-  end
-
   localized do
     devise_for :users, :skip => [:registrations]
 
@@ -76,7 +73,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    get '/' => 'orders#index'
+    get '/' => 'admin#dashboard', as: :root
 
     require 'sidekiq/web'
     authenticate :user do
