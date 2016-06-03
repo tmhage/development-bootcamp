@@ -10,7 +10,7 @@ module KpiSeries
         all_kpis[d[:date]].merge! d
       end
     end
-    all_kpis
+    all_kpis.sort.reverse
   end
 
   def self.models
