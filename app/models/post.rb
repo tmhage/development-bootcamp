@@ -1,4 +1,5 @@
 class Post < ActiveRecord::Base
+  include KpiSeries
   extend FriendlyId
   friendly_id :title, use: :slugged
 

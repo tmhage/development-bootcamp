@@ -1,4 +1,5 @@
 class Scholarship < ActiveRecord::Base
+  include KpiSeries
   include Notable
 
   PRICE = 750.0

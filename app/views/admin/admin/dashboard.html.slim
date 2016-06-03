@@ -1,0 +1,15 @@
+h2 KPIs
+
+table.table.table-striped
+  thead
+    th
+      = "Until date"
+    - KpiSeries.models.each do |model|
+      th
+        = model.name
+  tbody
+    - KpiSeries.weekly.each do |date,week|
+      tr
+        td = date.strftime("%d-%m-%Y")
+        - KpiSeries.models.each do |model|
+          td = week[model.table_name].to_i
