@@ -26,3 +26,5 @@ FactoryGirl.create_list :sponsor, 5, :active, plan: 'silver'
 FactoryGirl.create_list :sponsor, 2, :active, plan: 'lunch'
 FactoryGirl.create :sponsor, :active, plan: 'hackathon'
 FactoryGirl.create :sponsor, :active, plan: 'party'
+
+FactoryGirl.create_list :discount_code, 2
