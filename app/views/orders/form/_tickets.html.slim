@@ -28,8 +28,7 @@
               - discounted_price = price.to_f
               - if @order.has_valid_discount_code? && name != :community
                 - discounted_price = discounted_price * (1 - (@order.discount_code.discount_percentage / 100.0))
-              = f.hidden_field :cart, name: "order[cart][#{name}]", id: "order_cart_#{name}", value: 1
-              /= f.number_field :cart, name: "order[cart][#{name}]", id: "order_cart_#{name}", placeholder: 1, value: values[name] || 1, hide_label: true
+              = f.number_field :cart, name: "order[cart][#{name}]", id: "order_cart_#{name}", placeholder: 1, value: values[name] || 1, hide_label: true
               p.price data-price=discounted_price.to_f = number_to_currency((@order.cart && @order.cart[name]) ? @order.cart[name].to_i * discounted_price : discounted_price)
               - if discounted_price < price
                 p
