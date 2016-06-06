@@ -45,9 +45,6 @@ end
 group :development do
   gem 'spring'
   gem 'quiet_assets'
-  gem 'guard-rspec'
-  gem 'spring-commands-rspec'
-  gem 'rb-fsevent'
   gem 'terminal-notifier-guard'
 end
 
@@ -58,6 +55,7 @@ group :development, :test do
   gem 'guard-rspec'
   gem 'rb-fsevent'
   gem 'byebug'
+  gem 'faker'
 end
 
 group :test do
@@ -65,7 +63,6 @@ group :test do
   gem 'shoulda-matchers', require: false
   gem 'rspec-rails', '~> 3.0.2'
   gem 'factory_girl_rails'
-  gem 'faker'
   gem 'webmock'
   gem 'codeclimate-test-reporter', require: nil
 end
