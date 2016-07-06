@@ -8,8 +8,14 @@
     h1 = t(:title_pick_seats)
     = tmd(:tickets_intro)
 
-  .ticket-caution
+  .ticket-text
     = tmd(:tickets_caution, courses_url: courses_path)
+  
+  .sub-title
+    h2 = t(:title_education_voucher)
+  
+  .ticket-text
+    = tmd(:education_voucher_intro)
  
 - if @bootcamps.count > 0
   .tickets#select_bootcamp
