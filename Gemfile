@@ -58,6 +58,7 @@ group :development, :test do
   gem 'guard-rspec'
   gem 'rb-fsevent'
   gem 'byebug'
+  gem 'faker'
 end
 
 group :test do

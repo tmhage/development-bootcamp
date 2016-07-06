@@ -34,7 +34,7 @@
                 p
                   .old-price data-old-price=price.to_f = number_to_currency(price)
                   strong.discount #{@order.discount_code.discount_percentage}% DISCOUNT
-
+            = "incl. VAT / incl. BTW"
           .tear.tear-bottom
 
 .row
