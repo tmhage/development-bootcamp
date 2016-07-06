@@ -259,6 +259,12 @@ en:
     Please note that all courses run from 9:30am to 6:00pm and take place in our training facility located at Weesperstraat 61 in Amsterdam. The
     duration of each course varies; as such please review the respective [course page] (%{courses_url}) to ensure you understand the
     time-requirements.
+  title_education_voucher: Education Voucher!!!
+  education_voucher_intro: |
+    Webdevelopment is considered a career opportunity with high prospects by the
+    Dutch Government. Therefore, enrollment in any of our programs entitles you
+    to an education voucher from the UWV. Click [here] (https://www.developmentbootcamp.com/pages/education-voucher-uwv)
+    for more information on what this means and how you can benefit!
   valid_on: Valid
   label_accept_terms: I have read and agree to the %{terms}, and the %{conditions}
   change_order: Change order
