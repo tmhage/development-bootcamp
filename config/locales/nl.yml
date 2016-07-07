@@ -499,9 +499,9 @@ nl:
     respectievelijke [cursuspagina](%{courses_url}) vind je alle lesdagen.
   title_education_voucher: Scholingsvoucher!!!
   education_voucher_intro: |
-    Webdeveloper, evenals programmeur en testdeveloper is door de Nederlandse overheid
-    aangemerkt als een kansberoep. Dientengevolge kunt u in het kader van onze
-    opleidingen aanspraak maken op een scholingsvoucher van het UWV. Kijk [hier]
+    Webdeveloper is door de Nederlandse overheid aangemerkt als een kansberoep.
+    Dientengevolge kunt u in het kader van onze opleidingen aanspraak maken op
+    een scholingsvoucher van het UWV. Kijk [hier]
     (https://www.developmentbootcamp.com/pages/education-voucher-uwv) voor
     meer informatie en hoe je hier je voordeel mee kunt doen!
   valid_on: geldig
