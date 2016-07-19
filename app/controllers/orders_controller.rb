@@ -5,7 +5,6 @@ class OrdersController < ApplicationController
 
   before_action :set_order, only: [:show, :thanks, :stripe_token]
 
-
   respond_to :html
 
   def show
@@ -108,6 +107,12 @@ class OrdersController < ApplicationController
       flash[:error] = "Sorry, your creditcard payment could not be processed, please try again or contact us at support@developmentbootcamp.nl"
     end
     redirect_to enroll_url(@order)
+  end
+
+  protected #########################################################################################
+
+  def orders_controller?
+    true
   end
 
   private ###########################################################################################

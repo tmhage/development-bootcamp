@@ -6,13 +6,17 @@ class ApplicationController < ActionController::Base
   before_filter :configure_permitted_parameters, if: :devise_controller?
   before_filter :load_sponsors
 
-  protect_from_forgery with: :exception
+  protect_from_forgery with: :exception, unless: :orders_controller?
 
   rescue_from ActiveRecord::RecordNotFound, with: :page_not_found
 
   def sitemap; end
 
   protected
+
+  def orders_controller?
+    false
+  end
 
   def set_locale_from_url
     begin

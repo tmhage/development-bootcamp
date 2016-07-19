@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.1.5'
+ruby '2.2.4'
 
 gem 'rails', '4.1.7'
 gem 'rack-rewrite'
@@ -54,9 +54,6 @@ end
 group :development, :test do
   gem 'pronto'
   gem 'pronto-rubocop', require: false
-  gem 'spring-commands-rspec'
-  gem 'guard-rspec'
-  gem 'rb-fsevent'
   gem 'byebug'
   gem 'faker'
 end
@@ -66,7 +63,6 @@ group :test do
   gem 'shoulda-matchers', require: false
   gem 'rspec-rails', '~> 3.0.2'
   gem 'factory_girl_rails'
-  gem 'faker'
   gem 'webmock'
   gem 'codeclimate-test-reporter', require: nil
 end
