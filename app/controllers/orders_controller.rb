@@ -1,10 +1,10 @@
 class OrdersController < ApplicationController
+  skip_before_action :verify_authenticity_token, only: [:webhook, :stripe_webhook]
 
   before_filter :disable_sidebar
 
   before_action :set_order, only: [:show, :thanks, :stripe_token]
 
-  protect_from_forgery with: :exception, except: [:webhook, :stripe_webhook]
 
   respond_to :html
 
