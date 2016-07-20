@@ -295,7 +295,7 @@ class Order < ActiveRecord::Base
         :amount => creditcard_total,
         :currency => "eur",
         :source => stripe_token,
-        :description => "Development Bootcamp Community Ticket"
+        :description => "Development Bootcamp Ticket"
       )
       return true
     rescue Stripe::CardError => e
