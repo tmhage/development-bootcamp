@@ -1,6 +1,6 @@
 class Admin::OrdersController < Admin::AdminController
 
-  before_action :set_order, only: [:show, :edit, :update, :destroy, :manually_paid, :paid_by_creditcard, :send_invoice]
+  before_action :set_order, only: [:show, :edit, :update, :destroy, :manually_paid, :paid_by_creditcard, :send_invoice, :send_prework]
 
   respond_to :html
 
