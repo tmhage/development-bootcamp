@@ -33,6 +33,10 @@ class Bootcamp < ActiveRecord::Base
     order(starts_at: :asc)
   end
 
+  def beginner?
+    level == 1
+  end
+
   def readable_date_range
     "#{starts_at.day} #{starts_at.strftime("%b")}-#{ends_at.day} #{ends_at.strftime("%b")}, #{ends_at.year}"
   end

@@ -20,6 +20,10 @@
         =<> link_to send_invoice_admin_order_path(order), method: :patch, class: 'btn btn-small' do
           => fa_icon 'envelope'
           = 'Send invoice'
+        - if order.bootcamp && order.bootcamp.beginner?
+         =<> link_to send_prework_admin_order_path(order), method: :patch, class: 'btn btn-small' do
+            => fa_icon 'envelope'
+            = 'Send prework'
         - if order.paid?
           span.label.label-success =<> 'Paid'
           - if order.discount_code.present?

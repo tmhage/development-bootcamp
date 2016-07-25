@@ -64,6 +64,15 @@ class Admin::OrdersController < Admin::AdminController
     end
   end
 
+  def send_prework
+    if @order
+      PreworkMailWorker.perform_async(@order.id)
+      redirect_to admin_orders_path, notice: 'Prework queued for sending.'
+    else
+      redirect_to admin_orders_path, error: 'Could not find order, please try again.'
+    end
+  end
+
   private ###########################################################################################
 
   def set_order
