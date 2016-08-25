@@ -41,7 +41,7 @@ class Moneybird::Invoice < Moneybird::Api
 
       rows[rows.size.to_s] = row(
         amount: "#{amount} x",
-        description: "#{ticket.humanize} Ticket for #{order.bootcamp.name_with_dates}",
+        description: "Ticket for #{order.bootcamp.name_with_dates}",
         price: order.ticket_prices[ticket.to_sym]
       )
     end
@@ -55,7 +55,7 @@ class Moneybird::Invoice < Moneybird::Api
 
     if order.cart_discount > 0
       rows[rows.size.to_s] = row(
-        description: "Discount #{order.discount_code.discount_percentage}%",
+        description: "#{order.discount_code.code} (#{order.discount_code.discount_percentage}%)",
         price: -(order.cart_discount)
       )
     end
