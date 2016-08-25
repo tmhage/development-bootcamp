@@ -32,7 +32,9 @@
           span.label.label-warning =< order.payment.status
         - unless order.paid?
           =<> link_to 'Manually Paid', manually_paid_admin_order_path(order), method: :patch, class: 'btn btn-small'
-          = link_to 'Payment link', enroll_url(order), class: 'btn btn-small'
+          - if order.discount_code.present?
+            span.label.label-warning = "#{order.discount_code.code} (#{order.discount_code.discount_percentage}%)"
+          / = link_to 'Payment link', enroll_url(order), class: 'btn btn-small'
     - order.students.each do |student|
       .col-md-10
         .col-md-2
