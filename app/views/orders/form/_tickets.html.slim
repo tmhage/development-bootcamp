@@ -10,18 +10,18 @@
 
   .ticket-text
     = tmd(:tickets_caution, courses_url: courses_path)
-  
+
   .sub-title
     h2 = t(:title_education_voucher)
-  
+
   .ticket-text
     = tmd(:education_voucher_intro)
- 
+
 - if @bootcamps.count > 0
   .tickets#select_bootcamp
     = f.hidden_field :bootcamp_id
     - @bootcamps.each do |bootcamp|
-      .ticket class="#{bootcamp.level_name} #{@order.bootcamp_id == bootcamp.id ? "ticket-selected" : ""}" data-bootcamp-id=bootcamp.id
+      .ticket class="#{bootcamp.level_name} #{@order.bootcamp_id == bootcamp.id ? "ticket-selected" : ""} #{bootcamp.sold_out ? "sold_out" : ""}" data-bootcamp-id=bootcamp.id
         .outer role="button"
           .tear.tear-top
           .inset
@@ -34,7 +34,10 @@
               - discounted_price = price.to_f
               - if @order.has_valid_discount_code? && name != :community
                 - discounted_price = discounted_price * (1 - (@order.discount_code.discount_percentage / 100.0))
-              = f.number_field :cart, name: "order[cart][#{name}]", id: "order_cart_#{name}", placeholder: 1, value: values[name] || 1, hide_label: true
+              - if bootcamp.sold_out?
+                .sold-out = t(:sold_out)
+              - else
+                = f.number_field :cart, name: "order[cart][#{name}]", id: "order_cart_#{name}", placeholder: 1, value: values[name] || 1, hide_label: true
               p.price data-price=discounted_price.to_f = number_to_currency((@order.cart && @order.cart[name]) ? @order.cart[name].to_i * discounted_price : discounted_price)
               - if discounted_price < price
                 p

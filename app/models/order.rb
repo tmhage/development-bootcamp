@@ -26,6 +26,8 @@ class Order < ActiveRecord::Base
 
   validates :terms_and_conditions, inclusion: { in: [true], message: 'must be accepted.' }, if: ->{ at_step_or_after('details') }
 
+  validate :validate_bootcamp_availability
+
   accepts_nested_attributes_for :students
 
   belongs_to :bootcamp
@@ -199,6 +201,11 @@ class Order < ActiveRecord::Base
     errors.add(:students, "You need to provide details for all #{cart_sum_tickets} students.")
   end
 
+  def validate_bootcamp_availability
+    return unless bootcamp.blank? || bootcamp.sold_out?
+    errors.add(:bootcamp, "This Bootcamp is SOLD OUT, please try another date.")
+  end
+
   def min_ticket_price
     minimum = ticket_prices.values.min
     return minimum unless discount_code.present?
@@ -226,7 +233,7 @@ class Order < ActiveRecord::Base
   end
 
   def create_identifier
-    return if persisted? # Don't overwrite existing identifiers
+    return if persisted? && self.identifier.present? # Don't overwrite existing identifiers
     self.identifier = SecureRandom.uuid
     create_identifier if Order.where(identifier: self.identifier).count > 0
   end

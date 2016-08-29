@@ -9,5 +9,6 @@ FactoryGirl.define do
     normal_price { 1499 }
     supporter_price { 1999 }
     published_at { Date.yesterday }
+    sold_out { false }
   end
 end

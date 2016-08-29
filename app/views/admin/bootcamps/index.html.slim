@@ -24,7 +24,7 @@
       - @bootcamps.each do | bootcamp |
         tr
           td
-            = "#{bootcamp.name} (#{bootcamp.level_name})"
+            = "#{bootcamp.name} (#{bootcamp.level_name}#{bootcamp.sold_out? ? ', SOLD OUT' : ''})"
           td
             = bootcamp.location
           td

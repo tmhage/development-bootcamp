@@ -187,5 +187,19 @@ RSpec.describe Order, :type => :model do
         end
       end
     end
+
+    describe '#sold_out?' do
+      let(:bootcamp) { create(:bootcamp) }
+      let(:order) { build_stubbed(:order, bootcamp: bootcamp) }
+
+      describe 'validations' do
+        it { expect(order).to be_valid }
+
+        context 'when bootcamp is sold out' do
+          let(:bootcamp) { create(:bootcamp, sold_out: true) }
+          it { expect(order).not_to be_valid }
+        end
+      end
+    end
   end
 end

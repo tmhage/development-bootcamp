@@ -54,6 +54,6 @@ class Admin::BootcampsController < Admin::AdminController
     def bootcamp_params
       params.require(:bootcamp).permit(:name, :starts_at, :ends_at, :location,
         :level, :community_price, :normal_price, :supporter_price, :published_at,
-        :unpublish)
+        :unpublish, :sold_out)
     end
 end

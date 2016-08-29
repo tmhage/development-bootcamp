@@ -288,6 +288,7 @@ nl:
   nav_scholarships: Traineeship
 
   course_no_longer_exists: "Deze cursus wordt niet meer gegeven."
+  sold_out: "Uitverkocht"
 
   tickets:
     one: ticket
