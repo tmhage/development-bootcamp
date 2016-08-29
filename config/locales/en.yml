@@ -66,6 +66,7 @@ en:
   nav_scholarships: Traineeship
 
   course_no_longer_exists: "This course no longer exists."
+  sold_out: "Sold out"
 
   tickets:
     one: ticket

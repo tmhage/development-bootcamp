@@ -36,6 +36,10 @@
     .col-sm-10
       = f.check_box :unpublish, :class => "form-control"
   .form-group
+    = f.label :sold_out, :class => "col-sm-2 control-label"
+    .col-sm-10
+      = f.check_box :sold_out, :class => "form-control"
+  .form-group
     = f.label :community_price, :class => "col-sm-2 control-label"
     .col-sm-10
       = f.number_field :community_price, :class => "form-control", placeholder: @bootcamp.community_price
