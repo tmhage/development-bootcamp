@@ -2,7 +2,7 @@ class Scholarship < ActiveRecord::Base
   include KpiSeries
   include Notable
 
-  PRICE = 750.0
+  PRICE = 2500.0
 
   STATI = [
     'new',

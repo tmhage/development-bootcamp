@@ -358,8 +358,8 @@ nl:
     complexere technieken toevoegen aan je applicaties en je leert over de
     nieuwste hi-tech ontwikkelingen en hoe deze te gebruiken.
   advanced_bootcamp_description: |
-    Om een beroepsprogrammeur te worden moet je over meer beschikken dan
-    programmeerkennis. Je moet goed kunnen samenwerken in een team, weten hoe
+    Om het [beroep][nbg] programmeur te kunnen uitoefenen moet je over meer beschikken
+    dan programmeerkennis. Je moet goed kunnen samenwerken in een team, weten hoe
     je een applicatie ontwerpt, bouwt, beveiligd en onderhoud. Je moet ook iets
     weten over de omgeving waarop je applicatie draait: services.
 
@@ -379,6 +379,8 @@ nl:
     Bootcamp. Neem contact met ons op om een gesprek met ons in te plannen om
     je huidige niveau vast te stellen. Mogelijk vragen we je om je verder voor
     te bereiden voordat we je aanmelding accepteren.
+
+    [nbg]: http://www.nationaleberoepengids.nl/
 
   frontend_bootcamp: Frontend Web Bootcamp
   frontend_bootcamp_tagline: interactief en innemend
@@ -419,10 +421,10 @@ nl:
   cta_subscribe: Meld je nu aan
 
   immersive_course_beginner: '_Dit is intensieve, voltijd, 7 dagense cursus
-  die begint op zondag en eindigt op zaterdag. Lessen duren van 9:30 tot 18:00 en vinden plaats op onze trainingslocatie aan de Weesperstraat 61 te Amsterdam._'
-  immersive_course_intermediate: '_Dit is een intensieve, full-time cursus van 10 dagen verspreid over twee weken. Lessen duren van 9:30 tot 18:00 (maandag t/m vrijdag) en vinden plaats op onze trainingslocatie aan de Weesperstraat 61 te Amsterdam._'
+  die begint op zondag en eindigt op zaterdag. Lessen duren van 9:30 tot 18:00 en vinden plaats op onze trainingslocatie aan de Singel 542 te Amsterdam._'
+  immersive_course_intermediate: '_Dit is een intensieve, full-time cursus van 10 dagen verspreid over twee weken. Lessen duren van 9:30 tot 18:00 (maandag t/m vrijdag) en vinden plaats op onze trainingslocatie aan de Singel 542 te Amsterdam._'
   immersive_course_advanced: '_Dit is een intensieve, full-time cursus van 10 dagen verspreid over twee weken. Lessen vinden plaats van maandag t/m vrijdag gedurende de eerste week en van maandag t/m zaterdag gedurende de tweede week,
-  9:30 tot 18:00 van onze trainingslocatie aan de Weesperstraat 61 te Amsterdam._'
+  9:30 tot 18:00 van onze trainingslocatie aan de Singel 542 te Amsterdam._'
   this_is_a_weekly_course: '_Dit is wekelijkse cursus van 7 weken: 1 les per week en wat huiswerk voor tijdens het weekend._'
 
   please_fix_errors_below: Corrigeer de onderstaande foutmeldingen.
@@ -473,7 +475,8 @@ nl:
     Neem [Contact](%{contact_url}) met ons op als jij met je collega's
     wilt deelnemen.
 
-  scholarship_program: Traineeship Programmeren met Baangarantie
+  scholarship_program: |
+    Gratis met UWV Voucher: Traineeship Programmeren met Baangarantie
   scholarship_program_intro: |
     **Wil je een professionele developer worden?**
 
@@ -496,7 +499,7 @@ nl:
     Kies jouw niveau, en het aantal deelnemerplaatsen dat je wilt reserveren.
   tickets_caution: |
     Alle cursusdagen zijn van 9:30 tot 18:00 en worden gegeven op onze trainingslocatie
-    aan de Weesperstraat 61 in Amsterdam. De duur van de cursussen verschilt. Op de
+    aan de Singel 542 in Amsterdam. De duur van de cursussen verschilt. Op de
     respectievelijke [cursuspagina](%{courses_url}) vind je alle lesdagen.
   title_education_voucher: Scholingsvoucher!!!
   education_voucher_intro: |
@@ -711,7 +714,7 @@ nl:
     apply:
       title: Traineeship Programmeren voor Beginners
       subtitle: word web-developer met baangarantie!
-      page_title: Opleiding web-developer voor %{price}, met baangarantie! - Scholarship & Traineeship Programmeren
+      page_title: Opleiding web-developer met baangarantie! - Scholarship & Traineeship Programmeren
       meta_description: |
         Codaisseur biedt een uniek traineeship aan waarbinnen je eerst wordt opgeleid
         tot junior web developer en vervolgens in twee jaar uitgroeit tot ervaren programmeur.
@@ -756,7 +759,7 @@ nl:
 
         De selectie voor het programma in april/mei is afgerond. Het eerstvolgende 7-weekse programma vangt aan op 5 juni 2016 en eindigt 22 juli 2016. Lessen
         vinden plaats van maandag t/m vrijdag. Daarnaast heb je ook les op zondag 5 juni
-        en zaterdag 11 juni. Lesdagen beginnen om 9:30 uur en eindigen 18:00 uur. Alle lessen worden gegeven in onze trainingsruimte aan de Weesperstraat 61, Amsterdam.
+        en zaterdag 11 juni. Lesdagen beginnen om 9:30 uur en eindigen 18:00 uur. Alle lessen worden gegeven in onze trainingsruimte aan de Singel 542, Amsterdam.
 
       col_language: |
         ## EN/NL?
