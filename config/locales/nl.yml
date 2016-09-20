@@ -358,8 +358,8 @@ nl:
     complexere technieken toevoegen aan je applicaties en je leert over de
     nieuwste hi-tech ontwikkelingen en hoe deze te gebruiken.
   advanced_bootcamp_description: |
-    Om een beroepsprogrammeur te worden moet je over meer beschikken dan
-    programmeerkennis. Je moet goed kunnen samenwerken in een team, weten hoe
+    Om het [beroep][nbg] programmeur te kunnen uitoefenen moet je over meer beschikken
+    dan programmeerkennis. Je moet goed kunnen samenwerken in een team, weten hoe
     je een applicatie ontwerpt, bouwt, beveiligd en onderhoud. Je moet ook iets
     weten over de omgeving waarop je applicatie draait: services.
 
@@ -379,6 +379,8 @@ nl:
     Bootcamp. Neem contact met ons op om een gesprek met ons in te plannen om
     je huidige niveau vast te stellen. Mogelijk vragen we je om je verder voor
     te bereiden voordat we je aanmelding accepteren.
+
+    [nbg]: http://www.nationaleberoepengids.nl/
 
   frontend_bootcamp: Frontend Web Bootcamp
   frontend_bootcamp_tagline: interactief en innemend
