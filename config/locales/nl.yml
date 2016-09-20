@@ -475,7 +475,8 @@ nl:
     Neem [Contact](%{contact_url}) met ons op als jij met je collega's
     wilt deelnemen.
 
-  scholarship_program: Traineeship Programmeren met Baangarantie
+  scholarship_program: |
+    Gratis met UWV Voucher: Traineeship Programmeren met Baangarantie
   scholarship_program_intro: |
     **Wil je een professionele developer worden?**
 
@@ -713,7 +714,7 @@ nl:
     apply:
       title: Traineeship Programmeren voor Beginners
       subtitle: word web-developer met baangarantie!
-      page_title: Opleiding web-developer voor %{price}, met baangarantie! - Scholarship & Traineeship Programmeren
+      page_title: Opleiding web-developer met baangarantie! - Scholarship & Traineeship Programmeren
       meta_description: |
         Codaisseur biedt een uniek traineeship aan waarbinnen je eerst wordt opgeleid
         tot junior web developer en vervolgens in twee jaar uitgroeit tot ervaren programmeur.
