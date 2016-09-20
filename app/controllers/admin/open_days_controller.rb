@@ -15,7 +15,7 @@ class Admin::OpenDaysController < Admin::AdminController
   def new
     @open_day = OpenDay.new
     @open_day.starts_at = Date.today.end_of_day - 239.minutes # 8pm
-    @open_day.address = 'Weesperstraat 61, 1018 VN Amsterdam'
+    @open_day.address = 'Singel 542, 1017 AZ Amsterdam'
     @open_day.description_en = "
 <ul>
   <li>20:00  — Doors Open</li>

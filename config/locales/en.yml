@@ -189,10 +189,10 @@ en:
   cta_apply_now: Yes please!
   cta_subscribe: Subscribe now
 
-  immersive_course_beginner: '_This is an immersive, full-time, 7 day course that starts on Sunday and ends on Saturday. Classes start at 9:30am and end at 6:00pm and take place out our training facility located at Weesperstraat 61 in Amsterdam._'
-  immersive_course_intermediate: '_This is an immersive, full-time, 10 day course spanning a two week period.  Classes start at 9:30am and end at 6:00pm (Monday to Friday) and take place out our training facility located at Weesperstraat 61 in Amsterdam._'
+  immersive_course_beginner: '_This is an immersive, full-time, 7 day course that starts on Sunday and ends on Saturday. Classes start at 9:30am and end at 6:00pm and take place out our training facility located at Singel 542 in Amsterdam._'
+  immersive_course_intermediate: '_This is an immersive, full-time, 10 day course spanning a two week period.  Classes start at 9:30am and end at 6:00pm (Monday to Friday) and take place out our training facility located at Singel 542 in Amsterdam._'
   immersive_course_advanced: '_This is an immersive, full-time, 11 day course spanning a two week period. Classes run Monday to Friday during the first week and Monday to Saturday during the second week,
-  9:30am to 6:30pm from our training facility located at Weesperstraat 61 in Amsterdam._'
+  9:30am to 6:30pm from our training facility located at Singel 542 in Amsterdam._'
   please_fix_errors_below: Please fix the errors below.
   please_mail_support: Please don't hesitate to email us at %{support_mail} if you have any questions or feedback! We would love to know :)
 
@@ -257,7 +257,7 @@ en:
   tickets_intro: |
     Select the level you want and the number of seats required for the course.
   tickets_caution: |
-    Please note that all courses run from 9:30am to 6:00pm and take place in our training facility located at Weesperstraat 61 in Amsterdam. The
+    Please note that all courses run from 9:30am to 6:00pm and take place in our training facility located at Singel 542 in Amsterdam. The
     duration of each course varies; as such please review the respective [course page] (%{courses_url}) to ensure you understand the
     time-requirements.
   title_education_voucher: Education Voucher!!!
@@ -510,7 +510,7 @@ en:
 
         Selection for the April/May program is completed. The next 7-week program starts on June 5, 2016 en concludes on July 22, 2016.
         Classes are Monday to Friday. You will also have classes on Sunday, June 5
-        and Saturday, June 11. Class starts at 9:30am and ends at 6pm. All classes will take place in our training facility at Weesperstraat 61, Amsterdam.
+        and Saturday, June 11. Class starts at 9:30am and ends at 6pm. All classes will take place in our training facility at Singel 542, Amsterdam.
 
       col_language: |
         ## EN/NL?
