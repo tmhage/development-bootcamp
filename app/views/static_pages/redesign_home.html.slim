@@ -1,0 +1,42 @@
+.dbc-page-header.home
+  .dbc-page
+    .inner
+      .row
+        .text.right
+          h1
+            = t('.learn_the_most_wanted')
+            br
+            = t('.skill_right_now')
+
+          p = t('.tagline')
+
+          .cta
+            => link_to t(:cta_courses), courses_path, class: 'button primary', id: 'home-cta-two'
+            = link_to t(:cta_open_evening), open_evening_path, class: 'button default', id: 'home-cta-one'
+
+/no bottom bar
+
+.dbc-content
+  .dbc-container.dbc-three-col.three-reasons
+    .inner
+      .row
+        .col
+
+        .col
+          p
+            => t('.three_reasons_one_heading')
+            span = t('.three_reasons_one')
+      .row
+        .col
+          .circle.intermediate 2
+        .col
+          p
+            => t('.three_reasons_two_heading')
+            span = t('.three_reasons_two')
+      .row
+        .col
+          .circle.advanced 3
+        .col
+          p
+            => t('.three_reasons_three_heading')
+            span = t('.three_reasons_three')

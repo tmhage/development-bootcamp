@@ -31,31 +31,6 @@ ActiveRecord::Schema.define(version: 20160829092954) do
     t.boolean  "sold_out",        default: false
   end
 
-  create_table "companies", force: true do |t|
-    t.string   "name"
-    t.string   "website"
-    t.string   "chamber_of_commerce_registration"
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "email"
-    t.string   "phone"
-    t.text     "address"
-    t.string   "postal_code"
-    t.string   "city"
-    t.string   "country"
-    t.text     "reason"
-    t.integer  "company_size"
-    t.integer  "development_team_size"
-    t.integer  "traineeships_positions"
-    t.text     "company_profile"
-    t.boolean  "english_speakers_ok"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "slug"
-  end
-
-  add_index "companies", ["slug"], name: "index_companies_on_slug", using: :btree
-
   create_table "discount_codes", force: true do |t|
     t.string   "code"
     t.integer  "discount_percentage"
@@ -131,7 +106,6 @@ ActiveRecord::Schema.define(version: 20160829092954) do
     t.uuid     "identifier"
     t.string   "stripe_token"
     t.json     "stripe_payload"
-    t.text     "qr_code"
     t.boolean  "terms_and_conditions"
     t.boolean  "manually_paid"
     t.boolean  "paid_by_creditcard"
@@ -273,18 +247,6 @@ ActiveRecord::Schema.define(version: 20160829092954) do
 
   add_index "students", ["identifier"], name: "index_students_on_identifier", using: :btree
   add_index "students", ["order_id"], name: "index_students_on_order_id", using: :btree
-
-  create_table "trainee_contracts", force: true do |t|
-    t.integer  "scholarship_id"
-    t.string   "signature_id"
-    t.text     "status"
-    t.boolean  "signed",         default: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "trainee_contracts", ["scholarship_id"], name: "index_trainee_contracts_on_scholarship_id", using: :btree
-  add_index "trainee_contracts", ["signature_id"], name: "index_trainee_contracts_on_signature_id", using: :btree
 
   create_table "user_profiles", force: true do |t|
     t.integer  "user_id"
