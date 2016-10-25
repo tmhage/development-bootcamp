@@ -21,19 +21,6 @@
     &.primary
       text-shadow: none
 
-  .bottom-bar
-    @extend .row
-    background-color: $brand-primary
-    color: $gray-lighter
-    font-size: 24px
-    font-weight: 100
-    font-style: italic
-    text-align: center
-    padding-top: 0.6em
-    padding-bottom: 0.6em
-    margin-right: 0
-    margin-bottom: 6em
-
     .inner
       padding-bottom: 0
 
@@ -71,19 +58,25 @@
     .right
       @extend .col-sm-6
 
-    h1
-      font-size: 4.5rem
-      font-weight: 900
+    .header-homepage
+      font-size: 50px
+      font-weight: 600
+      line-height: 56px
       bottom: 0
+      text-align: center
 
-    p
-      margin-top: 1em
-      bottom: 0
-      font-weight: lighter
-      padding-bottom: 1em
+      .sub-header-homepage
+        //margin-top: 1em
+        bottom: 0
+        font-size: 50px
+        font-weight: 200
+        letter-spacing: 2px
+        line-height: 56px
+        //padding-bottom: 1em
+        text-align: center
 
-      i.fa
-        color: $brand-primary
+        i.fa
+          color: $brand-primary
 
     .button
       @extend .btn-lg
@@ -101,14 +94,14 @@
         border: 1px solid #fff
 
   &.home
-    background-image: image_url("home/codaisseur-classroom-3.jpg")
+    background: linear_gradient(rgba(0, 170, 134, 0.5), rgba(0, 170, 134, 0.5)), url("home/codaisseur-classroom-3.jpg"), top center no-repeat
     background-size: cover
     background-position: 25% bottom
     background-color: #333
     padding-bottom: 0
 
     .text
-      @extend .col-sm-offset-6
+      @extend .col-sm-offset-4
       p
         letter-spacing: 2px
 

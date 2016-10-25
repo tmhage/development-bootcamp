@@ -277,7 +277,7 @@ en:
     other: 'You selected: %{count} tickets for %{bootcamp} on:'
 
   static_pages:
-    home:
+    redesign_home:
       page_title: Home - Learn Programming
       meta_description: Learn code, the most wanted skill right now. We offer you the fastest way to tech hybrid or junior developer.
       meta_keywords: development, bootcamp, programming, learn, teach, tech hybrid, junior developer
@@ -293,12 +293,12 @@ en:
       takeaway3: extend your skills
 
       # Three Reasons to Enroll
-      three_reasons_one_heading: Code is everywhere.
-      three_reasons_one: People in all industries can benefit from learning code to boost their productivity and e-skills.
-      three_reasons_two_heading: We offer you a kickstart
-      three_reasons_two: into the world of modern day software engineering for the web with immersive and results-driven boot camps.
-      three_reasons_three_heading: Learn to build web applications
-      three_reasons_three:  from industry experts. Choose from entry level beginner courses all the way up to advanced courses that prepare you for a new career.
+      three_reasons_one_heading: Learn from PROFESSIONALS
+      three_reasons_one: Experience teachers with years of experience in the field
+      three_reasons_two_heading: In a SHORT time
+      three_reasons_two: No need to spend years in university
+      three_reasons_three_heading: And see how USEFUL it is
+      three_reasons_three: Examples of how the benefits of knowing how to code
 
       quote: You will learn a way of thinking and looking at things that is fun and fascinating. A programmer’s mind is a joy forever.
 
