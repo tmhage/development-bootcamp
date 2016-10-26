@@ -4,9 +4,9 @@ cache:
   directories:
   - vendor/bundle
 rvm:
-- 2.2.4
+- 2.3.1
 addons:
-  postgresql: '9.3'
+  postgresql: '9.5'
 before_script:
 - cp config/database.travis.yml config/database.yml
 - RAILS_ENV=test bundle exec rake db:drop db:create db:migrate
