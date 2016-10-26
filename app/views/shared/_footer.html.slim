@@ -1,68 +1,57 @@
 - localized_cache ['footer', Time.now.year] do
-  .footer
-    .inner
-      .sections
-        nav.section
-          strong = t(:footer_navigation)
+  footer.page-footer
+    .container
+      .row
+        .col.s12.m4
+          | <h5 class="white-text"
+          img.responsive-img src="codaisseur.png" /
           ul
-            = render "shared/menu_items"
-            = menu_item_for t(:nav_team), team_path
-            = menu_item_for t(:nav_scholarships), apply_scholarships_path
-
-        .section.social
-          strong = t(:footer_follow_us)
-          ul
-            li = link_to t(:nav_newsletter), newsletter_path
-            li = link_to "Twitter", "https://twitter.com/codaisseur"
-            li = link_to "Facebook", "https://www.facebook.com/developmentbootcamp"
-            li = link_to "LinkedIn", "https://www.linkedin.com/company/development-bootcamp"
-            li = link_to "Github", "https://github.com/devbootcamps"
-            li = link_to "Sitemap", sitemap_path(format: :xml)
-
-        .section.vcard
-          strong.fn Development Bootcamp
-          br
-          span.title Codaisseur BV
-          p.adr
-            span.email
-              = link_to "info@developmentbootcamp.nl", "mailto:info@developmentbootcamp.nl"
-            br
-            span.street-address Singel 542
-            br
-            span.postal-code 1017 AZ
-            span.locality  Amsterdam
-            br
-            span.country The Netherlands
-            br
-            | Phone:
-            span.phone-number  +31202615197
-
-        .section.company-details
-          p
-            span KvK: 63359359
-            br
-            span VAT ID: NL855202907B01
-            br
-            span Bank: NL59BUNQ2025584334
-
-        - localized_cache [cache_key_for_sponsors] do
-          - if @sponsors.count > 0
-            .sponsors#the-partners
-              - @sponsors.order('name asc').each do |sponsor|
-                - localized_cache [sponsor] do
-                  - sponsor_link = sponsor.website.present? ? sponsor.website : '#'
-                  - if sponsor.logo.present?
-                    .sponsor
-                      = link_to sponsor_link do
-                        = image_tag(sponsor.logo.thumb)
-
-      .bottom
-        p
-          => link_to 'Code of conduct', code_of_conduct_path
-          | •
-          =<> link_to 'Terms & Conditions', terms_and_conditions_path
-          | •
-          =<> link_to 'Cancellation policy', cancellation_policy_path
-          | • © 2014 -
-          =< Time.now.year
-          =< link_to 'Codaisseur BV', 'http://www.codaisseur.com'
+            li = link_to "Home", root_path
+            li = link_to "Cursussen", courses_path
+            li = link_to "Aanmelden", enroll_path
+            li = link_to "Support",root_path
+            li = link_to "Team", team_path
+            li = link_to "Traineeship", href="https://www.facebook.com/developmentbootcamp"
+        .col.s12.m4
+          h5.white-text Development Bootcamp
+          p.white-text
+            | Codaisseur BV
+            br/
+            | info@codaisseur.com
+            br/
+            | Weesperstraat 61
+            br/
+            | 1018 VN Amsterdam
+            br/
+            | The Netherlands
+            br/
+          p.white-text
+            | Tel: +31202615197
+            br/
+            | KvK: 63359359
+            br/
+            | VAT ID: NL855202907B01
+            br/
+            | Bank: NL90ABNA0401849279
+            br/
+        .col.s12.m4
+          h5.white-text Follow us
+          a href="https://twitter.com/codaisseur"
+            img src="" /
+          a href="https://www.facebook.com/developmentbootcamp"
+            img src="" /
+          a href="https://www.linkedin.com/company/development-bootcamp"
+            img src="" /
+          a href="https://github.com/devbootcamps"
+            img src="" /
+          .row
+            .input-field.col.s8
+              label for="email"  Subscribe to our newsletter
+              input#email.white-text placeholder=("Enter your email adres") type="text" /
+              button.btn.waves-effect.waves-light name="action" type="submit"
+                | Submit
+                i.material-icons.right send
+    /! Scripts
+    script src="https://code.jquery.com/jquery-2.1.1.min.js"
+    script src="js/materialize.js"
+    script src="js/init.js"
