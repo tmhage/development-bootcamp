@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.2.4'
+ruby '2.3.1'
 
 gem 'rails', '4.1.7'
 gem 'rack-rewrite'
@@ -9,7 +9,7 @@ gem 'dalli'
 gem 'connection_pool'
 gem 'slim-rails'
 gem 'redcarpet'
-gem 'sass-rails', '~> 4.0.3'
+gem 'sass-rails', '~> 5.0'
 gem 'compass-rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
@@ -37,6 +37,7 @@ gem 'mandrill-api'
 gem 'sidekiq'
 gem 'sinatra'
 gem 'route_translator'
+gem 'materialize-sass'
 
 group :production, :staging do
   gem 'rails_12factor'
