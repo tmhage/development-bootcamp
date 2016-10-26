@@ -31,6 +31,8 @@ Rails.application.routes.draw do
     get '/students/:id/qr-code' => 'students#qr_code'
     get '/students/:id/check' => 'students#check_qr_code'
 
+    get '/styleguide' => 'static_pages#styleguide'
+
     resources :scholarships, only: [:create] do
       collection do
         get :apply
