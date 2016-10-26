@@ -12,6 +12,5 @@
 //
 //= require jquery/dist/jquery.min
 //= require jquery-ujs/src/rails
-//= require bootstrap-sass/assets/javascripts/bootstrap-sprockets
-//= require bootstrap
+//= require materialize
 //= require_tree ./frontend
