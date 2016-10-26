@@ -2,69 +2,30 @@
 - meta_description t('.meta_description')
 - meta_keywords t('.meta_keywords')
 
-.dbc-page-header.home
-  .dbc-page
-    .inner
-      .row
-        .text.right
-          h1
-            = t('.learn_the_most_wanted')
-            br
-            = t('.skill_right_now')
+.redesign-dbc-page-header.home
+  .inner
+    .text.center
+      .title
+        t Learn the most wanted skill right now
+      .subtitle
+        t The fastest way to junior developer or tech hybrid
 
-          p = t('.tagline')
-
-          .cta
-            => link_to t(:cta_courses), courses_path, class: 'button primary', id: 'home-cta-two'
-            = link_to t(:cta_open_evening), open_evening_path, class: 'button default', id: 'home-cta-one'
-
-  .bottom-bar
-    .inner
-      nav
-        ul
-          li = link_to t('.takeaway1'), courses_path
-          li = link_to t('.takeaway2'), courses_path
-          li = link_to t('.takeaway3'), courses_path
-
-.dbc-content
-  .dbc-container.dbc-two-col.three-reasons
-    .inner
-      .row
-        .col
-          .circle.beginner 1
-        .col
-          p
-            => t('.three_reasons_one_heading')
-            span = t('.three_reasons_one')
-      .row
-        .col
-          .circle.intermediate 2
-        .col
-          p
-            => t('.three_reasons_two_heading')
-            span = t('.three_reasons_two')
-      .row
-        .col
-          .circle.advanced 3
-        .col
-          p
-            => t('.three_reasons_three_heading')
-            span = t('.three_reasons_three')
-
-  - if @reviews.any?
-    .dbc-container.reviews
-      .inner
-        .row
-          = render @reviews
-        .row
-          p.pull-right style="margin-top: 1.2em"
-            | Reviews via:
-            =< link_to 'https://www.springest.nl/codaisseur-development-bootcamp#ervaringen' do
-              = image_tag 'springest-logo.png', alt: 'Springest', style: 'height: 2.2em; margin-top: -1.2em'
-
-.dbc-content
-  .dbc-container.dbc-quote
-    .inner
-      .row
-        blockquote
-          p = "“#{t('.quote')}”"
+.redesign-dbc-content
+  .inner
+    .row
+      .text.center
+        .col.s12.m4
+          .row
+            = image_tag ('illustrations/star_black.png')
+            h3 Learn from PROFESSIONALS
+            p Experience teachters with years of experience in the field
+        .col.s12.m4
+          .row
+            = image_tag ('illustrations/clock_black.png')
+            h3 In a SHORT time
+            p No need to spend years in university
+        .col.s12.m4
+          .row
+            = image_tag ('illustrations/link_black.png')
+            h3 And see how USEFUL it is
+            p Examples of how the benefits of knowing how to code
