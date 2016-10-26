@@ -14,3 +14,4 @@
 //= require jquery-ujs/src/rails
 //= require materialize
 //= require_tree ./frontend
+//= require frontend/courses

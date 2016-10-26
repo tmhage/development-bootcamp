@@ -3,34 +3,73 @@
 - meta_keywords t('.meta_keywords')
 
 - localized_cache ['programs-index'] do
-  .dbc-content
-    .dbc-container
-      .inner
-        .block-title
-            h1
-              = t '.title'
-              span = t '.subtitle'
-
-    .dbc-container.dbc-three-col
-      .inner
-        .row
-          .col
-            .circle.beginner 1
-            h2 = link_to t(:beginner_bootcamp), courses_beginner_bootcamp_path
-            p = t :beginner_bootcamp_intro
-            p = link_to t(:full_program), courses_beginner_bootcamp_path, class: 'button default'
-
-          .col
-            .circle.intermediate 2
-            h2 = link_to t(:intermediate_bootcamp), courses_intermediate_bootcamp_path
-            p = t :intermediate_bootcamp_intro
-            p = link_to t(:full_program), courses_intermediate_bootcamp_path, class: 'button default'
-
-          .col
-            .circle.advanced 3
-            h2 = link_to t(:advanced_bootcamp), courses_advanced_bootcamp_path
-            p = t :advanced_bootcamp_intro
-            p = link_to t(:full_program), courses_advanced_bootcamp_path, class: 'button default'
+  .slideshow-container
+    br
+    h4.center Check out our courses
+    .mySlides.fade
+      .container
+        .section
+          .row
+            .col.s12.m4
+              .card
+                .card-image
+                  = image_tag 'sample-1.jpg'
+                .card-content.center
+                  h5 Beginner Bootcamp
+                  p Leer je de basisbeginselen van programmeren maar ook te denken als programmeur.
+                .card-action
+                  p.center = link_to t(:full_program), courses_beginner_bootcamp_path, class: 'waves-effect waves-light btn green darken'
+            .col.s12.m4
+              .card
+                .card-image
+                  = image_tag 'sample-1.jpg'
+                .card-content.center
+                  h5 Intermediate Bootcamp
+                  p Leer je over het bouwen en deployen van verschillende types web applicaties. Lporroap adspof dsakof ir foi
+                .card-action
+                  p.center = link_to t(:full_program), courses_intermediate_bootcamp_path, class: 'waves-effect waves-light btn yellow darken-3'
+            .col.s12.m4
+              .card
+                .card-image
+                  = image_tag 'sample-1.jpg'
+                .card-content.center
+                  h5 Advanced Bootcamp
+                  p Leer je de nieuwste ontwikkelingen en complexere technieken toevoegen aan je applicatie.
+                .card-action
+                  p.center = link_to t(:full_program), courses_advanced_bootcamp_path, class: 'waves-effect waves-light btn blue'
+    .mySlides.fade
+      .container
+        .section
+          .row
+            .col.s12.m4
+              .card
+                .card-image
+                  = image_tag 'sample-1.jpg'
+                .card-content.center
+                  h5 Beginner Bootcafdfmp
+                  p Leer je de basisbeginselen van programmeren maar ook te denken als programmeur.
+                .card-action
+                  p.center = link_to t(:full_program), courses_beginner_bootcamp_path, class: 'waves-effect waves-light btn green darken'
+            .col.s12.m4
+              .card
+                .card-image
+                  = image_tag 'sample-1.jpg'
+                .card-content.center
+                  h5 Intermediate Bootcamp
+                  p Leer je over het bouwen en deployen van verschillende types web applicaties. Lporroap adspof dsakof ir foi
+                .card-action
+                  p.center = link_to t(:full_program), courses_intermediate_bootcamp_path, class: 'waves-effect waves-light btn yellow darken-3'
+            .col.s12.m4
+              .card
+                .card-image
+                  = image_tag 'sample-1.jpg'
+                .card-content.center
+                  h5 Advanced Bootcamp
+                  p Leer je de nieuwste ontwikkelingen en complexere technieken toevoegen aan je applicatie.
+                .card-action
+                  p.center = link_to t(:full_program), courses_advanced_bootcamp_path, class: 'waves-effect waves-light btn blue'
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
 
     .dbc-container.dbc-three-col
       .inner
@@ -90,7 +129,7 @@
               = image_tag 'team/question-mark.png'
             h3 You?
             p
-              strong => mail_to "teachers@codaisseur.com", "Apply"
+              strong = mail_to "teachers@codaisseur.com", "Apply"
               | for Teaching/Coaching!
 
         .row
