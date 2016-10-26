@@ -52,14 +52,14 @@ html lang=I18n.locale
       ga('send', 'pageview');
 
   body
-    = render "shared/navigation"
+    / = render "shared/navigation"
 
     .dbc-page
       .dbc-main
         = render 'shared/flash_messages'
         = yield
 
-    = render "shared/footer"
+    / = render "shared/footer"
 
     #fb-root
 

@@ -1,0 +1,67 @@
+// gonna go, only for testing
+.butt-container
+  margin: 4em
+
+  .row
+    margin: 1.5em
+
+.btn
+  height: 40px
+  line-height: 40px
+  font-size: 14px
+  font-weight: 400
+  box-shadow: none
+  border-radius: 0
+  text-transform: none
+
+  // change of size for 'small' class
+  &.small
+    height: 35px
+    line-height: 35px
+
+  &:hover
+    box-shadow: none
+
+  // standard filled buttons
+  &.grn
+    background-color: #00AA86
+    &:hover
+      background-color: #007E64
+
+  &.ylw
+    background-color: #F5B723
+    &:hover
+      background-color: #E6A200
+
+  &.blu
+    background-color: #0093D5
+    &:hover
+      background-color: #0075AA
+
+  // empty buttons - three color versions with hover
+  &.empty
+    background-color: white
+
+    &.grn
+      color: #00AA86
+      border: 2px solid #00AA86
+      &:hover
+        background-color: #00AA86
+        color: white
+        border: 2px solid white
+
+    &.ylw
+      color: #F5B723
+      border: 2px solid #F5B723
+      &:hover
+        background-color: #F5B723
+        color: white
+        border: 2px solid white
+
+    &.blu
+      color: #0093D5
+      border: 2px solid #0093D5
+      &:hover
+        background-color: #0093D5
+        color: white
+        border: 2px solid white
