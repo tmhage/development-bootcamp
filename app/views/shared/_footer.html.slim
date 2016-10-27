@@ -3,13 +3,12 @@
     .container
       .row
         .col.s12.m4
-          | <h5 class="white-text"
           img.responsive-img src="codaisseur.png" /
           ul
             li = link_to "Home", root_path
             li = link_to "Cursussen", courses_path
             li = link_to "Aanmelden", enroll_path
-            li = link_to "Support",root_path
+            li = link_to "Support",contact_path
             li = link_to "Team", team_path
             li = link_to "Traineeship", href="https://www.facebook.com/developmentbootcamp"
         .col.s12.m4
@@ -26,7 +25,7 @@
             | The Netherlands
             br/
           p.white-text
-            | Tel: +31202615197
+            | Tel: +31202615197Z
             br/
             | KvK: 63359359
             br/
@@ -36,17 +35,25 @@
             br/
         .col.s12.m4
           h5.white-text Follow us
-          a href="https://twitter.com/codaisseur"
-            img src="" /
-          a href="https://www.facebook.com/developmentbootcamp"
-            img src="" /
-          a href="https://www.linkedin.com/company/development-bootcamp"
-            img src="" /
-          a href="https://github.com/devbootcamps"
-            img src="" /
+          = link_to href="https://twitter.com/codaisseur" do
+            i.span.fa-stack.fa-lg
+              i.fa.fa-circle-thin.fa-stack-2x.fa
+              i.fa.fa-twitter.fa-stack-2
+          = link_to href="https://www.facebook.com/developmentbootcamp" do
+            i.span.fa-stack.fa-lg
+              i.fa.fa-circle-thin.fa-stack-2x.fa
+              i.fa.fa-facebook.fa-stack-2
+          = link_to href="https://www.linkedin.com/company/development-bootcamp" do
+            i.span.fa-stack.fa-lg
+              i.fa.fa-circle-thin.fa-stack-2x.fa
+              i.fa.fa-linkedin.fa-stack-2
+          = link_to href="https://github.com/devbootcamps" do
+            i.span.fa-stack.fa-lg
+              i.fa.fa-circle-thin.fa-stack-2x.fa
+              i.fa.fa-github.fa-stack-2
           .row
             .input-field.col.s8
-              label for="email"  Subscribe to our newsletter
+              h3.white-text  Subscribe to our newsletter
               input#email.white-text placeholder=("Enter your email adres") type="text" /
               button.btn.waves-effect.waves-light name="action" type="submit"
                 | Submit
