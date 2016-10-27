@@ -149,3 +149,17 @@
           button.btn.small.empty.ylw
             | Button
       
+      p.description
+        | Dropdown buttons
+        
+      .row.dropdown-buttons
+        = link_to 'Dropdown button', '#', data_activates: 'dropdown-menu', class: 'dropdown-button btn grn'
+          
+        ul#dropdown-menu.dropdown-content
+          li
+            = link_to 'Item one', '#'
+          li 
+            = link_to 'Item two', '#'
+          li 
+            = link_to 'Item three', '#'
+              
