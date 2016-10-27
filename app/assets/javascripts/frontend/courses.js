@@ -10,6 +10,7 @@ function currentSlide(n) {
 }
 
 function showSlides(n) {
+  if ($('.mySlides').length > 0)
     var i;
     var slides = document.getElementsByClassName("mySlides");
     var dots = document.getElementsByClassName("dot");

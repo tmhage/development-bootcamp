@@ -79,69 +79,89 @@
     .a.next onclick="plusSlides(1)" ❯
   br
 
-    .dbc-container.dbc-three-col
-      .inner
-        .row
-          h2 = t '.our_teachers'
+  .partners-container
+    .partners-container-inner
+      .section
+        h2.center Our partners
+        br
+        .row.center
+          .col.s12.m2
+            = image_tag 'partners/codaisseur.png'
+          .col.s12.m2
+            = image_tag 'partners/girlsintech.png'
+          .col.s12.m2
+            = image_tag 'partners/rackspace.jpg'
+          .col.s12.m2
+            = image_tag 'partners/logo-startup-amsterdam.png'
+          .col.s12.m2
+            = image_tag 'partners/rooskookt-logo.svg'
+          .sol.s12.m2
+            = image_tag 'partners/logo-pragmatic.png'
+    br
 
-        .row
-          .col.team-member
-            .avatar
-              = image_tag 'team/rory.png'
-            h3 Rory Koehein
-            p React & JavaScript Teacher
-          .col.team-member
-            .avatar
-              = image_tag 'team/wouter.png'
-            h3 Wouter de Vos
-            p Teaching coordinator
+  .dbc-container.dbc-three-col
+    .inner
+      .row
+        h2 = t '.our_teachers'
 
-          .col.team-member
-            .avatar
-              = image_tag 'team/joost.jpg'
-            h3 Joost Elfering
-            p Programming Teacher
+      .row
+        .col.team-member
+          .avatar
+            = image_tag 'team/rory.png'
+          h3 Rory Koehein
+          p React & JavaScript Teacher
+        .col.team-member
+          .avatar
+            = image_tag 'team/wouter.png'
+          h3 Wouter de Vos
+          p Teaching coordinator
 
-          .col.team-member
-            .avatar
-              = image_tag 'team/miriam.png'
-            h3 Miriam Tocino
-            p Programming Teacher
+        .col.team-member
+          .avatar
+            = image_tag 'team/joost.jpg'
+          h3 Joost Elfering
+          p Programming Teacher
 
-          .col.team-member
-            .avatar
-              = image_tag 'team/paul.png'
-            h3 Paul Tondeur
-            p HTML & CSS Teacher
+        .col.team-member
+          .avatar
+            = image_tag 'team/miriam.png'
+          h3 Miriam Tocino
+          p Programming Teacher
 
-          .col.team-member
-            .avatar
-              = image_tag 'team/ben.png'
-            h3 Benjamin Udink ten Cate
-            p Programming Teacher
+        .col.team-member
+          .avatar
+            = image_tag 'team/paul.png'
+          h3 Paul Tondeur
+          p HTML & CSS Teacher
 
-          .col.team-member
-            .avatar
-              = image_tag 'team/jovana.jpg'
-            h3 Jovana Tokic
-            p Coach
+        .col.team-member
+          .avatar
+            = image_tag 'team/ben.png'
+          h3 Benjamin Udink ten Cate
+          p Programming Teacher
 
-          .col.team-member
-            .avatar
-              = image_tag 'team/vincent.jpeg'
-            h3 Vincent Oord
-            p Coach
+        .col.team-member
+          .avatar
+            = image_tag 'team/jovana.jpg'
+          h3 Jovana Tokic
+          p Coach
 
-          .col.team-member
-            .avatar
-              = image_tag 'team/question-mark.png'
-            h3 You?
-            p
-              strong = mail_to "teachers@codaisseur.com", "Apply"
-              | for Teaching/Coaching!
+        .col.team-member
+          .avatar
+            = image_tag 'team/vincent.jpeg'
+          h3 Vincent Oord
+          p Coach
 
-        .row
-          center = t('.meet_rest_team', team: link_to('team', team_path)).html_safe
+        .col.team-member
+          .avatar
+            = image_tag 'team/question-mark.png'
+          h3 You?
+          p
+            strong = mail_to "teachers@codaisseur.com", "Apply"
+            | for Teaching/Coaching!
+
+      .row
+        center = t('.meet_rest_team', team: link_to('team', team_path)).html_safe
 
   .dbc-container.dbc-three-col
     .inner
