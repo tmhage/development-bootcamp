@@ -1,4 +1,5 @@
 #styleguide
+
   .header
     h2.heading 
       strong 
@@ -139,7 +140,7 @@
 
       .row.small-buttons
         .col.s2
-          h4 Green Full Smal
+          h4 Green Full Small
           p height: 35px
           button.btn.small.grn
             | Button
@@ -149,17 +150,30 @@
           button.btn.small.empty.ylw
             | Button
       
-      p.description
-        | Dropdown buttons
-        
       .row.dropdown-buttons
-        = link_to 'Dropdown button', '#', data_activates: 'dropdown-menu', class: 'dropdown-button btn grn'
-          
-        ul#dropdown-menu.dropdown-content
+        .col.s4
+          h4 Dropdown Button Normal Green
+          p height: 40px, border: 2px
+          = link_to 'Dropdown button', '#', :data => {:activates => 'dropdown-menu1'}, class: 'dropdown-button btn grn'
+          end
+        .col.s3
+          h4 Dropdown Button Empty Blue
+          p height: 40px, border: 2px
+          = link_to 'Dropdown button', '#', :data => { :activates => 'dropdown-menu2'}, class: 'dropdown-button caret-down btn empty blu'
+        
+        / dropdown menus, they're not part of the document flow (I think)
+        ul#dropdown-menu1.dropdown-content.grn
           li
             = link_to 'Item one', '#'
           li 
             = link_to 'Item two', '#'
           li 
             = link_to 'Item three', '#'
-              
+        
+        ul#dropdown-menu2.dropdown-content.blu
+          li
+            = link_to 'Item one', '#'
+          li 
+            = link_to 'Item two', '#'
+          li 
+            = link_to 'Item three', '#'
