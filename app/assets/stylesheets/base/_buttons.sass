@@ -18,43 +18,74 @@
   // standard filled buttons
   &.grn
     background-color: #00AA86
+    border: 2px solid #FFFFFF
     &:hover
       background-color: #007E64
 
   &.ylw
     background-color: #F5B723
+    border: 2px solid #FFFFFF
     &:hover
       background-color: #E6A200
 
   &.blu
     background-color: #0093D5
+    border: 2px solid #FFFFFF
     &:hover
       background-color: #0075AA
 
+  &.blk
+    background-color: #000000
+    margin-bottom: 0
+    border: 2px solid #000000
+    &:hover
+      background-color: #FFFFFF
+      color: #000000
+      border: 2px solid #000000
+
   // empty buttons - three color versions with hover
   &.empty
-    background-color: white
+    background-color: #FFFFFF
 
     &.grn
       color: #00AA86
       border: 2px solid #00AA86
       &:hover
         background-color: #00AA86
-        color: white
-        border: 2px solid white
+        color: #FFFFFF
+        border: 2px solid #FFFFFF
 
     &.ylw
       color: #F5B723
       border: 2px solid #F5B723
       &:hover
         background-color: #F5B723
-        color: white
-        border: 2px solid white
+        color: #FFFFFF
+        border: 2px solid #FFFFFF
 
     &.blu
       color: #0093D5
       border: 2px solid #0093D5
       &:hover
         background-color: #0093D5
-        color: white
-        border: 2px solid white
+        color: #FFFFFF
+        border: 2px solid #FFFFFF
+
+.dropdown-content
+  line-height: 40px
+  overflow-y: hidden !important
+  li
+    font-size: 14px
+    text-align: center
+  &.grn
+    a
+      color: #00AA86
+    border: 2px solid #00AA86
+  &.ylw
+    a
+      color: #F5B723
+    border: 2px solid #F5B723
+  &.blu
+    a
+      color: #0093D5
+    border: 2px solid #0093D5
